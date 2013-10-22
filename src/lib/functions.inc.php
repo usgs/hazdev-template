@@ -8,12 +8,8 @@
  *        The parameter name.
  * @param $default {?} default is null.
  *        Optional default value if the parameter was not provided.
- * @param $regex {String} default is null.
- *        Optional regular expression used to validate.
- *        If the value was provided and does not match regex,
- *        return $default instead.
  */
-function param ($name, $default=null, $regex=null) {
+function param ($name, $default=null) {
 	$value = null;
 	$key = "$name";
 
@@ -23,14 +19,6 @@ function param ($name, $default=null, $regex=null) {
 		$value = $_GET[$key];
 	} else {
 		$value = $default;
-	}
-
-	if ($value !== $default && $regex !== null) {
-		if (preg_match($regex, $value)) {
-			return $value;
-		} else {
-			return $default;
-		}
 	}
 
 	return $value;
@@ -53,10 +41,10 @@ function findFileInPath ($name) {
 		// only compute this once for each request
 		$script_path = realpath($_SERVER['SCRIPT_FILENAME']);
 	}
-	
+
 	// start at script path
 	$path = $script_path;
-	
+
 	// check parent directories
 	while ($path !== false && $path !== '/' && $path !== '' && $path !== '.') {
 		// go up one directory
