@@ -124,6 +124,7 @@ module.exports = function (grunt) {
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'bower_components'),
 							mountFolder(connect, 'node_modules'),
+							mountPHP(options.base),
 							mountFolder(connect, options.base),
 							mountFolder(connect, appConfig.src + '/htdocs/js')
 						];
