@@ -5,7 +5,8 @@ date_default_timezone_set('UTC');
 $LIB_DIR = realpath(dirname(__FILE__));
 $APP_DIR = dirname($LIB_DIR);
 $HTDOCS_DIR = $APP_DIR . '/htdocs';
-$HTTPD_CONF = '../conf/httpd.conf';
+$CONF_DIR = $APP_DIR . '/conf';
+$HTTPD_CONF = $CONF_DIR . '/httpd.conf';
 
 
 // work from lib directory
@@ -13,6 +14,12 @@ chdir($LIB_DIR);
 
 // add lib directory to include path
 $include_path = get_include_path() . PATH_SEPARATOR . $LIB_DIR;
+
+
+// create conf directory if it doesn't exist
+if (!is_dir($CONF_DIR)) {
+	mkdir($CONF_DIR, umask(), true /*recursive*/);
+}
 
 
 // write apache configuration
