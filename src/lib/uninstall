@@ -2,7 +2,6 @@
 
 push `dirname $0` > /dev/null 2>&1;
 
-configFile='../conf/config.ini';
 httpdFile='../conf/httpd.conf';
 
 # Remove httpd config file, but leave the config INI file in place
