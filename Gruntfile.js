@@ -2,6 +2,7 @@
 
 var LIVE_RELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
+var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
 var gateway = require('gateway');
 
 var mountFolder = function (connect, dir) {
@@ -85,6 +86,9 @@ module.exports = function (grunt) {
 			options: {
 				hostname: 'localhost'
 			},
+			rules: {
+				'^/template/(.*)$': '/$1'
+			},
 			dev: {
 				options: {
 					base: '<%= app.src %>/htdocs',
@@ -93,6 +97,7 @@ module.exports = function (grunt) {
 					middleware: function (connect, options) {
 						return [
 							lrSnippet,
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, options.components),
 							mountPHP(options.base),
@@ -121,6 +126,7 @@ module.exports = function (grunt) {
 					port: 8000,
 					middleware: function (connect, options) {
 						return [
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'bower_components'),
 							mountFolder(connect, 'node_modules'),
@@ -286,6 +292,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'clean:dist',
+		'configureRewriteRules',
 		'connect:test',
 		'mocha_phantomjs'
 	]);
@@ -296,12 +303,14 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'replace',
 		'open:dist',
+		'configureRewriteRules',
 		'connect:dist'
 	]);
 
 	grunt.registerTask('default', [
 		'clean:dist',
 		'compass:dev',
+		'configureRewriteRules',
 		'connect:test',
 		'connect:dev',
 		'open:test',

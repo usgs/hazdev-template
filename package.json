@@ -2,7 +2,10 @@
 	"name": "hazdev-template",
 	"version": "0.0.0",
 	"description": "Template for HazDev web sites.",
-	"repository": {"type":"git","url":"https://github.com/usgs/hazdev-template.git"},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/usgs/hazdev-template.git"
+	},
 	"keywords": [
 		"usgs"
 	],
@@ -31,10 +34,10 @@
 		"grunt-text-replace": "~0.3.6",
 		"matchdep": "~0.1.2",
 		"mocha": "~1.9.0",
-		"sinon": "~1.7.3"
+		"sinon": "~1.7.3",
+		"grunt-connect-rewrite": "~0.1.1"
 	},
 	"engines": {
 		"node": ">=0.8.0"
 	}
 }
-
