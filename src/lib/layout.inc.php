@@ -75,8 +75,14 @@
 
 ?>
 
-	<form role="search" class="site-search" method="get" action="http://search.usa.gov/search">
-		<input type="search" name="query" placeholder="Search"/>
+	<form class="site-search" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
+		<input name="utf8" type="hidden" value="✓"/>
+		<input name="affiliate" type="hidden" value="usgs"/>
+
+		<input id="query" name="query" type="text" placeholder="Search..." title="Search"/>
+		<label for="sitelimit_site"><input id="sitelimit_site" name="sitelimit" type="radio" value="<?php echo $SITE_URL; ?>" checked="checked"> This site only</label>
+		<label for="sitelimit_all"><input id="sitelimit_all" name="sitelimit" type="radio" value=""/> All USGS</label>
+
 		<button type="submit">Search</button>
 	</form>
 
