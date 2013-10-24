@@ -36,14 +36,14 @@ function param ($name, $default=null) {
  *        name of file to find.
  */
 function findFileInPath ($name) {
-	static $script_path = null;
-	if ($script_path === null) {
+	static $scriptPath = null;
+	if ($scriptPath === null) {
 		// only compute this once for each request
-		$script_path = realpath($_SERVER['SCRIPT_FILENAME']);
+		$scriptPath = realpath($_SERVER['SCRIPT_FILENAME']);
 	}
 
 	// start at script path
-	$path = $script_path;
+	$path = $scriptPath;
 
 	// check parent directories
 	while ($path !== false && $path !== '/' && $path !== '' && $path !== '.') {
@@ -51,9 +51,9 @@ function findFileInPath ($name) {
 		$path = dirname($path);
 
 		// check for file in this directory
-		$test_path = $path . '/' . $name;
-		if (file_exists($test_path)) {
-			return $test_path;
+		$testPath = $path . '/' . $name;
+		if (file_exists($testPath)) {
+			return $testPath;
 		}
 
 		// stop checking when at document or app root
@@ -64,6 +64,54 @@ function findFileInPath ($name) {
 
 	// return null if not found
 	return null;
+}
+
+
+/**
+ * Generate markup for a navigation item.
+ *
+ * When $href is null, only the text is output.
+ * When $href matches the start of REQUEST_URI, it is considered the
+ * "current page", and no anchor is output.
+ *
+ * @param $href {String}
+ *         href for anchor, null for no link.
+ * @param $text {String}
+ *         text for anchor.
+ * @return {String} markup for navigation item.
+ */
+function navItem($href, $text) {
+	$isCurrentPage = false;
+	if ($href !== null) {
+		$isCurrentPage = preg_match('/^' . preg_quote($href, '/') . '/',
+				$_SERVER['REQUEST_URI']);
+	}
+
+	if ($isCurrentPage) {
+		return '<strong>' . $text . '</strong>';
+	} else if ($href !== null) {
+		return '<a href="' . $href . '">' . $text . '</a>';
+	} else {
+		return $text;
+	}
+}
+
+/**
+ * Generate markup for a navigation group.
+ *
+ * @param  $href {String}
+ *         href for anchor for group header, null for no link.
+ * @param  $text {String} text for group header.
+ * @param  $children markup for group navigation items.
+ * @return {String} markup for navigation group.
+ */
+function navGroup($href, $text, $children) {
+	$isChildSelected = (strpos($children, '<strong>') !== FALSE);
+
+	return '<section' . ($isChildSelected ? ' class="childselected' : '') . '>' .
+			'<header>' . navItem($href, $text) . '</header>' .
+			$children .
+			'</section>';
 }
 
 
