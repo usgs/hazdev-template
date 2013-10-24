@@ -1,0 +1,126 @@
+
+.site-footer {
+	& > hr {
+		display: none;
+	}
+
+	@media screen and (min-width:$breakpoint-full) {
+		clear:both;
+	}
+}
+
+
+.site-sectionnav {
+	border: 1px solid $sectionnav-border-color;
+	background-color: $sectionnav-background-color;
+
+	& > a {
+		display:block;
+		padding:$spacing;
+		text-decoration:none;
+
+		border-bottom: 1px solid #fff;
+		&:last-child {
+			border-bottom:none;
+		}
+
+		&:hover,
+		&.current-page {
+			background-color:$sectionnav-background-color-hover;
+		}
+
+		&.current-page {
+			text-decoration:underline;
+		}
+	}
+}
+
+
+/* search form */
+
+.site-search {
+	display: block;
+	margin: 1em 0;
+	padding: $spacing;
+	background-color: $search-background-color;
+	border: 1px solid $search-border-color;
+
+	& > [type="search"] {
+		width:100%;
+	}
+
+	@media screen and (min-width:$breakpoint-full) {
+		width: $sectionnav-width;
+		box-sizing: border-box;
+		float: left;
+	}
+}
+
+
+/* site nav */
+
+.site-sitenav {
+	background-color: $sitenav-background-color;
+	margin: $spacing 0;
+	border: 1px solid darken($sitenav-background-color, 20%);
+	overflow: visible;
+
+	& > a {
+		display: block;
+		padding: $spacing;
+		color: $sitenav-color;
+		text-decoration: none;
+		font-weight: bold;
+
+		@media screen and (max-width:($breakpoint-full - 1px)) {
+			border-bottom: 1px dotted #fff;
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			&:hover,
+			&.current-page {
+				background-color: $sitenav-background-color-hover;
+			}
+
+			&.current-page {
+				text-decoration:underline;
+			}
+		}
+
+		@media screen and (min-width:$breakpoint-full) {
+			display: inline-block;
+
+			padding: $spacing 0;
+			margin: 0 0 0 $spacing;
+
+			$border-side: bottom;
+
+			padding-#{$border-side}: $spacing - 3px;
+			border-#{$border-side}: 3px solid transparent;
+
+			&:hover,
+			&.current-page {
+				border-#{$border-side}-color: $sitenav-border-color-hover;
+			}
+		}
+	}
+
+}
+
+
+/* common nav */
+
+.site-commonnav {
+	text-align: center;
+
+	& > a {
+		display: inline-block;
+		margin: .25em;
+
+		@media screen and (min-width:$breakpoint-full) {
+			font-size: smaller;
+		}
+	}
+
+}
