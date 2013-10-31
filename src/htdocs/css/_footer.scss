@@ -1,11 +1,9 @@
 
 .site-footer {
+	clear: both;
+
 	& > hr {
 		display: none;
-	}
-
-	@media screen and (min-width:$breakpoint-full) {
-		clear:both;
 	}
 }
 
@@ -59,21 +57,12 @@
 /* search form */
 
 .site-search {
+	clear:both;
 	display: block;
-	margin: 1em 0;
+	margin: $spacing 0;
 	padding: $spacing;
 	background-color: $search-background-color;
 	border: 1px solid $search-border-color;
-
-	& > [type="search"] {
-		width:100%;
-	}
-
-	@media screen and (min-width:$breakpoint-full) {
-		width: $sectionnav-width;
-		box-sizing: border-box;
-		float: left;
-	}
 }
 
 
