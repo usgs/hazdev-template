@@ -99,17 +99,13 @@ function navItem($href, $text) {
 /**
  * Generate markup for a navigation group.
  *
- * @param  $href {String}
- *         href for anchor for group header, null for no link.
  * @param  $text {String} text for group header.
  * @param  $children markup for group navigation items.
  * @return {String} markup for navigation group.
  */
-function navGroup($href, $text, $children) {
-	$isChildSelected = (strpos($children, '<strong>') !== FALSE);
-
-	return '<section' . ($isChildSelected ? ' class="childselected' : '') . '>' .
-			'<header>' . navItem($href, $text) . '</header>' .
+function navGroup($text, $children) {
+	return '<section>' .
+			'<header>' . $text . '</header>' .
 			$children .
 			'</section>';
 }

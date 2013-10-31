@@ -13,8 +13,18 @@
 .site-sectionnav {
 	border: 1px solid $sectionnav-border-color;
 	background-color: $sectionnav-background-color;
+	margin: $spacing 0;
 
-	& > a {
+	// regular nav items
+	& > a,
+	// items in a nav group
+	& > section > a,
+	// nav group header
+	& > section > header,
+	// current page
+	& > strong,
+	& > section > header > strong,
+	& > section > strong {
 		display:block;
 		padding:$spacing;
 		text-decoration:none;
@@ -23,16 +33,26 @@
 		&:last-child {
 			border-bottom:none;
 		}
-
-		&:hover,
-		&.current-page {
-			background-color:$sectionnav-background-color-hover;
-		}
-
-		&.current-page {
-			text-decoration:underline;
-		}
 	}
+
+	// indent group items
+	& > section > a {
+		text-indent: 15px;
+	}
+
+	// hover styles for nav items
+	& > a:hover,
+	& > section > a:hover {
+		background-color:$sectionnav-background-color-hover;
+	}
+
+	// current page is a strong element
+	& > strong,
+	& > section > strong {
+			background-color:$sectionnav-background-color-hover;
+			text-decoration:underline;
+	}
+
 }
 
 
