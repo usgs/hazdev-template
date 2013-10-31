@@ -1,3 +1,4 @@
+/* ### set template variables */
 
 
 $banner-image: '/template/images/usgs-banner.jpg' !default;
@@ -9,7 +10,7 @@ $site-title-color: #fff !default;
 $site-title-background-color: #4e7ab9 !default;
 
 
-$breakpoint-full: 960px !default;
+$breakpoint-full: 768px;
 $spacing: 8px !default;
 
 
@@ -29,7 +30,7 @@ $sitenav-background-color-hover: darken($sitenav-background-color, 10%) !default
 $sitenav-border-color-hover: #111 !default;
 
 
-$sectionnav-width: 144px !default;
+$sectionnav-width: 20% !default;
 $sectionnav-color: $sitenav-color !default;
 $sectionnav-background-color: lighten($sitenav-background-color, 10%) !default;
 $sectionnav-color-hover: $sitenav-color-hover !default;
@@ -40,26 +41,9 @@ $offcanvas-width: 80% !default;
 
 
 
-@import 'compass/css3';
+/* ### include template css file */
+@import '../../src/htdocs/css/_template.scss';
 
 
-* {
-	@include box-sizing(border-box);
-}
+/* ### include any content module css files */
 
-
-body {
-	font-family: arial,helvetica,sans-serif;
-}
-
-
-@media screen and (max-width: ($breakpoint-full - 1px)) {
-	img {
-		max-width: 100%;
-	}
-}
-
-@import 'banner';
-@import 'page';
-@import 'social';
-@import 'footer';

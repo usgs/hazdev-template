@@ -31,3 +31,10 @@ $SITE_COMMONNAV = '
 		<a href="#partners">Partners</a>
 ';
 
+
+// add site css
+if (!isset($HEAD)) {
+	$HEAD = '';
+}
+$HEAD = '<link rel="stylesheet" href="/css/index.css"/>' . $HEAD;
+
