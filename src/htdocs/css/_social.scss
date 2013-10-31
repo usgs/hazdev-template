@@ -49,6 +49,7 @@ $social-icon-size-large: 32px;
 
 
 .page-social {
+
 	@media screen and (max-width: ($breakpoint-full - 1px)) {
 		@each $name in facebook, twitter, google-plus, email {
 			.#{$name} {
@@ -70,4 +71,11 @@ $social-icon-size-large: 32px;
 			}
 		}
 	}
+
+
+	& > a {
+		margin-right:4px;
+	}
+
+
 }

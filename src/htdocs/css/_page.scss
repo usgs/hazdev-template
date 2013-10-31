@@ -24,22 +24,7 @@
 	}
 }
 
-.page-social > a {
-	margin-right:4px;
-}
-
-
 @media screen and (min-width: $breakpoint-full) {
-
-	body {
-		width: $breakpoint-full;
-		margin: $spacing auto;
-	}
-
-	.page {
-		float: right;
-		width: $breakpoint-full - $sectionnav-width - $spacing;
-	}
 
 	.page-footer {
 		position:relative;
@@ -47,22 +32,29 @@
 		& > p {
 			margin-bottom:0;
 		}
+
+		& > .page-social {
+			position: absolute;
+			right: $spacing;
+			bottom: $spacing;
+		}
 	}
 
-	.page-social {
-		position: absolute;
-		right: $spacing;
-		bottom: $spacing;
-	}
+	// navigation/content as left/right columns
 
+	body.navigation {
 
-	.site-sectionnav {
-		float: left;
-		width: $sectionnav-width;
-	}
+		.page {
+			padding: $spacing;
+			float: right;
+			width: 100% - $sectionnav-width;
+		}
 
-	.site-footer {
-		clear: both;
+		.site-sectionnav {
+			float: left;
+			width: $sectionnav-width;
+		}
+
 	}
 
 }
