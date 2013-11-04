@@ -81,18 +81,14 @@ function findFileInPath ($name) {
  * @return {String} markup for navigation item.
  */
 function navItem($href, $text) {
-	$isCurrentPage = false;
-	if ($href !== null) {
-		$isCurrentPage = preg_match('/^' . preg_quote($href, '/') . '/',
-				$_SERVER['REQUEST_URI']);
-	}
+	$isCurrentPage = preg_match(
+			'/^' . preg_quote($href, '/') . '/',
+			$_SERVER['REQUEST_URI']);
 
 	if ($isCurrentPage) {
 		return '<strong>' . $text . '</strong>';
-	} else if ($href !== null) {
-		return '<a href="' . $href . '">' . $text . '</a>';
 	} else {
-		return $text;
+		return '<a href="' . $href . '">' . $text . '</a>';
 	}
 }
 
