@@ -10,6 +10,13 @@ var mountFolder = function (connect, dir) {
 };
 
 var mountPHP = function (dir, options) {
+	options = options || {
+		'.php': 'php-cgi',
+		'env': {
+			'PHPRC': process.cwd() + '/src/conf/php.ini'
+		}
+	};
+
 	return gateway(require('path').resolve(dir), options);
 };
 
