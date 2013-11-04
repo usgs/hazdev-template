@@ -66,7 +66,6 @@
 	if ($NAVIGATION) {
 		echo '<nav' .
 				' id="site-sectionnav"' .
-				' name="site-sectionnav"' .
 				' class="site-sectionnav offcanvas-left"' .
 				' aria-label="Section Navigation"' .
 				'>' . $NAVIGATION . '</nav>';
