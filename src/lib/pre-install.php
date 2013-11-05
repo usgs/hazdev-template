@@ -19,7 +19,7 @@ $include_path = get_include_path() . PATH_SEPARATOR . $LIB_DIR;
 
 // create conf directory if it doesn't exist
 if (!is_dir($CONF_DIR)) {
-	mkdir($CONF_DIR, umask(), true /*recursive*/);
+	mkdir($CONF_DIR, 0755, true /*recursive*/);
 }
 
 file_put_contents($PHP_INI, '
