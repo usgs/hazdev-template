@@ -84,7 +84,9 @@ grunt.registerTask('default', [
 
 At top of Gruntfile, add this:
 
-    **var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;**
+<pre><code>
+<strong>var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;</strong>
+</code></pre>
 
 
 In the connect section, add a rules property to configure template rewrites; add the rewriteRulesSnippet middleware and mount the node_modules folder
