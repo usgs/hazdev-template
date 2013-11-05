@@ -2,14 +2,20 @@
 	"name": "hazdev-template",
 	"version": "0.0.0",
 	"description": "Template for HazDev web sites.",
-	"repository": {"type":"git","url":"https://github.com/usgs/hazdev-template.git"},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/usgs/hazdev-template.git"
+	},
 	"keywords": [
 		"usgs"
 	],
 	"scripts": {
-		"test": "grunt test"
+		"test": "grunt test",
+		"preinstall": "php src/lib/pre-install.php"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"grunt-connect-rewrite": "~0.1.1"
+	},
 	"devDependencies": {
 		"chai": "~1.7.0",
 		"connect-livereload": "~0.2.0",
@@ -37,4 +43,3 @@
 		"node": ">=0.8.0"
 	}
 }
-

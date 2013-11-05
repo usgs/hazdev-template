@@ -2,6 +2,7 @@
 
 var LIVE_RELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
+var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
 var gateway = require('gateway');
 
 var mountFolder = function (connect, dir) {
@@ -9,12 +10,20 @@ var mountFolder = function (connect, dir) {
 };
 
 var mountPHP = function (dir, options) {
+	options = options || {
+		'.php': 'php-cgi',
+		'env': {
+			'PHPRC': process.cwd() + '/src/conf/php.ini'
+		}
+	};
+
 	return gateway(require('path').resolve(dir), options);
 };
 
 module.exports = function (grunt) {
 
 	// Load grunt tasks
+	require('matchdep').filter('grunt-*').forEach(grunt.loadNpmTasks);
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// App configuration, used throughout
@@ -42,7 +51,10 @@ module.exports = function (grunt) {
 				}
 			},
 			scss: {
-				files: ['<%= app.src %>/htdocs/css/**/*.scss'],
+				files: [
+					'<%= app.src %>/htdocs/css/**/*.scss',
+					'<%= app.test %>/**/*.scss'
+				],
 				tasks: ['compass:dev']
 			},
 			tests: {
@@ -85,6 +97,9 @@ module.exports = function (grunt) {
 			options: {
 				hostname: 'localhost'
 			},
+			rules: {
+				'^/template/(.*)$': '/$1'
+			},
 			dev: {
 				options: {
 					base: '<%= app.src %>/htdocs',
@@ -93,6 +108,7 @@ module.exports = function (grunt) {
 					middleware: function (connect, options) {
 						return [
 							lrSnippet,
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, options.components),
 							mountPHP(options.base),
@@ -121,11 +137,13 @@ module.exports = function (grunt) {
 					port: 8000,
 					middleware: function (connect, options) {
 						return [
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'bower_components'),
 							mountFolder(connect, 'node_modules'),
+							mountPHP(options.base),
 							mountFolder(connect, options.base),
-							mountFolder(connect, appConfig.src + '/htdocs/js')
+							mountFolder(connect, appConfig.src + '/htdocs')
 						];
 					}
 				}
@@ -142,7 +160,10 @@ module.exports = function (grunt) {
 		compass: {
 			dev: {
 				options: {
-					sassDir: '<%= app.src %>/htdocs/css',
+					sassDir: [
+						'<%= app.src %>/htdocs/css',
+						'<%= app.test %>/css'
+					],
 					cssDir: '<%= app.tmp %>/css',
 					environment: 'development'
 				}
@@ -285,6 +306,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'clean:dist',
+		'configureRewriteRules',
 		'connect:test',
 		'mocha_phantomjs'
 	]);
@@ -295,12 +317,14 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'replace',
 		'open:dist',
+		'configureRewriteRules',
 		'connect:dist'
 	]);
 
 	grunt.registerTask('default', [
 		'clean:dist',
 		'compass:dev',
+		'configureRewriteRules',
 		'connect:test',
 		'connect:dev',
 		'open:test',

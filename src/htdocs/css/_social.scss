@@ -1,0 +1,81 @@
+
+// icon sizes
+$social-icon-size-small: 16px;
+$social-icon-size-large: 32px;
+
+
+
+@mixin social-icon($name, $size) {
+	display: inline-block;
+	background: url('/template/images/social-sprite.png') no-repeat;
+	content: ' ';
+
+	// compute background position
+	$index: 1;
+	@if $name == facebook { $index: 1; }
+	@elseif $name == twitter { $index: 2; }
+	@elseif $name == google-plus { $index: 3; }
+	@elseif $name == email { $index: 4; }
+	@elseif $name == print { $index: 5; }
+	@elseif $name == feed { $index: 6; }
+	@elseif $name == feed2 { $index: 7; }
+	@elseif $name == google-earth { $index: 8; }
+	$position: -1 * ($social-icon-size-small + $social-icon-size-large) * ($index - 1);
+
+	@if $size == small {
+		background-position: 0 ($position - $social-icon-size-large);
+		height: $social-icon-size-small;
+		width: $social-icon-size-small;
+		margin-top: -1 * $social-icon-size-small;
+	}
+	@elseif $size == large {
+		width: $social-icon-size-large;
+		height: $social-icon-size-large;
+		background-position: 0 $position;
+		margin-top: -1 * $social-icon-size-large;
+	}
+}
+
+
+
+// now generate all classes
+@each $name in facebook, twitter, google-plus, email, print, feed, feed2, google-earth {
+	@each $size in small, large {
+		.social-#{$name}-#{$size} {
+			@include social-icon($name, $size);
+		}
+	}
+}
+
+
+.page-social {
+
+	@media screen and (max-width: ($breakpoint-full - 1px)) {
+		@each $name in facebook, twitter, google-plus, email {
+			.#{$name} {
+				@include social-icon($name, large);
+				text-indent: -9999px;
+				overflow: hidden;
+				margin-top:0;
+			}
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-full) {
+		@each $name in facebook, twitter, google-plus, email {
+			.#{$name}:before {
+				@include social-icon($name, small);
+				position:relative;
+				top:2px;
+				margin-right:2px;
+			}
+		}
+	}
+
+
+	& > a {
+		margin-right:4px;
+	}
+
+
+}
