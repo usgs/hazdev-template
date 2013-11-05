@@ -23,7 +23,6 @@ var mountPHP = function (dir, options) {
 module.exports = function (grunt) {
 
 	// Load grunt tasks
-	require('matchdep').filter('grunt-*').forEach(grunt.loadNpmTasks);
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// App configuration, used throughout
