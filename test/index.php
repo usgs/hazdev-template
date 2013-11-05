@@ -6,7 +6,6 @@ if (!isset($TEMPLATE)) {
 	include('template.inc.php');
 }
 
-phpinfo();
 ?>
 
 
