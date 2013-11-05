@@ -45,7 +45,7 @@ The `test` directory shows an example usage of the template:
 
 ## Embedding the hazdev-template in another project
 
-    `npm install git+https://github.com/jmfee-usgs/hazdev-template.git#initial_import --save-dev`
+<pre><code>npm install git+https://github.com/jmfee-usgs/hazdev-template.git#initial_import --save-dev</code></pre>
 
 
 ### Gruntfile configuration
