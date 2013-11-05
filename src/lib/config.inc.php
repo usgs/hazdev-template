@@ -92,6 +92,9 @@ if (!isset($SITE_COMMONNAV)) {
 	$SITE_COMMONNAV = false;
 }
 
+// make sure $HEAD is a string at this point
+if (!$HEAD) { $HEAD = ''; }
+
 if (isset($SITE_KEYWORDS)) {
 	$HEAD .= '<meta name="keywords" content="' . $SITE_KEYWORDS . '"/>';
 }
