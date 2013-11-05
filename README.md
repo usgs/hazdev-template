@@ -53,8 +53,7 @@ The `test` directory shows an example usage of the template:
 
 Configure php include path, by updating the mountPHP middleware function:
 
-<pre><code>
-var mountPHP = function (dir, options) {
+<pre><code>var mountPHP = function (dir, options) {
 	<strong>options = options || {
 		'.php': 'php-cgi',
 		'env': {
@@ -69,8 +68,7 @@ var mountPHP = function (dir, options) {
 
 In each grunt task that uses connect, add configureRewriteRules task before any connect:
 
-<pre><code>
-grunt.registerTask('default', [
+<pre><code>grunt.registerTask('default', [
     'clean:dist',
     'compass:dev',
     <strong>'configureRewriteRules',</strong>
@@ -84,15 +82,13 @@ grunt.registerTask('default', [
 
 At top of Gruntfile, add this:
 
-<pre><code>
-<strong>var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;</strong>
+<pre><code><strong>var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;</strong>
 </code></pre>
 
 
 In the connect section, add a rules property to configure template rewrites; add the rewriteRulesSnippet middleware and mount the node_modules folder
 
-<pre><code>
-connect: {
+<pre><code>connect: {
     options: {
             hostname: 'localhost'
     },
