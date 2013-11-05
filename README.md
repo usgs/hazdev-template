@@ -53,16 +53,17 @@ The `test` directory shows an example usage of the template:
 
 Configure php include path, by updating the mountPHP middleware function:
 
-    var mountPHP = function (dir, options) {
-    	**options = options || {**
-    		**'.php': 'php-cgi',**
-    		**'env': {**
-    			**'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'**
-    		**}**
-    	**};**
-    	return gateway(require('path').resolve(dir), options);
-    };
-
+<pre><code>
+var mountPHP = function (dir, options) {
+	<strong>options = options || {
+		'.php': 'php-cgi',
+		'env': {
+			'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
+		}
+	};
+	return gateway(require('path').resolve(dir), options);
+};
+</code></pre>
 
 #### Configure grunt-connect-rewrite module:
 
