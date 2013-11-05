@@ -75,6 +75,23 @@ if ($NAVIGATION === true) {
 }
 
 
+
+if (!isset($SITE_TITLE)) {
+	$SITE_TITLE = 'Default Site Title';
+}
+
+if (!isset($SITE_URL)) {
+	$SITE_URL = $_SERVER['HTTP_HOST'];
+}
+
+if (!isset($SITE_SITENAV)) {
+	$SITE_SITENAV = false;
+}
+
+if (!isset($SITE_COMMONNAV)) {
+	$SITE_COMMONNAV = false;
+}
+
 if (isset($SITE_KEYWORDS)) {
 	$HEAD .= '<meta name="keywords" content="' . $SITE_KEYWORDS . '"/>';
 }
