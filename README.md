@@ -45,21 +45,73 @@ The `test` directory shows an example usage of the template:
 
 ## Embedding the hazdev-template in another project
 
-Same dependencies as above.
+    `npm install git+https://github.com/jmfee-usgs/hazdev-template.git#initial_import --save-dev`
+
 
 ### Gruntfile configuration
 
-Customize your mountPHP connect middleware, so src/lib/php.ini is read by php-cgi, for example:
 
-    var gateway = require('gateway');
+Configure php include path, by updating the mountPHP middleware function:
+
     var mountPHP = function (dir, options) {
-    	options = options || {
-    		'.php': 'php-cgi',
-    		'env': {
-    			'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
-    		}
-    	};
+    	**options = options || {**
+    		**'.php': 'php-cgi',**
+    		**'env': {**
+    			**'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'**
+    		**}**
+    	**};**
     	return gateway(require('path').resolve(dir), options);
     };
+
+
+#### Configure grunt-connect-rewrite module:
+
+In each grunt task that uses connect, add configureRewriteRules task before any connect:
+
+    grunt.registerTask('default', [
+        'clean:dist',
+        'compass:dev',
+        **'configureRewriteRules',**
+        'connect:test',
+        'connect:dev',
+        'open:test',
+        'open:dev',
+        'watch'
+    ]);
+
+At top of Gruntfile, add this:
+
+    **var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;**
+
+
+In the connect section, add a rules property to configure template rewrites; add the rewriteRulesSnippet middleware and mount the node_modules folder
+
+    connect: {
+        options: {
+                hostname: 'localhost'
+        },
+        **rules: {**
+                **'^/template/(.*)$': '/hazdev-template/src/htdocs/$1'**
+        **},**
+        dev: {
+                options: {
+                        base: '<%= app.src %>/htdocs',
+                        port: 8080,
+                        components: bowerConfig.directory,
+                        middleware: function (connect, options) {
+                                return [
+                                        lrSnippet,
+                                        mountFolder(connect, '.tmp'),
+                                        mountFolder(connect, 'bower_components'),
+                                        mountPHP(options.base),
+                                        mountFolder(connect, options.base),
+                                        **rewriteRulesSnippet,**
+                                        **mountFolder(connect, 'node_modules')**
+                                ];
+                        }
+                }
+        }
+     }
+
 
 
