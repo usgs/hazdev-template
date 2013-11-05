@@ -60,7 +60,7 @@ var mountPHP = function (dir, options) {
 		'env': {
 			'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
 		}
-	};
+	};</strong>
 	return gateway(require('path').resolve(dir), options);
 };
 </code></pre>
@@ -69,16 +69,18 @@ var mountPHP = function (dir, options) {
 
 In each grunt task that uses connect, add configureRewriteRules task before any connect:
 
-    grunt.registerTask('default', [
-        'clean:dist',
-        'compass:dev',
-        **'configureRewriteRules',**
-        'connect:test',
-        'connect:dev',
-        'open:test',
-        'open:dev',
-        'watch'
-    ]);
+<pre><code>
+grunt.registerTask('default', [
+    'clean:dist',
+    'compass:dev',
+    <strong>'configureRewriteRules',</strong>
+    'connect:test',
+    'connect:dev',
+    'open:test',
+    'open:dev',
+    'watch'
+]);
+</code></pre>
 
 At top of Gruntfile, add this:
 
@@ -87,32 +89,33 @@ At top of Gruntfile, add this:
 
 In the connect section, add a rules property to configure template rewrites; add the rewriteRulesSnippet middleware and mount the node_modules folder
 
-    connect: {
-        options: {
-                hostname: 'localhost'
-        },
-        **rules: {**
-                **'^/template/(.*)$': '/hazdev-template/src/htdocs/$1'**
-        **},**
-        dev: {
-                options: {
-                        base: '<%= app.src %>/htdocs',
-                        port: 8080,
-                        components: bowerConfig.directory,
-                        middleware: function (connect, options) {
-                                return [
-                                        lrSnippet,
-                                        mountFolder(connect, '.tmp'),
-                                        mountFolder(connect, 'bower_components'),
-                                        mountPHP(options.base),
-                                        mountFolder(connect, options.base),
-                                        **rewriteRulesSnippet,**
-                                        **mountFolder(connect, 'node_modules')**
-                                ];
-                        }
-                }
-        }
-     }
-
+<pre><code>
+connect: {
+    options: {
+            hostname: 'localhost'
+    },
+    <strong>rules: {
+            '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
+    },</strong>
+    dev: {
+            options: {
+                    base: '<%= app.src %>/htdocs',
+                    port: 8080,
+                    components: bowerConfig.directory,
+                    middleware: function (connect, options) {
+                            return [
+                                    lrSnippet,
+                                    mountFolder(connect, '.tmp'),
+                                    mountFolder(connect, 'bower_components'),
+                                    mountPHP(options.base),
+                                    mountFolder(connect, options.base),
+                                    <strong>rewriteRulesSnippet,
+                                    mountFolder(connect, 'node_modules')</strong>
+                            ];
+                    }
+            }
+    }
+ }
+</code></pre>
 
 
