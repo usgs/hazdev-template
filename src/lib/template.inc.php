@@ -4,7 +4,7 @@
 
 
 // include template level functions
-include('functions.inc.php');
+include_once('functions.inc.php');
 
 // finish configuring template based on site and template defaults
 include('config.inc.php');

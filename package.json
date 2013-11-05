@@ -14,7 +14,6 @@
 		"preinstall": "php src/lib/pre-install.php"
 	},
 	"dependencies": {
-		"grunt-connect-rewrite": "~0.1.1"
 	},
 	"devDependencies": {
 		"chai": "~1.7.0",
@@ -37,7 +36,8 @@
 		"grunt-text-replace": "~0.3.6",
 		"matchdep": "~0.1.2",
 		"mocha": "~1.9.0",
-		"sinon": "~1.7.3"
+		"sinon": "~1.7.3",
+		"grunt-connect-rewrite": "~0.1.1"
 	},
 	"engines": {
 		"node": ">=0.8.0"
