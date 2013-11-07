@@ -1,0 +1,107 @@
+// set defaults, can be overridden when flexible-grid is included in site css.
+$breakpoint-full: 768px !default;
+$spacing: 8px !default;
+
+
+.column {
+	margin-bottom:$spacing;
+}
+
+
+@media screen and (min-width:$breakpoint-full) {
+
+	.column {
+		// make gutter on right side of each column
+		padding-right:$spacing;
+	}
+
+	// rows are left-to-right
+	.row {
+		clear:both;
+
+		& > .column {
+			float:left;
+
+			&:last-child {
+				padding-right:0;
+			}
+		}
+	}
+
+	// unless the right-to-left class is present
+	.row.right-to-left {
+		& > .column {
+			float:right;
+
+			// first child is right most, remove its padding
+			&:first-child {
+				padding-right:0;
+			}
+
+			// last child is left most, restore its padding
+			&:last-child {
+				padding-right:$spacing;
+			}
+		}
+	}
+
+	// */2
+	.one-of-two     { width: 100%*1/2; }
+
+	// */3
+	.one-of-three   { width: 100%*1/3; }
+	.two-of-three   { width: 100%*2/3; }
+
+	// */4
+	.one-of-four    { width: 100%*1/4; }
+	.two-of-four    { @extend .one-of-two; }
+	.three-of-four  { width: 100%*3/4; }
+
+	// */5
+	.one-of-five    { width: 100%*1/5; }
+	.two-of-five    { width: 100%*2/5; }
+	.three-of-five  { width: 100%*3/5; }
+	.four-of-five   { width: 100%*4/5; }
+
+	// */6
+	.one-of-six     { width: 100%*1/6; }
+	.two-of-six     { @extend .one-of-three; }
+	.three-of-six   { @extend .one-of-two; }
+	.four-of-six    { @extend .two-of-three; }
+	.five-of-six    { width: 100%*5/6; }
+
+	// */8
+	.one-of-eight   { width: 100%*1/8; }
+	.two-of-eight   { @extend .one-of-four; }
+	.three-of-eight { width: 100%*3/8; }
+	.four-of-eight  { @extend .one-of-two; }
+	.five-of-eight  { width: 100%*5/8; }
+	.six-of-eight   { @extend .three-of-four; }
+	.seven-of-eight { width: 100%*7/8; }
+
+	// */10
+	.one-of-ten     { width: 100%*1/10; }
+	.two-of-ten     { @extend .one-of-five; }
+	.three-of-ten   { width: 100%*3/10; }
+	.four-of-ten    { @extend .two-of-five; }
+	.five-of-ten    { @extend .one-of-two; }
+	.six-of-ten     { @extend .three-of-five; }
+	.seven-of-ten   { width: 100%*7/10; }
+	.eight-of-ten   { @extend .four-of-five; }
+	.nine-of-ten    { width: 100%*9/10; }
+
+	// */12
+	.one-of-twelve    { width: 100%*1/12; }
+	.two-of-twelve    { @extend .one-of-six; }
+	.three-of-twelve  { width: 100%*3/12; }
+	.four-of-twelve   { @extend .one-of-three; }
+	.five-of-twelve   { width: 100%*5/12; }
+	.six-of-twelve    { @extend .one-of-two; }
+	.seven-of-twelve  { width: 100%*7/12; }
+	.eight-of-twelve  { @extend .two-of-three; }
+	.nine-of-twelve   { width: 100%*9/12; }
+	.ten-of-twelve    { @extend .five-of-six; }
+	.eleven-of-twelve { width: 100%*11/12; }
+
+}
+
