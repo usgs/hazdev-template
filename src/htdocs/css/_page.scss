@@ -1,9 +1,12 @@
 
+.page {
+	padding:$spacing 0;
+}
 
 .page-header {
 	& > h1 {
 		margin: 0 0 $spacing;
-	}	
+	}
 }
 
 .page-content {
@@ -12,6 +15,7 @@
 }
 
 .page-footer {
+	clear:both;
 	color: $page-footer-color;
 	background-color: $page-footer-background-color;
 	padding:$spacing;
@@ -45,7 +49,7 @@
 	body.navigation {
 
 		.page {
-			padding: $spacing;
+			padding: $spacing 0 $spacing $spacing;
 			float: right;
 			width: 100% - $sectionnav-width;
 		}
