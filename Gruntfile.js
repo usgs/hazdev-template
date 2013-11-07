@@ -51,10 +51,10 @@ module.exports = function (grunt) {
 			},
 			scss: {
 				files: [
-					'<%= app.src %>/htdocs/css/**/*.scss',
+					'<%= app.src %>/htdocs/**/*.scss',
 					'<%= app.test %>/**/*.scss'
 				],
-				tasks: ['compass:dev']
+				tasks: ['compass:dev', 'compass:test']
 			},
 			tests: {
 				files: ['<%= app.test %>/*.html', '<%= app.test %>/**/*.js'],
@@ -159,10 +159,14 @@ module.exports = function (grunt) {
 		compass: {
 			dev: {
 				options: {
-					sassDir: [
-						'<%= app.src %>/htdocs/css',
-						'<%= app.test %>/css'
-					],
+					sassDir: '<%= app.src %>/htdocs/css',
+					cssDir: '<%= app.tmp %>/css',
+					environment: 'development'
+				}
+			},
+			test: {
+				options: {
+					sassDir: '<%= app.test %>/css',
 					cssDir: '<%= app.tmp %>/css',
 					environment: 'development'
 				}
