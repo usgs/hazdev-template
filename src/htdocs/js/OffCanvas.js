@@ -255,12 +255,12 @@ define([], function() {
 
 		// enable/disable offcanvas when window resizes
 		window.addEventListener('resize', function () {
-			if (_checkSizeTimeout !== null) {
-				clearTimeout(_checkSizeTimeout);
+			if (_resizeTimeout !== null) {
+				clearTimeout(_resizeTimeout);
 			}
 
-			_checkSizeTimeout = setTimeout(function () {
-				_checkSizeTimeout = null;
+			_resizeTimeout = setTimeout(function () {
+				_resizeTimeout = null;
 				_checkSize();
 			}, 10);
 		});
