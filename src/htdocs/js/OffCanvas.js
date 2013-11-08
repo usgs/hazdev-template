@@ -1,4 +1,24 @@
 /*global define*/
+
+/*
+ * OffCanvas is implemented using JavaScript instead of pure CSS so elements
+ * can come from different containing elements on the page.
+ *
+ * When OffCanvas is enabled, all elements with the class contentClass
+ * (default "offcanvas") are moved into an element created by OffCanvas.  When
+ * OffCanvas is disabled, those elements are returned to their original position
+ * in the DOM.
+ *
+ * When OffCanvas is shown (must be enabled first), css classes are added to the
+ * body element to control the transition.
+ *
+ * A toggle element is added when OffCanvas is first enabled (only shown when
+ * offcanvas is enabled) that toggles OffCanvas content.  A mask element is also
+ * added that is shown beneath OffCanvas content, but above page content.
+ *
+ * A window resize listener enables or disables OffCanvas depending on a
+ * configurable maxWidth property, which defaults to 768px;
+ */
 define([], function() {
 	'use strict';
 
