@@ -1,3 +1,11 @@
+// these styles are using along with js/OffCanvas.js,
+//
+// it creates elements
+//     (offcanvas-mask, offcanvas-container, and offcanvas-toggle)
+// and toggles state classes
+//     (offcanvas-enabled, offcanvas-almost-active, and offcanvas-active)
+// based on the current window size.
+
 
 // hide offcanvas elements by default
 .offcanvas-mask,
