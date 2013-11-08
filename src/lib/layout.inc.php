@@ -66,14 +66,14 @@
 	if ($NAVIGATION) {
 		echo '<nav' .
 				' id="site-sectionnav"' .
-				' class="site-sectionnav offcanvas-left"' .
+				' class="site-sectionnav offcanvas"' .
 				' aria-label="Section Navigation"' .
 				'>' . $NAVIGATION . '</nav>';
 	}
 
 ?>
 
-	<form class="site-search" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
+	<form class="site-search offcanvas" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
 		<input name="utf8" type="hidden" value="✓"/>
 		<input name="affiliate" type="hidden" value="usgs"/>
 
@@ -84,11 +84,11 @@
 		<button type="submit">Search</button>
 	</form>
 
-	<footer class="site-footer oncanvas">
+	<footer class="site-footer">
 		<?php
 
 			if ($SITE_SITENAV) {
-				echo '<nav class="site-sitenav" aria-label="Site Navigation">' .
+				echo '<nav class="site-sitenav offcanvas" aria-label="Site Navigation">' .
 						$SITE_SITENAV . '</nav>';
 			}
 
@@ -106,5 +106,6 @@
 		}
 
 	?>
+	<script data-main="/template/js/index.js" src="/requirejs/require.js"></script>
 </body>
 </html>
