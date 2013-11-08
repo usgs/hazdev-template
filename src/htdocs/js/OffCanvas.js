@@ -84,7 +84,7 @@ define([], function() {
 		'maskClass': 'offcanvas-mask',
 		'containerClass': 'offcanvas-container',
 		'toggleClass': 'offcanvas-toggle',
-		'toggleContent': '&#8801;';
+		'toggleContent': '&#8801;',
 		'enabledClass': 'offcanvas-enabled',
 		'almostActiveClass': 'offcanvas-almost-active',
 		'activeClass': 'offcanvas-active'
@@ -109,6 +109,9 @@ define([], function() {
 	 * @param options.toggleClass {String}
 	 *        offcanvas toggle element classname.
 	 *        default 'offcanvas-toggle'.
+	 * @param options.toggleContent {String}
+	 *        offcanvas toggle element innerHTML.
+	 *        default '&#8801;' (three horizontal lines).
 	 * @param options.enabledClass {String}
 	 *        classname added to body when offcanvas has been constructed.
 	 *        default 'offcanvas-enabled'.
