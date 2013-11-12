@@ -30,26 +30,10 @@
 	& > .jumplink-navigation {
 		display: block;
 		position: absolute;
-		text-indent: -9999px;
 		left:-9999px;
 		top:0;
 	}
 
-	@media screen and (max-width:($breakpoint-full - 1px)) {
-		.offcanvas &> .jumplink-navigation {
-			position:fixed;
-			right:8px;
-			left:auto;
-			top:8px;
-
-			width:36px;
-			height:36px;
-			background-color:#00c;
-
-
-			z-index:3;
-		}
-	}
 
 	@media screen and (min-width:$breakpoint-full) {
 		/* make banner larger on large screens. */

@@ -1,0 +1,100 @@
+// these styles are using along with js/OffCanvas.js,
+//
+// it creates elements
+//     (offcanvas-mask, offcanvas-container, and offcanvas-toggle)
+// and toggles state classes
+//     (offcanvas-enabled, offcanvas-almost-active, and offcanvas-active)
+// based on the current window size.
+
+
+// hide offcanvas elements by default
+.offcanvas-mask,
+.offcanvas-container,
+.offcanvas-toggle {
+	display:none;
+}
+
+// only applies when on a small screen
+@media screen and (max-width:($breakpoint-full - 1px)) {
+
+	// offcanvas is enabled, but not necessarily active
+	.offcanvas-enabled {
+
+		// position body relative, for offcanvas-active transition
+		position:relative;
+		left:0;
+		transition: left .5s;
+
+		// show the offcanvas-toggle in the top right corner of the page
+		.offcanvas-toggle {
+			display:block;
+			width:30px;
+			height:30px;
+			position:fixed;
+			top:10px;
+			right:10px;
+			z-index:5;
+			color:#fff;
+			background-color:#333;
+			border:1px solid #fff;
+			font-size:30px;
+			line-height:30px;
+			text-indent:0;
+			text-align:center;
+		}
+
+		// position offcanvas content to left of page
+		.offcanvas-container {
+			position:fixed;
+			display:block;
+			left:-80%;
+			top:0;
+			bottom:0;
+			width:80%;
+
+			background-color:#fff;
+			padding:0 8px;
+			z-index:2;
+
+			overflow-y:auto;
+			transition: left .5s;
+			-webkit-transition: left .5s;
+		}
+	}
+
+
+	// intermediate step when activating, for browsers that have trouble with
+	// overflow during transition (firefox)
+	.offcanvas-almost-active {
+		overflow:hidden;
+	}
+
+
+	// offcanvas is enabled and active
+	.offcanvas-active {
+
+		// move rest of page to the right
+		left:80%;
+
+		// move offcanvas content onto page
+		.offcanvas-container {
+			left:0;
+		}
+
+		// show offcanvas mask
+		.offcanvas-mask {
+			background-color:#000;
+			opacity:.5;
+			display:block;
+			position:fixed;
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+			z-index:1;
+		}
+
+	}
+
+}
+

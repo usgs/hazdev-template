@@ -57,12 +57,38 @@
 /* search form */
 
 .site-search {
+	position:relative;
 	clear:both;
 	display: block;
 	margin: $spacing 0;
 	padding: $spacing;
 	background-color: $search-background-color;
 	border: 1px solid $search-border-color;
+
+	& >[type="search"] {
+		display:block;
+		width:78%;
+	}
+
+	& > label {
+		display:block;
+		float:left;
+		margin-right:1em;
+		font-size:smaller;
+	}
+
+	& > button {
+		position:absolute;
+		right:$spacing;
+		top:$spacing;
+		width:20%;
+	}
+
+	&:after {
+		content: ' ';
+		display:block;
+		clear:both;
+	}
 }
 
 
