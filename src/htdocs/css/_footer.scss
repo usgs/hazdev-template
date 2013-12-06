@@ -34,7 +34,8 @@
 	}
 
 	// indent group items
-	& > section > a {
+	& > section > a,
+	& > section > strong {
 		text-indent: 15px;
 	}
 
