@@ -47,7 +47,10 @@
 
 	// current page is a strong element
 	& > strong,
-	& > section > strong {
+	// or an element with the class "current-page"
+	& > .current-page,
+	& > section > strong,
+	& > section > .current-page {
 			background-color:$sectionnav-background-color-hover;
 			text-decoration:underline;
 	}
