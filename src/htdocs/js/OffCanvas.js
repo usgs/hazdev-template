@@ -43,46 +43,12 @@ define([], function() {
 		return dst;
 	};
 
-	/**
-	 * Move elements from current position into another element.
-	 *
-	 * A placeholder span element is left in the elements current position, so it
-	 * can be moved back to its original position using _moveElementsBack.
-	 *
-	 * @param dst {DOMElement} element where els are appended.
-	 * @param els {DOMNodeList|Array} elements to be moved.
-	 */
-	var _moveElements = function (dst, els) {
-		for (var i=0, len=els.length; i<len; i++) {
-			var el = els[i];
-			el._placeholder = document.createElement('span');
-			el.parentNode.replaceChild(el._placeholder, el);
-			dst.appendChild(el);
-		}
-	};
-
-	/**
-	 * Restore elements moved by _moveElements to their original position in
-	 * the DOM.
-	 *
-	 * @param els {DOMNodeList|Array} elements to be restored.
-	 */
-	var _moveElementsBack = function (els) {
-		for (var i=0, len=els.length; i<len; i++) {
-			var el = els[i];
-			if (el._placeholder && el._placeholder.parentNode) {
-				el._placeholder.parentNode.replaceChild(el, el._placeholder);
-				el._placeholder = null;
-			}
-		}
-	};
-
 	// defaults
 	var DEFAULTS = {
-		'contentClass': 'offcanvas',
+		'enable': true,
 		'maxWidth': 768,
 		'maskClass': 'offcanvas-mask',
-		'containerClass': 'offcanvas-container',
+		'containerClass': 'offcanvas',
 		'toggleClass': 'offcanvas-toggle',
 		'toggleContent': '&#8801;',
 		'enabledClass': 'offcanvas-enabled',
@@ -94,9 +60,9 @@ define([], function() {
 	 * Construct a new OffCanvas object.
 	 *
 	 * @param options {Object} options.
-	 * @param options.contentClass {String}
-	 *        classname of elements that should appear offcanvas.
-	 *        default 'offcanvas'.
+	 * @param options.enable {Boolean}
+	 *        whether to automatically enable OffCanvas.
+	 *        default true.
 	 * @param options.maxWidth {Integer}
 	 *        maximum number of pixels for offcanvas to be enabled.
 	 *        default 768.
@@ -127,7 +93,6 @@ define([], function() {
 		    _options = _extend({}, DEFAULTS, options),
 		    _enabled = false,
 		    _active = false,
-		    _resizeTimeout = null,
 		    _body, _mask, _container, _toggle;
 
 		// create elements
@@ -138,8 +103,7 @@ define([], function() {
 		_mask.className = _options.maskClass;
 
 		// container for offcanvas content
-		_container = _body.appendChild(document.createElement('div'));
-		_container.className = _options.containerClass;
+		_container = document.querySelector(_options.containerClass);
 
 		// toggle offcanvas visibility
 		_toggle = _body.appendChild(document.createElement('div'));
@@ -205,9 +169,6 @@ define([], function() {
 
 			_enabled = true;
 			_body.classList.add(_options.enabledClass);
-			// move elements into offcanvas container
-			_moveElements(_container,
-					document.querySelectorAll('.' + _options.contentClass));
 		};
 
 		/**
@@ -224,9 +185,6 @@ define([], function() {
 			}
 			_enabled = false;
 			_body.classList.remove(_options.enabledClass);
-			// move elements back to original dom position
-			_moveElementsBack(
-					document.querySelectorAll('.' + _options.contentClass));
 		};
 
 
@@ -242,29 +200,10 @@ define([], function() {
 			_this.hide();
 		});
 
-
-		// only enable offcanvas if window is smaller than maxWidth
-		var _checkSize = function () {
-			if (window.innerWidth < _options.maxWidth) {
-				_this.enable();
-			} else {
-				_this.disable();
-			}
-		};
-		_checkSize();
-
-		// enable/disable offcanvas when window resizes
-		window.addEventListener('resize', function () {
-			if (_resizeTimeout !== null) {
-				clearTimeout(_resizeTimeout);
-			}
-
-			_resizeTimeout = setTimeout(function () {
-				_resizeTimeout = null;
-				_checkSize();
-			}, 10);
-		});
-
+		// enable offcanvas during constructor
+		if (_options.enable) {
+			this.enable();
+		}
 	};
 
 

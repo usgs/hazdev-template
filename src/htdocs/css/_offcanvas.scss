@@ -44,7 +44,7 @@
 		}
 
 		// position offcanvas content to left of page
-		.offcanvas-container {
+		.offcanvas {
 			position:fixed;
 			display:block;
 			left:-80%;
@@ -77,7 +77,7 @@
 		left:80%;
 
 		// move offcanvas content onto page
-		.offcanvas-container {
+		.offcanvas {
 			left:0;
 		}
 
