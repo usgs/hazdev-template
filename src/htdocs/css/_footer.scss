@@ -1,13 +1,4 @@
 
-.site-footer {
-	clear: both;
-
-	& > hr {
-		display: none;
-	}
-}
-
-
 .site-sectionnav {
 	border: 1px solid $sectionnav-border-color;
 	background-color: $sectionnav-background-color;
@@ -62,7 +53,6 @@
 
 .site-search {
 	position:relative;
-	clear:both;
 	display: block;
 	margin: $spacing 0;
 	padding: $spacing;
@@ -71,7 +61,7 @@
 
 	& >[type="search"] {
 		display:block;
-		width:78%;
+		width:100%;
 	}
 
 	& > label {
@@ -82,10 +72,9 @@
 	}
 
 	& > button {
-		position:absolute;
-		right:$spacing;
-		top:$spacing;
-		width:20%;
+		display:block;
+		clear:both;
+		margin-top:1em;
 	}
 
 	&:after {
@@ -111,37 +100,18 @@
 		text-decoration: none;
 		font-weight: bold;
 
-		@media screen and (max-width:($breakpoint-full - 1px)) {
-			border-bottom: 1px dotted #fff;
-			&:last-child {
-				border-bottom: 0;
-			}
-
-			&:hover,
-			&.current-page {
-				background-color: $sitenav-background-color-hover;
-			}
-
-			&.current-page {
-				text-decoration:underline;
-			}
+		border-bottom: 1px dotted #fff;
+		&:last-child {
+			border-bottom: 0;
 		}
 
-		@media screen and (min-width:$breakpoint-full) {
-			display: inline-block;
+		&:hover,
+		&.current-page {
+			background-color: $sitenav-background-color-hover;
+		}
 
-			padding: $spacing 0;
-			margin: 0 0 0 $spacing;
-
-			$border-side: bottom;
-
-			padding-#{$border-side}: $spacing - 3px;
-			border-#{$border-side}: 3px solid transparent;
-
-			&:hover,
-			&.current-page {
-				border-#{$border-side}-color: $sitenav-border-color-hover;
-			}
+		&.current-page {
+			text-decoration:underline;
 		}
 	}
 
@@ -151,6 +121,7 @@
 /* common nav */
 
 .site-commonnav {
+	clear:both;
 	text-align: center;
 
 	& > a {

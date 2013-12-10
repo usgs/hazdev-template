@@ -12,15 +12,7 @@
 
 	?>
 </head>
-<?php
-
-		if ($NAVIGATION) {
-			echo '<body class="navigation">';
-		} else {
-			echo '<body>';
-		}
-
-?>
+<body>
 
 	<header role="banner" class="site-header">
 		<a class="site-logo" href="http://www.usgs.gov/" title="U.S. Geological Survey">U.S. Geological Survey</a>
@@ -61,45 +53,40 @@
 		</footer>
 	</main>
 
-<?php
-
-	if ($NAVIGATION) {
-		echo '<nav' .
-				' id="site-sectionnav"' .
-				' class="site-sectionnav offcanvas"' .
-				' aria-label="Section Navigation"' .
-				'>' . $NAVIGATION . '</nav>';
-	}
-
-?>
-
-	<form class="site-search offcanvas" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
-		<input name="utf8" type="hidden" value="✓"/>
-		<input name="affiliate" type="hidden" value="usgs"/>
-
-		<input id="query" name="query" type="search" placeholder="Search..." title="Search"/>
-		<label for="sitelimit_site"><input id="sitelimit_site" name="sitelimit" type="radio" value="<?php echo $SITE_URL; ?>" checked="checked"> This site only</label>
-		<label for="sitelimit_all"><input id="sitelimit_all" name="sitelimit" type="radio" value=""/> All USGS</label>
-
-		<button type="submit">Search</button>
-	</form>
-
-	<footer class="site-footer">
+	<footer class="site-footer offcanvas">
 		<?php
 
+			if ($NAVIGATION) {
+				echo '<nav' .
+						' id="site-sectionnav"' .
+						' class="site-sectionnav"' .
+						' aria-label="Section Navigation"' .
+						'>' . $NAVIGATION . '</nav>';
+			}
+
 			if ($SITE_SITENAV) {
-				echo '<nav class="site-sitenav offcanvas" aria-label="Site Navigation">' .
+				echo '<nav class="site-sitenav" aria-label="Site Navigation">' .
 						$SITE_SITENAV . '</nav>';
 			}
 
-			if ($SITE_COMMONNAV) {
-				echo '<hr/><nav class="site-commonnav">' . $SITE_COMMONNAV . '</nav>';
-			}
-
 		?>
+
+		<form class="site-search" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
+			<input name="utf8" type="hidden" value="✓"/>
+			<input name="affiliate" type="hidden" value="usgs"/>
+			<input id="query" name="query" type="search" placeholder="Search..." title="Search"/>
+			<label for="sitelimit_site"><input id="sitelimit_site" name="sitelimit" type="radio" value="<?php echo $SITE_URL; ?>" checked="checked"/> This site only</label>
+			<label for="sitelimit_all"><input id="sitelimit_all" name="sitelimit" type="radio" value=""/> All USGS</label>
+			<button type="submit">Search</button>
+		</form>
+
 	</footer>
 
 	<?php
+
+		if ($SITE_COMMONNAV) {
+			echo '<nav class="site-commonnav"><hr/>' . $SITE_COMMONNAV . '</nav>';
+		}
 
 		if ($FOOT) {
 			echo $FOOT;

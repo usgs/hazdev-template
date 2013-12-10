@@ -46,19 +46,16 @@
 
 	// navigation/content as left/right columns
 
-	body.navigation {
 
-		.page {
-			padding: $spacing 0 $spacing $spacing;
-			float: right;
-			width: 100% - $sectionnav-width;
-		}
+	.page {
+		padding: $spacing 0 $spacing $spacing;
+		float: right;
+		width: 100% - $sectionnav-width;
+	}
 
-		.site-sectionnav {
-			float: left;
-			width: $sectionnav-width;
-		}
-
+	.site-footer {
+		float: left;
+		width: $sectionnav-width;
 	}
 
 }
