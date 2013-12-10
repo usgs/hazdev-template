@@ -17,8 +17,8 @@ $SITE_KEYWORDS = 'aftershock,earthquake,epicenter,fault,foreshock,geologist,' .
 $SITE_SITENAV =
 		navItem('#earthquakes', 'Earthquakes') .
 		navItem('#hazards', 'Hazards') .
+		navItem('#data', 'Data') .
 		navItem('#learn', 'Learn') .
-		navItem('#prepare', 'Prepare') .
 		navItem('#monitoring', 'Monitoring') .
 		navItem('#research', 'Research');
 
