@@ -244,8 +244,6 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'<%= app.dist %>/htdocs/lib/html5shiv/html5shiv.js':
-							['<%= bower.directory %>/html5shiv-dist/html5shiv.js'],
 					'<%= app.dist %>/htdocs/js/uglified.js':
 							['<%= app.dist %>/htdocs/js/index.js']
 				}
