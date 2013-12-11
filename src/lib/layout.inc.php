@@ -43,6 +43,28 @@
 						}
 					?>">Questions or comments?</a>
 			</p>
+
+			<?php
+				if (isset($SOCIAL)) {
+					$pageUrl = ($_SERVER['HTTPS'] !== 'Off' ? 'https://' : 'http://') .
+							$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+					$replacements = array(
+							'{URL}' => htmlspecialchars($pageUrl),
+							'{TITLE}' => htmlspecialchars($TITLE));
+
+					echo '<nav class="page-social" aria-label="Share this page">';
+					foreach ($SOCIAL as $link) {
+						echo ' <a' .
+								' href="' . htmlspecialchars(strtr($link['url'], $replacements)) . '"' .
+								' title="Share using ' . htmlspecialchars($link['name']) . '"' .
+								' class="' . $link['class'] . '"' .
+								' data-link-template="' . htmlspecialchars($link['url']) . '"' .
+								'>' . htmlspecialchars($link['name']) . '</a>';
+					}
+					echo '</nav>';
+				}
+			?>
 		</footer>
 	</main>
 

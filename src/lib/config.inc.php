@@ -42,10 +42,35 @@ if (!isset($NAVIGATION)) {
 	$NAVIGATION = false;
 }
 
+// social links for sharing page
+if (!isset($SOCIAL)) {
+	// NOTE: configured links do not need to encode & as &amp;
+	$SOCIAL = array(
+			array(
+				'name' => 'Facebook',
+				'url' => 'http://www.facebook.com/sharer.php?u={URL}',
+				'class' => 'facebook'
+			),
+			array(
+				'name' => 'Twitter',
+				'url' => 'http://twitter.com/share?url={URL}&text={TITLE}',
+				'class' => 'twitter'
+			),
+			array(
+				'name' => 'Google',
+				'url' => 'https://plusone.google.com/_/+1/confirm?url={URL}',
+				'class' => 'google-plus'
+			),
+			array(
+				'name' => 'Email',
+				'url' => 'mailto:?to=&subject={TITLE}&body={URL}',
+				'class' => 'email'
+			)
+	);
+}
 
 
 // auto generated content
-
 
 if ($HEAD === true) {
 	$HEAD = findFileInPath('_head.inc.php');
