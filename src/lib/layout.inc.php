@@ -36,16 +36,14 @@
 		</div>
 
 		<footer class="page-footer">
-			<p>
-				<a href="/contactus/<?php
+			<p><a href="/contactus/<?php
 						if ($CONTACT) {
 							echo '?to=' . $CONTACT;
 						}
-					?>">Questions or comments?</a>
-			</p>
+					?>">Questions or comments?</a></p>
 
 			<?php
-				if (isset($SOCIAL)) {
+				if ($SOCIAL) {
 					$pageUrl = ($_SERVER['HTTPS'] !== 'Off' ? 'https://' : 'http://') .
 							$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
@@ -65,6 +63,7 @@
 					echo '</nav>';
 				}
 			?>
+
 		</footer>
 	</main>
 
@@ -94,7 +93,6 @@
 			<label for="sitelimit_all"><input id="sitelimit_all" name="sitelimit" type="radio" value=""/> All USGS</label>
 			<button type="submit">Search</button>
 		</form>
-
 	</footer>
 
 	<?php
@@ -104,7 +102,12 @@
 		}
 
 		// load requirejs and template javascript before $FOOT
-		echo '<script data-main="/theme/js/index.js" src="/requirejs/require.js"></script>';
+		if (file_exists(dirname(__FILE__) . '/../htdocs/js/uglified.js')) {
+			echo '<script src="/theme/js/uglified.js"></script>';
+		} else {
+			echo '<script src="/requirejs/require.js"></script>' .
+					'<script src="/theme/js/index.js"></script>';
+		}
 
 		if ($FOOT) {
 			echo $FOOT;
