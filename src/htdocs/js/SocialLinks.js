@@ -89,7 +89,7 @@ define([], function () {
 			linkUrl = linkUrl.replace('%URL%', url);
 			linkUrl = linkUrl.replace('%TITLE%', title);
 
-			buf.push('<a',
+			buf.push(' <a',
 					' href="', link.url.replace('%URL%', url).replace('%TITLE%', title), '"',
 					' class="', link.class, '"',
 					' title="Share using ', link.name, '"',
@@ -97,7 +97,7 @@ define([], function () {
 		}
 
 		// update element
-		this._el.innerHTML = buf.join(' ');
+		this._el.innerHTML = buf.join('');
 	};
 
 
