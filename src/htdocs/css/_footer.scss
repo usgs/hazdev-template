@@ -5,15 +5,15 @@
 	margin: $spacing 0;
 
 	// regular nav items
-	& > a,
+	> a,
 	// items in a nav group
-	& > section > a,
+	> section > a,
 	// nav group header
-	& > section > header,
+	> section > header,
 	// current page
-	& > strong,
-	& > section > header > strong,
-	& > section > strong {
+	> strong,
+	> section > header > strong,
+	> section > strong {
 		display:block;
 		padding:$spacing;
 		text-decoration:none;
@@ -25,23 +25,23 @@
 	}
 
 	// indent group items
-	& > section > a,
-	& > section > strong {
+	> section > a,
+	> section > strong {
 		text-indent: 15px;
 	}
 
 	// hover styles for nav items
-	& > a:hover,
-	& > section > a:hover {
+	> a:hover,
+	> section > a:hover {
 		background-color:$sectionnav-background-color-hover;
 	}
 
 	// current page is a strong element
-	& > strong,
+	> strong,
 	// or an element with the class "current-page"
-	& > .current-page,
-	& > section > strong,
-	& > section > .current-page {
+	> .current-page,
+	> section > strong,
+	> section > .current-page {
 			background-color:$sectionnav-background-color-hover;
 			text-decoration:underline;
 	}
@@ -59,19 +59,19 @@
 	background-color: $search-background-color;
 	border: 1px solid $search-border-color;
 
-	& >[type="search"] {
+	>[type="search"] {
 		display:block;
 		width:100%;
 	}
 
-	& > label {
+	> label {
 		display:block;
 		float:left;
 		margin-right:1em;
 		font-size:smaller;
 	}
 
-	& > button {
+	> button {
 		display:block;
 		clear:both;
 		margin-top:1em;
@@ -93,7 +93,7 @@
 	border: 1px solid darken($sitenav-background-color, 20%);
 	overflow: visible;
 
-	& > a {
+	> a {
 		display: block;
 		padding: $spacing;
 		color: $sitenav-color;
@@ -124,7 +124,7 @@
 	clear:both;
 	text-align: center;
 
-	& > a {
+	> a {
 		display: inline-block;
 		margin: .25em;
 

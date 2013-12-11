@@ -19,7 +19,7 @@ $spacing: 8px !default;
 	.row {
 		clear:both;
 
-		& > .column {
+		> .column {
 			float:left;
 
 			&:last-child {
@@ -30,7 +30,7 @@ $spacing: 8px !default;
 
 	// unless the right-to-left class is present
 	.row.right-to-left {
-		& > .column {
+		> .column {
 			float:right;
 
 			// first child is right most, remove its padding

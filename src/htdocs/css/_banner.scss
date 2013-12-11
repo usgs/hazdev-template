@@ -10,9 +10,8 @@
 	background-image: url('#{$banner-image}');
 	background-position: 89px 0;
 
-
 	/* position usgs link over background image. */
-	& > .site-logo {
+	> .site-logo {
 		display: block;
 		position:absolute;
 		left:0;
@@ -27,7 +26,7 @@
 	}
 
 	/* visually hide navigation jumplink. */
-	& > .jumplink-navigation {
+	> .jumplink-navigation {
 		display: block;
 		position: absolute;
 		left:-9999px;
@@ -36,16 +35,16 @@
 
 
 	@media screen and (min-width:$breakpoint-full) {
+
 		/* make banner larger on large screens. */
 		height:72px;
 		background-position: 178px 0;
+		margin-bottom: 19px + (5px * 2) + 2px;
 
 		/* also adjust size of site-logo link */
-		& > .site-logo {
+		> .site-logo {
 			width:178px;
 		}
-
-		margin-bottom: 19px + (5px * 2) + 2px;
 
 		&:after {
 			display: block;
