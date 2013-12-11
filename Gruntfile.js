@@ -357,9 +357,7 @@ module.exports = function (grunt) {
 		'compass:dev',
 		'configureRewriteRules',
 		'connect:test',
-		'connect:dev',
 		'open:test',
-		'open:dev',
 		'watch'
 	]);
 
