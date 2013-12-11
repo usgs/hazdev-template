@@ -3,6 +3,9 @@
 if (!isset($TEMPLATE)) {
 	$TITLE = 'Test Index';
 	$NAVIGATION = true;
+
+	$FOOT = '<script src="js/index.js"></script>';
+
 	include('template.inc.php');
 }
 
