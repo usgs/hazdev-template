@@ -19,7 +19,7 @@
 		<a class="jumplink-navigation" href="#site-sectionnav">Jump to Navigation</a>
 	</header>
 
-	<main role="main" class="page oncanvas" aria-labelledby="page-header">
+	<main role="main" class="page" aria-labelledby="page-header">
 		<header class="page-header" id="page-header">
 			<h1><?php echo $TITLE; ?></h1>
 		</header>
@@ -43,17 +43,10 @@
 						}
 					?>">Questions or comments?</a>
 			</p>
-
-			<nav id="page-social" class="page-social" aria-label="Share this page">
-				<a href="#facebook" class="facebook">Facebook</a>
-				<a href="#twitter" class="twitter">Twitter</a>
-				<a href="#google-plus" class="google-plus">Google+</a>
-				<a href="#email" class="email">Email</a>
-			</nav>
 		</footer>
 	</main>
 
-	<footer class="site-footer offcanvas">
+	<footer class="site-footer">
 		<?php
 
 			if ($NAVIGATION) {
@@ -88,11 +81,13 @@
 			echo '<nav class="site-commonnav"><hr/>' . $SITE_COMMONNAV . '</nav>';
 		}
 
+		// load requirejs and template javascript before $FOOT
+		echo '<script data-main="/template/js/index.js" src="/requirejs/require.js"></script>';
+
 		if ($FOOT) {
 			echo $FOOT;
 		}
 
 	?>
-	<script data-main="/template/js/index.js" src="/requirejs/require.js"></script>
 </body>
 </html>
