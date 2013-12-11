@@ -202,7 +202,7 @@ module.exports = function (grunt) {
 					include: ['requireLib'],
 
 					useStrict: true,
-					wrap: true
+					wrap: false
 				}
 			}
 		},
@@ -231,7 +231,9 @@ module.exports = function (grunt) {
 		},
 		uglify: {
 			options: {
-				mangle: true,
+				mangle: {
+					except: ['require']
+				},
 				compress: true,
 				report: 'gzip'
 			},
