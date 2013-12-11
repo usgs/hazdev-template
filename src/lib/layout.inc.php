@@ -104,7 +104,7 @@
 		}
 
 		// load requirejs and template javascript before $FOOT
-		echo '<script data-main="/template/js/index.js" src="/requirejs/require.js"></script>';
+		echo '<script data-main="/theme/js/index.js" src="/requirejs/require.js"></script>';
 
 		if ($FOOT) {
 			echo $FOOT;

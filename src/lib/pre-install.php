@@ -37,10 +37,10 @@ file_put_contents($HTTPD_CONF, '
 	php_value include_path "' . $include_path . '"
 
 	# template alias for css/js/images
-	Alias /template ' . $HTDOCS_DIR . '
+	Alias /theme ' . $HTDOCS_DIR . '
 
 	# permissions for template directory
-	<Location /template>
+	<Location /theme>
 		Order Allow,Deny
 		Allow From all
 	</Location>

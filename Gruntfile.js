@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 				hostname: 'localhost'
 			},
 			rules: {
-				'^/template/(.*)$': '/$1'
+				'^/theme/(.*)$': '/$1'
 			},
 			dev: {
 				options: {
