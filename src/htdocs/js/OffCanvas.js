@@ -48,6 +48,7 @@ define([], function() {
 		'enable': true,
 		'maxWidth': 768,
 		'maskClass': 'offcanvas-mask',
+		'closeClass': 'offcanvas-close',
 		'containerClass': 'offcanvas',
 		'toggleClass': 'offcanvas-toggle',
 		'toggleContent': '&#8801;',
@@ -69,6 +70,9 @@ define([], function() {
 	 * @param options.maskClass {String}
 	 *        mask element classname.
 	 *        default 'offcanvas-mask'.
+	 * @param options.closeClass {String}
+	 *        close element classname.
+	 *        default 'offcanvas-close'.
 	 * @param options.containerClass {String}
 	 *        offcanvas container element classname.
 	 *        default 'offcanvas-container'.
@@ -93,7 +97,7 @@ define([], function() {
 		    _options = _extend({}, DEFAULTS, options),
 		    _enabled = false,
 		    _active = false,
-		    _body, _mask, _container, _toggle;
+		    _body, _mask, _close, _container, _toggle;
 
 		// create elements
 		_body = document.querySelector('body');
@@ -101,6 +105,10 @@ define([], function() {
 		// mask that covers oncanvas content
 		_mask = _body.appendChild(document.createElement('div'));
 		_mask.className = _options.maskClass;
+
+		// element that covers content and allows users to return to content
+		_close = _body.appendChild(document.createElement('div'));
+		_close.className = _options.closeClass;
 
 		// container for offcanvas content
 		_container = document.querySelector(_options.containerClass);
@@ -196,7 +204,7 @@ define([], function() {
 		});
 
 		// hide offcanvas when mask element is clicked
-		_mask.addEventListener('click', function () {
+		_close.addEventListener('click', function () {
 			_this.hide();
 		});
 
