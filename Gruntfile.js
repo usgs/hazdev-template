@@ -4,6 +4,8 @@ var LIVE_RELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
 var gateway = require('gateway');
+var child_process = require('child_process');
+
 
 var mountFolder = function (connect, dir) {
 	return connect.static(require('path').resolve(dir));
@@ -82,13 +84,14 @@ module.exports = function (grunt) {
 			predist: [
 				'jshint:scripts',
 				'jshint:tests',
-				'compass'
+				'compass',
+				'copy'
 			],
 			dist: [
 				'cssmin:dist',
 				'htmlmin:dist',
 				'uglify',
-				'copy'
+				'runpreinstall:dist'
 			]
 		},
 		connect: {
@@ -293,6 +296,36 @@ module.exports = function (grunt) {
 		grunt.config(['jshint', 'scripts'], filepath);
 	});
 
+	grunt.registerTask('runpreinstall:dev', function () {
+		var done = this.async();
+		child_process.exec('php src/lib/pre-install.php',
+				function (error, stdout, stderr) {
+					if (error !== null) {
+						grunt.log.error(stderr);
+						done(false);
+					} else {
+						grunt.log.write(stdout);
+						done();
+					}
+				});
+	});
+
+	grunt.registerTask('runpreinstall:dist', function () {
+		var done = this.async();
+		child_process.exec('php dist/lib/pre-install.php',
+				function (error, stdout, stderr) {
+					if (error !== null) {
+						grunt.log.error(error);
+						grunt.log.error(stdout);
+						grunt.log.error(stderr);
+						done(false);
+					} else {
+						grunt.log.write(stdout);
+						done();
+					}
+				});
+	});
+
 	grunt.registerTask('test', [
 		'clean:dist',
 		'configureRewriteRules',
@@ -313,6 +346,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', [
 		'clean:dist',
+		'runpreinstall:dev',
 		'compass:dev',
 		'configureRewriteRules',
 		'connect:test',
