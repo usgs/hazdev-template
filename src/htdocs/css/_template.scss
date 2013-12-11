@@ -62,10 +62,8 @@ body {
 }
 
 
-@media screen and (max-width: ($breakpoint-full - 1px)) {
-	img {
-		max-width: 100%;
-	}
+img {
+	max-width: 100%;
 }
 
 @import 'banner';
