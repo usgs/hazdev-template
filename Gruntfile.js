@@ -190,19 +190,24 @@ module.exports = function (grunt) {
 		requirejs: {
 			dist: {
 				options: {
-					name: 'index',
-					baseUrl: appConfig.src + '/htdocs/js',
-					out: appConfig.dist + '/htdocs/js/index.js',
-					mainConfigFile: appConfig.src + '/htdocs/js/index.js',
+					appDir: appConfig.src + '/htdocs',
+					baseUrl: 'js',
+					dir: appConfig.dist + '/htdocs',
+					useStrict: true,
+					wrap: false,
 
-					// bundle require library in to index.js
+					// for bundling require library in to index.js
 					paths: {
 						requireLib: '../../../bower_components/requirejs/require'
 					},
-					include: ['requireLib'],
 
-					useStrict: true,
-					wrap: false
+					modules: [
+						{
+							name: 'index',
+							include: ['requireLib']
+						}
+						// the index module is enough to compile all other scripts
+					]
 				}
 			}
 		},
