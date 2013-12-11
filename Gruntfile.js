@@ -85,7 +85,6 @@ module.exports = function (grunt) {
 				'compass'
 			],
 			dist: [
-				'requirejs:dist',
 				'cssmin:dist',
 				'htmlmin:dist',
 				'uglify',
@@ -187,16 +186,16 @@ module.exports = function (grunt) {
 					name: 'index',
 					baseUrl: appConfig.src + '/htdocs/js',
 					out: appConfig.dist + '/htdocs/js/index.js',
-					optimize: 'uglify2',
 					mainConfigFile: appConfig.src + '/htdocs/js/index.js',
+
+					// bundle require library in to index.js
+					paths: {
+						requireLib: '../../../bower_components/requirejs/require'
+					},
+					include: ['requireLib'],
+
 					useStrict: true,
-					wrap: true,
-					uglify2: {
-						report: 'gzip',
-						mangle: true,
-						compress: true,
-						preserveComments: 'some'
-					}
+					wrap: true
 				}
 			}
 		},
@@ -231,10 +230,10 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'<%= app.dist %>/htdocs/lib/requirejs/require.js':
-							['<%= bower.directory %>/requirejs/require.js'],
 					'<%= app.dist %>/htdocs/lib/html5shiv/html5shiv.js':
-							['<%= bower.directory %>/html5shiv-dist/html5shiv.js']
+							['<%= bower.directory %>/html5shiv-dist/html5shiv.js'],
+					'<%= app.dist %>/htdocs/js/uglified.js':
+							['<%= app.dist %>/htdocs/js/index.js']
 				}
 			}
 		},
@@ -246,15 +245,6 @@ module.exports = function (grunt) {
 				src: [
 					'img/**/*.{png,gif,jpg,jpeg}',
 					'**/*.php'
-				]
-			},
-			conf: {
-				expand: true,
-				cwd: '<%= app.src %>/conf',
-				dest: '<%= app.dist/conf',
-				src: [
-					'**/*',
-					'!**/*.orig'
 				]
 			},
 			lib: {
@@ -274,10 +264,6 @@ module.exports = function (grunt) {
 				],
 				overwrite: true,
 				replacements: [
-					{
-						from: 'requirejs/require.js',
-						to: 'lib/requirejs/require.js'
-					},
 					{
 						from: 'html5shiv-dist/html5shiv.js',
 						to: 'lib/html5shiv/html5shiv.js'
@@ -317,11 +303,12 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'concurrent:predist',
+		'requirejs:dist',
 		'concurrent:dist',
 		'replace',
-		'open:dist',
 		'configureRewriteRules',
-		'connect:dist'
+		'connect:dist',
+		'open:dist'
 	]);
 
 	grunt.registerTask('default', [
