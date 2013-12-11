@@ -39,12 +39,14 @@
 		/* make banner larger on large screens. */
 		height:72px;
 		background-position: 178px 0;
-		margin-bottom: 19px + (5px * 2) + 2px;
 
 		/* also adjust size of site-logo link */
 		> .site-logo {
 			width:178px;
 		}
+
+		/* make room for :after content (font size + padding*2 + border*2) */
+		margin-bottom: 19px + (5px * 2) + 2px;
 
 		&:after {
 			display: block;
