@@ -13,13 +13,16 @@ var mountFolder = function (connect, dir) {
 
 var mountPHP = function (dir, options) {
 	options = options || {
+		'phpini': '/src/conf/php.ini'
+	};
+	var gatewayOptions = {
 		'.php': 'php-cgi',
 		'env': {
-			'PHPRC': process.cwd() + '/src/conf/php.ini'
+			'PHPRC': process.cwd() + options.phpini
 		}
 	};
 
-	return gateway(require('path').resolve(dir), options);
+	return gateway(require('path').resolve(dir), gatewayOptions);
 };
 
 module.exports = function (grunt) {
@@ -125,7 +128,9 @@ module.exports = function (grunt) {
 					keepalive: true,
 					middleware: function (connect, options) {
 						return [
-							mountPHP(options.base),
+							rewriteRulesSnippet,
+							mountPHP(appConfig.test, {phpini: '/dist/conf/php.ini'}),
+							mountFolder(connect, appConfig.test),
 							mountFolder(connect, options.base)
 						];
 					}
@@ -341,7 +346,8 @@ module.exports = function (grunt) {
 		'replace',
 		'configureRewriteRules',
 		'connect:dist',
-		'open:dist'
+		'open:dist',
+		'watch'
 	]);
 
 	grunt.registerTask('default', [
