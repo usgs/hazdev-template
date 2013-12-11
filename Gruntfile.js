@@ -125,7 +125,6 @@ module.exports = function (grunt) {
 				options: {
 					base: '<%= app.dist %>/htdocs',
 					port: 8081,
-					keepalive: true,
 					middleware: function (connect, options) {
 						return [
 							rewriteRulesSnippet,
