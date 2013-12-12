@@ -1,6 +1,13 @@
+require.config({
+	baseUrl: '.',
+	paths: {
+		theme: '/theme/js'
+	}
+});
+
 
 require([
-	'./OffCanvas'
+	'theme/OffCanvas'
 ], function (
 	OffCanvas
 ) {
