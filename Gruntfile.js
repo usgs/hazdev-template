@@ -366,6 +366,7 @@ module.exports = function (grunt) {
 		'clean:dist',
 		'runpreinstall:dev',
 		'compass:dev',
+		'compass:test',
 		'configureRewriteRules',
 		'connect:test',
 		'open:test',
