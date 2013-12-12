@@ -343,18 +343,25 @@ module.exports = function (grunt) {
 		'mocha_phantomjs'
 	]);
 
+	// build the distribution
 	grunt.registerTask('build', [
 		'clean:dist',
 		'concurrent:predist',
 		'requirejs:dist',
 		'concurrent:dist',
-		'replace',
+		'replace'
+	]);
+
+	// preview the distribution
+	grunt.registerTask('dist', [
+		'build',
 		'configureRewriteRules',
 		'connect:dist',
 		'open:dist',
 		'watch'
 	]);
 
+	// develop
 	grunt.registerTask('default', [
 		'clean:dist',
 		'runpreinstall:dev',
