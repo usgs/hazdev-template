@@ -1,10 +1,10 @@
+
 require.config({
 	baseUrl: '.',
 	paths: {
 		theme: '/theme/js'
 	}
 });
-
 
 require([
 	'theme/OffCanvas'
