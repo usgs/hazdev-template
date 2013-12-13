@@ -1,8 +1,22 @@
 
+require.config({
+	baseUrl: '.',
+	paths: {
+		theme: '/theme/js'
+	}
+});
 
-require(['./OffCanvas'], function (OffCanvas) {
+require([
+	'theme/OffCanvas'
+], function (
+	OffCanvas
+) {
 	'use strict';
 
-	// enable offcanvas navigation
+	// make the site footer offcanvas
+	document.querySelector('.site-footer').classList.add('offcanvas');
+
+	// initialize offcanvas
 	new OffCanvas();
+
 });

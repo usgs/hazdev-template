@@ -23,11 +23,7 @@ Lightweight php template framework
 
     `bower install`
 
-3. Configure the project (do this any time the path to the project changes)
-
-    `php src/lib/pre-install.php`
-
-4. Preview in a browser
+3. Preview in a browser
 
     `grunt`
 
@@ -58,7 +54,7 @@ Configure php include path, by updating the mountPHP middleware function:
 	<strong>options = options || {
 		'.php': 'php-cgi',
 		'env': {
-			'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
+			'PHPRC': process.cwd() + '/node_modules/hazdev-template/dist/conf/php.ini'
 		}
 	};</strong>
 	return gateway(require('path').resolve(dir), options);
@@ -94,7 +90,7 @@ In the connect section, add a rules property to configure template rewrites; add
             hostname: 'localhost'
     },
     <strong>rules: {
-            '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
+            '^/template/(.*)$': '/hazdev-template/dist/htdocs/$1'
     },</strong>
     dev: {
             options: {

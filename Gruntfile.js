@@ -4,6 +4,8 @@ var LIVE_RELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
 var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
 var gateway = require('gateway');
+var child_process = require('child_process');
+
 
 var mountFolder = function (connect, dir) {
 	return connect.static(require('path').resolve(dir));
@@ -11,13 +13,16 @@ var mountFolder = function (connect, dir) {
 
 var mountPHP = function (dir, options) {
 	options = options || {
+		'phpini': '/src/conf/php.ini'
+	};
+	var gatewayOptions = {
 		'.php': 'php-cgi',
 		'env': {
-			'PHPRC': process.cwd() + '/src/conf/php.ini'
+			'PHPRC': process.cwd() + options.phpini
 		}
 	};
 
-	return gateway(require('path').resolve(dir), options);
+	return gateway(require('path').resolve(dir), gatewayOptions);
 };
 
 module.exports = function (grunt) {
@@ -82,14 +87,14 @@ module.exports = function (grunt) {
 			predist: [
 				'jshint:scripts',
 				'jshint:tests',
-				'compass'
+				'compass',
+				'copy'
 			],
 			dist: [
-				'requirejs:dist',
 				'cssmin:dist',
 				'htmlmin:dist',
 				'uglify',
-				'copy'
+				'runpreinstall:dist'
 			]
 		},
 		connect: {
@@ -97,7 +102,7 @@ module.exports = function (grunt) {
 				hostname: 'localhost'
 			},
 			rules: {
-				'^/template/(.*)$': '/$1'
+				'^/theme/(.*)$': '/$1'
 			},
 			dev: {
 				options: {
@@ -107,9 +112,9 @@ module.exports = function (grunt) {
 					middleware: function (connect, options) {
 						return [
 							lrSnippet,
-							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, options.components),
+							rewriteRulesSnippet,
 							mountPHP(options.base),
 							mountFolder(connect, options.base)
 						];
@@ -120,10 +125,11 @@ module.exports = function (grunt) {
 				options: {
 					base: '<%= app.dist %>/htdocs',
 					port: 8081,
-					keepalive: true,
 					middleware: function (connect, options) {
 						return [
-							mountPHP(options.base),
+							mountPHP(appConfig.test, {phpini: '/dist/conf/php.ini'}),
+							mountFolder(connect, appConfig.test),
+							rewriteRulesSnippet,
 							mountFolder(connect, options.base)
 						];
 					}
@@ -136,12 +142,12 @@ module.exports = function (grunt) {
 					port: 8000,
 					middleware: function (connect, options) {
 						return [
-							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'bower_components'),
 							mountFolder(connect, 'node_modules'),
 							mountPHP(options.base),
 							mountFolder(connect, options.base),
+							rewriteRulesSnippet,
 							mountFolder(connect, appConfig.src + '/htdocs')
 						];
 					}
@@ -184,19 +190,25 @@ module.exports = function (grunt) {
 		requirejs: {
 			dist: {
 				options: {
-					name: 'index',
-					baseUrl: appConfig.src + '/htdocs/js',
-					out: appConfig.dist + '/htdocs/js/index.js',
-					optimize: 'uglify2',
-					mainConfigFile: appConfig.src + '/htdocs/js/index.js',
+					appDir: appConfig.src + '/htdocs',
+					baseUrl: 'js',
+					dir: appConfig.dist + '/htdocs',
 					useStrict: true,
-					wrap: true,
-					uglify2: {
-						report: 'gzip',
-						mangle: true,
-						compress: true,
-						preserveComments: 'some'
-					}
+					wrap: false,
+
+					// for bundling require library in to index.js
+					paths: {
+						requireLib: '../../../bower_components/requirejs/require',
+						theme: '.'
+					},
+
+					modules: [
+						{
+							name: 'index',
+							include: ['requireLib']
+						}
+						// the index module is enough to compile all other scripts
+					]
 				}
 			}
 		},
@@ -225,16 +237,16 @@ module.exports = function (grunt) {
 		},
 		uglify: {
 			options: {
-				mangle: true,
+				mangle: {
+					except: ['require']
+				},
 				compress: true,
 				report: 'gzip'
 			},
 			dist: {
 				files: {
-					'<%= app.dist %>/htdocs/lib/requirejs/require.js':
-							['<%= bower.directory %>/requirejs/require.js'],
-					'<%= app.dist %>/htdocs/lib/html5shiv/html5shiv.js':
-							['<%= bower.directory %>/html5shiv-dist/html5shiv.js']
+					'<%= app.dist %>/htdocs/js/uglified.js':
+							['<%= app.dist %>/htdocs/js/index.js']
 				}
 			}
 		},
@@ -244,17 +256,8 @@ module.exports = function (grunt) {
 				cwd: '<%= app.src %>/htdocs',
 				dest: '<%= app.dist %>/htdocs',
 				src: [
-					'img/**/*.{png,gif,jpg,jpeg}',
+					'images/**/*.{png,gif,jpg,jpeg}',
 					'**/*.php'
-				]
-			},
-			conf: {
-				expand: true,
-				cwd: '<%= app.src %>/conf',
-				dest: '<%= app.dist/conf',
-				src: [
-					'**/*',
-					'!**/*.orig'
 				]
 			},
 			lib: {
@@ -274,10 +277,6 @@ module.exports = function (grunt) {
 				],
 				overwrite: true,
 				replacements: [
-					{
-						from: 'requirejs/require.js',
-						to: 'lib/requirejs/require.js'
-					},
 					{
 						from: 'html5shiv-dist/html5shiv.js',
 						to: 'lib/html5shiv/html5shiv.js'
@@ -307,6 +306,36 @@ module.exports = function (grunt) {
 		grunt.config(['jshint', 'scripts'], filepath);
 	});
 
+	grunt.registerTask('runpreinstall:dev', function () {
+		var done = this.async();
+		child_process.exec('php src/lib/pre-install.php',
+				function (error, stdout, stderr) {
+					if (error !== null) {
+						grunt.log.error(stderr);
+						done(false);
+					} else {
+						grunt.log.write(stdout);
+						done();
+					}
+				});
+	});
+
+	grunt.registerTask('runpreinstall:dist', function () {
+		var done = this.async();
+		child_process.exec('php dist/lib/pre-install.php',
+				function (error, stdout, stderr) {
+					if (error !== null) {
+						grunt.log.error(error);
+						grunt.log.error(stdout);
+						grunt.log.error(stderr);
+						done(false);
+					} else {
+						grunt.log.write(stdout);
+						done();
+					}
+				});
+	});
+
 	grunt.registerTask('test', [
 		'clean:dist',
 		'configureRewriteRules',
@@ -314,24 +343,33 @@ module.exports = function (grunt) {
 		'mocha_phantomjs'
 	]);
 
+	// build the distribution
 	grunt.registerTask('build', [
 		'clean:dist',
 		'concurrent:predist',
+		'requirejs:dist',
 		'concurrent:dist',
-		'replace',
-		'open:dist',
-		'configureRewriteRules',
-		'connect:dist'
+		'replace'
 	]);
 
+	// preview the distribution
+	grunt.registerTask('dist', [
+		'build',
+		'configureRewriteRules',
+		'connect:dist',
+		'open:dist',
+		'watch'
+	]);
+
+	// develop
 	grunt.registerTask('default', [
 		'clean:dist',
+		'runpreinstall:dev',
 		'compass:dev',
+		'compass:test',
 		'configureRewriteRules',
 		'connect:test',
-		'connect:dev',
 		'open:test',
-		'open:dev',
 		'watch'
 	]);
 

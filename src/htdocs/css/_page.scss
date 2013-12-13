@@ -4,7 +4,7 @@
 }
 
 .page-header {
-	& > h1 {
+	> h1 {
 		margin: 0 0 $spacing;
 	}
 }
@@ -23,7 +23,7 @@
 	border: 1px solid $page-footer-border-color;
 	font-size:smaller;
 
-	& > p {
+	> p {
 		margin-top: 0;
 	}
 }
@@ -33,11 +33,11 @@
 	.page-footer {
 		position:relative;
 
-		& > p {
+		> p {
 			margin-bottom:0;
 		}
 
-		& > .page-social {
+		> .page-social {
 			position: absolute;
 			right: $spacing;
 			bottom: $spacing;
@@ -46,19 +46,16 @@
 
 	// navigation/content as left/right columns
 
-	body.navigation {
 
-		.page {
-			padding: $spacing 0 $spacing $spacing;
-			float: right;
-			width: 100% - $sectionnav-width;
-		}
+	.page {
+		padding: $spacing 0 $spacing $spacing;
+		float: right;
+		width: 100% - $sectionnav-width;
+	}
 
-		.site-sectionnav {
-			float: left;
-			width: $sectionnav-width;
-		}
-
+	.site-footer {
+		float: left;
+		width: $sectionnav-width;
 	}
 
 }
