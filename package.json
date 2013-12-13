@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "test": "grunt test",
-    "install": "grunt build"
+    "preinstall": "bower install",
+    "postinstall": "grunt build"
   },
   "dependencies": {
     "grunt-concurrent": "~0.3.0",
