@@ -12,7 +12,7 @@
   "scripts": {
     "test": "grunt test",
     "preinstall": "bower install",
-    "postinstall": "grunt build"
+    "install": "php src/lib/pre-install.php"
   },
   "dependencies": {
     "grunt-concurrent": "~0.3.0",
