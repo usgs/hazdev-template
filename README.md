@@ -54,7 +54,7 @@ Configure php include path, by updating the mountPHP middleware function:
 	<strong>options = options || {
 		'.php': 'php-cgi',
 		'env': {
-			'PHPRC': process.cwd() + '/node_modules/hazdev-template/dist/conf/php.ini'
+			'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
 		}
 	};</strong>
 	return gateway(require('path').resolve(dir), options);
@@ -90,7 +90,7 @@ In the connect section, add a rules property to configure template rewrites; add
             hostname: 'localhost'
     },
     <strong>rules: {
-            '^/template/(.*)$': '/hazdev-template/dist/htdocs/$1'
+            '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
     },</strong>
     dev: {
             options: {
