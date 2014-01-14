@@ -1,0 +1,94 @@
+.accordian {
+	display:block;
+
+	> h3 {
+		background-color: rgb(226,226,226);
+		border:1px solid rgb(226,226,226);
+		padding:10px 15px;
+		color:#333;
+		text-shadow:1px 1px 0 rgb(255,255,255);
+		font-weight:normal;
+		border-bottom: 3px solid rgb(226,226,226);
+		vertical-align:bottom;
+		margin-bottom:0;
+	}
+
+	> h3:hover {
+		cursor:pointer;
+		background-color:rgb(237,237,237);
+	}
+
+	> h3:before {
+		font-family: "Courier New", Courier, monospace;
+		content: '-';
+		letter-spacing:1em;
+		font-weight: bold;
+		color:#666;
+	}
+
+	> div {
+		display:block;
+		border-left:1px solid rgb(226,226,226);
+		border-right:1px solid rgb(226,226,226);
+		border-bottom:3px solid rgb(226,226,226);
+		padding:10px 15px;
+	}
+
+}
+
+.accordian-open {
+
+	> h3 {
+		background-color: rgb(226,226,226);
+		border-top: 2px solid rgb(226,226,226);
+		border-bottom: none;
+		text-shadow:1px 1px 0 rgba(255,255,255, 0.5);
+		color:#333;
+	}
+
+	> h3:before {
+		font-family: "Courier New", Courier, monospace;
+		content: '-';
+		letter-spacing:1em;
+		font-weight: bold;
+		color:#666;
+	}
+
+	> div {
+		display:block;
+		border-left:1px solid rgb(226,226,226);
+		border-right:1px solid rgb(226,226,226);
+		border-bottom:3px solid rgb(226,226,226);
+		padding:10px 15px;
+	}
+}
+
+
+.accordian-closed {
+
+	> h3 {
+		background-color:rgb(245,245,245);
+		border:1px solid rgb(226,226,226);
+		padding:10px 15px;
+		color:#666;
+		text-shadow:1px 1px 0 rgb(255,255,255);
+		font-weight:normal;
+		border-bottom: 3px solid rgb(226,226,226);
+		vertical-align:bottom;
+		margin-bottom:0;
+	}
+
+	> h3:before {
+		font-family: "Courier New", Courier, monospace;
+		content: '+';
+		letter-spacing:1em;
+		font-weight: bold;
+		color:#aaa;
+	}
+
+	> div {
+		display:none;
+	}
+
+}
+
