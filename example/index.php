@@ -32,8 +32,8 @@ if (!isset($TEMPLATE)) {
 
 
 
-<div class="accordian accordian-closed">
-	<h3>Section Header</h3>
+<div class="accordion accordion-closed">
+	<h3 class="header">Section Header</h3>
 	<div>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -66,8 +66,8 @@ if (!isset($TEMPLATE)) {
 
 
 
-<div class="accordian accordian-open">
-	<h3>Section Header</h3>
+<div class="accordion accordion-open">
+	<h3 class="header">Section Header</h3>
 	<div>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -98,8 +98,8 @@ if (!isset($TEMPLATE)) {
 	</div>
 </div>
 
-<div class="accordian">
-	<h3>Section Header</h3>
+<div class="accordion">
+	<h3 class="header">Section Header</h3>
 	<div>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -144,21 +144,21 @@ if (!isset($TEMPLATE)) {
 
 	var _toggleClass = function (event) {
 
-		var accordian = event.target.parentElement,
-		    className = accordian.className;
+		var accordion = event.target.parentElement,
+		    className = accordion.className;
 
-		if (className.indexOf('accordian-open') !== -1) {
-			className = className.replace('accordian-open', 'accordian-closed');
-		} else if (className.indexOf('accordian-closed') !== -1){
-			className = className.replace('accordian-closed', 'accordian-open');
+		if (className.indexOf('accordion-open') !== -1) {
+			className = className.replace('accordion-open', 'accordion-closed');
+		} else if (className.indexOf('accordion-closed') !== -1){
+			className = className.replace('accordion-closed', 'accordion-open');
 		} else {
-			className = 'accordian accordian-closed';
+			className = 'accordion accordion-closed';
 		}
 
-		accordian.className = className;
+		accordion.className = className;
 	};
 
-	var headers = document.querySelectorAll('.accordian');
+	var headers = document.querySelectorAll('.accordion');
 
 	for (var i = 0; i < headers.length; i++) {
 		var header = headers[i];

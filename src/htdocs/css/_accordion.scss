@@ -1,7 +1,7 @@
-$border-color: rgb(226,226,226) !default;
-$hover-color: rgb(237,237,237) !default;
-$background-color-open: $border-color !default;
-$background-color-closed: rgb(245,245,245) !default;
+$accordion-border-color: rgb(226,226,226) !default;
+$accordion-hover-color: rgb(237,237,237) !default;
+$accordion-background-color-open: $accordion-border-color !default;
+$accordion-background-color-closed: rgb(245,245,245) !default;
 
 @mixin plus-minus ($icon) {
 		font-family: "Courier New", Courier, monospace;
@@ -12,55 +12,56 @@ $background-color-closed: rgb(245,245,245) !default;
 		@elseif $icon == '-' {color:#666; }
 }
 
-.accordian {
+.accordion {
 	display:block;
 
-	> h3 {
-		background-color: $background-color-open;
-		border:1px solid $border-color;
+	> .header {
+		background-color:$accordion-background-color-open;
+		border-left:1px solid $accordion-border-color;
+		border-right:1px solid $accordion-border-color;
+		border-top:2px solid $accordion-border-color;
 		padding:10px 15px;
 		color:#333;
 		text-shadow:1px 1px 0 rgb(255,255,255);
 		font-weight:normal;
-		border-bottom: 2px solid $border-color;
 		vertical-align:bottom;
 		margin-bottom:0;
 	}
 
-	> h3:hover {
+	> .header:hover {
 		cursor:pointer;
-		background-color:rgb(237,237,237);
+		background-color:$accordion-hover-color;
 	}
 
-	> h3:before {
+	> .header:before {
 		@include plus-minus('-');
 	}
 
 	> div {
 		display:block;
-		border-left:1px solid $border-color;
-		border-right:1px solid $border-color;
-		border-bottom:3px solid $border-color;
+		border-left:1px solid $accordion-border-color;
+		border-right:1px solid $accordion-border-color;
+		border-bottom:3px solid $accordion-border-color;
 		padding:10px 15px;
 	}
 }
 
-.accordian-open {
-	> h3 {
-		border-top: 2px solid $border-color;
-		border-bottom: none;
-		text-shadow:1px 1px 0 rgba(255,255,255, 0.5);
+.accordion-open {
+	> .header {
+		text-shadow:1px 1px 0 rgba(255,255,255,0.5);
 		color:#333;
 	}
 }
 
-.accordian-closed {
-	> h3 {
-		background-color:$background-color-closed;
+.accordion-closed {
+	> .header {
+		background-color:$accordion-background-color-closed;
+		border:1px solid $accordion-border-color;
+		border-bottom: 2px solid $accordion-border-color;
 		color:#666;
 	}
 
-	> h3:before {
+	> .header:before {
 		@include plus-minus('+');
 	}
 
