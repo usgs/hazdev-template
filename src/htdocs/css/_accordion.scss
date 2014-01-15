@@ -16,10 +16,9 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 	display:block;
 
 	> .header {
+		display:block;
 		background-color:$accordion-background-color-open;
-		border-left:1px solid $accordion-border-color;
-		border-right:1px solid $accordion-border-color;
-		border-top:2px solid $accordion-border-color;
+		border:1px solid $accordion-border-color;
 		padding:10px 15px;
 		color:#333;
 		text-shadow:1px 1px 0 rgb(255,255,255);
@@ -57,7 +56,6 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 	> .header {
 		background-color:$accordion-background-color-closed;
 		border:1px solid $accordion-border-color;
-		border-bottom: 2px solid $accordion-border-color;
 		color:#666;
 	}
 
