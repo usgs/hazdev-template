@@ -90,7 +90,7 @@ In the connect section, add a rules property to configure template rewrites; add
             hostname: 'localhost'
     },
     <strong>rules: [
-            {from:'^/template/(.*)$', to: '/hazdev-template/src/htdocs/$1'}
+            {from:'^/theme/(.*)$', to: '/hazdev-template/src/htdocs/$1'}
     ],</strong>
     dev: {
             options: {
