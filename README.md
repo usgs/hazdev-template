@@ -89,9 +89,9 @@ In the connect section, add a rules property to configure template rewrites; add
     options: {
             hostname: 'localhost'
     },
-    <strong>rules: {
-            '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
-    },</strong>
+    <strong>rules: [
+            {from:'^/theme/(.*)$', to: '/hazdev-template/src/htdocs/$1'}
+    ],</strong>
     dev: {
             options: {
                     base: '<%= app.src %>/htdocs',
