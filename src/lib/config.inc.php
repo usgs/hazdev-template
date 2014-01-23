@@ -101,10 +101,6 @@ if ($NAVIGATION === true) {
 
 
 
-if (!isset($SITE_TITLE)) {
-	$SITE_TITLE = 'Default Site Title';
-}
-
 if (!isset($SITE_URL)) {
 	$SITE_URL = $_SERVER['HTTP_HOST'];
 }
