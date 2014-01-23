@@ -50,12 +50,12 @@
 	.page {
 		padding: $spacing 0 $spacing $spacing;
 		float: right;
-		width: 100% - $sectionnav-width;
+		width: 100% - $side-column-width;
 	}
 
 	.site-footer {
 		float: left;
-		width: $sectionnav-width;
+		width: $side-column-width;
 	}
 
 }
