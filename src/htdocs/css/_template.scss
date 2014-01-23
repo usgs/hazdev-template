@@ -49,11 +49,9 @@ $offcanvas-toggle-border-color-hover: $sitenav-border-color-hover !default;
 $offcanvas-transition-time: .5s !default;
 
 
-@import 'compass/css3';
-
-
 * {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 
