@@ -17,11 +17,7 @@ $site-title: 'My Site Title';
 @import "/path/to/hazdev-template/src/htdocs/css/template";
 ```
 
-This site wide SCSS file then needs to be compiled to CSS, using sass on the command line:
-```
-sass site/theme.scss
-```
-This should generate a file named `site/theme.css` that can be configured as described below.
+This site wide SCSS file then needs to be compiled to CSS, using sass on the command line `sass site/theme.scss`, which should generate a file named `site/theme.css` that can be configured as described below.
 
 
 ## PHP configuration
