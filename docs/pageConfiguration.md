@@ -30,12 +30,11 @@ This is the processing flow for a page that loads the template.  Note that `page
 page.php
     configure template
     include 'template.inc.php'
-        # templating begins
-        set $TEMPLATE
         include 'functions.inc.php'
         include 'config.inc.php'
             # load site configuration
             include DOCUMENT_ROOT/_config.inc.php
+            set $TEMPLATE
         include 'layout.inc.php'
             # output header
             include page.php
@@ -48,7 +47,7 @@ page.php
 
 ## Using template functions before including the template
 
-The template normally includes functions before re-including a page to generate content, but sometimes you want to use these functions before including the template.  One example would be using the [param() function](phpFunctions.md#param) during or before template configuration:
+Template functions are normally only defined after the template has been included. Sometimes you want to use these functions before including the template.  One example would be using the [param() function](phpFunctions.md#param) during or before template configuration:
 
 ```php
 if (!isset($TEMPLATE)) {
