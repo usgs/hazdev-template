@@ -4,10 +4,12 @@ hazdev-template
 Lightweight php template framework
 
 
-
-- [PHP Template Configuration and Variables](phpVariables.md)
-- [PHP Template Functions](phpFunctions.md)
-- [Embedding the hazdev-template in another project](embedding.md)
+- [Template Site Configuration](docs/siteConfiguration.md)
+- [Template Page Configuration](docs/pageConfiguration.md)
+- [PHP Template Variables](docs/phpVariables.md)
+- [PHP Template Functions](docs/phpFunctions.md)
+- [SCSS Variables](docs/scssVariables.md)
+- [Embedding the hazdev-template in another project](docs/embedding.md)
 
 ## Working on the hazdev-template project:
 

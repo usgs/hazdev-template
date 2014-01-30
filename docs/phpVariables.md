@@ -1,42 +1,7 @@
 PHP Template Variables
 ======================
 
-## Site configuration of template
-
-Site-wide configuration variables should be place in the file `DOCUMENT_ROOT/_config.inc.php`. Be careful to check if a page has already set a variable such as $HEAD, so page specific configuration is not ignored.
-
-```php
-if (!isset $HEAD) {
-	$HEAD = '';
-}
-$HEAD = '<link rel="stylesheet" href="/site/index.css">' . $HEAD;
-```
-
-
-## Page configuration of template
-
-Each page using the template should configure the template, include the template, and then generate page content:
-
-```php
-<?php
-
-// include guard so configuration only happens once
-if (!isset($TEMPLATE)) {
-	// configure the template
-	$TITLE = 'My Page Title';
-	// include the template
-	include_once 'template.inc.php';
-}
-
-// generate page content
-
-?>
-```
-
-
-## Variables
-
-### $TITLE
+## $TITLE
 
 Sets the content of the title element, and h1 page header.
 
@@ -45,7 +10,7 @@ $TITLE = 'My page title';
 ```
 
 
-### $CONTACT
+## $CONTACT
 
 Sets the page contact information email.
 
@@ -54,7 +19,7 @@ $CONTACT = 'lisa@usgs.gov';
 ```
 
 
-### $HEAD
+## $HEAD
 
 Markup after the opening head element of a page (`<head>$HEAD`).  Typically stylesheets.
 
@@ -69,7 +34,7 @@ $HEAD = '<link rel="stylesheet" href="mystyles.css"/>';
 ```
 
 
-### $FOOT
+## $FOOT
 
 Markup before the closing body element of a page (`$FOOT</body>`).  Typically javascript.
 
@@ -84,7 +49,7 @@ $FOOT = '<script src="myscript.js"></script>';
 ```
 
 
-### $NAVIGATION
+## $NAVIGATION
 
 Markup for "section" navigation.
 Appears before "site" navigation (`$SITE_SITENAV`) in sidebar/offcanvas.
@@ -102,7 +67,7 @@ $NAVIGATION = navItem('/section/', 'Section') .
         navItem('/section2/other.php', 'Section 2 other'));
 ```
 
-#### Section navigation example
+### Section navigation example
 By setting $NAVIGATION to true, all pages in a section can share the same 
 navigation file without repeating the navigation content in each page.
 
@@ -120,7 +85,7 @@ echo navItem('/section/', 'Section') .
 ```
 
 
-### $SOCIAL
+## $SOCIAL
 
 Configure sharing links in page footer.
 
@@ -158,7 +123,7 @@ $SOCIAL = array(
 Url values may include "{TITLE}" and "{URL}", which are replaced with page specific values.
 
 
-### $SITE_URL
+## $SITE_URL
 
 Configure the domain name, embedded in search form for search this site.
 
@@ -167,7 +132,7 @@ $SITE_URL = 'earthquake.usgs.gov';
 ```
 
 
-### $SITE_SITENAV
+## $SITE_SITENAV
 
 Configure "site" navigation.
 Appears between "section" navigation ($NAVIGATION) and "search" in sidebar/offcanvas.
@@ -182,7 +147,7 @@ $SITE_SITENAV = navItem('/earthquakes/', 'Earthquakes') .
 ```
 
 
-### $SITE_COMMONNAV
+## $SITE_COMMONNAV
 
 Configure "common navigation".
 Appears at bottom of page.
@@ -197,7 +162,7 @@ $SITE_COMMONNAV =
 ```
 
 
-### $SITE_KEYWORDS
+## $SITE_KEYWORDS
 
 Configure meta keywords.
 
@@ -210,7 +175,7 @@ $SITE_KEYWORDS = 'aftershock,earthquake,epicenter,fault,foreshock,geologist,' .
 ```
 
 
-### $SITE_DESCRIPTION
+## $SITE_DESCRIPTION
 
 Configure meta description.
 
