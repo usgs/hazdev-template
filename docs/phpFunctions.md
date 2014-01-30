@@ -18,14 +18,14 @@ function param ($name, $default=null)
 
 ### param examples
 
-mypage.php?someparameter=value
+If the requested page is `mypage.php?someparameter=value`:
 ```php
 $someparameter = param('someparameter', 'defaultvalue');
 echo $someparameter;
 // output is "value"
 ```
 
-mypage.php
+If the requested page is `mypage.php`:
 ```php
 $someparameter = param('someparameter', 'defaultvalue');
 echo $someparameter;
@@ -60,21 +60,21 @@ directory/subdirectory/subsubdirectory/index.php
 directory/subdirectory/subsubdirectory/myfile.php
 ```
 
-directory/index.php
+If the requested page is `directory/index.php`:
 ```php
 $path = findFileInPath('myfile.php');
 echo $path;
 // output is 'directory/myfile.php'
 ```
 
-directory/subdirectory/index.php
+If the requested page is `directory/subdirectory/index.php`:
 ```php
 $path = findFileInPath('myfile.php');
 echo $path;
 // output is 'directory/myfile.php'
 ```
 
-directory/subdirectory/subsubdirectory/index.php
+If the requested page is `directory/subdirectory/subsubdirectory/index.php`:
 ```php
 $path = findFileInPath('myfile.php');
 echo $path;
