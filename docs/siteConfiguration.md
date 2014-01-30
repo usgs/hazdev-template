@@ -8,7 +8,7 @@ Each site should define one site-wide stylesheet that defines the site theme, be
 
 [Template SCSS Variables](scssVariables.md)
 
-Example site theme `DOCUMENT_ROOT/site/theme.scss`
+Example site theme `DOCUMENT_ROOT/site/theme.scss`:
 ```scss
 // theme variables
 $site-title: 'My Site Title';
