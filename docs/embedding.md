@@ -6,7 +6,7 @@ Embedding the hazdev-template in another project
 npm install git+https://github.com/usgs/hazdev-template.git --save-dev</code></pre>
 
 
-### Gruntfile configuration
+## Gruntfile configuration
 
 
 Configure php include path, by updating the mountPHP middleware function:
@@ -73,4 +73,9 @@ In the connect section, add a rules property to configure template rewrites; add
     }
  }
 </code></pre>
+
+
+## Site configuration
+
+See [Site Configuration](siteConfiguration.md) for information on configuring a template theme and site.  The effective DOCUMENT_ROOT is often `src/htdocs`, for `_config.inc.php`, but may vary.
 
