@@ -25,7 +25,7 @@ Markup after the opening head element of a page (`<head>$HEAD`).  Typically styl
 
 Values:
 - (default) {Boolean} false, don't embed content.
-- {Boolean} true, includes result of [findFileInPath('_head.inc.php')](phpFunctions.md#findFileInPath) if found.
+- {Boolean} true, includes result of [findFileInPath('_head.inc.php')](phpFunctions.md#findfileinpath) if found.
 - {String} markup, html markup to include.
 
 ```php
@@ -39,7 +39,7 @@ Markup before the closing body element of a page (`$FOOT</body>`).  Typically ja
 
 Value:
 - (default) {Boolean} false, don't embed content.
-- {Boolean} true, includes [findFileInPath('_foot.inc.php')](phpFunctions.md#findFileInPath) if found.
+- {Boolean} true, includes [findFileInPath('_foot.inc.php')](phpFunctions.md#findfileinpath) if found.
 - {String} markup, html markup to include.
 
 ```php
@@ -54,7 +54,7 @@ Appears before "site" navigation (`$SITE_SITENAV`) in sidebar/offcanvas.
 
 Values:
 - (default) {Boolean} false, don't embed content.
-- {Boolean} true, includes [findFileInPath('_navigation.inc.php')](phpFunctions.md#findFileInPath) if found.
+- {Boolean} true, includes [findFileInPath('_navigation.inc.php')](phpFunctions.md#findfileinpath) if found.
 - {String} markup, html markup to include.
 
 ```php
