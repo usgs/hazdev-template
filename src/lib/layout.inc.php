@@ -88,9 +88,8 @@
 		<form class="site-search" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
 			<input name="utf8" type="hidden" value="✓"/>
 			<input name="affiliate" type="hidden" value="usgs"/>
+			<input name="sitelimit" type="hidden" value="<?php echo $SITE_URL; ?>"/>
 			<input id="query" name="query" type="search" placeholder="Search..." title="Search"/>
-			<label for="sitelimit_site"><input id="sitelimit_site" name="sitelimit" type="radio" value="<?php echo $SITE_URL; ?>" checked="checked"/> This site only</label>
-			<label for="sitelimit_all"><input id="sitelimit_all" name="sitelimit" type="radio" value=""/> All USGS</label>
 			<button type="submit">Search</button>
 		</form>
 	</footer>
