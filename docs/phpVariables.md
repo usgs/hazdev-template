@@ -157,28 +157,3 @@ $SITE_COMMONNAV =
 		navItem('/legal/', 'Legal') .
 		navItem('/partners/', 'Partners');
 ```
-
-
-## $SITE_KEYWORDS
-
-Configure meta keywords.
-
-```php
-$SITE_KEYWORDS = 'aftershock,earthquake,epicenter,fault,foreshock,geologist,' .
-		'geophysics,hazard,hypocenter,intensity,intensity scale,magnitude,' .
-		'magnitude scale,mercalli,plate,richter,seismic,seismicity,seismogram,' .
-		'seismograph,seismologist,seismology,subduction,tectonics,tsunami,quake,' .
-		'sismologico,sismologia';
-```
-
-
-## $SITE_DESCRIPTION
-
-Configure meta description.
-
-```php
-$SITE_DESCRIPTION = 'USGS Earthquake Hazards Program, responsible for' .
-		' monitoring, reporting, and researching earthquakes and' .
-		' earthquake hazards';
-```
-
