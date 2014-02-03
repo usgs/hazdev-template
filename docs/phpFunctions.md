@@ -120,6 +120,8 @@ echo $path;
 
 ## navItem
 
+See [$NAVIGATION](phpVariables#navigation) for information about template navigation.
+
 ```php
 /**
  * Generate markup for a navigation item.
@@ -145,6 +147,8 @@ echo navItem('/contactus/', 'Contact Us');
 
 
 ## navGroup
+
+See [$NAVIGATION](phpVariables#navigation) for information about template navigation.
 
 ```php
 /**
