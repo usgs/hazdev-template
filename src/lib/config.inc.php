@@ -1,15 +1,7 @@
 <?php
 
-// load site configuration if it exists
-if (isset($_SERVER['DOCUMENT_ROOT'])) {
-	$site_config = $_SERVER['DOCUMENT_ROOT'] . '/_config.inc.php';
-	if (file_exists($site_config)) {
-		include_once($site_config);
-	} else {
-		trigger_error('expected site configuration at "' . $site_config . '"');
-	}
-}
-
+///////////////////////////////////////////////////////////////////////////////
+// SET DEFAULTS
 
 
 // include guard for detecting whether template has been included
@@ -69,58 +61,53 @@ if (!isset($SOCIAL)) {
 	);
 }
 
-
-// auto generated content
-
-if ($HEAD === true) {
-	$HEAD = findFileInPath('_head.inc.php');
-	if ($HEAD !== null) {
-		ob_start();
-		include($HEAD);
-		$HEAD = ob_get_clean();
-	}
-}
-
-if ($FOOT === true) {
-	$FOOT = findFileInPath('_foot.inc.php');
-	if ($FOOT !== null) {
-		ob_start();
-		include($FOOT);
-		$FOOT = ob_get_clean();
-	}
-}
-
-if ($NAVIGATION === true) {
-	$NAVIGATION = findFileInPath('_navigation.inc.php');
-	if ($NAVIGATION !== null) {
-		ob_start();
-		include($NAVIGATION);
-		$NAVIGATION = ob_get_clean();
-	}
-}
-
-
-
+// site url (without protocol) for "search this site"
 if (!isset($SITE_URL)) {
-	$SITE_URL = $_SERVER['HTTP_HOST'];
+	// an empty value implies search "All USGS Sites"
+	$SITE_URL = '';
 }
 
+// site navigation markup
 if (!isset($SITE_SITENAV)) {
 	$SITE_SITENAV = false;
 }
 
+// common navigation markup
 if (!isset($SITE_COMMONNAV)) {
 	$SITE_COMMONNAV = false;
 }
 
-// make sure $HEAD is a string at this point
-if (!$HEAD) { $HEAD = ''; }
 
-if (isset($SITE_KEYWORDS)) {
-	$HEAD .= '<meta name="keywords" content="' . $SITE_KEYWORDS . '"/>';
+///////////////////////////////////////////////////////////////////////////////
+// AUTO GENERATED CONTENT
+
+// process before site configuration, in case site needs to modify
+
+if ($HEAD === true) {
+	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
 }
 
-if (isset($SITE_DESCRIPTION)) {
-	$HEAD .= '<meta name="description" content="' . $SITE_DESCRIPTION . '"/>';
+if ($FOOT === true) {
+	$FOOT = includeFile(findFileInPath('_foot.inc.php'), null);
 }
 
+if ($NAVIGATION === true) {
+	$NAVIGATION = includeFile(findFileInPath('_navigation.inc.php'), null);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// SITE CONFIGURATION
+
+// load site configuration if it exists, or trigger_error
+
+if (isset($_SERVER['DOCUMENT_ROOT'])) {
+	$site_config = $_SERVER['DOCUMENT_ROOT'] . '/_config.inc.php';
+	if (file_exists($site_config)) {
+		include_once($site_config);
+	} else {
+		trigger_error('expected site configuration at "' . $site_config . '"');
+	}
+} else {
+	trigger_error('DOCUMENT_ROOT is not set, cannot find site configuration');
+}
