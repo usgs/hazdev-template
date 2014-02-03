@@ -66,6 +66,28 @@ function findFileInPath ($name) {
 	return null;
 }
 
+/**
+ * Include a file and return any output.
+ *
+ * NOTE: File is included by function with local scope, and cannot access
+ * global variables without using the global keyword.
+ *
+ * @param $file {String}
+ *         path the file, or null to not include any file.
+ * @param $default {Any}
+ *         return value when file is null or does not exist.
+ *         default is null.
+ * @return {String} any output that was captured.
+ */
+function includeFile ($file, $default=null) {
+	$contents = $default;
+	if ($file !== null && file_exists($file)) {
+		ob_start();
+		include $file;
+		$contents = ob_get_clean();
+	}
+	return $contents;
+}
 
 /**
  * Generate markup for a navigation item.
@@ -80,7 +102,7 @@ function findFileInPath ($name) {
  *         text for anchor.
  * @return {String} markup for navigation item.
  */
-function navItem($href, $text) {
+function navItem ($href, $text) {
 	$isCurrentPage = preg_match(
 			'/^' . preg_quote($href, '/') . '/',
 			$_SERVER['REQUEST_URI']);
@@ -99,7 +121,7 @@ function navItem($href, $text) {
  * @param  $children markup for group navigation items.
  * @return {String} markup for navigation group.
  */
-function navGroup($text, $children) {
+function navGroup ($text, $children) {
 	return '<section>' .
 			'<header>' . $text . '</header>' .
 			$children .
