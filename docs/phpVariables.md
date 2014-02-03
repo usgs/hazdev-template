@@ -21,7 +21,7 @@ $CONTACT = 'lisa@usgs.gov';
 
 ## $HEAD
 
-Markup after the opening head element of a page (`<head>$HEAD`).  Typically stylesheets.
+Markup before the closing head element of a page (`$HEAD</head>`).  Typically stylesheets.
 
 Values:
 - (default) {Boolean} false, don't embed content.
