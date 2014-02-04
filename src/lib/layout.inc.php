@@ -36,13 +36,14 @@
 		</div>
 
 		<footer class="page-footer">
-			<p><a href="/contactus/<?php
-						if ($CONTACT) {
-							echo '?to=' . $CONTACT;
-						}
-					?>">Questions or comments?</a></p>
-
 			<?php
+
+				if ($CONTACT_URL) {
+					echo '<p><a href="' .
+							str_replace('{CONTACT}', $CONTACT, $CONTACT_URL) .
+							'">Questions or comments?</a></p>';
+				}
+
 				if ($SOCIAL) {
 					$pageUrl = ($_SERVER['HTTPS'] !== 'Off' ? 'https://' : 'http://') .
 							$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -62,8 +63,8 @@
 					}
 					echo '</nav>';
 				}
-			?>
 
+			?>
 		</footer>
 	</main>
 

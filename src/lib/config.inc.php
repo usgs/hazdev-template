@@ -3,7 +3,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 // SET DEFAULTS
 
-
 // include guard for detecting whether template has been included
 if (!isset($TEMPLATE)) {
 	$TEMPLATE = null;
@@ -17,6 +16,10 @@ if (!isset($TITLE)) {
 // page contact, email address
 if (!isset($CONTACT)) {
 	$CONTACT = null;
+}
+
+if (!isset($CONTACT_URL)) {
+	$CONTACT_URL = '/contactus/?to={CONTACT}';
 }
 
 // content for head element of page, like <meta> or <link>
@@ -79,7 +82,7 @@ if (!isset($SITE_COMMONNAV)) {
 
 
 ///////////////////////////////////////////////////////////////////////////////
-// AUTO GENERATED CONTENT
+// Auto Generated Content
 
 // process before site configuration, in case site needs to modify
 
@@ -97,9 +100,9 @@ if ($NAVIGATION === true) {
 
 
 ///////////////////////////////////////////////////////////////////////////////
-// SITE CONFIGURATION
+// Site Configuration
 
-// load site configuration if it exists, or trigger_error
+// load site configuration, or trigger_error
 
 if (isset($_SERVER['DOCUMENT_ROOT'])) {
 	$site_config = $_SERVER['DOCUMENT_ROOT'] . '/_config.inc.php';
@@ -111,3 +114,22 @@ if (isset($_SERVER['DOCUMENT_ROOT'])) {
 } else {
 	trigger_error('DOCUMENT_ROOT is not set, cannot find site configuration');
 }
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Recheck Auto Generated Content
+
+// in case site configuration (re)enables these
+
+if ($HEAD === true) {
+	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
+}
+
+if ($FOOT === true) {
+	$FOOT = includeFile(findFileInPath('_foot.inc.php'), null);
+}
+
+if ($NAVIGATION === true) {
+	$NAVIGATION = includeFile(findFileInPath('_navigation.inc.php'), null);
+}
+
