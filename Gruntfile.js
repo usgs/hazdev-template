@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 	var appConfig = {
 		src: 'src',
 		dist: 'dist',
-		test: 'test',
+		test: 'example',
 		tmp: '.tmp'
 	};
 
