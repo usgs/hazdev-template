@@ -112,11 +112,11 @@ Border color for search box.
 Default is #ccc
 
 
-## Off Canvas
+## Offcanvas
 
-Side column content is displayed "off canvas", or hidden by default, on pages smaller than `$breakpoint-full` pixels wide.
+Side column content is hidden by default on pages smaller than `$breakpoint-full` pixels wide, and shown by clicking a toggle link.
 
-<img src="images/overviewOffcanvas.png" alt="image of off canvas content"/>
+<img src="images/overviewOffcanvas.png" alt="image of offcanvas content"/>
 
 * Side column content fills `$offcanvas-width` percent of the screen.
 * The toggle is in the top right corner of the screen.

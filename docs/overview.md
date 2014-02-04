@@ -34,11 +34,11 @@ The header is collapsed and site title hidden.
 
 <img src="images/overviewMobileHeader.png" alt="image of collapsed header"/>
 
-### Off Canvas Side Column
+### Offcanvas Side Column
 
 The side column with navigation and search is hidden behind a toggle in the top right corner, which stays fixed (in the same place) as the page scrolls.  When activated, the side column content is revealed by moving the page to the right.
 
-<img src="images/overviewOffcanvas.png" alt="image of off canvas content"/>
+<img src="images/overviewOffcanvas.png" alt="image of offcanvas content"/>
 
 ### Collapsed Footer
 
