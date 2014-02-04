@@ -42,17 +42,34 @@ Background color for [$site-title](#site-title).
 Default is #4e7ab9.
 
 
-## Search
+## Section Navigation
 
-<img src="images/search.png" alt="image of search"/>
+Section navigation is by default made to be 10% "lighter" than [site navigation](#site-navigation), and often does not need to be specified by a theme.
 
-### $search-background-color
-Background color for search box.
-Default is #eee.
+<img src="images/navigationExample.png" alt="image of section navigation"/>
 
-### $search-border-color
-Border color for search box.
-Default is #ccc
+* "Test" shows the styles for the current page, based on $sitenav-background-color-hover.
+* "Item" shows the styles when a mouse hovers over the item.
+
+### $sectionnav-color
+Text color for section navigation.
+Default is $sitenav-color.
+
+### $sectionnav-background-color
+Background color for section navigation.
+Default is lighten($sitenav-background-color, 10%).
+
+### $sectionnav-color-hover
+Hover text color for section navigation.
+Default is $sitenav-color-hover.
+
+### $sectionnav-background-color-hover
+Hover background color for section navigation.
+Default is lighten($sitenav-background-color-hover, 10%).
+
+### $sectionnav-border-color
+Border color for section navigation.
+Default is #ccc.
 
 
 ## Site Navigation
@@ -82,41 +99,24 @@ Hover border color for site navigation.
 Default is #111.
 
 
-## Section Navigation
+## Search
 
-Section navigation is by default made to be 10% "lighter" than site navigation, and often does not need to be specified by a theme.
+<img src="images/search.png" alt="image of search"/>
 
-<img src="images/navigationExample.png" alt="image of section navigation"/>
+### $search-background-color
+Background color for search box.
+Default is #eee.
 
-* "Test" shows the styles for the current page, based on $sitenav-background-color-hover.
-* "Item" shows the styles when a mouse hovers over the item.
-
-### $sectionnav-color
-Text color for section navigation.
-Default is $sitenav-color.
-
-### $sectionnav-background-color
-Background color for section navigation.
-Default is lighten($sitenav-background-color, 10%).
-
-### $sectionnav-color-hover
-Hover text color for section navigation.
-Default is $sitenav-color-hover.
-
-### $sectionnav-background-color-hover
-Hover background color for section navigation.
-Default is lighten($sitenav-background-color-hover, 10%).
-
-### $sectionnav-border-color
-Border color for section navigation.
-Default is #ccc.
+### $search-border-color
+Border color for search box.
+Default is #ccc
 
 
 ## Off Canvas
 
 Side column content is displayed "off canvas", or hidden by default, on pages smaller than $breakpoint-full pixels wide.
 
-<img src="images/overviewOffCanvas" alt="image of off canvas content"/>
+<img src="images/overviewOffcanvas.png" alt="image of off canvas content"/>
 
 * Side column content fills `$offcanvas-width` percent of the screen.
 * The toggle is in the top right corner of the screen.
