@@ -6,6 +6,8 @@ Site Configuration
 
 Each site should define one site-wide stylesheet that defines the site theme, before including the template SCSS partial that uses those theme variables.
 
+This theme file should be placed in a web accessible location, and configured into the site wide PHP configuration using a site root-relative url.
+
 
 Example site theme `theme.scss`:
 ```scss
@@ -42,7 +44,7 @@ $sitenav-background-color: #C9D8E9;
 
 ```
 
-This site wide SCSS file then needs to be compiled to CSS, using sass on the command line `sass theme.scss`, which should generate a file named `theme.css` that can be configured as described below.
+This site wide SCSS file is compiled to CSS using sass on the command line `sass theme.scss`, which will generate a similarly named file `theme.css` that can be configured as described below.
 
 [All SCSS Variables](scssVariables.md)
 [All Content Patterns](scssPatterns.md)
@@ -52,10 +54,12 @@ This site wide SCSS file then needs to be compiled to CSS, using sass on the com
 
 Site-wide php variables go in the file `DOCUMENT_ROOT/_config.inc.php`:
 ```php
+<?php
 
-// configure site search url, leave blank for all usgs
+// site search url, leave blank for all usgs
 $SITE_URL = 'earthquake.usgs.gov';
 
+// navigation above search, below section navigation
 $SITE_SITENAV =
 		navItem('#earthquakes', 'Earthquakes') .
 		navItem('#hazards', 'Hazards') .
@@ -64,6 +68,7 @@ $SITE_SITENAV =
 		navItem('#monitoring', 'Monitoring') .
 		navItem('#research', 'Research');
 
+// at bottom of page
 $SITE_COMMONNAV =
 		navItem('#home', 'Home') .
 		navItem('#aboutus', 'About Us') .
@@ -86,11 +91,12 @@ $HEAD =
 		'<meta name="keywords" content="' .
 				'aftershock,earthquake,epicenter,fault,foreshock,geologist,' .
 				'geophysics,hazard,hypocenter,intensity,intensity scale,magnitude,' .
-				'magnitude scale,mercalli,plate,richter,seismic,seismicity,seismogram,' .
-				'seismograph,seismologist,seismology,subduction,tectonics,tsunami,quake,' .
-				'sismologico,sismologia' .
+				'magnitude scale,mercalli,plate,richter,seismic,seismicity,' .
+				'seismogram,seismograph,seismologist,seismology,subduction,' .
+				'tectonics,tsunami,quake,sismologico,sismologia' .
 		'"/>';
 
+?>
 ```
 
 When setting site-wide variables, consider whether pages may also use those variables so page configuration is not ignored.  For example the `$HEAD` variable can be used to include a site-wide stylesheet, but pages may need to add additional page specific stylesheets.
@@ -105,4 +111,7 @@ The template pre-install script creates and Apache configuration file snippet in
 - Add `hazdev-template/src/lib` to the php include path.
 - Alias the url prefix `/theme` to the directory `hazdev-template/src/htdocs`.
 
-This can be included into the webserver apache configuration using an Include directive; or these same configurations may be manually changed on other web servers.
+This can be added to the webserver apache configuration using an Include directive:
+```
+Include hazdev-template/src/conf/httpd.conf
+```
