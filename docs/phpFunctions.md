@@ -126,17 +126,17 @@ See [$NAVIGATION](phpVariables#navigation) for information about template naviga
 /**
  * Generate markup for a navigation item.
  *
- * When $href is null, only the text is output.
  * When $href matches the start of REQUEST_URI, it is considered the
- * "current page", and no anchor is output.
+ * "current page", and no anchor is output.  To match the start of
+ * REQUEST_URI, $href should be a site root-relative link.
  *
  * @param $href {String}
- *         href for anchor, null for no link.
+ *         href for anchor.
  * @param $text {String}
  *         text for anchor.
  * @return {String} markup for navigation item.
  */
-function navItem($href, $text)
+function navItem ($href, $text)
 ```
 
 ### navItem example
