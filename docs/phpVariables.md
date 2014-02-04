@@ -18,13 +18,16 @@ Special variables that allow content to automatically be configured for a sectio
 ### Values
 
 * `false`
+
 	Omit content.
 
 * `true`
+
 	Result of [`includeFile(findFileInPath(FILE))`](phpFunctions.md#includefile).
 	Each variable uses a different FILE, listed below.
 
 *  String
+
 	html markup as a string.
 
 
