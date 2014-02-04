@@ -81,7 +81,7 @@ $HEAD =
 		// site theme, should use a site root-relative URL
 		'<link rel="stylesheet" href="/css/theme.css"/>' .
 		// page head content
-		($HEAD || '') .
+		($HEAD ? $HEAD : '') .
 		// description meta
 		'<meta name="description" content="' .
 				'USGS Earthquake Hazards Program, responsible for' .

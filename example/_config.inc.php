@@ -22,7 +22,7 @@ $HEAD =
 		'<link rel="stylesheet" href="/css/index.css"/>' .
 
 		// page head content
-		($HEAD || '') .
+		($HEAD ? $HEAD : '') .
 
 		// description meta
 		'<meta name="description" content="' .
