@@ -5,12 +5,12 @@ date_default_timezone_set('UTC');
 // work from lib directory
 chdir(dirname($argv[0]));
 
-$LIB_DIR = `pwd`;
+$LIB_DIR = getcwd();
 $APP_DIR = dirname($LIB_DIR);
-$HTDOCS_DIR = $APP_DIR . '/htdocs';
-$CONF_DIR = $APP_DIR . '/conf';
-$HTTPD_CONF = $CONF_DIR . '/httpd.conf';
-$PHP_INI = $CONF_DIR . '/php.ini';
+$HTDOCS_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'htdocs';
+$CONF_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'conf';
+$HTTPD_CONF = $CONF_DIR . DIRECTORY_SEPARATOR . 'httpd.conf';
+$PHP_INI = $CONF_DIR . DIRECTORY_SEPARATOR . 'php.ini';
 
 
 // add lib directory to include path
