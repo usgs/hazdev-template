@@ -18,7 +18,7 @@ Configure php include path, by updating the mountPHP middleware function:
 +	  'env': {
 +	    'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
 +	  }
-+ };</strong>
++	};</strong>
 	return gateway(require('path').resolve(dir), options);
 };
 </code></pre>
