@@ -35,8 +35,11 @@
 			?>
 		</div>
 
-		<footer class="page-footer">
-			<?php
+		<?php
+
+			if ($CONTACT_URL || $SOCIAL) {
+
+				echo '<footer class="page-footer">';
 
 				if ($CONTACT_URL) {
 					echo '<p><a href="' .
@@ -64,8 +67,11 @@
 					echo '</nav>';
 				}
 
-			?>
-		</footer>
+				echo '</footer>';
+
+			}
+
+		?>
 	</main>
 
 	<footer class="site-footer">
