@@ -101,9 +101,12 @@ module.exports = function (grunt) {
 			options: {
 				hostname: 'localhost'
 			},
-			rules: {
-				'^/theme/(.*)$': '/$1'
-			},
+			rules: [
+				{
+					from:'^/theme/(.*)$',
+					to: '/$1'
+				}
+			],
 			dev: {
 				options: {
 					base: '<%= app.src %>/htdocs',
