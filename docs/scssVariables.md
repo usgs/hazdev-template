@@ -14,6 +14,8 @@ See [Site Configuration](siteConfiguration.md) for information about configuring
 
 ## Template Header
 
+<img src="images/templateHeader.png" alt="image of template header"/>
+
 ### $banner-image
 
 The banner image to the right of the USGS logo.
@@ -40,22 +42,9 @@ Background color for [$site-title](#site-title).
 Default is #4e7ab9.
 
 
-## Page Footer
-
-### $page-footer-color
-Text color for page footer.
-Default is #999.
-
-### $page-footer-background-color
-Background color for page footer.
-Default is #fff.
-
-### $page-footer-border-color
-Border color for page footer.
-Default is #ddd.
-
-
 ## Search
+
+<img src="images/search.png" alt="image of search"/>
 
 ### $search-background-color
 Background color for search box.
@@ -67,6 +56,8 @@ Default is #ccc
 
 
 ## Site Navigation
+
+<img src="images/siteNavigation.png" alt="image of site navigation"/>
 
 ### $sitenav-color
 Text color for site navigation.
@@ -95,6 +86,11 @@ Default is #111.
 
 Section navigation is by default made to be 10% "lighter" than site navigation, and often does not need to be specified by a theme.
 
+<img src="images/navigationExample.png" alt="image of section navigation"/>
+
+* "Test" shows the styles for the current page, based on $sitenav-background-color-hover.
+* "Item" shows the styles when a mouse hovers over the item.
+
 ### $sectionnav-color
 Text color for section navigation.
 Default is $sitenav-color.
@@ -119,6 +115,11 @@ Default is #ccc.
 ## Off Canvas
 
 Side column content is displayed "off canvas", or hidden by default, on pages smaller than $breakpoint-full pixels wide.
+
+<img src="images/overviewOffCanvas" alt="image of off canvas content"/>
+
+* Side column content fills `$offcanvas-width` percent of the screen.
+* The toggle is in the top right corner of the screen.
 
 ### $offcanvas-width
 How wide the offcanvas content will be (or how far from the left edge page content is shifted).
@@ -151,6 +152,23 @@ Default is $sitenav-border-color-hover
 ### $offcanvas-transition-time
 Transition time when showing and hiding offcanvas content.
 Default is .5s.
+
+
+## Page Footer
+
+<img src="images/pageFooter.png" alt="iamge of page footer"/>
+
+### $page-footer-color
+Text color for page footer.
+Default is #999.
+
+### $page-footer-background-color
+Background color for page footer.
+Default is #fff.
+
+### $page-footer-border-color
+Border color for page footer.
+Default is #ddd.
 
 
 ## General Layout
