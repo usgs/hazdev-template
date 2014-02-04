@@ -8,16 +8,17 @@ npm install git+https://github.com/usgs/hazdev-template.git --save-dev</code></p
 
 ## Gruntfile configuration
 
+NOTE: Plus (+) characters are added to the beginning of lines to highlight lines being added to the gruntfile, but are not part of the content that should be added.
 
 Configure php include path, by updating the mountPHP middleware function:
 
-<pre><code>var mountPHP = function (dir, options) {
-	<strong>options = options || {
-		'.php': 'php-cgi',
-		'env': {
-			'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
-		}
-	};</strong>
+<pre><code>var mountPHP = function (dir, options) {<strong>
++	options = options || {
++	  '.php': 'php-cgi',
++	  'env': {
++	    'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
++	  }
++ };</strong>
 	return gateway(require('path').resolve(dir), options);
 };
 </code></pre>
@@ -28,8 +29,8 @@ In each grunt task that uses connect, add configureRewriteRules task before any 
 
 <pre><code>grunt.registerTask('default', [
     'clean:dist',
-    'compass:dev',
-    <strong>'configureRewriteRules',</strong>
+    'compass:dev',<strong>
++   'configureRewriteRules',</strong>
     'connect:test',
     'connect:dev',
     'open:test',
@@ -40,7 +41,7 @@ In each grunt task that uses connect, add configureRewriteRules task before any 
 
 At top of Gruntfile, add this:
 
-<pre><code><strong>var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;</strong>
+<pre><code><strong>+ var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;</strong>
 </code></pre>
 
 
@@ -49,10 +50,10 @@ In the connect section, add a rules property to configure template rewrites; add
 <pre><code>connect: {
     options: {
             hostname: 'localhost'
-    },
-    <strong>rules: {
-            '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
-    },</strong>
+    },<strong>
++   rules: {
++           '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
++   },</strong>
     dev: {
             options: {
                     base: '<%= app.src %>/htdocs',
@@ -64,9 +65,9 @@ In the connect section, add a rules property to configure template rewrites; add
                                     mountFolder(connect, '.tmp'),
                                     mountFolder(connect, 'bower_components'),
                                     mountPHP(options.base),
-                                    mountFolder(connect, options.base),
-                                    <strong>rewriteRulesSnippet,
-                                    mountFolder(connect, 'node_modules')</strong>
+                                    mountFolder(connect, options.base),<strong>
++                                   rewriteRulesSnippet,
++                                   mountFolder(connect, 'node_modules')</strong>
                             ];
                     }
             }
