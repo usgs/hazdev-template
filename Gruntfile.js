@@ -115,9 +115,9 @@ module.exports = function (grunt) {
 					middleware: function (connect, options) {
 						return [
 							lrSnippet,
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, options.components),
-							rewriteRulesSnippet,
 							mountPHP(options.base),
 							mountFolder(connect, options.base)
 						];
@@ -145,12 +145,12 @@ module.exports = function (grunt) {
 					port: 8000,
 					middleware: function (connect, options) {
 						return [
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'bower_components'),
 							mountFolder(connect, 'node_modules'),
 							mountPHP(options.base),
 							mountFolder(connect, options.base),
-							rewriteRulesSnippet,
 							mountFolder(connect, appConfig.src + '/htdocs')
 						];
 					}

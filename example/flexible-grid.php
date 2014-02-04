@@ -2,7 +2,7 @@
 
 if (!isset($TEMPLATE)) {
 	$HEAD = '
-	<link rel="stylesheet" href="/template/css/flexible-grid.css"/>
+	<link rel="stylesheet" href="/theme/css/flexible-grid.css"/>
 	<style>
 		.row > .column {
 			border:1px solid #F00;
