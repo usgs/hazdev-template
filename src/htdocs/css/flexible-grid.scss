@@ -26,6 +26,12 @@ $spacing: 8px !default;
 				padding-right:0;
 			}
 		}
+
+		&:after {
+			display: block;
+			content: ' ';
+			clear: both;
+		}
 	}
 
 	// unless the right-to-left class is present
