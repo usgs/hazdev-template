@@ -2,13 +2,13 @@
 
 if (!isset($TEMPLATE)) {
 	$HEAD = '
-	<link rel="stylesheet" href="/template/css/flexible-grid.css"/>
+	<link rel="stylesheet" href="/theme/css/flexible-grid.css"/>
 	<style>
 		.row > .column {
-			border:1px solid #f00;
+			border:1px solid #F00;
 		}
 		.row.right-to-left > .column {
-			border-color:#00f;
+			border-color:#00F;
 		}
 	</style>
 ';

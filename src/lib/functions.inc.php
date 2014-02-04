@@ -66,21 +66,43 @@ function findFileInPath ($name) {
 	return null;
 }
 
+/**
+ * Include a file and return any output.
+ *
+ * NOTE: File is included by function with local scope, and cannot access
+ * global variables without using the global keyword.
+ *
+ * @param $file {String}
+ *         path the file, or null to not include any file.
+ * @param $default {Any}
+ *         return value when file is null or does not exist.
+ *         default is null.
+ * @return {String} any output that was captured.
+ */
+function includeFile ($file, $default=null) {
+	$contents = $default;
+	if ($file !== null && file_exists($file)) {
+		ob_start();
+		include $file;
+		$contents = ob_get_clean();
+	}
+	return $contents;
+}
 
 /**
  * Generate markup for a navigation item.
  *
- * When $href is null, only the text is output.
  * When $href matches the start of REQUEST_URI, it is considered the
- * "current page", and no anchor is output.
+ * "current page", and no anchor is output.  To match the start of
+ * REQUEST_URI, $href should be a site root-relative link.
  *
  * @param $href {String}
- *         href for anchor, null for no link.
+ *         href for anchor.
  * @param $text {String}
  *         text for anchor.
  * @return {String} markup for navigation item.
  */
-function navItem($href, $text) {
+function navItem ($href, $text) {
 	$isCurrentPage = preg_match(
 			'/^' . preg_quote($href, '/') . '/',
 			$_SERVER['REQUEST_URI']);
@@ -99,7 +121,7 @@ function navItem($href, $text) {
  * @param  $children markup for group navigation items.
  * @return {String} markup for navigation group.
  */
-function navGroup($text, $children) {
+function navGroup ($text, $children) {
 	return '<section>' .
 			'<header>' . $text . '</header>' .
 			$children .

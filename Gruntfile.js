@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 	var appConfig = {
 		src: 'src',
 		dist: 'dist',
-		test: 'test',
+		test: 'example',
 		tmp: '.tmp'
 	};
 
@@ -101,9 +101,12 @@ module.exports = function (grunt) {
 			options: {
 				hostname: 'localhost'
 			},
-			rules: {
-				'^/theme/(.*)$': '/$1'
-			},
+			rules: [
+				{
+					from:'^/theme/(.*)$',
+					to: '/$1'
+				}
+			],
 			dev: {
 				options: {
 					base: '<%= app.src %>/htdocs',
@@ -112,9 +115,9 @@ module.exports = function (grunt) {
 					middleware: function (connect, options) {
 						return [
 							lrSnippet,
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, options.components),
-							rewriteRulesSnippet,
 							mountPHP(options.base),
 							mountFolder(connect, options.base)
 						];
@@ -142,12 +145,12 @@ module.exports = function (grunt) {
 					port: 8000,
 					middleware: function (connect, options) {
 						return [
+							rewriteRulesSnippet,
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'bower_components'),
 							mountFolder(connect, 'node_modules'),
 							mountPHP(options.base),
 							mountFolder(connect, options.base),
-							rewriteRulesSnippet,
 							mountFolder(connect, appConfig.src + '/htdocs')
 						];
 					}
