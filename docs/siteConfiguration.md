@@ -47,6 +47,7 @@ $sitenav-background-color: #C9D8E9;
 This site wide SCSS file is compiled to CSS using sass on the command line `sass theme.scss`, which will generate a similarly named file `theme.css` that can be configured as described below.
 
 [All SCSS Variables](scssVariables.md)
+
 [All Content Patterns](scssPatterns.md)
 
 
