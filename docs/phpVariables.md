@@ -1,10 +1,18 @@
 PHP Template Variables
 ======================
 
+## $TITLE
 
-## Special variables
+Sets the content of the title element, and h1 page header.
 
-`$HEAD`, `$FOOT`, and `$NAVIGATION`, are special variables that allow content to automatically be configured for a section of the website.
+```php
+$TITLE = 'My page title';
+```
+
+
+## $HEAD, $FOOT, and $NAVIGATION
+
+Special variables that allow content to automatically be configured for a section of the website.
 
 
 ### Values
@@ -98,23 +106,13 @@ echo navItem('/test.php', 'Test') .
 ```
 
 This generates a navigation list similar to:
-<figure>
-	<img src="images/navigationExample.png" alt="Section navigation screen capture"/>
-	<figcaption>
-		"Test" shows the styles of the "current page".
-		"Item" shows the styles when mouse hovers over the item.
-		Group items are indented under an un-linked group title.
-	</figcaption>
-</figure>
 
+<img src="images/navigationExample.png" alt="Section navigation screen capture"/>
 
-## $TITLE
+* "Test" shows the styles of the "current page".
+* "Item" shows the styles when mouse hovers over the item.
+* Group items are indented under an un-linked group title.
 
-Sets the content of the title element, and h1 page header.
-
-```php
-$TITLE = 'My page title';
-```
 
 
 ## $CONTACT
@@ -126,7 +124,7 @@ $CONTACT = 'lisa@usgs.gov';
 ```
 
 
-## $CONTACT_URL
+### $CONTACT_URL
 
 Sets the page contact url.  The placeholder `{CONTACT}` is replaced with the contents of the $CONTACT variable.
 
@@ -135,7 +133,7 @@ $CONTACT_URL = '/contactus/?to={CONTACT}';
 ```
 
 
-## $SOCIAL
+### $SOCIAL
 
 Configure sharing links in page footer.
 
@@ -173,7 +171,7 @@ $SOCIAL = array(
 Url values may include "{TITLE}" and "{URL}", which are replaced with page specific values.
 
 
-## $SITE_URL
+### $SITE_URL
 
 Configure the domain name, embedded in search form for search this site.
 
@@ -182,7 +180,7 @@ $SITE_URL = 'earthquake.usgs.gov';
 ```
 
 
-## $SITE_SITENAV
+### $SITE_SITENAV
 
 Configure "site" navigation.
 Appears between "section" navigation ($NAVIGATION) and "search" in sidebar/offcanvas.
@@ -197,7 +195,7 @@ $SITE_SITENAV = navItem('/earthquakes/', 'Earthquakes') .
 ```
 
 
-## $SITE_COMMONNAV
+### $SITE_COMMONNAV
 
 Configure "common navigation".
 Appears at bottom of page.
