@@ -114,7 +114,7 @@ Default is #ccc
 
 ## Off Canvas
 
-Side column content is displayed "off canvas", or hidden by default, on pages smaller than $breakpoint-full pixels wide.
+Side column content is displayed "off canvas", or hidden by default, on pages smaller than `$breakpoint-full` pixels wide.
 
 <img src="images/overviewOffcanvas.png" alt="image of off canvas content"/>
 
@@ -182,5 +182,5 @@ Width of page when OffCanvas is disabled.
 Default is 768px.
 
 ### $side-column-width
-Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least $breakpoint-full pixels wide.
+Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least `$breakpoint-full` pixels wide.
 Default is 20%.
