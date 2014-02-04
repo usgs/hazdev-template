@@ -52,7 +52,7 @@ In the connect section, add a rules property to configure template rewrites; add
             hostname: 'localhost'
     },<strong>
 +   rules: {
-+           '^/template/(.*)$': '/hazdev-template/src/htdocs/$1'
++           '^/theme/(.*)$': '/hazdev-template/src/htdocs/$1'
 +   },</strong>
     dev: {
             options: {
