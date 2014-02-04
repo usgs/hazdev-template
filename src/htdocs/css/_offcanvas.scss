@@ -58,7 +58,7 @@
 			left:0;
 			top:0;
 			bottom:0;
-			width:80%;
+			width:$offcanvas-width;
 
 			background-color:#FFF;
 			padding:0 8px;
@@ -93,18 +93,18 @@
 	.offcanvas-active {
 
 		// move page to the right
-		left:80%;
+		left:$offcanvas-width;
 
 		// show offcanvas mask
 		.offcanvas-mask {
-			left:80%;
+			left:$offcanvas-width;
 		}
 
 		.offcanvas-close {
 			background-color:transparent;
 			display:block;
 			position:fixed;
-			left:80%;
+			left:$offcanvas-width;
 			top:0;
 			right:0;
 			bottom:0;
