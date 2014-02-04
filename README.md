@@ -42,6 +42,7 @@ Lightweight php template framework
 
     `grunt`
 
+    On windows, `gateway` has trouble resolving default documents and you need to change the opened url to `http://localhost:8080/index.php`.
 
 ### Example usage
 
