@@ -1,25 +1,18 @@
 Template SCSS Variables
 =======================
 
-See [Site Configuration](siteConfiguration.md) for information about where to set these variables.
+The most commonly configured SCSS variables are:
+- [$banner-image](#banner-image)
+- [$banner-background-color](#banner-background-color)
+- [$site-title](#site-title)
+- [$site-title-color](#site-title-color)
+- [$site-title-background-color](#site-title-background-color)
+- [$sitenav-background-color](#sitenav-background-color)
+
+See [Site Configuration](siteConfiguration.md) for information about configuring these variables.
 
 
-## General layout
-
-### $spacing
-Used as padding and margin of many elements.
-Default is 8px.
-
-### $breakpoint-full
-Width of page when OffCanvas is disabled.
-Default is 768px.
-
-### $side-column-width
-Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least $breakpoint-full pixels wide.
-Default is 20%.
-
-
-## Banner variables
+## Template Header
 
 ### $banner-image
 
@@ -83,6 +76,8 @@ Default is #132840.
 Background color for site navigation.
 Default is #C9D8E9.
 
+This variable is used as the basis for many site colors, and it's frequently enough to change only this color to customize an entire site.
+
 ### $sitenav-color-hover
 Hover text color for site navigation
 Default is #111.
@@ -121,7 +116,7 @@ Border color for section navigation.
 Default is #ccc.
 
 
-## OffCanvas
+## Off Canvas
 
 Side column content is displayed "off canvas", or hidden by default, on pages smaller than $breakpoint-full pixels wide.
 
@@ -157,3 +152,17 @@ Default is $sitenav-border-color-hover
 Transition time when showing and hiding offcanvas content.
 Default is .5s.
 
+
+## General Layout
+
+### $spacing
+Used as padding and margin of many elements.
+Default is 8px.
+
+### $breakpoint-full
+Width of page when OffCanvas is disabled.
+Default is 768px.
+
+### $side-column-width
+Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least $breakpoint-full pixels wide.
+Default is 20%.
