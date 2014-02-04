@@ -20,8 +20,8 @@ $banner-background-color: #000;
 
 // site title and colors
 $site-title: 'My Site Title';
-$site-title-color: #fff;
-$site-title-background-color: #4e7ab9;
+$site-title-color: #FFF;
+$site-title-background-color: #4E7AB9;
 
 // primary color of site
 $sitenav-background-color: #C9D8E9;

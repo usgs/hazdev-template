@@ -34,12 +34,12 @@ Default is 'U.S. Geological Survey'.
 ### $site-title-color
 
 Text color for [$site-title](#site-title).
-Default is #fff.
+Default is #FFF.
 
 ### $site-title-background-color
 
 Background color for [$site-title](#site-title).
-Default is #4e7ab9.
+Default is #4E7AB9.
 
 
 ## Section Navigation
@@ -69,7 +69,7 @@ Default is lighten($sitenav-background-color-hover, 10%).
 
 ### $sectionnav-border-color
 Border color for section navigation.
-Default is #ccc.
+Default is #CCC.
 
 
 ## Site Navigation
@@ -105,11 +105,11 @@ Default is #111.
 
 ### $search-background-color
 Background color for search box.
-Default is #eee.
+Default is #EEE.
 
 ### $search-border-color
 Border color for search box.
-Default is #ccc
+Default is #CCC.
 
 
 ## Offcanvas
@@ -164,11 +164,11 @@ Default is #999.
 
 ### $page-footer-background-color
 Background color for page footer.
-Default is #fff.
+Default is #FFF.
 
 ### $page-footer-border-color
 Border color for page footer.
-Default is #ddd.
+Default is #DDD.
 
 
 ## General Layout
