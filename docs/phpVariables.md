@@ -1,61 +1,56 @@
 PHP Template Variables
 ======================
 
-## $TITLE
 
-Sets the content of the title element, and h1 page header.
+## Special variables
 
-```php
-$TITLE = 'My page title';
-```
+`$HEAD`, `$FOOT`, and `$NAVIGATION`, are special variables that allow content to automatically be configured for a section of the website.
 
 
-## $CONTACT
+### Values
 
-Sets the page contact information email.
+* `false`
+	Omit content.
 
-```php
-$CONTACT = 'lisa@usgs.gov';
-```
+* `true`
+	Result of [`includeFile(findFileInPath(FILE))`](phpFunctions.md#includefile).
+	Each variable uses a different FILE, listed below.
+
+*  String
+	html markup as a string.
 
 
-## $HEAD
+### $HEAD
+
+FILE is `_head.inc.php`
 
 Markup before the closing head element of a page (`$HEAD</head>`).  Typically stylesheets.
 
-Values:
-- (default) {Boolean} false, don't embed content.
-- {Boolean} true, includes result of [findFileInPath('_head.inc.php')](phpFunctions.md#findfileinpath) if found.
-- {String} markup, html markup to include.
-
 ```php
-$HEAD = '<link rel="stylesheet" href="mystyles.css"/>';
+$HEAD = '<link rel="stylesheet" href="mystyles.css"/>' .
+		'<link rel="stylesheet" href="mystyles2.css"/>';
 ```
 
 
-## $FOOT
+### $FOOT
+
+FILE is `_foot.inc.php`
 
 Markup before the closing body element of a page (`$FOOT</body>`).  Typically javascript.
 
-Value:
-- (default) {Boolean} false, don't embed content.
-- {Boolean} true, includes [findFileInPath('_foot.inc.php')](phpFunctions.md#findfileinpath) if found.
-- {String} markup, html markup to include.
-
 ```php
-$FOOT = '<script src="myscript.js"></script>';
+$FOOT = '<script src="myscript.js"></script>' .
+		'<script src="myscript2.js"></script>';
 ```
 
 
-## $NAVIGATION
+### $NAVIGATION
+
+FILE is `_navigation.inc.php`
 
 Markup for "section" navigation.
-Appears before "site" navigation (`$SITE_SITENAV`) in sidebar/offcanvas.
 
-Values:
-- (default) {Boolean} false, don't embed content.
-- {Boolean} true, includes [findFileInPath('_navigation.inc.php')](phpFunctions.md#findfileinpath) if found.
-- {String} markup, html markup to include.
+Appears before "site" navigation (`$SITE_SITENAV`) in sidebar/offcanvas.
 
 ```php
 $NAVIGATION = navItem('/section/', 'Section') .
@@ -112,6 +107,31 @@ This generates a navigation list similar to:
 	</figcaption>
 </figure>
 
+
+## $TITLE
+
+Sets the content of the title element, and h1 page header.
+
+```php
+$TITLE = 'My page title';
+```
+
+
+## $CONTACT
+
+Sets the page contact information email.
+
+```php
+$CONTACT = 'lisa@usgs.gov';
+```
+
+
+## $CONTACT_URL
+
+Sets the page contact url.  The placeholder `{CONTACT}` is replaced with the contents of the $CONTACT variable.
+
+```php
+$CONTACT_URL = '/contactus/?to={CONTACT}';
 ```
 
 
