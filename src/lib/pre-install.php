@@ -5,7 +5,7 @@ date_default_timezone_set('UTC');
 // work from lib directory
 chdir(dirname($argv[0]));
 
-$LIB_DIR = getcwd();
+$LIB_DIR = $_SERVER['PWD'];
 $APP_DIR = dirname($LIB_DIR);
 $HTDOCS_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'htdocs';
 $CONF_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'conf';
