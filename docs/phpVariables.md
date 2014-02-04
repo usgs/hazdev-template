@@ -64,21 +64,54 @@ $NAVIGATION = navItem('/section/', 'Section') .
         navItem('/section2/other.php', 'Section 2 other'));
 ```
 
-### Section navigation example
-By setting $NAVIGATION to true, all pages in a section can share the same 
-navigation file without repeating the navigation content in each page.
+#### Section Navigation
 
-page.php
+By setting $NAVIGATION to true, all pages in a section can share the same navigation file without repeating the navigation content in each page.
+
+
+1) In the template configuration for a content page, set $NAVIGATION to true:
+
 ```php
-$NAVIGATION = true;
+<?php
+
+if (!isset($TEMPLATE)) {
+	$TITLE = 'My title';
+	$NAVIGATION = true;
+	include 'template.inc.php';
+}
+
+?>
+
+content
 ```
 
-_navigation.inc.php
+2) In the same directory, or a parent directory, create a file named `_navigation.inc.php` that outputs navigation:
+
 ```php
-echo navItem('/section/', 'Section') .
-    navGroup('Section 2',
-        navItem('/section2/index.php', 'Section 2 page') .
-        navItem('/section2/other.php', 'Section 2 other'));
+<?php
+
+echo navItem('/test.php', 'Test') .
+		navGroup('Group 1',
+				navItem('/item1.php', 'Group item 1') .
+				navItem('/item2.php', 'Group item 2')) .
+		navItem('/item.php', 'Item') .
+		navGroup('Group 2',
+				navItem('/group2/item1.php', 'Group item 1') .
+				navItem('/group2/item2.php', 'Group item 2'));
+
+?>
+```
+
+This generates a navigation list similar to:
+<figure>
+	<img src="images/navigationExample.png" alt="Section navigation screen capture"/>
+	<figcaption>
+		"Test" shows the styles of the "current page".
+		"Item" shows the styles when mouse hovers over the item.
+		Group items are indented under an un-linked group title.
+	</figcaption>
+</figure>
+
 ```
 
 
