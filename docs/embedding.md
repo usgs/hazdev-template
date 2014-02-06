@@ -3,7 +3,7 @@ Embedding the hazdev-template in another project
 
 
 <pre><code>npm install grunt-connect-rewrite --save-dev
-npm install git+https://github.com/usgs/hazdev-template.git --save-dev</code></pre>
+npm install hazdev-template --save-dev</code></pre>
 
 
 ## Gruntfile configuration
