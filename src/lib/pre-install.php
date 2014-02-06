@@ -2,16 +2,19 @@
 
 date_default_timezone_set('UTC');
 
+$OLD_PWD = $_SERVER['PWD'];
+
 // work from lib directory
 chdir(dirname($argv[0]));
 
-if (isset($_SERVER['PWD'])) {
+if ($_SERVER['PWD'] !== $OLD_PWD) {
 	// pwd doesn't resolve symlinks
 	$LIB_DIR = $_SERVER['PWD'];
 } else {
-	// windows doesn't provide $_SERVER['PWD']...
+	// windows doesn't update $_SERVER['PWD']...
 	$LIB_DIR = getcwd();
 }
+
 $APP_DIR = dirname($LIB_DIR);
 $HTDOCS_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'htdocs';
 $CONF_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'conf';
