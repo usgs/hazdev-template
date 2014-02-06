@@ -5,7 +5,13 @@ date_default_timezone_set('UTC');
 // work from lib directory
 chdir(dirname($argv[0]));
 
-$LIB_DIR = $_SERVER['PWD'];
+if (isset($_SERVER['PWD'])) {
+	// pwd doesn't resolve symlinks
+	$LIB_DIR = $_SERVER['PWD'];
+} else {
+	// windows doesn't provide $_SERVER['PWD']...
+	$LIB_DIR = getcwd();
+}
 $APP_DIR = dirname($LIB_DIR);
 $HTDOCS_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'htdocs';
 $CONF_DIR = $APP_DIR . DIRECTORY_SEPARATOR . 'conf';
