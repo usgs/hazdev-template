@@ -9,6 +9,7 @@
  * @param $default {?} default is null.
  *        Optional default value if the parameter was not provided.
  */
+if (!function_exists('param')) {
 function param ($name, $default=null) {
 	$value = null;
 	$key = "$name";
@@ -23,6 +24,7 @@ function param ($name, $default=null) {
 
 	return $value;
 }
+}
 
 
 /**
@@ -35,6 +37,7 @@ function param ($name, $default=null) {
  * @param $name {String}
  *        name of file to find.
  */
+if (!function_exists('findFileInPath')) {
 function findFileInPath ($name) {
 	static $scriptPath = null;
 	if ($scriptPath === null) {
@@ -65,6 +68,7 @@ function findFileInPath ($name) {
 	// return null if not found
 	return null;
 }
+}
 
 /**
  * Include a file and return any output.
@@ -79,6 +83,7 @@ function findFileInPath ($name) {
  *         default is null.
  * @return {String} any output that was captured.
  */
+if (!function_exists('includeFile')) {
 function includeFile ($file, $default=null) {
 	$contents = $default;
 	if ($file !== null && file_exists($file)) {
@@ -87,6 +92,7 @@ function includeFile ($file, $default=null) {
 		$contents = ob_get_clean();
 	}
 	return $contents;
+}
 }
 
 /**
@@ -102,6 +108,7 @@ function includeFile ($file, $default=null) {
  *         text for anchor.
  * @return {String} markup for navigation item.
  */
+if (!function_exists('navItem')) {
 function navItem ($href, $text) {
 	$isCurrentPage = preg_match(
 			'/^' . preg_quote($href, '/') . '/',
@@ -113,6 +120,7 @@ function navItem ($href, $text) {
 		return '<a href="' . $href . '">' . $text . '</a>';
 	}
 }
+}
 
 /**
  * Generate markup for a navigation group.
@@ -121,11 +129,13 @@ function navItem ($href, $text) {
  * @param  $children markup for group navigation items.
  * @return {String} markup for navigation group.
  */
+if (!function_exists('navGroup')) {
 function navGroup ($text, $children) {
 	return '<section>' .
 			'<header>' . $text . '</header>' .
 			$children .
 			'</section>';
+}
 }
 
 

@@ -48,7 +48,8 @@
 				}
 
 				if ($SOCIAL) {
-					$pageUrl = ($_SERVER['HTTPS'] !== 'Off' ? 'https://' : 'http://') .
+					$pageUrl = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'Off')
+							? 'https://' : 'http://') .
 							$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 					$replacements = array(
