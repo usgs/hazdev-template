@@ -104,7 +104,7 @@ module.exports = function (grunt) {
 			rules: [
 				{
 					from:'^/theme/(.*)$',
-					to: '/$1'
+					to: '/htdocs/$1'
 				}
 			],
 			dev: {
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
 							mountFolder(connect, 'node_modules'),
 							mountPHP(options.base),
 							mountFolder(connect, options.base),
-							mountFolder(connect, appConfig.src + '/htdocs')
+							mountFolder(connect, appConfig.src)
 						];
 					}
 				}
