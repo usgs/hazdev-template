@@ -15,9 +15,6 @@
  * A toggle element is added when OffCanvas is first enabled (only shown when
  * offcanvas is enabled) that toggles OffCanvas content.  A mask element is also
  * added that is shown beneath OffCanvas content, but above page content.
- *
- * A window resize listener enables or disables OffCanvas depending on a
- * configurable maxWidth property, which defaults to 768px;
  */
 define([], function() {
 	'use strict';
@@ -46,7 +43,6 @@ define([], function() {
 	// defaults
 	var DEFAULTS = {
 		'enable': true,
-		'maxWidth': 768,
 		'maskClass': 'offcanvas-mask',
 		'closeClass': 'offcanvas-close',
 		'containerClass': 'offcanvas',
@@ -64,9 +60,6 @@ define([], function() {
 	 * @param options.enable {Boolean}
 	 *        whether to automatically enable OffCanvas.
 	 *        default true.
-	 * @param options.maxWidth {Integer}
-	 *        maximum number of pixels for offcanvas to be enabled.
-	 *        default 768.
 	 * @param options.maskClass {String}
 	 *        mask element classname.
 	 *        default 'offcanvas-mask'.
@@ -215,5 +208,24 @@ define([], function() {
 	};
 
 
-	return OffCanvas;
+	// singleton reference
+	var SINGLETON = null;
+
+	return {
+		/**
+		 * Get or construct the singleton instance.
+		 *
+		 * @param options {Object}
+		 *        offcanvas options, only used on first call to getOffCanvas().
+		 * @return OffCanvas object.
+		 * @see OffCanvas.
+		 */
+		getOffCanvas: function (options) {
+			if (SINGLETON === null) {
+				SINGLETON = new OffCanvas(options);
+			}
+			return SINGLETON;
+		}
+	};
+
 });
