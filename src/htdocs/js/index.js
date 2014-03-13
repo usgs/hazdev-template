@@ -17,6 +17,6 @@ require([
 	document.querySelector('.site-footer').classList.add('offcanvas');
 
 	// initialize offcanvas
-	new OffCanvas();
+	OffCanvas.getOffCanvas();
 
 });
