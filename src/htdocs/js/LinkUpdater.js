@@ -54,8 +54,8 @@ define([], function () {
 	 * Update social links to current document url and title.
 	 */
 	LinkUpdater.prototype.render = function () {
-		var url = escape(window.location),
-		    title = escape(document.title),
+		var url = encodeURIComponent(window.location),
+		    title = encodeURIComponent(document.title),
 		    links, link, linkUrl;
 
 		// find all links with a "data-link-template" attribute

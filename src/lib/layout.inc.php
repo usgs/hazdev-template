@@ -75,20 +75,20 @@
 		?>
 	</main>
 
-	<footer class="site-footer">
+	<nav class="site-footer">
 		<?php
 
 			if ($NAVIGATION) {
-				echo '<nav' .
+				echo '<section' .
 						' id="site-sectionnav"' .
 						' class="site-sectionnav"' .
 						' aria-label="Section Navigation"' .
-						'>' . $NAVIGATION . '</nav>';
+						'>' . $NAVIGATION . '</section>';
 			}
 
 			if ($SITE_SITENAV) {
-				echo '<nav class="site-sitenav" aria-label="Site Navigation">' .
-						$SITE_SITENAV . '</nav>';
+				echo '<section class="site-sitenav" aria-label="Site Navigation">' .
+						$SITE_SITENAV . '</section>';
 			}
 
 		?>
@@ -100,12 +100,12 @@
 			<input id="query" name="query" type="search" placeholder="Search..." title="Search"/>
 			<button type="submit">Search</button>
 		</form>
-	</footer>
+	</nav>
 
 	<?php
 
 		if ($SITE_COMMONNAV) {
-			echo '<nav class="site-commonnav"><hr/>' . $SITE_COMMONNAV . '</nav>';
+			echo '<footer class="site-commonnav"><hr/>' . $SITE_COMMONNAV . '</footer>';
 		}
 
 		// load requirejs and template javascript before $FOOT
