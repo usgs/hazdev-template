@@ -1,4 +1,4 @@
-/* global define, escape */
+/* global define */
 define([], function () {
 	'use strict';
 
