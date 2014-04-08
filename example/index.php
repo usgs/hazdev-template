@@ -6,7 +6,7 @@ if (!isset($TEMPLATE)) {
 
 	$FOOT = '<script src="js/index.js"></script>';
 
-	include('template.inc.php');
+	include 'template.inc.php';
 }
 
 ?>

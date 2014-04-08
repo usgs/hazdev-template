@@ -4,13 +4,13 @@
 
 
 // include template level functions
-include_once('functions.inc.php');
+include_once 'functions.inc.php';
 
 // finish configuring template based on site and template defaults
-include('config.inc.php');
+include 'config.inc.php';
 
 // begin layout, which includes original page for content
-include('layout.inc.php');
+include 'layout.inc.php';
 
 // layout is complete, exit before returnning to original page
 exit();

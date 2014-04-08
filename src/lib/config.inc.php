@@ -87,15 +87,36 @@ if (!isset($SITE_COMMONNAV)) {
 // process before site configuration, in case site needs to modify
 
 if ($HEAD === true) {
-	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
+	$file = findFileInPath('_head.inc.php');
+	if (is_file($file)) {
+		ob_start();
+		include $file;
+		$HEAD = ob_get_clean();
+	} else {
+		$HEAD = null;
+	}
 }
 
 if ($FOOT === true) {
-	$FOOT = includeFile(findFileInPath('_foot.inc.php'), null);
+	$file = findFileInPath('_foot.inc.php');
+	if (is_file($file)) {
+		ob_start();
+		include $file;
+		$FOOT = ob_get_clean();
+	} else {
+		$FOOT = null;
+	}
 }
 
 if ($NAVIGATION === true) {
-	$NAVIGATION = includeFile(findFileInPath('_navigation.inc.php'), null);
+	$file = findFileInPath('_navigation.inc.php');
+	if (is_file($file)) {
+		ob_start();
+		include $file;
+		$NAVIGATION = ob_get_clean();
+	} else {
+		$NAVIGATION = null;
+	}
 }
 
 
@@ -106,7 +127,7 @@ if ($NAVIGATION === true) {
 
 if (isset($_SERVER['DOCUMENT_ROOT'])) {
 	$site_config = $_SERVER['DOCUMENT_ROOT'] . '/_config.inc.php';
-	if (file_exists($site_config)) {
+	if (is_file($site_config)) {
 		include_once($site_config);
 	} else {
 		trigger_error('expected site configuration at "' . $site_config . '"');
@@ -122,14 +143,35 @@ if (isset($_SERVER['DOCUMENT_ROOT'])) {
 // in case site configuration (re)enables these
 
 if ($HEAD === true) {
-	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
+	$file = findFileInPath('_head.inc.php');
+	if (is_file($file)) {
+		ob_start();
+		include $file;
+		$HEAD = ob_get_clean();
+	} else {
+		$HEAD = null;
+	}
 }
 
 if ($FOOT === true) {
-	$FOOT = includeFile(findFileInPath('_foot.inc.php'), null);
+	$file = findFileInPath('_foot.inc.php');
+	if (is_file($file)) {
+		ob_start();
+		include $file;
+		$FOOT = ob_get_clean();
+	} else {
+		$FOOT = null;
+	}
 }
 
 if ($NAVIGATION === true) {
-	$NAVIGATION = includeFile(findFileInPath('_navigation.inc.php'), null);
+	$file = findFileInPath('_navigation.inc.php');
+	if (is_file($file)) {
+		ob_start();
+		include $file;
+		$NAVIGATION = ob_get_clean();
+	} else {
+		$NAVIGATION = null;
+	}
 }
 

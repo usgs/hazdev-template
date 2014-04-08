@@ -23,7 +23,7 @@ Special variables that allow content to automatically be configured for a sectio
 
 * `true`
 
-	Result of [`includeFile(findFileInPath(FILE))`](phpFunctions.md#includefile).
+	Result of including FILE with string buffering.
 	Each variable uses a different FILE, listed below.
 
 *  String
