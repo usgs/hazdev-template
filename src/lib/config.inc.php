@@ -87,7 +87,6 @@ if (!isset($SITE_COMMONNAV)) {
 // process before site configuration, in case site needs to modify
 
 if ($HEAD === true) {
-	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
 	$file = findFileInPath('_head.inc.php');
 	if ($file !== '' && file_exists($file)) {
 		ob_start();
@@ -144,7 +143,6 @@ if (isset($_SERVER['DOCUMENT_ROOT'])) {
 // in case site configuration (re)enables these
 
 if ($HEAD === true) {
-	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
 	$file = findFileInPath('_head.inc.php');
 	if ($file !== '' && file_exists($file)) {
 		ob_start();
