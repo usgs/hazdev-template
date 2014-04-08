@@ -71,31 +71,6 @@ function findFileInPath ($name) {
 }
 
 /**
- * Include a file and return any output.
- *
- * NOTE: File is included by function with local scope, and cannot access
- * global variables without using the global keyword.
- *
- * @param $file {String}
- *         path the file, or null to not include any file.
- * @param $default {Any}
- *         return value when file is null or does not exist.
- *         default is null.
- * @return {String} any output that was captured.
- */
-if (!function_exists('includeFile')) {
-function includeFile ($file, $default=null) {
-	$contents = $default;
-	if ($file !== null && file_exists($file)) {
-		ob_start();
-		include $file;
-		$contents = ob_get_clean();
-	}
-	return $contents;
-}
-}
-
-/**
  * Generate markup for a navigation item.
  *
  * When $href matches the start of REQUEST_URI, it is considered the
@@ -137,6 +112,5 @@ function navGroup ($text, $children) {
 			'</section>';
 }
 }
-
 
 ?>

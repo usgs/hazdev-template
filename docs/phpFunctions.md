@@ -33,42 +33,6 @@ echo $someparameter;
 ```
 
 
-## includeFile 
-
-```php
-/**
- * Include a file and return any output.
- *
- * NOTE: File is included by function with local scope, and cannot access
- * global variables without using the global keyword.
- *
- * @param $file {String}
- *         path the file, or null to not include any file.
- * @param $default {Any}
- *         return value when file is null or does not exist.
- *         default is null.
- * @return {String} any output that was captured.
- */
-function includeFile ($file, $default=null) {
-```
-
-### includeFile examples
-
-If the file `somefile.php` contains:
-```php
-<?php
-echo 'Hello World!';
-?>
-```
-
-Then:
-```php
-$someFileContents = includeFile('somefile.php');
-echo $someFileContents;
-// output is "Hello World!"
-```
-
-
 ## findFileInPath
 
 ```php
