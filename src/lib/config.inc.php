@@ -88,7 +88,7 @@ if (!isset($SITE_COMMONNAV)) {
 
 if ($HEAD === true) {
 	$file = findFileInPath('_head.inc.php');
-	if ($file !== '' && file_exists($file)) {
+	if ($file !== '' && is_file($file)) {
 		ob_start();
 		include $file;
 		$HEAD = ob_get_clean();
@@ -99,7 +99,7 @@ if ($HEAD === true) {
 
 if ($FOOT === true) {
 	$file = findFileInPath('_foot.inc.php');
-	if ($file !== '' && file_exists($file)) {
+	if ($file !== '' && is_file($file)) {
 		ob_start();
 		include $file;
 		$FOOT = ob_get_clean();
@@ -110,7 +110,7 @@ if ($FOOT === true) {
 
 if ($NAVIGATION === true) {
 	$file = findFileInPath('_navigation.inc.php');
-	if ($file !== '' && file_exists($file)) {
+	if ($file !== '' && is_file($file)) {
 		ob_start();
 		include $file;
 		$NAVIGATION = ob_get_clean();
@@ -127,7 +127,7 @@ if ($NAVIGATION === true) {
 
 if (isset($_SERVER['DOCUMENT_ROOT'])) {
 	$site_config = $_SERVER['DOCUMENT_ROOT'] . '/_config.inc.php';
-	if (file_exists($site_config)) {
+	if (is_file($site_config)) {
 		include_once($site_config);
 	} else {
 		trigger_error('expected site configuration at "' . $site_config . '"');
@@ -144,7 +144,7 @@ if (isset($_SERVER['DOCUMENT_ROOT'])) {
 
 if ($HEAD === true) {
 	$file = findFileInPath('_head.inc.php');
-	if ($file !== '' && file_exists($file)) {
+	if ($file !== '' && is_file($file)) {
 		ob_start();
 		include $file;
 		$HEAD = ob_get_clean();
@@ -155,7 +155,7 @@ if ($HEAD === true) {
 
 if ($FOOT === true) {
 	$file = findFileInPath('_foot.inc.php');
-	if ($file !== '' && file_exists($file)) {
+	if ($file !== '' && is_file($file)) {
 		ob_start();
 		include $file;
 		$FOOT = ob_get_clean();
@@ -166,7 +166,7 @@ if ($FOOT === true) {
 
 if ($NAVIGATION === true) {
 	$file = findFileInPath('_navigation.inc.php');
-	if ($file !== '' && file_exists($file)) {
+	if ($file !== '' && is_file($file)) {
 		ob_start();
 		include $file;
 		$NAVIGATION = ob_get_clean();
