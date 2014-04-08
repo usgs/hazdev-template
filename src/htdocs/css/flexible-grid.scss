@@ -18,13 +18,10 @@ $spacing: 8px !default;
 	// rows are left-to-right
 	.row {
 		clear:both;
+		margin-right:-$spacing;
 
 		> .column {
 			float:left;
-
-			&:last-child {
-				padding-right:0;
-			}
 		}
 
 		&:after {
@@ -38,16 +35,6 @@ $spacing: 8px !default;
 	.row.right-to-left {
 		> .column {
 			float:right;
-
-			// first child is right most, remove its padding
-			&:first-child {
-				padding-right:0;
-			}
-
-			// last child is left most, restore its padding
-			&:last-child {
-				padding-right:$spacing;
-			}
 		}
 	}
 
