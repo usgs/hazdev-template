@@ -88,14 +88,36 @@ if (!isset($SITE_COMMONNAV)) {
 
 if ($HEAD === true) {
 	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
+	$file = findFileInPath('_head.inc.php');
+	if ($file !== '' && file_exists($file)) {
+		ob_start();
+		include $file;
+		$HEAD = ob_get_clean();
+	} else {
+		$HEAD = null;
+	}
 }
 
 if ($FOOT === true) {
-	$FOOT = includeFile(findFileInPath('_foot.inc.php'), null);
+	$file = findFileInPath('_foot.inc.php');
+	if ($file !== '' && file_exists($file)) {
+		ob_start();
+		include $file;
+		$FOOT = ob_get_clean();
+	} else {
+		$FOOT = null;
+	}
 }
 
 if ($NAVIGATION === true) {
-	$NAVIGATION = includeFile(findFileInPath('_navigation.inc.php'), null);
+	$file = findFileInPath('_navigation.inc.php');
+	if ($file !== '' && file_exists($file)) {
+		ob_start();
+		include $file;
+		$NAVIGATION = ob_get_clean();
+	} else {
+		$NAVIGATION = null;
+	}
 }
 
 
@@ -123,13 +145,35 @@ if (isset($_SERVER['DOCUMENT_ROOT'])) {
 
 if ($HEAD === true) {
 	$HEAD = includeFile(findFileInPath('_head.inc.php'), null);
+	$file = findFileInPath('_head.inc.php');
+	if ($file !== '' && file_exists($file)) {
+		ob_start();
+		include $file;
+		$HEAD = ob_get_clean();
+	} else {
+		$HEAD = null;
+	}
 }
 
 if ($FOOT === true) {
-	$FOOT = includeFile(findFileInPath('_foot.inc.php'), null);
+	$file = findFileInPath('_foot.inc.php');
+	if ($file !== '' && file_exists($file)) {
+		ob_start();
+		include $file;
+		$FOOT = ob_get_clean();
+	} else {
+		$FOOT = null;
+	}
 }
 
 if ($NAVIGATION === true) {
-	$NAVIGATION = includeFile(findFileInPath('_navigation.inc.php'), null);
+	$file = findFileInPath('_navigation.inc.php');
+	if ($file !== '' && file_exists($file)) {
+		ob_start();
+		include $file;
+		$NAVIGATION = ob_get_clean();
+	} else {
+		$NAVIGATION = null;
+	}
 }
 
