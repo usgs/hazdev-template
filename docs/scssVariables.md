@@ -173,6 +173,10 @@ Default is #DDD.
 
 ## General Layout
 
+### $body-margin
+Gutter around all page content.
+Default is 8px.
+
 ### $spacing
 Used as padding and margin of many elements.
 Default is 8px.
