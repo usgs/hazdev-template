@@ -173,9 +173,21 @@ Default is #DDD.
 
 ## General Layout
 
+### $body-margin
+Gutter around all page content.
+Default is 8px.
+
 ### $spacing
 Used as padding and margin of many elements.
 Default is 8px.
+
+### $horizontal-spacing
+Used as left and right padding and margin of many elements.
+Default is $spacing.
+
+### $vertical-spacing
+Used as top and bottom padding and margin of many elements.
+Default is $spacing.
 
 ### $breakpoint-full
 Width of page when OffCanvas is disabled.

@@ -2,7 +2,7 @@
 .site-sectionnav {
 	border: 1px solid $sectionnav-border-color;
 	background-color: $sectionnav-background-color;
-	margin: $spacing 0;
+	margin: $vertical-spacing 0;
 
 	// regular nav items
 	> a,
@@ -15,7 +15,7 @@
 	> section > header > strong,
 	> section > strong {
 		display:block;
-		padding:$spacing;
+		padding:$vertical-spacing $horizontal-spacing;
 		text-decoration:none;
 
 		border-bottom: 1px solid #FFF;
@@ -27,7 +27,7 @@
 	// indent group items
 	> section > a,
 	> section > strong {
-		padding-left: 15px;
+		padding-left: 2*$horizontal-spacing;
 	}
 
 	// hover styles for nav items
@@ -54,8 +54,8 @@
 .site-search {
 	position:relative;
 	display: block;
-	margin: $spacing 0;
-	padding: $spacing;
+	margin: $vertical-spacing 0;
+	padding: $vertical-spacing $horizontal-spacing;
 	background-color: $search-background-color;
 	border: 1px solid $search-border-color;
 
@@ -89,13 +89,13 @@
 
 .site-sitenav {
 	background-color: $sitenav-background-color;
-	margin: $spacing 0;
+	margin: $vertical-spacing 0;
 	border: 1px solid darken($sitenav-background-color, 20%);
 	overflow: visible;
 
 	> a {
 		display: block;
-		padding: $spacing;
+		padding: $vertical-spacing $horizontal-spacing;
 		color: $sitenav-color;
 		text-decoration: none;
 		font-weight: bold;

@@ -1,10 +1,12 @@
 // set defaults, can be overridden when flexible-grid is included in site css.
 $breakpoint-full: 768px !default;
 $spacing: 8px !default;
+$horizontal-spacing: $spacing !default;
+$vertical-spacing: $spacing !default;
 
 
 .column {
-	margin-bottom:$spacing;
+	margin-bottom:$vertical-spacing;
 }
 
 
@@ -12,19 +14,16 @@ $spacing: 8px !default;
 
 	.column {
 		// make gutter on right side of each column
-		padding-right:$spacing;
+		padding-right:$horizontal-spacing;
 	}
 
 	// rows are left-to-right
 	.row {
 		clear:both;
+		margin-right:-$horizontal-spacing;
 
 		> .column {
 			float:left;
-
-			&:last-child {
-				padding-right:0;
-			}
 		}
 
 		&:after {
@@ -38,18 +37,11 @@ $spacing: 8px !default;
 	.row.right-to-left {
 		> .column {
 			float:right;
-
-			// first child is right most, remove its padding
-			&:first-child {
-				padding-right:0;
-			}
-
-			// last child is left most, restore its padding
-			&:last-child {
-				padding-right:$spacing;
-			}
 		}
 	}
+
+	// */1
+	.one-of-one     { width: 100%; }
 
 	// */2
 	.one-of-two     { width: 100%*1/2; }

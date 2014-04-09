@@ -2,12 +2,12 @@
 
 if (!isset($TEMPLATE)) {
 	$HEAD = '
-	<link rel="stylesheet" href="/theme/css/flexible-grid.css"/>
+	<link rel="stylesheet" href="/css/flexible-grid.css"/>
 	<style>
-		.row > .column {
+		.row > .column > div {
 			border:1px solid #F00;
 		}
-		.row.right-to-left > .column {
+		.row.right-to-left > .column > div {
 			border-color:#00F;
 		}
 	</style>
@@ -47,17 +47,29 @@ foreach ($grid_sizes as $size) {
 
 		// output normal example
 		echo '<div class="row">';
-			echo '<div class="column ' . $i_name . '">' . $i_name . ' (first)</div>';
-			echo '<div class="column ' . $rest_name . '">' . $rest_name . ' (second)</div>';
+			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (first)</div></div>';
+			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (second)</div></div>';
 		echo '</div>';
 
 		// output right-to-left example
 		echo '<div class="row right-to-left">';
-			echo '<div class="column ' . $i_name . '">' . $i_name . ' (first)</div>';
-			echo '<div class="column ' . $rest_name . '">' . $rest_name . ' (second)</div>';
+			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (first)</div></div>';
+			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (second)</div></div>';
 		echo '</div>';
 
 	}
 }
 
 ?>
+
+<h2>Nested columns</h2>
+<div class="row">
+	<div class="column one-of-two"><div>one-of-two</div></div>
+	<div class="column one-of-two"><div>
+		one-of-two<br/>
+		<div class="row">
+			<div class="column one-of-two"><div>nested one-of-two</div></div>
+			<div class="column one-of-two"><div>nested one-of-two</div></div>
+		</div>
+	</div></div>
+</div>
