@@ -47,6 +47,9 @@ A column in a row.
 
 Column sizes can be mixed and matched, columns will wrap if they add to more than 1.
 
+* \*/1
+	.one-of-one
+
 * \*/2
 	.one-of-two
 
