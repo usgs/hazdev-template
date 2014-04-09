@@ -11,6 +11,10 @@ $site-title-background-color: #4E7AB9 !default;
 
 
 $spacing: 8px !default;
+$horizontal-spacing: $spacing !default;
+$vertical-spacing: $spacing !default;
+
+
 $breakpoint-full: 768px !default;
 // 20% of 768 px = 153.6
 $side-column-width: 20% !default;

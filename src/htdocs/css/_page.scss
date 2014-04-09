@@ -1,11 +1,11 @@
 
 .page {
-	padding:$spacing 0;
+	padding:$vertical-spacing 0;
 }
 
 .page-header {
 	> h1 {
-		margin: 0 0 $spacing;
+		margin: 0 0 $vertical-spacing;
 	}
 }
 
@@ -18,7 +18,7 @@
 	clear:both;
 	color: $page-footer-color;
 	background-color: $page-footer-background-color;
-	padding:$spacing;
+	padding:$vertical-spacing $horizontal-spacing;
 	margin:1em 0 0;
 	border: 1px solid $page-footer-border-color;
 	font-size:smaller;
@@ -39,8 +39,8 @@
 
 		> .page-social {
 			position: absolute;
-			right: $spacing;
-			bottom: $spacing;
+			right: $horizontal-spacing;
+			bottom: $vertical-spacing;
 		}
 	}
 
@@ -48,7 +48,7 @@
 
 
 	.page {
-		padding: $spacing 0 $spacing $spacing;
+		padding: $vertical-spacing 0 $vertical-spacing $horizontal-spacing;
 		float: right;
 		width: 100% - $side-column-width;
 	}
