@@ -138,7 +138,7 @@ include 'classes/ImageList.class.php';
  */
 ```
 
-### $list->addItem($linke, $image, $title, $content);
+### $list->addItem($link, $image, $title, $content);
 ```php
 /**
  * Adds an item to the list object.
