@@ -124,7 +124,7 @@ PHP File:
 include 'classes/ImageList.class.php';
 ```
 
-###  ImageList
+###  $list = new ImageList($imageClass, $id);
 ```php
 /**
  * Instantiate a new ImageList object in PHP.
@@ -138,7 +138,7 @@ include 'classes/ImageList.class.php';
  */
 ```
 
-### addItem
+### $list->addItem($linke, $image, $title, $content);
 ```php
 /**
  * Adds an item to the list object.
@@ -155,7 +155,7 @@ include 'classes/ImageList.class.php';
  */
 ```
 
-### display
+### $list->display();
 ```php
 /**
  * Renders the current list contents to the page.
