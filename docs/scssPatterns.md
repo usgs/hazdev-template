@@ -107,3 +107,58 @@ Column sizes can be mixed and matched, columns will wrap if they add to more tha
 	.nine-of-twelve
 	.ten-of-twelve
 	.eleven-of-twelve
+
+
+## ImageList
+
+See [example usage page](../example/imagelist.php) for additional help using
+this content pattern.
+
+SCSS File:
+```css
+@import "hazdev-template/src/htdocs/css/imagelist.scss";
+```
+
+PHP File:
+```php
+include 'classes/ImageList.class.php';
+```
+
+###  ImageList
+```php
+/**
+ * Instantiate a new ImageList object in PHP.
+ *
+ * @param $imageClass {String} Optional.
+ *      A class name to add to the image itself. This allows for additional
+ *      custom styling for your list. Default: None.
+ * @param id {String} Optional.
+ *      An ID attribute to add to the list container. This allows for additional
+ *      custom styling for your list. Default: None.
+ */
+```
+
+### addItem
+```php
+/**
+ * Adds an item to the list object.
+ *
+ * @param $link {String}
+ *      The URL to which this item should link.
+ * @param $image {String}
+ *      The URL for the image element to use. Use an empty string if no image
+ *      is desired.
+ * @param $title {String}
+ *      The title for the list item.
+ * @param $content {String}
+ *      The content for the list item. May contain HTML.
+ */
+```
+
+### display
+```php
+/**
+ * Renders the current list contents to the page.
+ *
+ */
+```
