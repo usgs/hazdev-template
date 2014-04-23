@@ -99,13 +99,11 @@ class ImageList {
 	 * @param $item the imagelist item to output.
 	 */
 	public function displayItem($item) {
-		print '<li class="imagelist-item">';
+		print '<li class="imagelist-item"><header class="imagelist-header">';
 
 		//includes link
 		if ($item['link'] != '') {
-			printf('<a class="imagelist-header" href="%s">', $item['link']);
-		} else {
-			print '<header class="imagelist-header">';
+			printf('<a href="%s">', $item['link']);
 		}
 
 		if ($this->heading != null) {
@@ -127,11 +125,9 @@ class ImageList {
 
 		if ($item['link'] != '') {
 			print '</a>';
-		} else {
-			print '</header>';
 		}
 
-		print '<section class="imagelist-content">' .
+		print '</header><section class="imagelist-content">' .
 				$item['content'] . '</section>';
 
 		print '</li>'.PHP_EOL;
