@@ -99,7 +99,7 @@ class ImageList {
 	 * @param $item the imagelist item to output.
 	 */
 	public function displayItem($item) {
-		print '<li>';
+		print '<li class="imagelist-item">';
 
 		//includes link
 		if ($item['link'] != '') {
