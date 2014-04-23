@@ -3,7 +3,7 @@
 	margin:0;
 	padding:0;
 
-	> li {
+	> .imagelist-item {
 		margin:2em 0 0 0;
 		padding:0;
 
@@ -14,14 +14,14 @@
 		> .imagelist-header {
 			display:block;
 
-			> .imagelist-title {
+			.imagelist-title {
 				display:block;
 				margin-bottom:.5em;
 				font-size:1.4em;
 				font-weight:normal;
 			}
 
-			> .imagelist-image {
+			.imagelist-image {
 				display:block;
 			}
 		}
@@ -34,7 +34,7 @@
 }
 
 @media screen and (min-width:480px) {
-	.imagelist > li {
+	.imagelist > .imagelist-item {
 		position:relative;
 
 		&:after {
@@ -48,7 +48,7 @@
 			width:25%;
 			padding-right:16px;
 
-			> .imagelist-title {
+			.imagelist-title {
 				position:absolute;
 				top:-4px;
 				left:25%;
@@ -59,7 +59,7 @@
 				overflow:hidden;
 			}
 
-			> .imagelist-image {
+			.imagelist-image {
 				width:100%;
 			}
 		}
