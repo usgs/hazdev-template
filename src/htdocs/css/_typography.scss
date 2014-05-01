@@ -1,0 +1,162 @@
+html {
+	font-size: 100%;
+	line-height: 1.4;
+	//letter-spacing: 0.01em;
+	word-spacing: 0.05em;
+	font-family: helvetica, arial, sans-serif;
+}
+
+body {
+	font-size: 17px;
+	font-size: 106.25%;
+}
+
+// apply same margin for each header for consistency
+h1, h2, h3, h4, h5 {
+	margin:0 0 15px;
+	color:#333;
+
+	&.thin {
+		font-weight: 100;
+	}
+
+	&.subheader {
+		color: #777;
+	}
+
+	&.underline {
+		padding: $spacing 0;
+		border-bottom: 1px solid #ddd;
+		font-weight:normal;
+	}
+}
+
+/*
+ * Add margin-top to all adjacent headers, this will
+ * apply unless the header is the first nested element
+ */
+*+h1, *+h2, *+h3, *+h4, *+h5 {
+	margin-top:25px;
+}
+
+h1 {
+	font-size: 2.23529412em; // 38px
+	font-size: 2.375rem;
+}
+
+h2,
+section > h1 {
+	font-size: 1.76470588em; // 30px
+	font-size: 1.875rem;
+}
+
+h3,
+section > h2,
+section > section > h1 {
+	font-size: 1.35294118em; // 23px
+	font-size: 1.4375rem;
+}
+
+h4,
+section > h3,
+section > section > h2,
+section > section > section > h1 {
+	font-size: 1.11764706em; // 19px
+	font-size: 1.1875rem;
+}
+
+h5,
+section > h4,
+section > section > h3,
+section > section > section > h2,
+section > section > section > section > h1 {
+	font-size: 1em; // 17px
+	font-size: 1.0625rem;
+}
+
+
+@media screen and (min-width: 420px) {
+
+	body {
+		font-size: 18px;
+		font-size: 112.5%;
+	}
+
+	h1 {
+		font-size: 2.33333333em; // 42px
+		font-size: 2.625rem;
+	}
+
+	h2,
+	section > h1 {
+		font-size: 1.77777778em; // 32px
+		font-size: 2rem;
+	}
+
+	h3,
+	section > h2,
+	section > section > h1 {
+		font-size: 1.33333333em; // 24px
+		font-size: 1.5rem;
+	}
+
+	h4,
+	section > h3,
+	section > section > h2,
+	section > section > section > h1 {
+		font-size: 1.11111111em; // 20px
+		font-size: 1.25rem;
+	}
+
+	h5,
+	section > h4,
+	section > section > h3,
+	section > section > section > h2,
+	section > section > section > section > h1 {
+		font-size: 1em; // 18px
+		font-size: 1.125rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+
+	body {
+		font-size: 19px;
+		font-size: 118.75%;
+	}
+
+	h1 {
+		font-size: 2.52631579em; // 48px
+		font-size: 3rem;
+	}
+
+	h2,
+	section > h1 {
+		font-size: 1.89473684em; // 36px
+		font-size: 2.25rem;
+	}
+
+	h3,
+	section > h2,
+	section > section h1 {
+		font-size: 1.36842105em; // 26px
+		font-size: 1.625rem;
+	}
+
+	h4,
+	section > h3,
+	section > section > h2,
+	section > section > section h1 {
+		font-size: 1.15789474em; // 22px
+		font-size: 1.375rem;
+	}
+
+	h5,
+	section > h4,
+	section > section > h3,
+	section > section > section > h2,
+	section > section > section > section h1 {
+		font-size: 1em; // 19px
+		font-size: 1.1875rem;
+	}
+}
