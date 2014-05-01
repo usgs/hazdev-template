@@ -30,7 +30,7 @@ define([], function () {
 		this._el = options.el || '';
 	};
 
-	/* 
+	/*
 	 * this will build the markup for an accordion element
 	 */
 	Accordion.prototype.addAccordion = function(title, content) {
@@ -55,7 +55,7 @@ define([], function () {
 		this._el.appendChild(accordion);
 	};
 
-	/* 
+	/*
 	 * this will enhance this._el by searching for all occurences of .accordions,
 	 * then it will setup the accordion action
 	 */

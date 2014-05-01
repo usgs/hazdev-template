@@ -33,7 +33,7 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 	}
 
 	> .header:before {
-		@include plus-minus('-'); 
+		@include plus-minus('-');
 	}
 
 	> div {
@@ -60,7 +60,7 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 	}
 
 	> .header:before {
-		@include plus-minus('+'); 
+		@include plus-minus('+');
 	}
 
 	> div {
@@ -68,4 +68,3 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 	}
 
 }
-

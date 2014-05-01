@@ -46,9 +46,9 @@ class ImageList {
 
 		// add default icon if necessary
 		//if ($image == null) { $image = "images/icons/report.jpg"; }
-		
+
 		$this->addItemArray(
-			
+
 			array(
 				'link' => $link,
 				'image' => $image,
@@ -79,7 +79,7 @@ class ImageList {
 		if (count($this->list) == 0) {
 			return;
 		}
-		
+
 		print '<ul class="imagelist"';
 		if ($this->id != null) {
 			printf(' id="%s"', $this->id);
@@ -134,4 +134,3 @@ class ImageList {
 	}
 
 }
-

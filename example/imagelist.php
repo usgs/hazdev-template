@@ -176,4 +176,3 @@ $imageList->addItem('#', 'http://placehold.it/80x80',
 
 $imageList->display();
 ?>
-
