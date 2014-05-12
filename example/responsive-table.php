@@ -5,11 +5,21 @@ if (!isset($TEMPLATE)) {
 	<link rel="stylesheet" href="/css/responsive-table.css"/>
 	<style>
 		@media screen and (max-width: 767px) {
-			td:nth-of-type(1):before { content: "First Header"; }
-			td:nth-of-type(2):before { content: "Second Header"; }
-			td:nth-of-type(3):before { content: "Third Header"; }
-			td:nth-of-type(4):before { content: "Fourth Header"; }
-			td:nth-of-type(5):before { content: "Fifth Header"; }
+
+			table.test-horizontal > tbody > tr > td,
+			table.test-horizontal > tbody > tr > td:first-child {
+				padding-left: 48%;
+			}
+
+			.test-horizontal td:nth-of-type(1):before { content: "First Header"; }
+			.test-horizontal td:nth-of-type(2):before { content: "Second Header"; }
+			.test-horizontal td:nth-of-type(3):before { content: "Third Header"; }
+			.test-horizontal td:nth-of-type(4):before { content: "Fourth Header"; }
+			.test-horizontal td:nth-of-type(5):before { content: "Fifth Header"; }
+		}
+
+		.test-vertical th {
+			width:50%;
 		}
 	</style>
 ';
@@ -19,7 +29,10 @@ if (!isset($TEMPLATE)) {
 
 ?>
 
-<table class="responsive test-table">
+
+<h2>Responsive Table (.responsive)</h2>
+
+<table class="responsive test-horizontal">
 	<thead>
 		<tr>
 			<th>First Header</th>
@@ -77,6 +90,34 @@ if (!isset($TEMPLATE)) {
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Vertical Table (.responsive-vertical)</h2>
+
+<table class="responsive-vertical test-vertical">
+	<tbody>
+		<tr>
+			<th>First Header</th>
+			<td>This</td>
+		</tr>
+		<tr>
+			<th>Second Header</th>
+			<td>Is</td>
+		</tr>
+		<tr>
+			<th>Third Header</th>
+			<td>A</td>
+		</tr>
+		<tr>
+			<th>Fourth Header</th>
+			<td>Vertical</td>
+		</tr>
+		<tr>
+			<th>Fifth Header</th>
 			<td>Table</td>
 		</tr>
 	</tbody>
