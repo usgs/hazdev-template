@@ -104,8 +104,8 @@ module.exports = function (grunt) {
 					port: 8080,
 					middleware: function (connect, options) {
 						return [
-							mountFolder(connect, options.base),
 							mountPHP(options.base),
+							mountFolder(connect, options.base),
 
 							mountFolder(connect, '.tmp')
 						];
@@ -129,8 +129,8 @@ module.exports = function (grunt) {
 						return [
 							lrSnippet,
 							proxyRequest,
-							mountFolder(connect, options.base),
 							mountPHP(options.base),
+							mountFolder(connect, options.base),
 
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'node_modules')
@@ -145,8 +145,8 @@ module.exports = function (grunt) {
 					port: 8082,
 					middleware: function (connect, options) {
 						return [
-							mountFolder(connect, options.base),
-							mountPHP(options.base, {phpini: '/dist/conf/php.ini'})
+							mountPHP(options.base, {phpini: '/dist/conf/php.ini'}),
+							mountFolder(connect, options.base)
 						];
 					}
 				}
@@ -168,8 +168,8 @@ module.exports = function (grunt) {
 						return [
 							lrSnippet,
 							proxyRequest,
-							mountFolder(connect, options.base),
 							mountPHP(options.base),
+							mountFolder(connect, options.base),
 
 							mountFolder(connect, '.tmp'),
 							mountFolder(connect, 'node_modules')

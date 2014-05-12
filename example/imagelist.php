@@ -1,6 +1,7 @@
 <?php
 if (!isset($TEMPLATE)) {
 	$TITLE = 'Image List Example';
+	$NAVIGATION = true;
 
 	$HEAD = '
 		<link rel="stylesheet" href="/css/flexible-grid.css"/>

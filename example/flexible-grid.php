@@ -1,6 +1,8 @@
 <?php
 
 if (!isset($TEMPLATE)) {
+	$TITLE = 'Flexible grid demo';
+	$NAVIGATION = true;
 	$HEAD = '
 	<link rel="stylesheet" href="/css/flexible-grid.css"/>
 	<style>
@@ -11,8 +13,8 @@ if (!isset($TEMPLATE)) {
 			border-color:#00F;
 		}
 	</style>
-';
-	$TITLE = 'Flexible grid demo';
+	';
+
 	include 'template.inc.php';
 }
 

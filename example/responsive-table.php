@@ -1,6 +1,9 @@
 <?php
 
 if (!isset($TEMPLATE)) {
+	$TITLE = 'Responsive Table Demo';
+	$NAVIGATION = true;
+
 	$HEAD = '
 	<link rel="stylesheet" href="/css/responsive-table.css"/>
 	<style>
@@ -22,8 +25,7 @@ if (!isset($TEMPLATE)) {
 			width:50%;
 		}
 	</style>
-';
-	$TITLE = 'Responsive Table Demo';
+	';
 	include 'template.inc.php';
 }
 
