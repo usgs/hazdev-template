@@ -79,8 +79,8 @@ module.exports = function (grunt) {
 			}
 		},
 		concurrent: {
-			scripts: ['jshint:scripts', 'mocha_phantomjs'],
-			examples: ['jshint:examples', 'mocha_phantomjs'],
+			scripts: ['jshint:scripts'],
+			examples: ['jshint:examples'],
 			predist: [
 				'jshint:scripts',
 				'jshint:examples',
@@ -199,15 +199,6 @@ module.exports = function (grunt) {
 					sassDir: '<%= app.example %>/css',
 					cssDir: '<%= app.tmp %>/css',
 					environment: 'development'
-				}
-			}
-		},
-		mocha_phantomjs: {
-			all: {
-				options: {
-					urls: [
-						'http://localhost:<%= connect.example.options.port %>/index.html'
-					]
 				}
 			}
 		},

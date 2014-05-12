@@ -9,5 +9,6 @@ echo navGroup('Default Extensions',
 
 echo navGroup('Additional Extensions',
 		navItem('/imagelist.php', 'Image List') .
-		navItem('/responsive-table.php', 'Responsive Table')
+		navItem('/responsive-table.php', 'Responsive Table') .
+		navItem('/accordion.php', 'Accordion')
 	);

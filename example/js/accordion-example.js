@@ -1,4 +1,3 @@
-
 require.config({
 	baseUrl: '.',
 	paths: {
@@ -7,19 +6,11 @@ require.config({
 });
 
 require([
-	'theme/LinkUpdater',
 	'theme/Accordion'
 ], function (
-	LinkUpdater,
 	Accordion
 ) {
-
 	'use strict';
-
-	// automatically update page-social links client side
-	new LinkUpdater({
-		el: document.querySelector('.page-social')
-	});
 
 	var accordion = new Accordion({
 		el: document.querySelector('.page-content')
@@ -30,8 +21,10 @@ require([
 
 	// build from content/title passed in
 	accordion.addAccordion(
-			'Eddie Hunter',
-			'This is the content that should be collapsable.'
+			'Section Header (Dynamically Created)',
+			'This accordion element is not part of the original DOM, but is ' +
+			'injected by Javascript at load time. Just an example of what can be ' +
+			'done.'
 		);
 
 });
