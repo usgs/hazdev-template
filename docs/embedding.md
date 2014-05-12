@@ -61,12 +61,10 @@ In the connect section, add a rules property to configure template rewrites; add
             options: {
                     base: '<%= app.src %>/htdocs',
                     port: 8080,
-                    components: bowerConfig.directory,
                     middleware: function (connect, options) {
                             return [
                                     lrSnippet,
                                     mountFolder(connect, '.tmp'),
-                                    mountFolder(connect, 'bower_components'),
                                     mountPHP(options.base),
                                     mountFolder(connect, options.base),<strong>
 +                                   rewriteRulesSnippet,

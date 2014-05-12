@@ -34,10 +34,6 @@ Lightweight php template framework
 
     `npm install`
 
-2. Install Bower dependencies
-
-    `bower install`
-
 3. Preview in a browser
 
     `grunt`
