@@ -7,7 +7,7 @@ $SITE_SITENAV =
 		navItem('#hazards', 'Hazards') .
 		navItem('#data', 'Data') .
 		navItem('#learn', 'Learn') .
-		navItem('#monitoring', 'Monitoring') .
+		navItem('/flexible-grid.php', 'Monitoring') .
 		navItem('#research', 'Research');
 
 $SITE_COMMONNAV =
