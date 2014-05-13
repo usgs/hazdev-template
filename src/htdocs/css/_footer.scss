@@ -15,7 +15,7 @@
 	> section > header > strong,
 	> section > strong {
 		display:block;
-		padding:$vertical-spacing $horizontal-spacing;
+		padding:$vertical-spacing/2 $horizontal-spacing/2;
 	}
 
 	> a,
@@ -48,7 +48,7 @@
 	> .current-page,
 	> section > strong,
 	> section > .current-page {
-		background-color:$sectionnav-background-color-hover;
+		background-color:#FFF;
 	}
 
 }
@@ -60,7 +60,7 @@
 	position:relative;
 	display: block;
 	margin: $vertical-spacing 0;
-	padding: $vertical-spacing $horizontal-spacing;
+	padding: $horizontal-spacing/2;
 	background-color: $search-background-color;
 	border: 1px solid $search-border-color;
 
@@ -101,7 +101,7 @@
 	> a,
 	> strong {
 		display: block;
-		padding: $vertical-spacing $horizontal-spacing;
+		padding: $vertical-spacing/2 $horizontal-spacing/2;
 		color: $sitenav-color;
 		text-decoration: none;
 		font-weight: bold;
@@ -115,6 +115,14 @@
 			background-color: $sitenav-background-color-hover;
 			color: $sitenav-color-hover;
 		}
+	}
+
+	> strong,
+	> .current-page,
+	> strong:hover,
+	> .current-page:hover {
+		background-color:#fff;
+		color:#000;
 	}
 }
 
