@@ -8,96 +8,94 @@
 	http://css-tricks.com/responsive-data-tables/
 
  */
+
+$font_color: #333 !default;
+$border_color: #e0e0e0 !default;
+
 $td_padding: 10px !default; 
 $td_background_color: rgb(248,248,248) !default;
 
 $th_padding: $td_padding !default; 
 $th_background_color: rgb(237,237,237) !default;
 
-$tr_striping: yes !default;
-$tr_striping_color: rgb(251,251,251) !default;
-
 @mixin first_cell($padding_left) {
 	text-align: left;
 	padding-left: $padding_left;
 }
 
+// change colors to accentuate values over headers
 table.responsive,
 table.responsive-vertical {
-
-	font-size:16px;
+	font-size:14px;
+	text-align: left;
+	margin:15px 0;
 	width: 100%;
 	border-collapse: collapse;
-	margin-bottom:15px;
-	background: $td_background_color;
-	color:#666;
-	text-shadow: 1px 1px 0px #fff;
-	//border:1px solid #ccc;
-	border:1px solid #e0e0e0;
-	text-align: center;
+	color: $font_color;
 
-	> thead > tr {
-
-			> th {
-				background: $th_background_color;
-				color:#000;
-				font-weight:bold;
-				padding:21px 25px 22px 25px;
-				padding:$th_padding;
-				border-bottom:1px solid #ccc;
-				border-top:1px solid #ccc;
-			}
+	> tbody > tr > td:before {
+		// de-emphasize table headers
+		color:#777;
 	}
-
-	> tbody {
-
-		/* Zebra striping */
-		@if $tr_striping == yes {
-			tr:nth-of-type(odd) {
-				background:$tr_striping_color;
-			}
-		}
-
-		> tr {
-
-			> td {
-				padding: $td_padding;
-				border-bottom:1px solid #e0e0e0;
-				border-left:1px solid #e0e0e0;
-			}
-
-			>td > small {
-				display:block;
-			}
-		}
-	}
-
 }
-
-
 
 table.responsive {
 
-	> thead > tr > th:first-child {
-		@include first-cell($td_padding * 2);
+	/* Display table as more of a list */
+	thead, tbody, th, td, tr {
+		display: block;
 	}
 
-	> tbody > tr > td:first-child {
-		@include first-cell($td_padding * 2);
+	/* Hide table headers (but not display: none;, for accessibility) */
+	> thead > tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	> tbody > tr {
+		margin-top: 15px;
+
+		> th {
+			font-weight:bold;
+		}
+
+		> th:first-child {
+			margin-bottom:5px;
+			padding-bottom:5px;
+			padding-left:0;
+			border-bottom:1px solid $border_color;
+			text-align:left;
+		}
+
+		> td:first-child {
+			border-top:1px solid $border_color;
+		}
+
+		> td:first-child,
+		> td:first-child:before {
+			padding-top: 15px;
+		}
+
+		> td {
+			position: relative;
+			padding: $td_padding/5;
+			padding-left: 36%;
+		}
+
+		> td:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 36%;
+			padding: $td_padding/5 0;
+			white-space: nowrap;
+			text-align: left;
+		}
 	}
 }
 
 table.responsive-vertical {
-
-	> thead > tr {
-
-		> th {
-			padding:10px;
-			border-bottom:1px solid #e0e0e0;
-			border-top:1px solid #e0e0e0;
-			border-left: 1px solid #e0e0e0;
-		}
-	}
 
 	> tbody > tr {
 
@@ -106,101 +104,80 @@ table.responsive-vertical {
 			color:#333;
 			font-weight:bold;
 			padding:10px;
-			border-bottom: 1px solid #e0e0e0;
-			border-top: 1px solid #e0e0e0;
+			border:1px solid $border_color;
+		}
+
+		> th,
+		> td {
+			padding:10px;
 			text-align:left;
 		}
 
-
-		th:first-child {
-			border-top: none;
-		}
-
 		> td {
-			//padding:10px 15px;
-			padding:10px;
+			border-bottom: 1px solid $border_color;
+			border-top: 1px solid $border_color;
+			border-right: 1px solid $border_color;
 		}
 	}
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
 
+	table.responsive,
 	table.responsive-vertical {
+		font-size:16px;
+		border:1px solid $border_color;
 
-		> tbody > tr {
-			> td {
-				//padding:9px 12px;
-				padding:10px;
-			}
-
-			> th {
-				//padding:9px 12px;
-				padding:10px;
-			}
+		> thead > tr > th {
+			background: $th_background_color;
+			color:#000;
+			font-weight:bold;
+			padding:$th_padding;
+			text-align:center;
+			text-shadow: 1px 1px 0px #fff;
 		}
-	}
-}
-
-
-@media screen and (max-width: 767px) {
-
-
-	table.responsive-vertical {
-		font-size:14px;
 	}
 
 	table.responsive {
-		background: $th_background_color;
-		display:block;
-		text-align: left;
-		color:#666;
-		font-size:14px;
+		thead  { display: table-header-group; }
+		tbody  { display: table-row-group; }
+		tr     { display: table-row; }
+		td, th { display: table-cell; }
 
-		/* Force table to not be like tables anymore */
-		thead, tbody, th, td, tr {
-			display: block;
-		}
-
-		/* Hide table headers (but not display: none;, for accessibility) */
 		> thead > tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
+			position:static;
+
+			// indent first child in table
+			> th:first-child {
+				@include first-cell($td_padding * 2);
+			}
 		}
 
 		> tbody > tr {
-			padding:10px;
-			border-bottom:1px solid #e0e0e0;
 
-
-			>td {
-				border-left: none;
-				border-bottom:none;
-				border-top:1px solid #e0e0e0;
-				position: relative;
+			> th {
 				padding: $td_padding;
-				padding-left: 36%;
+				border-bottom:1px solid $border_color;
+				border-top:1px solid $border_color;
+				border-left: 1px solid $border_color;
+				font-weight:normal;
+
+				&:first-child {
+					@include first-cell($td_padding * 2);
+				}
 			}
 
-			> td:first-child {
-				border-top:none;
-			}
-
-			> td:first-child {
-				padding-left:36%;
-			}
-
-			> td:before {
-				position: absolute;
-				box-sizing: border-box;
-				top: 0;
-				left: 0;
-				width: 36%;
+			> td {
 				padding: $td_padding;
-				white-space: nowrap;
-				font-weight: bold;
-				text-align: left;
+				border-bottom:1px solid $border_color;
+				border-top:1px solid $border_color;
+				border-left: 1px solid $border_color;
+
+				// indent first child in table
+				&:first-child {
+					@include first-cell($td_padding * 2);
+				}
 			}
 		}
 	}
