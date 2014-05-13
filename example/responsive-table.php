@@ -44,6 +44,71 @@ if (!isset($TEMPLATE)) {
 	</thead>
 	<tbody>
 		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+		<tr>
+			<th>Main Value</th>
+			<td>In</td>
+			<td>A</td>
+			<td>Responsive</td>
+			<td>Table</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Responsive Table (.responsive)</h2>
+
+<table class="responsive test-horizontal">
+	<thead>
+		<tr>
+			<th>First Header</th>
+			<th>Second Header</th>
+			<th>Third Header</th>
+			<th>Fourth Header</th>
+			<th>Fifth Header</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
 			<td>This</td>
 			<td>Is</td>
 			<td>A</td>
