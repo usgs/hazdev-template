@@ -22,68 +22,86 @@ $tr_striping_color: rgb(251,251,251) !default;
 	padding-left: $padding_left;
 }
 
-table.responsive,
-table.responsive-vertical {
 
-	font-size:16px;
+// when not the first element give margin-top
+*+table {
+	margin-top:15px;
+}
+
+// change colors to accentuate values over headers
+table {
+	color:#333;
+	font-size:14px;
+	text-align: left;
+	text-shadow: 1px 1px 0px #fff;
+	border:1px solid #e0e0e0;
+	margin-bottom:15px;
 	width: 100%;
 	border-collapse: collapse;
-	margin-bottom:15px;
-	background: $td_background_color;
-	color:#666;
-	text-shadow: 1px 1px 0px #fff;
-	//border:1px solid #ccc;
-	border:1px solid #e0e0e0;
-	text-align: center;
 
-	> thead > tr {
+	> tbody > td:before {
+		// de-emphasize table headers
+		color:#777;
+	}
+}
 
-			> th {
-				background: $th_background_color;
-				color:#000;
-				font-weight:bold;
-				padding:21px 25px 22px 25px;
-				padding:$th_padding;
-				border-bottom:1px solid #ccc;
-				border-top:1px solid #ccc;
-			}
+table.responsive {
+
+	/* Display table as more of a list */
+	thead, tbody, th, td, tr {
+		display: block;
 	}
 
-	> tbody {
+	/* Hide table headers (but not display: none;, for accessibility) */
+	> thead > tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	> tbody > tr {
+		padding:10px;
+		border-bottom:1px solid #e0e0e0;
 
 		/* Zebra striping */
 		@if $tr_striping == yes {
-			tr:nth-of-type(odd) {
+			&:nth-of-type(odd) {
 				background:$tr_striping_color;
 			}
 		}
 
-		> tr {
+		> td {
+			border-left: none;
+			border-bottom:none;
+			border-top:1px solid #e0e0e0;
+			position: relative;
+			padding: $td_padding;
+			padding-left: 36%;
 
-			> td {
-				padding: $td_padding;
-				border-bottom:1px solid #e0e0e0;
-				border-left:1px solid #e0e0e0;
-			}
-
-			>td > small {
+			> small {
 				display:block;
 			}
 		}
-	}
 
-}
+		> td:first-child {
+			border-top:none;
+		}
 
+		> td:first-child {
+			padding-left:36%;
+		}
 
-
-table.responsive {
-
-	> thead > tr > th:first-child {
-		@include first-cell($td_padding * 2);
-	}
-
-	> tbody > tr > td:first-child {
-		@include first-cell($td_padding * 2);
+		> td:before {
+			position: absolute;
+			box-sizing: border-box;
+			top: 0;
+			left: 0;
+			width: 36%;
+			padding: $td_padding;
+			white-space: nowrap;
+			font-weight: bold;
+			text-align: left;
+		}
 	}
 }
 
@@ -105,103 +123,71 @@ table.responsive-vertical {
 			background: $th_background_color;
 			color:#333;
 			font-weight:bold;
+
+			&:first-child {
+				border-top: none;
+			}
+		}
+
+		> th,
+		> td {
 			padding:10px;
 			border-bottom: 1px solid #e0e0e0;
 			border-top: 1px solid #e0e0e0;
 			text-align:left;
 		}
-
-
-		th:first-child {
-			border-top: none;
-		}
-
-		> td {
-			//padding:10px 15px;
-			padding:10px;
-		}
 	}
 }
 
 
-@media screen and (max-width: 480px) {
-
-	table.responsive-vertical {
-
-		> tbody > tr {
-			> td {
-				//padding:9px 12px;
-				padding:10px;
-			}
-
-			> th {
-				//padding:9px 12px;
-				padding:10px;
-			}
-		}
-	}
-}
-
-
-@media screen and (max-width: 767px) {
-
-
-	table.responsive-vertical {
-		font-size:14px;
-	}
+@media screen and (min-width: 768px) {
 
 	table.responsive {
-		background: $th_background_color;
-		display:block;
-		text-align: left;
-		color:#666;
-		font-size:14px;
+		thead  { display: table-header-group; }
+		tbody  { display: table-row-group; }
+		tr     { display: table-row; }
+		td, th { display: table-cell; }
 
-		/* Force table to not be like tables anymore */
-		thead, tbody, th, td, tr {
-			display: block;
-		}
-
-		/* Hide table headers (but not display: none;, for accessibility) */
 		> thead > tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
+			position:relative;
+
+			// indent first child in table
+			> th:first-child {
+				@include first-cell($td_padding * 2);
+			}
 		}
 
-		> tbody > tr {
-			padding:10px;
+		> tbody > tr > td {
+			padding: $td_padding;
+
+			// indent first child in table
+			&:first-child {
+				@include first-cell($td_padding * 2);
+			}
+		}
+	}
+
+	table {
+		font-size:16px;
+		text-align:center;
+
+		> thead > tr {
+			border: 1px solid #ccc;
+
+			> th {
+				background: $th_background_color;
+				color:#000;
+				font-weight:bold;
+				padding:$th_padding;
+				border-bottom:1px solid #ccc;
+				border-top:1px solid #ccc;
+			}
+		}
+
+		> tbody > tr > td {
+			padding: $td_padding;
 			border-bottom:1px solid #e0e0e0;
-
-
-			>td {
-				border-left: none;
-				border-bottom:none;
-				border-top:1px solid #e0e0e0;
-				position: relative;
-				padding: $td_padding;
-				padding-left: 36%;
-			}
-
-			> td:first-child {
-				border-top:none;
-			}
-
-			> td:first-child {
-				padding-left:36%;
-			}
-
-			> td:before {
-				position: absolute;
-				box-sizing: border-box;
-				top: 0;
-				left: 0;
-				width: 36%;
-				padding: $td_padding;
-				white-space: nowrap;
-				font-weight: bold;
-				text-align: left;
-			}
+			border-left:1px solid #e0e0e0;
 		}
 	}
 }
