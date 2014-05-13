@@ -289,10 +289,10 @@ module.exports = function (grunt) {
 		},
 		open: {
 			exampleDev: {
-				path: 'http://localhost:<%= connect.dev.options.port %>'
+				path: 'http://localhost:<%= connect.exampleDev.options.port %>'
 			},
 			exampleDist: {
-				path: 'http://localhost:<%= connect.dist.options.port %>'
+				path: 'http://localhost:<%= connect.exampleDist.options.port %>'
 			}
 		},
 		clean: {
@@ -350,7 +350,7 @@ module.exports = function (grunt) {
 		'configureProxies:exampleDist',
 		'connect:dist',
 		'connect:exampleDist',
-		//'open:dist',
+		'open:exampleDist',
 		'watch'
 	]);
 
@@ -363,7 +363,7 @@ module.exports = function (grunt) {
 		'configureProxies:exampleDev',
 		'connect:dev',
 		'connect:exampleDev',
-		//'open:example',
+		'open:exampleDev',
 		'watch'
 	]);
 
