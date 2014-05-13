@@ -16,12 +16,18 @@
 	> section > strong {
 		display:block;
 		padding:$vertical-spacing $horizontal-spacing;
-		text-decoration:none;
+	}
 
-		border-bottom: 1px solid #FFF;
-		&:last-child {
-			border-bottom:none;
-		}
+	> a,
+	> strong,
+	> section,
+	> section > a,
+	> section > strong {
+		border-top:1px solid #fff;
+	}
+
+	> :first-child {
+		border-top:none;
 	}
 
 	// indent group items
@@ -42,8 +48,7 @@
 	> .current-page,
 	> section > strong,
 	> section > .current-page {
-			background-color:$sectionnav-background-color-hover;
-			text-decoration:underline;
+		background-color:$sectionnav-background-color-hover;
 	}
 
 }
@@ -93,7 +98,8 @@
 	border: 1px solid darken($sitenav-background-color, 20%);
 	overflow: visible;
 
-	> a {
+	> a,
+	> strong {
 		display: block;
 		padding: $vertical-spacing $horizontal-spacing;
 		color: $sitenav-color;
@@ -105,16 +111,11 @@
 			border-bottom: 0;
 		}
 
-		&:hover,
-		&.current-page {
+		&:hover {
 			background-color: $sitenav-background-color-hover;
-		}
-
-		&.current-page {
-			text-decoration:underline;
+			color: $sitenav-color-hover;
 		}
 	}
-
 }
 
 
@@ -123,6 +124,7 @@
 .site-commonnav {
 	clear:both;
 	text-align: center;
+	margin-bottom:$spacing;
 
 	> a {
 		display: inline-block;
