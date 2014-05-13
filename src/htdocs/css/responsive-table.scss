@@ -22,7 +22,6 @@ $tr_striping_color: rgb(251,251,251) !default;
 	padding-left: $padding_left;
 }
 
-
 // when not the first element give margin-top
 *+table {
 	margin-top:15px;
@@ -30,7 +29,6 @@ $tr_striping_color: rgb(251,251,251) !default;
 
 // change colors to accentuate values over headers
 table {
-	color:#333;
 	font-size:14px;
 	text-align: left;
 	text-shadow: 1px 1px 0px #fff;
@@ -38,8 +36,9 @@ table {
 	margin-bottom:15px;
 	width: 100%;
 	border-collapse: collapse;
+	color:#333;
 
-	> tbody > td:before {
+	> tbody > tr > td:before {
 		// de-emphasize table headers
 		color:#777;
 	}
@@ -93,13 +92,11 @@ table.responsive {
 
 		> td:before {
 			position: absolute;
-			box-sizing: border-box;
 			top: 0;
 			left: 0;
 			width: 36%;
 			padding: $td_padding;
 			white-space: nowrap;
-			font-weight: bold;
 			text-align: left;
 		}
 	}
