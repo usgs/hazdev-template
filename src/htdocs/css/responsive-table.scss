@@ -10,6 +10,7 @@
  */
 
 $font_color: #333 !default;
+$border_color: #e0e0e0 !default;
 
 $td_padding: 10px !default; 
 $td_background_color: rgb(248,248,248) !default;
@@ -25,18 +26,12 @@ $tr_striping_color: rgb(251,251,251) !default;
 	padding-left: $padding_left;
 }
 
-// when not the first element give margin-top
-*+table {
-	margin-top:15px;
-}
-
 // change colors to accentuate values over headers
-table {
+table.responsive,
+table.responsive-vertical {
 	font-size:14px;
 	text-align: left;
-	text-shadow: 1px 1px 0px #fff;
-	//border:1px solid #e0e0e0;
-	margin-bottom:15px;
+	margin:15px 0;
 	width: 100%;
 	border-collapse: collapse;
 	color: $font_color;
@@ -63,19 +58,21 @@ table.responsive {
 
 	> tbody > tr {
 		margin-top: 15px;
-		//border-bottom:1px solid #e0e0e0;
+
+		> th {
+			font-weight:bold;
+		}
 
 		> th:first-child {
-			font-weight:bold;
 			margin-bottom:5px;
 			padding-bottom:5px;
 			padding-left:0;
-			border-bottom:1px solid #ccc;
+			border-bottom:1px solid $border_color;
 			text-align:left;
 		}
 
 		> td:first-child {
-			border-top:1px solid #ccc;
+			border-top:1px solid $border_color;
 		}
 
 		> td:first-child,
@@ -84,18 +81,9 @@ table.responsive {
 		}
 
 		> td {
-			//border-top:1px solid #e0e0e0;
 			position: relative;
 			padding: $td_padding/5;
 			padding-left: 36%;
-
-			> small {
-				display:block;
-			}
-		}
-
-		> td:first-child {
-			padding-left:36%;
 		}
 
 		> td:before {
@@ -119,8 +107,7 @@ table.responsive-vertical {
 			color:#333;
 			font-weight:bold;
 			padding:10px;
-			border:1px solid #ccc;
-
+			border:1px solid $border_color;
 		}
 
 		> th,
@@ -130,15 +117,30 @@ table.responsive-vertical {
 		}
 
 		> td {
-			border-bottom: 1px solid #e0e0e0;
-			border-top: 1px solid #e0e0e0;
-			border-right: 1px solid #e0e0e0;
+			border-bottom: 1px solid $border_color;
+			border-top: 1px solid $border_color;
+			border-right: 1px solid $border_color;
 		}
 	}
 }
 
 
 @media screen and (min-width: 768px) {
+
+	table.responsive,
+	table.responsive-vertical {
+		font-size:16px;
+		border:1px solid $border_color;
+
+		> thead > tr > th {
+			background: $th_background_color;
+			color:#000;
+			font-weight:bold;
+			padding:$th_padding;
+			text-align:center;
+			text-shadow: 1px 1px 0px #fff;
+		}
+	}
 
 	table.responsive {
 		thead  { display: table-header-group; }
@@ -147,7 +149,7 @@ table.responsive-vertical {
 		td, th { display: table-cell; }
 
 		> thead > tr {
-			position:relative;
+			position:static;
 
 			// indent first child in table
 			> th:first-child {
@@ -156,58 +158,29 @@ table.responsive-vertical {
 		}
 
 		> tbody > tr {
-			border-bottom:1px solid #e0e0e0;
 
-			> th:first-child {
-				@include first-cell($td_padding * 2);
-				border:none;
+			> th {
+				padding: $td_padding;
+				border-bottom:1px solid $border_color;
+				border-top:1px solid $border_color;
+				border-left: 1px solid $border_color;
 				font-weight:normal;
-				font-color:$font_color;
+
+				&:first-child {
+					@include first-cell($td_padding * 2);
+				}
 			}
 
 			> td {
 				padding: $td_padding;
-				border-top:1px solid #e0e0e0;
+				border-bottom:1px solid $border_color;
+				border-top:1px solid $border_color;
+				border-left: 1px solid $border_color;
 
 				// indent first child in table
 				&:first-child {
 					@include first-cell($td_padding * 2);
 				}
-			}
-		}
-	}
-
-	table {
-		font-size:16px;
-		text-align:center;
-		border:1px solid #e0e0e0;
-
-		> thead > tr {
-			border: 1px solid #ccc;
-
-			> th {
-				background: $th_background_color;
-				color:#000;
-				font-weight:bold;
-				padding:$th_padding;
-				border-bottom:1px solid #ccc;
-				border-top:1px solid #ccc;
-			}
-		}
-
-		> tbody > tr {
-
-			/* Zebra striping */
-			@if $tr_striping == yes {
-				&:nth-of-type(odd) {
-					background:$tr_striping_color;
-				}
-			}
-
-			> td {
-				padding: $td_padding;
-				border-bottom:1px solid #e0e0e0;
-				border-left:1px solid #e0e0e0;
 			}
 		}
 	}

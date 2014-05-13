@@ -6,8 +6,7 @@ if (!isset($TEMPLATE)) {
 	<style>
 		@media screen and (max-width: 767px) {
 
-			table.test-horizontal > tbody > tr > td,
-			table.test-horizontal > tbody > tr > td:first-child {
+			table.test-horizontal > tbody > tr > td {
 				padding-left: 48%;
 			}
 
