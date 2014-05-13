@@ -1,5 +1,5 @@
 
-$body-margin: 8px !default;
+$body-margin: 4px !default;
 
 $banner-image: '/theme/images/usgs-banner.jpg' !default;
 $banner-background-color: #000 !default;
@@ -7,12 +7,12 @@ $banner-background-color: #000 !default;
 
 $site-title: 'U.S. Geological Survey' !default;
 $site-title-color: #fff !default;
-$site-title-background-color: #4E7AB9 !default;
+$site-title-background-color: #999 !default;
 
 
-$spacing: 8px !default;
+$spacing: 16px !default;
 $horizontal-spacing: $spacing !default;
-$vertical-spacing: $spacing !default;
+$vertical-spacing: 12px !default;
 
 
 $breakpoint-full: 768px !default;
@@ -29,17 +29,17 @@ $search-background-color: #EEE !default;
 $search-border-color: #CCC !default;
 
 
-$sitenav-color: #132840 !default;
-$sitenav-background-color: #C9D8E9 !default;
+$sitenav-color: #222 !default;
+$sitenav-background-color: #CCC !default;
 $sitenav-color-hover: #111 !default;
-$sitenav-background-color-hover: darken($sitenav-background-color, 10%) !default;
+$sitenav-background-color-hover: saturate(lighten($sitenav-background-color, 30%), 10%) !default;
 $sitenav-border-color-hover: #111 !default;
 
 
 $sectionnav-color: $sitenav-color !default;
-$sectionnav-background-color: lighten($sitenav-background-color, 10%) !default;
+$sectionnav-background-color: lighten($sitenav-background-color, 40%) !default;
 $sectionnav-color-hover: $sitenav-color-hover !default;
-$sectionnav-background-color-hover: lighten($sitenav-background-color-hover, 10%) !default;
+$sectionnav-background-color-hover: $sitenav-background-color-hover !default;
 $sectionnav-border-color: #CCC !default;
 
 

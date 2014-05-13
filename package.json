@@ -11,7 +11,6 @@
   ],
   "scripts": {
     "test": "grunt test",
-    "preinstall": "bower install",
     "install": "php src/lib/pre-install.php"
   },
   "dependencies": {
@@ -28,8 +27,6 @@
     "grunt-contrib-watch": "~0.4.4",
     "grunt-mocha-phantomjs": "~0.2.8",
     "grunt-open": "~0.2.0",
-    "grunt-text-replace": "~0.3.6",
-    "grunt-connect-rewrite": "~0.2.1",
     "connect-livereload": "~0.2.0",
     "gateway": "~0.1.1",
     "matchdep": "~0.1.2"
@@ -38,7 +35,9 @@
     "chai": "~1.7.0",
     "grunt": "~0.4.1",
     "mocha": "~1.9.0",
-    "sinon": "~1.7.3"
+    "sinon": "~1.7.3",
+    "grunt-connect-proxy": "~0.1.10",
+    "requirejs": "~2.1.11"
   },
   "engines": {
     "node": ">=0.8.0"

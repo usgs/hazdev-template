@@ -2,7 +2,7 @@
 
 var LIVE_RELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
-var rewriteRulesSnippet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
+var proxyRequest = require('grunt-connect-proxy/lib/utils').proxyRequest;
 var gateway = require('gateway');
 var child_process = require('child_process');
 
@@ -34,18 +34,12 @@ module.exports = function (grunt) {
 	var appConfig = {
 		src: 'src',
 		dist: 'dist',
-		test: 'example',
+		example: 'example',
 		tmp: '.tmp'
-	};
-
-	// TODO :: Read this from .bowerrc
-	var bowerConfig = {
-		directory: 'bower_components'
 	};
 
 	grunt.initConfig({
 		app: appConfig,
-		bower: bowerConfig,
 		watch: {
 			scripts: {
 				files: ['<%= app.src %>/htdocs/js/**/*.js'],
@@ -57,13 +51,13 @@ module.exports = function (grunt) {
 			scss: {
 				files: [
 					'<%= app.src %>/htdocs/**/*.scss',
-					'<%= app.test %>/**/*.scss'
+					'<%= app.example %>/**/*.scss'
 				],
-				tasks: ['compass:dev', 'compass:test']
+				tasks: ['compass:dev', 'compass:example']
 			},
-			tests: {
-				files: ['<%= app.test %>/*.html', '<%= app.test %>/**/*.js'],
-				tasks: ['concurrent:tests']
+			examples: {
+				files: ['<%= app.example %>/*.html', '<%= app.example %>/**/*.js'],
+				tasks: ['concurrent:examples']
 			},
 			livereload: {
 				options: {
@@ -72,10 +66,10 @@ module.exports = function (grunt) {
 				files: [
 					'<%= app.src %>/htdocs/**/*.html',
 					'<%= app.src %>/**/*.php',
-					'<%= app.test %>/**/*.html',
-					'<%= app.test %>/**/*.php',
+					'<%= app.example %>/**/*.html',
+					'<%= app.example %>/**/*.php',
 					'<%= app.src %>/htdocs/css/**/*.css',
-					'<%= app.src %>/htdocs/img/**/*.{png,jpg,jpeg,gif}',
+					'<%= app.src %>/htdocs/images/**/*.{png,jpg,jpeg,gif}',
 					'.tmp/css/**/*.css'
 				]
 			},
@@ -85,11 +79,11 @@ module.exports = function (grunt) {
 			}
 		},
 		concurrent: {
-			scripts: ['jshint:scripts', 'mocha_phantomjs'],
-			tests: ['jshint:tests', 'mocha_phantomjs'],
+			scripts: ['jshint:scripts'],
+			examples: ['jshint:examples'],
 			predist: [
 				'jshint:scripts',
-				'jshint:tests',
+				'jshint:examples',
 				'compass',
 				'copy'
 			],
@@ -104,58 +98,81 @@ module.exports = function (grunt) {
 			options: {
 				hostname: 'localhost'
 			},
-			rules: [
-				{
-					from:'^/theme/(.*)$',
-					to: '/htdocs/$1'
-				}
-			],
 			dev: {
 				options: {
 					base: '<%= app.src %>/htdocs',
 					port: 8080,
-					components: bowerConfig.directory,
 					middleware: function (connect, options) {
 						return [
-							lrSnippet,
-							rewriteRulesSnippet,
-							mountFolder(connect, '.tmp'),
-							mountFolder(connect, options.components),
 							mountPHP(options.base),
-							mountFolder(connect, options.base)
+							mountFolder(connect, options.base),
+
+							mountFolder(connect, '.tmp')
 						];
 					}
 				}
 			},
-			dist: {
+			exampleDev: {
+				proxies: [{
+					context: '/theme',
+					host: 'localhost',
+					https: false,
+					port: '<%= connect.dev.options.port %>',
+					chnageOrigin: false,
+					xforward: false,
+					rewrite: {'/theme': ''}
+				}],
 				options: {
-					base: '<%= app.dist %>/htdocs',
+					base: '<%= app.example %>',
 					port: 8081,
 					middleware: function (connect, options) {
 						return [
-							mountPHP(appConfig.test, {phpini: '/dist/conf/php.ini'}),
-							mountFolder(connect, appConfig.test),
-							rewriteRulesSnippet,
+							lrSnippet,
+							proxyRequest,
+							mountPHP(options.base),
+							mountFolder(connect, options.base),
+
+							mountFolder(connect, '.tmp'),
+							mountFolder(connect, 'node_modules')
+						];
+					}
+				}
+			},
+
+			dist: {
+				options: {
+					base: '<%= app.dist %>/htdocs',
+					port: 8082,
+					middleware: function (connect, options) {
+						return [
+							mountPHP(options.base, {phpini: '/dist/conf/php.ini'}),
 							mountFolder(connect, options.base)
 						];
 					}
 				}
 			},
-			test: {
+			exampleDist: {
+				proxies: [{
+					context: '/theme',
+					host: 'localhost',
+					https: false,
+					port: '<%= connect.dist.options.port %>',
+					chnageOrigin: false,
+					xforward: false,
+					rewrite: {'/theme': ''}
+				}],
 				options: {
-					base: '<%= app.test %>',
-					components: bowerConfig.directory,
-					port: 8000,
+					base: '<%= app.example %>',
+					port: 8083,
 					middleware: function (connect, options) {
 						return [
 							lrSnippet,
-							rewriteRulesSnippet,
-							mountFolder(connect, '.tmp'),
-							mountFolder(connect, 'bower_components'),
-							mountFolder(connect, 'node_modules'),
+							proxyRequest,
 							mountPHP(options.base),
 							mountFolder(connect, options.base),
-							mountFolder(connect, appConfig.src)
+
+							mountFolder(connect, '.tmp'),
+							mountFolder(connect, 'node_modules')
 						];
 					}
 				}
@@ -167,7 +184,7 @@ module.exports = function (grunt) {
 			},
 			gruntfile: ['Gruntfile.js'],
 			scripts: ['<%= app.src %>/htdocs/js/**/*.js'],
-			tests: ['<%= app.test %>/**/*.js']
+			examples: ['<%= app.example %>/**/*.js']
 		},
 		compass: {
 			dev: {
@@ -177,20 +194,11 @@ module.exports = function (grunt) {
 					environment: 'development'
 				}
 			},
-			test: {
+			example: {
 				options: {
-					sassDir: '<%= app.test %>/css',
+					sassDir: '<%= app.example %>/css',
 					cssDir: '<%= app.tmp %>/css',
 					environment: 'development'
-				}
-			}
-		},
-		mocha_phantomjs: {
-			all: {
-				options: {
-					urls: [
-						'http://localhost:<%= connect.test.options.port %>/index.html'
-					]
 				}
 			}
 		},
@@ -205,7 +213,7 @@ module.exports = function (grunt) {
 
 					// for bundling require library in to index.js
 					paths: {
-						requireLib: '../../../bower_components/requirejs/require',
+						requireLib: '../../../node_modules/requirejs/require',
 						theme: '.'
 					},
 
@@ -279,30 +287,12 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		replace: {
-			dist: {
-				src: [
-					'<%= app.dist %>/htdocs/index.html',
-					'<%= app.dist %>/**/*.php'
-				],
-				overwrite: true,
-				replacements: [
-					{
-						from: 'html5shiv-dist/html5shiv.js',
-						to: 'lib/html5shiv/html5shiv.js'
-					}
-				]
-			}
-		},
 		open: {
-			dev: {
-				path: 'http://localhost:<%= connect.dev.options.port %>'
+			exampleDev: {
+				path: 'http://localhost:<%= connect.exampleDev.options.port %>'
 			},
-			test: {
-				path: 'http://localhost:<%= connect.test.options.port %>'
-			},
-			dist: {
-				path: 'http://localhost:<%= connect.dist.options.port %>'
+			exampleDist: {
+				path: 'http://localhost:<%= connect.exampleDist.options.port %>'
 			}
 		},
 		clean: {
@@ -346,40 +336,34 @@ module.exports = function (grunt) {
 				});
 	});
 
-	grunt.registerTask('test', [
-		'clean:dist',
-		'configureRewriteRules',
-		'connect:test',
-		'mocha_phantomjs'
-	]);
-
 	// build the distribution
 	grunt.registerTask('build', [
 		'clean:dist',
 		'concurrent:predist',
 		'requirejs:dist',
-		'concurrent:dist',
-		'replace'
+		'concurrent:dist'
 	]);
 
 	// preview the distribution
 	grunt.registerTask('dist', [
 		'build',
-		'configureRewriteRules',
+		'configureProxies:exampleDist',
 		'connect:dist',
-		'open:dist',
+		'connect:exampleDist',
+		'open:exampleDist',
 		'watch'
 	]);
 
 	// develop
 	grunt.registerTask('default', [
-		'clean:dist',
+		'clean',
 		'runpreinstall:dev',
 		'compass:dev',
-		'compass:test',
-		'configureRewriteRules',
-		'connect:test',
-		'open:test',
+		'compass:example',
+		'configureProxies:exampleDev',
+		'connect:dev',
+		'connect:exampleDev',
+		'open:exampleDev',
 		'watch'
 	]);
 

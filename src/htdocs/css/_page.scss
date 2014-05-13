@@ -1,6 +1,6 @@
 
 .page {
-	padding:$vertical-spacing 0;
+	padding:$vertical-spacing 0 $vertical-spacing $horizontal-spacing;
 }
 
 .page-header {
@@ -18,9 +18,8 @@
 	clear:both;
 	color: $page-footer-color;
 	background-color: $page-footer-background-color;
-	padding:$vertical-spacing $horizontal-spacing;
+	padding:$vertical-spacing 0;
 	margin:1em 0 0;
-	border: 1px solid $page-footer-border-color;
 	font-size:smaller;
 
 	> p {
