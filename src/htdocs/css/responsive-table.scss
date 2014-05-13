@@ -65,7 +65,7 @@ table.responsive {
 		margin-top: 15px;
 		//border-bottom:1px solid #e0e0e0;
 
-		> th {
+		> th:first-child {
 			font-weight:bold;
 			margin-bottom:5px;
 			padding-bottom:5px;
@@ -156,9 +156,7 @@ table.responsive-vertical {
 		> tbody > tr {
 			border-bottom:1px solid #e0e0e0;
 
-
-
-			> th {
+			> th:first-child {
 				@include first-cell($td_padding * 2);
 				border:none;
 				font-weight:normal;
