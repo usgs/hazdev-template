@@ -3,6 +3,9 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Accordion Example';
 	$NAVIGATION = true;
 
+	$HEAD = '
+		<link rel="stylesheet" href="/css/accordion.css"/>
+	';
 	$FOOT = '
 		<script src="/js/accordion-example.js"></script>
 	';
