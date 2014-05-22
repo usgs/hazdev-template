@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 		},
 		connect: {
 			options: {
-				hostname: 'localhost'
+				hostname: '0.0.0.0'
 			},
 			dev: {
 				options: {
