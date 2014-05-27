@@ -10,7 +10,7 @@ $vertical-spacing: $spacing !default;
 }
 
 
-@media screen and (min-width:$breakpoint-full) {
+@media screen and (min-width:$breakpoint-full), print {
 
 	.column {
 		// make gutter on right side of each column

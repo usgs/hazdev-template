@@ -144,3 +144,12 @@
 	}
 
 }
+
+@media print {
+	.site-sectionnav,
+	.site-search,
+	.site-sitenav,
+	.site-commonnav {
+		display:none;
+	}
+}
