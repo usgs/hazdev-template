@@ -12,17 +12,19 @@
 
 	/* position usgs link over background image. */
 	> .site-logo {
-		display: block;
-		position:absolute;
-		left:0;
-		top:0;
-		color:transparent;
-		width:89px;
-		height:100%;
-		text-indent: -9999px;
+		> img {
+			// display: block;
+			// position:absolute;
+			// left:0;
+			// top:0;
+			// color:transparent;
+			// width:89px;
+			// height:100%;
+			// text-indent: -9999px;
 
-		background-size: auto 100%;
-		background-image: url('/theme/images/usgs-logo.jpg');
+			// background-size: auto 100%;
+			// background-image: url('/theme/images/usgs-logo.jpg');
+		}
 	}
 
 	/* visually hide navigation jumplink. */
@@ -71,4 +73,12 @@
 
 }
 
-
+@media print {
+	[role="banner"] {
+		> .site-logo {
+			> img {
+				height:50px;
+			}
+		}
+	}
+}
