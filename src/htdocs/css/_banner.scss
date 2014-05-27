@@ -1,36 +1,36 @@
 
 [role="banner"] {
-	height: 36px;
-	margin-bottom: $vertical-spacing;
-	position: relative;
+	height:36px;
+	margin-bottom:$vertical-spacing;
+	position:relative;
 
-	background-color: $banner-background-color;
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-image: url('#{$banner-image}');
-	background-position: 89px 0;
+	background-color:$banner-background-color;
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-image:url('#{$banner-image}');
+	background-position:89px 0;
 
 	/* position usgs link over background image. */
 	> .site-logo {
-		> img {
-			// display: block;
-			// position:absolute;
-			// left:0;
-			// top:0;
-			// color:transparent;
-			// width:89px;
-			// height:100%;
-			// text-indent: -9999px;
+			display:block;
+			position:absolute;
+			left:0;
+			top:0;
+			color:transparent;
+			width:89px;
+			height:100%;
 
-			// background-size: auto 100%;
-			// background-image: url('/theme/images/usgs-logo.jpg');
-		}
+			background-size:auto 100%;
+			background-image:url('/theme/images/usgs-logo.jpg');
+			> img {
+				display:none;
+			}
 	}
 
 	/* visually hide navigation jumplink. */
 	> .jumplink-navigation {
-		display: block;
-		position: absolute;
+		display:block;
+		position:absolute;
 		left:-9999px;
 		top:0;
 	}
@@ -40,7 +40,7 @@
 
 		/* make banner larger on large screens. */
 		height:72px;
-		background-position: 178px 0;
+		background-position:178px 0;
 
 		/* also adjust size of site-logo link */
 		> .site-logo {
@@ -48,25 +48,25 @@
 		}
 
 		/* make room for :after content (font size + padding*2 + border*2) */
-		margin-bottom: 19px + (5px * 2) + 2px;
+		margin-bottom:19px + (5px * 2) + 2px;
 
 		&:after {
-			display: block;
-			position: absolute;
-			top: 100%;
-			left: 0;
+			display:block;
+			position:absolute;
+			top:100%;
+			left:0;
 			right:0;
 
-			padding: 5px;
-			border: 1px solid white;
-			border-width: 1px 0;
+			padding:5px;
+			border:1px solid white;
+			border-width:1px 0;
 			font-family:verdana,arial,helvetica,sans-serif;
-			font-size: 17px;
+			font-size:17px;
 			font-weight:bold;
 
-			content: $site-title;
-			color: $site-title-color;
-			background-color: $site-title-background-color;
+			content:$site-title;
+			color:$site-title-color;
+			background-color:$site-title-background-color;
 		}
 
 	}
@@ -75,10 +75,11 @@
 
 @media print {
 	[role="banner"] {
-		> .site-logo {
-			> img {
-				height:50px;
-			}
+		visibility:hidden;
+		height:20px;
+		> .site-logo > img {
+			visibility:visible;
+			display:inline;
 		}
 	}
 }
