@@ -54,8 +54,8 @@
 		// position offcanvas content beneath page
 		.offcanvas {
 			position:fixed;
-			display:block;
-			left:0;
+			display:none;
+			right:0;
 			top:0;
 			bottom:0;
 			width:$offcanvas-width;
@@ -74,41 +74,47 @@
 			position:fixed;
 			left:0;
 			top:0;
-			right:0;
 			bottom:0;
+			width:100%;
+
 			z-index:-1;
-			box-shadow:-2px 0 5px rgba(53,53,53,.5);
+
 			transition: left $offcanvas-transition-time;
 		}
 	}
 
 
-	// intermediate step when activating, for browsers that have trouble with
-	// overflow during transition (firefox)
+	// intermediate step when activating
 	.offcanvas-almost-active {
 		overflow:hidden;
+
+		// show offcanvas content just before transition
+		.offcanvas {
+			display:block;
+		}
 	}
 
 
 	// offcanvas is enabled and active
 	.offcanvas-active {
+		// move page to the left
+		left:-$offcanvas-width;
 
-		// move page to the right
-		left:$offcanvas-width;
-
-		// show offcanvas mask
+		// move mask to the left with page
 		.offcanvas-mask {
-			left:$offcanvas-width;
+			left: -$offcanvas-width;
+			box-shadow: 1px 0 4px 0 black;
 		}
 
+		// position close on top of page
 		.offcanvas-close {
 			background-color:transparent;
 			display:block;
 			position:fixed;
-			left:$offcanvas-width;
+			left:-$offcanvas-width;
 			top:0;
-			right:0;
 			bottom:0;
+			width:100%;
 			z-index:4;
 			cursor:pointer;
 		}
