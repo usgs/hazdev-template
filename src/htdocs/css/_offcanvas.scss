@@ -9,7 +9,6 @@
 
 // hide offcanvas elements by default
 .offcanvas-mask,
-.offcanvas-close,
 .offcanvas-container,
 .offcanvas-toggle {
 	display:none;
@@ -43,6 +42,9 @@
 			text-indent:0;
 			text-align:center;
 			cursor:pointer;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
 
 			&:hover {
 				color:$offcanvas-toggle-color-hover;
@@ -51,36 +53,38 @@
 			}
 		}
 
-		// position offcanvas content beneath page
+		// position offcanvas to left of page
 		.offcanvas {
 			position:fixed;
 			display:none;
-			right:0;
+			left:-$offcanvas-width;
 			top:0;
 			bottom:0;
 			width:$offcanvas-width;
 
 			background-color:#FFF;
 			padding:0 8px;
-			z-index:-2;
+			z-index:1002;
 
 			overflow-y:auto;
 			-webkit-overflow-scrolling: touch;
+			transition: left $offcanvas-transition-time;
 		}
 
+		// position mask over page
 		.offcanvas-mask {
-			background-color:#FFF;
-			display:block;
+			background-color:rgba(0, 0, 0, .1);
+			display:none;
 			position:fixed;
 			left:0;
 			top:0;
 			bottom:0;
 			width:100%;
-
-			z-index:-1;
-
+			z-index:1001;
 			transition: left $offcanvas-transition-time;
+			cursor:pointer;
 		}
+
 	}
 
 
@@ -91,32 +95,26 @@
 		// show offcanvas content just before transition
 		.offcanvas {
 			display:block;
+			box-shadow: 1px 0 4px 0 black;
+		}
+
+		// mask page just before transition
+		.offcanvas-mask {
+			display:block;
 		}
 	}
 
 
 	// offcanvas is enabled and active
 	.offcanvas-active {
-		// move page to the left
-		left:-$offcanvas-width;
-
-		// move mask to the left with page
-		.offcanvas-mask {
-			left: -$offcanvas-width;
-			box-shadow: 1px 0 4px 0 black;
+		// move offcanvas over page
+		.offcanvas {
+			left:0;
 		}
 
-		// position close on top of page
-		.offcanvas-close {
-			background-color:transparent;
-			display:block;
-			position:fixed;
-			left:-$offcanvas-width;
-			top:0;
-			bottom:0;
-			width:100%;
-			z-index:4;
-			cursor:pointer;
+		// move mask to right of offcanvas
+		.offcanvas-mask {
+			left:$offcanvas-width;
 		}
 	}
 
