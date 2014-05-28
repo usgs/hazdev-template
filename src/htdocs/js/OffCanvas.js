@@ -100,6 +100,8 @@ define([], function() {
 
 		this._enabled = false;
 		this._active = false;
+		this.hide = this.hide.bind(this);
+		this.toggle = this.toggle.bind(this);
 
 		// create elements
 		body = document.querySelector('body');
@@ -113,7 +115,8 @@ define([], function() {
 		// element that covers content and allows users to return to content
 		close = body.appendChild(document.createElement('div'));
 		close.className = options.closeClass;
-		close.addEventListener('click', this.hide.bind(this));
+		close.addEventListener('click', this.hide);
+		close.addEventListener('touchstart', this.hide);
 		this._close = close;
 
 		// container for offcanvas content
@@ -123,7 +126,8 @@ define([], function() {
 		toggle = body.appendChild(document.createElement('div'));
 		toggle.className = options.toggleClass;
 		toggle.innerHTML = options.toggleContent;
-		toggle.addEventListener('click', this.toggle.bind(this));
+		toggle.addEventListener('click', this.toggle);
+		toggle.addEventListener('touchstart', this.toggle);
 		this._toggle = toggle;
 
 		// enable offcanvas during constructor
@@ -161,7 +165,7 @@ define([], function() {
 	/**
 	 * Hide offcanvas content.
 	 */
-	OffCanvas.prototype.hide = function () {
+	OffCanvas.prototype.hide = function (e) {
 		var options,
 		    body;
 
@@ -180,6 +184,7 @@ define([], function() {
 			// remove "almost active" class
 			body.classList.remove(options.almostActiveClass);
 		}, 50);
+		try {e.preventDefault();} catch (ex) {}
 	};
 
 	/**
