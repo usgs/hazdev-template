@@ -44,7 +44,6 @@ define([], function() {
 	var DEFAULTS = {
 		'enable': true,
 		'maskClass': 'offcanvas-mask',
-		'closeClass': 'offcanvas-close',
 		'containerClass': 'offcanvas',
 		'toggleClass': 'offcanvas-toggle',
 		'toggleContent': '&#8801;',
@@ -63,9 +62,6 @@ define([], function() {
 	 * @param options.maskClass {String}
 	 *        mask element classname.
 	 *        default 'offcanvas-mask'.
-	 * @param options.closeClass {String}
-	 *        close element classname.
-	 *        default 'offcanvas-close'.
 	 * @param options.containerClass {String}
 	 *        offcanvas container element classname.
 	 *        default 'offcanvas-container'.
@@ -95,7 +91,6 @@ define([], function() {
 		var options = this._options,
 		    body,
 		    mask,
-		    close,
 		    toggle;
 
 		this._enabled = false;
@@ -107,20 +102,12 @@ define([], function() {
 		body = document.querySelector('body');
 		this._body = body;
 
-		// mask that covers oncanvas content
+		// element that covers content and allows users to return to content
 		mask = body.appendChild(document.createElement('div'));
 		mask.className = options.maskClass;
+		mask.addEventListener('click', this.hide);
+		mask.addEventListener('touchstart', this.hide);
 		this._mask = mask;
-
-		// element that covers content and allows users to return to content
-		close = body.appendChild(document.createElement('div'));
-		close.className = options.closeClass;
-		close.addEventListener('click', this.hide);
-		close.addEventListener('touchstart', this.hide);
-		this._close = close;
-
-		// container for offcanvas content
-		this._container = document.querySelector(options.containerClass);
 
 		// toggle offcanvas visibility
 		toggle = body.appendChild(document.createElement('div'));
@@ -135,6 +122,39 @@ define([], function() {
 			this.enable();
 		}
 	};
+
+
+	/**
+	 * Disable, unbind event handlers, and free references.
+	 */
+	OffCanvas.prototype.destroy = function () {
+		var mask = this._mask,
+		    toggle = this._toggle;
+
+		// disable
+		this.disable();
+
+		// unbind event handlers
+		if (mask) {
+			mask.removeEventListener('click', this.hide);
+			mask.removeEventListener('touchstart', this.hide);
+			mask.parentNode.removeChild(mask);
+		}
+		if (toggle) {
+			toggle.removeEventListener('click', this.toggle);
+			toggle.removeEventListener('touchstart', this.toggle);
+			toggle.parentNode.removeChild(toggle);
+		}
+
+		// free references
+		this._options = null;
+		this._body = null;
+		this._mask = null;
+		this._toggle = null;
+		delete this.hide;
+		delete this.toggle;
+	};
+
 
 	/**
 	 * Show offcanvas content.
