@@ -9,7 +9,6 @@
 
 // hide offcanvas elements by default
 .offcanvas-mask,
-.offcanvas-close,
 .offcanvas-container,
 .offcanvas-toggle {
 	display:none;
@@ -43,6 +42,9 @@
 			text-indent:0;
 			text-align:center;
 			cursor:pointer;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
 
 			&:hover {
 				color:$offcanvas-toggle-color-hover;
@@ -51,66 +53,68 @@
 			}
 		}
 
-		// position offcanvas content beneath page
+		// position offcanvas to left of page
 		.offcanvas {
 			position:fixed;
-			display:block;
-			left:0;
+			display:none;
+			left:-$offcanvas-width;
 			top:0;
 			bottom:0;
 			width:$offcanvas-width;
 
 			background-color:#FFF;
 			padding:0 8px;
-			z-index:-2;
+			z-index:1002;
 
 			overflow-y:auto;
 			-webkit-overflow-scrolling: touch;
+			transition: left $offcanvas-transition-time;
 		}
 
+		// position mask over page
 		.offcanvas-mask {
-			background-color:#FFF;
-			display:block;
+			background-color:rgba(0, 0, 0, .1);
+			display:none;
 			position:fixed;
 			left:0;
 			top:0;
-			right:0;
 			bottom:0;
-			z-index:-1;
-			box-shadow:-2px 0 5px rgba(53,53,53,.5);
+			width:100%;
+			z-index:1001;
 			transition: left $offcanvas-transition-time;
+			cursor:pointer;
 		}
+
 	}
 
 
-	// intermediate step when activating, for browsers that have trouble with
-	// overflow during transition (firefox)
+	// intermediate step when activating
 	.offcanvas-almost-active {
 		overflow:hidden;
+
+		// show offcanvas content just before transition
+		.offcanvas {
+			display:block;
+			box-shadow: 1px 0 4px 0 black;
+		}
+
+		// mask page just before transition
+		.offcanvas-mask {
+			display:block;
+		}
 	}
 
 
 	// offcanvas is enabled and active
 	.offcanvas-active {
-
-		// move page to the right
-		left:$offcanvas-width;
-
-		// show offcanvas mask
-		.offcanvas-mask {
-			left:$offcanvas-width;
+		// move offcanvas over page
+		.offcanvas {
+			left:0;
 		}
 
-		.offcanvas-close {
-			background-color:transparent;
-			display:block;
-			position:fixed;
+		// move mask to right of offcanvas
+		.offcanvas-mask {
 			left:$offcanvas-width;
-			top:0;
-			right:0;
-			bottom:0;
-			z-index:4;
-			cursor:pointer;
 		}
 	}
 
