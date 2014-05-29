@@ -110,6 +110,11 @@
 			echo '<footer class="site-commonnav"><hr/>' . $SITE_COMMONNAV . '</footer>';
 		}
 
+		// IE <= 9 polyfills
+		echo '<!--[if lte IE 9]>';
+		echo '<script src="/theme/js/classList.js"></script>';
+		echo '<![endif]-->';
+
 		// load requirejs and template javascript before $FOOT
 		if (file_exists(dirname(__FILE__) . '/../htdocs/js/uglified.js')) {
 			echo '<script src="/theme/js/uglified.js"></script>';
