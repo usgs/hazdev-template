@@ -261,7 +261,9 @@ module.exports = function (grunt) {
 			dist: {
 				files: {
 					'<%= app.dist %>/htdocs/js/uglified.js':
-							['<%= app.dist %>/htdocs/js/index.js']
+							['<%= app.dist %>/htdocs/js/index.js'],
+					'<%= app.dist %>/htdocs/js/classList.js':
+							['<%= app.dist %>/htdocs/js/classList.js']
 				}
 			}
 		},
@@ -272,7 +274,8 @@ module.exports = function (grunt) {
 				dest: '<%= app.dist %>/htdocs',
 				src: [
 					'images/**/*.{png,gif,jpg,jpeg}',
-					'**/*.php'
+					'**/*.php',
+					'js/classList.js'
 				]
 			},
 			lib: {
