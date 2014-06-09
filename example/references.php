@@ -9,7 +9,7 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 
-<p><a href="https://github.com/usgs/earthquake-website/blob/master/src/htdocs/css/references.scss">References SCSS</a></p>
+<p><a href="https://github.com/usgs/hazdev-template/tree/master/src/htdocs/css/references.scss">References SCSS</a></p>
 
 <ul class='referencelist'>
 	<li>Reference 1 - showing that the format is in bibliography style where the

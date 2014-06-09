@@ -9,7 +9,7 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 
-<p><a href="https://github.com/usgs/earthquake-website/blob/master/src/htdocs/css/jumplist.scss">JumpList SCSS</a></p>
+<p><a href="https://github.com/usgs/hazdev-template/tree/master/src/htdocs/css/jumplist.scss">JumpList SCSS</a></p>
 
 <nav class="jumplist">
 	<a href="#aheader">Jump to Here</a>

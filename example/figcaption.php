@@ -9,7 +9,7 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 
-<p><a href="https://github.com/usgs/earthquake-website/blob/master/src/htdocs/css/figcaption.scss">Images (with captions) SCSS</a></p>
+<p><a href="https://github.com/usgs/hazdev-template/tree/master/src/htdocs/css/figcaption.scss">Images (with captions) SCSS</a></p>
 
 <h2>An H2 Header</h2>
 
