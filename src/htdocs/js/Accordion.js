@@ -6,13 +6,6 @@ define([], function () {
 		var accordion = event.target.parentElement,
 		    className = accordion.className;
 
-		// if (className.indexOf('accordion-open') !== -1) {
-		// 	className = className.replace('accordion-open', 'accordion-closed');
-		// } else if (className.indexOf('accordion-closed') !== -1){
-		// 	className = className.replace('accordion-closed', 'accordion-open');
-		// } else {
-		// 	className = 'accordion accordion-closed';
-		// }
 		if (className.indexOf('accordion-closed') !== -1) {
 			className = className.replace(' accordion-closed', '');
 		} else {
