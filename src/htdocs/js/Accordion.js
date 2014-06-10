@@ -6,12 +6,17 @@ define([], function () {
 		var accordion = event.target.parentElement,
 		    className = accordion.className;
 
-		if (className.indexOf('accordion-open') !== -1) {
-			className = className.replace('accordion-open', 'accordion-closed');
-		} else if (className.indexOf('accordion-closed') !== -1){
-			className = className.replace('accordion-closed', 'accordion-open');
+		// if (className.indexOf('accordion-open') !== -1) {
+		// 	className = className.replace('accordion-open', 'accordion-closed');
+		// } else if (className.indexOf('accordion-closed') !== -1){
+		// 	className = className.replace('accordion-closed', 'accordion-open');
+		// } else {
+		// 	className = 'accordion accordion-closed';
+		// }
+		if (className.indexOf('accordion-closed') !== -1) {
+			className = className.replace(' accordion-closed', '');
 		} else {
-			className = 'accordion accordion-closed';
+			className = className + ' accordion-closed';
 		}
 
 		accordion.className = className;
@@ -39,7 +44,7 @@ define([], function () {
 		    accordionContent = document.createElement('div');
 
 		// set classes for accordion styles
-		accordion.className = 'accordion';
+		accordion.className = 'accordion accordion-standard';
 		accordionTitle.className = 'accordion-toggle';
 		accordionContent.className = 'accordion-content';
 
