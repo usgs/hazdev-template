@@ -19,10 +19,10 @@ define([], function () {
 
 	var _bindAccordionEvent = function(element) {
 
-		var header = element.querySelector('.header');
+		var accordionToggle = element.querySelector('.accordion-toggle');
 
-		header.addEventListener('click', function (header) {
-			_toggleClass(header);
+		accordionToggle.addEventListener('click', function (accordionToggle) {
+			_toggleClass(accordionToggle);
 		});
 	};
 
@@ -40,7 +40,8 @@ define([], function () {
 
 		// set classes for accordion styles
 		accordion.className = 'accordion';
-		accordionTitle.className = 'header';
+		accordionTitle.className = 'accordion-toggle';
+		accordionContent.className = 'accordion-content';
 
 		// set the html markup that will be collapsable
 		accordionTitle.innerHTML = title;
@@ -60,12 +61,12 @@ define([], function () {
 	 * then it will setup the accordion action
 	 */
 	Accordion.prototype.enhanceAccordions = function() {
-		var headers = this._el.querySelectorAll('.accordion');
+		var accordionToggles = this._el.querySelectorAll('.accordion');
 
-		for (var i = 0; i < headers.length; i++) {
-			var header = headers[i];
+		for (var i = 0; i < accordionToggles.length; i++) {
+			var accordionToggle = accordionToggles[i];
 
-			_bindAccordionEvent(header);
+			_bindAccordionEvent(accordionToggle);
 		}
 	};
 

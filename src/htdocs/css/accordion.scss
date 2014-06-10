@@ -1,13 +1,13 @@
-$accordion-border-color: rgb(226,226,226) !default;
-$accordion-hover-color: rgb(237,237,237) !default;
-$accordion-background-color-open: $accordion-border-color !default;
-$accordion-background-color-closed: rgb(245,245,245) !default;
+$accordion-border-color:rgb(226,226,226) !default;
+$accordion-hover-color:rgb(237,237,237) !default;
+$accordion-background-color-open:$accordion-border-color !default;
+$accordion-background-color-closed:rgb(245,245,245) !default;
 
 @mixin plus-minus ($icon) {
-		font-family: "Courier New", Courier, monospace;
-		content: $icon;
+		font-family:"Courier New", Courier, monospace;
+		content:$icon;
 		letter-spacing:1em;
-		font-weight: bold;
+		font-weight:bold;
 		@if $icon == '+' { color:#aaa; }
 		@elseif $icon == '-' {color:#666; }
 }
@@ -15,7 +15,7 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 .accordion {
 	display:block;
 
-	> .header {
+	> .accordion-toggle {
 		display:block;
 		background-color:$accordion-background-color-open;
 		border:1px solid $accordion-border-color;
@@ -27,16 +27,16 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 		margin-bottom:0;
 	}
 
-	> .header:hover {
+	> .accordion-toggle:hover {
 		cursor:pointer;
 		background-color:$accordion-hover-color;
 	}
 
-	> .header:before {
+	> .accordion-toggle:before {
 		@include plus-minus('-');
 	}
 
-	> div {
+	> .accordion-content {
 		display:block;
 		border-left:1px solid $accordion-border-color;
 		border-right:1px solid $accordion-border-color;
@@ -46,24 +46,24 @@ $accordion-background-color-closed: rgb(245,245,245) !default;
 }
 
 .accordion-open {
-	> .header {
+	> .accordion-toggle {
 		text-shadow:1px 1px 0 rgba(255,255,255,0.5);
 		color:#333;
 	}
 }
 
 .accordion-closed {
-	> .header {
+	> .accordion-toggle {
 		background-color:$accordion-background-color-closed;
 		border:1px solid $accordion-border-color;
 		color:#666;
 	}
 
-	> .header:before {
+	> .accordion-toggle:before {
 		@include plus-minus('+');
 	}
 
-	> div {
+	> .accordion-content {
 		display:none;
 	}
 
