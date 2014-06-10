@@ -14,22 +14,15 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 
 .accordion {
 	display:block;
+	border:1px solid $accordion-border-color;
 
 	> .accordion-toggle {
 		display:block;
-		background-color:$accordion-background-color-open;
-		border:1px solid $accordion-border-color;
 		padding:10px 15px;
-		color:#333;
-		text-shadow:1px 1px 0 rgb(255,255,255);
-		font-weight:normal;
-		vertical-align:bottom;
-		margin-bottom:0;
 	}
 
 	> .accordion-toggle:hover {
 		cursor:pointer;
-		background-color:$accordion-hover-color;
 	}
 
 	> .accordion-toggle:before {
@@ -38,6 +31,39 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 
 	> .accordion-content {
 		display:block;
+		padding:10px 15px;
+	}
+}
+
+.accordion-closed {
+	> .accordion-toggle:before {
+		@include plus-minus('+');
+	}
+
+	> .accordion-content {
+		display:none;
+	}
+}
+
+/* Standard accordion with headers used for toggling */
+.accordion-standard {
+	border:none;
+
+	> .accordion-toggle {
+		background-color:$accordion-background-color-open;
+		border:1px solid $accordion-border-color;
+		color:#333;
+		text-shadow:1px 1px 0 rgb(255,255,255);
+		font-weight:normal;
+		vertical-align:bottom;
+		margin-bottom:0;
+	}
+
+	> .accordion-toggle:hover {
+		background-color:$accordion-hover-color;
+	}
+
+	> .accordion-content {
 		border-left:1px solid $accordion-border-color;
 		border-right:1px solid $accordion-border-color;
 		border-bottom:3px solid $accordion-border-color;
@@ -58,13 +84,4 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		border:1px solid $accordion-border-color;
 		color:#666;
 	}
-
-	> .accordion-toggle:before {
-		@include plus-minus('+');
-	}
-
-	> .accordion-content {
-		display:none;
-	}
-
 }

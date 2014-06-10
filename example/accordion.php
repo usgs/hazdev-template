@@ -14,16 +14,8 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 
-<div class="accordion">
-	<div>
-		Content inside of the accordion container, but outside of the
-		accordion-toggle and accordion-content.
-	</div>
-	<span class="accordion-toggle">Section Header (Default Open)</span>
-	<div>
-		Even more content inside of the accordion container, but outside of the
-		accordion-toggle and accordion-content. Location. Location. Location.
-	</div>
+<div class="accordion accordion-standard">
+	<h3 class="accordion-toggle">Section Header (Default Open)</h3>
 	<div class="accordion-content">
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -47,8 +39,8 @@ if (!isset($TEMPLATE)) {
 	</div>
 </div>
 
-<div class="accordion accordion-closed">
-	<span class="accordion-toggle">Section Header (Default Closed)</span>
+<div class="accordion accordion-standard accordion-closed">
+	<h3 class="accordion-toggle">Section Header (Default Closed)</h3>
 	<div class="accordion-content">
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -76,13 +68,12 @@ if (!isset($TEMPLATE)) {
 	<div>
 		Nothing inside of this div will be toggled by the accordion button because
 		it is not part of the <em>accordion-content</em> class.
-		<h3>
-			<em>Example Content</em>
-			<small> - more description and stuff</small>
-		</h3>
+	</div>
+	<span class="accordion-toggle">Toggle Button</span>
+	<div>
+		Another div that will not be toggled by the accordion.
 		Yes, 20.
 	</div>
-	<span class="accordion-toggle">Details</span>
 	<div class="accordion-content">
 		<p>
 			This is at the beginning of the details that will be hidden/displayed.
