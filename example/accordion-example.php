@@ -60,40 +60,23 @@ if (!isset($TEMPLATE)) {
 	</div>
 </div>
 
-<section class="accordion" style="position:relative;">
-	<div style="
-		border:1px solid red;
-		padding-right:75px;
-		overflow:hidden;
-		white-space:nowrap;
-		text-overflow:ellipsis;">
+<section class="accordion my-accordion">
+	<div class="my-summary">
 		Nothing inside of this div will be toggled by the accordion button because
 		it is not part of the <em>accordion-content</em> class.
 	</div>
-	<span class="accordion-toggle" style="
-		position:absolute;
-		top:27px;
-		right:15px;
-		padding:0;
-		color:#00f;">Toggle Button</span>
-	<div style="
-		border:1px solid red;
-		padding-right:165px;
-		overflow:hidden;
-		white-space:nowrap;
-		text-overflow:ellipsis;">
+	<span class="accordion-toggle">Toggle Button</span>
+	<div class="my-summary">
 		Another div that will not be toggled by the accordion.
 		Yes, 20.
 	</div>
-	<div class="accordion-content" style="border:1px solid blue;">
+	<div class="accordion-content">
 		<p>
 			This is at the beginning of the details that will be hidden/displayed.
-			All of the inline styles here are just to help point out which sections
-			are which, and what can be done. The toggle button will remain wherever
-			it is placed and will only toggle content within the
-			<em>accordion-content</em> container with the same parent as the
-			<em>accordion-toggle</em>. The <em>accordion-content</em> container in
-			this example has a blue 1px border.
+			The toggle button will remain wherever it is placed by default and will
+			only toggle content within the <em>accordion-content</em> container with
+			the same parent as the <em>accordion-toggle</em>. The
+			<em>accordion-content</em> container in this example has a blue 1px border
 		</p>
 		<table>
 			<thead>

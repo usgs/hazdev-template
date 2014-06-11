@@ -31,13 +31,10 @@ require([
 				toggleElement: 'span',
 				contentText:
 					'My awesome contents for this great accordion',
-				classes: ''
+				classes: 'my-accordion'
 			}
 		]
 	});
-
-	// setup from existing markup on page
-	// accordion.enhanceAccordions();
 
 	// build from content/title passed in
 	accordion.addAccordion({
