@@ -8,8 +8,8 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		content:$icon;
 		letter-spacing:1em;
 		font-weight:bold;
-		@if $icon == '+' { color:#aaa; }
-		@elseif $icon == '-' {color:#666; }
+		@if $icon == '+' {color:#aaa;}
+		@elseif $icon == '-' {color:#666;}
 }
 
 .accordion {
