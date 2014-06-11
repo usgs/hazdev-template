@@ -33,15 +33,15 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		display:block;
 		padding:10px 15px;
 	}
-}
 
-.accordion-closed {
-	> .accordion-toggle:before {
-		@include plus-minus('+');
-	}
+	.accordion-closed {
+		> .accordion-toggle:before {
+			@include plus-minus('+');
+		}
 
-	> .accordion-content {
-		display:none;
+		> .accordion-content {
+			display:none;
+		}
 	}
 }
 
