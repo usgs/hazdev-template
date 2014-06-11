@@ -2,54 +2,96 @@
 define([], function () {
 	'use strict';
 
-	var _toggleClass = function (event) {
-		var accordion = event.target.parentElement,
-		    className = accordion.className;
-
-		if (className.indexOf(' accordion-closed') !== -1) {
-			className = className.replace(' accordion-closed', '');
-		} else {
-			className = className + ' accordion-closed';
-		}
-
-		accordion.className = className;
+	var ACCORDION_OPTIONS = {
+		accordions: null,
+		el: null
 	};
 
-	var _bindAccordionEvent = function(element) {
+	var ADD_ACCORDION_OPTIONS = {
+		toggleText: 'Details',
+		toggleElement: 'span',
+		contentText: 'Contents',
+		classes: 'accordion-standard'
+	};
 
-		var accordionToggle = element.querySelector('.accordion-toggle');
+	var ACCORDION_CLOSED = 'accordion-closed',
+	    ACCORDION_TOGGLE = 'accordion-toggle',
+	    ACCORDION_CONTENT = 'accordion-content';
 
-		accordionToggle.addEventListener('click', function (accordionToggle) {
-			_toggleClass(accordionToggle);
-		});
+	/**
+	 * Copy properties from one or more objects onto another object.
+	 *
+	 * @param dst {Object}
+	 *        Destination object where properties are copied
+	 * @param varargs {Object...}
+	 *        Variable number of objects where properties are copied from.
+	 *        Objects earlier in the arguments list have their properties
+	 *        overridden by objects later in the arguments list.
+	 * @return dst.
+	 */
+	var _extend = function(dst) {
+		for (var i=1, len=arguments.length; i<len; i++) {
+			var o = arguments[i];
+			for (var prop in o) {
+				dst[prop] = o[prop];
+			}
+		}
+		return dst;
+	};
+
+	var _onClick = function (evt) {
+		var target = evt.target;
+
+		if (target.classList.contains(ACCORDION_TOGGLE)) {
+			target.parentElement.classList.toggle(ACCORDION_CLOSED);
+		}
 	};
 
 	var Accordion = function (options) {
-		this._el = options.el || '';
+		options = _extend({}, ACCORDION_OPTIONS, options);
+		this._options = options;
+		this._el = options.el || document.createElement('section');
+
+		this._initialize();
+	};
+
+	Accordion.prototype._initialize = function () {
+		var options = this._options,
+		    i,
+		    len;
+
+		this._el.addEventListener('click', _onClick);
+
+		if (options.accordions) {
+			len = options.accordions.length;
+			for (i = 0; i < len; i++) {
+				this.addAccordion(options.accordions[i]);
+			}
+		}
 	};
 
 	/*
 	 * this will build the markup for an accordion element
 	 */
-	Accordion.prototype.addAccordion = function(title, content) {
-		var accordion = document.createElement('section'),
-		    accordionTitle = document.createElement('h3'),
-		    accordionContent = document.createElement('div');
+	Accordion.prototype.addAccordion = function(options) {
+		var accordion,
+		    title,
+		    content;
 
-		// set classes for accordion styles
-		accordion.className = 'accordion accordion-standard';
-		accordionTitle.className = 'accordion-toggle';
-		accordionContent.className = 'accordion-content';
+		options = _extend({}, ADD_ACCORDION_OPTIONS, options);
 
-		// set the html markup that will be collapsable
-		accordionTitle.innerHTML = title;
-		accordionContent.innerHTML = content;
+		accordion = document.createElement('section');
+		accordion.className = 'accordion ' + options.classes;
 
-		// append DOM elements to accordion wrapper div
-		accordion.appendChild(accordionTitle);
-		accordion.appendChild(accordionContent);
+		title = document.createElement(options.toggleElement);
+		title.className = ACCORDION_TOGGLE;
+		title.innerHTML = options.toggleText;
+		accordion.appendChild(title);
 
-		_bindAccordionEvent(accordion);
+		content = document.createElement('div');
+		content.className = ACCORDION_CONTENT;
+		content.innerHTML = options.contentText;
+		accordion.appendChild(content);
 
 		this._el.appendChild(accordion);
 	};
@@ -58,15 +100,15 @@ define([], function () {
 	 * this will enhance this._el by searching for all occurences of .accordions,
 	 * then it will setup the accordion action
 	 */
-	Accordion.prototype.enhanceAccordions = function() {
-		var accordionToggles = this._el.querySelectorAll('.accordion');
+	// Accordion.prototype.enhanceAccordions = function() {
+	// 	var accordionToggles = this._el.querySelectorAll('.accordion');
 
-		for (var i = 0; i < accordionToggles.length; i++) {
-			var accordionToggle = accordionToggles[i];
+	// 	for (var i = 0; i < accordionToggles.length; i++) {
+	// 		var accordionToggle = accordionToggles[i];
 
-			_bindAccordionEvent(accordionToggle);
-		}
-	};
+	// 		_bindAccordionEvent(accordionToggle);
+	// 	}
+	// };
 
 	return Accordion;
 
