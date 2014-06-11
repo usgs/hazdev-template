@@ -69,19 +69,19 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		border-bottom:3px solid $accordion-border-color;
 		padding:10px 15px;
 	}
-}
 
-.accordion-open {
-	> .accordion-toggle {
-		text-shadow:1px 1px 0 rgba(255,255,255,0.5);
-		color:#333;
+	.accordion-open {
+		> .accordion-toggle {
+			text-shadow:1px 1px 0 rgba(255,255,255,0.5);
+			color:#333;
+		}
 	}
-}
 
-.accordion-closed {
-	> .accordion-toggle {
-		background-color:$accordion-background-color-closed;
-		border:1px solid $accordion-border-color;
-		color:#666;
+	.accordion-closed {
+		> .accordion-toggle {
+			background-color:$accordion-background-color-closed;
+			border:1px solid $accordion-border-color;
+			color:#666;
+		}
 	}
 }
