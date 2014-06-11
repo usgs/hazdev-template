@@ -24,7 +24,9 @@ require([
 			'Section Header (Dynamically Created)',
 			'This accordion element is not part of the original DOM, but is ' +
 			'injected by Javascript at load time. Just an example of what can be ' +
-			'done.'
+			'done. Using the <em>accordion.addAccordion</em> method will create a ' +
+			'"standard" accordion with a header/banner at the top being used for ' +
+			'the clickable toggle.'
 		);
 
 });
