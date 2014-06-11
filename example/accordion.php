@@ -3,12 +3,8 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Accordion Example';
 	$NAVIGATION = true;
 
-	$HEAD = '
-		<link rel="stylesheet" href="/css/accordion.css"/>
-	';
-	$FOOT = '
-		<script src="/js/accordion-example.js"></script>
-	';
+	$HEAD = '<link rel="stylesheet" href="/css/accordion.css"/>';
+	$FOOT = '<script src="/js/accordion-example.js"></script>';
 
 	include_once 'template.inc.php';
 }
@@ -64,19 +60,38 @@ if (!isset($TEMPLATE)) {
 	</div>
 </div>
 
-<section class="accordion">
-	<div>
+<section class="accordion" style="position:relative;">
+	<div style="
+		border:1px solid red;
+		padding-right:75px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;">
 		Nothing inside of this div will be toggled by the accordion button because
 		it is not part of the <em>accordion-content</em> class.
 	</div>
-	<span class="accordion-toggle">Toggle Button</span>
-	<div>
+	<span class="accordion-toggle" style="
+		position:absolute;
+		top:25px;
+		right:15px;
+		padding:0;
+		color:#00f;">Toggle Button</span>
+	<div style="
+		border:1px solid red;
+		padding-right:165px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;">
 		Another div that will not be toggled by the accordion.
 		Yes, 20.
 	</div>
-	<div class="accordion-content">
+	<div class="accordion-content" style="border:1px solid blue;">
 		<p>
 			This is at the beginning of the details that will be hidden/displayed.
+			All of the inline styles here are just to help point out which sections
+			are which, and what can be done. The toggle button will remain wherever
+			it is placed and will only toggle content within the accordion-content
+			container with the same parent as the accordion-toggle.
 		</p>
 		<table>
 			<thead>
