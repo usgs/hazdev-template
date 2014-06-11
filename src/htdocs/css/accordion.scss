@@ -33,21 +33,23 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		display:block;
 		padding:10px 15px;
 	}
+}
 
-	.accordion-closed {
-		> .accordion-toggle:before {
-			@include plus-minus('+');
-		}
+.accordion-closed {
+	> .accordion-toggle:before {
+		@include plus-minus('+');
+	}
 
-		> .accordion-content {
-			display:none;
-		}
+	> .accordion-content {
+		display:none;
 	}
 }
 
 /* Standard accordion with headers used for toggling */
 .accordion-standard {
 	border:none;
+	text-shadow:1px 1px 0 rgba(255,255,255,0.5);
+	color:#333;
 
 	> .accordion-toggle {
 		background-color:$accordion-background-color-open;
@@ -68,13 +70,6 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		border-right:1px solid $accordion-border-color;
 		border-bottom:3px solid $accordion-border-color;
 		padding:10px 15px;
-	}
-
-	.accordion-open {
-		> .accordion-toggle {
-			text-shadow:1px 1px 0 rgba(255,255,255,0.5);
-			color:#333;
-		}
 	}
 
 	.accordion-closed {
