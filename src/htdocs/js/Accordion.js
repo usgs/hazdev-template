@@ -33,7 +33,7 @@ define([], function () {
 	 */
 	Accordion.prototype.addAccordion = function(title, content) {
 		var accordion = document.createElement('section'),
-		    accordionTitle = document.createElement('span'),
+		    accordionTitle = document.createElement('h3'),
 		    accordionContent = document.createElement('div');
 
 		// set classes for accordion styles
