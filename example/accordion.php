@@ -72,7 +72,7 @@ if (!isset($TEMPLATE)) {
 	</div>
 	<span class="accordion-toggle" style="
 		position:absolute;
-		top:25px;
+		top:27px;
 		right:15px;
 		padding:0;
 		color:#00f;">Toggle Button</span>
@@ -90,8 +90,10 @@ if (!isset($TEMPLATE)) {
 			This is at the beginning of the details that will be hidden/displayed.
 			All of the inline styles here are just to help point out which sections
 			are which, and what can be done. The toggle button will remain wherever
-			it is placed and will only toggle content within the accordion-content
-			container with the same parent as the accordion-toggle.
+			it is placed and will only toggle content within the
+			<em>accordion-content</em> container with the same parent as the
+			<em>accordion-toggle</em>. The <em>accordion-content</em> container in
+			this example has a blue 1px border.
 		</p>
 		<table>
 			<thead>
