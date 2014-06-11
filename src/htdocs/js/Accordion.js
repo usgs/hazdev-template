@@ -6,7 +6,7 @@ define([], function () {
 		var accordion = event.target.parentElement,
 		    className = accordion.className;
 
-		if (className.indexOf('accordion-closed') !== -1) {
+		if (className.indexOf(' accordion-closed') !== -1) {
 			className = className.replace(' accordion-closed', '');
 		} else {
 			className = className + ' accordion-closed';
@@ -32,7 +32,7 @@ define([], function () {
 	 * this will build the markup for an accordion element
 	 */
 	Accordion.prototype.addAccordion = function(title, content) {
-		var accordion = document.createElement('div'),
+		var accordion = document.createElement('section'),
 		    accordionTitle = document.createElement('span'),
 		    accordionContent = document.createElement('div');
 
