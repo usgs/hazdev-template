@@ -96,20 +96,6 @@ define([], function () {
 		this._el.appendChild(accordion);
 	};
 
-	/*
-	 * this will enhance this._el by searching for all occurences of .accordions,
-	 * then it will setup the accordion action
-	 */
-	// Accordion.prototype.enhanceAccordions = function() {
-	// 	var accordionToggles = this._el.querySelectorAll('.accordion');
-
-	// 	for (var i = 0; i < accordionToggles.length; i++) {
-	// 		var accordionToggle = accordionToggles[i];
-
-	// 		_bindAccordionEvent(accordionToggle);
-	// 	}
-	// };
-
 	return Accordion;
 
 });
