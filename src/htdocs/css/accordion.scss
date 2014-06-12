@@ -72,7 +72,7 @@ $accordion-background-color-closed:rgb(245,245,245) !default;
 		padding:10px 15px;
 	}
 
-	.accordion-closed {
+	&.accordion-closed {
 		> .accordion-toggle {
 			background-color:$accordion-background-color-closed;
 			border:1px solid $accordion-border-color;
