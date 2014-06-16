@@ -21,7 +21,8 @@
 			height:100%;
 
 			background-size:auto 100%;
-			background-image:url('/theme/images/usgs-logo.jpg');
+			background-image:url('/theme/images/usgs-logo.svg');
+			background-repeat: no-repeat;
 			> img {
 				display:none;
 			}
@@ -40,11 +41,12 @@
 
 		/* make banner larger on large screens. */
 		height:72px;
-		background-position:178px 0;
+		background-position:182px 0;
+
 
 		/* also adjust size of site-logo link */
 		> .site-logo {
-			width:178px;
+			width:182px;
 		}
 
 		/* make room for :after content (font size + padding*2 + border*2) */
