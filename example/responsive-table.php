@@ -188,3 +188,30 @@ if (!isset($TEMPLATE)) {
 		</tr>
 	</tbody>
 </table>
+
+
+<table class="responsive-vertical">
+	<thead>
+		<tr>
+			<th>Plane</th>
+			<th>Strike</th>
+			<th>Dip</th>
+			<th>Rake</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">NP1</th>
+			<td>285°</td>
+			<td>75°</td>
+			<td>48°</td>
+		</tr>
+		<tr>
+			<th scope="row">NP2</th>
+			<td>178°</td>
+			<td>44°</td>
+			<td>158°</td>
+		</tr>
+	</tbody>
+</table>
+
