@@ -10,7 +10,6 @@ echo navGroup('Default Extensions',
 echo navGroup('Additional Extensions',
 		navItem('/imagelist.php', 'Image List') .
 		navItem('/responsive-table.php', 'Responsive Table') .
-		navItem('/accordion-example.php', 'Accordion') .
 		navItem('/figcaption.php', 'Figure Caption') .
 		navItem('/jumplist.php', 'Jump List') .
 		navItem('/references.php', 'References')
