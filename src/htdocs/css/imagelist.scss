@@ -35,12 +35,25 @@
 	position:absolute;
 	top:-4px;
 	left:25%;
-	max-width:100%;
+	max-width:75%;
 	padding-right:25%;
 	white-space:nowrap;
 	text-overflow:ellipsis;
 	overflow:hidden;
 }
+
+.imagelist-image {
+	display:block;
+	width:100%;
+}
+
+.imagelist-content {
+	display:block;
+	float:left;
+	width:75%;
+	margin-top:2em;
+}
+
 
 .imagelist-image {
 	display:block;
