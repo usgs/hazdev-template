@@ -33,6 +33,10 @@ table.responsive-vertical {
 	border-collapse: collapse;
 	color: $font_color;
 
+	th {
+			text-shadow: 1px 1px 0px #fff;
+	}
+
 	> tbody > tr > td:before {
 		// de-emphasize table headers
 		color:#777;
@@ -97,6 +101,21 @@ table.responsive {
 
 table.responsive-vertical {
 
+	> thead > tr {
+		border: 1px solid $border_color;
+
+		th {
+			border-left:1px solid $border_color;
+			padding:10px;
+			background: #ededed;
+		}
+
+		th:first-child {
+			text-align:left;
+			border:none;
+		}
+	}
+
 	> tbody > tr {
 
 		> th {
@@ -135,7 +154,6 @@ table.responsive-vertical {
 			font-weight:bold;
 			padding:$th_padding;
 			text-align:center;
-			text-shadow: 1px 1px 0px #fff;
 		}
 	}
 
