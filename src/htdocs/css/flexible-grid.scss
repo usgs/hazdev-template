@@ -20,7 +20,6 @@ $vertical-spacing: $spacing !default;
 	// rows are left-to-right
 	.row {
 		clear:both;
-		margin-right:-$horizontal-spacing;
 
 		> .column {
 			float:left;

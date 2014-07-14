@@ -1,3 +1,4 @@
+/* section nav */
 
 .site-sectionnav {
 	border: 1px solid $sectionnav-border-color;
@@ -16,6 +17,7 @@
 	> section > strong {
 		display:block;
 		padding:$vertical-spacing/2 $horizontal-spacing/2;
+		font-size: 1rem;
 	}
 
 	> a,
@@ -26,6 +28,11 @@
 		border-top:1px solid #fff;
 	}
 
+	a {
+		color: #333;
+		text-decoration: none;
+	}
+
 	> :first-child {
 		border-top:none;
 	}
@@ -33,7 +40,7 @@
 	// indent group items
 	> section > a,
 	> section > strong {
-		padding-left: 2*$horizontal-spacing;
+		padding-left: 1.5*$horizontal-spacing;
 	}
 
 	// hover styles for nav items
@@ -95,7 +102,7 @@
 .site-sitenav {
 	background-color: $sitenav-background-color;
 	margin: $vertical-spacing 0;
-	border: 1px solid darken($sitenav-background-color, 20%);
+	border: 1px solid $sitenav-border-color;
 	overflow: visible;
 
 	> a,
@@ -104,9 +111,8 @@
 		padding: $vertical-spacing/2 $horizontal-spacing/2;
 		color: $sitenav-color;
 		text-decoration: none;
-		font-weight: bold;
 
-		border-bottom: 1px dotted #FFF;
+		border-bottom: 1px solid #FFF;
 		&:last-child {
 			border-bottom: 0;
 		}
@@ -132,11 +138,18 @@
 .site-commonnav {
 	clear:both;
 	text-align: center;
+	padding-top: $spacing;
 	margin-bottom:$spacing;
+
+	> hr {
+		border: solid #ddd;
+		border-width: 1px 0 0;
+	}
 
 	> a {
 		display: inline-block;
-		margin: .25em;
+		color: $sitenav-background-color;
+		margin: 0 $horizontal-spacing 0 0;
 
 		@media screen and (min-width:$breakpoint-full) {
 			font-size: smaller;

@@ -8,9 +8,8 @@ figure {
 
 	> figcaption {
 		display: block;
-		margin-top: 0.25em;
+		margin-top: -.25em;
 		font-size: 0.8em;
-		font-style: italic;
 	}
 
 	@media screen and (min-width: 400px) {
