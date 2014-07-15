@@ -1,5 +1,5 @@
 
-$body-margin: 4px !default;
+$body-margin: 0 !default;
 
 $banner-image: '/theme/images/usgs-banner.jpg' !default;
 $banner-background-color: #000 !default;
@@ -68,6 +68,7 @@ body {
 img {
 	max-width: 100%;
 }
+
 
 @import 'typography';
 @import 'banner';
