@@ -80,16 +80,16 @@
 		<?php
 
 			if ($NAVIGATION) {
-				echo '<section' .
+				echo '<div' .
 						' id="site-sectionnav"' .
 						' class="site-sectionnav"' .
 						' aria-label="Section Navigation"' .
-						'>' . $NAVIGATION . '</section>';
+						'>' . $NAVIGATION . '</div>';
 			}
 
 			if ($SITE_SITENAV) {
-				echo '<section class="site-sitenav" aria-label="Site Navigation">' .
-						$SITE_SITENAV . '</section>';
+				echo '<div class="site-sitenav" aria-label="Site Navigation">' .
+						$SITE_SITENAV . '</div>';
 			}
 
 		?>

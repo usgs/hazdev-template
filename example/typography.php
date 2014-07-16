@@ -102,35 +102,35 @@ deserunt mollit anim id est laborum.
 
 <p>
 	This is an example of what happens when you nest headers inside
-	&lt;section&gt; tags.
+	&lt;div&gt; tags.
 </p>
 
 <pre class="code">
 &lt;h1&gt;h1 Header&lt;/h1&gt;
-&lt;section&gt;
+&lt;div&gt;
 	&lt;h1&gt;h1 Header&lt;/h1&gt;
-	&lt;section&gt;
+	&lt;div&gt;
 		&lt;h1&gt;h1 Header&lt;/h1&gt;
-		&lt;section&gt;
+		&lt;div&gt;
 			&lt;h1&gt;h1 Header&lt;/h1&gt;
-			&lt;section&gt;
+			&lt;div&gt;
 				&lt;h1&gt;h1 Header&lt;/h1&gt;
-			&lt;/section&gt;
-		&lt;/section&gt;
-	&lt;/section&gt;
-&lt;/section&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
 <h1>h1 Header</h1>
-<section>
+<div>
 	<h1>h1 Header</h1>
-	<section>
+	<div>
 		<h1>h1 Header</h1>
-		<section>
+		<div>
 			<h1>h1 Header</h1>
-			<section>
+			<div>
 				<h1>h1 Header</h1>
-			</section>
-		</section>
-	</section>
-</section>
+			</div>
+		</div>
+	</div>
+</div>

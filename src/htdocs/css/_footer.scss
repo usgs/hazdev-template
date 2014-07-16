@@ -7,22 +7,22 @@
 	// regular nav items
 	> a,
 	// items in a nav group
-	> section > a,
+	> div > a,
 	// nav group header
-	> section > header,
+	> div > header,
 	// current page
 	> strong,
-	> section > header > strong,
-	> section > strong {
+	> div > header > strong,
+	> div > strong {
 		display:block;
 		padding:$vertical-spacing/2 $horizontal-spacing/2;
 	}
 
 	> a,
 	> strong,
-	> section,
-	> section > a,
-	> section > strong {
+	> div,
+	> div > a,
+	> div > strong {
 		border-top:1px solid #fff;
 	}
 
@@ -31,14 +31,14 @@
 	}
 
 	// indent group items
-	> section > a,
-	> section > strong {
+	> div > a,
+	> div > strong {
 		padding-left: 2*$horizontal-spacing;
 	}
 
 	// hover styles for nav items
 	> a:hover,
-	> section > a:hover {
+	> div > a:hover {
 		background-color:$sectionnav-background-color-hover;
 	}
 
@@ -46,8 +46,8 @@
 	> strong,
 	// or an element with the class "current-page"
 	> .current-page,
-	> section > strong,
-	> section > .current-page {
+	> div > strong,
+	> div > .current-page {
 		background-color:#FFF;
 	}
 

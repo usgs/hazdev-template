@@ -127,8 +127,8 @@ class ImageList {
 			print '</a>';
 		}
 
-		print '</header><section class="imagelist-content">' .
-				$item['content'] . '</section>';
+		print '</header><div class="imagelist-content">' .
+				$item['content'] . '</div>';
 
 		print '</li>'.PHP_EOL;
 	}
