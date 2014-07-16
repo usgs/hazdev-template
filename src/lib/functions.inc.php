@@ -106,10 +106,10 @@ function navItem ($href, $text) {
  */
 if (!function_exists('navGroup')) {
 function navGroup ($text, $children) {
-	return '<section>' .
+	return '<div>' .
 			'<header>' . $text . '</header>' .
 			$children .
-			'</section>';
+			'</div>';
 }
 }
 
