@@ -76,6 +76,20 @@ section > section > section > section > h1 {
 	font-size: 1.0625rem;
 }
 
+a {
+	color: $link-color;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+	&:active {
+		color: #c23030;
+	}
+	&:visited {
+		color: $link-color;
+	}
+}
 
 @media screen and (min-width: 420px) {
 
