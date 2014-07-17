@@ -28,17 +28,15 @@
 		// show the offcanvas-toggle in the top right corner of the page
 		.offcanvas-toggle {
 			display:block;
-			width:30px;
-			height:30px;
-			position:fixed;
-			top:7px;
-			right:7px;
+			width:56px;
+			height:56px;
+			position:absolute;
+			top:0;
+			right:0;
 			z-index:5;
 			color:$offcanvas-toggle-color;
-			background-color:$offcanvas-toggle-background-color;
-			border:1px solid $offcanvas-toggle-border-color;
-			font-size:30px;
-			line-height:30px;
+			font-size:34px;
+			line-height:56px;
 			text-indent:0;
 			text-align:center;
 			cursor:pointer;
@@ -46,10 +44,8 @@
 			-webkit-user-select: none;
 			-ms-user-select: none;
 
-			&:hover {
-				color:$offcanvas-toggle-color-hover;
-				background-color:$offcanvas-toggle-background-color-hover;
-				border-color:$offcanvas-toggle-border-color-hover;
+			&:active {
+				background-color:$offcanvas-toggle-background-color-active;
 			}
 		}
 
@@ -63,7 +59,7 @@
 			width:$offcanvas-width;
 
 			background-color:#FFF;
-			padding:0 8px;
+			padding:0 $spacing/2 0;;
 			z-index:1002;
 
 			overflow-y:auto;
