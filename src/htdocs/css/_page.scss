@@ -1,6 +1,5 @@
-
 .page {
-	padding:$vertical-spacing 0;
+	padding: $vertical-spacing $horizontal-spacing;
 }
 
 .page-header {
@@ -10,7 +9,7 @@
 }
 
 .page-content {
-	line-height: 1.3;
+	line-height: 1.6;
 	margin: 1em 0;
 }
 
@@ -47,7 +46,7 @@
 
 
 	.page {
-		padding: $vertical-spacing 0 $vertical-spacing $horizontal-spacing;
+		padding: $vertical-spacing $horizontal-spacing $vertical-spacing 0;
 		float: right;
 		width: 100% - $side-column-width;
 	}

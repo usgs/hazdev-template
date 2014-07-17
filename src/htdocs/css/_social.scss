@@ -67,14 +67,14 @@ $social-icon-size-large: 32px;
 				@include social-icon($name, small);
 				position:relative;
 				top:2px;
-				margin-right:2px;
+				margin-right:4px;
 			}
 		}
 	}
 
 
 	& > a {
-		margin-right:4px;
+		margin-left:$horizontal-spacing;
 	}
 
 

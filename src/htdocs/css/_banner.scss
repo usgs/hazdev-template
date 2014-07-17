@@ -8,17 +8,17 @@
 	background-size:auto 100%;
 	background-repeat:no-repeat;
 	background-image:url('#{$banner-image}');
-	background-position:89px 0;
+	background-position:112px 0;
 
-	/* position usgs link over background image. */
+	/* position usgs logo over background image. */
 	> .site-logo {
 			display:block;
 			position:absolute;
-			left:0;
-			top:0;
+			left:$horizontal-spacing - 2;
+			top:2px;
 			color:transparent;
-			width:89px;
-			height:100%;
+			width:182px;
+			height:34px;
 
 			background-size:auto 100%;
 			background-image:url('/theme/images/usgs-logo.svg');
@@ -41,12 +41,12 @@
 
 		/* make banner larger on large screens. */
 		height:72px;
-		background-position:182px 0;
+		background-position:202px 0;
 
 
-		/* also adjust size of site-logo link */
+		/* also adjust size of usgs logo */
 		> .site-logo {
-			width:182px;
+			height: 70px;
 		}
 
 		/* make room for :after content (font size + padding*2 + border*2) */
@@ -59,10 +59,10 @@
 			left:0;
 			right:0;
 
-			padding:5px;
+			padding:5px 0 5px $horizontal-spacing;
 			border:1px solid white;
 			border-width:1px 0;
-			font-family:verdana,arial,helvetica,sans-serif;
+			font-family:verdana,helvetica,arial,sans-serif;
 			font-size:17px;
 			font-weight:bold;
 
