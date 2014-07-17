@@ -149,16 +149,22 @@
 	text-align: center;
 	padding-top: $spacing;
 	margin-bottom:$spacing;
+	font-size: 11px;
 
 	> hr {
 		border: solid #ddd;
 		border-width: 1px 0 0;
+		margin:0 0 15px;
 	}
 
 	> a {
 		display: inline-block;
 		color: $sitenav-background-color;
 		margin: 0 $horizontal-spacing 0 0;
+
+		&:last-child {
+			margin:0;
+		}
 
 		@media screen and (min-width:$breakpoint-full) {
 			font-size: smaller;
