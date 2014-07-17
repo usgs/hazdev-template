@@ -4,6 +4,10 @@
 	-moz-box-sizing: border-box;
 }
 
+main {
+	display:block;
+}
+
 body {
 	margin: $body-margin;
 }
