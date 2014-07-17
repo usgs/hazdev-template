@@ -1,3 +1,10 @@
+// compass mixin for transitions
+@import "compass/css3/transition";
+
+.nav-transition {
+	@include transition(background .25s ease-out);
+}
+
 .site-footer {
 	padding: $spacing - $vertical-spacing $horizontal-spacing;
 }
@@ -32,6 +39,7 @@
 		border-top:1px solid #fff;
 		color: #333;
 		text-decoration: none;
+		@extend .nav-transition;
 	}
 
 	> :first-child {
@@ -112,7 +120,7 @@
 		padding: $vertical-spacing/2 $horizontal-spacing/2;
 		color: $sitenav-color;
 		text-decoration: none;
-
+		@extend .nav-transition;
 		border-bottom: 1px solid #FFF;
 		&:last-child {
 			border-bottom: 0;
