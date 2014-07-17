@@ -75,6 +75,10 @@ $social-icon-size-large: 32px;
 
 	& > a {
 		margin-left:$horizontal-spacing;
+
+		&:first-child {
+			margin:0;
+		}
 	}
 
 
