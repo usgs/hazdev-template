@@ -173,18 +173,6 @@
 
 }
 
-@media screen and (min-width:$breakpoint-full) {
-	.site-sectionnav,
-	.site-sitenav,
-	.site-search {
-		margin:$vertical-spacing 0;
-	}
-
-	.site-commonnav {
-		font-size: 1rem;
-	}
-}
-
 @media print {
 	.site-sectionnav,
 	.site-search,
