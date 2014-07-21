@@ -106,7 +106,7 @@
 	<?php
 
 		if ($SITE_COMMONNAV) {
-			echo '<footer class="site-commonnav"><hr/>' . $SITE_COMMONNAV . '</footer>';
+			echo '<footer class="site-commonnav">' . $SITE_COMMONNAV . '</footer>';
 		}
 
 		// IE <= 9 polyfills

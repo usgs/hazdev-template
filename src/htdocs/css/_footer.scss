@@ -14,7 +14,7 @@
 .site-sectionnav {
 	border: 1px solid $sectionnav-border-color;
 	background-color: $sectionnav-background-color;
-	margin: $vertical-spacing/2 0;
+	margin: $vertical-spacing 0;
 
 	// regular nav items
 	> a,
@@ -75,7 +75,7 @@
 .site-search {
 	position:relative;
 	display: block;
-	margin: $vertical-spacing/2 0;
+	margin: $vertical-spacing 0;
 	padding: $horizontal-spacing/2;
 	background-color: $search-background-color;
 	border: 1px solid $search-border-color;
@@ -110,7 +110,7 @@
 
 .site-sitenav {
 	background-color: $sitenav-background-color;
-	margin: $vertical-spacing/2 0;
+	margin: $vertical-spacing 0;
 	border: 1px solid $sitenav-border-color;
 	overflow: visible;
 
@@ -147,8 +147,9 @@
 .site-commonnav {
 	clear:both;
 	text-align: center;
-	margin-bottom:$spacing;
-	font-size: 11px;
+	line-height: 1.6;
+	padding: 1rem;
+	border-top:1px solid #e5e5e5;
 
 	> hr {
 		border: solid #ddd;
