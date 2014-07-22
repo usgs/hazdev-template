@@ -1,6 +1,6 @@
 // set defaults, can be overridden when flexible-grid is included in site css.
 $breakpoint-full: 768px !default;
-$spacing: 8px !default;
+$spacing: 16px !default;
 $horizontal-spacing: $spacing !default;
 $vertical-spacing: $spacing !default;
 
@@ -20,6 +20,7 @@ $vertical-spacing: $spacing !default;
 	// rows are left-to-right
 	.row {
 		clear:both;
+		margin-right:-$horizontal-spacing;
 
 		> .column {
 			float:left;

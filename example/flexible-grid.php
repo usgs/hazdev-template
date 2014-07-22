@@ -4,7 +4,6 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Flexible grid demo';
 	$NAVIGATION = true;
 	$HEAD = '
-	<link rel="stylesheet" href="/css/flexible-grid.css"/>
 	<style>
 		.row > .column > div {
 			border:1px solid #F00;
