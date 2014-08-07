@@ -28,7 +28,6 @@ $th_background_color: #ededed !default;
 
 table.tabular {
 	margin:$table_spacing 0;
-	width: 100%;
 	border-collapse: collapse;
 	font-size:1em;
 	border:1px solid $table_border_color;
@@ -64,5 +63,12 @@ table.tabular {
 
 	&.center {
 		text-align:center;
+
+		th,
+		td {
+			&:first-child {
+				@include first-cell($td_padding);
+			}
+		}
 	}
 }
