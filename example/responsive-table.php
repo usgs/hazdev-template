@@ -148,9 +148,9 @@ if (!isset($TEMPLATE)) {
 	</tbody>
 </table>
 
-<h2>Responsive Table (.tabular .responsive)</h2>
+<h2>Responsive Table (.tabular .responsive .center)</h2>
 
-<table class="tabular responsive test-horizontal">
+<table class="tabular responsive center test-horizontal">
 	<thead>
 		<tr>
 			<th>First Header</th>

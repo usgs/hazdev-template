@@ -61,4 +61,8 @@ table.tabular {
 		background: $td_background_color;
 		font-weight: normal;
 	}
+
+	&.center {
+		text-align:center;
+	}
 }
