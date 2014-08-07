@@ -160,7 +160,7 @@ if (!isset($TEMPLATE)) {
 			<th>Fifth Header</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody class="no-header-style">
 		<tr>
 			<th>This</th>
 			<td>Is</td>

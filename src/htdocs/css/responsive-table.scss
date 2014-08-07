@@ -56,4 +56,9 @@ table.tabular {
 			@include first-cell($td_padding * 2);
 		}
 	}
+
+	> tbody.no-header-style > tr > th {
+		background: $td_background_color;
+		font-weight: normal;
+	}
 }
