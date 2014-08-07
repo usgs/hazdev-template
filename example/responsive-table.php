@@ -9,19 +9,6 @@ if (!isset($TEMPLATE)) {
 	<style>
 		@media screen and (max-width: 767px) {
 
-			table.test-horizontal > tbody > tr > td {
-				padding-left: 48%;
-			}
-
-			.test-horizontal td:nth-of-type(1):before { content: "First Header"; }
-			.test-horizontal td:nth-of-type(2):before { content: "Second Header"; }
-			.test-horizontal td:nth-of-type(3):before { content: "Third Header"; }
-			.test-horizontal td:nth-of-type(4):before { content: "Fourth Header"; }
-			.test-horizontal td:nth-of-type(5):before { content: "Fifth Header"; }
-		}
-
-		.test-vertical th {
-			width:50%;
 		}
 	</style>
 	';
@@ -31,7 +18,7 @@ if (!isset($TEMPLATE)) {
 ?>
 
 
-<h2>Responsive Table (.responsive)</h2>
+<h2>Responsive Table (.tabular)</h2>
 
 <table class="tabular">
 	<thead>
@@ -96,6 +83,8 @@ if (!isset($TEMPLATE)) {
 	</tbody>
 </table>
 
+
+<h2>Responsive Table (.tabular .responsive)</h2>
 <table class="tabular responsive test-horizontal">
 	<thead>
 		<tr>
@@ -159,7 +148,7 @@ if (!isset($TEMPLATE)) {
 	</tbody>
 </table>
 
-<h2>Responsive Table (.responsive)</h2>
+<h2>Responsive Table (.tabular .responsive)</h2>
 
 <table class="tabular responsive test-horizontal">
 	<thead>
@@ -173,49 +162,49 @@ if (!isset($TEMPLATE)) {
 	</thead>
 	<tbody>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
 			<td>Table</td>
 		</tr>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
 			<td>Table</td>
 		</tr>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
 			<td>Table</td>
 		</tr>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
 			<td>Table</td>
 		</tr>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
 			<td>Table</td>
 		</tr>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
 			<td>Table</td>
 		</tr>
 		<tr>
-			<th class="header">This</th>
+			<th>This</th>
 			<td>Is</td>
 			<td>A</td>
 			<td>Responsive</td>
@@ -225,7 +214,7 @@ if (!isset($TEMPLATE)) {
 </table>
 
 
-<h2>Vertical Table (.responsive-vertical)</h2>
+<h2>Vertical Table (.tabular)</h2>
 
 <table class="tabular">
 	<tbody>
