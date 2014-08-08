@@ -21,54 +21,139 @@ $th_color: #444 !default;
 $th_padding: $table_spacing / 2 !default;
 $th_background_color: #ededed !default;
 
-@mixin first_cell($padding_left) {
-	padding-left: $padding_left;
-	padding-top: $td_padding;
+@mixin padding() {
+	padding: $table_spacing/2 $table_spacing*3/4;
 }
 
 table.tabular {
 	margin:$table_spacing 0;
 	border-collapse: collapse;
-	font-size:1em;
+	font-size:0.875em;
 	border:1px solid $table_border_color;
 	text-align:left;
+	width:100%;
 
 	th {
-		padding: $th_padding;
 		color: $th_color;
 		background-color: $th_background_color;
-		border:1px solid $table_border_color;
 		font-weight:bold;
 		text-shadow: 1px 1px 0px #fff;
 	}
 
 	td {
-		padding: $th_padding;
 		color: $th_color;
 		background-color: $td_background_color;
-		border:1px solid $table_border_color;
 	}
 
 	th,
 	td {
-		&:first-child {
-			@include first-cell($td_padding * 2);
+		@include padding();
+		border:1px solid $table_border_color;
+	}
+}
+
+table.center {
+	text-align:center;
+}
+
+
+/*** RESPONSIVE TABLE STYLES ***/
+
+table.responsive {
+	border:none;
+	text-align:left;
+
+	/* Reset styles, display table as more of a list */
+	thead, tbody, th, td, tr {
+		display: block;
+		border:none;
+		background:none;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	> thead > tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	> tbody > tr {
+		margin-top: $table_spacing;
+
+		> th:first-child {
+			margin-bottom:5px;
+			padding-bottom:5px;
+			padding-left:0;
+			border-bottom:1px solid $table_border_color;
+		}
+
+		> td:first-child {
+			border-top:1px solid $table_border_color;
+			padding-left: 40%;
+		}
+
+		> td:first-child,
+		> td:first-child:before {
+			padding-top: $table_spacing;
+		}
+
+		> td {
+			position: relative;
+			padding: $td_padding/5;
+			padding-left: 40%;
+		}
+
+		> td:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: $td_padding/5 0;
+			white-space: nowrap;
+		}
+	}
+}
+
+
+@media screen and (min-width: 560px), print {
+
+	table.center {
+		text-align:center;
+	}
+
+	table.tabular {
+		width:auto;
+		font-size:1em;
+
+		> tbody.no-header-style > tr > th {
+			background: $td_background_color;
+			font-weight: normal;
 		}
 	}
 
-	> tbody.no-header-style > tr > th {
-		background: $td_background_color;
-		font-weight: normal;
-	}
+	table.responsive {
+		border:1px solid $table_border_color;
 
-	&.center {
-		text-align:center;
+		th {
+			background-color: $th_background_color;
+			border: 1px solid $table_border_color;
+		}
 
-		th,
-		td {
-			&:first-child {
-				@include first-cell($td_padding);
+		thead  { display: table-header-group; }
+		tbody  { display: table-row-group; }
+		tr     { display: table-row; }
+		td, th { display: table-cell; }
+
+		> tbody > tr {
+
+			th, th:first-child,
+			td, td:first-child {
+				border: 1px solid $table_border_color;
+				@include padding();
 			}
+		}
+
+		> thead > tr {
+			position:static;
 		}
 	}
 }
