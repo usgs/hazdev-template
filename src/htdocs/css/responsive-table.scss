@@ -94,10 +94,8 @@ table.responsive {
 		}
 
 		> th:first-child {
-			margin-bottom:5px;
-			padding-bottom:5px;
-			padding-left:0;
-			padding-top:0;
+			margin-bottom:0.5em;
+			padding:0 0 0.5em 0;
 			border-bottom:1px solid $table_border_color;
 		}
 
