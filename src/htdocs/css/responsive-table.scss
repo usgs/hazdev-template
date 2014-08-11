@@ -38,6 +38,7 @@ table.tabular {
 		background-color: $th_background_color;
 		font-weight:bold;
 		text-shadow: 1px 1px 0px #fff;
+		text-align: left; /* only necessary for IE */
 	}
 
 	td {
@@ -54,6 +55,10 @@ table.tabular {
 
 table.center {
 	text-align:center;
+
+	th {
+		text-align: center;
+	}
 }
 
 
@@ -62,6 +67,10 @@ table.center {
 table.responsive {
 	border:none;
 	text-align:left;
+
+	th {
+		text-align:left;
+	}
 
 	/* Reset styles, display table as more of a list */
 	thead, tbody, th, td, tr {
@@ -118,6 +127,10 @@ table.responsive {
 
 	table.center {
 		text-align:center;
+
+		th {
+			text-align: center;
+		}
 	}
 
 	table.tabular {
