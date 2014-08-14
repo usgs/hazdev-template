@@ -3,7 +3,7 @@
 }
 
 body {
-	font-size:1.6rem;
+	font-size:1.5rem;
 	line-height:1.5;
 	font-family:helvetica, arial, sans-serif;
 }
@@ -49,4 +49,13 @@ h5 {
 
 h6 {
 	font-size: 0.875em; /* 14px */
+}
+
+
+// Leave this at 768px even though the grid stacks at 560px
+@media screen and (min-width: $breakpoint-full) {
+
+	body {
+		font-size:1.6rem;
+	}
 }
