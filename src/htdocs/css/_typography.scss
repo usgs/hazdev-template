@@ -2,7 +2,6 @@
 	font-size: 10px;
 }
 
-
 body {
 	font-size:1.6rem;
 	line-height:1.5;
@@ -17,22 +16,16 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
+a {
+	color: $link-color;
 
-// a {
-// 	color: $link-color;
-// 	text-decoration: none;
-
-// 	&:hover {
-// 		text-decoration: underline;
-// 	}
-// 	&:active {
-// 		color: #c23030;
-// 	}
-// 	&:visited {
-// 		color: $link-color;
-// 	}
-// }
-// 
+	&:active {
+		color: #c23030;
+	}
+	&:visited {
+		color: $link-color;
+	}
+}
 
 h1 {
 	font-size: 2em; /* 32px */
