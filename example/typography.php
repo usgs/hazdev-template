@@ -6,29 +6,12 @@ if (!isset($TEMPLATE)) {
 
 	$HEAD = '
 		<style>
-			pre {
-				white-space: pre-wrap;
-				white-space: -moz-pre-wrap;
-				white-space: -o-pre-wrap;
-				background: #f6f6f6;
-				color:#666;
-				font-size:14px;
-				font-family:monospace;
-			}
-
-			.code {
-				display: block;
-				padding: 0.5em 1em;
-				border: 1px solid #ededed;
-			}
-
 			hr {
 				padding:0;
 				margin:0;
 				border:none;
 				border-top:1px solid #ccc;
 			}
-
 		</style>
 	';
 	$FOOT = '<script src="js/index.js"></script>';
@@ -41,7 +24,8 @@ if (!isset($TEMPLATE)) {
 <p>This page gives examples of different header sizes and styles.</p>
 
 
-<h2 class="underline">Headers and Line Height</h2>
+<h2>Headers and Line Height</h2>
+<hr>
 
 <h1>h1 Header</h1>
 <p>
