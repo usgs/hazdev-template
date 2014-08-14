@@ -100,15 +100,15 @@ deserunt mollit anim id est laborum.
 </p>
 
 <hr>
-<h1>h1 Header</h1>
+<h1>Header (h1)</h1>
 <hr>
-<h2>h2 Header</h2>
+<h2>Header (h2)</h2>
 <hr>
-<h3>h3 Header</h3>
+<h3>Header (h3)</h3>
 <hr>
-<h4>h4 Header</h4>
+<h4>Header (h4)</h4>
 <hr>
-<h5>h5 Header</h5>
+<h5>Header (h5)</h5>
 <hr>
-<h6>h6 Header</h6>
+<h6>Header (h6)</h6>
 <hr>
