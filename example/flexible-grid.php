@@ -14,6 +14,11 @@ if (!isset($TEMPLATE)) {
 		.mobile > .column > div {
 			border-color:#0B0;
 		}
+		@media screen and (max-width:560px) {
+			.desktop-to-mobile > .row > .column > div{
+				border-color:#0B0;
+			}
+		}
 	</style>
 	';
 
@@ -56,8 +61,8 @@ foreach ($grid_sizes as $size) {
 
 		// output mobile example
 		echo '<div class="row mobile">';
-			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (mobile)</div></div>';
-			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (mobile)</div></div>';
+			echo '<div class="column mobile-' . $i_name . '"><div>' . $i_name . ' (mobile)</div></div>';
+			echo '<div class="column mobile-' . $rest_name . '"><div>' . $rest_name . ' (mobile)</div></div>';
 		echo '</div>';
 
 	}
@@ -76,3 +81,32 @@ foreach ($grid_sizes as $size) {
 		</div>
 	</div></div>
 </div>
+
+
+<section class="desktop-to-mobile">
+	<h2>Transitioning columns</h2>
+	<p>
+		large screens see a <code>.one-of-four</code> layout, while small screens
+		get a <code>.mobile-one-of-two</code> layout. For small screens the same
+		four elements layout in a two-up grid.
+	</p>
+	<div class="row">
+		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
+	</div>
+
+	<p>
+		large screens see a <code>.five-up</code> layout, while small screens
+		get a <code>.mobile-three-up</code> layout. For small screens the same
+		five elements layout in a three-up grid.
+	</p>
+	<div class="row mobile-three-up five-up">
+		<div class="column"><div>five-up (mobile-three-up)</div></div>
+		<div class="column"><div>five-up (mobile-three-up)</div></div>
+		<div class="column"><div>five-up (mobile-three-up)</div></div>
+		<div class="column"><div>five-up (mobile-three-up)</div></div>
+		<div class="column"><div>five-up (mobile-three-up)</div></div>
+	</div>
+</section>
