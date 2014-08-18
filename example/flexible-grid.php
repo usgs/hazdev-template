@@ -11,6 +11,9 @@ if (!isset($TEMPLATE)) {
 		.row.right-to-left > .column > div {
 			border-color:#00F;
 		}
+		.mobile > .column > div {
+			border-color:#0B0;
+		}
 	</style>
 	';
 
@@ -23,18 +26,11 @@ $names = array(
 	2 => "two",
 	3 => "three",
 	4 => "four",
-	5 => "five",
-	6 => "six",
-	7 => "seven",
-	8 => "eight",
-	9 => "nine",
-	10 => "ten",
-	11 => "eleven",
-	12 => "twelve"
+	5 => "five"
 );
 
 
-$grid_sizes = array(2, 3, 4, 5, 6, 8, 10, 12);
+$grid_sizes = array(2, 3, 4, 5);
 
 
 foreach ($grid_sizes as $size) {
@@ -56,6 +52,12 @@ foreach ($grid_sizes as $size) {
 		echo '<div class="row right-to-left">';
 			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (first)</div></div>';
 			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (second)</div></div>';
+		echo '</div>';
+
+		// output mobile example
+		echo '<div class="row mobile">';
+			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (mobile)</div></div>';
+			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (mobile)</div></div>';
 		echo '</div>';
 
 	}
