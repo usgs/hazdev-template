@@ -210,6 +210,7 @@ module.exports = function (grunt) {
 					dir: appConfig.dist + '/htdocs',
 					useStrict: true,
 					wrap: false,
+					fileExclusionRegExp: /^(\.|[^_].*\.scss)/,
 
 					// for bundling require library in to index.js
 					paths: {
