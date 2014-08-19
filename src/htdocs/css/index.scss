@@ -1,0 +1,28 @@
+/* include variables */
+@import 'variables';
+
+
+/* include template partials */
+@import 'typography';
+@import 'banner';
+@import 'page';
+@import 'social';
+@import 'footer';
+@import 'offcanvas';
+
+
+/* custom styles for the template */
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+
+body {
+	margin: $body-margin;
+}
+
+
+img {
+	max-width: 100%;
+}

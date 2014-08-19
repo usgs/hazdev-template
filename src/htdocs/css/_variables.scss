@@ -1,3 +1,4 @@
+/* set template variables */
 
 $body-margin: 0 !default;
 
@@ -52,28 +53,3 @@ $offcanvas-toggle-color-active: #fff !default;
 $offcanvas-toggle-background-color-active: desaturate(lighten($banner-background-color, 20%), 60%) !default;
 
 $offcanvas-transition-time: .25s !default;
-
-
-* {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-
-body {
-	margin: $body-margin;
-}
-
-
-img {
-	max-width: 100%;
-}
-
-
-@import 'typography';
-@import 'banner';
-@import 'page';
-@import 'social';
-@import 'footer';
-@import 'offcanvas';
-
