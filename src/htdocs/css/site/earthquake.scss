@@ -1,0 +1,23 @@
+/* include variables */
+@import 'earthquake-variables';
+
+
+/* include template css file */
+@import '../template.scss';
+
+
+/* include any content module css files */
+@import '../flexible-grid.scss';
+@import '../figcaption.scss';
+@import '../jumplist.scss';
+@import '../references.scss';
+@import '../responsive-table.scss';
+
+
+/* custom styles for this theme */
+.date {
+	font-size:.9em;
+	color:#777;
+	font-family:Georgia, Times, serif;
+	font-style:normal;
+}
