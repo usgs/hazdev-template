@@ -1,17 +1,17 @@
 /* include variables */
-@import 'earthquake-variables';
+@import 'variables';
 
 
 /* include template css file */
-@import '../template.scss';
+@import '../../template.scss';
 
 
 /* include any content module css files */
-@import '../flexible-grid.scss';
-@import '../figcaption.scss';
-@import '../jumplist.scss';
-@import '../references.scss';
-@import '../responsive-table.scss';
+@import '../../flexible-grid.scss';
+@import '../../figcaption.scss';
+@import '../../jumplist.scss';
+@import '../../references.scss';
+@import '../../responsive-table.scss';
 
 
 /* custom styles for this theme */
