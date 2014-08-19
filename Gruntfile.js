@@ -229,12 +229,12 @@ module.exports = function (grunt) {
 		},
 		cssmin: {
 			dist: {
-				files: {
-					'<%= app.dist %>/htdocs/css/index.css': [
-						'<%= app.src %>/htdocs/css/**/*.css',
-						'.tmp/css/**/*.css'
-					]
-				}
+				expand: true,
+				cwd: '<%= app.tmp %>',
+				src: [
+					'**/*.css'
+				],
+				dest: '<%= app.dist %>/htdocs'
 			}
 		},
 		htmlmin: {
