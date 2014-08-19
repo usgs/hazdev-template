@@ -53,7 +53,7 @@ h6 {
 
 
 // Leave this at 768px even though the grid stacks at 560px
-@media screen and (min-width: $breakpoint-full) {
+@media screen and (min-width: $breakpoint-offcanvas) {
 
 	body {
 		font-size:1.6rem;

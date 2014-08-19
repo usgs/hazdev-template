@@ -1,5 +1,5 @@
 // set defaults, can be overridden when flexible-grid is included in site css.
-$breakpoint-full: 768px !default;
+$breakpoint-stacking: 560px !default;
 $spacing: 16px !default;
 $horizontal-spacing: $spacing !default;
 $vertical-spacing: $spacing !default;
@@ -62,7 +62,7 @@ $vertical-spacing: $spacing !default;
 .mobile-four-of-five  { width: 100%*4/5; }
 
 
-@media screen and (min-width:560px), print {
+@media screen and (min-width:$breakpoint-stacking), print {
 
 	.row {
 		margin-bottom:$vertical-spacing;

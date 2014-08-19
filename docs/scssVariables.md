@@ -114,7 +114,7 @@ Default is #CCC.
 
 ## Offcanvas
 
-Side column content is hidden by default on pages smaller than `$breakpoint-full` pixels wide, and shown by clicking a toggle link.
+Side column content is hidden by default on pages smaller than `$breakpoint-offcanvas` pixels wide, and shown by clicking a toggle link.
 
 <img src="images/overviewOffcanvas.png" alt="image of offcanvas content"/>
 
@@ -189,10 +189,14 @@ Default is $spacing.
 Used as top and bottom padding and margin of many elements.
 Default is $spacing.
 
-### $breakpoint-full
+### $breakpoint-stacking
+Width of page when content formatted using the flexible grid starts to stack.
+Default is 560px.
+
+### $breakpoint-offcanvas
 Width of page when OffCanvas is disabled.
 Default is 768px.
 
 ### $side-column-width
-Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least `$breakpoint-full` pixels wide.
+Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least `$breakpoint-offcanvas` pixels wide.
 Default is 20%.

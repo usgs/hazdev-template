@@ -31,7 +31,7 @@
 	}
 
 
-	@media screen and (min-width:$breakpoint-full) {
+	@media screen and (min-width: $breakpoint-offcanvas) {
 
 		/* make banner larger on large screens. */
 		background-size:auto 100%;

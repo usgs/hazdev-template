@@ -126,7 +126,7 @@ table.responsive {
 }
 
 
-@media screen and (min-width: 560px), print {
+@media screen and (min-width: $breakpoint-stacking), print {
 
 	table.center {
 		text-align:center;

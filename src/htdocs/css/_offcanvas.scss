@@ -15,7 +15,7 @@
 }
 
 // only applies when on a small screen
-@media screen and (max-width:($breakpoint-full - 1px)) {
+@media screen and (max-width:($breakpoint-offcanvas - 1px)) {
 
 	// offcanvas is enabled, but not necessarily active
 	.offcanvas-enabled {
