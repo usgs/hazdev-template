@@ -9,20 +9,3 @@
 @import 'social';
 @import 'footer';
 @import 'offcanvas';
-
-
-/* custom styles for the template */
-* {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-
-body {
-	margin: $body-margin;
-}
-
-
-img {
-	max-width: 100%;
-}
