@@ -1,10 +1,11 @@
-/* include variables */
+/* include earthquake variables */
 @import 'variables';
 
+/* include base variables */
+@import '../../css/variables';
 
-/* include template css file */
-@import '../../css/index.scss';
-
+/* include the template */
+@import '../../css/template';
 
 /* include any content module css files */
 @import '../../css/flexible-grid.scss';
