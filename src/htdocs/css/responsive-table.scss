@@ -9,6 +9,9 @@
 
  */
 
+// set defaults, can be overridden when responsive-table is included in site css.
+$breakpoint-stacking: 560px !default;
+
 $table_spacing: 1em !default;
 $table_border_color: #e0e0e0 !default;
 $table_background: #fff !default;
@@ -126,7 +129,7 @@ table.responsive {
 }
 
 
-@media screen and (min-width: 560px), print {
+@media screen and (min-width: $breakpoint-stacking), print {
 
 	table.center {
 		text-align:center;

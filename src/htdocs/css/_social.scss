@@ -50,7 +50,7 @@ $social-icon-size-large: 32px;
 
 .page-social {
 
-	@media screen and (max-width: ($breakpoint-full - 1px)) {
+	@media screen and (max-width: ($breakpoint-offcanvas - 1px)) {
 		@each $name in facebook, twitter, google-plus, email {
 			.#{$name} {
 				@include social-icon($name, large);
@@ -61,7 +61,7 @@ $social-icon-size-large: 32px;
 		}
 	}
 
-	@media screen and (min-width: $breakpoint-full) {
+	@media screen and (min-width: $breakpoint-offcanvas) {
 		@each $name in facebook, twitter, google-plus, email {
 			.#{$name}:before {
 				@include social-icon($name, small);

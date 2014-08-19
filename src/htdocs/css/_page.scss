@@ -1,5 +1,5 @@
 .page {
-	padding: $vertical-spacing $horizontal-spacing;
+	padding: 0 $horizontal-spacing;
 }
 
 .page-content {
@@ -12,7 +12,7 @@
 	color: $page-footer-color;
 	background-color: $page-footer-background-color;
 	padding:$vertical-spacing 0;
-	margin:1em 0 0;
+	margin:1em 0;
 	font-size:smaller;
 
 	> p {
@@ -20,7 +20,7 @@
 	}
 }
 
-@media screen and (min-width: $breakpoint-full) {
+@media screen and (min-width: $breakpoint-offcanvas) {
 
 	.page-footer {
 		position:relative;
@@ -37,10 +37,8 @@
 	}
 
 	// navigation/content as left/right columns
-
-
 	.page {
-		padding: $vertical-spacing $horizontal-spacing $vertical-spacing 0;
+		padding-left:0;
 		float: right;
 		width: 75%;
 	}
