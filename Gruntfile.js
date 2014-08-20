@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 	require('matchdep').filter('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// Load dev dependencies, if not building
-	if (grunt.cli.tasks.length > 0 &&
+	if (grunt.cli.tasks.length === 0 ||
 			// build related tasks (concurrent tasks are separate grunt processes)
 			[
 				'build',
