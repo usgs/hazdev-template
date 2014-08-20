@@ -1,9 +1,7 @@
 'use strict';
 
 var LIVE_RELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
-var proxyRequest = require('grunt-connect-proxy/lib/utils').proxyRequest;
-var gateway = require('gateway');
+var lrSnippet, proxyRequest, gateway;
 var child_process = require('child_process');
 
 
@@ -27,8 +25,29 @@ var mountPHP = function (dir, options) {
 
 module.exports = function (grunt) {
 
-	// Load grunt tasks
-	require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
+	// Load build dependencies
+	require('matchdep').filter('grunt-*').forEach(grunt.loadNpmTasks);
+
+	// Load dev dependencies, if not building
+	if (grunt.cli.tasks.length > 0 &&
+			// build related tasks (concurrent tasks are separate grunt processes)
+			[
+				'build',
+				'copy',
+				'jshint:scripts',
+				'jshint:examples',
+				'compass',
+				'cssmin:dist',
+				'htmlmin:dist',
+				'uglify',
+				'runpreinstall:dist'
+			].indexOf(grunt.cli.tasks[0]) === -1) {
+		require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+		lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
+		proxyRequest = require('grunt-connect-proxy/lib/utils').proxyRequest;
+		gateway = require('gateway');
+	}
 
 	// App configuration, used throughout
 	var appConfig = {
