@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 				'copy',
 				'jshint:scripts',
 				'jshint:examples',
-				'compass',
+				'compass:dev',
 				'cssmin:dist',
 				'htmlmin:dist',
 				'uglify',
@@ -103,7 +103,7 @@ module.exports = function (grunt) {
 			predist: [
 				'jshint:scripts',
 				'jshint:examples',
-				'compass',
+				'compass:dev',
 				'copy'
 			],
 			dist: [
@@ -208,8 +208,8 @@ module.exports = function (grunt) {
 		compass: {
 			dev: {
 				options: {
-					sassDir: '<%= app.src %>/htdocs/css',
-					cssDir: '<%= app.tmp %>/css',
+					sassDir: '<%= app.src %>/htdocs',
+					cssDir: '<%= app.tmp %>',
 					environment: 'development'
 				}
 			},
@@ -362,7 +362,7 @@ module.exports = function (grunt) {
 
 	// build the distribution
 	grunt.registerTask('build', [
-		'clean:dist',
+		'clean',
 		'concurrent:predist',
 		'requirejs:dist',
 		'concurrent:dist'
