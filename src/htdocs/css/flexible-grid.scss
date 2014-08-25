@@ -9,13 +9,13 @@ $vertical-spacing: $spacing !default;
 	width:100%;
 	margin-bottom:$vertical-spacing;
 	// make gutter on right side of each column
-	padding-right:$horizontal-spacing;
+	padding-left:$horizontal-spacing;
 }
 
 // rows are left-to-right
 .row {
 	clear:both;
-	margin-right:-$horizontal-spacing;
+	margin-left:-$horizontal-spacing;
 	margin-bottom:0;
 
 	> .column {
