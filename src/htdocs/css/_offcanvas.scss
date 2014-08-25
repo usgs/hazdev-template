@@ -69,7 +69,7 @@
 
 		// position mask over page
 		.offcanvas-mask {
-			background-color:rgba(0, 0, 0, .7);
+			background-color:rgba(0, 0, 0, 0);
 			display:none;
 			position:fixed;
 			left:0;
@@ -77,7 +77,7 @@
 			bottom:0;
 			width:100%;
 			z-index:1001;
-			transition: left $offcanvas-transition-time ease-in-out;
+			transition: background-color $offcanvas-transition-time linear;
 			cursor:pointer;
 		}
 
@@ -110,7 +110,7 @@
 
 		// move mask to right of offcanvas
 		.offcanvas-mask {
-			left:240px;
+			background-color:rgba(0, 0, 0, .7);
 		}
 	}
 
