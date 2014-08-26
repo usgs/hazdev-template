@@ -77,7 +77,7 @@
 			bottom:0;
 			width:100%;
 			z-index:1001;
-			transition: background-color $offcanvas-transition-time linear;
+			transition: background-color $offcanvas-transition-time ease-in-out;
 			cursor:pointer;
 		}
 
