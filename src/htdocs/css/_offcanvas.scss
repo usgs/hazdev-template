@@ -53,10 +53,10 @@
 		.offcanvas {
 			position:fixed;
 			display:none;
-			left:-240px;
+			left:-$offcanvas-width;
 			top:0;
 			bottom:0;
-			width:240px;
+			width:$offcanvas-width;
 
 			background-color:#FFF;
 			padding:0 $spacing;
