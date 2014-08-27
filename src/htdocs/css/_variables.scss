@@ -46,8 +46,8 @@ $sectionnav-background-color-hover: #fff;
 $sectionnav-border-color: #ddd;
 
 
-$offcanvas-width: 240px !default;
-$offcanvas-toggle-color: $sitenav-color !default;
+$offcanvas-width: 228px !default;
+$offcanvas-toggle-color: #333 !default;
 $offcanvas-toggle-background-color: $banner-background-color !default;
 $offcanvas-toggle-color-active: #fff !default;
 $offcanvas-toggle-background-color-active: desaturate(lighten($banner-background-color, 20%), 60%) !default;

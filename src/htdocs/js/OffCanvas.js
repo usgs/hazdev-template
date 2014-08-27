@@ -46,7 +46,7 @@ define([], function() {
 		'maskClass': 'offcanvas-mask',
 		'containerClass': 'offcanvas',
 		'toggleClass': 'offcanvas-toggle',
-		'toggleContent': '&#8801;',
+		'toggleContent': 'Menu',
 		'enabledClass': 'offcanvas-enabled',
 		'almostActiveClass': 'offcanvas-almost-active',
 		'activeClass': 'offcanvas-active'
