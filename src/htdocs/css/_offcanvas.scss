@@ -46,6 +46,12 @@
 			-moz-user-select: none;
 			-webkit-user-select: none;
 			-ms-user-select: none;
+
+			&:active {
+				text-shadow: 0 1px 0 #ccc;
+				background: $offcanvas-toggle-background-color-active;
+				background-image: linear-gradient(to bottom,#dadada,#999);
+			}
 		}
 
 		// position offcanvas to left of page
