@@ -7,7 +7,7 @@ var child_process = require('child_process'),
     fs = require('fs');
 
 var mountFolder = function (connect, dir) {
-	return connect.static(require('path').resolve(dir));
+	return connect.static(path.resolve(dir));
 };
 
 var mountPHP = function (dir, options) {
@@ -21,7 +21,7 @@ var mountPHP = function (dir, options) {
 		}
 	};
 
-	return gateway(require('path').resolve(dir), gatewayOptions);
+	return gateway(path.resolve(dir), gatewayOptions);
 };
 
 module.exports = function (grunt) {
