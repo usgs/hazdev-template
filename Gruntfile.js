@@ -2,8 +2,9 @@
 
 var LIVE_RELOAD_PORT = 35729;
 var lrSnippet, proxyRequest, gateway;
-var child_process = require('child_process');
-
+var child_process = require('child_process'),
+    path = require('path'),
+    fs = require('fs');
 
 var mountFolder = function (connect, dir) {
 	return connect.static(require('path').resolve(dir));
@@ -26,7 +27,30 @@ var mountPHP = function (dir, options) {
 module.exports = function (grunt) {
 
 	// Load build dependencies
-	require('matchdep').filter('grunt-*').forEach(grunt.loadNpmTasks);
+
+	// check if being run as another project's dependency:
+	// when npm installs as another projects dependency, npm doesn't reinstall
+	// shared (used by parent) dependencies locally, so they must be loaded
+	// from parent node modules directory instead.
+	var loadNpmTasks = grunt.loadNpmTasks,
+	    cwd = process.cwd(),
+	    localModules = cwd + path.sep + 'node_modules',
+	    parentModules = path.dirname(cwd);
+	if (path.basename(parentModules) === 'node_modules') {
+		var parentDir = path.dirname(parentModules);
+
+		loadNpmTasks = function (name) {
+			if (!fs.existsSync(localModules + path.sep + name)) {
+				process.chdir(parentDir);
+				grunt.loadNpmTasks(name);
+				process.chdir(cwd);
+			} else {
+				grunt.loadNpmTasks(name);
+			}
+		}
+	}
+
+	require('matchdep').filter('grunt-*').forEach(loadNpmTasks);
 
 	// Load dev dependencies, if not building
 	if (grunt.cli.tasks.length === 0 ||
