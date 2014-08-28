@@ -7,7 +7,6 @@ $vertical-spacing: $spacing !default;
 
 .column {
 	width:100%;
-	margin-bottom:$vertical-spacing;
 	// make gutter on right side of each column
 	padding-left:$horizontal-spacing;
 }
@@ -16,7 +15,6 @@ $vertical-spacing: $spacing !default;
 .row {
 	clear:both;
 	margin-left:-$horizontal-spacing;
-	margin-bottom:0;
 
 	> .column {
 		float:left;
@@ -63,14 +61,6 @@ $vertical-spacing: $spacing !default;
 
 
 @media screen and (min-width:$breakpoint-stacking), print {
-
-	.row {
-		margin-bottom:$vertical-spacing;
-	}
-
-	.column {
-		margin-bottom:0;
-	}
 
 	// */1
 	.one-of-one    { width: 100%; }
