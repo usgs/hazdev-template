@@ -258,7 +258,8 @@ module.exports = function (grunt) {
 
 					// for bundling require library in to index.js
 					paths: {
-						requireLib: '../../../node_modules/requirejs/require',
+						requireLib: (fs.existsSync(localModules + path.sep + 'requirejs') ? '' : '../../') +
+								'../../../node_modules/requirejs/require',
 						theme: '.'
 					},
 
