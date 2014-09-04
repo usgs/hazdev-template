@@ -16,6 +16,11 @@ img {
 	max-width: 100%;
 }
 
+abbr {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
 .page {
 	padding: 0 $horizontal-spacing;
 }
