@@ -1,11 +1,11 @@
 /** Stacked should be the default mobile style */
-select, textarea, input, button, fieldset, legend, label {
+select, textarea, input, fieldset, legend, label {
 	display:block;
 	clear:both;
 	vertical-align:middle;
 }
 
-textarea, input, button, select {
+textarea, input, select {
 	height:2.5em;
 	border:1px solid #d8d8d8;
 	padding: 0.6666em 1em;
