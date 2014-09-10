@@ -76,14 +76,14 @@ if (!isset($TEMPLATE)) {
 
 <h2>Forms</h2>
 <p>
-	The inputs and labels on a form can be stacked by applying <code>.stacked</code> to the container of the form elements.
-</p>
+	The inputs, labels, and other form elements on a form are stacked
+	when the <code>.stacked</code> class is applied to the container.
 <h3 class="subheading">Example 1</h3>
-<form class="form">
+<form class="form stacked">
 
 	<!-- Label and text input -->
 	<label for="regularInput">Regular Input</label>
-	<input type="text" id="regularInput" />
+	<input type="text" id="regularInput" placeholder="Placeholder Text"/>
 
 	<!-- Label and textarea -->
 	<label for="regularTextarea">Regular Textarea</label>
