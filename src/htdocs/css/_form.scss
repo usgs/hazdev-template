@@ -1,0 +1,37 @@
+/** Stacked should be the default mobile style */
+select, textarea, input, button, fieldset, legend, label {
+	display:block;
+	clear:both;
+	vertical-align:middle;
+}
+
+textarea, input, button, select {
+	height:2.5em;
+	border:1px solid #d8d8d8;
+	padding: 0.6666em 1em;
+}
+
+label {
+	margin: 15px 0 5px;
+}
+
+fieldset {
+	margin:15px 0;
+	padding:0;
+	border:none;
+
+	label {
+		margin: 5px 0 0;
+	}
+}
+
+fieldset {
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display:inline;
+	height:1.5em;
+	margin:3px 6px 3px 6px;
+}
+

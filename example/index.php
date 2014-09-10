@@ -46,6 +46,10 @@ if (!isset($TEMPLATE)) {
 		padding-left:1em;
 	}
 
+	hr {
+		margin:25px 0;
+	}
+
 </style>
 
 <p>
@@ -65,6 +69,70 @@ if (!isset($TEMPLATE)) {
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
+
+
+<hr class="article-divider" />
+
+
+<h2>Forms</h2>
+<p>
+	The inputs and labels on a form can be stacked by applying <code>.stacked</code> to the container of the form elements.
+</p>
+<h3 class="subheading">Example 1</h3>
+<form class="form">
+
+	<!-- Label and text input -->
+	<label for="regularInput">Regular Input</label>
+	<input type="text" id="regularInput" />
+
+	<!-- Label and textarea -->
+	<label for="regularTextarea">Regular Textarea</label>
+	<textarea id="regularTextarea"></textarea>
+
+	<!-- Label and select list -->
+	<label for="selectList">Select List</label>
+	<select id="selectList">
+		<option value="Option 1">Option 1</option>
+		<option value="Option 2">Option 2</option>
+		<option value="Option 3">Option 3</option>
+	</select>
+
+	<!-- Wrap checkbox/radio button groups in fieldsets -->
+	<fieldset>
+
+		<!-- Give the fieldset a legend -->
+		<legend for="">Checkboxes</legend>
+
+		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
+		<label for="regularCheckbox">
+			<input type="checkbox" id="regularCheckbox" value="checkbox 1" />
+			Regular Checkbox
+		</label>
+
+		<label for="secondRegularCheckbox">
+			<input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
+			Regular Checkbox
+		</label>
+	</fieldset>
+
+	<fieldset>
+		<legend>Radio Buttons</legend>
+		<label for="regularRadio">
+			<input type="radio" name="radios" id="regularRadio" value="radio 1" />
+			Regular Radio
+		</label>
+		<label for="secondRegularRadio">
+			<input type="radio" name="radios" id="secondRegularRadio" value="radio 2" />
+			Regular Radio
+		</label>
+	</fieldset>
+
+	<button type="submit">Submit Form</button>
+</form>
+
+
+<hr class="article-divider" />
+
 
 <section class="buttons">
 <h2>Buttons</h2>
