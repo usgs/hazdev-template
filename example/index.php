@@ -14,24 +14,8 @@ if (!isset($TEMPLATE)) {
 		min-width:80px;
 	}
 
-	.confirm {
-		color:#fff;
-		background:#2EA96A;
-		text-shadow:0 1px 1px rgba(0,0,0,0.6);
-		border-color:#0C7C42;
-		border-color:#108B4C;
-	}
-
 	.confirm.icon:after {
 		content:'\2713';
-	}
-
-	.cancel {
-		color:#fff;
-		background:#C7351F;
-		text-shadow:0 1px 1px rgba(0,0,0,0.6);
-		border-color:#7E1000;
-		border-color:#961300;
 	}
 
 	.cancel.icon:after {
