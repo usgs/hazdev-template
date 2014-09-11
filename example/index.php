@@ -14,21 +14,11 @@ if (!isset($TEMPLATE)) {
 		min-width:80px;
 	}
 
-	.confirm.icon:after {
-		content:'\2713';
+	.buttons button.cancel,
+	.buttons button.confirm {
+		min-width:100px;
 	}
 
-	.cancel.icon:after {
-		content:'x';
-		font-weight:bold;
-	}
-
-	.icon:after {
-		position:relative;
-		border-left:1px solid rgba(0,0,0,0.2);
-		margin-left:1em;
-		padding-left:1em;
-	}
 
 	hr {
 		margin:25px 0;
@@ -130,18 +120,18 @@ if (!isset($TEMPLATE)) {
 <button type="submit" disabled>Disabled</button>
 
 <h3 class="subheading">Example 2</h3>
-<button class="confirm" type="submit">Yes</button>
-<button class="cancel" type="submit">No</button>
+<button class="green" type="submit">Yes</button>
+<button type="submit">No</button>
 <br>
-<button class="confirm" type="submit" disabled>Yes</button>
-<button class="cancel" type="submit" disabled>No</button>
+<button class="green" type="submit" disabled>Yes</button>
+<button type="submit" disabled>No</button>
 
 <h3 class="subheading">Example 3</h3>
-<button class="confirm icon" type="submit">Confirm</button>
-<button class="cancel icon" type="submit">Cancel</button>
+<button class="green confirm" type="submit">Yes</button>
+<button class="cancel" type="submit">No</button>
 <br>
-<button class="confirm icon" type="submit" disabled>Confirm</button>
-<button class="cancel icon" type="submit" disabled>Cancel</button>
+<button class="green confirm" type="submit" disabled>Yes</button>
+<button class="cancel" type="submit" disabled>No</button>
 
 <h3 class="subheading">Example 4</h3>
 <button class="red" type="submit">Red</button>

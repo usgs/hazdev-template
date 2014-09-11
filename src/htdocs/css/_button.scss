@@ -1,4 +1,5 @@
 button {
+	position:relative;
 	font-size:0.75em;
 	padding:.666em 1em;
 	color: #555;
@@ -18,15 +19,11 @@ button {
 	&.red,
 	&.orange,
 	&.green,
-	&.blue,
-	&.confirm,
-	&.caution,
-	&.warning {
+	&.blue {
 		color:#fff;
 		text-shadow:0 1px 1px rgba(0,0,0,0.6);
 	}
 
-	&.cancel,
 	&.yellow {
 		color:#555;
 		text-shadow:0 1px 1px #fff;
@@ -43,57 +40,67 @@ button {
 			background-image:none;
 		}
 	}
+
+
+	/*** DO PEOPLE LIKE ?? -- Icon styling on buttons for yes/no options ***/
+	&.cancel,
+	&.confirm {
+		text-align:left;
+
+		&:after {
+			position: absolute;
+			right: 0;
+			top: -1px;
+			bottom: -1px;
+			padding: 0;
+			margin: 0;
+
+			line-height: 2.6em;
+			width: 3em;
+			text-align: center;
+			border-left: 1px solid rgba(0,0,0,0.05);
+			background: rgba(0,0,0,0.05);
+		}
+
+		&[disabled]:after,
+		&.disabled:after, {
+			border:none;
+		}
+	}
+
+	&.confirm:after {
+		content:'\2713';
+	}
+
+	&.cancel:after {
+		content:'x';
+		font-weight:bold;
+	}
+	/*** END of icon styling ***/
 }
 
-
-
-
-
-.cancel {
-	background: #f8f8f8;
-	border-color: #d8d8d8;
-}
-
-.red,
-.warning {
+.red {
 	background: #C7351F;
 	border-color: #961300;
 }
 
-.orange,
-.caution {
+.orange {
 	background: #FA8B12;
 	border-color: #C96900;
 }
 
 .yellow {
 	background: #F0F00D;
-	background: #ECEC00;
 	border-color: #CFCF00;
 }
 
-.green,
-.confirm {
+.green {
 	background: #2EA96A;
 	border-color: #108B4C;
 }
 
 .blue {
-	background: #0070FF;
 	background: #008BF8;
 	border-color: #004FB4;
 }
 
-
-// .tint {
-// 	background: #329FF5; //blue
-// 	background: #4CB47F; //green
-// 	background: #F3F374; //yellow
-// 	background: #F7A347; //orange
-// 	background: #C45747; //red
-// }
-
-
-.tint {
-	background-image:linear-gradient(to top, rgba(255,255,255,0.3), rgba(255,255,255,0.3));
-}
