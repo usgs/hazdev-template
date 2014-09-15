@@ -4,27 +4,8 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	include 'template.inc.php';
-
 }
 ?>
-
-<style>
-
-	.buttons button {
-		min-width:80px;
-	}
-
-	.buttons button.cancel,
-	.buttons button.confirm {
-		min-width:100px;
-	}
-
-
-	hr {
-		margin:25px 0;
-	}
-
-</style>
 
 <p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
