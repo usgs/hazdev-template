@@ -7,6 +7,7 @@ if (!isset($TEMPLATE)) {
 	<style>
 		.row > .column > div {
 			border:1px solid #F00;
+			margin-bottom:8px;
 		}
 		.row.right-to-left > .column > div {
 			border-color:#00F;
