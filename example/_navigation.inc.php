@@ -12,5 +12,6 @@ echo navGroup('Additional Extensions',
 		navItem('/responsive-table.php', 'Responsive Table') .
 		navItem('/figcaption.php', 'Figure Caption') .
 		navItem('/jumplist.php', 'Jump List') .
-		navItem('/references.php', 'References')
+		navItem('/references.php', 'References') .
+		navItem('/form.php', 'Forms')
 	);

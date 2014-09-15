@@ -1,0 +1,45 @@
+/** Stacked should be the default mobile style */
+select, textarea, input, fieldset, legend, label {
+	vertical-align:middle;
+}
+
+textarea, input, select {
+	height:2.5em;
+	border:1px solid #d8d8d8;
+	padding: 0.5em;
+	font-size:0.75em;
+	border-radius: 2px;
+}
+
+label,
+legend {
+	margin: 15px 0 5px;
+}
+
+fieldset {
+	margin:15px 0;
+	padding:0;
+	border:none;
+
+	label {
+		margin: 5px 0 0;
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	height:1.5em;
+	margin:3px 6px 3px 6px;
+}
+
+.stacked {
+	select, textarea, input, fieldset, legend, label {
+		display:block;
+		clear:both;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"] {
+		display:inline;
+	}
+}

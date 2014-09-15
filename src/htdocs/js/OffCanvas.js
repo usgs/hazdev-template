@@ -110,7 +110,7 @@ define([], function() {
 		this._mask = mask;
 
 		// toggle offcanvas visibility
-		toggle = body.appendChild(document.createElement('div'));
+		toggle = body.appendChild(document.createElement('button'));
 		toggle.className = options.toggleClass;
 		toggle.innerHTML = options.toggleContent;
 		toggle.addEventListener('click', this.toggle);
