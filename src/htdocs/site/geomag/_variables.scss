@@ -1,0 +1,9 @@
+/* set template variables */
+
+$banner-image:'/theme/images/usgs-banner.jpg' !default;
+$site-title-background-color:#1B3C43 !default;
+$site-title:'National Geomagnetism Program' !default;
+$sitenav-background-color: #A2C07B !default;
+
+// import default variables
+@import '../../css/variables';
