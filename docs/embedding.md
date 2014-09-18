@@ -8,7 +8,9 @@ npm install hazdev-template --save-dev</code></pre>
 
 ## Gruntfile configuration
 
-NOTE: Plus (+) characters are added to the beginning of lines to highlight lines being added to the gruntfile, but are not part of the content that should be added.
+NOTE: Plus (+) characters are added to the beginning of lines to highlight lines
+being added to the gruntfile, but are not part of the content that should be
+added.
 
 Configure php include path, by updating the mountPHP middleware function:
 
@@ -16,16 +18,26 @@ Configure php include path, by updating the mountPHP middleware function:
 +	options = options || {
 +	  '.php': 'php-cgi',
 +	  'env': {
-+	    'PHPRC': process.cwd() + '/node_modules/hazdev-template/src/conf/php.ini'
++	    'PHPRC': process.cwd() + '/node_modules/hazdev-template/dist/conf/php.ini'
 +	  }
 +	};</strong>
 	return gateway(require('path').resolve(dir), options);
 };
 </code></pre>
 
+### NOTE: This overrides the default php configuration
+This may include custom extensions or other PHP settings, these should be
+re-added to the php.ini file that is loaded from the template.
+For example, to add the PDO Sqlite extension:
+<pre><code>
+  extension_dir = C:\php55\ext
+  extension = php_pdo_sqlite.dll
+</code></pre>
+
 #### Configure grunt-connect-rewrite module:
 
-In each grunt task that uses connect, add configureRewriteRules task before any connect:
+In each grunt task that uses connect, add configureRewriteRules task before any
+connect:
 
 <pre><code>grunt.registerTask('default', [
     'clean:dist',
@@ -45,7 +57,8 @@ At top of Gruntfile, add this:
 </code></pre>
 
 
-In the connect section, add a rules property to configure template rewrites; add the rewriteRulesSnippet middleware and mount the node_modules folder
+In the connect section, add a rules property to configure template rewrites; add
+the rewriteRulesSnippet middleware and mount the node_modules folder
 
 <pre><code>connect: {
     options: {
@@ -79,5 +92,7 @@ In the connect section, add a rules property to configure template rewrites; add
 
 ## Site configuration
 
-See [Site Configuration](siteConfiguration.md) for information on configuring a template theme and site.  The effective DOCUMENT_ROOT is often `src/htdocs`, for `_config.inc.php`, but may vary.
+See [Site Configuration](siteConfiguration.md) for information on configuring a
+template theme and site.  The effective DOCUMENT_ROOT is often `src/htdocs`, for
+`_config.inc.php`, but may vary.
 
