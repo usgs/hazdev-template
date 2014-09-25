@@ -33,7 +33,7 @@ input[type="checkbox"] {
 }
 
 .stacked {
-	select, textarea, input, fieldset, legend, label {
+	label {
 		display:block;
 		clear:both;
 	}
