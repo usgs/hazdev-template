@@ -16,17 +16,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
-a {
-	color: $link-color;
-
-	&:active {
-		color: #c23030;
-	}
-	&:visited {
-		color: $link-color;
-	}
-}
-
 h1 {
 	font-size: 2em;
 }
