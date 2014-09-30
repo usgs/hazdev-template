@@ -13,5 +13,6 @@ echo navGroup('Additional Extensions',
 		navItem('/figcaption.php', 'Figure Caption') .
 		navItem('/jumplist.php', 'Jump List') .
 		navItem('/references.php', 'References') .
-		navItem('/form.php', 'Forms')
+		navItem('/form.php', 'Forms') .
+		navItem('/text.php', 'Text Level Semantics')
 	);
