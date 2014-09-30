@@ -1,1 +1,33 @@
 /** Text Level Semantics **/
+
+a {
+	color: $link-color;
+
+	&:active {
+		color: #c23030;
+	}
+	&:visited {
+		color: $link-color;
+	}
+}
+
+abbr {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+code {
+	font-size: 0.8em;
+	font-family: Consolas,monospace,serif;
+	color: #555;
+	white-space: nowrap;
+	padding: 2px 4px;
+	border: 1px solid #d8d8d8;
+	border-radius: 3px;
+	background: #f8f8f8;
+}
+
+mark {
+	background-color: rgba(255, 249, 113, 0.6);
+	padding: 2px 4px;
+}
