@@ -14,17 +14,7 @@
 					border-radius: 2em;
 				}
 
-				// .alert {
-				// 	margin: 1em 0;
-				// }
-
-				// p.alert,
-				// input.alert,
-				// div.alert {
-				// 	margin: 0;
-				// }
-
-				dd {
+				.example > dd {
 					margin-bottom: 1em;
 				}
 			</style>
@@ -73,7 +63,7 @@
 	<code>warning</code>, and <code>error</code>, can be applied to
 	any HTML elements.
 </p>
-<dl class="horizontal">
+<dl class="horizontal example">
 	<dt>Input Elements</dt>
 	<dd>
 		<input id="input-field" type="text" class="alert error" value="Error state">
