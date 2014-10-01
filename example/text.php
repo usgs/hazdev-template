@@ -5,12 +5,6 @@
 
 		$HEAD = '
 			<link rel="stylesheet" href="/css/responsive-table.css"/>
-
-			<style>
-				pre > code {
-					padding: 10px;
-				}
-			</style>
 		';
 
 		include 'template.inc.php';
@@ -65,8 +59,4 @@
 	</tbody>
 </table>
 <h3 class="subheading">Usage</h3>
-<pre>
-<code>
-	&lt; TODO:: add code sample.&gt;
-</code>
-</pre>
+<pre><code>&lt; TODO:: add code sample.&gt;</code></pre>

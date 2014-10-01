@@ -16,15 +16,26 @@ abbr {
 	cursor: help;
 }
 
+pre,
 code {
-	font-size: 0.8em;
 	font-family: Consolas,monospace,serif;
 	color: #555;
-	white-space: nowrap;
-	padding: 2px 4px;
-	border: 1px solid #d8d8d8;
-	border-radius: 3px;
 	background: #f8f8f8;
+	border-radius: 3px;
+}
+
+:not(pre)>code {
+	border: 1px solid #d8d8d8;
+	padding: 2px 4px;
+}
+
+code {
+	font-size: 0.8em;
+}
+
+pre {
+	border: 1px solid #d8d8d8;
+	padding: 10px 15px;
 }
 
 mark {
