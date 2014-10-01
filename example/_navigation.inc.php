@@ -15,5 +15,6 @@ echo navGroup('Additional Extensions',
 		navItem('/references.php', 'References') .
 		navItem('/form.php', 'Forms') .
 		navItem('/text.php', 'Text Level Semantics') .
-		navItem('/list.php', 'Lists')
+		navItem('/list.php', 'Lists') .
+		navItem('/alert.php', 'Alerts')
 	);
