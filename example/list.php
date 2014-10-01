@@ -131,11 +131,24 @@
 <h3 class="subheading">Default Styles</h3>
 <dl>
 	<dt>This is a longer definition term</dt>
-	<dd>Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam ut lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut vitae metus et quam rutrum varius sit amet sit amet lectus. Suspendisse rhoncus nibh eu placerat blandit. Pellentesque quis mollis leo. Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue, fringilla et felis eget, commodo consequat sem.</dd>
+	<dd>
+		Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam
+		ut lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut
+		vitae metus et quam rutrum varius sit amet sit amet lectus. Suspendisse
+		rhoncus nibh eu placerat blandit. Pellentesque quis mollis leo. Aenean
+		sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue,
+		fringilla et felis eget, commodo consequat sem.
+	</dd>
 	<dt>This is a term</dt>
-	<dd>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue, fringilla et felis eget.</dd>
-	<dt>This is a term</dt>
-	<dd>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue, fringilla et felis eget.</dd>
+	<dd>
+		Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna
+		augue, fringilla et felis eget.
+	</dd>
+	<dt>This is a term that overflows</dt>
+	<dd>
+		Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna
+		augue, fringilla et felis eget.
+	</dd>
 </dl>
 <h3 class="subheading">Usage</h3>
 <pre>
@@ -144,14 +157,31 @@
 </code>
 </pre>
 <h3 class="subheading">Horizontal Definition List</h3>
-<p>Add the <code>.horizontal</code> class to display terms and definitions side by side.</p>
+<p>
+	Add the <code>.horizontal</code> class to display terms and definitions side
+	by side. On mobile devices the horizontal definition list collapses, it does
+	not layout horizontally.
+</p>
 <dl class="horizontal">
 	<dt>This is a longer definition term</dt>
-	<dd>Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam ut lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut vitae metus et quam rutrum varius sit amet sit amet lectus. Suspendisse rhoncus nibh eu placerat blandit. Pellentesque quis mollis leo. Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue, fringilla et felis eget, commodo consequat sem.</dd>
+	<dd>
+		Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam
+		ut lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut
+		vitae metus et quam rutrum varius sit amet sit amet lectus. Suspendisse
+		rhoncus nibh eu placerat blandit. Pellentesque quis mollis leo. Aenean
+		sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue,
+		fringilla et felis eget, commodo consequat sem.
+	</dd>
 	<dt>This is a term</dt>
-	<dd>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue, fringilla et felis eget.</dd>
+	<dd>
+		Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna
+		augue, fringilla et felis eget.
+	</dd>
 	<dt>This is a term that overflows</dt>
-	<dd>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue, fringilla et felis eget.</dd>
+	<dd>
+		Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna
+		augue, fringilla et felis eget.
+	</dd>
 </dl>
 <h3 class="subheading">Usage</h3>
 <pre>

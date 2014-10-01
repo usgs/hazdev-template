@@ -28,18 +28,39 @@ fieldset {
 
 input[type="radio"],
 input[type="checkbox"] {
+	display:inline;
 	height:1.5em;
 	margin:3px 6px 3px 6px;
 }
 
-.stacked {
-	select, textarea, input, fieldset, legend, label {
-		display:block;
-		clear:both;
+label {
+	display:block;
+	clear:both;
+}
+
+
+
+@media screen and (min-width: $breakpoint-stacking) {
+
+	label,
+	legend {
+		margin: 0;
 	}
 
-	input[type="radio"],
-	input[type="checkbox"] {
+	label {
+		clear:none;
 		display:inline;
+	}
+
+	.vertical {
+		label {
+			display:block;
+			clear:both;
+		}
+
+		input[type="radio"],
+		input[type="checkbox"] {
+			display:inline;
+		}
 	}
 }
