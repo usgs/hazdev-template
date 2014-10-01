@@ -56,6 +56,13 @@ label {
 		label {
 			display:block;
 			clear:both;
+			margin: 15px 0 5px;
+		}
+
+		fieldset {
+			label {
+				margin: 5px 0 0;
+			}
 		}
 
 		input[type="radio"],
