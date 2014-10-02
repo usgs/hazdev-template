@@ -4,7 +4,7 @@ select, textarea, input, fieldset, legend, label {
 }
 
 textarea, input, select {
-	height:2.5em;
+	height:3rem;
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	font-size:0.75em;
@@ -13,6 +13,7 @@ textarea, input, select {
 
 label,
 legend {
+	line-height:3rem;
 	margin: 15px 0 5px;
 }
 
@@ -28,9 +29,9 @@ fieldset {
 
 input[type="radio"],
 input[type="checkbox"] {
-	display:inline;
-	height:1.5em;
-	margin:3px 6px 3px 6px;
+	display: inline;
+	height: 3rem;
+	margin: 0 6px 3px 9px;
 }
 
 label {
@@ -38,6 +39,11 @@ label {
 	clear:both;
 }
 
+/* collapse margins from .row on horizontal form at mobile screen sizes */
+.column > legend,
+.column > label {
+	margin: 0 0 5px;
+}
 
 
 @media screen and (min-width: $breakpoint-stacking) {
@@ -63,11 +69,6 @@ label {
 			label {
 				margin: 5px 0 0;
 			}
-		}
-
-		input[type="radio"],
-		input[type="checkbox"] {
-			display:inline;
 		}
 	}
 }
