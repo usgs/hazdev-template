@@ -1,19 +1,24 @@
 button {
 	position:relative;
 	font-size:0.75em;
-	padding:.666em 1em;
+	line-height:3rem;
+	padding:0 1em;
 	color: #555;
 	background: #f8f8f8;
 	text-shadow:0 1px 1px #fff;
-	border:1px solid #d8d8d8;
 	border-radius:2px;
 	cursor:pointer;
+	border:none;
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset;
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.05) 0%,
+			rgba(0,0,0,0.05) 100%);
 
 	&:hover,
 	&:active {
 		background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,
 				rgba(0,0,0,0.1) 100%);
 		color:#000;
+		text-shadow:none;
 	}
 
 	&.red,
@@ -21,7 +26,7 @@ button {
 	&.green,
 	&.blue {
 		color:#fff;
-		text-shadow:0 1px 1px rgba(0,0,0,0.6);
+		text-shadow:0 1px 1px rgba(0,0,0,0.4);
 	}
 
 	&.yellow {
@@ -34,7 +39,7 @@ button {
 		color:#777;
 		text-shadow:none;
 		cursor:text;
-		border-color:#e9e9e9;
+		box-shadow:none;
 
 		&:hover {
 			background-image:none;
@@ -50,14 +55,15 @@ button {
 		&:after {
 			position: absolute;
 			right: 0;
-			top: -1px;
-			bottom: -1px;
+			top: 0;
+			bottom: 0;
 			padding: 0;
 			margin: 0;
 
-			line-height: 2.6em;
+			line-height: 3rem;
 			width: 3em;
 			text-align: center;
+			border-radius: 0 2px 2px 0;
 			border-left: 1px solid rgba(0,0,0,0.05);
 			background: rgba(0,0,0,0.05);
 		}
@@ -79,28 +85,24 @@ button {
 	/*** END of icon styling ***/
 }
 
+
 .red {
-	background: #CF4C39;
-	border-color: #AF4F41;
+	background-color: #E46554;
 }
 
 .orange {
-	background: #FA8B12;
-	border-color: #C96900;
+	background-color: #F59048;
 }
 
 .yellow {
-	background: #F0F00D;
-	border-color: #CFCF00;
+	background-color: #FFF066;
 }
 
 .green {
-	background: #2EA96A;
-	border-color: #108B4C;
+	background-color: #58A973;
 }
 
 .blue {
-	background: #008BF8;
-	border-color: #004FB4;
+	background-color: #5393CA;
 }
 
