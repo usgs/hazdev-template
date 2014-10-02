@@ -7,15 +7,23 @@
 		$HEAD = '
 			<style>
 				.help {
-					width: 3em;
-					height: 3em;
+					width: 2em;
+					height: 2em;
 					text-align: center;
 					font-weight: bold;
-					border-radius: 2em;
+					border-radius: 1em;
+					line-height: 2em;
+					padding: 0;
 				}
 
 				.example > dd {
 					margin-bottom: 1em;
+				}
+
+				input.alert:focus {
+					background: #fff;
+					color: #555;
+					border: 1px solid #d8d8d8;
 				}
 			</style>
 		';
@@ -41,11 +49,11 @@
 	<code>.alert .success</code> classes.
 </p>
 <p class="alert warning">
-	To indicate a message containing a warning add the
+	To highlight a message containing a warning add the
 	<code>.alert .warning</code> classes.
 </p>
 <p class="alert error">
-	To indicate a message containing an error add the
+	To highlight a message containing an error add the
 	<code>.alert .error</code> classes.
 </p>
 <h3 class="subheading">Usage</h3>
@@ -70,14 +78,14 @@
 	</dd>
 	<dt>Span Elements</dt>
 	<dd>
-		<span class="alert warning">
-			This text is inside a <code>&lt;p&gt;</code> tag styled with
-			<code>.alert .warning</code>
+		<span class="alert info">
+			This text is inside a <code>&lt;span&gt;</code> tag styled with
+			<code>.alert .info</code>
 		</span>
 	</dd>
 	<dt>Div Elements</dt>
 	<dd>
-		<div class="alert info help">?</div>
+		<div class="alert success help">&#10003;</div>
 	</dd>
 </dl>
 <h3 class="subheading">Usage</h3>
