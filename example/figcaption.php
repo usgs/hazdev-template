@@ -3,7 +3,14 @@
 if (!isset($TEMPLATE)) {
 	$TITLE = 'Figure Captions';
 	$NAVIGATION = true;
-	$HEAD = '<link rel="stylesheet" href="/css/figcaption.css"/>';
+	$HEAD = '
+			<link rel="stylesheet" href="/css/figcaption.css"/>
+			<style>
+				.clear {
+					clear:both;
+				}
+			</style>
+	';
 
 	include('template.inc.php');
 }
@@ -58,3 +65,11 @@ if (!isset($TEMPLATE)) {
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
+
+
+<h3 class="clear">Example</h3>
+<pre><code>&lt;figure class="right"&gt;
+	&lt;img src="http://placehold.it/300x205" alt="Placeholder image"/&gt;
+	&lt;figcaption&gt;Image floated right with figure caption.&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>

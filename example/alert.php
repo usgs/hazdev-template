@@ -20,7 +20,7 @@
 					margin-bottom: 1em;
 				}
 
-				input.alert:focus {
+				input.error:focus {
 					background: #fff;
 					color: #555;
 					border: 1px solid #d8d8d8;
@@ -28,6 +28,7 @@
 			</style>
 
 			<link rel="stylesheet" href="/css/alert.css"/>
+			<link rel="stylesheet" href="/css/form.css"/>
 		';
 
 		include 'template.inc.php';
@@ -73,13 +74,14 @@
 <p>
 	The alert classes <code>.info</code>, <code>.success</code>,
 	<code>.warning</code>, and <code>.error</code>, can be applied to
-	any HTML elements. However, these classes cannot be applied by themselves,
-	they must always be used with the sibling <code>.alert</code> class.
+	any HTML elements. If they are applied without the <code>.alert</code>
+	sibling class then they will only inherit a color, background-color,
+	and border-color.
 </p>
 <dl class="horizontal example">
 	<dt>Input Elements</dt>
 	<dd>
-		<input type="text" class="alert error" value="Error state">
+		<input type="text" class="error" value="Error state">
 	</dd>
 	<dt>Span Elements</dt>
 	<dd>

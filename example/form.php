@@ -82,6 +82,24 @@ if (!isset($TEMPLATE)) {
 
 	<button type="submit">Submit Form</button>
 </form>
+<h3 class="subheading">Usage</h3>
+<pre><code>&lt;form class="vertical"&gt;
+	&lt;label for="regularInput"&gt;Regular Input&lt;/label&gt;
+	&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
+	&hellip;
+	&lt;fieldset&gt;
+		&lt;legend&gt;Radio Buttons&lt;/legend&gt;
+		&lt;label for="regularRadio"&gt;
+			&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
+			Regular Radio
+		&lt;/label&gt;
+		&lt;label for="secondRegularRadio"&gt;
+			&lt;input type="radio" name="radios" id="secondRegularRadio" value="radio 2" /&gt;
+			Regular Radio
+		&lt;/label&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
 
 
 <h3 class="subheading">Horizontal Form</h3>
@@ -167,5 +185,31 @@ if (!isset($TEMPLATE)) {
 
 	<button type="submit">Submit Form</button>
 </form>
-
-
+<h3 class="subheading">Usage</h3>
+<pre><code>&lt;form class="example"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="column one-of-five"&gt;
+			&lt;label for="regularInput" &gt;Regular Input&lt;/label&gt;
+		&lt;/div&gt;
+		&lt;div class="column four-of-five"&gt;
+			&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&hellip;
+	&lt;fieldset class="row"&gt;
+		&lt;div class="column one-of-five"&gt;
+			&lt;legend&gt;Radio Buttons&lt;/legend&gt;
+		&lt;/div&gt;
+		&lt;div class="column four-of-five"&gt;
+			&lt;label for="regularRadio"&gt;
+				&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
+				Regular Radio
+			&lt;/label&gt;
+			&lt;label for="secondRegularRadio"&gt;
+				&lt;input type="radio" name="radios" id="secondRegularRadio" value="radio 2" /&gt;
+				Regular Radio
+			&lt;/label&gt;
+		&lt;/div&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
