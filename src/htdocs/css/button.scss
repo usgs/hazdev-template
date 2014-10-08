@@ -71,6 +71,7 @@ button {
 	&.cancel,
 	&.confirm {
 		text-align:left;
+		padding-right: 4em;
 
 		&:after {
 			position: absolute;

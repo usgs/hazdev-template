@@ -7,38 +7,23 @@ if (!isset($TEMPLATE)) {
 			<link rel="stylesheet" href="/css/flexible-grid.css" />
 			<link rel="stylesheet" href="/css/form.css" />
 			<link rel="stylesheet" href="/css/button.css" />
+
+			<style>
+				textarea {
+					width: 36em;
+					height: 10em;
+				}
+
+				.example .row {
+					margin-top: 15px;
+				}
+			</style>
 	';
 
 	include 'template.inc.php';
 
 }
 ?>
-
-<style>
-
-	.buttons button {
-		min-width:80px;
-	}
-
-	.buttons button.cancel,
-	.buttons button.confirm {
-		min-width:100px;
-	}
-
-	textarea {
-		width: 36em;
-		height: 10em;
-	}
-
-	hr {
-		margin:25px 0;
-	}
-
-	.example .row {
-		margin-top: 15px;
-	}
-
-</style>
 
 
 <p>
@@ -98,9 +83,6 @@ if (!isset($TEMPLATE)) {
 
 	<button type="submit">Submit Form</button>
 </form>
-
-
-<hr class="article-divider" />
 
 
 <h3 class="subheading">Horizontal Form</h3>
@@ -188,46 +170,3 @@ if (!isset($TEMPLATE)) {
 </form>
 
 
-
-<hr class="article-divider" />
-
-
-
-<section class="buttons">
-<h2>Buttons</h2>
-<p>
-	Here are some examples of default styles for buttons, and also some examples
-	of class modifiers you can use for a consistent look with common button usage.
-</p>
-<h3 class="subheading">Example 1</h3>
-<button type="submit">Enabled</button>
-<br>
-<button type="submit" disabled>Disabled</button>
-
-<h3 class="subheading">Example 2</h3>
-<button class="green" type="submit">Yes</button>
-<button type="submit">No</button>
-<br>
-<button class="green" type="submit" disabled>Yes</button>
-<button type="submit" disabled>No</button>
-
-<h3 class="subheading">Example 3</h3>
-<button class="green confirm" type="submit">Yes</button>
-<button class="cancel" type="submit">No</button>
-<br>
-<button class="green confirm" type="submit" disabled>Yes</button>
-<button class="cancel" type="submit" disabled>No</button>
-
-<h3 class="subheading">Example 4</h3>
-<button class="red" type="submit">Red</button>
-<button class="orange" type="submit">Orange</button>
-<button class="yellow" type="submit">Yellow</button>
-<button class="green" type="submit">Green</button>
-<button class="blue" type="submit">Blue</button>
-<br>
-<button class="red" type="submit" disabled>Red</button>
-<button class="orange" type="submit" disabled>Orange</button>
-<button class="yellow" type="submit" disabled>Yellow</button>
-<button class="green" type="submit" disabled>Green</button>
-<button class="blue" type="submit" disabled>Blue</button>
-</section>

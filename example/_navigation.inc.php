@@ -11,6 +11,7 @@ echo navGroup('Default Extensions',
 
 echo navGroup('Additional Extensions',
 		navItem('/alert.php', 'Alerts') .
+		navItem('/button.php', 'Buttons') .
 		navItem('/figcaption.php', 'Figure Caption') .
 		navItem('/form.php', 'Forms') .
 		navItem('/imagelist.php', 'Image List') .
