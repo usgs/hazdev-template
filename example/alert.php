@@ -34,7 +34,7 @@
 
 <p>
 	It is suggested that alert classes are added on <code>&lt;p&gt;</code>
-	tags. This way the element will inherit a top/bottom margin.
+	tags. This way the element will inherit a top/bottom margin. 
 </p>
 <h3 class="subheading">Example 1</h3>
 <p class="alert">
@@ -58,23 +58,26 @@
 </p>
 <h3 class="subheading">Usage</h3>
 <pre>
-<code>
-	&lt; TODO:: add code sample.&gt;
-</code>
+<code>&lt;p class="alert"&gt;&hellip;&lt;/p&gt;
+&lt;p class="alert info"&gt;&hellip;&lt;/p&gt;
+&lt;p class="alert success"&gt;&hellip;&lt;/p&gt;
+&lt;p class="alert warning"&gt;&hellip;&lt;/p&gt;
+&lt;p class="alert error"&gt;&hellip;&lt;/p&gt;</code>
 </pre>
 
 
 
 <h3 class="subheading">Example 2</h3>
 <p>
-	The alert classes <code>info</code>, <code>success</code>,
-	<code>warning</code>, and <code>error</code>, can be applied to
-	any HTML elements.
+	The alert classes <code>.info</code>, <code>.success</code>,
+	<code>.warning</code>, and <code>.error</code>, can be applied to
+	any HTML elements. However, these classes cannot be applied by themselves,
+	they must always be used with the sibling <code>.alert</code> class.
 </p>
 <dl class="horizontal example">
 	<dt>Input Elements</dt>
 	<dd>
-		<input id="input-field" type="text" class="alert error" value="Error state">
+		<input type="text" class="alert error" value="Error state">
 	</dd>
 	<dt>Span Elements</dt>
 	<dd>
@@ -90,7 +93,7 @@
 </dl>
 <h3 class="subheading">Usage</h3>
 <pre>
-<code>
-	&lt; TODO:: add code sample.&gt;
-</code>
+<code>&lt;input type="text" class="alert error" value="Error state"&gt;
+&lt;span class="alert info"&gt;&hellip;&lt;/span&gt;
+&lt;div class="alert success help""&gt;&#10003;&lt;/div&gt;</code>
 </pre>

@@ -58,5 +58,3 @@
 		</tr>
 	</tbody>
 </table>
-<h3 class="subheading">Usage</h3>
-<pre><code>&lt; TODO:: add code sample.&gt;</code></pre>

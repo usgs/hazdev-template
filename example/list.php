@@ -152,15 +152,18 @@
 </dl>
 <h3 class="subheading">Usage</h3>
 <pre>
-<code>
-	&lt; TODO:: add code sample.&gt;
-</code>
+<code>&lt;dl&gt;
+	&lt;dt&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;/dd&gt;
+	&hellip;
+&lt;/dl&gt;</code>
 </pre>
 <h3 class="subheading">Horizontal Definition List</h3>
 <p>
 	Add the <code>.horizontal</code> class to display terms and definitions side
 	by side. On mobile devices the horizontal definition list collapses, it does
-	not layout horizontally.
+	not layout horizontally. The <code>dt</code> element is given a width of
+	10em by default, but is styled with text-overflow ellipsis.
 </p>
 <dl class="horizontal">
 	<dt>This is a longer definition term</dt>
@@ -185,7 +188,9 @@
 </dl>
 <h3 class="subheading">Usage</h3>
 <pre>
-<code>
-	&lt; TODO:: add code sample.&gt;
-</code>
+<code>&lt;dl class="horizontal"&gt;
+	&lt;dt&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;/dd&gt;
+	&hellip;
+&lt;/dl&gt;</code>
 </pre>
