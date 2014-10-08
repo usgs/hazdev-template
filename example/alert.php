@@ -6,7 +6,7 @@
 
 		$HEAD = '
 			<style>
-				.help {
+				div.help {
 					width: 2em;
 					height: 2em;
 					text-align: center;
@@ -26,6 +26,8 @@
 					border: 1px solid #d8d8d8;
 				}
 			</style>
+
+			<link rel="stylesheet" href="/css/alert.css"/>
 		';
 
 		include 'template.inc.php';

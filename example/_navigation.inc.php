@@ -4,17 +4,17 @@ echo navItem('/index.php', 'Template Intro Page');
 
 echo navGroup('Default Extensions',
 		navItem('/flexible-grid.php', 'Flexible Grid') .
+		navItem('/list.php', 'Lists') .
+		navItem('/text.php', 'Text Level Semantics') .
 		navItem('/typography.php', 'Typography')
 	);
 
 echo navGroup('Additional Extensions',
-		navItem('/imagelist.php', 'Image List') .
-		navItem('/responsive-table.php', 'Responsive Table') .
+		navItem('/alert.php', 'Alerts') .
 		navItem('/figcaption.php', 'Figure Caption') .
+		navItem('/form.php', 'Forms') .
+		navItem('/imagelist.php', 'Image List') .
 		navItem('/jumplist.php', 'Jump List') .
 		navItem('/references.php', 'References') .
-		navItem('/form.php', 'Forms') .
-		navItem('/text.php', 'Text Level Semantics') .
-		navItem('/list.php', 'Lists') .
-		navItem('/alert.php', 'Alerts')
+		navItem('/responsive-table.php', 'Responsive Table')
 	);

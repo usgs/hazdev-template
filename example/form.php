@@ -3,7 +3,10 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Forms';
 	$NAVIGATION = true;
 
-	$HEAD = '<link rel="stylesheet" href="/css/flexible-grid.css" />';
+	$HEAD = '
+			<link rel="stylesheet" href="/css/flexible-grid.css" />
+			<link rel="stylesheet" href="/css/form.css" />
+	';
 
 	include 'template.inc.php';
 

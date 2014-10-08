@@ -1,3 +1,5 @@
+$breakpoint-stacking: 560px !default;
+
 /** Stacked should be the default mobile style */
 select, textarea, input, fieldset, legend, label {
 	vertical-align:middle;
