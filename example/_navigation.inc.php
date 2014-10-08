@@ -3,6 +3,7 @@
 echo navItem('/index.php', 'Template Intro Page');
 
 echo navGroup('Default Extensions',
+		navItem('/button.php', 'Buttons') .
 		navItem('/flexible-grid.php', 'Flexible Grid') .
 		navItem('/list.php', 'Lists') .
 		navItem('/text.php', 'Text Level Semantics') .
@@ -11,7 +12,6 @@ echo navGroup('Default Extensions',
 
 echo navGroup('Additional Extensions',
 		navItem('/alert.php', 'Alerts') .
-		navItem('/button.php', 'Buttons') .
 		navItem('/figcaption.php', 'Figure Caption') .
 		navItem('/form.php', 'Forms') .
 		navItem('/imagelist.php', 'Image List') .

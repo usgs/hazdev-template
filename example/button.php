@@ -4,8 +4,6 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	$HEAD = '
-			<link rel="stylesheet" href="/css/button.css" />
-
 			<style>
 				.buttons button {
 					min-width:80px;

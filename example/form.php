@@ -6,7 +6,6 @@ if (!isset($TEMPLATE)) {
 	$HEAD = '
 			<link rel="stylesheet" href="/css/flexible-grid.css" />
 			<link rel="stylesheet" href="/css/form.css" />
-			<link rel="stylesheet" href="/css/button.css" />
 
 			<style>
 				textarea {
