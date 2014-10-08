@@ -21,6 +21,26 @@ button {
 		text-shadow:none;
 	}
 
+	&.red {
+		background-color: #E46554;
+	}
+
+	&.orange {
+		background-color: #F59048;
+	}
+
+	&.yellow {
+		background-color: #FFF066;
+	}
+
+	&.green {
+		background-color: #58A973;
+	}
+
+	&.blue {
+		background-color: #5393CA;
+	}
+
 	&.red,
 	&.orange,
 	&.green,
@@ -34,7 +54,8 @@ button {
 		text-shadow:0 1px 1px #fff;
 	}
 
-	&.disabled, &[disabled] {
+	&.disabled,
+	&[disabled] {
 		background:#e9e9e9;
 		color:#777;
 		text-shadow:none;
@@ -46,8 +67,7 @@ button {
 		}
 	}
 
-
-	/*** DO PEOPLE LIKE ?? -- Icon styling on buttons for yes/no options ***/
+	// YES/NO icon styling
 	&.cancel,
 	&.confirm {
 		text-align:left;
@@ -82,27 +102,7 @@ button {
 		content:'x';
 		font-weight:bold;
 	}
-	/*** END of icon styling ***/
 }
 
 
-.red {
-	background-color: #E46554;
-}
-
-.orange {
-	background-color: #F59048;
-}
-
-.yellow {
-	background-color: #FFF066;
-}
-
-.green {
-	background-color: #58A973;
-}
-
-.blue {
-	background-color: #5393CA;
-}
 
