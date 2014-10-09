@@ -2,7 +2,7 @@
 [role="banner"] {
 	height:56px;
 	position:relative;
-	background-color:$banner-background-color;
+	background-color: $site-title-background-color;
 
 	/* position usgs logo over background image. */
 	> .site-logo {
@@ -34,6 +34,7 @@
 	@media screen and (min-width: $breakpoint-offcanvas) {
 
 		/* make banner larger on large screens. */
+		background-color:$banner-background-color;
 		background-size:auto 100%;
 		background-repeat:no-repeat;
 		background-image:url('#{$banner-image}');

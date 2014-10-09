@@ -28,7 +28,6 @@
 			</style>
 
 			<link rel="stylesheet" href="/css/alert.css"/>
-			<link rel="stylesheet" href="/css/form.css"/>
 		';
 
 		include 'template.inc.php';

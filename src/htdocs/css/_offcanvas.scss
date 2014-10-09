@@ -48,7 +48,7 @@
 
 			background-color:#FFF;
 			box-shadow: 1px 0 4px 0 black;
-			padding:0 $spacing;
+			padding:0;
 			z-index:1002;
 
 			overflow-y:auto;
@@ -97,5 +97,13 @@
 		}
 	}
 
+}
+
+
+@media screen and (min-width: $breakpoint-offcanvas) {
+
+	.offcanvas-enabled .offcanvas {
+		padding: 0 $spacing;
+	}
 }
 

@@ -1,6 +1,6 @@
 <?php
 if (!isset($TEMPLATE)) {
-	$TITLE = 'Test Index';
+	$TITLE = 'The Template';
 	$NAVIGATION = true;
 
 	include 'template.inc.php';
@@ -8,20 +8,16 @@ if (!isset($TEMPLATE)) {
 ?>
 
 <p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	There are some styles in the template that are included by default on
+	every page. If you want to include styles not listed below see the additional
+	extensions section. The default styles in the template include:
 </p>
 
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
-
+<ul>
+	<li>Buttons</li>
+	<li>Flexible Grid</li>
+	<li>Forms</li>
+	<li>Lists</li>
+	<li>Text Level Semantics</li>
+	<li>Typography</li>
+</ul>
