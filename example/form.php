@@ -34,16 +34,16 @@ if (!isset($TEMPLATE)) {
 <form class="vertical">
 
 	<!-- Label and text input -->
-	<label for="regularInput">Regular Input</label>
-	<input type="text" id="regularInput" placeholder="Placeholder Text"/>
+	<label for="regularInput1">Regular Input</label>
+	<input type="text" id="regularInput1" placeholder="Placeholder Text"/>
 
 	<!-- Label and textarea -->
-	<label for="regularTextarea">Regular Textarea</label>
-	<textarea id="regularTextarea"></textarea>
+	<label for="regularTextarea1">Regular Textarea</label>
+	<textarea id="regularTextarea1"></textarea>
 
 	<!-- Label and select list -->
-	<label for="selectList">Select List</label>
-	<select id="selectList">
+	<label for="selectList1">Select List</label>
+	<select id="selectList1">
 		<option value="Option 1">Option 1</option>
 		<option value="Option 2">Option 2</option>
 		<option value="Option 3">Option 3</option>
@@ -56,26 +56,31 @@ if (!isset($TEMPLATE)) {
 		<legend for="">Checkboxes</legend>
 
 		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
-		<label for="regularCheckbox">
-			<input type="checkbox" id="regularCheckbox" value="checkbox 1" />
-			Regular Checkbox
+		<label for="regularCheckbox1">
+			<input type="checkbox" id="regularCheckbox1" value="checkbox 1" />
+			Regular Checkbox 1
 		</label>
 
-		<label for="secondRegularCheckbox">
-			<input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
-			Regular Checkbox
+		<label for="secondRegularCheckbox1">
+			<input type="checkbox" id="secondRegularCheckbox1" value="checkbox 2" />
+			Regular Checkbox 2
+		</label>
+
+		<label for="thirdRegularCheckbox1">
+			<input type="checkbox" id="thirdRegularCheckbox1" value="checkbox 2" />
+			Regular Checkbox 3
 		</label>
 	</fieldset>
 
 	<fieldset>
 		<legend>Radio Buttons</legend>
-		<label for="regularRadio">
-			<input type="radio" name="radios" id="regularRadio" value="radio 1" />
-			Regular Radio
+		<label for="regularRadio1">
+			<input type="radio" name="radios" id="regularRadio1" value="radio 1" />
+			Regular Radio 1
 		</label>
-		<label for="secondRegularRadio">
-			<input type="radio" name="radios" id="secondRegularRadio" value="radio 2" />
-			Regular Radio
+		<label for="secondRegularRadio1">
+			<input type="radio" name="radios" id="secondRegularRadio1" value="radio 2" />
+			Regular Radio 2
 		</label>
 	</fieldset>
 
@@ -110,33 +115,33 @@ if (!isset($TEMPLATE)) {
 	<!-- Label and text input -->
 	<div class="row">
 		<div class="column one-of-five">
-			<label for="regularInput" >Regular Input</label>
+			<label for="regularInput2" >Regular Input</label>
 		</div>
 
 		<div class="column four-of-five">
-			<input type="text" id="regularInput" placeholder="Placeholder Text"/>
+			<input type="text" id="regularInput2" placeholder="Placeholder Text"/>
 		</div>
 	</div>
 
 	<!-- Label and textarea -->
 	<div class="row">
 		<div class="column one-of-five">
-			<label for="regularTextarea">Regular Textarea</label>
+			<label for="regularTextarea2">Regular Textarea</label>
 		</div>
 
 		<div class="column four-of-five">
-			<textarea id="regularTextarea"></textarea>
+			<textarea id="regularTextarea2"></textarea>
 		</div>
 	</div>
 
 	<!-- Label and select list -->
 	<div class="row">
 		<div class="column one-of-five">
-			<label for="selectList">Select List</label>
+			<label for="selectList2">Select List</label>
 		</div>
 
 		<div class="column four-of-five">
-			<select id="selectList">
+			<select id="selectList2">
 				<option value="Option 1">Option 1</option>
 				<option value="Option 2">Option 2</option>
 				<option value="Option 3">Option 3</option>
@@ -154,14 +159,19 @@ if (!isset($TEMPLATE)) {
 
 		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
 		<div class="column four-of-five">
-			<label for="regularCheckbox">
-				<input type="checkbox" id="regularCheckbox" value="checkbox 1" />
-				Regular Checkbox
+			<label for="regularCheckbox2">
+				<input type="checkbox" id="regularCheckbox2" value="checkbox 1" />
+				Regular Checkbox 1
 			</label>
 
-			<label for="secondRegularCheckbox">
-				<input type="checkbox" id="secondRegularCheckbox" value="checkbox 2" />
-				Regular Checkbox
+			<label for="secondRegularCheckbox2">
+				<input type="checkbox" id="secondRegularCheckbox2" value="checkbox 2" />
+				Regular Checkbox 2
+			</label>
+
+			<label for="thirdRegularCheckbox2">
+				<input type="checkbox" id="secondRegularCheckbox2" value="checkbox 2" />
+				Regular Checkbox 3
 			</label>
 		</div>
 	</fieldset>
@@ -171,13 +181,13 @@ if (!isset($TEMPLATE)) {
 			<legend>Radio Buttons</legend>
 		</div>
 		<div class="column four-of-five">
-			<label for="regularRadio">
-				<input type="radio" name="radios" id="regularRadio" value="radio 1" />
-				Regular Radio
+			<label for="regularRadio2">
+				<input type="radio" name="radios" id="regularRadio2" value="radio 1" />
+				Regular Radio 1
 			</label>
-			<label for="secondRegularRadio">
-				<input type="radio" name="radios" id="secondRegularRadio" value="radio 2" />
-				Regular Radio
+			<label for="secondRegularRadio2">
+				<input type="radio" name="radios" id="secondRegularRadio2" value="radio 2" />
+				Regular Radio 2
 			</label>
 		</div>
 	</fieldset>
@@ -212,3 +222,32 @@ if (!isset($TEMPLATE)) {
 	&lt;/fieldset&gt;
 &lt;/form&gt;
 </code></pre>
+
+
+
+<h3>Example 3</h3>
+<section class="vertical">
+	<fieldset>
+		<legend>
+			I have a long question that I want to wrap on a smaller screen, do you
+			think that this text will wrap?
+		</legend>
+		<label for="regularRadio3">
+			<input type="radio" name="radios" id="regularRadio3" value="radio 1" />
+			I'm not sure if it will wrap... I'm not very good with this line of
+			questioning let me think on it for ahile. 
+		</label>
+		<label for="secondRegularRadio3">
+			<input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" />
+			Yes
+		</label>
+		<label for="thirdRegularRadio3">
+			<input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" />
+			No
+		</label>
+		<label for="fourthRegularRadio3">
+			<input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" />
+			Maybe
+		</label>
+	</fieldset>
+</section>
