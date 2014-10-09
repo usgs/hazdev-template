@@ -27,7 +27,10 @@
 
 		// show the offcanvas-toggle in the top right corner of the page
 		.offcanvas-toggle {
+			padding: 0 0.75em;
 			display:block;
+			height: 2em;
+			line-height: 2em;
 			position:absolute;
 			top:11px;
 			right:$spacing;
