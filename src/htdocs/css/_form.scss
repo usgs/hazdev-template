@@ -3,11 +3,15 @@ select, textarea, input, fieldset, legend, label {
 	vertical-align: middle;
 }
 
-textarea, input, select {
+textarea,
+input[type="text"],
+input[type="search"],
+select {
 	height:4rem;
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
+	font-size: 1em;
 }
 
 label,
@@ -28,7 +32,7 @@ fieldset {
 	label {
 		display:block;
 		margin: 0 0 0.25em;
-		text-indent: -2em;
+		text-indent: -2.3em;
 		padding-left: 2em;
 
 		&:hover {
@@ -39,7 +43,6 @@ fieldset {
 
 input[type="radio"],
 input[type="checkbox"] {
-	height: 2em;
 	margin: 0 0.65em;
 }
 
@@ -64,8 +67,16 @@ input[type="checkbox"] {
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 
-	textarea, input, select {
+	textarea,
+	input[type="text"],
+	input[type="search"],
+	select {
 		font-size: 0.75em;
 		height: 3rem;
+	}
+
+	fieldset label {
+		text-indent: -2em;
+		padding-left: 2em;
 	}
 }
