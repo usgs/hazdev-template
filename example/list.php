@@ -158,6 +158,40 @@
 	&hellip;
 &lt;/dl&gt;</code>
 </pre>
+<h3 class="subheading">Vertical Definition List</h3>
+<p>
+	Add the <code>.vertical</code> class to display terms and definitions stacked
+	vertically. This must be reapplied to nested definition lists to apply.
+</p>
+<dl class="vertical">
+	<dt>This is a longer definition term</dt>
+	<dd>
+		Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam
+		ut lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut
+		vitae metus et quam rutrum varius sit amet sit amet lectus. Suspendisse
+		rhoncus nibh eu placerat blandit. Pellentesque quis mollis leo. Aenean
+		sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna augue,
+		fringilla et felis eget, commodo consequat sem.
+	</dd>
+	<dt>This is a term</dt>
+	<dd>
+		Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna
+		augue, fringilla et felis eget.
+	</dd>
+	<dt>This is a term that overflows</dt>
+	<dd>
+		Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris magna
+		augue, fringilla et felis eget.
+	</dd>
+</dl>
+<h3 class="subheading">Usage</h3>
+<pre>
+<code>&lt;dl class="vertical"&gt;
+	&lt;dt&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;/dd&gt;
+	&hellip;
+&lt;/dl&gt;</code>
+</pre>
 <h3 class="subheading">Horizontal Definition List</h3>
 <p>
 	Add the <code>.horizontal</code> class to display terms and definitions side
