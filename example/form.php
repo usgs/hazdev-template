@@ -53,7 +53,7 @@ if (!isset($TEMPLATE)) {
 	<fieldset>
 
 		<!-- Give the fieldset a legend -->
-		<legend for="">Checkboxes</legend>
+		<legend>Checkboxes</legend>
 
 		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
 		<label for="regularCheckbox1">
@@ -153,9 +153,7 @@ if (!isset($TEMPLATE)) {
 	<fieldset class="row">
 
 		<!-- Give the fieldset a legend -->
-		<div class="column one-of-five">
-			<legend for="">Checkboxes</legend>
-		</div>
+		<legend class="column one-of-five">Checkboxes</legend>
 
 		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
 		<div class="column four-of-five">
@@ -170,16 +168,14 @@ if (!isset($TEMPLATE)) {
 			</label>
 
 			<label for="thirdRegularCheckbox2">
-				<input type="checkbox" id="secondRegularCheckbox2" value="checkbox 2" />
+				<input type="checkbox" id="thirdRegularCheckbox2" value="checkbox 2" />
 				Regular Checkbox 3
 			</label>
 		</div>
 	</fieldset>
 
 	<fieldset class="row">
-		<div class="column one-of-five">
-			<legend>Radio Buttons</legend>
-		</div>
+		<legend class="column one-of-five">Radio Buttons</legend>
 		<div class="column four-of-five">
 			<label for="regularRadio2">
 				<input type="radio" name="radios" id="regularRadio2" value="radio 1" />
@@ -197,18 +193,14 @@ if (!isset($TEMPLATE)) {
 <h3 class="subheading">Usage</h3>
 <pre><code>&lt;form class="example"&gt;
 	&lt;div class="row"&gt;
-		&lt;div class="column one-of-five"&gt;
-			&lt;label for="regularInput" &gt;Regular Input&lt;/label&gt;
-		&lt;/div&gt;
+		&lt;label class="column one-of-five" for="regularInput" &gt;Regular Input&lt;/label&gt;
 		&lt;div class="column four-of-five"&gt;
 			&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 	&hellip;
 	&lt;fieldset class="row"&gt;
-		&lt;div class="column one-of-five"&gt;
-			&lt;legend&gt;Radio Buttons&lt;/legend&gt;
-		&lt;/div&gt;
+		&lt;legend class="column one-of-five"&gt;Radio Buttons&lt;/legend&gt;
 		&lt;div class="column four-of-five"&gt;
 			&lt;label for="regularRadio"&gt;
 				&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
