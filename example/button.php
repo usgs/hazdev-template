@@ -26,10 +26,10 @@ if (!isset($TEMPLATE)) {
 </p>
 <button>Enabled</button>
 <br>
-<button disabled="true">Disabled</button>
+<button disabled>Disabled</button>
 <h2 class="subheading">Usage</h2>
 <pre><code>&lt;button&gt;Enabled&lt;button&gt;
-&lt;button disabled="true"&gt;Disabled&lt;button&gt;
+&lt;button disabled&gt;Disabled&lt;button&gt;
 </code></pre>
 
 
@@ -41,14 +41,14 @@ if (!isset($TEMPLATE)) {
 <button class="green">Yes</button>
 <button>No</button>
 <br>
-<button class="green" disabled="true">Yes</button>
-<button disabled="true">No</button>
+<button class="green" disabled>Yes</button>
+<button disabled>No</button>
 <h2 class="subheading">Usage</h2>
 <pre><code>&lt;button class="green"&gt;Yes&lt;button&gt;
 &lt;button&gt;No&lt;button&gt;
 &lt;br&gt;
-&lt;button class="green" disabled="true"&gt;Yes&lt;button&gt;
-&lt;button disabled="true"&gt;No&lt;button&gt;
+&lt;button class="green" disabled&gt;Yes&lt;button&gt;
+&lt;button disabled&gt;No&lt;button&gt;
 </code></pre>
 
 <h2 class="subheading">Example 3</h2>
@@ -60,14 +60,14 @@ if (!isset($TEMPLATE)) {
 <button class="green confirm">Yes</button>
 <button class="cancel">No</button>
 <br>
-<button class="green confirm" disabled="true">Yes</button>
-<button class="cancel" disabled="true">No</button>
+<button class="green confirm" disabled>Yes</button>
+<button class="cancel" disabled>No</button>
 <h2 class="subheading">Usage</h2>
 <pre><code>&lt;button class="confirm green"&gt;Yes&lt;button&gt;
 &lt;button class="cancel"&gt;No&lt;button&gt;
 &lt;br&gt;
-&lt;button class="confirm green" disabled="true"&gt;Yes&lt;button&gt;
-&lt;button class="cancel" disabled="true"&gt;No&lt;button&gt;
+&lt;button class="confirm green" disabled&gt;Yes&lt;button&gt;
+&lt;button class="cancel" disabled&gt;No&lt;button&gt;
 </code></pre>
 
 <h2 class="subheading">Example 4</h2>
@@ -83,11 +83,11 @@ if (!isset($TEMPLATE)) {
 <button class="green">Green</button>
 <button class="blue">Blue</button>
 <br>
-<button class="red" disabled="true">Red</button>
-<button class="orange" disabled="true">Orange</button>
-<button class="yellow" disabled="true">Yellow</button>
-<button class="green" disabled="true">Green</button>
-<button class="blue" disabled="true">Blue</button>
+<button class="red" disabled>Red</button>
+<button class="orange" disabled>Orange</button>
+<button class="yellow" disabled>Yellow</button>
+<button class="green" disabled>Green</button>
+<button class="blue" disabled>Blue</button>
 </section>
 <h2 class="subheading">Usage</h2>
 <pre><code>&lt;button class="red"&gt;Red&lt;button&gt;
@@ -96,9 +96,9 @@ if (!isset($TEMPLATE)) {
 &lt;button class="green"&gt;Green&lt;button&gt;
 &lt;button class="blue"&gt;Blue&lt;button&gt;
 &lt;br&gt;
-&lt;button class="red" disabled="true"&gt;Red&lt;button&gt;
-&lt;button class="orange" disabled="true"&gt;Orange&lt;button&gt;
-&lt;button class="yellow" disabled="true"&gt;Yellow&lt;button&gt;
-&lt;button class="green" disabled="true"&gt;Green&lt;button&gt;
-&lt;button class="blue" disabled="true"&gt;Blue&lt;button&gt;
+&lt;button class="red" disabled&gt;Red&lt;button&gt;
+&lt;button class="orange" disabled&gt;Orange&lt;button&gt;
+&lt;button class="yellow" disabled&gt;Yellow&lt;button&gt;
+&lt;button class="green" disabled&gt;Green&lt;button&gt;
+&lt;button class="blue" disabled&gt;Blue&lt;button&gt;
 </code></pre>
