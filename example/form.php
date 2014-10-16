@@ -218,6 +218,9 @@ if (!isset($TEMPLATE)) {
 
 
 <h3>Example 3</h3>
+<p>
+	This is an example of a <code>fieldset</code> being used to format a question.
+</p>
 <section class="vertical">
 	<fieldset>
 		<legend>
@@ -243,3 +246,30 @@ if (!isset($TEMPLATE)) {
 		</label>
 	</fieldset>
 </section>
+<h3 class="subheading">Usage</h3>
+<pre><code>&lt;section class="vertical"&gt;
+	&lt;fieldset&gt;
+		&lt;legend&gt;
+			I have a long question that I want to wrap on a smaller screen, do you
+			think that this text will wrap?
+		&lt;/legend&gt;
+		&lt;label for="regularRadio3"&gt;
+			&lt;input type="radio" name="radios" id="regularRadio3" value="radio 1" /&gt;
+			I'm not sure if it will wrap... I'm not very good with this line of
+			questioning let me think on it for ahile.
+		&lt;/label&gt;
+		&lt;label for="secondRegularRadio3"&gt;
+			&lt;input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" /&gt;
+			Yes
+		&lt;/label&gt;
+		&lt;label for="thirdRegularRadio3"&gt;
+			&lt;input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" /&gt;
+			No
+		&lt;/label&gt;
+		&lt;label for="fourthRegularRadio3"&gt;
+			&lt;input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" /&gt;
+			Maybe
+		&lt;/label&gt;
+	&lt;/fieldset&gt;
+&lt;/section&gt;
+</code></pre>
