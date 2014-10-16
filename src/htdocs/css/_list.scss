@@ -31,7 +31,9 @@ dl {
 	}
 }
 
-dl.vertical {
+// for mobile both hortizontal and vertical stack with a clean left edge
+dl.vertical,
+dl.horizontal {
 	> dd {
 		margin: 0;
 	}

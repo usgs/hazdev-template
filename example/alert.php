@@ -16,7 +16,7 @@
 					padding: 0;
 				}
 
-				.example > dd {
+				dl.example > dd {
 					margin-bottom: 1em;
 				}
 
