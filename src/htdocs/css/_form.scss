@@ -11,7 +11,7 @@ select {
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
-	font-size: 1em;
+	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
 }
 
 label,
