@@ -1,6 +1,7 @@
 /** Stacked should be the default mobile style */
 select, textarea, input, fieldset, legend, label {
-	vertical-align: middle;
+	color: #333;
+	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
 }
 
 textarea,
@@ -11,17 +12,16 @@ select {
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
-	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
+	margin: 0.5em 0 1em;
 }
 
 label,
 legend {
-	margin: 1em 0 0.25em;
 	padding: 0;
 }
 
 fieldset {
-	margin: 1em 0;
+	margin:0.5em 0 1em;
 	padding:0;
 	border:none;
 
@@ -32,8 +32,8 @@ fieldset {
 	label {
 		display:block;
 		margin: 0 0 0.25em;
-		text-indent: -2.3em;
-		padding-left: 2.5em;
+		text-indent: -49px;
+		padding-left: 45px; // 4px diff (not sure why)
 
 		&:hover {
 			cursor: pointer;
@@ -43,7 +43,9 @@ fieldset {
 
 input[type="radio"],
 input[type="checkbox"] {
-	margin: 0 0.65em;
+	padding: 0;
+	margin: 0 12px 0 16px;
+	width: 16px;
 }
 
 .vertical {
@@ -53,12 +55,6 @@ input[type="checkbox"] {
 	}
 }
 
-// Keeps margin from doubling on row margin
-.column > legend,
-.column > label {
-	margin: 0 0 0.25em;
-}
-
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 
@@ -66,12 +62,17 @@ input[type="checkbox"] {
 	input[type="text"],
 	input[type="search"],
 	select {
-		font-size: 0.75em;
+		font-size: 0.8125em;
 		height: 3rem;
+		margin: 0;
 	}
 
-	fieldset label {
-		text-indent: -2em;
-		padding-left: 2.5em;
+	.vertical {
+		textarea,
+		input[type="text"],
+		input[type="search"],
+		select {
+			margin: 0.5em 0 1em;
+		}
 	}
 }

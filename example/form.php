@@ -12,8 +12,11 @@ if (!isset($TEMPLATE)) {
 					height: 10em;
 				}
 
-				.example .row {
-					margin-top: 15px;
+				/* Keeps margins from doubling up on .row elements */
+				@media screen and (min-width: 560px) {
+					.example .row {
+						margin-top: 15px;
+					}
 				}
 			</style>
 	';
