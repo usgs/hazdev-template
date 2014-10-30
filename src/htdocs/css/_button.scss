@@ -3,7 +3,7 @@ button {
 	font-size:1em;
 	line-height:4rem;
 	height:4rem;
-	padding:0 1em;
+	padding:0 1.5em;
 	margin:2px;
 	color: #333;
 	background: #f8f8f8;
@@ -74,6 +74,7 @@ button {
 	&.confirm {
 		text-align:left;
 		padding-right: 4em;
+		padding-left: 1em;
 
 		&:after {
 			position: absolute;
