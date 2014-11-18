@@ -6,20 +6,40 @@
 }
 
 /* section nav */
-
 .site-sectionnav {
 
+	// Ungrouped Links
+	> a,
+	> strong {
+		background-color: #ededed;
+		background-image:none;
+		border-top: 1px solid $sectionnav-border-color;
+		color: #333;
+		display: block;
+		padding: ($vertical-spacing * 3/4) $horizontal-spacing;
+		text-decoration:none;
+		@extend .nav-transition;
+
+		&:visited {
+			color: #333;
+		}
+	}
+
+	> a:hover {
+		text-decoration:underline;
+	}
+
+	// Grouped Links
 	> section {
-		margin-bottom: 0 0 1em 0;
+		margin: 0 0 0.2em 0;
 
 		// items in a nav group
 		> a,
 		> strong,
-		> header > a,
-		> header > strong {
+		> header {
+			color: #333;
 			display: block;
 			padding: ($vertical-spacing * 3/4) $horizontal-spacing;
-			color: #333;
 			@extend .nav-transition;
 		}
 
@@ -47,8 +67,7 @@
 		}
 
 		// nav group header
-		> header > a,
-		> header > strong {
+		> header {
 			background-color: #ededed;
 			border-top: 1px solid $sectionnav-border-color;
 			border-bottom: 1px solid $sectionnav-border-color;
@@ -63,10 +82,21 @@
 		> a,
 		> header > a {
 			text-decoration:none;
+			background-image:none;
 
 			// hover styles for nav items
 			&:hover {
+				text-decoration:underline;
 				background-color: $sectionnav-background-color-hover;
+			}
+		}
+
+		> header > a {
+			display:block;
+			color: #333;
+
+			&:hover {
+				background-color: $sectionnav-background-color;
 			}
 		}
 	}
@@ -206,19 +236,25 @@
 
 	.site-sectionnav {
 
+		> a,
+		> strong {
+			border: 1px solid #ddd;
+			margin: 0 0 1em 0;
+			padding:$vertical-spacing/2 $horizontal-spacing * 2/3;
+		}
+
 		> section {
 			margin: 0 0 1em;
 			border: 1px solid #ddd;
 
-			header > a,
-			header > strong {
+			header,
+			header > a {
 				border-top: 0;
 			}
 
 			> a,
 			> strong,
-			> header > a,
-			> header > strong {
+			> header {
 				padding:$vertical-spacing/2 $horizontal-spacing * 2/3;
 			}
 

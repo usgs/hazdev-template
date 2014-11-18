@@ -105,9 +105,9 @@ function navItem ($href, $text) {
  * @return {String} markup for navigation group.
  */
 if (!function_exists('navGroup')) {
-function navGroup ($href, $text, $children) {
+function navGroup ($text, $children) {
 	return '<section>' .
-			'<header>' . navItem($href, $text) . '</header>' .
+			'<header>' . $text . '</header>' .
 			$children .
 			'</section>';
 }
