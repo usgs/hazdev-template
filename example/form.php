@@ -12,11 +12,12 @@ if (!isset($TEMPLATE)) {
 					height: 10em;
 				}
 
-				/* Keeps margins from doubling up on .row elements */
-				@media screen and (min-width: 560px) {
-					.example .row {
-						margin-top: 15px;
-					}
+				.example .row {
+					margin-top: 15px;
+				}
+
+				.example .column {
+					margin-top:5px;
 				}
 			</style>
 	';
@@ -32,8 +33,32 @@ if (!isset($TEMPLATE)) {
 	when the <code>.vertical</code> class is applied to the container.
 </p>
 
+<h2>Form Elements</h2>
+<p>
+	Here are some examples of form elements displayed with their default styles.
+</p>
 
-<h3 class="subheading">Vertical Form</h3>
+<h3>Sort Example</h3>
+<div class="sortExample">
+	<label>Sort by
+		<select class="collection-selectbox">
+			<option value="0">Location</option>
+			<option value="1">MMI</option>
+			<option value="2">Responses</option>
+			<option value="3" selected="selected">Distance</option>
+		</select>
+	</label>
+	<button type="submit">Download</button>
+</div>
+
+<h3>Search Example</h3>
+<div class="searchExample">
+	<input type="search" placeholder="Search" />
+	<button type="submit">Search</button>
+</div>
+
+
+<h2>Vertical Form</h2>
 <form class="vertical">
 
 	<!-- Label and text input -->
@@ -89,7 +114,7 @@ if (!isset($TEMPLATE)) {
 
 	<button type="submit">Submit Form</button>
 </form>
-<h3 class="subheading">Usage</h3>
+<h2>Usage</h2>
 <pre><code>&lt;form class="vertical"&gt;
 	&lt;label for="regularInput"&gt;Regular Input&lt;/label&gt;
 	&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
@@ -109,7 +134,7 @@ if (!isset($TEMPLATE)) {
 </code></pre>
 
 
-<h3 class="subheading">Horizontal Form</h3>
+<h2>Horizontal Form</h2>
 <p>
 	To acheive a horizontal layout you must use the flexible grid to layout form
 	labels and input fields, grouping each logical match with a <code>.row</code>.
@@ -193,7 +218,7 @@ if (!isset($TEMPLATE)) {
 
 	<button type="submit">Submit Form</button>
 </form>
-<h3 class="subheading">Usage</h3>
+<h2>Usage</h2>
 <pre><code>&lt;form class="example"&gt;
 	&lt;div class="row"&gt;
 		&lt;label class="column one-of-five" for="regularInput" &gt;Regular Input&lt;/label&gt;
@@ -220,7 +245,7 @@ if (!isset($TEMPLATE)) {
 
 
 
-<h3>Example 3</h3>
+<h2>Example 3</h2>
 <p>
 	This is an example of a <code>fieldset</code> being used to format a question.
 </p>
@@ -249,7 +274,7 @@ if (!isset($TEMPLATE)) {
 		</label>
 	</fieldset>
 </section>
-<h3 class="subheading">Usage</h3>
+<h2>Usage</h2>
 <pre><code>&lt;section class="vertical"&gt;
 	&lt;fieldset&gt;
 		&lt;legend&gt;

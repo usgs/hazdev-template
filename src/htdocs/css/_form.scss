@@ -12,12 +12,15 @@ select {
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
-	margin: 0.5em 0 1em;
 }
 
 label,
 legend {
 	padding: 0;
+}
+
+textarea {
+	vertical-align:top;
 }
 
 fieldset {
@@ -53,8 +56,25 @@ input[type="checkbox"] {
 		display:block;
 		clear:both;
 	}
+
+	textarea,
+	input[type="text"],
+	input[type="search"],
+	select {
+		margin: 0.5em 0 1em;
+	}
 }
 
+
+@media screen and (min-width: $breakpoint-stacking) {
+
+	textarea,
+	input[type="text"],
+	input[type="search"],
+	select {
+		margin: 0;
+	}
+}
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 
@@ -64,15 +84,5 @@ input[type="checkbox"] {
 	select {
 		font-size: 0.8125em;
 		height: 3rem;
-		margin: 0;
-	}
-
-	.vertical {
-		textarea,
-		input[type="text"],
-		input[type="search"],
-		select {
-			margin: 0.5em 0 1em;
-		}
 	}
 }
