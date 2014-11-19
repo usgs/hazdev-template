@@ -59,7 +59,6 @@ module.exports = function (grunt) {
 				'build',
 				'copy',
 				'jshint:scripts',
-				'jshint:examples',
 				'compass:dev',
 				'cssmin:dist',
 				'htmlmin:dist',
@@ -94,12 +93,11 @@ module.exports = function (grunt) {
 			scss: {
 				files: [
 					'<%= app.src %>/htdocs/**/*.scss',
-					'<%= app.example %>/**/*.scss'
 				],
-				tasks: ['compass:dev', 'compass:example']
+				tasks: ['compass:dev']
 			},
 			examples: {
-				files: ['<%= app.example %>/*.html', '<%= app.example %>/**/*.js'],
+				files: ['<%= app.example %>/*.html'],
 				tasks: ['concurrent:examples']
 			},
 			livereload: {
@@ -123,10 +121,8 @@ module.exports = function (grunt) {
 		},
 		concurrent: {
 			scripts: ['jshint:scripts'],
-			examples: ['jshint:examples'],
 			predist: [
 				'jshint:scripts',
-				'jshint:examples',
 				'compass:dev',
 				'copy'
 			],
@@ -226,21 +222,13 @@ module.exports = function (grunt) {
 				jshintrc: '.jshintrc'
 			},
 			gruntfile: ['Gruntfile.js'],
-			scripts: ['<%= app.src %>/htdocs/js/**/*.js'],
-			examples: ['<%= app.example %>/**/*.js']
+			scripts: ['<%= app.src %>/htdocs/js/**/*.js']
 		},
 		compass: {
 			dev: {
 				options: {
 					sassDir: '<%= app.src %>/htdocs',
 					cssDir: '<%= app.tmp %>',
-					environment: 'development'
-				}
-			},
-			example: {
-				options: {
-					sassDir: '<%= app.example %>/css',
-					cssDir: '<%= app.tmp %>/css',
 					environment: 'development'
 				}
 			}
@@ -408,7 +396,6 @@ module.exports = function (grunt) {
 		'clean',
 		'runpreinstall:dev',
 		'compass:dev',
-		'compass:example',
 		'configureProxies:exampleDev',
 		'connect:dev',
 		'connect:exampleDev',
