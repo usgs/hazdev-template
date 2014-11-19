@@ -13,7 +13,8 @@ $vertical-spacing: $spacing !default;
 
 // rows are left-to-right
 .row {
-	clear:both;
+	//clear:both;
+	overflow: hidden;
 	margin-left:-$horizontal-spacing;
 
 	> .column {
@@ -23,7 +24,8 @@ $vertical-spacing: $spacing !default;
 	&:after {
 		display: block;
 		content: ' ';
-		clear: both;
+		//clear: both;
+		overflow: hidden;
 	}
 }
 
