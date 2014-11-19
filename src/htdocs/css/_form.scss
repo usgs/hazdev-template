@@ -2,6 +2,7 @@
 select, textarea, input, fieldset, legend, label {
 	color: #333;
 	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
+	margin:4px 2px
 }
 
 textarea,
@@ -12,11 +13,6 @@ select {
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
-}
-
-label,
-legend {
-	padding: 0;
 }
 
 textarea {
@@ -65,16 +61,6 @@ input[type="checkbox"] {
 	}
 }
 
-
-@media screen and (min-width: $breakpoint-stacking) {
-
-	textarea,
-	input[type="text"],
-	input[type="search"],
-	select {
-		margin: 0;
-	}
-}
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 

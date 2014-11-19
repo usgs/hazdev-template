@@ -16,9 +16,9 @@ if (!isset($TEMPLATE)) {
 					margin-top: 15px;
 				}
 
-				.example .column {
-					margin-top:5px;
-				}
+				// .example .column {
+				// 	margin-top:5px;
+				// }
 			</style>
 	';
 

@@ -7,6 +7,7 @@ if (!isset($TEMPLATE)) {
 			<style>
 				.buttons button {
 					min-width:80px;
+					margin:4px 2px;
 				}
 			</style>
 	';
