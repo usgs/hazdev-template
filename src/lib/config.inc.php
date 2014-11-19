@@ -48,7 +48,7 @@ if (!isset($SOCIAL)) {
 			),
 			array(
 				'name' => 'Twitter',
-				'url' => 'http://twitter.com/share?url={URL}&text={TITLE}',
+				'url' => 'http://twitter.com/intent/tweet?url={URL}&text={TITLE}',
 				'class' => 'twitter'
 			),
 			array(
