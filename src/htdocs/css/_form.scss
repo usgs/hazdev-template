@@ -2,7 +2,8 @@
 select, textarea, input, fieldset, legend, label {
 	color: #333;
 	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
-	margin:4px 2px
+	margin:4px 2px;
+	font-family:'helvetica neue', arial, sans-serif;
 }
 
 textarea,
