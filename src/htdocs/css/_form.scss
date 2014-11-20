@@ -6,6 +6,11 @@ select, textarea, input, fieldset, legend, label {
 	font-family:'helvetica neue', arial, sans-serif;
 }
 
+legend,
+label {
+	margin: 4px 0;
+}
+
 textarea,
 input[type="text"],
 input[type="search"],
