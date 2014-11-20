@@ -146,7 +146,6 @@ table.responsive {
 	table.tabular {
 		width:auto;
 		font-size:1em;
-		border:1px solid $table_border_color;
 
 		> tbody.no-header-style > tr > th {
 			background: $td_background_color;
@@ -155,7 +154,6 @@ table.responsive {
 	}
 
 	table.responsive {
-		border:1px solid $table_border_color;
 
 		th {
 			background-color: $th_background_color;
