@@ -2,18 +2,19 @@ button {
 	position:relative;
 	font-size:0.75em;
 	padding:.666em 1em;
-	color: #555;
+	color: #333;
 	background: #f8f8f8;
 	text-shadow:0 1px 1px #fff;
 	border:1px solid #d8d8d8;
 	border-radius:2px;
 	cursor:pointer;
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,
+				rgba(0,0,0,0.05) 100%);
 
 	&:hover,
 	&:active {
 		background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,
 				rgba(0,0,0,0.1) 100%);
-		color:#000;
 	}
 
 	&.red,
@@ -21,7 +22,7 @@ button {
 	&.green,
 	&.blue {
 		color:#fff;
-		text-shadow:0 1px 1px rgba(0,0,0,0.6);
+		text-shadow:0 1px 1px rgba(0,0,0,0.5);
 	}
 
 	&.yellow {
@@ -80,27 +81,27 @@ button {
 }
 
 .red {
-	background: #C7351F;
-	border-color: #961300;
+	background-color: #C7351F;
+	border-color: #AD1600;
 }
 
 .orange {
-	background: #FA8B12;
-	border-color: #C96900;
+	background-color: #FA8B12;
+	border-color: #DD7300;
 }
 
 .yellow {
-	background: #F0F00D;
-	border-color: #CFCF00;
+	background-color: #F0F00D;
+	border-color: #E5E600;
 }
 
 .green {
-	background: #2EA96A;
+	background-color: #2EA96A;
 	border-color: #108B4C;
 }
 
 .blue {
-	background: #008BF8;
-	border-color: #004FB4;
+	background-color: #008BF8;
+	border-color: #006BF3;
 }
 
