@@ -29,9 +29,8 @@ $th_background_color: #ededed !default;
 }
 
 table.tabular {
-	margin:$table_spacing 0;
+	margin:$table_spacing 0 0;
 	border-collapse: collapse;
-	font-size:0.875em;
 	text-align:left;
 	width:100%;
 
@@ -145,7 +144,6 @@ table.responsive {
 
 	table.tabular {
 		width:auto;
-		font-size:1em;
 
 		> tbody.no-header-style > tr > th {
 			background: $td_background_color;

@@ -6,9 +6,13 @@ select, textarea, input, fieldset, legend, label {
 	font-family:'helvetica neue', arial, sans-serif;
 }
 
+form {
+	margin: 1em 0 0;
+}
+
 legend,
 label {
-	margin: 4px 0;
+	margin: 0.25em 0;
 }
 
 textarea,
@@ -27,6 +31,7 @@ textarea {
 
 fieldset {
 	margin:0.5em 0 1em;
+	margin: 1em 0 0;
 	padding:0;
 	border:none;
 

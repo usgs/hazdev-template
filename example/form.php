@@ -12,13 +12,6 @@ if (!isset($TEMPLATE)) {
 					height: 10em;
 				}
 
-				.example .row {
-					margin-top: 15px;
-				}
-
-				// .example .column {
-				// 	margin-top:5px;
-				// }
 			</style>
 	';
 
@@ -53,7 +46,9 @@ if (!isset($TEMPLATE)) {
 
 <h3>Search Example</h3>
 <div class="searchExample">
-	<input type="search" placeholder="Search" />
+	<label>Search
+		<input type="search" placeholder="Search" />
+	</label>
 	<button type="submit">Search</button>
 </div>
 

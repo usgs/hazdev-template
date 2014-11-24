@@ -11,6 +11,10 @@ a {
 	}
 }
 
+p {
+	margin: 1em 0 0;
+}
+
 abbr {
 	border-bottom: 1px dotted;
 	cursor: help;
@@ -39,6 +43,7 @@ pre {
 	border: 1px solid #d8d8d8;
 	padding: 10px 15px;
 	overflow: scroll;
+	margin: 1em 0 0;
 }
 
 mark {

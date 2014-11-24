@@ -20,20 +20,15 @@ img {
 	padding: 0 $horizontal-spacing;
 }
 
-.page-content {
-	margin: 1em 0;
-}
-
 .page-footer {
 	clear:both;
 	color: $page-footer-color;
 	background-color: $page-footer-background-color;
 	padding:$vertical-spacing 0;
-	margin:1em 0;
 	font-size:smaller;
 
-	> p {
-		margin-top: 0;
+	> .page-social {
+		margin:1em 0 0;
 	}
 }
 
@@ -42,14 +37,11 @@ img {
 	.page-footer {
 		position:relative;
 
-		> p {
-			margin-bottom:0;
-		}
-
 		> .page-social {
 			position: absolute;
 			right: $horizontal-spacing;
 			bottom: $vertical-spacing;
+			margin: 0;
 		}
 	}
 
@@ -64,9 +56,7 @@ img {
 		float: left;
 		width: 25%;
 	}
-
 }
-
 
 @media screen and (min-width: 1200px) {
 	.page {

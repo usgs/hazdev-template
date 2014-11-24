@@ -4,13 +4,13 @@
 
 body {
 	font-size:1.6rem;
-	line-height:1.5;
+	line-height:1.6;
 	font-family:'helvetica neue', arial, sans-serif;
 }
 
 // apply same margin for each header for consistency
 h1, h2, h3, h4, h5, h6 {
-	margin:25px 0 15px;
+	margin:2.4rem 0 0; /* 1.5em of base font-size */
 	line-height:1.2;
 	color:#333;
 	font-weight: normal;
