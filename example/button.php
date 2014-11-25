@@ -5,9 +5,8 @@ if (!isset($TEMPLATE)) {
 
 	$HEAD = '
 			<style>
-				.buttons button {
-					min-width:80px;
-					margin:4px 2px;
+				nav.button-group {
+					margin:16px 0 0;
 				}
 			</style>
 	';
@@ -21,12 +20,14 @@ if (!isset($TEMPLATE)) {
 	Here are some examples of default styles for buttons, and also some examples
 	of class modifiers you can use for a consistent look with common button usage.
 </p>
-<h2 class="subheading">Example 1</h2>
+
+<h2 class="subheading">Button</h2>
 <p>
-	This is the default style applied to all buttons, it also displays the disabled state. The disabled state can be set using the disabled attribute or by applying the class <code>.disabled</code>.
+	This is the default style applied to all buttons, it also displays the
+	disabled state.
 </p>
+<h3>Example</h3>
 <button>Enabled</button>
-<br>
 <button disabled>Disabled</button>
 <h2 class="subheading">Usage</h2>
 <pre><code>&lt;button&gt;Enabled&lt;button&gt;
@@ -34,17 +35,19 @@ if (!isset($TEMPLATE)) {
 </code></pre>
 
 
-<h2 class="subheading">Example 2</h2>
+<h2 class="subheading">Button States</h2>
 <p>
 	When color styles are applied to buttons the disabled state does not
-	inherit the background color.
+	inherit the background color. The disabled state can be set using the disabled
+	attribute or by applying the class <code>.disabled</code>.
 </p>
+<h3>Example</h3>
 <button class="green">Yes</button>
 <button>No</button>
 <br>
 <button class="green" disabled>Yes</button>
 <button disabled>No</button>
-<h2 class="subheading">Usage</h2>
+<h3>Usage</h3>
 <pre><code>&lt;button class="green"&gt;Yes&lt;button&gt;
 &lt;button&gt;No&lt;button&gt;
 &lt;br&gt;
@@ -102,4 +105,61 @@ if (!isset($TEMPLATE)) {
 &lt;button class="yellow" disabled&gt;Yellow&lt;button&gt;
 &lt;button class="green" disabled&gt;Green&lt;button&gt;
 &lt;button class="blue" disabled&gt;Blue&lt;button&gt;
+</code></pre>
+
+
+
+<h2 class="subheading">Button Groups</h2>
+<p>
+	To group together buttons in a navigation style list, use this markup.
+</p>
+<h3>Example</h3>
+<nav class="button-group">
+	<button>List</button>
+	<button>Map</button>
+	<button>Settings</button>
+</nav>
+
+<nav class="button-group">
+	<button class="blue">List</button>
+	<button class="blue">Map</button>
+	<button class="blue">Settings</button>
+</nav>
+
+<nav class="button-group">
+	<button class="green">List</button>
+	<button class="green">Map</button>
+	<button class="green">Settings</button>
+</nav>
+
+<nav class="button-group">
+	<button class="yellow">List</button>
+	<button class="yellow">Map</button>
+	<button class="yellow">Settings</button>
+</nav>
+
+<nav class="button-group">
+	<button class="orange">List</button>
+	<button class="orange">Map</button>
+	<button class="orange">Settings</button>
+</nav>
+
+<nav class="button-group">
+	<button class="red">List</button>
+	<button class="red">Map</button>
+	<button class="red">Settings</button>
+</nav>
+
+<h3>Usage</h3>
+<pre><code>&lt;nav class="button-group"&gt;
+	&lt;button&gt;List&lt;/button&gt;
+	&lt;button class="active"&gt;Map&lt;/button&gt;
+	&lt;button class="active"&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
+&lt;nav class="button-group"&gt;
+	&lt;button class="blue"&gt;List&lt;/button&gt;
+	&lt;button class="blue active"&gt;Map&lt;/button&gt;
+	&lt;button class="blue active"&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
+...
 </code></pre>
