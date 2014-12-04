@@ -56,5 +56,13 @@
 			<td><code>&lt;small&gt;</code></td>
 			<td>De-emphasize text for small print using the <small>small element</small>.</td>
 		</tr>
+		<tr>
+			<td><code>&lt;sup&gt;</code></td>
+			<td>Mark up typographical conventions with specific meanings, US<sup>2</sup>.</td>
+		</tr>
+		<tr>
+			<td><code>&lt;sub&gt;</code></td>
+			<td>Mark up typographical conventions with specific meanings, US<sub>2</sub>.</td>
+		</tr>
 	</tbody>
 </table>
