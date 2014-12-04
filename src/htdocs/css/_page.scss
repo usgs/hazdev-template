@@ -13,7 +13,8 @@ body {
 	margin: $body-margin;
 }
 
-img {
+img,
+canvas {
 	max-width: 100%;
 }
 
