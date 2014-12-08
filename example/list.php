@@ -82,12 +82,12 @@
 
 <h3 class="subheading">Unstyled List</h3>
 <p>
-	Adding the class <code>.unstyled</code> to a <code>ul</code> or
+	Adding the class <code>.no-style</code> to a <code>ul</code> or
 	<code>ol</code> list will remove padding from the list and remove bullets.
-	The class <code>.unstyled</code> only applies to direct descendants, and
+	The class <code>.no-style</code> only applies to direct descendants, and
 	must be repeated for nested lists.
 </p>
-<ul class="unstyled">
+<ul class="no-style">
 	<li>Item 1</li>
 	<li>Item 2
 		<ul>
@@ -99,7 +99,7 @@
 	<li>Item 4</li>
 </ul>
 <h3 class="subheading">Usage</h3>
-<pre><code>&lt;ul class="unstyled"&gt;
+<pre><code>&lt;ul class="no-style"&gt;
 	&hellip;
 &lt;/ul&gt;
 </code></pre>
@@ -111,14 +111,14 @@
 	The class <code>.separator</code> only applies to direct descendants, and
 	must be repeated for nested lists.
 </p>
-<ul class="unstyled separator">
+<ul class="no-style separator">
 	<li>Item 1</li>
 	<li>Item 2</li>
 	<li>Item 3</li>
 	<li>Item 4</li>
 </ul>
 <h3 class="subheading">Usage</h3>
-<pre><code>&lt;ul class="unstyled separator"&gt;
+<pre><code>&lt;ul class="no-style separator"&gt;
 	&hellip;
 &lt;/ul&gt;
 </code></pre>
