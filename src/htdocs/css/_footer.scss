@@ -5,67 +5,101 @@
 	@include transition(background .25s ease-out);
 }
 
-.site-footer {
-	padding: $spacing - $vertical-spacing $horizontal-spacing;
-}
-
 /* section nav */
-
 .site-sectionnav {
-	border: 1px solid $sectionnav-border-color;
-	background-color: $sectionnav-background-color;
-	margin: $vertical-spacing 0;
 
-	// regular nav items
+	// Ungrouped Links
 	> a,
-	// items in a nav group
-	> section > a,
-	// nav group header
-	> section > header,
-	// current page
-	> strong,
-	> section > header > strong,
-	> section > strong {
-		display:block;
-		padding:$vertical-spacing/2 $horizontal-spacing/2;
-	}
-
-	> a,
-	> strong,
-	> section,
-	> section > a,
-	> section > strong {
-		border-top:1px solid #fff;
+	> strong {
+		background-color: #ededed;
+		background-image:none;
+		border-top: 1px solid $sectionnav-border-color;
 		color: #333;
-		text-decoration: none;
+		display: block;
+		padding: ($vertical-spacing * 3/4) $horizontal-spacing;
+		text-decoration:none;
 		@extend .nav-transition;
+
+		&:visited {
+			color: #333;
+		}
 	}
 
-	> :first-child {
-		border-top:none;
+	> a:hover {
+		text-decoration:underline;
 	}
 
-	// indent group items
-	> section > a,
-	> section > strong {
-		padding-left: 1.5*$horizontal-spacing;
-	}
+	// Grouped Links
+	> section {
+		margin: 0 0 0.2em 0;
 
-	// hover styles for nav items
-	> a:hover,
-	> section > a:hover {
-		background-color:$sectionnav-background-color-hover;
-	}
+		// items in a nav group
+		> a,
+		> strong,
+		> header {
+			color: #333;
+			display: block;
+			padding: ($vertical-spacing * 3/4) $horizontal-spacing;
+			@extend .nav-transition;
+		}
 
-	// current page is a strong element
-	> strong,
-	// or an element with the class "current-page"
-	> .current-page,
-	> section > strong,
-	> section > .current-page {
-		background-color:#FFF;
-	}
+		// indent group items
+		> a,
+		> strong {
+			padding-left: (3/2 * $horizontal-spacing);
+			position:relative; // for linear-gradient background
 
+			// gradient separator between section links
+			&:before {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0,
+						rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
+				background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0,
+						rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
+				background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0,
+						rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
+			}
+		}
+
+		// nav group header
+		> header {
+			background-color: #ededed;
+			border-top: 1px solid $sectionnav-border-color;
+			border-bottom: 1px solid $sectionnav-border-color;
+			font-weight: normal;
+			text-shadow: 0 1px 1px #fff;
+		}
+
+		> header > strong {
+			font-weight: bold;
+		}
+
+		> a,
+		> header > a {
+			text-decoration:none;
+			background-image:none;
+
+			// hover styles for nav items
+			&:hover {
+				text-decoration:underline;
+				background-color: $sectionnav-background-color-hover;
+			}
+		}
+
+		> header > a {
+			display:block;
+			color: #333;
+
+			&:hover {
+				background-color: $sectionnav-background-color;
+			}
+		}
+	}
 }
 
 
@@ -74,14 +108,15 @@
 .site-search {
 	position:relative;
 	display: block;
-	margin: $vertical-spacing 0;
-	padding: $horizontal-spacing/2;
-	background-color: $search-background-color;
-	border: 1px solid $search-border-color;
+	margin: 1.2em 1em;
 
 	>[type="search"] {
 		display:block;
 		width:100%;
+		-webkit-appearance:none;
+		-moz-appearance:none;
+		appearance:none;
+		margin:0;
 	}
 
 	> label {
@@ -94,7 +129,7 @@
 	> button {
 		display:block;
 		clear:both;
-		margin-top:1em;
+		margin: 1em 0 0 0;
 	}
 
 	&:after {
@@ -109,20 +144,34 @@
 
 .site-sitenav {
 	background-color: $sitenav-background-color;
-	margin: $vertical-spacing 0;
-	border: 1px solid $sitenav-border-color;
+	margin: 0.2em 0;
 	overflow: visible;
+	// border-top: 1px solid $sitenav-border-color;
+	// border-bottom: 1px solid $sitenav-border-color;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 
 	> a,
 	> strong {
 		display: block;
-		padding: $vertical-spacing/2 $horizontal-spacing/2;
+		padding: ($vertical-spacing * 3/4) $horizontal-spacing;
 		color: $sitenav-color;
 		text-decoration: none;
+		font-weight:normal;
+		text-shadow: 0 0 2px #000;
 		@extend .nav-transition;
-		border-bottom: 1px solid #FFF;
+		// border-bottom: 1px solid $sitenav-border-color;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		border-top: 1px solid rgba(255,255,255,0.1);
+		border-right: 1px solid rgba(255,255,255,0.1);
+		border-left: 1px solid rgba(255,255,255,0.1);
+
+		&:visited {
+			color: $sitenav-color;
+		}
+
 		&:last-child {
-			border-bottom: 0;
+			border-bottom: 1px solid rgba(255,255,255,0.1);
 		}
 
 		&:hover {
@@ -166,8 +215,65 @@
 			margin:0;
 		}
 	}
-
 }
+
+
+@media screen and (min-width: $breakpoint-offcanvas) {
+
+	.site-footer {
+		padding: $spacing - $vertical-spacing $horizontal-spacing;
+	}
+
+	.site-sectionnav,
+	.site-sitenav,
+	.site-search {
+		margin: 1em 0;
+	}
+
+	.site-sitenav {
+		border: 1px solid $sitenav-border-color;
+		//border: 1px solid rgba(0,0,0,0.1);
+	}
+
+	.site-sectionnav {
+
+		> a,
+		> strong {
+			border: 1px solid #ddd;
+			margin: 0 0 1em 0;
+			padding:$vertical-spacing/2 $horizontal-spacing * 2/3;
+		}
+
+		> section {
+			margin: 0 0 1em;
+			border: 1px solid #ddd;
+
+			header,
+			header > a {
+				border-top: 0;
+			}
+
+			> a,
+			> strong,
+			> header {
+				padding:$vertical-spacing/2 $horizontal-spacing * 2/3;
+			}
+
+			> a,
+			> strong {
+				padding-left: (3/2 * $horizontal-spacing);
+			}
+		}
+	}
+
+	.site-sitenav {
+		> a,
+		> strong {
+			padding: $vertical-spacing/2 $horizontal-spacing * 2/3;
+		}
+	}
+}
+
 
 @media print {
 	.site-sectionnav,

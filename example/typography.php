@@ -21,11 +21,10 @@ if (!isset($TEMPLATE)) {
 
 ?>
 
-<p>This page gives examples of different header sizes and styles.</p>
-
-
-<h2>Headers and Line Height</h2>
-<hr>
+<p>
+	This page gives examples of the default styles for <code>h1</code> through
+	<code>h6</code> headers.
+</p>
 
 <h1>h1 Header</h1>
 <p>
@@ -98,17 +97,3 @@ in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.
 </p>
-
-<hr>
-<h1>Header (h1)</h1>
-<hr>
-<h2>Header (h2)</h2>
-<hr>
-<h3>Header (h3)</h3>
-<hr>
-<h4>Header (h4)</h4>
-<hr>
-<h5>Header (h5)</h5>
-<hr>
-<h6>Header (h6)</h6>
-<hr>

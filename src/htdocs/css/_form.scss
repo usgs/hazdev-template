@@ -1,45 +1,85 @@
 /** Stacked should be the default mobile style */
 select, textarea, input, fieldset, legend, label {
-	vertical-align:middle;
+	color: #333;
+	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
+	margin:4px 2px;
+	font-family:'helvetica neue', arial, sans-serif;
 }
 
-textarea, input, select {
-	height:2.5em;
+form {
+	margin: 1em 0 0;
+}
+
+legend,
+label {
+	margin: 0.25em 0;
+}
+
+textarea,
+input[type="text"],
+input[type="search"],
+select {
+	height:4rem;
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
-	font-size:0.75em;
-	border-radius: 2px;
+	max-width: 100%;
 }
 
-label,
-legend {
-	margin: 15px 0 5px;
+textarea {
+	vertical-align:top;
 }
 
 fieldset {
-	margin:15px 0;
+	margin:0.5em 0 1em;
+	margin: 1em 0 0;
 	padding:0;
 	border:none;
 
+	legend {
+		margin: 0 0 0.5em;
+	}
+
 	label {
-		margin: 5px 0 0;
+		display:block;
+		margin: 0 0 0.25em;
+		text-indent: -49px;
+		padding-left: 45px; // 4px diff (not sure why)
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-	height:1.5em;
-	margin:3px 6px 3px 6px;
+	padding: 0;
+	margin: 0 12px 0 16px;
+	width: 16px;
 }
 
-.stacked {
-	select, textarea, input, fieldset, legend, label {
+.vertical {
+	label {
 		display:block;
 		clear:both;
 	}
 
-	input[type="radio"],
-	input[type="checkbox"] {
-		display:inline;
+	textarea,
+	input[type="text"],
+	input[type="search"],
+	select {
+		margin: 0.5em 0 1em;
+	}
+}
+
+
+@media screen and (min-width: $breakpoint-offcanvas) {
+
+	textarea,
+	input[type="text"],
+	input[type="search"],
+	select {
+		font-size: 0.8125em;
+		height: 3rem;
 	}
 }

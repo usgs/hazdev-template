@@ -2,7 +2,7 @@
 [role="banner"] {
 	height:56px;
 	position:relative;
-	background-color:$banner-background-color;
+	background-color: $site-title-background-color;
 
 	/* position usgs logo over background image. */
 	> .site-logo {
@@ -34,6 +34,7 @@
 	@media screen and (min-width: $breakpoint-offcanvas) {
 
 		/* make banner larger on large screens. */
+		background-color:$banner-background-color;
 		background-size:auto 100%;
 		background-repeat:no-repeat;
 		background-image:url('#{$banner-image}');
@@ -62,8 +63,9 @@
 			padding:0.25em 0 0.25em $horizontal-spacing;
 			border:1px solid white;
 			border-width:1px 0;
-			font-family:verdana,helvetica,arial,sans-serif;
+			font-family:'helvetica neue', arial, sans-serif;
 			font-size:1em;
+			text-shadow: 0 0 2px rgba(0,0,0,0.6);
 			line-height:1.5;
 			font-weight:bold;
 

@@ -29,12 +29,15 @@ $th_background_color: #ededed !default;
 }
 
 table.tabular {
-	margin:$table_spacing 0;
+	margin:$table_spacing 0 0;
 	border-collapse: collapse;
-	font-size:0.875em;
-	border:1px solid $table_border_color;
 	text-align:left;
 	width:100%;
+
+	display: block;
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
 
 	th {
 		color: $th_color;
@@ -141,7 +144,6 @@ table.responsive {
 
 	table.tabular {
 		width:auto;
-		font-size:1em;
 
 		> tbody.no-header-style > tr > th {
 			background: $td_background_color;
@@ -150,7 +152,6 @@ table.responsive {
 	}
 
 	table.responsive {
-		border:1px solid $table_border_color;
 
 		th {
 			background-color: $th_background_color;

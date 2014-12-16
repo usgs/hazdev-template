@@ -14,6 +14,11 @@ if (!isset($TEMPLATE)) {
 			.test-horizontal td:nth-of-type(4):before { content: "Fourth Header"; }
 			.test-horizontal td:nth-of-type(5):before { content: "Fifth Header"; }
 		}
+
+		strong {
+			/* color: red */
+			color: #E46554;
+		}
 	</style>
 	';
 	include 'template.inc.php';
@@ -88,6 +93,29 @@ if (!isset($TEMPLATE)) {
 		</tr>
 	</tbody>
 </table>
+<h3>Usage</h3>
+<pre><code>&lt;table class="<strong>tabular</strong>"&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;First Header&lt;/th&gt;
+			&lt;th&gt;Second Header&lt;/th&gt;
+			&lt;th&gt;Third Header&lt;/th&gt;
+			&lt;th&gt;Fourth Header&lt;/th&gt;
+			&lt;th&gt;Fifth Header&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;This&lt;/td&gt;
+			&lt;td&gt;Is&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+			&lt;td&gt;Responsive&lt;/td&gt;
+			&lt;td&gt;Table&lt;/td&gt;
+		&lt;/tr&gt;
+	&hellip;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
 
 
 <h2>Vertical Table (.tabular)</h2>
@@ -118,6 +146,21 @@ if (!isset($TEMPLATE)) {
 		</tr>
 	</tbody>
 </table>
+<h3>Usage</h3>
+<pre><code>&lt;table class="<strong>tabular</strong>"&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th&gt;First Header&lt;/th&gt;
+			&lt;td&gt;This&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Second Header&lt;/th&gt;
+			&lt;td&gt;Is&lt;/td&gt;
+		&lt;/tr&gt;
+		&hellip;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
 
 
 <h2>Responsive Table (.tabular .responsive)</h2>
@@ -187,6 +230,29 @@ if (!isset($TEMPLATE)) {
 		</tr>
 	</tbody>
 </table>
+<h3>Usage</h3>
+<pre><code>&lt;table class="<strong>tabular responsive</strong>"&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;First Header&lt;/th&gt;
+			&lt;th&gt;Second Header&lt;/th&gt;
+			&lt;th&gt;Third Header&lt;/th&gt;
+			&lt;th&gt;Fourth Header&lt;/th&gt;
+			&lt;th&gt;Fifth Header&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;This&lt;/td&gt;
+			&lt;td&gt;Is&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+			&lt;td&gt;Responsive&lt;/td&gt;
+			&lt;td&gt;Table&lt;/td&gt;
+		&lt;/tr&gt;
+	&hellip;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
 
 
 <h2>Responsive Table (.tabular .responsive)</h2>
@@ -243,6 +309,29 @@ if (!isset($TEMPLATE)) {
 		</tr>
 	</tbody>
 </table>
+<h3>Usage</h3>
+<pre><code>&lt;table class="<strong>tabular responsive</strong>"&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;First Header&lt;/th&gt;
+			&lt;th&gt;Second Header&lt;/th&gt;
+			&lt;th&gt;Third Header&lt;/th&gt;
+			&lt;th&gt;Fourth Header&lt;/th&gt;
+			&lt;th&gt;Fifth Header&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			<strong>&lt;th&gt;</strong>This<strong>&lt;/th&gt;</strong>
+			&lt;td&gt;Is&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+			&lt;td&gt;Responsive&lt;/td&gt;
+			&lt;td&gt;Table&lt;/td&gt;
+		&lt;/tr&gt;
+	&hellip;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
 
 <h2>Responsive Table (.tabular .responsive .center)</h2>
 <p>
@@ -317,3 +406,26 @@ if (!isset($TEMPLATE)) {
 		</tr>
 	</tbody>
 </table>
+<h3>Usage</h3>
+<pre><code>&lt;table class="<strong>tabular responsive center</strong>"&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;First Header&lt;/th&gt;
+			&lt;th&gt;Second Header&lt;/th&gt;
+			&lt;th&gt;Third Header&lt;/th&gt;
+			&lt;th&gt;Fourth Header&lt;/th&gt;
+			&lt;th&gt;Fifth Header&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody class="<strong>no-header-style</strong>"&gt;
+		&lt;tr&gt;
+			<strong>&lt;th&gt;</strong>Main Value<strong>&lt;/th&gt;</strong>
+			&lt;td&gt;In&lt;/td&gt;
+			&lt;td&gt;A&lt;/td&gt;
+			&lt;td&gt;Responsive&lt;/td&gt;
+			&lt;td&gt;Table&lt;/td&gt;
+		&lt;/tr&gt;
+		&hellip;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>

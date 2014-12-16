@@ -1,0 +1,35 @@
+.alert {
+	display:block;
+	padding: 0.75em 1em;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px #fff;
+
+	background: #f8f8f8;
+	color: #555;
+	border: 1px solid #d8d8d8;
+}
+
+.info {
+	color: #2d7091;
+	background-color: #ebf7fd;
+	border-color: rgba(45,112,145,.3);
+}
+
+.success {
+	color: #659f13;
+	background-color: #f2fae3;
+	border-color: rgba(101,159,19,.3);
+}
+
+.warning {
+	color: #e28327;
+	background-color: #fffceb;
+	border-color: rgba(226,131,39,.3);
+}
+
+.error {
+	color: #d85030;
+	background-color: #fff1f0;
+	border-color: rgba(216,80,48,.3);
+}
+

@@ -3,28 +3,17 @@
 }
 
 body {
-	font-size:1.5rem;
-	line-height:1.5;
-	font-family:helvetica, arial, sans-serif;
+	font-size:1.6rem;
+	line-height:1.6;
+	font-family:'helvetica neue', arial, sans-serif;
 }
 
 // apply same margin for each header for consistency
 h1, h2, h3, h4, h5, h6 {
-	margin:25px 0 15px;
+	margin:2.4rem 0 0; /* 1.5em of base font-size */
 	line-height:1.2;
 	color:#333;
 	font-weight: normal;
-}
-
-a {
-	color: $link-color;
-
-	&:active {
-		color: #c23030;
-	}
-	&:visited {
-		color: $link-color;
-	}
 }
 
 h1 {
@@ -49,13 +38,4 @@ h5 {
 
 h6 {
 	font-size: 0.875em;
-}
-
-
-// Leave this at 768px even though the grid stacks at 560px
-@media screen and (min-width: $breakpoint-offcanvas) {
-
-	body {
-		font-size:1.6rem;
-	}
 }

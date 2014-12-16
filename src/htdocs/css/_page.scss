@@ -2,6 +2,7 @@
 * {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	word-wrap: break-word; // keeps content from breaking its container
 }
 
 main {
@@ -12,22 +13,13 @@ body {
 	margin: $body-margin;
 }
 
-img {
+img,
+canvas {
 	max-width: 100%;
-}
-
-abbr {
-	border-bottom: 1px dotted;
-	cursor: help;
 }
 
 .page {
 	padding: 0 $horizontal-spacing;
-}
-
-.page-content {
-	line-height: 1.6;
-	margin: 1em 0;
 }
 
 .page-footer {
@@ -35,11 +27,10 @@ abbr {
 	color: $page-footer-color;
 	background-color: $page-footer-background-color;
 	padding:$vertical-spacing 0;
-	margin:1em 0;
 	font-size:smaller;
 
-	> p {
-		margin-top: 0;
+	> .page-social {
+		margin:1em 0 0;
 	}
 }
 
@@ -48,14 +39,11 @@ abbr {
 	.page-footer {
 		position:relative;
 
-		> p {
-			margin-bottom:0;
-		}
-
 		> .page-social {
 			position: absolute;
 			right: $horizontal-spacing;
 			bottom: $vertical-spacing;
+			margin: 0;
 		}
 	}
 
@@ -70,9 +58,7 @@ abbr {
 		float: left;
 		width: 25%;
 	}
-
 }
-
 
 @media screen and (min-width: 1200px) {
 	.page {

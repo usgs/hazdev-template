@@ -9,7 +9,7 @@ if (!isset($TEMPLATE)) {
 	';
 
 	$FOOT = '
-		<script src="http://localhost:35729/livereload.js?snipver=1"></sciript>
+		<script src="http://localhost:35729/livereload.js?snipver=1"></script>
 	';
 
 	$gist = 'https://gist.github.com/emartinez-usgs/11158054.js';
