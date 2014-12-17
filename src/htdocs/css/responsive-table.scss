@@ -93,7 +93,7 @@ table.responsive {
 	}
 
 	> tbody > tr {
-		margin-top: $table_spacing;
+		margin-top: $table_spacing * 1.5;
 
 		&:first-child {
 			margin-top:0;
@@ -112,7 +112,7 @@ table.responsive {
 
 		> td:first-child,
 		> td:first-child:before {
-			padding-top: $table_spacing;
+			padding-top: $table_spacing * 1.5;
 		}
 
 		> td {
