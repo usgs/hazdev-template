@@ -184,8 +184,8 @@
 	> .current-page,
 	> strong:hover,
 	> .current-page:hover {
-		background-color:#fff;
-		color:#000;
+		background-color: $sitenav-background-color-hover;
+		color: $sitenav-color-hover;
 	}
 }
 
