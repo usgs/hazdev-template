@@ -2,17 +2,11 @@
 	list-style:none;
 	margin:0;
 	padding:0;
-	font-size:1em;
 }
 
 .imagelist-item {
 	position:relative;
 	margin:1em 0 0;
-	padding:0;
-
-	&:first-child {
-		margin-top:0;
-	}
 
 	&:after {
 		display:block;
@@ -30,8 +24,7 @@
 
 .imagelist-title {
 	display:block;
-	font-size:1.4em;
-	font-weight:normal;
+	font-size:1.375em; // h3 font-size
 	position:absolute;
 	top:-4px;
 	left:25%;
