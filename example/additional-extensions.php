@@ -16,7 +16,6 @@ if (!isset($TEMPLATE)) {
 <ul>
 	<li>Alerts</li>
 	<li>Figure Captions</li>
-	<li>Image Lists</li>
 	<li>Jump Lists</li>
 	<li>References</li>
 	<li>Responsive Tables</li>
