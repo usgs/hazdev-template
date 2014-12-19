@@ -37,7 +37,6 @@ code {
 
 code {
 	font-size: 0.8em;
-	word-wrap: normal;
 }
 
 pre {
@@ -45,6 +44,10 @@ pre {
 	padding: 10px 15px;
 	overflow: scroll;
 	margin: 1em 0 0;
+}
+
+pre > code {
+	word-wrap: normal;
 }
 
 mark {
