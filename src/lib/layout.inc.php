@@ -56,11 +56,14 @@
 					$replacements = array(
 							'{URL}' => htmlspecialchars($pageUrl),
 							'{TITLE}' => htmlspecialchars($TITLE));
+					$urlReplacements = array(
+							'{URL}' => urlencode($pageUrl),
+							'{TITLE}' => urlencode($TITLE));
 
 					echo '<nav class="page-social" aria-label="Share this page">';
 					foreach ($SOCIAL as $link) {
 						echo ' <a' .
-								' href="' . htmlspecialchars(strtr($link['url'], $replacements)) . '"' .
+								' href="' . htmlspecialchars(strtr($link['url'], $urlReplacements)) . '"' .
 								' title="Share using ' . htmlspecialchars($link['name']) . '"' .
 								' class="' . $link['class'] . '"' .
 								' data-link-template="' . htmlspecialchars($link['url']) . '"' .
