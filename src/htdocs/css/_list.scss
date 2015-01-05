@@ -9,10 +9,12 @@ ol {
 	}
 
 	&.separator > li {
-		border-bottom: 1px solid #d8d8d8;
+		border-top: 1px solid #d8d8d8;
+		padding: 1em 0;
 
-		&:last-child {
-			border-bottom: none;
+		&:first-child {
+			border-top: none;
+			padding-top: 0;
 		}
 	}
 }
