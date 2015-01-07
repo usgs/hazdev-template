@@ -46,6 +46,10 @@ pre {
 	margin: 1em 0 0;
 }
 
+pre > code {
+	word-wrap: normal;
+}
+
 mark {
 	background-color: #ffa;
 	padding: 2px 4px;
