@@ -8,7 +8,7 @@ select, textarea, input, fieldset, legend, label {
 
 legend,
 label {
-	margin: 0.25em 0;
+	margin: 0.5em 0 0;
 }
 
 input[type="date"],
@@ -37,13 +37,8 @@ fieldset {
 	padding:0;
 	border:none;
 
-	legend {
-		margin: 0.5em 0 0;
-	}
-
 	label {
 		display:block;
-		margin: 0.5em 0 0;
 		text-indent: -49px;
 		padding-left: 49px;
 
@@ -70,6 +65,21 @@ input[type="checkbox"] {
 		label {
 			margin: 0.5em 0 0;
 		}
+	}
+
+	input[type="date"],
+	input[type="datetime"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	select,
+	textarea {
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
