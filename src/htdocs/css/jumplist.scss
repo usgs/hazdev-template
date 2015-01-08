@@ -1,25 +1,19 @@
 /* "jumplist" navigation links */
 
 .jumplist {
-	padding: 8px;
-	margin: 1em 0 0;
 	border: 1px solid #ddd;
+	padding: 0.5em 0 0.5em 1em;
+	margin: 1em 0 0;
 
 	> a {
-		&:after {
-			display: inline-block;
-			content: '|';
-			padding: 0 8px;
-		}
-		&:last-child:after {
-			display: none;
-		}
+		border-right: 1px solid #ccc;
+		display: inline-block;
+		line-height: 1em;
+		padding-right: 0.5em;
+		margin-right: 0.5em;
 
-		// trim whitespace btwn elem
-		//http://stackoverflow.com/questions/14630061/correct-html-mark-up-syntax-to-remove-whitespace-between-inline-block-elements/14630227#14630227
-		float: left;
 		&:last-child {
-			float: none;
+			border: none;
 		}
 	}
 }
