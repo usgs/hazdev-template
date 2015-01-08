@@ -12,7 +12,6 @@ echo navGroup(navItem('/index.php', 'The Template'),
 echo navGroup(navItem('/additional-extensions.php','Additional Extensions'),
 		navItem('/alert.php', 'Alerts') .
 		navItem('/figcaption.php', 'Figure Caption') .
-		navItem('/imagelist.php', 'Image List') .
 		navItem('/jumplist.php', 'Jump List') .
 		navItem('/references.php', 'References') .
 		navItem('/responsive-table.php', 'Responsive Table')
