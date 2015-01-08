@@ -12,6 +12,15 @@ if (!isset($TEMPLATE)) {
 					height: 10em;
 				}
 
+				.vertical > button {
+					margin: 2em 0 0;
+				}
+
+				.sortExample,
+				.searchExample {
+					margin: 1em 0 0;
+				}
+
 			</style>
 	';
 
@@ -129,118 +138,7 @@ if (!isset($TEMPLATE)) {
 </code></pre>
 
 
-<h2>Horizontal Form</h2>
-<p>
-	To acheive a horizontal layout you must use the flexible grid to layout form
-	labels and input fields, grouping each logical match with a <code>.row</code>.
-</p>
-<form class="example">
-	<!-- Label and text input -->
-	<div class="row">
-		<div class="column one-of-five">
-			<label for="regularInput2" >Regular Input</label>
-		</div>
-
-		<div class="column four-of-five">
-			<input type="text" id="regularInput2" placeholder="Placeholder Text"/>
-		</div>
-	</div>
-
-	<!-- Label and textarea -->
-	<div class="row">
-		<div class="column one-of-five">
-			<label for="regularTextarea2">Regular Textarea</label>
-		</div>
-
-		<div class="column four-of-five">
-			<textarea id="regularTextarea2"></textarea>
-		</div>
-	</div>
-
-	<!-- Label and select list -->
-	<div class="row">
-		<div class="column one-of-five">
-			<label for="selectList2">Select List</label>
-		</div>
-
-		<div class="column four-of-five">
-			<select id="selectList2">
-				<option value="Option 1">Option 1</option>
-				<option value="Option 2">Option 2</option>
-				<option value="Option 3">Option 3</option>
-			</select>
-		</div>
-	</div>
-
-	<!-- Wrap checkbox/radio button groups in fieldsets -->
-	<fieldset class="row">
-
-		<!-- Give the fieldset a legend -->
-		<legend class="column one-of-five">Checkboxes</legend>
-
-		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
-		<div class="column four-of-five">
-			<label for="regularCheckbox2">
-				<input type="checkbox" id="regularCheckbox2" value="checkbox 1" />
-				Regular Checkbox 1
-			</label>
-
-			<label for="secondRegularCheckbox2">
-				<input type="checkbox" id="secondRegularCheckbox2" value="checkbox 2" />
-				Regular Checkbox 2
-			</label>
-
-			<label for="thirdRegularCheckbox2">
-				<input type="checkbox" id="thirdRegularCheckbox2" value="checkbox 2" />
-				Regular Checkbox 3
-			</label>
-		</div>
-	</fieldset>
-
-	<fieldset class="row">
-		<legend class="column one-of-five">Radio Buttons</legend>
-		<div class="column four-of-five">
-			<label for="regularRadio2">
-				<input type="radio" name="radios" id="regularRadio2" value="radio 1" />
-				Regular Radio 1
-			</label>
-			<label for="secondRegularRadio2">
-				<input type="radio" name="radios" id="secondRegularRadio2" value="radio 2" />
-				Regular Radio 2
-			</label>
-		</div>
-	</fieldset>
-
-	<button type="submit">Submit Form</button>
-</form>
-<h2>Usage</h2>
-<pre><code>&lt;form class="example"&gt;
-	&lt;div class="row"&gt;
-		&lt;label class="column one-of-five" for="regularInput" &gt;Regular Input&lt;/label&gt;
-		&lt;div class="column four-of-five"&gt;
-			&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&hellip;
-	&lt;fieldset class="row"&gt;
-		&lt;legend class="column one-of-five"&gt;Radio Buttons&lt;/legend&gt;
-		&lt;div class="column four-of-five"&gt;
-			&lt;label for="regularRadio"&gt;
-				&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
-				Regular Radio
-			&lt;/label&gt;
-			&lt;label for="secondRegularRadio"&gt;
-				&lt;input type="radio" name="radios" id="secondRegularRadio" value="radio 2" /&gt;
-				Regular Radio
-			&lt;/label&gt;
-		&lt;/div&gt;
-	&lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre>
-
-
-
-<h2>Example 3</h2>
+<h2>Fieldset Example</h2>
 <p>
 	This is an example of a <code>fieldset</code> being used to format a question.
 </p>
