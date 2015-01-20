@@ -6,19 +6,22 @@ select, textarea, input, fieldset, legend, label {
 	font-family:'helvetica neue', arial, sans-serif;
 }
 
-form {
-	margin: 1em 0 0;
-}
-
 legend,
 label {
-	margin: 0.25em 0;
+	margin: 0.5em 0 0;
 }
 
-textarea,
-input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
 input[type="search"],
-select {
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+select,
+textarea {
 	height:4rem;
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
@@ -30,18 +33,12 @@ textarea {
 }
 
 fieldset {
-	margin:0.5em 0 1em;
 	margin: 1em 0 0;
 	padding:0;
 	border:none;
 
-	legend {
-		margin: 0 0 0.5em;
-	}
-
 	label {
 		display:block;
-		margin: 0 0 0.25em;
 		text-indent: -49px;
 		padding-left: 49px;
 
@@ -61,24 +58,45 @@ input[type="checkbox"] {
 .vertical {
 	label {
 		display:block;
-		clear:both;
+		margin: 1em 0 0;
 	}
 
-	textarea,
-	input[type="text"],
+	fieldset {
+		label {
+			margin: 0.5em 0 0;
+		}
+	}
+
+	input[type="date"],
+	input[type="datetime"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
 	input[type="search"],
-	select {
-		margin: 0.5em 0 1em;
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	select,
+	textarea {
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 
-	textarea,
-	input[type="text"],
-	input[type="search"],
-	select {
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+select,
+textarea {
 		font-size: 0.8125em;
 		height: 3rem;
 	}
