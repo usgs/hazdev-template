@@ -28,10 +28,11 @@ Configure php include path, by updating the mountPHP middleware function:
 ### NOTE: This overrides the default php configuration
 This may include custom extensions or other PHP settings, these should be
 re-added to the php.ini file that is loaded from the template.
-For example, to add the PDO Sqlite extension:
+For example, to add the PDO Sqlite and init_curl extensions:
 <pre><code>
   extension_dir = C:\php55\ext
   extension = php_pdo_sqlite.dll
+  extension = php_curl.dll
 </code></pre>
 
 #### Configure grunt-connect-rewrite module:
