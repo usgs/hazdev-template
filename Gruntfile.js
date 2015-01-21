@@ -207,7 +207,7 @@ module.exports = function (grunt) {
 						return [
 							lrSnippet,
 							proxyRequest,
-							mountPHP(options.base),
+							mountPHP(options.base, {phpini: '/dist/conf/php.ini'}),
 							mountFolder(connect, options.base),
 
 							mountFolder(connect, '.tmp'),

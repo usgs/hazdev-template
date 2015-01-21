@@ -19,16 +19,16 @@ Special variables that allow content to automatically be configured for a sectio
 
 * `false`
 
-	Omit content.
+  Omit content.
 
 * `true`
 
-	Result of including FILE with string buffering.
-	Each variable uses a different FILE, listed below.
+  Result of including FILE with string buffering.
+  Each variable uses a different FILE, listed below.
 
 *  String
 
-	html markup as a string.
+  html markup as a string.
 
 
 ### $HEAD
@@ -39,7 +39,7 @@ Markup before the closing head element of a page (`$HEAD</head>`).  Typically st
 
 ```php
 $HEAD = '<link rel="stylesheet" href="mystyles.css"/>' .
-		'<link rel="stylesheet" href="mystyles2.css"/>';
+    '<link rel="stylesheet" href="mystyles2.css"/>';
 ```
 
 
@@ -51,7 +51,7 @@ Markup before the closing body element of a page (`$FOOT</body>`).  Typically ja
 
 ```php
 $FOOT = '<script src="myscript.js"></script>' .
-		'<script src="myscript2.js"></script>';
+    '<script src="myscript2.js"></script>';
 ```
 
 
@@ -81,9 +81,9 @@ By setting $NAVIGATION to true, all pages in a section can share the same naviga
 <?php
 
 if (!isset($TEMPLATE)) {
-	$TITLE = 'My title';
-	$NAVIGATION = true;
-	include 'template.inc.php';
+  $TITLE = 'My title';
+  $NAVIGATION = true;
+  include 'template.inc.php';
 }
 
 ?>
@@ -97,13 +97,13 @@ content
 <?php
 
 echo navItem('/test.php', 'Test') .
-		navGroup('Group 1',
-				navItem('/item1.php', 'Group item 1') .
-				navItem('/item2.php', 'Group item 2')) .
-		navItem('/item.php', 'Item') .
-		navGroup('Group 2',
-				navItem('/group2/item1.php', 'Group item 1') .
-				navItem('/group2/item2.php', 'Group item 2'));
+    navGroup('Group 1',
+        navItem('/item1.php', 'Group item 1') .
+        navItem('/item2.php', 'Group item 2')) .
+    navItem('/item.php', 'Item') .
+    navGroup('Group 2',
+        navItem('/group2/item1.php', 'Group item 1') .
+        navItem('/group2/item2.php', 'Group item 2'));
 
 ?>
 ```
@@ -148,27 +148,27 @@ Values:
 Default value is
 ```php
 $SOCIAL = array(
-		array(
-			'name' => 'Facebook',
-			'url' => 'http://www.facebook.com/sharer.php?u={URL}',
-			'class' => 'facebook'
-		),
-		array(
-			'name' => 'Twitter',
-			'url' => 'http://twitter.com/share?url={URL}&text={TITLE}',
-			'class' => 'twitter'
-		),
-		array(
-			'name' => 'Google',
-			'url' => 'https://plusone.google.com/_/+1/confirm?url={URL}',
-			'class' => 'google-plus'
-		),
-		array(
-			'name' => 'Email',
-			'url' => 'mailto:?to=&subject={TITLE}&body={URL}',
-			'class' => 'email'
-		)
-	);
+    array(
+      'name' => 'Facebook',
+      'url' => 'http://www.facebook.com/sharer.php?u={URL}',
+      'class' => 'facebook'
+    ),
+    array(
+      'name' => 'Twitter',
+      'url' => 'http://twitter.com/share?url={URL}&text={TITLE}',
+      'class' => 'twitter'
+    ),
+    array(
+      'name' => 'Google',
+      'url' => 'https://plusone.google.com/_/+1/confirm?url={URL}',
+      'class' => 'google-plus'
+    ),
+    array(
+      'name' => 'Email',
+      'url' => 'mailto:?to=&subject={TITLE}&body={URL}',
+      'class' => 'email'
+    )
+  );
 ```
 
 Url values may include "{TITLE}" and "{URL}", which are replaced with page specific values.
@@ -205,9 +205,18 @@ Appears at bottom of page.
 
 ```php
 $SITE_COMMONNAV =
-		navItem('/index.php', 'Home') .
-		navItem('/aboutus/', 'About Us') .
-		navItem('/contactus/', 'Contact Us') .
-		navItem('/legal/', 'Legal') .
-		navItem('/partners/', 'Partners');
+    navItem('/index.php', 'Home') .
+    navItem('/aboutus/', 'About Us') .
+    navItem('/contactus/', 'Contact Us') .
+    navItem('/legal/', 'Legal') .
+    navItem('/partners/', 'Partners');
+```
+
+### $GA_KEY
+
+Enables and configures Google Analytics for the site. Should be set to a string
+value for the Google Analytics key for the site.
+
+```php
+$GA_KEY = 'XX-XXXXXXX-X';
 ```
