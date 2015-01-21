@@ -211,3 +211,12 @@ $SITE_COMMONNAV =
 		navItem('/legal/', 'Legal') .
 		navItem('/partners/', 'Partners');
 ```
+
+### $GA_KEY
+
+Enables and configures Google Analytics for the site. Should be set to a string
+value for the Google Analytics key for the site.
+
+```php
+$GA_KEY = 'XX-XXXXXXX-X';
+```

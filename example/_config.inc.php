@@ -78,3 +78,5 @@ $HEAD = $THEME_CSS .
 				'sismologico,sismologia' .
 		'"/>';
 
+// Google Analytics key for site. If not set, analytics are disabled.
+$GA_KEY = '12-3456789-0';
