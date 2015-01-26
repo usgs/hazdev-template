@@ -17,261 +17,261 @@
  * added that is shown beneath OffCanvas content, but above page content.
  */
 define([], function() {
-	'use strict';
+  'use strict';
 
-	/**
-	 * Copy properties from one or more objects onto another object.
-	 *
-	 * @param dst {Object}
-	 *        Destination object where properties are copied
-	 * @param varargs {Object...}
-	 *        Variable number of objects where properties are copied from.
-	 *        Objects earlier in the arguments list have their properties
-	 *        overridden by objects later in the arguments list.
-	 * @return dst.
-	 */
-	var _extend = function(dst) {
-		for (var i=1, len=arguments.length; i<len; i++) {
-			var o = arguments[i];
-			for (var prop in o) {
-				dst[prop] = o[prop];
-			}
-		}
-		return dst;
-	};
+  /**
+   * Copy properties from one or more objects onto another object.
+   *
+   * @param dst {Object}
+   *        Destination object where properties are copied
+   * @param varargs {Object...}
+   *        Variable number of objects where properties are copied from.
+   *        Objects earlier in the arguments list have their properties
+   *        overridden by objects later in the arguments list.
+   * @return dst.
+   */
+  var _extend = function(dst) {
+    for (var i=1, len=arguments.length; i<len; i++) {
+      var o = arguments[i];
+      for (var prop in o) {
+        dst[prop] = o[prop];
+      }
+    }
+    return dst;
+  };
 
-	// defaults
-	var DEFAULTS = {
-		'enable': true,
-		'maskClass': 'offcanvas-mask',
-		'containerClass': 'offcanvas',
-		'toggleClass': 'offcanvas-toggle',
-		'toggleContent': 'Menu',
-		'enabledClass': 'offcanvas-enabled',
-		'almostActiveClass': 'offcanvas-almost-active',
-		'activeClass': 'offcanvas-active'
-	};
+  // defaults
+  var DEFAULTS = {
+    'enable': true,
+    'maskClass': 'offcanvas-mask',
+    'containerClass': 'offcanvas',
+    'toggleClass': 'offcanvas-toggle',
+    'toggleContent': 'Menu',
+    'enabledClass': 'offcanvas-enabled',
+    'almostActiveClass': 'offcanvas-almost-active',
+    'activeClass': 'offcanvas-active'
+  };
 
-	/**
-	 * Construct a new OffCanvas object.
-	 *
-	 * @param options {Object} options.
-	 * @param options.enable {Boolean}
-	 *        whether to automatically enable OffCanvas.
-	 *        default true.
-	 * @param options.maskClass {String}
-	 *        mask element classname.
-	 *        default 'offcanvas-mask'.
-	 * @param options.containerClass {String}
-	 *        offcanvas container element classname.
-	 *        default 'offcanvas-container'.
-	 * @param options.toggleClass {String}
-	 *        offcanvas toggle element classname.
-	 *        default 'offcanvas-toggle'.
-	 * @param options.toggleContent {String}
-	 *        offcanvas toggle element innerHTML.
-	 *        default '&#8801;' (three horizontal lines).
-	 * @param options.enabledClass {String}
-	 *        classname added to body when offcanvas has been constructed.
-	 *        default 'offcanvas-enabled'.
-	 * @param options.almostActiveClass {String}
-	 *        classname added to body 50ms before offcanvas is activated.
-	 *        default 'offcanvas-almost-active'.
-	 * @param options.activeClass {String}
-	 *        classname added to body when offcanvas is activated.
-	 *        default 'offcanvas-active'.
-	 */
-	var OffCanvas = function (options) {
-		this._options = _extend({}, DEFAULTS, options);
-		this._initialize();
-	};
-
-
-	OffCanvas.prototype._initialize = function () {
-		var options = this._options,
-		    body,
-		    mask,
-		    toggle;
-
-		this._enabled = false;
-		this._active = false;
-		this.hide = this.hide.bind(this);
-		this.toggle = this.toggle.bind(this);
-
-		// create elements
-		body = document.querySelector('body');
-		this._body = body;
-
-		// element that covers content and allows users to return to content
-		mask = body.appendChild(document.createElement('div'));
-		mask.className = options.maskClass;
-		mask.addEventListener('click', this.hide);
-		mask.addEventListener('touchstart', this.hide);
-		this._mask = mask;
-
-		// toggle offcanvas visibility
-		toggle = body.appendChild(document.createElement('button'));
-		toggle.className = options.toggleClass;
-		toggle.innerHTML = options.toggleContent;
-		toggle.addEventListener('click', this.toggle);
-		toggle.addEventListener('touchstart', this.toggle);
-		this._toggle = toggle;
-
-		// enable offcanvas during constructor
-		if (options.enable) {
-			this.enable();
-		}
-	};
+  /**
+   * Construct a new OffCanvas object.
+   *
+   * @param options {Object} options.
+   * @param options.enable {Boolean}
+   *        whether to automatically enable OffCanvas.
+   *        default true.
+   * @param options.maskClass {String}
+   *        mask element classname.
+   *        default 'offcanvas-mask'.
+   * @param options.containerClass {String}
+   *        offcanvas container element classname.
+   *        default 'offcanvas-container'.
+   * @param options.toggleClass {String}
+   *        offcanvas toggle element classname.
+   *        default 'offcanvas-toggle'.
+   * @param options.toggleContent {String}
+   *        offcanvas toggle element innerHTML.
+   *        default '&#8801;' (three horizontal lines).
+   * @param options.enabledClass {String}
+   *        classname added to body when offcanvas has been constructed.
+   *        default 'offcanvas-enabled'.
+   * @param options.almostActiveClass {String}
+   *        classname added to body 50ms before offcanvas is activated.
+   *        default 'offcanvas-almost-active'.
+   * @param options.activeClass {String}
+   *        classname added to body when offcanvas is activated.
+   *        default 'offcanvas-active'.
+   */
+  var OffCanvas = function (options) {
+    this._options = _extend({}, DEFAULTS, options);
+    this._initialize();
+  };
 
 
-	/**
-	 * Disable, unbind event handlers, and free references.
-	 */
-	OffCanvas.prototype.destroy = function () {
-		var mask = this._mask,
-		    toggle = this._toggle;
+  OffCanvas.prototype._initialize = function () {
+    var options = this._options,
+        body,
+        mask,
+        toggle;
 
-		// disable
-		this.disable();
+    this._enabled = false;
+    this._active = false;
+    this.hide = this.hide.bind(this);
+    this.toggle = this.toggle.bind(this);
 
-		// unbind event handlers
-		if (mask) {
-			mask.removeEventListener('click', this.hide);
-			mask.removeEventListener('touchstart', this.hide);
-			mask.parentNode.removeChild(mask);
-		}
-		if (toggle) {
-			toggle.removeEventListener('click', this.toggle);
-			toggle.removeEventListener('touchstart', this.toggle);
-			toggle.parentNode.removeChild(toggle);
-		}
+    // create elements
+    body = document.querySelector('body');
+    this._body = body;
 
-		// free references
-		this._options = null;
-		this._body = null;
-		this._mask = null;
-		this._toggle = null;
-		delete this.hide;
-		delete this.toggle;
-	};
+    // element that covers content and allows users to return to content
+    mask = body.appendChild(document.createElement('div'));
+    mask.className = options.maskClass;
+    mask.addEventListener('click', this.hide);
+    mask.addEventListener('touchstart', this.hide);
+    this._mask = mask;
 
+    // toggle offcanvas visibility
+    toggle = body.appendChild(document.createElement('button'));
+    toggle.className = options.toggleClass;
+    toggle.innerHTML = options.toggleContent;
+    toggle.addEventListener('click', this.toggle);
+    toggle.addEventListener('touchstart', this.toggle);
+    this._toggle = toggle;
 
-	/**
-	 * Show offcanvas content.
-	 */
-	OffCanvas.prototype.show = function () {
-		var options,
-		    body;
-
-		// must be enabled to show
-		if (!this._enabled) {
-			return;
-		}
-		// track that offcanvas is visible
-		this._active = true;
-
-		options = this._options;
-		body = this._body;
-		// add "almost active" class
-		body.classList.add(options.almostActiveClass);
-		// wait 50 milliseconds before triggering transition,
-		// for firefox to update overflow of body
-		setTimeout(function () {
-			// add "active" class
-			body.classList.add(options.activeClass);
-		}, 50);
-	};
-
-	/**
-	 * Hide offcanvas content.
-	 */
-	OffCanvas.prototype.hide = function (e) {
-		var options,
-		    body;
-
-		// must be enabled to hide
-		if (!this._enabled) { return; }
-		// track that offcanvas is hidden
-		this._active = false;
-
-		options = this._options;
-		body = this._body;
-		// remove "active" class
-		body.classList.remove(options.activeClass);
-		// wait 50 milliseconds before triggering transition,
-		// for firefox to update overflow of body
-		setTimeout(function () {
-			// remove "almost active" class
-			body.classList.remove(options.almostActiveClass);
-		}, 50);
-		try {e.preventDefault();} catch (ex) {}
-	};
-
-	/**
-	 * Toggle offcanvas content.
-	 */
-	OffCanvas.prototype.toggle = function(e) {
-		if (this._active) {
-			this.hide();
-		} else {
-			this.show();
-		}
-		try {e.preventDefault();} catch (ex) {}
-		return false;
-	};
-
-	/**
-	 * Enable offcanvas.
-	 *
-	 * Usually shouldn't be called directly.  A window resize listener
-	 * enables/disables offcanvas based on window size.
-	 */
-	OffCanvas.prototype.enable = function() {
-		if (this._enabled) {
-			return;
-		}
-		this._enabled = true;
-		this._body.classList.add(this._options.enabledClass);
-	};
-
-	/**
-	 * Disable offcanvas.
-	 *
-	 * Usually shouldn't be called directly.  A window resize listener
-	 * enables/disables offcanvas based on window size.
-	 */
-	OffCanvas.prototype.disable = function () {
-		if (!this._enabled) {
-			return;
-		}
-		if (this._active) {
-			this.hide();
-		}
-		this._enabled = false;
-		this._body.classList.remove(this._options.enabledClass);
-	};
+    // enable offcanvas during constructor
+    if (options.enable) {
+      this.enable();
+    }
+  };
 
 
+  /**
+   * Disable, unbind event handlers, and free references.
+   */
+  OffCanvas.prototype.destroy = function () {
+    var mask = this._mask,
+        toggle = this._toggle;
+
+    // disable
+    this.disable();
+
+    // unbind event handlers
+    if (mask) {
+      mask.removeEventListener('click', this.hide);
+      mask.removeEventListener('touchstart', this.hide);
+      mask.parentNode.removeChild(mask);
+    }
+    if (toggle) {
+      toggle.removeEventListener('click', this.toggle);
+      toggle.removeEventListener('touchstart', this.toggle);
+      toggle.parentNode.removeChild(toggle);
+    }
+
+    // free references
+    this._options = null;
+    this._body = null;
+    this._mask = null;
+    this._toggle = null;
+    delete this.hide;
+    delete this.toggle;
+  };
 
 
-	// singleton reference
-	var SINGLETON = null;
+  /**
+   * Show offcanvas content.
+   */
+  OffCanvas.prototype.show = function () {
+    var options,
+        body;
 
-	return {
-		/**
-		 * Get or construct the singleton instance.
-		 *
-		 * @param options {Object}
-		 *        offcanvas options, only used on first call to getOffCanvas().
-		 * @return OffCanvas object.
-		 * @see OffCanvas.
-		 */
-		getOffCanvas: function (options) {
-			if (SINGLETON === null) {
-				SINGLETON = new OffCanvas(options);
-			}
-			return SINGLETON;
-		}
-	};
+    // must be enabled to show
+    if (!this._enabled) {
+      return;
+    }
+    // track that offcanvas is visible
+    this._active = true;
+
+    options = this._options;
+    body = this._body;
+    // add "almost active" class
+    body.classList.add(options.almostActiveClass);
+    // wait 50 milliseconds before triggering transition,
+    // for firefox to update overflow of body
+    setTimeout(function () {
+      // add "active" class
+      body.classList.add(options.activeClass);
+    }, 50);
+  };
+
+  /**
+   * Hide offcanvas content.
+   */
+  OffCanvas.prototype.hide = function (e) {
+    var options,
+        body;
+
+    // must be enabled to hide
+    if (!this._enabled) { return; }
+    // track that offcanvas is hidden
+    this._active = false;
+
+    options = this._options;
+    body = this._body;
+    // remove "active" class
+    body.classList.remove(options.activeClass);
+    // wait 50 milliseconds before triggering transition,
+    // for firefox to update overflow of body
+    setTimeout(function () {
+      // remove "almost active" class
+      body.classList.remove(options.almostActiveClass);
+    }, 50);
+    try {e.preventDefault();} catch (ex) {}
+  };
+
+  /**
+   * Toggle offcanvas content.
+   */
+  OffCanvas.prototype.toggle = function(e) {
+    if (this._active) {
+      this.hide();
+    } else {
+      this.show();
+    }
+    try {e.preventDefault();} catch (ex) {}
+    return false;
+  };
+
+  /**
+   * Enable offcanvas.
+   *
+   * Usually shouldn't be called directly.  A window resize listener
+   * enables/disables offcanvas based on window size.
+   */
+  OffCanvas.prototype.enable = function() {
+    if (this._enabled) {
+      return;
+    }
+    this._enabled = true;
+    this._body.classList.add(this._options.enabledClass);
+  };
+
+  /**
+   * Disable offcanvas.
+   *
+   * Usually shouldn't be called directly.  A window resize listener
+   * enables/disables offcanvas based on window size.
+   */
+  OffCanvas.prototype.disable = function () {
+    if (!this._enabled) {
+      return;
+    }
+    if (this._active) {
+      this.hide();
+    }
+    this._enabled = false;
+    this._body.classList.remove(this._options.enabledClass);
+  };
+
+
+
+
+  // singleton reference
+  var SINGLETON = null;
+
+  return {
+    /**
+     * Get or construct the singleton instance.
+     *
+     * @param options {Object}
+     *        offcanvas options, only used on first call to getOffCanvas().
+     * @return OffCanvas object.
+     * @see OffCanvas.
+     */
+    getOffCanvas: function (options) {
+      if (SINGLETON === null) {
+        SINGLETON = new OffCanvas(options);
+      }
+      return SINGLETON;
+    }
+  };
 
 });

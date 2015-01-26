@@ -1,22 +1,22 @@
 
 require.config({
-	baseUrl: '.',
-	paths: {
-		theme: '/theme/js'
-	}
+  baseUrl: '.',
+  paths: {
+    theme: '/theme/js'
+  }
 });
 
 require([
-	'theme/OffCanvas'
+  'theme/OffCanvas'
 ], function (
-	OffCanvas
+  OffCanvas
 ) {
-	'use strict';
+  'use strict';
 
-	// make the site footer offcanvas
-	document.querySelector('.site-footer').classList.add('offcanvas');
+  // make the site footer offcanvas
+  document.querySelector('.site-footer').classList.add('offcanvas');
 
-	// initialize offcanvas
-	OffCanvas.getOffCanvas();
+  // initialize offcanvas
+  OffCanvas.getOffCanvas();
 
 });
