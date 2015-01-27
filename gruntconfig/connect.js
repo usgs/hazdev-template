@@ -42,11 +42,11 @@ var connect = {
   },
   dev: {
     options: {
-      base: config.build + '/htdocs',
+      base: config.build + '/src/htdocs',
       port: 8003,
       middleware: function (connect, options) {
         return [
-          mountPHP(options.base[0], {phpini: config.build + '/conf/php.ini'}),
+          mountPHP(options.base[0], {phpini: config.build + '/src/conf/php.ini'}),
           mountFolder(connect, options.base[0])
         ];
       }
@@ -71,7 +71,7 @@ var connect = {
         return [
           getLiveReload(),
           getProxy(),
-          mountPHP(options.base[0], {phpini: config.build + '/conf/php.ini'}),
+          mountPHP(options.base[0], {phpini: config.build + '/src/conf/php.ini'}),
           mountFolder(connect, options.base[0])
         ];
       }

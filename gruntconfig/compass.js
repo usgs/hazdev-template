@@ -6,7 +6,7 @@ var compass = {
   build: {
     options: {
       sassDir: config.src + '/htdocs',
-      cssDir: config.build + '/htdocs',
+      cssDir: config.build + '/src/htdocs',
       environment: 'development'
     }
   }

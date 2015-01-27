@@ -19,7 +19,7 @@ var svgmin = {
 [
   'htdocs/images/usgs-logo.svg'
 ].forEach(function (file) {
-  svgmin.dist.files[config.dist + '/' + file] = config.build + '/' + file;
+  svgmin.dist.files[config.dist + '/' + file] = config.build + '/src/' + file;
 });
 
 module.exports = svgmin;

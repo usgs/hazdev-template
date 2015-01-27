@@ -8,9 +8,9 @@ var jshint = {
   },
   gruntfile: [
     'Gruntfile.js',
-    'gruntconfig/**.js'
+    'gruntconfig/**/*.js'
   ],
-  scripts: [config.src + '/htdocs/js/**/*.js']
+  scripts: [config.src + '/htdocs/**/*.js']
 };
 
 module.exports = jshint;

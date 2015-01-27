@@ -14,24 +14,6 @@ var watch = {
     files: [config.src + '/htdocs/**/*.scss'],
     tasks: ['compass:dev']
   },
-  examples: {
-    files: [config.example + '/*.html'],
-    tasks: ['concurrent:examples']
-  },
-  livereload: {
-    options: {
-      livereload: config.liveReloadPort
-    },
-    files: [
-      config.src + '/htdocs/**/*.html',
-      config.src + '/**/*.php',
-      config.example + '/**/*.html',
-      config.example + '/**/*.php',
-      config.src + '/htdocs/css/**/*.css',
-      config.src + '/htdocs/images/**/*.{png,jpg,jpeg,gif}',
-      config.build + '/**/*'
-    ]
-  },
   gruntfile: {
     files: [
       'Gruntfile.js',

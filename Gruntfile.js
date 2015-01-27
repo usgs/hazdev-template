@@ -42,7 +42,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('runpreinstall', function (dir) {
     var done = this.async();
-    child_process.exec('php ' + gruntConfig.config[dir] + '/lib/pre-install.php',
+
+    child_process.exec('php ' + gruntConfig.config[dir + 'Preinstall'],
         function (error, stdout, stderr) {
           if (error !== null) {
             grunt.log.error(error);
