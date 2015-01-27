@@ -4,7 +4,6 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Figure Captions';
 	$NAVIGATION = true;
 	$HEAD = '
-			<link rel="stylesheet" href="/css/figcaption.css"/>
 			<style>
 				.clear {
 					clear:both;

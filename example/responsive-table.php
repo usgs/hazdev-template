@@ -5,7 +5,7 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	$HEAD = '
-	<link rel="stylesheet" href="/css/responsive-table.css"/>
+	<link rel="stylesheet" href="/theme/css/responsive-table.css"/>
 	<style>
 		@media screen and (max-width: 559px) {
 			.test-horizontal td:nth-of-type(1):before { content: "First Header"; }

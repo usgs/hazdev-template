@@ -32,6 +32,6 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	$HEAD = '
-	&lt;link rel="stylesheet" href="/css/responsive-table.css"/&gt;
+	&lt;link rel="stylesheet" href="/theme/css/responsive-table.css"/&gt;
 }
 </code></pre>

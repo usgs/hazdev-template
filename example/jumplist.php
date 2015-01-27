@@ -3,7 +3,7 @@
 if (!isset($TEMPLATE)) {
 	$TITLE = 'Jumplist';
 	$NAVIGATION = true;
-	$HEAD = '<link rel="stylesheet" href="/css/jumplist.css"/>';
+	$HEAD = '<link rel="stylesheet" href="/theme/css/jumplist.css"/>';
 
 	include('template.inc.php');
 }
