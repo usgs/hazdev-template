@@ -25,6 +25,7 @@
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
+    "grunt-svgmin": "^2.0.0",
     "requirejs": "~2.1.11"
   },
   "devDependencies": {
@@ -32,11 +33,7 @@
     "connect-livereload": "~0.2.0",
     "gateway": "~0.1.1",
     "grunt-contrib-watch": "~0.4.4",
-    "grunt-mocha-phantomjs": "~0.2.8",
     "grunt-open": "~0.2.0",
-    "chai": "~1.7.0",
-    "mocha": "~1.9.0",
-    "sinon": "~1.7.3",
     "grunt-connect-proxy": "~0.1.11"
   },
   "engines": {

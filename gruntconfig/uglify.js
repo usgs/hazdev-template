@@ -2,13 +2,6 @@
 
 var config = require('./config');
 
-var filesToUglify = {};
-filesToUglify[config.dist + '/htdocs/js/uglified.js'] =
-    config.build + '/htdocs/js/index.js';
-filesToUglify[config.dist + '/htdocs/js/classList.js'] =
-    config.build + '/htdocs/js/classList.js';
-
-
 var uglify = {
   options: {
     mangle: {
@@ -18,8 +11,16 @@ var uglify = {
     report: 'gzip'
   },
   dist: {
-    files: filesToUglify
+    files: {}
   }
 };
+
+// uglify from build into dist
+[
+  'htdocs/js/index.js',
+  'htdocs/js/classList.js'
+].forEach(function (file) {
+  uglify.dist.files[config.dist + '/' + file] = config.build + '/' + file;
+});
 
 module.exports = uglify;

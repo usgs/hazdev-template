@@ -12,7 +12,7 @@ var gruntconfig = function (grunt) {
     copy: require('./copy'),
     cssmin: require('./cssmin'),
     jshint: require('./jshint'),
-    requirejs: require('./requirejs'),
+    svgmin: require('./svgmin'),
     uglify: require('./uglify'),
 
     tasks: [
@@ -23,8 +23,8 @@ var gruntconfig = function (grunt) {
       'grunt-contrib-copy',
       'grunt-contrib-cssmin',
       'grunt-contrib-jshint',
-      'grunt-contrib-requirejs',
-      'grunt-contrib-uglify'
+      'grunt-contrib-uglify',
+      'grunt-svgmin'
     ]
   };
 
@@ -45,10 +45,9 @@ var gruntconfig = function (grunt) {
     config.watch = require('./watch');
 
     config.tasks.push(
+      'grunt-connect-proxy',
       'grunt-contrib-connect',
-      'grunt-contrib-watch',
-      'grunt-mocha-phantomjs',
-      'grunt-connect-proxy'
+      'grunt-contrib-watch'
     );
   }
 
