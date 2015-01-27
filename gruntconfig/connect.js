@@ -43,7 +43,7 @@ var connect = {
   dev: {
     options: {
       base: config.build + '/htdocs',
-      port: 8080,
+      port: 8003,
       middleware: function (connect, options) {
         return [
           mountPHP(options.base[0], {phpini: config.build + '/conf/php.ini'}),
@@ -64,7 +64,7 @@ var connect = {
     }],
     options: {
       base: config.example,
-      port: 8081,
+      port: 8000,
       open: true,
       useAvailablePort: true,
       middleware: function (connect, options) {
@@ -81,7 +81,7 @@ var connect = {
   dist: {
     options: {
       base: config.dist + '/htdocs',
-      port: 8082,
+      port: 8003,
       middleware: function (connect, options) {
         return [
           mountPHP(options.base[0], {phpini: config.dist + '/conf/php.ini'}),
@@ -102,7 +102,7 @@ var connect = {
     }],
     options: {
       base: config.example,
-      port: 8083,
+      port: 8002,
       open: true,
       useAvailablePort: true,
       middleware: function (connect, options) {
