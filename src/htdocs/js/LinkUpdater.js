@@ -26,6 +26,8 @@ var LinkUpdater = function (options) {
 
       _render;
 
+  _this = Object.create({});
+
   /**
    * Parse options and bind event listeners.
    */
