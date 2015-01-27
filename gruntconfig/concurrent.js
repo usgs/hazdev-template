@@ -3,7 +3,7 @@
 var concurrent = {
   scripts: [
     'jshint:scripts',
-    'browserify'
+    'concat:scripts'
   ],
   build: [
     'compass:build',

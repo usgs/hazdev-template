@@ -5,9 +5,9 @@ var gruntconfig = function (grunt) {
   var config = {
     config: require('./config'),
 
-    browserify: require('./browserify'),
     clean: require('./clean'),
     compass: require('./compass'),
+    concat: require('./concat'),
     concurrent: require('./concurrent'),
     copy: require('./copy'),
     cssmin: require('./cssmin'),
@@ -16,10 +16,10 @@ var gruntconfig = function (grunt) {
     uglify: require('./uglify'),
 
     tasks: [
-      'grunt-browserify',
       'grunt-concurrent',
       'grunt-contrib-clean',
       'grunt-contrib-compass',
+      'grunt-contrib-concat',
       'grunt-contrib-copy',
       'grunt-contrib-cssmin',
       'grunt-contrib-jshint',
