@@ -5,8 +5,7 @@ var config = {
   dist: 'dist',
   example: 'example',
   liveReloadPort: 35729,
-  src: 'src',
-  tmp: '.tmp'
+  src: 'src'
 };
 
 module.exports = config;

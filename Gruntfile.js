@@ -44,25 +44,9 @@ module.exports = function (grunt) {
 		grunt.config(['jshint', 'scripts'], filepath);
 	});
 
-	grunt.registerTask('runpreinstall:dev', function () {
+	grunt.registerTask('runpreinstall', function (dir) {
 		var done = this.async();
-		child_process.exec('php ' + config.config.src + '/lib/pre-install.php',
-				function (error, stdout, stderr) {
-					if (error !== null) {
-						grunt.log.error(error);
-						grunt.log.error(stdout);
-						grunt.log.error(stderr);
-						done(false);
-					} else {
-						grunt.log.write(stdout);
-						done();
-					}
-				});
-	});
-
-	grunt.registerTask('runpreinstall:dist', function () {
-		var done = this.async();
-		child_process.exec('php ' + config.config.dist + '/lib/pre-install.php',
+		child_process.exec('php ' + config.config[dir] + '/lib/pre-install.php',
 				function (error, stdout, stderr) {
 					if (error !== null) {
 						grunt.log.error(error);
@@ -79,14 +63,17 @@ module.exports = function (grunt) {
 	// build the distribution
 	grunt.registerTask('build', [
 		'clean',
-		'concurrent:predist',
-		'requirejs:dist',
-		'concurrent:dist'
+		'copy:build',
+		'concurrent:build',
+		'runpreinstall:build'
 	]);
 
 	// preview the distribution
 	grunt.registerTask('dist', [
 		'build',
+		'copy:dist',
+		'concurrent:dist',
+		'runpreinstall:dist',
 		'configureProxies:exampleDist',
 		'connect:dist',
 		'connect:exampleDist',
@@ -95,9 +82,7 @@ module.exports = function (grunt) {
 
 	// develop
 	grunt.registerTask('default', [
-		'clean',
-		'runpreinstall:dev',
-		'compass:dev',
+		'build',
 		'configureProxies:exampleDev',
 		'connect:dev',
 		'connect:exampleDev',

@@ -42,13 +42,12 @@ var connect = {
   },
   dev: {
     options: {
-      base: config.src + '/htdocs',
+      base: config.build + '/htdocs',
       port: 8080,
       middleware: function (connect, options) {
         return [
-          mountPHP(options.base[0]),
-          mountFolder(connect, options.base[0]),
-          mountFolder(connect, config.tmp)
+          mountPHP(options.base[0], {phpini: config.build + '/conf/php.ini'}),
+          mountFolder(connect, options.base[0])
         ];
       }
     }
@@ -72,11 +71,8 @@ var connect = {
         return [
           getLiveReload(),
           getProxy(),
-          mountPHP(options.base[0]),
-          mountFolder(connect, options.base[0]),
-
-          mountFolder(connect, config.tmp),
-          mountFolder(connect, 'node_modules')
+          mountPHP(options.base[0], {phpini: config.build + '/conf/php.ini'}),
+          mountFolder(connect, options.base[0])
         ];
       }
     }
@@ -114,10 +110,7 @@ var connect = {
           getLiveReload(),
           getProxy(),
           mountPHP(options.base[0], {phpini: config.dist + '/conf/php.ini'}),
-          mountFolder(connect, options.base[0]),
-
-          mountFolder(connect, config.tmp),
-          mountFolder(connect, 'node_modules')
+          mountFolder(connect, options.base[0])
         ];
       }
     }

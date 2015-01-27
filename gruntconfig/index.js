@@ -5,23 +5,23 @@ var gruntconfig = function (grunt) {
   var config = {
     config: require('./config'),
 
+    browserify: require('./browserify'),
     clean: require('./clean'),
     compass: require('./compass'),
     concurrent: require('./concurrent'),
     copy: require('./copy'),
     cssmin: require('./cssmin'),
-    htmlmin: require('./htmlmin'),
     jshint: require('./jshint'),
     requirejs: require('./requirejs'),
     uglify: require('./uglify'),
 
     tasks: [
+      'grunt-browserify',
       'grunt-concurrent',
       'grunt-contrib-clean',
       'grunt-contrib-compass',
       'grunt-contrib-copy',
       'grunt-contrib-cssmin',
-      'grunt-contrib-htmlmin',
       'grunt-contrib-jshint',
       'grunt-contrib-requirejs',
       'grunt-contrib-uglify'
@@ -37,7 +37,6 @@ var gruntconfig = function (grunt) {
         'jshint:scripts',
         'compass:dev',
         'cssmin:dist',
-        'htmlmin:dist',
         'uglify',
         'runpreinstall:dist'
       ].indexOf(grunt.cli.tasks[0]) === -1) {

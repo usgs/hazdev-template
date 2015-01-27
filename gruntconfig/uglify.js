@@ -4,9 +4,9 @@ var config = require('./config');
 
 var filesToUglify = {};
 filesToUglify[config.dist + '/htdocs/js/uglified.js'] =
-    config.dist + '/htdocs/js/index.js';
+    config.build + '/htdocs/js/index.js';
 filesToUglify[config.dist + '/htdocs/js/classList.js'] =
-    config.dist + '/htdocs/js/classList.js';
+    config.build + '/htdocs/js/classList.js';
 
 
 var uglify = {

@@ -1,17 +1,17 @@
 'use strict';
 
 var concurrent = {
-  scripts: ['jshint:scripts'],
-  predist: [
+  scripts: [
     'jshint:scripts',
-    'compass:dev',
-    'copy'
+    'browserify'
+  ],
+  build: [
+    'compass:build',
+    'concurrent:scripts',
   ],
   dist: [
     'cssmin:dist',
-    'htmlmin:dist',
-    'uglify',
-    'runpreinstall:dist'
+    'uglify'
   ]
 };
 

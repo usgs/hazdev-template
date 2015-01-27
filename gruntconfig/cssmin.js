@@ -5,11 +5,11 @@ var config = require('./config');
 var cssmin = {
   dist: {
     expand: true,
-    cwd: config.tmp,
+    cwd: config.build,
     src: [
       '**/*.css'
     ],
-    dest: config.dist + '/htdocs'
+    dest: config.dist
   }
 };
 

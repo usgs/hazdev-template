@@ -29,7 +29,7 @@ var watch = {
       config.example + '/**/*.php',
       config.src + '/htdocs/css/**/*.css',
       config.src + '/htdocs/images/**/*.{png,jpg,jpeg,gif}',
-      config.tmp + '/css/**/*.css'
+      config.build + '/**/*'
     ]
   },
   gruntfile: {

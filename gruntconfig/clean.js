@@ -4,7 +4,10 @@ var config = require('./config');
 
 var clean = {
   dist: [config.dist],
-  dev: [config.tmp, '.sass-cache']
+  dev: [
+    config.build,
+    '.sass-cache'
+  ]
 };
 
 module.exports = clean;

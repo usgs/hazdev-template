@@ -3,10 +3,10 @@
 var config = require('./config');
 
 var compass = {
-  dev: {
+  build: {
     options: {
       sassDir: config.src + '/htdocs',
-      cssDir: config.tmp,
+      cssDir: config.build + '/htdocs',
       environment: 'development'
     }
   }

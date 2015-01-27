@@ -3,26 +3,30 @@
 var config = require('./config');
 
 var copy = {
-  app: {
+  build: {
     expand: true,
-    cwd: config.src + '/htdocs',
-    dest: config.dist + '/htdocs',
+    cwd: config.src,
+    dest: config.build,
     src: [
-      'images/**/*.{png,gif,jpg,jpeg}',
-      '**/*.php',
-      'js/classList.js'
-    ]
-  },
-  lib: {
-    expand: true,
-    cwd: config.src + '/lib',
-    dest: config.dist + '/lib',
-    src: [
-      '**/*'
+      '**/*',
+      '!conf',
+      '!**/*.js',
+      '!**/*.scss'
     ],
     options: {
       mode: true
     }
+  },
+  dist: {
+    expand: true,
+    cwd: config.build,
+    dest: config.dist,
+    src: [
+      '**/*',
+      '!conf',
+      '!**/*.js',
+      '!**/*.css'
+    ]
   }
 };
 
