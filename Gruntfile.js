@@ -1,14 +1,12 @@
 'use strict';
 
-var gruntconfig = require('./gruntconfig'),
-    child_process = require('child_process'),
-    path = require('path'),
-    fs = require('fs');
-
-
 module.exports = function (grunt) {
 
   // Load build dependencies
+  var gruntConfig = require('./gruntconfig')(grunt),
+      child_process = require('child_process'),
+      path = require('path'),
+      fs = require('fs');
 
   // check if being run as another project's dependency:
   // when npm installs as another projects dependency, npm doesn't reinstall
@@ -32,10 +30,8 @@ module.exports = function (grunt) {
     };
   }
 
-  var config = gruntconfig(grunt);
-  config.tasks.forEach(loadNpmTasks);
-
-  grunt.initConfig(config);
+  gruntConfig.tasks.forEach(loadNpmTasks);
+  grunt.initConfig(gruntConfig);
 
 
 
@@ -46,7 +42,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('runpreinstall', function (dir) {
     var done = this.async();
-    child_process.exec('php ' + config.config[dir] + '/lib/pre-install.php',
+    child_process.exec('php ' + gruntConfig.config[dir] + '/lib/pre-install.php',
         function (error, stdout, stderr) {
           if (error !== null) {
             grunt.log.error(error);
