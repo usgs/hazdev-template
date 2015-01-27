@@ -264,7 +264,7 @@ var OffCanvas = (function () {
      */
     getOffCanvas: function (options) {
       if (SINGLETON === null) {
-        SINGLETON = new OffCanvas(options);
+        SINGLETON = OffCanvas(options);
       }
       return SINGLETON;
     }
