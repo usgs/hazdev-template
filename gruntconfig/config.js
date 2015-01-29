@@ -6,7 +6,6 @@ var config = {
   dist: 'dist',
   distPreinstall: 'dist/lib/pre-install.php',
   example: 'example',
-  liveReloadPort: 35729,
   src: 'src'
 };
 
