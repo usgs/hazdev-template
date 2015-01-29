@@ -20,7 +20,8 @@ var uglify = {
   'htdocs/js/index.js',
   'htdocs/js/classList.js'
 ].forEach(function (file) {
-  uglify.dist.files[config.dist + '/' + file] = config.build + '/src/' + file;
+  uglify.dist.files[config.dist + '/' + file] =
+      config.build + '/' + config.src + '/' + file;
 });
 
 module.exports = uglify;

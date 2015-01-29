@@ -6,7 +6,6 @@ var copy = {
   build: {
     expand: true,
     cwd: config.src,
-    dest: config.build + '/src',
     src: [
       '**/*',
       '!conf',
@@ -14,20 +13,24 @@ var copy = {
       '!**/*.scss',
       'htdocs/js/classList.js'
     ],
+    dest: config.build + '/' + config.src,
     options: {
       mode: true
     }
   },
   dist: {
     expand: true,
-    cwd: config.build + '/src',
-    dest: config.dist,
+    cwd: config.build + '/' + config.src,
     src: [
       '**/*',
       '!conf',
       '!**/*.js',
       '!**/*.css'
-    ]
+    ],
+    dest: config.dist,
+    options: {
+      mode: true
+    }
   }
 };
 

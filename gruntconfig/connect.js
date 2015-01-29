@@ -4,13 +4,6 @@ var config = require('./config'),
     path = require('path');
 
 
-var getLiveReload = function () {
-  var livereload = require('connect-livereload');
-  return livereload({
-    port: config.liveReloadPort
-  });
-};
-
 var getProxy = function () {
   var proxy = require('grunt-connect-proxy/lib/utils');
   return proxy.proxyRequest;
@@ -41,23 +34,11 @@ var connect = {
     hostname: '*'
   },
   dev: {
-    options: {
-      base: config.build + '/src/htdocs',
-      port: 8003,
-      middleware: function (connect, options) {
-        return [
-          mountPHP(options.base[0], {phpini: config.build + '/src/conf/php.ini'}),
-          mountFolder(connect, options.base[0])
-        ];
-      }
-    }
-  },
-  exampleDev: {
     proxies: [{
       context: '/theme',
       host: 'localhost',
       https: false,
-      port: '<%= connect.dev.options.port %>',
+      port: '<%= connect.devTemplate.options.port %>',
       changeOrigin: false,
       xforward: false,
       rewrite: {'/theme': ''}
@@ -65,13 +46,29 @@ var connect = {
     options: {
       base: config.example,
       port: 8000,
-      open: true,
-      useAvailablePort: true,
+      open: 'http://localhost:8000/',
+      livereload: true,
       middleware: function (connect, options) {
         return [
-          getLiveReload(),
           getProxy(),
-          mountPHP(options.base[0], {phpini: config.build + '/src/conf/php.ini'}),
+          mountPHP(options.base[0], {
+            phpini: config.build + '/' + config.src + '/conf/php.ini'
+          }),
+          mountFolder(connect, options.base[0])
+        ];
+      }
+    }
+  },
+
+  devTemplate: {
+    options: {
+      base: config.build + '/' + config.src + '/htdocs',
+      port: 8003,
+      middleware: function (connect, options) {
+        return [
+          mountPHP(options.base[0], {
+            phpini: config.build + '/' + config.src + '/conf/php.ini'
+          }),
           mountFolder(connect, options.base[0])
         ];
       }
@@ -79,6 +76,31 @@ var connect = {
   },
 
   dist: {
+    proxies: [{
+      context: '/theme',
+      host: 'localhost',
+      https: false,
+      port: '<%= connect.distTemplate.options.port %>',
+      changeOrigin: false,
+      xforward: false,
+      rewrite: {'/theme': ''}
+    }],
+    options: {
+      base: config.example,
+      port: 8002,
+      open: 'http://localhost:8002/',
+      keepalive: true,
+      middleware: function (connect, options) {
+        return [
+          getProxy(),
+          mountPHP(options.base[0], {phpini: config.dist + '/conf/php.ini'}),
+          mountFolder(connect, options.base[0])
+        ];
+      }
+    }
+  },
+
+  distTemplate: {
     options: {
       base: config.dist + '/htdocs',
       port: 8003,
@@ -89,32 +111,8 @@ var connect = {
         ];
       }
     }
-  },
-  exampleDist: {
-    proxies: [{
-      context: '/theme',
-      host: 'localhost',
-      https: false,
-      port: '<%= connect.dist.options.port %>',
-      changeOrigin: false,
-      xforward: false,
-      rewrite: {'/theme': ''}
-    }],
-    options: {
-      base: config.example,
-      port: 8002,
-      open: true,
-      useAvailablePort: true,
-      middleware: function (connect, options) {
-        return [
-          getLiveReload(),
-          getProxy(),
-          mountPHP(options.base[0], {phpini: config.dist + '/conf/php.ini'}),
-          mountFolder(connect, options.base[0])
-        ];
-      }
-    }
   }
+
 };
 
 

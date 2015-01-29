@@ -5,7 +5,7 @@ var config = require('./config');
 var svgmin = {
   options: {
     plugins: [
-      {reviewViewBox: false},
+      {removeViewBox: false},
       {removeUselessStrokeAndFill: false}
     ]
   },
@@ -19,7 +19,8 @@ var svgmin = {
 [
   'htdocs/images/usgs-logo.svg'
 ].forEach(function (file) {
-  svgmin.dist.files[config.dist + '/' + file] = config.build + '/src/' + file;
+  svgmin.dist.files[config.dist + '/' + file] =
+      config.build + '/' + config.src + '/' + file;
 });
 
 module.exports = svgmin;

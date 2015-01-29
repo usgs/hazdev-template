@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 
   // Load build dependencies
   var gruntConfig = require('./gruntconfig')(grunt),
+      config = gruntConfig.config,
       child_process = require('child_process'),
       path = require('path'),
       fs = require('fs');
@@ -43,7 +44,7 @@ module.exports = function (grunt) {
   grunt.registerTask('runpreinstall', function (dir) {
     var done = this.async();
 
-    child_process.exec('php ' + gruntConfig.config[dir + 'Preinstall'],
+    child_process.exec('php ' + dir + '/lib/pre-install.php',
         function (error, stdout, stderr) {
           if (error !== null) {
             grunt.log.error(error);
@@ -62,7 +63,7 @@ module.exports = function (grunt) {
     'clean',
     'copy:build',
     'concurrent:build',
-    'runpreinstall:build'
+    'runpreinstall:' + config.build + '/' + config.src
   ]);
 
   // preview the distribution
@@ -70,19 +71,18 @@ module.exports = function (grunt) {
     'build',
     'copy:dist',
     'concurrent:dist',
-    'runpreinstall:dist',
-    'configureProxies:exampleDist',
-    'connect:dist',
-    'connect:exampleDist',
-    'watch'
+    'runpreinstall:' + config.dist,
+    'configureProxies:dist',
+    'connect:distTemplate',
+    'connect:dist'
   ]);
 
   // develop
   grunt.registerTask('default', [
     'build',
-    'configureProxies:exampleDev',
+    'configureProxies:dev',
+    'connect:devTemplate',
     'connect:dev',
-    'connect:exampleDev',
     'watch'
   ]);
 

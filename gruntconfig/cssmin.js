@@ -5,7 +5,7 @@ var config = require('./config');
 var cssmin = {
   dist: {
     expand: true,
-    cwd: config.build + '/src',
+    cwd: config.build + '/' + config.src,
     src: [
       '**/*.css'
     ],
