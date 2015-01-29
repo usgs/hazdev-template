@@ -11,8 +11,8 @@ var gruntconfig = function (grunt) {
     concurrent: require('./concurrent'),
     copy: require('./copy'),
     cssmin: require('./cssmin'),
+    imagemin: require('./imagemin'),
     jshint: require('./jshint'),
-    svgmin: require('./svgmin'),
     uglify: require('./uglify'),
 
     tasks: [
@@ -22,9 +22,9 @@ var gruntconfig = function (grunt) {
       'grunt-contrib-concat',
       'grunt-contrib-copy',
       'grunt-contrib-cssmin',
+      'grunt-contrib-imagemin',
       'grunt-contrib-jshint',
-      'grunt-contrib-uglify',
-      'grunt-svgmin'
+      'grunt-contrib-uglify'
     ]
   };
 

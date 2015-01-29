@@ -12,7 +12,7 @@ var concurrent = {
   dist: [
     'cssmin:dist',
     'uglify:dist',
-    'svgmin:dist'
+    'imagemin:dist'
   ]
 };
 
