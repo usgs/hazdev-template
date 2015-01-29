@@ -42,7 +42,7 @@ var gruntconfig = function (grunt) {
       ].indexOf(grunt.cli.tasks[0]) === -1) {
 
     config.connect = require('./connect');
-    config.watch = require('./watch')(grunt.cli.tasks[0]);
+    config.watch = require('./watch');
 
     config.tasks.push(
       'grunt-connect-proxy',
