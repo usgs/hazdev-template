@@ -1,3 +1,4 @@
+/* jshint -W098 */
 'use strict';
 
 /**
@@ -73,5 +74,3 @@ var LinkUpdater = function (options) {
   return _this;
 };
 
-
-module.exports = LinkUpdater;

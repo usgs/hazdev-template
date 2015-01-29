@@ -9,9 +9,7 @@ var copy = {
     src: [
       '**/*',
       '!conf',
-      '!**/*.js',
-      '!**/*.scss',
-      'htdocs/js/classList.js'
+      '!**/*.scss'
     ],
     dest: config.build + '/' + config.src,
     options: {
