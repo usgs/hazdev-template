@@ -4,7 +4,7 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	$HEAD = '
-			<link rel="stylesheet" href="/css/flexible-grid.css" />
+			<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
 
 			<style>
 				textarea {

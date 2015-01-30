@@ -4,7 +4,7 @@
 		$NAVIGATION = true;
 
 		$HEAD = '
-			<link rel="stylesheet" href="/css/responsive-table.css"/>
+			<link rel="stylesheet" href="/theme/css/responsive-table.css"/>
 		';
 
 		include 'template.inc.php';

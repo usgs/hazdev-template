@@ -1,77 +1,76 @@
-/* global define */
-define([], function () {
-	'use strict';
+/* jshint -W098 */
+'use strict';
 
-	/**
-	 * Construct a new LinkUpdater object.
-	 *
-	 * LinkUpdater updates links based on the current page URL and TITLE,
-	 * using a data attribute for templating.
-	 *
-	 * Example usage:
-	 *
-	 * <div class="container">
-	 *   <a href="blah" data-link-template="something?url={URL}&amp;{TITLE}">Text</a>
-	 * </div>
-	 * <script>
-	 *   new LinkUpdater({el: document.querySelector('.container')});
-	 * </script>
-	 *
-	 * @param options {Object}
-	 * @param options.el {DOMElement}
-	 */
-	var LinkUpdater = function (options) {
-		this._el = options.el;
-		this.initialize(options);
-	};
+/**
+ * Construct a new LinkUpdater object.
+ *
+ * LinkUpdater updates links based on the current page URL and TITLE,
+ * using a data attribute for templating.
+ *
+ * Example usage:
+ *
+ * <div class="container">
+ *   <a href="blah" data-link-template="something?url={URL}&amp;{TITLE}">Text</a>
+ * </div>
+ * <script>
+ *   new LinkUpdater({el: document.querySelector('.container')});
+ * </script>
+ *
+ * @param options {Object}
+ * @param options.el {DOMElement}
+ */
+var LinkUpdater = function (options) {
+  var _this,
+      _initialize,
 
+      _el,
 
-	/**
-	 * Bind event listeners.
-	 *
-	 * Sub-classes can override this method for additional initialization.
-	 */
-	LinkUpdater.prototype.initialize = function (/* options */) {
-		// update when location changes
-		var _this = this;
-		this._render = function() {
-			_this.render();
-		};
-		window.addEventListener('hashchange', this._render);
+      _render;
 
-		// render links
-		this.render();
-	};
+  _this = Object.create({});
 
-	/**
-	 * Unbind event listeners.
-	 */
-	LinkUpdater.prototype.destroy = function () {
-		window.removeEventListener('hashchange', this._render);
-	};
+  /**
+   * Parse options and bind event listeners.
+   */
+  _initialize = function () {
+    _el = options.el;
+    // update links
+    _render();
+    // update links when url fragment changes
+    window.addEventListener('hashchange', _render);
 
-	/**
-	 * Update social links to current document url and title.
-	 */
-	LinkUpdater.prototype.render = function () {
-		var url = encodeURIComponent(window.location),
-		    title = encodeURIComponent(document.title),
-		    links, link, linkUrl;
+    options = null;
+  };
 
-		// find all links with a "data-link-template" attribute
-		links = this._el.querySelectorAll('a[data-link-template]');
-		for (var i=0, len=links.length; i<len; i++) {
-			link = links[i];
-			// generate new url based on template
-			linkUrl = link.getAttribute('data-link-template');
-			linkUrl = linkUrl.replace('{URL}', url);
-			linkUrl = linkUrl.replace('{TITLE}', title);
-			// update href
-			link.setAttribute('href', linkUrl);
-		}
-	};
+  /**
+   * Update social links to current document url and title.
+   */
+  _render = function () {
+    var url = encodeURIComponent(window.location),
+        title = encodeURIComponent(document.title),
+        links, link, linkUrl;
 
+    // find all links with a "data-link-template" attribute
+    links = _el.querySelectorAll('a[data-link-template]');
+    for (var i=0, len=links.length; i<len; i++) {
+      link = links[i];
+      // generate new url based on template
+      linkUrl = link.getAttribute('data-link-template');
+      linkUrl = linkUrl.replace('{URL}', url);
+      linkUrl = linkUrl.replace('{TITLE}', title);
+      // update href
+      link.setAttribute('href', linkUrl);
+    }
+  };
 
-	// return constructor
-	return LinkUpdater;
-});
+  /**
+   * Unbind event listeners.
+   */
+  _this.destroy = function () {
+    window.removeEventListener('hashchange', _render);
+  };
+
+  _initialize();
+  return _this;
+};
+

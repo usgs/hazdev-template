@@ -22,7 +22,7 @@ if (!isset($TEMPLATE)) {
 		}
 	</style>
 
-	<link rel="stylesheet" href="/css/flexible-grid.css" />
+	<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
 	';
 
 	include 'template.inc.php';

@@ -1,406 +1,89 @@
 'use strict';
 
-var LIVE_RELOAD_PORT = 35729;
-var lrSnippet, proxyRequest, gateway;
-var child_process = require('child_process'),
-    path = require('path'),
-    fs = require('fs');
-
-var mountFolder = function (connect, dir) {
-	return connect.static(path.resolve(dir));
-};
-
-var mountPHP = function (dir, options) {
-	options = options || {
-		'phpini': '/src/conf/php.ini'
-	};
-	var gatewayOptions = {
-		'.php': 'php-cgi',
-		'env': {
-			'PHPRC': process.cwd() + options.phpini
-		}
-	};
-
-	return gateway(path.resolve(dir), gatewayOptions);
-};
-
 module.exports = function (grunt) {
 
-	// Load build dependencies
+  // Load build dependencies
+  var gruntConfig = require('./gruntconfig')(grunt),
+      config = gruntConfig.config,
+      child_process = require('child_process'),
+      path = require('path'),
+      fs = require('fs');
 
-	// check if being run as another project's dependency:
-	// when npm installs as another projects dependency, npm doesn't reinstall
-	// shared (used by parent) dependencies locally, so they must be loaded
-	// from parent node modules directory instead.
-	var loadNpmTasks = grunt.loadNpmTasks,
-	    cwd = process.cwd(),
-	    localModules = cwd + path.sep + 'node_modules',
-	    parentModules = path.dirname(cwd);
-	if (path.basename(parentModules) === 'node_modules') {
-		var parentDir = path.dirname(parentModules);
+  // check if being run as another project's dependency:
+  // when npm installs as another projects dependency, npm doesn't reinstall
+  // shared (used by parent) dependencies locally, so they must be loaded
+  // from parent node modules directory instead.
+  var loadNpmTasks = grunt.loadNpmTasks,
+      cwd = process.cwd(),
+      localModules = cwd + path.sep + 'node_modules',
+      parentModules = path.dirname(cwd);
+  if (path.basename(parentModules) === 'node_modules') {
+    var parentDir = path.dirname(parentModules);
 
-		loadNpmTasks = function (name) {
-			if (!fs.existsSync(localModules + path.sep + name)) {
-				process.chdir(parentDir);
-				grunt.loadNpmTasks(name);
-				process.chdir(cwd);
-			} else {
-				grunt.loadNpmTasks(name);
-			}
-		}
-	}
+    loadNpmTasks = function (name) {
+      if (!fs.existsSync(localModules + path.sep + name)) {
+        process.chdir(parentDir);
+        grunt.loadNpmTasks(name);
+        process.chdir(cwd);
+      } else {
+        grunt.loadNpmTasks(name);
+      }
+    };
+  }
 
-	require('matchdep').filter('grunt-*').forEach(loadNpmTasks);
+  gruntConfig.tasks.forEach(loadNpmTasks);
+  grunt.initConfig(gruntConfig);
 
-	// Load dev dependencies, if not building
-	if (grunt.cli.tasks.length === 0 ||
-			// build related tasks (concurrent tasks are separate grunt processes)
-			[
-				'build',
-				'copy',
-				'jshint:scripts',
-				'compass:dev',
-				'cssmin:dist',
-				'htmlmin:dist',
-				'uglify',
-				'runpreinstall:dist'
-			].indexOf(grunt.cli.tasks[0]) === -1) {
-		require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-		lrSnippet = require('connect-livereload')({port: LIVE_RELOAD_PORT});
-		proxyRequest = require('grunt-connect-proxy/lib/utils').proxyRequest;
-		gateway = require('gateway');
-	}
 
-	// App configuration, used throughout
-	var appConfig = {
-		src: 'src',
-		dist: 'dist',
-		example: 'example',
-		tmp: '.tmp'
-	};
+  grunt.event.on('watch', function (action, filepath) {
+    // Only lint the file that actually changed
+    grunt.config(['jshint', 'scripts'], filepath);
+  });
 
-	grunt.initConfig({
-		app: appConfig,
-		watch: {
-			scripts: {
-				files: ['<%= app.src %>/htdocs/js/**/*.js'],
-				tasks: ['concurrent:scripts'],
-				options: {
-					livereload: LIVE_RELOAD_PORT
-				}
-			},
-			scss: {
-				files: [
-					'<%= app.src %>/htdocs/**/*.scss',
-				],
-				tasks: ['compass:dev']
-			},
-			examples: {
-				files: ['<%= app.example %>/*.html'],
-				tasks: ['concurrent:examples']
-			},
-			livereload: {
-				options: {
-					livereload: LIVE_RELOAD_PORT
-				},
-				files: [
-					'<%= app.src %>/htdocs/**/*.html',
-					'<%= app.src %>/**/*.php',
-					'<%= app.example %>/**/*.html',
-					'<%= app.example %>/**/*.php',
-					'<%= app.src %>/htdocs/css/**/*.css',
-					'<%= app.src %>/htdocs/images/**/*.{png,jpg,jpeg,gif}',
-					'.tmp/css/**/*.css'
-				]
-			},
-			gruntfile: {
-				files: ['Gruntfile.js'],
-				tasks: ['jshint:gruntfile']
-			}
-		},
-		concurrent: {
-			scripts: ['jshint:scripts'],
-			predist: [
-				'jshint:scripts',
-				'compass:dev',
-				'copy'
-			],
-			dist: [
-				'cssmin:dist',
-				'htmlmin:dist',
-				'uglify',
-				'runpreinstall:dist'
-			]
-		},
-		connect: {
-			options: {
-				hostname: '0.0.0.0'
-			},
-			dev: {
-				options: {
-					base: '<%= app.src %>/htdocs',
-					port: 8080,
-					middleware: function (connect, options) {
-						return [
-							mountPHP(options.base),
-							mountFolder(connect, options.base),
+  grunt.registerTask('runpreinstall', function (dir) {
+    var done = this.async();
 
-							mountFolder(connect, '.tmp')
-						];
-					}
-				}
-			},
-			exampleDev: {
-				proxies: [{
-					context: '/theme',
-					host: 'localhost',
-					https: false,
-					port: '<%= connect.dev.options.port %>',
-					chnageOrigin: false,
-					xforward: false,
-					rewrite: {'/theme': ''}
-				}],
-				options: {
-					base: '<%= app.example %>',
-					port: 8081,
-					middleware: function (connect, options) {
-						return [
-							lrSnippet,
-							proxyRequest,
-							mountPHP(options.base),
-							mountFolder(connect, options.base),
+    child_process.exec('php ' + dir + '/lib/pre-install.php',
+        function (error, stdout, stderr) {
+          if (error !== null) {
+            grunt.log.error(error);
+            grunt.log.error(stdout);
+            grunt.log.error(stderr);
+            done(false);
+          } else {
+            grunt.log.write(stdout);
+            done();
+          }
+        });
+  });
 
-							mountFolder(connect, '.tmp'),
-							mountFolder(connect, 'node_modules')
-						];
-					}
-				}
-			},
+  // build the distribution
+  grunt.registerTask('build', [
+    'clean',
+    'copy:build',
+    'concurrent:build',
+    'runpreinstall:' + config.build + '/' + config.src
+  ]);
 
-			dist: {
-				options: {
-					base: '<%= app.dist %>/htdocs',
-					port: 8082,
-					middleware: function (connect, options) {
-						return [
-							mountPHP(options.base, {phpini: '/dist/conf/php.ini'}),
-							mountFolder(connect, options.base)
-						];
-					}
-				}
-			},
-			exampleDist: {
-				proxies: [{
-					context: '/theme',
-					host: 'localhost',
-					https: false,
-					port: '<%= connect.dist.options.port %>',
-					chnageOrigin: false,
-					xforward: false,
-					rewrite: {'/theme': ''}
-				}],
-				options: {
-					base: '<%= app.example %>',
-					port: 8083,
-					middleware: function (connect, options) {
-						return [
-							lrSnippet,
-							proxyRequest,
-							mountPHP(options.base, {phpini: '/dist/conf/php.ini'}),
-							mountFolder(connect, options.base),
+  // preview the distribution
+  grunt.registerTask('dist', [
+    'build',
+    'copy:dist',
+    'concurrent:dist',
+    'runpreinstall:' + config.dist,
+    'configureProxies:dist',
+    'connect:distTemplate',
+    'connect:dist'
+  ]);
 
-							mountFolder(connect, '.tmp'),
-							mountFolder(connect, 'node_modules')
-						];
-					}
-				}
-			}
-		},
-		jshint: {
-			options: {
-				jshintrc: '.jshintrc'
-			},
-			gruntfile: ['Gruntfile.js'],
-			scripts: ['<%= app.src %>/htdocs/js/**/*.js']
-		},
-		compass: {
-			dev: {
-				options: {
-					sassDir: '<%= app.src %>/htdocs',
-					cssDir: '<%= app.tmp %>',
-					environment: 'development'
-				}
-			}
-		},
-		requirejs: {
-			dist: {
-				options: {
-					appDir: appConfig.src + '/htdocs',
-					baseUrl: 'js',
-					dir: appConfig.dist + '/htdocs',
-					useStrict: true,
-					wrap: false,
-					fileExclusionRegExp: /(^\.|\.scss$)/,
-					optimize: 'none',
-
-					// for bundling require library in to index.js
-					paths: {
-						requireLib: (fs.existsSync(localModules + path.sep + 'requirejs') ? '' : '../../') +
-								'../../../node_modules/requirejs/require',
-						theme: '.'
-					},
-
-					modules: [
-						{
-							name: 'index',
-							include: ['requireLib']
-						}
-						// the index module is enough to compile all other scripts
-					]
-				}
-			}
-		},
-		cssmin: {
-			dist: {
-				expand: true,
-				cwd: '<%= app.tmp %>',
-				src: [
-					'**/*.css'
-				],
-				dest: '<%= app.dist %>/htdocs'
-			}
-		},
-		htmlmin: {
-			dist: {
-				options: {
-					collapseWhitespace: true
-				},
-				files: [{
-					expand: true,
-					cwd: '<%= app.src %>',
-					src: '**/*.html',
-					dest: '<%= app.dist %>'
-				}]
-			}
-		},
-		uglify: {
-			options: {
-				mangle: {
-					except: ['require']
-				},
-				compress: true,
-				report: 'gzip'
-			},
-			dist: {
-				files: {
-					'<%= app.dist %>/htdocs/js/uglified.js':
-							['<%= app.dist %>/htdocs/js/index.js'],
-					'<%= app.dist %>/htdocs/js/classList.js':
-							['<%= app.dist %>/htdocs/js/classList.js']
-				}
-			}
-		},
-		copy: {
-			app: {
-				expand: true,
-				cwd: '<%= app.src %>/htdocs',
-				dest: '<%= app.dist %>/htdocs',
-				src: [
-					'images/**/*.{png,gif,jpg,jpeg}',
-					'**/*.php',
-					'js/classList.js'
-				]
-			},
-			lib: {
-				expand: true,
-				cwd: '<%= app.src %>/lib',
-				dest: '<%= app.dist %>/lib',
-				src: [
-					'**/*'
-				],
-				options: {
-					mode: true
-				}
-			}
-		},
-		open: {
-			exampleDev: {
-				path: 'http://localhost:<%= connect.exampleDev.options.port %>'
-			},
-			exampleDist: {
-				path: 'http://localhost:<%= connect.exampleDist.options.port %>'
-			}
-		},
-		clean: {
-			dist: ['<%= app.dist %>'],
-			dev: ['<%= app.tmp %>', '.sass-cache']
-		}
-	});
-
-	grunt.event.on('watch', function (action, filepath) {
-		// Only lint the file that actually changed
-		grunt.config(['jshint', 'scripts'], filepath);
-	});
-
-	grunt.registerTask('runpreinstall:dev', function () {
-		var done = this.async();
-		child_process.exec('php src/lib/pre-install.php',
-				function (error, stdout, stderr) {
-					if (error !== null) {
-						grunt.log.error(stderr);
-						done(false);
-					} else {
-						grunt.log.write(stdout);
-						done();
-					}
-				});
-	});
-
-	grunt.registerTask('runpreinstall:dist', function () {
-		var done = this.async();
-		child_process.exec('php dist/lib/pre-install.php',
-				function (error, stdout, stderr) {
-					if (error !== null) {
-						grunt.log.error(error);
-						grunt.log.error(stdout);
-						grunt.log.error(stderr);
-						done(false);
-					} else {
-						grunt.log.write(stdout);
-						done();
-					}
-				});
-	});
-
-	// build the distribution
-	grunt.registerTask('build', [
-		'clean',
-		'concurrent:predist',
-		'requirejs:dist',
-		'concurrent:dist'
-	]);
-
-	// preview the distribution
-	grunt.registerTask('dist', [
-		'build',
-		'configureProxies:exampleDist',
-		'connect:dist',
-		'connect:exampleDist',
-		'open:exampleDist',
-		'watch'
-	]);
-
-	// develop
-	grunt.registerTask('default', [
-		'clean',
-		'runpreinstall:dev',
-		'compass:dev',
-		'configureProxies:exampleDev',
-		'connect:dev',
-		'connect:exampleDev',
-		'open:exampleDev',
-		'watch'
-	]);
+  // develop
+  grunt.registerTask('default', [
+    'build',
+    'configureProxies:dev',
+    'connect:devTemplate',
+    'connect:dev',
+    'watch'
+  ]);
 
 };

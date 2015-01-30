@@ -14,7 +14,6 @@ if (!isset($TEMPLATE)) {
 			}
 		</style>
 	';
-	$FOOT = '<script src="js/index.js"></script>';
 
 	include('template.inc.php');
 }

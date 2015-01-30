@@ -116,14 +116,7 @@
     echo '<!--[if lte IE 9]>';
     echo '<script src="/theme/js/classList.js"></script>';
     echo '<![endif]-->';
-
-    // load requirejs and template javascript before $FOOT
-    if (file_exists(dirname(__FILE__) . '/../htdocs/js/uglified.js')) {
-      echo '<script src="/theme/js/uglified.js"></script>';
-    } else {
-      echo '<script src="/requirejs/require.js"></script>' .
-          '<script src="/theme/js/index.js"></script>';
-    }
+    echo '<script src="/theme/js/index.js"></script>';
 
     if ($FOOT) {
       echo $FOOT;

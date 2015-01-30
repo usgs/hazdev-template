@@ -27,7 +27,7 @@
 				}
 			</style>
 
-			<link rel="stylesheet" href="/css/alert.css"/>
+			<link rel="stylesheet" href="/theme/css/alert.css"/>
 		';
 
 		include 'template.inc.php';
