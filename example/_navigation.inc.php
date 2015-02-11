@@ -16,3 +16,5 @@ echo navGroup(navItem('/additional-extensions.php','Additional Extensions'),
 		navItem('/references.php', 'References') .
 		navItem('/responsive-table.php', 'Responsive Table')
 	);
+
+echo navItem('/content.php', 'Content Styles');

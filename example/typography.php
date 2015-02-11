@@ -25,6 +25,15 @@ if (!isset($TEMPLATE)) {
 	<code>h6</code> headers.
 </p>
 
+<p>
+	<code>h1</code> headers are used for the title of the webpage and so should
+not be used anywhere else:
+</p>
+
+<pre><code>$TITLE = 'Typography';
+</code></pre>
+
+
 <h1>h1 Header</h1>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
