@@ -22,8 +22,10 @@ var copy = {
     src: [
       '**/*',
       '!conf',
-      '!**/*.js',
-      '!**/*.css'
+      // cssmin
+      '!**/*.css',
+      // uglify
+      '!**/*.js'
     ],
     dest: config.dist,
     options: {
