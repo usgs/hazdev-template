@@ -7,7 +7,7 @@ var uglify = {
     mangle: {
       except: ['require']
     },
-    compress: true,
+    compress: {},
     report: 'gzip'
   },
   dist: {
