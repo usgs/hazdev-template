@@ -58,7 +58,7 @@ module.exports = function (grunt) {
         });
   });
 
-  // build the distribution
+  // build for dev
   grunt.registerTask('build', [
     'clean',
     'copy:build',
@@ -66,12 +66,17 @@ module.exports = function (grunt) {
     'runpreinstall:' + config.build + '/' + config.src
   ]);
 
-  // preview the distribution
-  grunt.registerTask('dist', [
+  // build distribution
+  grunt.registerTask('builddist', [
     'build',
     'copy:dist',
     'concurrent:dist',
-    'runpreinstall:' + config.dist,
+    'runpreinstall:' + config.dist
+  ]);
+
+  // preview the distribution
+  grunt.registerTask('dist', [
+    'builddist',
     'configureProxies:dist',
     'connect:distTemplate',
     'connect:dist'

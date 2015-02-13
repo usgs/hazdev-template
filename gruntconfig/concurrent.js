@@ -11,8 +11,7 @@ var concurrent = {
   ],
   dist: [
     'cssmin:dist',
-    'uglify:dist',
-    'imagemin:dist'
+    'uglify:dist'
   ]
 };
 

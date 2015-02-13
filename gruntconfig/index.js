@@ -11,7 +11,6 @@ var gruntconfig = function (grunt) {
     concurrent: require('./concurrent'),
     copy: require('./copy'),
     cssmin: require('./cssmin'),
-    imagemin: require('./imagemin'),
     jshint: require('./jshint'),
     uglify: require('./uglify'),
 
@@ -22,7 +21,6 @@ var gruntconfig = function (grunt) {
       'grunt-contrib-concat',
       'grunt-contrib-copy',
       'grunt-contrib-cssmin',
-      'grunt-contrib-imagemin',
       'grunt-contrib-jshint',
       'grunt-contrib-uglify'
     ]
@@ -33,12 +31,20 @@ var gruntconfig = function (grunt) {
       // build related tasks (concurrent tasks are separate grunt processes)
       [
         'build',
+        'builddist',
+        'clean',
+        'compass:build',
+        'concat:scripts',
+        'concurrent:scripts',
         'copy',
-        'jshint:scripts',
-        'compass:dev',
+        'copy:build',
+        'copy:dist',
         'cssmin:dist',
-        'uglify',
-        'runpreinstall:dist'
+        'imagemin:dist',
+        'jshint:scripts',
+        'runpreinstall:' + config.build + '/' + config.src,
+        'runpreinstall:dist',
+        'uglify:dist'
       ].indexOf(grunt.cli.tasks[0]) === -1) {
 
     config.connect = require('./connect');
