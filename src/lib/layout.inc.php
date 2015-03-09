@@ -15,7 +15,7 @@
 <body>
 
   <header role="banner" class="site-header">
-    <a class="site-logo" href="http://www.usgs.gov/" title="U.S. Geological Survey">
+    <a class="site-logo" href="/" title="U.S. Geological Survey">
     </a>
     <a class="jumplink-navigation" href="#site-sectionnav">Jump to Navigation</a>
   </header>
