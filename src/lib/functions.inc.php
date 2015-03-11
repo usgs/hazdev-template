@@ -81,13 +81,19 @@ function findFileInPath ($name) {
  *         href for anchor.
  * @param $text {String}
  *         text for anchor.
+ * @param $isCurrentPage {Boolean} default null.
+ *        When null, compare /^$href/ to REQUEST_URI and highlight if matches.
+ *        When true, highlight.
+ *        When false, do not highlight.
  * @return {String} markup for navigation item.
  */
 if (!function_exists('navItem')) {
-function navItem ($href, $text) {
-	$isCurrentPage = preg_match(
-			'/^' . preg_quote($href, '/') . '/',
-			$_SERVER['REQUEST_URI']);
+function navItem ($href, $text, $isCurrentPage=null) {
+	if ($isCurrentPage === null) {
+		$isCurrentPage = preg_match(
+				'/^' . preg_quote($href, '/') . '/',
+				$_SERVER['REQUEST_URI']);
+	}
 
 	if ($isCurrentPage) {
 		return '<strong>' . $text . '</strong>';
