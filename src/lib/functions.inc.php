@@ -96,7 +96,7 @@ function navItem ($href, $text, $isCurrentPage=null) {
 	}
 
 	if ($isCurrentPage) {
-		return '<strong>' . $text . '</strong>';
+		return '<a href="' . $href . '"><strong>' . $text . '</strong></a>';
 	} else {
 		return '<a href="' . $href . '">' . $text . '</a>';
 	}
