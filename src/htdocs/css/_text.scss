@@ -1,10 +1,14 @@
 /** Text Level Semantics **/
 
+body {
+	color: $body-text-color;
+}
+
 a {
 	color: $link-color;
 
 	&:active {
-		color: #c23030;
+		color: $link-color-active;
 	}
 	&:visited {
 		color: $link-color;
