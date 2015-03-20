@@ -10,13 +10,12 @@ if (!isset($TEMPLATE)) {
 
 ?>
 
-<h2>Image List</h2>
+<h2>Link List Example</h2>
 
 <ul class="linklist">
   <li>
     <a href="#1">
       <h4>Featured Research</h4>
-      <img src="http://placehold.it/200x200" alt="Placeholder image">
       <p>On August 23, 2011 tens of millions of people along the East Coast of
         the U.S from Maine to Georgia, west to Cincinnati, Cleveland, and
         Chicago, and southeastern Canada suddenly felt the earth shaking from
@@ -29,7 +28,41 @@ if (!isset($TEMPLATE)) {
   <li>
     <a href="#2">
       <h4>Was the M5.3 Trinidad, CO Earthquake Natural or Induced?</h4>
-      <img src="http://placehold.it/200x200" alt="Placeholder image">
+      <p>A magnitude 5.3 earthquake occurred near Trinidad, Colorado in the
+        Raton Basin on August of 2011. A previous study by USGS scientists of
+        smaller earthquakes in the area had concluded that the Raton Basin was
+        experiencing a significant increase in the number of earthquakes
+        starting in 2001 after an increase in hydrocarbon production activity
+        starting in 1999. The M5.3 Trinidad earthquake provided another
+        important piece to the puzzle.
+      </p>
+    </a>
+  </li>
+</ul>
+
+<h2>Image List Example</h2>
+
+<p>Suggested width for images is 150px or 200px for consistency. Also optimized,
+  retina (2x) images are recommended for thumbnail images in image lists.</p>
+
+<ul class="linklist">
+  <li>
+    <a href="#1">
+      <h4>Featured Research</h4>
+      <img src="http://placehold.it/150x150" alt="Placeholder image">
+      <p>On August 23, 2011 tens of millions of people along the East Coast of
+        the U.S from Maine to Georgia, west to Cincinnati, Cleveland, and
+        Chicago, and southeastern Canada suddenly felt the earth shaking from
+        the largest earthquake in the eastern U.S. since the M5.8 earthquake in
+        1944 near Cornwall and Massena, New York. What have scientists learned
+        from this rare earthquake?
+      </p>
+    </a>
+  </li>
+  <li>
+    <a href="#2">
+      <h4>Was the M5.3 Trinidad, CO Earthquake Natural or Induced?</h4>
+      <img src="http://placehold.it/150x150" alt="Placeholder image">
       <p>A magnitude 5.3 earthquake occurred near Trinidad, Colorado in the
         Raton Basin on August of 2011. A previous study by USGS scientists of
         smaller earthquakes in the area had concluded that the Raton Basin was
@@ -43,7 +76,7 @@ if (!isset($TEMPLATE)) {
   <li>
     <a href="#3">
       <h4>How Big and How Frequent Are Earthquakes on the Wasatch Fault?</h4>
-      <img src="http://placehold.it/200x200" alt="Placeholder image">
+      <img src="http://placehold.it/150x150" alt="Placeholder image">
       <p>A team of scientists have been gathering data from new paleoseismic
         trenches along the Wasatch fault zone. These new datasets will help
         researchers to understand if past surface-rupturing earthquakes have
@@ -58,31 +91,19 @@ if (!isset($TEMPLATE)) {
   </li>
 </ul>
 
-<h2>Link List</h2>
+<h2>Usage</h2>
 
-<ul class="linklist">
-  <li>
-    <a href="#1">
-      <h4>Featured Research</h4>
-      <p>On August 23, 2011 tens of millions of people along the East Coast of
-        the U.S from Maine to Georgia, west to Cincinnati, Cleveland, and
-        Chicago, and southeastern Canada suddenly felt the earth shaking from
-        the largest earthquake in the eastern U.S. since the M5.8 earthquake in
-        1944 near Cornwall and Massena, New York. What have scientists learned
-        from this rare earthquake?
-      </p>
-    </a>
-  </li>
-  <li>
-    <a href="#2">
-      <h4>Was the M5.3 Trinidad, CO Earthquake Natural or Induced?</h4>
-      <p>A magnitude 5.3 earthquake occurred near Trinidad, Colorado in the
-        Raton Basin on August of 2011. A previous study by USGS scientists of
-        smaller earthquakes in the area had concluded that the Raton Basin was
-        experiencing a significant increase in the number of earthquakes
-        starting in 2001 after an increase in hydrocarbon production activity
-        starting in 1999. The M5.3 Trinidad earthquake provided another
-        important piece to the puzzle.
-      </p>
-    </a>
-  </li>
+<pre>
+  <code>
+    &lt;ul class="linklist"&gt;
+        &lt;li&gt;
+            &lt;a href="#"&gt;
+                &lt;h4&gt;&hellip;&lt;/h4&gt;
+                &lt;img src="" alt="" /&gt; (optional)
+                &lt;p&gt;&hellip;&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &hellip;
+    &lt;/ul&gt;
+  </code>
+</pre>
