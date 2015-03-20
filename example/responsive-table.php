@@ -15,7 +15,7 @@ if (!isset($TEMPLATE)) {
 			.test-horizontal td:nth-of-type(5):before { content: "Fifth Header"; }
 		}
 
-		strong {
+		code > strong {
 			/* color: red */
 			color: #E46554;
 		}

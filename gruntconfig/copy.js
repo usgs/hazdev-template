@@ -9,6 +9,7 @@ var copy = {
     src: [
       '**/*',
       '!conf',
+      '!**/*.js',
       '!**/*.scss'
     ],
     dest: config.build + '/' + config.src,

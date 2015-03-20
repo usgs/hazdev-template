@@ -9,8 +9,7 @@
 .site-sectionnav {
 
 	// Ungrouped Links
-	> a,
-	> strong {
+	> a {
 		background-color: #ededed;
 		background-image:none;
 		border-top: 1px solid $sectionnav-border-color;
@@ -35,7 +34,6 @@
 
 		// items in a nav group
 		> a,
-		> strong,
 		> header {
 			color: #333;
 			display: block;
@@ -44,8 +42,7 @@
 		}
 
 		// indent group items
-		> a,
-		> strong {
+		> a {
 			padding-left: (3/2 * $horizontal-spacing);
 			position:relative; // for linear-gradient background
 
@@ -73,10 +70,6 @@
 			border-bottom: 1px solid $sectionnav-border-color;
 			font-weight: normal;
 			text-shadow: 0 1px 1px #fff;
-		}
-
-		> header > strong {
-			font-weight: bold;
 		}
 
 		> a,
