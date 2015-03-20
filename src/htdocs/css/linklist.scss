@@ -1,40 +1,41 @@
+/* "linklist" module - also used for an "imagelist" (images are optional) */
+
+@import 'variables';
+
 .linklist {
   list-style: none;
   padding: 0;
-}
+  margin: 0;
 
-.linklist li {
-  border-bottom: 1px dotted #ddd;
-}
+  li {
+    border-bottom: 1px dotted #ddd;
+  }
+  li:last-child {
+    border: none;
+  }
+  a {
+    text-decoration: none;
+    padding: 2.5rem 0;
+    display: block;
+    overflow: auto;
+  }
+  h4 {
+    text-decoration: underline;
+    color: $link-color;
+    margin: 0 0 -.25rem 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 1.125em;
 
-.linklist li:last-child {
-  border: none;
-}
-
-.linklist a {
-  text-decoration: none;
-  padding: 1.5em 0;
-  display: block;
-  overflow: auto;
-}
-
-.linklist a:hover {
-
-}
-
-.linklist p {
-  color: #000;
-}
-
-.linklist h4 {
-  text-decoration: underline;
-  color: #306ac2;
-  margin: 0 0 -.25em 0;
-  padding: 0;
-  line-height: 1.4;
-}
-
-.linklist img {
-	float: left;
-	margin: 1.3em 16px 0 0;
+    &:active {
+  		color: $link-color-active;
+  	}
+  }
+  p {
+    color: $body-text-color;
+  }
+  img {
+    float: left;
+  	margin: 2rem $horizontal-spacing 0 0;
+  }
 }
