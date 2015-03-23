@@ -3,39 +3,44 @@
 @import 'variables';
 
 .linklist {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 
-  li {
-    border-bottom: 1px dotted #ddd;
-  }
-  li:last-child {
-    border: none;
-  }
-  a {
-    text-decoration: none;
-    padding: 2.5rem 0;
-    display: block;
-    overflow: auto;
-  }
-  h4 {
-    text-decoration: underline;
-    color: $link-color;
-    margin: 0 0 -.25rem 0;
-    padding: 0;
-    line-height: 1.4;
-    font-size: 1.125em;
+	> li {
+		border-top: 1px dotted #ddd;
 
-    &:active {
-      color: $link-color-active;
-    }
-  }
-  p {
-    color: $body-text-color;
-  }
-  img {
-    float: left;
-    margin: 2rem $horizontal-spacing 0 0;
-  }
+		&:first-child {
+			border: none;
+		}
+
+		> a {
+			text-decoration: none;
+			padding: 2.5rem 0;
+			display: inline-block;
+			overflow: auto;
+		}
+
+		h2, h3, h4 {
+			text-decoration: underline;
+			color: $link-color;
+			margin: 0 0 -.25rem 0;
+			padding: 0;
+			line-height: 1.4;
+			font-size: 1.125em;
+
+			&:active {
+				color: $link-color-active;
+			}
+		}
+
+		p {
+			color: $body-text-color;
+		}
+
+		img {
+			float: left;
+			margin: 2rem $horizontal-spacing 0 0;
+		}
+	}
 }
