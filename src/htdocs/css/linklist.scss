@@ -28,14 +28,14 @@
     font-size: 1.125em;
 
     &:active {
-  		color: $link-color-active;
-  	}
+      color: $link-color-active;
+    }
   }
   p {
     color: $body-text-color;
   }
   img {
     float: left;
-  	margin: 2rem $horizontal-spacing 0 0;
+    margin: 2rem $horizontal-spacing 0 0;
   }
 }
