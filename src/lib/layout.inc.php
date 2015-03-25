@@ -122,7 +122,14 @@
       echo $FOOT;
     }
 
-    if (isset($GA_KEY) && $GA_KEY !== '') { ?>
+    // universal analytics
+    if (isset($UNIVERSAL_ANALYTICS) && $UNIVERSAL_ANALYTICS) {
+      $analyticsUrl = '/theme/js/analytics.js?agency=DOI';
+      if (isset($GA_KEY) && $GA_KEY !== '') {
+        $analyticsUrl .= '&amp;pua=' . $GA_KEY;
+      }
+      echo '<script id="_fed_an_ua_tag" src="' . $analyticsUrl . '"></script>';
+    } else if (isset($GA_KEY) && $GA_KEY !== '') {?>
     <script>
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', '<?php print $GA_KEY; ?>']);
