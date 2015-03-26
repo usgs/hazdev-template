@@ -126,16 +126,16 @@
 
 <ul class="linklist">
   <li>
-    <h4>
-      <a href="#1">This is a link</a>
-    </h4>
+    <a href="#1">
+      <h4>This is a link</h4>
+    </a>
     <p>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris
       magna augue, fringilla et felis eget.</p>
   </li>
   <li>
-    <h4>
-      <a href="#1">This is a longer link</a>
-    </h4>
+    <a href="#2">
+      <h4>This is a longer link</h4>
+    </a>
     <p>Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam ut
       lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut vitae
       metus et quam rutrum varius sit amet sit amet lectus. Suspendisse rhoncus
@@ -151,9 +151,9 @@
   <code>
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
-    &lt;h4&gt; (or h3, h5)
-      &lt;a&gt;&lt;/a&gt;
-    &lt;/h4&gt;
+    &lt;a&gt;
+      &lt;h4&gt;&lt;/h4&gt; (or h3, h5)  
+    &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
   &lt;/li&gt;
   &hellip;
@@ -177,7 +177,7 @@
       magna augue, fringilla et felis eget.</p>
   </li>
   <li>
-    <a href="#1">
+    <a href="#2">
       <h4>This is a longer link</h4>
       <img src="http://placehold.it/150x150" alt="Placeholder image">
     </a>
@@ -196,10 +196,10 @@
   <code>
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
-    &lt;h4&gt; (or h3, h5)
-      &lt;a&gt;&lt;/a&gt;
-    &lt;/h4&gt;
-    &lt;img /&gt;
+    &lt;a&gt;
+      &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
+      &lt;img /&gt;
+    &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
   &lt;/li&gt;
   &hellip;

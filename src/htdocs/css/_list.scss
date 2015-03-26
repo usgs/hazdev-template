@@ -1,6 +1,6 @@
 ul,
 ol {
-  margin: 1em 0 0;
+  margin: 1.5em 0 0;
   padding-left: 2em;
 
   &.no-style {
@@ -23,32 +23,31 @@ ol {
   @extend ul.no-style;
   @extend ul.separator;
 
-  margin-top: 2rem;
-
-  li {
+  > li {
     overflow: auto;
     padding: 2.5rem 0;
 
     &:last-child {
       padding-bottom: 1rem;
     }
-  }
 
-  h2, h3, h4 {
-    margin: 0 0 -.5rem 0;
-    padding: 0;
-    line-height: 1.4;
-    font-size: 1.125em;
-    color: $link-color;
-    &:active {
-      color: $link-color-active;
+    h2, h3, h4 {
+      margin: 0 0 -.5rem 0;
+      padding: 0;
+      line-height: 1.4;
+      font-size: 1.125em;
+      color: $link-color;
+      &:active {
+        color: $link-color-active;
+      }
     }
-  }
 
-  img {
-    float: left;
-    margin: 0 $horizontal-spacing $vertical-spacing 0;
-    padding-top: 1.3em;
+    /* a selector included to 'enforce' img tag inside of a for linked img's */
+    a > img {
+      float: left;
+      margin: 0 $horizontal-spacing $vertical-spacing 0;
+      padding-top: 1.3em;
+    }
   }
 }
 
