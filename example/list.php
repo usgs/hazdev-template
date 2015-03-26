@@ -122,7 +122,7 @@
 &lt;/ul&gt;
 </code></pre>
 
-<h2>Link Lists</h2>
+<h2>Link List</h2>
 
 <ul class="linklist">
   <li>
@@ -152,7 +152,7 @@
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
     &lt;a&gt;
-      &lt;h4&gt;&lt;/h4&gt; (or h3, h5)  
+      &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
     &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
   &lt;/li&gt;
@@ -161,7 +161,7 @@
   </code>
 </pre>
 
-<h2>Image Lists</h2>
+<h2>Image List</h2>
 
 <p>Suggested width for images is either 150px or 200px for consistency. Also
   optimized, retina (2x) images are recommended for thumbnail images in image
