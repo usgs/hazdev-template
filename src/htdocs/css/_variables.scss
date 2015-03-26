@@ -1,6 +1,7 @@
 /* set template variables */
 
 $body-margin: 0 !default;
+$body-text-color: #000;
 
 $banner-image: '/theme/images/usgs-banner.jpg' !default;
 $banner-background-color: #000 !default;
@@ -22,6 +23,7 @@ $breakpoint-offcanvas: 768px !default;
 $side-column-width: 20% !default;
 
 $link-color: #306ac2 !default;
+$link-color-active: #c23030 !default;
 
 $page-footer-color: #999 !default;
 $page-footer-background-color: #FFF !default;
