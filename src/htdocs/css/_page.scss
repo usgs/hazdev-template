@@ -1,77 +1,78 @@
 /* custom styles for the template */
 * {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	word-wrap: break-word; // keeps content from breaking its container
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  word-wrap: break-word; // keeps content from breaking its container
 }
 
 main {
-	display:block;
+  display:block;
 }
 
 body {
-	margin: $body-margin;
+  margin: $body-margin;
+  color: $body-text-color;
 }
 
 img,
 canvas {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .page {
-	padding: 0 $horizontal-spacing;
+  padding: 0 $horizontal-spacing;
 }
 
 .page-footer {
-	clear:both;
-	color: $page-footer-color;
-	background-color: $page-footer-background-color;
-	padding:$vertical-spacing 0;
-	font-size:smaller;
+  clear:both;
+  color: $page-footer-color;
+  background-color: $page-footer-background-color;
+  padding:$vertical-spacing 0;
+  font-size:smaller;
 
-	> .page-social {
-		margin:1em 0 0;
-	}
+  > .page-social {
+    margin:1em 0 0;
+  }
 }
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 
-	.page-footer {
-		position:relative;
+  .page-footer {
+    position:relative;
 
-		> .page-social {
-			position: absolute;
-			right: $horizontal-spacing;
-			bottom: $vertical-spacing;
-			margin: 0;
-		}
-	}
+    > .page-social {
+      position: absolute;
+      right: $horizontal-spacing;
+      bottom: $vertical-spacing;
+      margin: 0;
+    }
+  }
 
-	// navigation/content as left/right columns
-	.page {
-		padding-left:0;
-		float: right;
-		width: 75%;
-	}
+  // navigation/content as left/right columns
+  .page {
+    padding-left:0;
+    float: right;
+    width: 75%;
+  }
 
-	.site-footer {
-		float: left;
-		width: 25%;
-	}
+  .site-footer {
+    float: left;
+    width: 25%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-	.page {
-		width: 100% - $side-column-width;
-	}
+  .page {
+    width: 100% - $side-column-width;
+  }
 
-	.site-footer {
-		width: $side-column-width;
-	}
+  .site-footer {
+    width: $side-column-width;
+  }
 }
 
 @media print {
-	.page-footer {
-		display:none;
-	}
+  .page-footer {
+    display:none;
+  }
 }
