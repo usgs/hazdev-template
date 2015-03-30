@@ -61,6 +61,7 @@ module.exports = function (grunt) {
   // build for dev
   grunt.registerTask('build', [
     'clean',
+    'copy:analytics',
     'copy:build',
     'concurrent:build',
     'runpreinstall:' + config.build + '/' + config.src

@@ -17,6 +17,11 @@ var copy = {
       mode: true
     }
   },
+  analytics: {
+    expand: true,
+    src: 'node_modules/dap-gov-wide-ga-code/Universal-Federated-Analytics.1.0.js',
+    dest: config.build + '/' + config.src + '/htdocs/js/analytics.js'
+  },
   dist: {
     expand: true,
     cwd: config.build + '/' + config.src,
