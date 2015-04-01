@@ -122,22 +122,6 @@
       echo $FOOT;
     }
 
-    if (isset($GA_KEY) && $GA_KEY !== '') { ?>
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '<?php print $GA_KEY; ?>']);
-      _gaq.push(['_gat.anonymizeIp']);
-      _gaq.push(['_trackPageview']);
-      (function () {
-        var ga = document.createElement('script');
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ?
-            'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        document.querySelector('script').parentNode.appendChild(ga);
-      })();
-    </script>
-    <?php
-    }
   ?>
 </body>
 </html>

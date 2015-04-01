@@ -77,6 +77,3 @@ $HEAD = $THEME_CSS .
         'seismograph,seismologist,seismology,subduction,tectonics,tsunami,quake,' .
         'sismologico,sismologia' .
     '"/>';
-
-// Google Analytics key for site. If not set, analytics are disabled.
-// $GA_KEY = 'XX-XXXXXXX-X';
