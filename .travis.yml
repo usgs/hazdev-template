@@ -6,5 +6,6 @@ before_install:
   - sudo apt-get install -y php5
   - sudo apt-get install -y ruby
   - sudo apt-get install -y rubygems
-  - sudo gem install compass
+  - rvmsudo gem install compass
+  - rvmsudo gem update --system
   - npm install -g grunt-cli
