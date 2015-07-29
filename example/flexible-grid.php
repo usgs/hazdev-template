@@ -6,23 +6,13 @@ if (!isset($TEMPLATE)) {
 	$HEAD = '
 	<style>
 		.row > .column > div {
-			border:1px solid #F00;
-			margin-bottom:8px;
-		}
-		.row.right-to-left > .column > div {
-			border-color:#00F;
-		}
-		.mobile > .column > div {
-			border-color:#0B0;
-		}
-		@media screen and (max-width:560px) {
-			.desktop-to-mobile > .row > .column > div{
-				border-color:#0B0;
-			}
+			margin: 16px 0 0;
+			text-align: center;
 		}
 	</style>
 
 	<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
+	<link rel="stylesheet" href="/theme/css/alert.css" />
 	';
 
 	include 'template.inc.php';
@@ -52,20 +42,20 @@ foreach ($grid_sizes as $size) {
 
 		// output normal example
 		echo '<div class="row">';
-			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (first)</div></div>';
-			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (second)</div></div>';
+			echo '<div class="column ' . $i_name . '"><div class="alert">' . $i_name . ' (first)</div></div>';
+			echo '<div class="column ' . $rest_name . '"><div class="alert">' . $rest_name . ' (second)</div></div>';
 		echo '</div>';
 
 		// output right-to-left example
 		echo '<div class="row right-to-left">';
-			echo '<div class="column ' . $i_name . '"><div>' . $i_name . ' (first)</div></div>';
-			echo '<div class="column ' . $rest_name . '"><div>' . $rest_name . ' (second)</div></div>';
+			echo '<div class="column ' . $i_name . '"><div class="alert success">' . $i_name . ' (first)</div></div>';
+			echo '<div class="column ' . $rest_name . '"><div class="alert success">' . $rest_name . ' (second)</div></div>';
 		echo '</div>';
 
 		// output mobile example
 		echo '<div class="row mobile">';
-			echo '<div class="column mobile-' . $i_name . '"><div>' . $i_name . ' (mobile)</div></div>';
-			echo '<div class="column mobile-' . $rest_name . '"><div>' . $rest_name . ' (mobile)</div></div>';
+			echo '<div class="column mobile-' . $i_name . '"><div class="alert info">' . $i_name . ' (mobile)</div></div>';
+			echo '<div class="column mobile-' . $rest_name . '"><div class="alert info">' . $rest_name . ' (mobile)</div></div>';
 		echo '</div>';
 
 	}
@@ -75,12 +65,12 @@ foreach ($grid_sizes as $size) {
 
 <h2>Nested columns</h2>
 <div class="row">
-	<div class="column one-of-two"><div>one-of-two</div></div>
-	<div class="column one-of-two"><div>
+	<div class="column one-of-two"><div class="alert info">one-of-two</div></div>
+	<div class="column one-of-two"><div class="alert info">
 		one-of-two<br/>
 		<div class="row">
-			<div class="column one-of-two"><div>nested one-of-two</div></div>
-			<div class="column one-of-two"><div>nested one-of-two</div></div>
+			<div class="column one-of-two"><div class="alert">nested one-of-two</div></div>
+			<div class="column one-of-two"><div class="alert">nested one-of-two</div></div>
 		</div>
 	</div></div>
 </div>
@@ -94,10 +84,10 @@ foreach ($grid_sizes as $size) {
 		four elements layout in a two-up grid.
 	</p>
 	<div class="row">
-		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
-		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
-		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
-		<div class="column one-of-four mobile-one-of-two"><div>one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div class="alert info">one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div class="alert info">one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div class="alert info">one-of-four (mobile-one-of-two)</div></div>
+		<div class="column one-of-four mobile-one-of-two"><div class="alert info">one-of-four (mobile-one-of-two)</div></div>
 	</div>
 
 	<p>
@@ -106,10 +96,10 @@ foreach ($grid_sizes as $size) {
 		five elements layout in a three-up grid.
 	</p>
 	<div class="row mobile-three-up five-up">
-		<div class="column"><div>five-up (mobile-three-up)</div></div>
-		<div class="column"><div>five-up (mobile-three-up)</div></div>
-		<div class="column"><div>five-up (mobile-three-up)</div></div>
-		<div class="column"><div>five-up (mobile-three-up)</div></div>
-		<div class="column"><div>five-up (mobile-three-up)</div></div>
+		<div class="column"><div class="alert info">five-up (mobile-three-up)</div></div>
+		<div class="column"><div class="alert info">five-up (mobile-three-up)</div></div>
+		<div class="column"><div class="alert info">five-up (mobile-three-up)</div></div>
+		<div class="column"><div class="alert info">five-up (mobile-three-up)</div></div>
+		<div class="column"><div class="alert info">five-up (mobile-three-up)</div></div>
 	</div>
 </section>
