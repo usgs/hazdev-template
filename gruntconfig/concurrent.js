@@ -6,11 +6,11 @@ var concurrent = {
     'concat:scripts'
   ],
   build: [
-    'compass:build',
+    'postcss:build',
     'concurrent:scripts',
   ],
   dist: [
-    'cssmin:dist',
+    'postcss:dist',
     'uglify:dist'
   ]
 };
