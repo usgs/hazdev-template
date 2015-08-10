@@ -20,13 +20,24 @@ input[type="search"],
 input[type="tel"],
 input[type="text"],
 input[type="time"],
-select,
 textarea {
 	height:4rem;
 	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
+
+select {
+	height:4rem;
+	border:1px solid #d8d8d8;
+	padding: 0 0.25em;
+	max-width: 100%;
+}
+
 
 textarea {
 	vertical-align:top;
@@ -83,20 +94,19 @@ input[type="checkbox"] {
 	}
 }
 
-
 @media screen and (min-width: $breakpoint-offcanvas) {
 
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-select,
-textarea {
+	input[type="date"],
+	input[type="datetime"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	select,
+	textarea {
 		font-size: 0.8125em;
 		height: 3rem;
 	}
