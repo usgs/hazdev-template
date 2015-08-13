@@ -163,7 +163,7 @@
 
 <h2>Image List</h2>
 
-<p>Suggested width for images is either 150px or 200px for consistency. Also
+<p>Suggested width for images is either 75px or 150px for consistency. Also
   optimized, retina (2x) images are recommended for thumbnail images in image
   lists.</p>
 
