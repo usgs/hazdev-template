@@ -22,7 +22,6 @@ input[type="text"],
 input[type="time"],
 textarea {
 	height:4rem;
-	border:1px solid #d8d8d8;
 	padding: 0.5em;
 	max-width: 100%;
 
@@ -38,6 +37,10 @@ select {
 	max-width: 100%;
 }
 
+input,
+textarea {
+	border: 1px solid #d8d8d8;
+}
 
 textarea {
 	vertical-align:top;
