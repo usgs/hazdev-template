@@ -153,13 +153,13 @@ if (!isset($TEMPLATE)) {
 <h3>Usage</h3>
 <pre><code>&lt;nav class="button-group"&gt;
 	&lt;button&gt;List&lt;/button&gt;
-	&lt;button class="active"&gt;Map&lt;/button&gt;
-	&lt;button class="active"&gt;Settings&lt;/button&gt;
+	&lt;button&gt;Map&lt;/button&gt;
+	&lt;button disabled&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
 &lt;nav class="button-group"&gt;
 	&lt;button class="blue"&gt;List&lt;/button&gt;
-	&lt;button class="blue active"&gt;Map&lt;/button&gt;
-	&lt;button class="blue active"&gt;Settings&lt;/button&gt;
+	&lt;button class="blue"&gt;Map&lt;/button&gt;
+	&lt;button class="blue" disabled&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
 ...
 </code></pre>
