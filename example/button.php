@@ -116,8 +116,8 @@ if (!isset($TEMPLATE)) {
 <h3>Example</h3>
 <nav class="button-group">
 	<button>List</button>
-	<button>Map</button>
-	<button disabled>Settings</button>
+	<button class="selected">Map</button>
+	<button class="selected">Settings</button>
 </nav>
 
 <nav class="button-group">
@@ -129,7 +129,7 @@ if (!isset($TEMPLATE)) {
 <nav class="button-group">
 	<button class="green">List</button>
 	<button class="green">Map</button>
-	<button class="green" disabled>Settings</button>
+	<button class="green">Settings</button>
 </nav>
 
 <nav class="button-group">
@@ -155,6 +155,11 @@ if (!isset($TEMPLATE)) {
 	&lt;button&gt;List&lt;/button&gt;
 	&lt;button&gt;Map&lt;/button&gt;
 	&lt;button disabled&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
+&lt;nav class="button-group"&gt;
+	&lt;button&gt;List&lt;/button&gt;
+	&lt;button class="selected"&gt;Map&lt;/button&gt;
+	&lt;button class="selected"&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
 &lt;nav class="button-group"&gt;
 	&lt;button class="blue"&gt;List&lt;/button&gt;

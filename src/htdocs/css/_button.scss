@@ -6,7 +6,7 @@ button {
 	margin:4px 2px;
 	color: #333;
 	background: #f8f8f8;
-	text-shadow:0 0 2px #fff;
+	text-shadow:0 0 1px rgba(255, 255, 255, 0.5);
 	border-radius:2px;
 	cursor:pointer;
 	border:none;
@@ -24,9 +24,12 @@ button {
 		text-shadow:none;
 	}
 
-	&:active{
-		background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 20%,
-				rgba(55, 55, 55, 0.1) 100%);
+	&:active,
+	&.selected {
+		background-image: linear-gradient(to top,
+				rgba(55, 55, 55, 0.1) 0%,
+				rgba(55, 55, 55, 0.3) 85%,
+				rgba(55, 55, 55, 0.5) 100%);
 	}
 
 	&.red {
@@ -54,14 +57,14 @@ button {
 	&.green,
 	&.blue {
 		color:#fff;
-		text-shadow:0 0 2px rgba(0,0,0,0.6);
+		text-shadow:0 0 1px rgba(0,0,0,0.5);
 	}
 
 	&.yellow {
 		color:#555;
 		color:#836352;
 		color:#74513F;
-		text-shadow:0 0 2px #fff;
+		text-shadow:0 0 1px rgba(255, 255, 255, 0.5);
 	}
 
 	&.disabled,
