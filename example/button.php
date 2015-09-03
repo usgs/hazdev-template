@@ -117,49 +117,49 @@ if (!isset($TEMPLATE)) {
 <nav class="button-group">
 	<button>List</button>
 	<button>Map</button>
-	<button>Settings</button>
+	<button disabled>Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="blue">List</button>
 	<button class="blue">Map</button>
-	<button class="blue">Settings</button>
+	<button class="blue" disabled>Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="green">List</button>
 	<button class="green">Map</button>
-	<button class="green">Settings</button>
+	<button class="green" disabled>Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="yellow">List</button>
 	<button class="yellow">Map</button>
-	<button class="yellow">Settings</button>
+	<button class="yellow" disabled>Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="orange">List</button>
 	<button class="orange">Map</button>
-	<button class="orange">Settings</button>
+	<button class="orange" disabled>Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="red">List</button>
 	<button class="red">Map</button>
-	<button class="red">Settings</button>
+	<button class="red" disabled>Settings</button>
 </nav>
 
 <h3>Usage</h3>
 <pre><code>&lt;nav class="button-group"&gt;
 	&lt;button&gt;List&lt;/button&gt;
-	&lt;button class="active"&gt;Map&lt;/button&gt;
-	&lt;button class="active"&gt;Settings&lt;/button&gt;
+	&lt;button&gt;Map&lt;/button&gt;
+	&lt;button disabled&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
 &lt;nav class="button-group"&gt;
 	&lt;button class="blue"&gt;List&lt;/button&gt;
-	&lt;button class="blue active"&gt;Map&lt;/button&gt;
-	&lt;button class="blue active"&gt;Settings&lt;/button&gt;
+	&lt;button class="blue"&gt;Map&lt;/button&gt;
+	&lt;button class="blue" disabled&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
 ...
 </code></pre>
