@@ -116,20 +116,20 @@ if (!isset($TEMPLATE)) {
 <h3>Example</h3>
 <nav class="button-group">
 	<button>List</button>
-	<button>Map</button>
-	<button disabled>Settings</button>
+	<button class="selected">Map</button>
+	<button class="selected">Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="blue">List</button>
 	<button class="blue">Map</button>
-	<button class="blue" disabled>Settings</button>
+	<button class="blue selected">Settings</button>
 </nav>
 
 <nav class="button-group">
 	<button class="green">List</button>
 	<button class="green">Map</button>
-	<button class="green" disabled>Settings</button>
+	<button class="green">Settings</button>
 </nav>
 
 <nav class="button-group">
@@ -153,13 +153,32 @@ if (!isset($TEMPLATE)) {
 <h3>Usage</h3>
 <pre><code>&lt;nav class="button-group"&gt;
 	&lt;button&gt;List&lt;/button&gt;
-	&lt;button&gt;Map&lt;/button&gt;
-	&lt;button disabled&gt;Settings&lt;/button&gt;
+	&lt;button class="selected"&gt;Map&lt;/button&gt;
+	&lt;button class="selected"&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
 &lt;nav class="button-group"&gt;
 	&lt;button class="blue"&gt;List&lt;/button&gt;
 	&lt;button class="blue"&gt;Map&lt;/button&gt;
-	&lt;button class="blue" disabled&gt;Settings&lt;/button&gt;
+	&lt;button class="blue selected"&gt;Settings&lt;/button&gt;
 &lt;/nav&gt;
-...
+&lt;nav class="button-group"&gt;
+	&lt;button class="green"&gt;List&lt;/button&gt;
+	&lt;button class="green"&gt;Map&lt;/button&gt;
+	&lt;button class="green"&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
+&lt;nav class="button-group"&gt;
+	&lt;button class="yellow"&gt;List&lt;/button&gt;
+	&lt;button class="yellow"&gt;Map&lt;/button&gt;
+	&lt;button class="yellow" disabled&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
+&lt;nav class="button-group"&gt;
+	&lt;button class="orange"&gt;List&lt;/button&gt;
+	&lt;button class="orange"&gt;Map&lt;/button&gt;
+	&lt;button class="orange" disabled&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
+&lt;nav class="button-group"&gt;
+	&lt;button class="red"&gt;List&lt;/button&gt;
+	&lt;button class="red"&gt;Map&lt;/button&gt;
+	&lt;button class="red" disabled&gt;Settings&lt;/button&gt;
+&lt;/nav&gt;
 </code></pre>
