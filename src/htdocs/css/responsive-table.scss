@@ -24,7 +24,7 @@ $th_color: #444 !default;
 $th_padding: $table_spacing / 2 !default;
 $th_background_color: #ededed !default;
 
-@mixin padding() {
+@define-mixin padding {
 	padding: $table_spacing/2 $table_spacing*3/4;
 }
 
@@ -54,7 +54,7 @@ table.tabular {
 
 	th,
 	td {
-		@include padding();
+		@mixin padding;
 		border:1px solid $table_border_color;
 	}
 }
@@ -168,7 +168,7 @@ table.responsive {
 			th, th:first-child,
 			td, td:first-child {
 				border: 1px solid $table_border_color;
-				@include padding();
+				@mixin padding;
 			}
 		}
 
