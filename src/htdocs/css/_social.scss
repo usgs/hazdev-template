@@ -41,7 +41,7 @@ $social-icon-size-large: 32px;
 // now generate all classes
 @each $name in facebook, twitter, google-plus, email, print, feed, feed2, google-earth {
 	@each $size in small, large {
-		.social-#{$name}-#{$size} {
+		.social-$(name)-$(size) {
 			@mixin social-icon $name,$size;
 		}
 	}
@@ -52,7 +52,7 @@ $social-icon-size-large: 32px;
 
 	@media screen and (max-width: ($breakpoint-offcanvas - 1px)) {
 		@each $name in facebook, twitter, google-plus, email {
-			.#{$name} {
+			.$(name) {
 				@mixin social-icon $name,large;
 				text-indent: -9999px;
 				overflow: hidden;
@@ -63,7 +63,7 @@ $social-icon-size-large: 32px;
 
 	@media screen and (min-width: $breakpoint-offcanvas) {
 		@each $name in facebook, twitter, google-plus, email {
-			.#{$name}:before {
+			.$(name):before {
 				@mixin social-icon $name,small;
 				position:relative;
 				top:2px;
