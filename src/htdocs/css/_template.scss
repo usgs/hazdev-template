@@ -1,16 +1,17 @@
 /* include variables */
-@import 'fonts';
-@import 'variables';
+@import '_fonts.scss'
+@import '_variables.scss';
 
 
 /* include template partials */
-@import 'typography';
-@import 'banner';
-@import 'page';
-@import 'social';
-@import 'footer';
-@import 'offcanvas';
-@import 'list';
-@import 'button';
-@import 'form';
-@import 'figcaption';
+@import '_typography.scss';
+@import '_banner.scss';
+@import '_page.scss';
+@import '_social.scss';
+@import '_footer.scss';
+@import '_offcanvas.scss';
+@import '_text.scss';
+@import '_list.scss';
+@import '_button.scss';
+@import '_form.scss';
+@import '_figcaption.scss';

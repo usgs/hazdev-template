@@ -1,6 +1,3 @@
-// compass mixin for transitions
-@import "compass/css3/transition";
-
 .nav-transition {
 	@include transition(background .25s ease-out);
 }
