@@ -3,6 +3,7 @@
 var autoprefixer = require('autoprefixer-core'),
     cssnano = require('cssnano'),
     each = require('postcss-each'),
+    calc = require('postcss-calc'),
     precss = require('precss');
 
 //var config = require('./config');
@@ -14,6 +15,7 @@ var postcss = {
       map: true,
       processors: [
         each(),
+        calc(),
         precss(),
         autoprefixer({'browsers': 'last 2 versions'}), // vendor prefix
       ]

@@ -24,25 +24,25 @@ $horizontal-spacing: $spacing !default;
 
 /* /2 */
 .mobile-two-up > .column,
-.mobile-one-of-two,   { flex-basis: 100%*1/2; }
+.mobile-one-of-two   { flex-basis: calc(100%*1/2); }
 
 /* /3 */
 .mobile-three-up > .column,
-.mobile-one-of-three, { flex-basis: 100%*1/3; }
-.mobile-two-of-three  { flex-basis: 100%*2/3; }
+.mobile-one-of-three { flex-basis: calc(100%*1/3); }
+.mobile-two-of-three  { flex-basis: calc(100%*2/3); }
 
 /* /4 */
 .mobile-four-up > .column,
-.mobile-one-of-four   { flex-basis: 100%*1/4; }
-.mobile-two-of-four   { flex-basis: 100%*2/4; }
-.mobile-three-of-four { flex-basis: 100%*3/4; }
+.mobile-one-of-four   { flex-basis: calc(100%*1/4); }
+.mobile-two-of-four   { flex-basis: calc(100%*2/4); }
+.mobile-three-of-four { flex-basis: calc(100%*3/4); }
 
 /* /5 */
 .mobile-five-up > .column,
-.mobile-one-of-five   { flex-basis: 100%*1/5; }
-.mobile-two-of-five   { flex-basis: 100%*2/5; }
-.mobile-three-of-five { flex-basis: 100%*3/5; }
-.mobile-four-of-five  { flex-basis: 100%*4/5; }
+.mobile-one-of-five   { flex-basis: calc(100%*1/5); }
+.mobile-two-of-five   { flex-basis: calc(100%*2/5); }
+.mobile-three-of-five { flex-basis: calc(100%*3/5); }
+.mobile-four-of-five  { flex-basis: calc(100%*4/5); }
 
 
 @media screen and (min-width:$breakpoint-stacking), print {
@@ -57,24 +57,24 @@ $horizontal-spacing: $spacing !default;
 
 	/* /2 */
 	.two-up > .column,
-	.one-of-two    { flex-basis: 100%*1/2; }
+	.one-of-two    { flex-basis: calc(100%*1/2); }
 
 	/* /3 */
 	.three-up > .column,
-	.one-of-three  { flex-basis: 100%*1/3; }
-	.two-of-three  { flex-basis: 100%*2/3; }
+	.one-of-three  { flex-basis: calc(100%*1/3); }
+	.two-of-three  { flex-basis: calc(100%*2/3); }
 
 	/* /4 */
 	.four-up > .column,
-	.one-of-four   { flex-basis: 100%*1/4; }
-	.two-of-four   { flex-basis: 100%*1/4; }
-	.three-of-four { flex-basis: 100%*3/4; }
+	.one-of-four   { flex-basis: calc(100%*1/4); }
+	.two-of-four   { flex-basis: calc(100%*2/4); }
+	.three-of-four { flex-basis: calc(100%*3/4); }
 
 	/* /5 */
 	.five-up > .column,
-	.one-of-five   { flex-basis: 100%*1/5; }
-	.two-of-five   { flex-basis: 100%*2/5; }
-	.three-of-five { flex-basis: 100%*3/5; }
-	.four-of-five  { flex-basis: 100%*4/5; }
+	.one-of-five   { flex-basis: calc(100%*1/5); }
+	.two-of-five   { flex-basis: calc(100%*2/5); }
+	.three-of-five { flex-basis: calc(100%*3/5); }
+	.four-of-five  { flex-basis: calc(100%*4/5); }
 
 }

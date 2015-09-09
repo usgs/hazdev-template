@@ -15,7 +15,7 @@
 }
 
 /* only applies when on a small screen */
-@media screen and (max-width:($breakpoint-offcanvas - 1px)) {
+@media screen and (max-width: 767px) {
 
 	/* offcanvas is enabled, but not necessarily active */
 	.offcanvas-enabled {
@@ -45,7 +45,7 @@
 		/* position offcanvas to left of page */
 		.offcanvas {
 			position:fixed;
-			left:-($offcanvas-width + 4px);
+			left: calc(-$offcanvas-width - 4px);
 			top:0;
 			bottom:0;
 			width:$offcanvas-width;

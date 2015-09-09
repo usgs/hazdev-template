@@ -17,15 +17,15 @@ $table_border_color: #e0e0e0 !default;
 $table_background: #fff !default;
 
 $td_color: #555 !default;
-$td_padding: $table_spacing / 2 !default;
+$td_padding: calc($table_spacing / 2) !default;
 $td_background_color: #fff !default;
 
 $th_color: #444 !default;
-$th_padding: $table_spacing / 2 !default;
+$th_padding: calc($table_spacing / 2) !default;
 $th_background_color: #ededed !default;
 
 @define-mixin padding {
-	padding: $table_spacing/2 $table_spacing*3/4;
+	padding: calc($table_spacing/2) calc($table_spacing * 3/4);
 }
 
 table.tabular {
@@ -112,12 +112,12 @@ table.responsive {
 
 		> td:first-child,
 		> td:first-child:before {
-			padding-top: $table_spacing * 1.5;
+			padding-top: calc($table_spacing * 1.5);
 		}
 
 		> td {
 			position: relative;
-			padding: $td_padding/5;
+			padding: calc($td_padding/5);
 			padding-left: 40%;
 		}
 
@@ -125,7 +125,7 @@ table.responsive {
 			position: absolute;
 			top: 0;
 			left: 0;
-			padding: $td_padding/5 0;
+			padding: calc($td_padding/5) 0;
 			white-space: nowrap;
 		}
 	}

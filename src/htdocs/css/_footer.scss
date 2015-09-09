@@ -12,7 +12,7 @@
 		border-top: 1px solid $sectionnav-border-color;
 		color: #333;
 		display: block;
-		padding: ($vertical-spacing * 3/4) $horizontal-spacing;
+		padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
 		text-decoration:none;
 		@extend nav-transition;
 
@@ -34,13 +34,13 @@
 		> header {
 			color: #333;
 			display: block;
-			padding: ($vertical-spacing * 3/4) $horizontal-spacing;
+			padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
 			@extend nav-transition;
 		}
 
 		/* indent group items */
 		> a {
-			padding-left: (3/2 * $horizontal-spacing);
+			padding-left: calc(3/2 * $horizontal-spacing);
 			position:relative; /* for linear-gradient background
 
 			/* gradient separator between section links */
@@ -142,7 +142,7 @@
 	> a,
 	> strong {
 		display: block;
-		padding: ($vertical-spacing * 3/4) $horizontal-spacing;
+		padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
 		color: $sitenav-color;
 		text-decoration: none;
 		font-weight:normal;
@@ -208,7 +208,7 @@
 @media screen and (min-width: $breakpoint-offcanvas) {
 
 	.site-footer {
-		padding: $spacing - $vertical-spacing $horizontal-spacing;
+		padding: calc($spacing - $vertical-spacing) $horizontal-spacing;
 	}
 
 	.site-sectionnav,
@@ -227,7 +227,7 @@
 		> strong {
 			border: 1px solid #ddd;
 			margin: 0 0 1em 0;
-			padding:$vertical-spacing/2 $horizontal-spacing * 2/3;
+			padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
 		}
 
 		> section {
@@ -242,12 +242,12 @@
 			> a,
 			> strong,
 			> header {
-				padding:$vertical-spacing/2 $horizontal-spacing * 2/3;
+				padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
 			}
 
 			> a,
 			> strong {
-				padding-left: (3/2 * $horizontal-spacing);
+				padding-left: calc(3/2 * $horizontal-spacing);
 			}
 		}
 	}
@@ -255,7 +255,7 @@
 	.site-sitenav {
 		> a,
 		> strong {
-			padding: $vertical-spacing/2 $horizontal-spacing * 2/3;
+			padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
 		}
 	}
 }
