@@ -1,31 +1,31 @@
-// these styles are using along with js/OffCanvas.js,
-//
-// it creates elements
-//     (offcanvas-mask, offcanvas-container, and offcanvas-toggle)
-// and toggles state classes
-//     (offcanvas-enabled, offcanvas-almost-active, and offcanvas-active)
-// based on the current window size.
+/* these styles are using along with js/OffCanvas.js,
+ *
+ * it creates elements
+ *     (offcanvas-mask, offcanvas-container, and offcanvas-toggle)
+ * and toggles state classes
+ *     (offcanvas-enabled, offcanvas-almost-active, and offcanvas-active)
+ * based on the current window size.
+ */
 
-
-// hide offcanvas elements by default
+/* hide offcanvas elements by default */
 .offcanvas-mask,
 .offcanvas-container,
 .offcanvas-toggle {
 	display:none;
 }
 
-// only applies when on a small screen
+/* only applies when on a small screen */
 @media screen and (max-width:($breakpoint-offcanvas - 1px)) {
 
-	// offcanvas is enabled, but not necessarily active
+	/* offcanvas is enabled, but not necessarily active */
 	.offcanvas-enabled {
 
-		// position body relative, for offcanvas-active transition
+		/* position body relative, for offcanvas-active transition */
 		position:relative;
 		left:0;
 		transition: left $offcanvas-transition-time ease-in-out;
 
-		// show the offcanvas-toggle in the top right corner of the page
+		/* show the offcanvas-toggle in the top right corner of the page */
 		.offcanvas-toggle {
 			margin:0;
 			padding: 0 0.75em;
@@ -42,7 +42,7 @@
 			-ms-user-select: none;
 		}
 
-		// position offcanvas to left of page
+		/* position offcanvas to left of page */
 		.offcanvas {
 			position:fixed;
 			left:-($offcanvas-width + 4px);
@@ -60,7 +60,7 @@
 			transition: left $offcanvas-transition-time ease-in-out;
 		}
 
-		// position mask over page
+		/* position mask over page */
 		.offcanvas-mask {
 			background-color:rgba(0, 0, 0, 0);
 			display:none;
@@ -77,25 +77,25 @@
 	}
 
 
-	// intermediate step when activating
+	/* intermediate step when activating */
 	.offcanvas-almost-active {
 		overflow:hidden;
 
-		// mask page just before transition
+		/* mask page just before transition */
 		.offcanvas-mask {
 			display:block;
 		}
 	}
 
 
-	// offcanvas is enabled and active
+	/* offcanvas is enabled and active */
 	.offcanvas-active {
-		// move offcanvas over page
+		/* move offcanvas over page */
 		.offcanvas {
 			left:0;
 		}
 
-		// move mask to right of offcanvas
+		/* move mask to right of offcanvas */
 		.offcanvas-mask {
 			background-color:rgba(0, 0, 0, .7);
 		}

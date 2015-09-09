@@ -1,5 +1,5 @@
 
-// icon sizes
+/* icon sizes */
 $social-icon-size-small: 16px;
 $social-icon-size-large: 32px;
 
@@ -10,7 +10,7 @@ $social-icon-size-large: 32px;
 	background: url('/theme/images/social-sprite.png') no-repeat;
 	content: ' ';
 
-	// compute background position
+	/* compute background position */
 	$index: 1;
 	@if $name == facebook { $index: 1; }
 	@elseif $name == twitter { $index: 2; }
@@ -38,7 +38,7 @@ $social-icon-size-large: 32px;
 
 
 
-// now generate all classes
+/* now generate all classes */
 @each $name in facebook, twitter, google-plus, email, print, feed, feed2, google-earth {
 	@each $size in small, large {
 		.social-$(name)-$(size) {

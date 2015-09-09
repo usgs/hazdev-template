@@ -5,7 +5,7 @@
 /* section nav */
 .site-sectionnav {
 
-	// Ungrouped Links
+	/* Ungrouped Links */
 	> a {
 		background-color: #ededed;
 		background-image:none;
@@ -25,11 +25,11 @@
 		text-decoration:underline;
 	}
 
-	// Grouped Links
+	/* Grouped Links */
 	> section {
 		margin: 0 0 0.2em 0;
 
-		// items in a nav group
+		/* items in a nav group */
 		> a,
 		> header {
 			color: #333;
@@ -38,12 +38,12 @@
 			@extend nav-transition;
 		}
 
-		// indent group items
+		/* indent group items */
 		> a {
 			padding-left: (3/2 * $horizontal-spacing);
-			position:relative; // for linear-gradient background
+			position:relative; /* for linear-gradient background
 
-			// gradient separator between section links
+			/* gradient separator between section links */
 			&:before {
 				position: absolute;
 				content: '';
@@ -60,7 +60,7 @@
 			}
 		}
 
-		// nav group header
+		/* nav group header */
 		> header {
 			background-color: #ededed;
 			border-top: 1px solid $sectionnav-border-color;
@@ -74,7 +74,7 @@
 			text-decoration:none;
 			background-image:none;
 
-			// hover styles for nav items
+			/* hover styles for nav items */
 			&:hover {
 				text-decoration:underline;
 				background-color: $sectionnav-background-color-hover;
@@ -136,8 +136,6 @@
 	background-color: $sitenav-background-color;
 	margin: 0.2em 0;
 	overflow: visible;
-	// border-top: 1px solid $sitenav-border-color;
-	// border-bottom: 1px solid $sitenav-border-color;
 	border-top: 1px solid rgba(0,0,0,0.1);
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 
@@ -150,7 +148,6 @@
 		font-weight:normal;
 		text-shadow: 0 0 2px #000;
 		@extend nav-transition;
-		// border-bottom: 1px solid $sitenav-border-color;
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 		border-top: 1px solid rgba(255,255,255,0.1);
 		border-right: 1px solid rgba(255,255,255,0.1);
@@ -222,7 +219,6 @@
 
 	.site-sitenav {
 		border: 1px solid $sitenav-border-color;
-		//border: 1px solid rgba(0,0,0,0.1);
 	}
 
 	.site-sectionnav {
