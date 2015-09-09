@@ -1,5 +1,5 @@
-.nav-transition {
-	@include transition(background .25s ease-out);
+@define-extend nav-transition {
+	transition: background .25s ease-out;
 }
 
 /* section nav */
@@ -14,7 +14,7 @@
 		display: block;
 		padding: ($vertical-spacing * 3/4) $horizontal-spacing;
 		text-decoration:none;
-		@extend .nav-transition;
+		@extend nav-transition;
 
 		&:visited {
 			color: #333;
@@ -35,7 +35,7 @@
 			color: #333;
 			display: block;
 			padding: ($vertical-spacing * 3/4) $horizontal-spacing;
-			@extend .nav-transition;
+			@extend nav-transition;
 		}
 
 		// indent group items
@@ -149,7 +149,7 @@
 		text-decoration: none;
 		font-weight:normal;
 		text-shadow: 0 0 2px #000;
-		@extend .nav-transition;
+		@extend nav-transition;
 		// border-bottom: 1px solid $sitenav-border-color;
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 		border-top: 1px solid rgba(255,255,255,0.1);

@@ -20,8 +20,6 @@ ol {
 }
 
 .linklist {
-  @extend ul.no-style;
-  @extend ul.separator;
 
   > li {
     overflow: auto;

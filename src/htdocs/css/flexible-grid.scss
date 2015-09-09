@@ -34,7 +34,7 @@ $horizontal-spacing: $spacing !default;
 // */4
 .mobile-four-up > .column,
 .mobile-one-of-four   { flex-basis: 100%*1/4; }
-.mobile-two-of-four   { @extend .mobile-one-of-two; }
+.mobile-two-of-four   { flex-basis: 100%*2/4; }
 .mobile-three-of-four { flex-basis: 100%*3/4; }
 
 // */5
@@ -67,7 +67,7 @@ $horizontal-spacing: $spacing !default;
 	// */4
 	.four-up > .column,
 	.one-of-four   { flex-basis: 100%*1/4; }
-	.two-of-four   { @extend .one-of-two; }
+	.two-of-four   { flex-basis: 100%*1/4; }
 	.three-of-four { flex-basis: 100%*3/4; }
 
 	// */5
