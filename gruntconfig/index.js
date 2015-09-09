@@ -6,7 +6,6 @@ var gruntconfig = function (grunt) {
     config: require('./config'),
 
     clean: require('./clean'),
-    compass: require('./compass'),
     concat: require('./concat'),
     concurrent: require('./concurrent'),
     copy: require('./copy'),
@@ -17,7 +16,6 @@ var gruntconfig = function (grunt) {
     tasks: [
       'grunt-concurrent',
       'grunt-contrib-clean',
-      'grunt-contrib-compass',
       'grunt-contrib-concat',
       'grunt-contrib-copy',
       'grunt-contrib-jshint',
@@ -33,7 +31,7 @@ var gruntconfig = function (grunt) {
         'build',
         'builddist',
         'clean',
-        'compass:build',
+        'postcss:build',
         'concat:scripts',
         'concurrent:scripts',
         'copy',
