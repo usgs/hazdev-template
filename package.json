@@ -33,7 +33,6 @@
     "grunt-open": "~0.2.0",
     "grunt-postcss": "^0.6.0",
     "postcss-calc": "^5.0.0",
-    "postcss-each": "^0.6.0",
     "precss": "^1.1.2"
   },
   "engines": {
