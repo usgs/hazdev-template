@@ -6,7 +6,6 @@ var concurrent = {
     'concat:scripts'
   ],
   build: [
-    'postcss:build',
     'concurrent:scripts',
   ],
   dist: [

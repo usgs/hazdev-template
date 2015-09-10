@@ -1,6 +1,6 @@
 'use strict';
 
-var autoprefixer = require('autoprefixer-core'),
+var autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     calc = require('postcss-calc'),
     precss = require('precss');
