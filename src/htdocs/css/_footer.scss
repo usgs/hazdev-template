@@ -162,7 +162,7 @@
 		}
 
 		&:hover {
-			background-color: $sitenav-background-color-hover;
+			background: rgba(0,0,0,0.2);
 			color: $sitenav-color-hover;
 		}
 	}
