@@ -1,43 +1,62 @@
 html {
-	font-size: 10px;
-	-webkit-text-size-adjust: 100%;
-	text-size-adjust: 100%;
+  font-family: $font-sans;
+  font-size: $em-base;
 }
 
 body {
-	font-size:1.6rem;
-	line-height:1.5;
-	font-family:'helvetica neue', arial, sans-serif;
+  font-size: $base-font-size;
 }
 
-// apply same margin for each header for consistency
+p {
+  line-height: $base-line-height;
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
-	margin:2.4rem 0 0; /* 1.5em of base font-size */
-	line-height:1.2;
-	color:#333;
-	font-weight: normal;
+  clear: both;
+  font-family: $font-serif;
+  font-weight: $font-bold;
+  line-height: $heading-line-height;
+  margin: {
+    top: 1.5em;
+    bottom: .5em;
+  }
 }
 
 h1 {
-	font-size: 2em;
+  font-size: $h1-font-size;
 }
 
 h2 {
-	font-size: 1.625em;
+  font-size: $h2-font-size;
 }
 
 h3 {
-	font-size: 1.375em;
+  font-size: $h3-font-size;
 }
 
 h4 {
-	font-size: 1.125em;
+  font-size: $h4-font-size;
 }
 
 h5 {
-	font-size: 1em;
+	font-size: $h4-font-size;
 }
 
 h6 {
-	font-size: 0.875em;
+  font-family: $font-sans;
+  font-size: $h6-font-size;
+  font-weight: $font-normal;
+  text-transform: uppercase;
+}
+
+// Remove user agent styles
+cite,
+var,
+address,
+dfn {
+ font-style: normal;
 }
