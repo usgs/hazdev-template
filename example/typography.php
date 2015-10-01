@@ -23,7 +23,7 @@ not be used anywhere else:
 </code></pre>
 
 
-<h1>h1 Header</h1>
+<h1>h1 Header - Title</h1>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
