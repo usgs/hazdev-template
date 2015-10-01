@@ -4,17 +4,6 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Typography';
 	$NAVIGATION = true;
 
-	$HEAD = '
-		<style>
-			hr {
-				padding:0;
-				margin:0;
-				border:none;
-				border-top:1px solid #ccc;
-			}
-		</style>
-	';
-
 	include('template.inc.php');
 }
 
