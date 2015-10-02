@@ -1,143 +1,143 @@
 
 [role="banner"] {
-	height:56px;
-	position:relative;
-	background-color: $site-title-background-color;
+  height:56px;
+  position:relative;
+  background-color: $site-title-background-color;
 
-	/* position usgs logo over background. */
-	> .site-logo {
-		/*
-			bottom padding of 0
-			+ overflow: hidden
-			+ image height 140%
-			= hide "science for a changing world" on small screens.
-		*/
-		background-color: $site-title-background-color;
-		display: block;
-		height: 42px;
-		left: 0;
-		overflow: hidden;
-		padding: 14px 14px 0;
-		position: absolute;
-		top: 0;
+  /* position usgs logo over background. */
+  > .site-logo {
+    /*
+      bottom padding of 0
+      + overflow: hidden
+      + image height 140%
+      = hide "science for a changing world" on small screens.
+    */
+    background-color: $site-title-background-color;
+    display: block;
+    height: 42px;
+    left: 0;
+    overflow: hidden;
+    padding: 14px 14px 0;
+    position: absolute;
+    top: 0;
 
-		> img {
-			height: 140%;
-		}
-	}
+    > img {
+      height: 140%;
+    }
+  }
 
-	/* visually hide navigation jumplink. */
-	> .jumplink-navigation {
-		display:block;
-		position:absolute;
-		left:-9999px;
-		top:0;
-	}
+  /* visually hide navigation jumplink. */
+  > .jumplink-navigation {
+    display:block;
+    position:absolute;
+    left:-9999px;
+    top:0;
+  }
 
 
-	@media screen and (min-width: $breakpoint-offcanvas) {
+  @media screen and (min-width: $breakpoint-offcanvas) {
 
-		/* make banner larger on large screens. */
-		background-color:$banner-background-color;
-		background-size:auto 100%;
-		background-repeat:no-repeat;
-		background-image:url('#{$banner-image}');
-		height:72px;
-		background-position:164px 0;
-		/* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
-		margin-bottom:2em;
+    /* make banner larger on large screens. */
+    background-color:$banner-background-color;
+    background-size:auto 100%;
+    background-repeat:no-repeat;
+    background-image:url('#{$banner-image}');
+    height:72px;
+    background-position:164px 0;
+    /* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
+    margin-bottom:2em;
 
-		/* also adjust size of usgs logo */
-		> .site-logo {
-			background-color:$banner-background-color;
-			padding: 10px 14px;
-			height: 100%;
-			width: 157px;
+    /* also adjust size of usgs logo */
+    > .site-logo {
+      background-color:$banner-background-color;
+      padding: 10px 14px;
+      height: 100%;
+      width: 157px;
 
-			> img {
-				height: 100%;
-			}
-		}
+      > img {
+        height: 100%;
+      }
+    }
 
-		&:after {
-			display:block;
-			position:absolute;
-			top:100%;
-			left:0;
-			right:0;
+    &:after {
+      display:block;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
 
-			padding:0.25em 0 0.25em $horizontal-spacing;
-			border:1px solid white;
-			border-width:1px 0;
-			font-family:'helvetica neue', arial, sans-serif;
-			font-size:1em;
-			text-shadow: 0 0 2px rgba(0,0,0,0.6);
-			line-height:1.5;
-			font-weight:bold;
+      padding:0.25em 0 0.25em $horizontal-spacing;
+      border:1px solid white;
+      border-width:1px 0;
+      font-family:'helvetica neue', arial, sans-serif;
+      font-size:1em;
+      text-shadow: 0 0 2px rgba(0,0,0,0.6);
+      line-height:1.5;
+      font-weight:bold;
 
-			content:$site-title;
-			color:$site-title-color;
-			background-color:$site-title-background-color;
-		}
+      content:$site-title;
+      color:$site-title-color;
+      background-color:$site-title-background-color;
+    }
 
-	}
+  }
 
 }
 
 
 [role="banner"] > .cooperators {
-	/* hide banner cooperator logos on small screens. */
-	display: none;
+  /* hide banner cooperator logos on small screens. */
+  display: none;
 
-	/* banner cooperator styles. */
-	background-color: $banner-background-color;
-	height: 100%;
-	left: 157px;
-	overflow: hidden;
-	padding: 10px 0;
-	position: absolute;
-	top: 0;
-	white-space: nowrap;
+  /* banner cooperator styles. */
+  background-color: $banner-background-color;
+  height: 100%;
+  left: 157px;
+  overflow: hidden;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
 
-	@media screen and (min-width: $breakpoint-offcanvas) {
-		display: block;
-	}
+  @media screen and (min-width: $breakpoint-offcanvas) {
+    display: block;
+  }
 }
 
 /* cooperator links/logos */
 .cooperator {
-	display: inline-block;
-	margin-right: 14px;
+  display: inline-block;
+  margin-right: 14px;
 
-	&,
-	> img {
-		height: 100%;
-		max-width: none;
-	}
+  &,
+  > img {
+    height: 100%;
+    max-width: none;
+  }
 }
 
 
 
 
 @media print {
-	/** Only show USGS logo when printing, requires background colors... */
-	[role="banner"] {
-		height: 34px;
-		width: 106px;
-		padding: 3px;
-		margin: 16px 16px 0;
+  /** Only show USGS logo when printing, requires background colors... */
+  [role="banner"] {
+    height: 34px;
+    width: 106px;
+    padding: 3px;
+    margin: 16px 16px 0;
 
-		> * {
-			visibility:hidden;
-		}
+    > * {
+      visibility:hidden;
+    }
 
-		> .site-logo {
-			left: 3px;
-			top: 3px;
-			height: 28px;
-			padding: 0;
-			width: 101px;
-			visibility: visible;
-		}
-	}
+    > .site-logo {
+      left: 3px;
+      top: 3px;
+      height: 28px;
+      padding: 0;
+      width: 101px;
+      visibility: visible;
+    }
+  }
 }
