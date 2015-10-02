@@ -39,10 +39,10 @@
 
     /* make banner larger on large screens. */
     background-color: $banner-background-color;
-		background-image: url('#{$banner-image}');
-		background-position: 164px 0;
+    background-image: url('#{$banner-image}');
+    background-position: 164px 0;
     background-repeat: no-repeat;
-		background-size: auto 100%;
+    background-size: auto 100%;
     height: 72px;
     /* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
     margin-bottom:2em;
@@ -50,7 +50,7 @@
     /* also adjust size of usgs logo */
     > .site-logo {
       background-color: $banner-background-color;
-			height: 100%;
+      height: 100%;
       padding: 10px 14px;
       width: 157px;
 
@@ -60,22 +60,22 @@
     }
 
     &:after {
-			background-color: $site-title-background-color;
-			border: 1px solid white;
+      background-color: $site-title-background-color;
+      border: 1px solid white;
       border-width: 1px 0;
-			color: $site-title-color;
+      color: $site-title-color;
       content: $site-title;
       display: block;
-			font-family: 'helvetica neue', arial, sans-serif;
+      font-family: 'helvetica neue', arial, sans-serif;
       font-size: 1em;
-			font-weight: bold;
+      font-weight: bold;
       left: 0;
-			line-height: 1.5;
+      line-height: 1.5;
       right: 0;
-			padding: 0.25em 0 0.25em $horizontal-spacing;
-			position: absolute;
-			text-shadow: 0 0 2px rgba(0,0,0,0.6);
-			top: 100%;
+      padding: 0.25em 0 0.25em $horizontal-spacing;
+      position: absolute;
+      text-shadow: 0 0 2px rgba(0,0,0,0.6);
+      top: 100%;
     }
 
   }
@@ -94,7 +94,7 @@
   top: 0;
   white-space: nowrap;
 
-	/* hide banner cooperator logos on small screens. */
+  /* hide banner cooperator logos on small screens. */
   display: none;
   @media screen and (min-width: $breakpoint-offcanvas) {
     display: block;
@@ -119,16 +119,16 @@
 @media print {
   /** Only show USGS logo when printing, requires background colors... */
   [role="banner"] {
-		background-color: #fff;
+    background-color: #fff;
     height: 0;
-		margin: 0;
-		padding: 0;
-		visibility:hidden;
+    margin: 0;
+    padding: 0;
+    visibility:hidden;
     width: 100%;
 
     &:after {
-			color: #333;
-			content: 'U.S. Geological Survey - ' $site-title;
+      color: #333;
+      content: 'U.S. Geological Survey - ' $site-title;
       display: block;
       visibility: visible;
     }
