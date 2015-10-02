@@ -19,6 +19,15 @@
       <img src="/theme/images/usgs-logo.svg" alt=""/>
     </a>
     <a class="jumplink-navigation" href="#site-sectionnav">Jump to Navigation</a>
+    <?php
+
+      if ($COOPERATORS) {
+        echo '<div class="cooperators">' .
+            $COOPERATORS .
+            '</div>';
+      }
+
+    ?>
   </header>
 
   <main role="main" class="page" aria-labelledby="page-header">
