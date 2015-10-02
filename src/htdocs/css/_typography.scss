@@ -15,24 +15,14 @@ p {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   clear: both;
-  font-family: $font-sans;
+  font-family: $font-serif;
   line-height: $heading-line-height;
   margin: {
     top: 1.5em;
     bottom: .5em;
   }
-}
-
-h1.serif,
-h2.serif,
-h3.serif,
-h4.serif,
-h5.serif,
-h6.serif {
-  font-family: $font-serif;
-  margin: 0;
 }
 
 h1 {
