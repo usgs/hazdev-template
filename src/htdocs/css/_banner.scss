@@ -84,6 +84,41 @@
 
 }
 
+
+[role="banner"] > .cooperators {
+	/* hide banner cooperator logos on small screens. */
+	display: none;
+
+	/* banner cooperator styles. */
+	background-color: $banner-background-color;
+	height: 100%;
+	left: 157px;
+	overflow: hidden;
+	padding: 10px 0;
+	position: absolute;
+	top: 0;
+	white-space: nowrap;
+
+	@media screen and (min-width: $breakpoint-offcanvas) {
+		display: block;
+	}
+}
+
+/* cooperator links/logos */
+.cooperator {
+	display: inline-block;
+	margin-right: 14px;
+
+	&,
+	> img {
+		height: 100%;
+		max-width: none;
+	}
+}
+
+
+
+
 @media print {
 	/** Only show USGS logo when printing, requires background colors... */
 	[role="banner"] {
