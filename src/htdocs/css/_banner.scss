@@ -4,21 +4,25 @@
 	position:relative;
 	background-color: $site-title-background-color;
 
-	/* position usgs logo over background image. */
+	/* position usgs logo over background. */
 	> .site-logo {
+		/*
+			bottom padding of 0
+			+ overflow: hidden
+			+ image height 140%
+			= hide "science for a changing world" on small screens.
+		*/
+		background-color: $site-title-background-color;
 		display: block;
+		height: 42px;
+		left: 0;
+		overflow: hidden;
+		padding: 14px 14px 0;
 		position: absolute;
-		left: 14px;
-		top: 14px;
-		color: transparent;
-		width: 101px;
-		height: 50%;
-		background-size: auto 140%;
-		background-image: url("/theme/images/usgs-logo.svg");
-		background-repeat: no-repeat;
+		top: 0;
 
 		> img {
-			display:none;
+			height: 140%;
 		}
 	}
 
@@ -43,15 +47,17 @@
 		/* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
 		margin-bottom:2em;
 
-
 		/* also adjust size of usgs logo */
 		> .site-logo {
-			width: 137px;
-			height: 75%;
-			top:10px;
-			background-size: auto 100%;
-		}
+			background-color:$banner-background-color;
+			padding: 10px 14px;
+			height: 100%;
+			width: 157px;
 
+			> img {
+				height: 100%;
+			}
+		}
 
 		&:after {
 			display:block;
@@ -79,12 +85,24 @@
 }
 
 @media print {
+	/** Only show USGS logo when printing, requires background colors... */
 	[role="banner"] {
-		visibility:hidden;
-		height:20px;
-		> .site-logo > img {
-			visibility:visible;
-			display:inline;
+		height: 34px;
+		width: 106px;
+		padding: 3px;
+		margin: 16px 16px 0;
+
+		> * {
+			visibility:hidden;
+		}
+
+		> .site-logo {
+			left: 3px;
+			top: 3px;
+			height: 28px;
+			padding: 0;
+			width: 101px;
+			visibility: visible;
 		}
 	}
 }
