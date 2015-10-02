@@ -1,7 +1,7 @@
 
 [role="banner"] {
-  height:56px;
-  position:relative;
+  height: 56px;
+  position: relative;
   background-color: $site-title-background-color;
 
   /* position usgs logo over background. */
@@ -28,30 +28,30 @@
 
   /* visually hide navigation jumplink. */
   > .jumplink-navigation {
-    display:block;
-    position:absolute;
-    left:-9999px;
-    top:0;
+    display: block;
+    position: absolute;
+    left: -9999px;
+    top: 0;
   }
 
 
   @media screen and (min-width: $breakpoint-offcanvas) {
 
     /* make banner larger on large screens. */
-    background-color:$banner-background-color;
-    background-size:auto 100%;
-    background-repeat:no-repeat;
-    background-image:url('#{$banner-image}');
-    height:72px;
-    background-position:164px 0;
+    background-color: $banner-background-color;
+		background-image: url('#{$banner-image}');
+		background-position: 164px 0;
+    background-repeat: no-repeat;
+		background-size: auto 100%;
+    height: 72px;
     /* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
     margin-bottom:2em;
 
     /* also adjust size of usgs logo */
     > .site-logo {
-      background-color:$banner-background-color;
+      background-color: $banner-background-color;
+			height: 100%;
       padding: 10px 14px;
-      height: 100%;
       width: 157px;
 
       > img {
@@ -60,24 +60,22 @@
     }
 
     &:after {
-      display:block;
-      position:absolute;
-      top:100%;
-      left:0;
-      right:0;
-
-      padding:0.25em 0 0.25em $horizontal-spacing;
-      border:1px solid white;
-      border-width:1px 0;
-      font-family:'helvetica neue', arial, sans-serif;
-      font-size:1em;
-      text-shadow: 0 0 2px rgba(0,0,0,0.6);
-      line-height:1.5;
-      font-weight:bold;
-
-      content:$site-title;
-      color:$site-title-color;
-      background-color:$site-title-background-color;
+			background-color: $site-title-background-color;
+			border: 1px solid white;
+      border-width: 1px 0;
+			color: $site-title-color;
+      content: $site-title;
+      display: block;
+			font-family: 'helvetica neue', arial, sans-serif;
+      font-size: 1em;
+			font-weight: bold;
+      left: 0;
+			line-height: 1.5;
+      right: 0;
+			padding: 0.25em 0 0.25em $horizontal-spacing;
+			position: absolute;
+			text-shadow: 0 0 2px rgba(0,0,0,0.6);
+			top: 100%;
     }
 
   }
@@ -86,9 +84,6 @@
 
 
 [role="banner"] > .cooperators {
-  /* hide banner cooperator logos on small screens. */
-  display: none;
-
   /* banner cooperator styles. */
   background-color: $banner-background-color;
   height: 100%;
@@ -99,6 +94,8 @@
   top: 0;
   white-space: nowrap;
 
+	/* hide banner cooperator logos on small screens. */
+  display: none;
   @media screen and (min-width: $breakpoint-offcanvas) {
     display: block;
   }
@@ -122,18 +119,18 @@
 @media print {
   /** Only show USGS logo when printing, requires background colors... */
   [role="banner"] {
+		background-color: #fff;
     height: 0;
+		margin: 0;
+		padding: 0;
+		visibility:hidden;
     width: 100%;
-    background-color: #fff;
-    padding: 0;
-    margin: 0;
-    visibility:hidden;
 
     &:after {
+			color: #333;
+			content: 'U.S. Geological Survey - ' $site-title;
       display: block;
-      content: 'U.S. Geological Survey - ' $site-title;
       visibility: visible;
-      color: #666;
     }
   }
 
