@@ -1,8 +1,9 @@
 button {
-	position: relative; /* used by before/after selectors */
-	line-height: 4rem;
-	padding: 0 1em;
-	margin: 4px 2px;
+	position:relative; /* used by before/after selectors */
+	font-size:1em;
+	line-height:1;
+	padding:1rem 2rem;
+	margin:4px 2px;
 	color: #333;
 	background: #f8f8f8;
 	text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
@@ -73,6 +74,7 @@ button {
 		cursor:text;
 		box-shadow:none;
 		z-index:1;
+		cursor: not-allowed;
 	}
 
 	// YES/NO icon styling
@@ -146,6 +148,5 @@ button {
 @media screen and (min-width: $breakpoint-offcanvas) {
 	button {
 		font-size: 0.8125em;
-		line-height: 3rem;
 	}
 }
