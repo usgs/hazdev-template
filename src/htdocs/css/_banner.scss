@@ -122,22 +122,22 @@
 @media print {
   /** Only show USGS logo when printing, requires background colors... */
   [role="banner"] {
-    height: 34px;
-    width: 106px;
-    padding: 3px;
-    margin: 16px 16px 0;
+    height: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    visibility:hidden;
 
-    > * {
-      visibility:hidden;
-    }
-
-    > .site-logo {
-      left: 3px;
-      top: 3px;
-      height: 28px;
-      padding: 0;
-      width: 101px;
+    &:after {
+      display: block;
+      content: 'U.S. Geological Survey - ' $site-title;
       visibility: visible;
+      color: #666;
     }
+  }
+
+  [role="main"] {
+    padding: 1em 0 0 !important;
   }
 }
