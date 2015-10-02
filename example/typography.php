@@ -24,7 +24,6 @@ not be used anywhere else:
 
 
 <h1>h1 Title</h1>
-<h1 class="serif">h1 Title</h1>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -42,7 +41,6 @@ deserunt mollit anim id est laborum.
 </p>
 
 <h2>h2 Header</h2>
-<h2 class="serif">h2 Header</h2>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -54,7 +52,6 @@ deserunt mollit anim id est laborum.
 </p>
 
 <h3>h3 Header</h3>
-<h3 class="serif">h3 Header</h3>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -66,7 +63,6 @@ deserunt mollit anim id est laborum.
 </p>
 
 <h4>h4 Header</h4>
-<h4 class="serif">h4 Header</h4>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -78,7 +74,6 @@ deserunt mollit anim id est laborum.
 </p>
 
 <h5>h5 Header</h5>
-<h5 class="serif">h5 Header</h5>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -90,7 +85,6 @@ deserunt mollit anim id est laborum.
 </p>
 
 <h6>h6 Header</h6>
-<h6 class="serif">h6 Header</h6>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
