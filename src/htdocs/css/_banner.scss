@@ -1,90 +1,140 @@
 
 [role="banner"] {
-	height:56px;
-	position:relative;
-	background-color: $site-title-background-color;
+  height: 56px;
+  position: relative;
+  background-color: $site-title-background-color;
 
-	/* position usgs logo over background image. */
-	> .site-logo {
-		display: block;
-		position: absolute;
-		left: 14px;
-		top: 14px;
-		color: transparent;
-		width: 101px;
-		height: 50%;
-		background-size: auto 140%;
-		background-image: url("/theme/images/usgs-logo.svg");
-		background-repeat: no-repeat;
+  /* position usgs logo over background. */
+  > .site-logo {
+    /*
+      bottom padding of 0
+      + overflow: hidden
+      + image height 140%
+      = hide "science for a changing world" on small screens.
+    */
+    background-color: $site-title-background-color;
+    display: block;
+    height: 42px;
+    left: 0;
+    overflow: hidden;
+    padding: 14px 14px 0;
+    position: absolute;
+    top: 0;
 
-		> img {
-			display:none;
-		}
-	}
+    > img {
+      height: 140%;
+    }
+  }
 
-	/* visually hide navigation jumplink. */
-	> .jumplink-navigation {
-		display:block;
-		position:absolute;
-		left:-9999px;
-		top:0;
-	}
-
-
-	@media screen and (min-width: $breakpoint-offcanvas) {
-
-		/* make banner larger on large screens. */
-		background-color:$banner-background-color;
-		background-size:auto 100%;
-		background-repeat:no-repeat;
-		background-image:url('#{$banner-image}');
-		height:72px;
-		background-position:164px 0;
-		/* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
-		margin-bottom:2em;
+  /* visually hide navigation jumplink. */
+  > .jumplink-navigation {
+    display: block;
+    position: absolute;
+    left: -9999px;
+    top: 0;
+  }
 
 
-		/* also adjust size of usgs logo */
-		> .site-logo {
-			width: 137px;
-			height: 75%;
-			top:10px;
-			background-size: auto 100%;
-		}
+  @media screen and (min-width: $breakpoint-offcanvas) {
 
+    /* make banner larger on large screens. */
+    background-color: $banner-background-color;
+    background-image: url('#{$banner-image}');
+    background-position: 164px 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 72px;
+    /* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
+    margin-bottom:2em;
 
-		&:after {
-			display:block;
-			position:absolute;
-			top:100%;
-			left:0;
-			right:0;
+    /* also adjust size of usgs logo */
+    > .site-logo {
+      background-color: $banner-background-color;
+      height: 100%;
+      padding: 10px 14px;
+      width: 157px;
 
-			padding:0.25em 0 0.25em $horizontal-spacing;
-			border:1px solid white;
-			border-width:1px 0;
-			font-family:'helvetica neue', arial, sans-serif;
-			font-size:1em;
-			text-shadow: 0 0 2px rgba(0,0,0,0.6);
-			line-height:1.5;
-			font-weight:bold;
+      > img {
+        height: 100%;
+      }
+    }
 
-			content:$site-title;
-			color:$site-title-color;
-			background-color:$site-title-background-color;
-		}
+    &:after {
+      background-color: $site-title-background-color;
+      border: 1px solid white;
+      border-width: 1px 0;
+      color: $site-title-color;
+      content: $site-title;
+      display: block;
+      font-family: 'helvetica neue', arial, sans-serif;
+      font-size: 1em;
+      font-weight: bold;
+      left: 0;
+      line-height: 1.5;
+      right: 0;
+      padding: 0.25em 0 0.25em $horizontal-spacing;
+      position: absolute;
+      text-shadow: 0 0 2px rgba(0,0,0,0.6);
+      top: 100%;
+    }
 
-	}
+  }
 
 }
 
+
+[role="banner"] > .cooperators {
+  /* banner cooperator styles. */
+  background-color: $banner-background-color;
+  height: 100%;
+  left: 157px;
+  overflow: hidden;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+
+  /* hide banner cooperator logos on small screens. */
+  display: none;
+  @media screen and (min-width: $breakpoint-offcanvas) {
+    display: block;
+  }
+}
+
+/* cooperator links/logos */
+.cooperator {
+  display: inline-block;
+  margin-right: 14px;
+
+  &,
+  > img {
+    height: 100%;
+    max-width: none;
+  }
+}
+
+
+
+
 @media print {
-	[role="banner"] {
-		visibility:hidden;
-		height:20px;
-		> .site-logo > img {
-			visibility:visible;
-			display:inline;
-		}
-	}
+  /** Only show USGS logo when printing, requires background colors... */
+  [role="banner"] {
+    background-color: #fff;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    visibility:hidden;
+    width: 100%;
+
+    &:after {
+      color: #333;
+      content: 'U.S. Geological Survey - ' $site-title;
+      display: block;
+      visibility: visible;
+    }
+  }
+
+  [role="main"] {
+    padding: 1em 0 0 !important;
+  }
 }

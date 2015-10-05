@@ -136,6 +136,27 @@ $CONTACT_URL = '/contactus/?to={CONTACT}';
 ```
 
 
+### $COOPERATORS
+
+Cooperator logo(s).
+
+#### With link to cooperator
+```php
+$COOPERATORS =
+    '<a class="cooperator" href="http://anss.org/">' .
+      '<img src="/theme/images/anss-logo.svg"' .
+      ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>' .
+    '</a>';
+```
+
+### Without link to cooperator
+```php
+$COOPERATORS =
+    '<img class="cooperator" src="/theme/images/anss-logo.svg"' .
+      ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>';
+```
+
+
 ### $SOCIAL
 
 Configure sharing links in page footer.
