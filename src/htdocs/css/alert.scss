@@ -1,35 +1,87 @@
 .alert {
-	display:block;
-	padding: 0.75em 1em;
-	border-radius: 4px;
-	text-shadow: 0 1px 1px #fff;
-
-	background: #f8f8f8;
-	color: #555;
-	border: 1px solid #d8d8d8;
+  background-color: #eeeeee;
+  background-size: 4rem;
+  margin-top: 1.5em;
+  padding: 1em;
+  padding-left: 1rem;
+  position: relative;
 }
 
 .info {
-	color: #2d7091;
-	background-color: #ebf7fd;
-	border-color: rgba(45,112,145,.3);
+  background-color: #E8F5FA;
+  padding-left: 5rem;
+  &:before {
+    background-image: url('/theme/images/alerts.svg');
+    background-position: -78px;
+    background-repeat: no-repeat;
+    background-size: 104px 26px;
+    content: '';
+    display: block;
+    left: 5px;
+    height: 26px;
+    position: absolute;
+    top: 5px;
+    width: 26px;
+  }
 }
 
 .success {
-	color: #659f13;
-	background-color: #f2fae3;
-	border-color: rgba(101,159,19,.3);
+  background-color: #E5FCDE;
+  padding-left: 5rem;
+  &:before {
+    background-image: url('/theme/images/alerts.svg');
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-size: 104px 26px;
+    content: '';
+    display: block;
+    height: 26px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 26px;
+  }
 }
 
 .warning {
-	color: #e28327;
-	background-color: #fffceb;
-	border-color: rgba(226,131,39,.3);
+  padding-left: 5rem;
+  background-color: #FDF7DC;
+  &:before {
+    background-image: url('/theme/images/alerts.svg');
+    background-position: -26px;
+    background-repeat: no-repeat;
+    background-size: 104px 26px;
+    content: '';
+    display: block;
+    height: 26px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 26px;
+  }
 }
 
 .error {
-	color: #d85030;
-	background-color: #fff1f0;
-	border-color: rgba(216,80,48,.3);
+  padding-left: 5rem;
+  background-color: #F9DEDE;
+  &:before {
+    background-image: url('/theme/images/alerts.svg');
+    background-position: -52px;
+    background-repeat: no-repeat;
+    background-size: 104px 26px;
+    content: '';
+    display: block;
+    height: 26px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 26px;
+  }
 }
 
+.remove-icon {
+  padding-left: 1rem;
+  &:before {
+    background-image: none;
+  }
+}
