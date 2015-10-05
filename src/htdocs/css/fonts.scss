@@ -2,10 +2,8 @@
     font-family: 'Source Sans Pro';
     font-style: normal;
   	font-weight: 400;
-    src: url('../fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
-         url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'),
-         url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'),
-         url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    src: url('fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff') format('woff'),
+         url('fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.ttf') format('truetype');
 
 }
 
@@ -13,10 +11,8 @@
     font-family: 'Source Sans Pro';
     font-style: italic;
     font-weight: 400;
-    src: url('../fonts/sourcesanspro-italic-webfont.woff2') format('woff2'),
-         url('../fonts/sourcesanspro-italic-webfont.woff') format('woff'),
-         url('../fonts/sourcesanspro-italic-webfont.ttf') format('truetype'),
-         url('../fonts/sourcesanspro-italic-webfont.svg#source_sans_proitalic') format('svg');
+    src: url('fonts/Source_Sans_Pro/sourcesanspro-italic-webfont.woff') format('woff'),
+         url('fonts/Source_Sans_Pro/sourcesanspro-italic-webfont.ttf') format('truetype');
 
 }
 
@@ -24,10 +20,8 @@
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/sourcesanspro-bold-webfont.woff2') format('woff2'),
-         url('../fonts/sourcesanspro-bold-webfont.woff') format('woff'),
-         url('../fonts/sourcesanspro-bold-webfont.ttf') format('truetype'),
-         url('../fonts/sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+    src: url('fonts/Source_Sans_Pro/sourcesanspro-bold-webfont.woff') format('woff'),
+         url('fonts/Source_Sans_Pro/sourcesanspro-bold-webfont.ttf') format('truetype');
 
 }
 
@@ -35,10 +29,8 @@
     font-family: 'Merriweather';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/merriweather-regular-webfont.woff2') format('woff2'),
-         url('../fonts/merriweather-regular-webfont.woff') format('woff'),
-         url('../fonts/merriweather-regular-webfont.ttf') format('truetype'),
-         url('../fonts/merriweather-regular-webfont.svg#source_sans_proitalic') format('svg');
+    src: url('fonts/Merriweather/merriweather-regular-webfont.woff') format('woff'),
+         url('fonts/Merriweather/Merriweather-Regular.ttf') format('truetype');
 
 }
 
@@ -46,10 +38,8 @@
     font-family: 'Merriweather';
     font-style: italic;
     font-weight: 400;
-    src: url('../fonts/merriweather-italic-webfont.woff2') format('woff2'),
-         url('../fonts/merriweather-italic-webfont.woff') format('woff'),
-         url('../fonts/merriweather-italic-webfont.ttf') format('truetype'),
-         url('../fonts/merriweather-italic-webfont.svg#source_sans_proitalic') format('svg');
+    src: url('fonts/Merriweather/merriweather-italic-webfont.woff') format('woff'),
+         url('fonts/Merriweather/Merriweather-Italic.ttf') format('truetype');
 
 }
 
@@ -57,9 +47,7 @@
     font-family: 'Merriweather';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/merriweather-bold-webfont.woff2') format('woff2'),
-         url('../fonts/merriweather-bold-webfont.woff') format('woff'),
-         url('../fonts/merriweather-bold-webfont.ttf') format('truetype'),
-         url('../fonts/merriweather-bold-webfont.svg#source_sans_probold') format('svg');
+    src: url('fonts/Merriweather/merriweather-bold-webfont.woff') format('woff'),
+         url('fonts/Merriweather/Merriweather-Bold.ttf') format('truetype');
 
 }
