@@ -70,6 +70,28 @@
 <p class="alert error remove-icon">
 	To remove error icon add the <code>.remove-icon</code> class.
 </p>
+
+<div class="alert info">
+	<h3>Header</h3>
+	<p>
+		Multiple lines of text Lorem ipsum dolor sit amet, consectetur adipiscing
+		elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+		enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+		aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+		occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+		anim id est laborum.
+	</p>
+</div>
+
+<h3 class="subheading">Header Usage</h3>
+<pre>
+<code>&lt;div class="alert info"&gt;
+ &lt;h3&gt;&hellip;&lt;/h3&gt;
+ &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
 <h3 class="subheading">Usage</h3>
 <pre>
 <code>&lt;p class="alert"&gt;&hellip;&lt;/p&gt;
@@ -77,38 +99,4 @@
 &lt;p class="alert success"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert warning"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert error"&gt;&hellip;&lt;/p&gt;</code>
-</pre>
-
-
-
-<h3 class="subheading">Example 2</h3>
-<p>
-	The alert classes <code>.info</code>, <code>.success</code>,
-	<code>.warning</code>, and <code>.error</code>, can be applied to
-	any HTML elements. If they are applied without the <code>.alert</code>
-	sibling class then they will only inherit a color, background-color,
-	and border-color.
-</p>
-<dl class="horizontal example">
-	<dt>Input Elements</dt>
-	<dd>
-		<input type="text" class="error" value="Error state">
-	</dd>
-	<dt>Span Elements</dt>
-	<dd>
-		<span class="alert info">
-			This text is inside a <code>&lt;span&gt;</code> tag styled with
-			<code>.alert .info</code>
-		</span>
-	</dd>
-	<dt>Div Elements</dt>
-	<dd>
-		<div class="alert success help">&#10003;</div>
-	</dd>
-</dl>
-<h3 class="subheading">Usage</h3>
-<pre>
-<code>&lt;input type="text" class="alert error" value="Error state"&gt;
-&lt;span class="alert info"&gt;&hellip;&lt;/span&gt;
-&lt;div class="alert success help""&gt;&#10003;&lt;/div&gt;</code>
 </pre>
