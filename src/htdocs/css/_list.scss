@@ -91,3 +91,24 @@ dl.horizontal {
     }
   }
 }
+
+// Unstyled lists
+
+.usa-unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: list-item;
+    margin: 0;
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}
