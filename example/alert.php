@@ -84,13 +84,6 @@
 	</p>
 </div>
 
-<h3 class="subheading">Header Usage</h3>
-<pre>
-<code>&lt;div class="alert info"&gt;
- &lt;h3&gt;&hellip;&lt;/h3&gt;
- &lt;p&gt;&hellip;&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
 
 <h3 class="subheading">Usage</h3>
 <pre>
@@ -100,3 +93,11 @@
 &lt;p class="alert warning"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert error"&gt;&hellip;&lt;/p&gt;</code>
 </pre>
+
+<h3 class="subheading">Header Usage</h3>
+<pre>
+<code>&lt;div class="alert info"&gt;
+ &lt;h3&gt;&hellip;&lt;/h3&gt;
+ &lt;p&gt;&hellip;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
