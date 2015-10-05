@@ -7,19 +7,12 @@ if (!isset($TEMPLATE)) {
 			<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
 
 			<style>
-				textarea {
-					width: 36em;
-					height: 10em;
-				}
 
-				.vertical > button {
-					margin: 2em 0 0;
-				}
-
-				.sortExample,
-				.searchExample {
-					margin: 1em 0 0;
-				}
+				.preview {
+          border: 1px solid #eee;
+          margin: 1em 0;
+          padding: .25em 3rem;
+        }
 
 			</style>
 	';
@@ -30,113 +23,83 @@ if (!isset($TEMPLATE)) {
 ?>
 
 
-<p>
-	The inputs, labels, and other form elements on a form are vertical
-	when the <code>.vertical</code> class is applied to the container.
-</p>
+<div class="preview">
+  <h2>Text input Examples</h2>
+  <form>
+    <label for="input-type-text">Text input label</label>
+    <input id="input-type-text" name="input-type-text" type="text" />
 
-<h2>Form Elements</h2>
-<p>
-	Here are some examples of form elements displayed with their default styles.
-</p>
+    <label for="input-focus">Text input focused</label>
+    <input class="usa-input-focus" id="input-focus" name="input-focus" type="text" />
 
-<h3>Sort Example</h3>
-<div class="sortExample">
-	<label>Sort by
-		<select class="collection-selectbox">
-			<option value="0">Location</option>
-			<option value="1">MMI</option>
-			<option value="2">Responses</option>
-			<option value="3" selected="selected">Distance</option>
-		</select>
-	</label>
-	<button type="submit">Download</button>
+    <div class="usa-input-error">
+      <label class="usa-input-error-label" for="input-error">Text input error</label>
+      <span class="usa-input-error-message" id="input-error-message" role="alert">Helpful error message</span>
+      <input id="input-error" name="input-error" type="text" aria-describedby="input-error-message" />
+    </div>
+
+    <label for="input-success">Text input success</label>
+    <input class="usa-input-success" id="input-success" name="input-success" type="text" />
+
+    <label for="input-type-textarea">Text area label</label>
+    <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
+  </form>
 </div>
 
-<h3>Search Example</h3>
-<div class="searchExample">
-	<label>Search
-		<input type="search" placeholder="Search" />
-	</label>
-	<button type="submit">Search</button>
+<div class="preview">
+  <h2>Dropdown Example</h2>
+  <form>
+  	<label>Dropdown label
+  		<select class="collection-selectbox">
+  			<option value="0">Location</option>
+  			<option value="1">MMI</option>
+  			<option value="2">Responses</option>
+  			<option value="3" selected="selected">Distance</option>
+  		</select>
+  	</label>
+  </form>
 </div>
 
+<div class="preview">
+  <h2>Checkboxes Example</h2>
+  <fieldset class="usa-fieldset-inputs">
+    <legend class="usa-sr-only">Checkboxes</legend>
+    <ul class="usa-unstyled-list">
+      <li>
+        <input type="checkbox" id="regularCheckbox1" value="checkbox 1" />
+        <label for="regularCheckbox1">Regular Checkbox 1</label>
+      </li>
+      <li>
+        <input type="checkbox" id="secondRegularCheckbox1" value="checkbox 2" />
+        <label for="secondRegularCheckbox1">Regular Checkbox 2</label>
+      </li>
+      <li>
+        <input type="checkbox" id="thirdRegularCheckbox1" value="checkbox 2" />
+        <label for="thirdRegularCheckbox1">Regular Checkbox 3</label>
+      </li>
+    </ul>
+  </fieldset>
+</div>
 
-<h2>Vertical Form</h2>
-<form class="vertical">
+<div class="preview">
+  <h2>Radio Buttons Example</h2>
+  <fieldset class="usa-fieldset-inputs">
+    <legend class="usa-sr-only">Radio Buttons</legend>
+    <ul class="usa-unstyled-list">
+      <li>
+        <input type="radio" name="radios" id="regularRadio1" value="radio 1" />
+        <label for="regularRadio1">Regular Radio 1</label>
+      </li>
+      <li>
+        <input type="radio" name="radios" id="secondRegularRadio1" value="radio 2" />
+        <label for="secondRegularRadio1">Regular Radio 2</label>
+      </li>
+    </ul>
+  </fieldset>
+</div>
 
-	<!-- Label and text input -->
-	<label for="regularInput1">Regular Input</label>
-	<input type="text" id="regularInput1" placeholder="Placeholder Text"/>
-
-	<!-- Label and textarea -->
-	<label for="regularTextarea1">Regular Textarea</label>
-	<textarea id="regularTextarea1"></textarea>
-
-	<!-- Label and select list -->
-	<label for="selectList1">Select List</label>
-	<select id="selectList1">
-		<option value="Option 1">Option 1</option>
-		<option value="Option 2">Option 2</option>
-		<option value="Option 3">Option 3</option>
-	</select>
-
-	<!-- Wrap checkbox/radio button groups in fieldsets -->
-	<fieldset>
-
-		<!-- Give the fieldset a legend -->
-		<legend>Checkboxes</legend>
-
-		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
-		<label for="regularCheckbox1">
-			<input type="checkbox" id="regularCheckbox1" value="checkbox 1" />
-			Regular Checkbox 1
-		</label>
-
-		<label for="secondRegularCheckbox1">
-			<input type="checkbox" id="secondRegularCheckbox1" value="checkbox 2" />
-			Regular Checkbox 2
-		</label>
-
-		<label for="thirdRegularCheckbox1">
-			<input type="checkbox" id="thirdRegularCheckbox1" value="checkbox 2" />
-			Regular Checkbox 3
-		</label>
-	</fieldset>
-
-	<fieldset>
-		<legend>Radio Buttons</legend>
-		<label for="regularRadio1">
-			<input type="radio" name="radios" id="regularRadio1" value="radio 1" />
-			Regular Radio 1
-		</label>
-		<label for="secondRegularRadio1">
-			<input type="radio" name="radios" id="secondRegularRadio1" value="radio 2" />
-			Regular Radio 2
-		</label>
-	</fieldset>
-
-	<button type="submit">Submit Form</button>
-</form>
 <h2>Usage</h2>
-<pre><code>&lt;form class="vertical"&gt;
-	&lt;label for="regularInput"&gt;Regular Input&lt;/label&gt;
-	&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
-	&hellip;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Radio Buttons&lt;/legend&gt;
-		&lt;label for="regularRadio"&gt;
-			&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
-			Regular Radio
-		&lt;/label&gt;
-		&lt;label for="secondRegularRadio"&gt;
-			&lt;input type="radio" name="radios" id="secondRegularRadio" value="radio 2" /&gt;
-			Regular Radio
-		&lt;/label&gt;
-	&lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre>
-
+Inspect an element to see how it was used in the desired example.
 
 <h2>Fieldset Example</h2>
 <p>
@@ -151,7 +114,7 @@ if (!isset($TEMPLATE)) {
 		<label for="regularRadio3">
 			<input type="radio" name="radios" id="regularRadio3" value="radio 1" />
 			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile. 
+			questioning let me think on it for ahile.
 		</label>
 		<label for="secondRegularRadio3">
 			<input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" />
