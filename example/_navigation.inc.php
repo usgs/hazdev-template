@@ -4,8 +4,8 @@ echo navGroup(navItem('/index.php', 'The Template'),
     navItem('/button.php', 'Buttons') .
     navItem('/flexible-grid.php', 'Flexible Grid') .
     navItem('/form.php', 'Forms') .
-    navItem('/list.php', 'Lists') .
     navItem('/icons.php', 'Icons') .
+    navItem('/list.php', 'Lists') .
     navItem('/text.php', 'Text Level Semantics') .
     navItem('/typography.php', 'Typography')
   );
