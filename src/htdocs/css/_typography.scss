@@ -1,43 +1,120 @@
 html {
-	font-size: 10px;
-	-webkit-text-size-adjust: 100%;
-	text-size-adjust: 100%;
+  font-family: $font-sans;
+  font-size: 17px;
 }
 
-body {
-	font-size:1.6rem;
-	line-height:1.5;
-	font-family:'helvetica neue', arial, sans-serif;
+p {
+  line-height: $base-line-height;
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
 }
 
-// apply same margin for each header for consistency
-h1, h2, h3, h4, h5, h6 {
-	margin:2.4rem 0 0; /* 1.5em of base font-size */
-	line-height:1.2;
-	color:#333;
-	font-weight: normal;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  clear: both;
+  font-family: $font-serif;
+  line-height: $heading-line-height;
+  margin: {
+    top: 1.5em;
+    bottom: .5em;
+  }
+}
+
+header > h1 {
+  margin-top: 0.75em;
 }
 
 h1 {
-	font-size: 2em;
+  font-size: 2.35em;
 }
 
 h2 {
-	font-size: 1.625em;
+  font-size: 1.7625em;    // 3/4 the size of h1
 }
 
 h3 {
-	font-size: 1.375em;
+  font-size: 1.175em;     // 1/2 the size of h1
 }
 
 h4 {
-	font-size: 1.125em;
+  font-size: 1em;         // 17/40 the size of h1
 }
 
 h5 {
-	font-size: 1em;
+	font-size: .88125em;    // 3/8 the size of h1
 }
 
 h6 {
-	font-size: 0.875em;
+  font-family: $font-sans;
+  font-size: .763755em;   // 13/40 the size of h1
+  font-weight: $font-normal;
+  text-transform: uppercase;
+}
+
+// Remove user agent styles
+cite,
+var,
+address,
+dfn {
+ font-style: normal;
+}
+
+/** Text Level Semantics **/
+
+a {
+  color: $link-color;
+
+  &:active {
+    color: $link-color-active;
+  }
+  &:visited {
+    color: $link-color;
+  }
+}
+
+abbr {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+pre,
+code {
+  font-family: $font-code;
+  color: #555;
+  background: #f8f8f8;
+  border-radius: 3px;
+}
+
+:not(pre)>code {
+  border: 1px solid #d8d8d8;
+  padding: 2px 4px;
+  // do not break code element unless inside pre tag
+  white-space: nowrap;
+}
+
+code {
+  font-size: 0.8em;
+}
+
+pre {
+  border: 1px solid #d8d8d8;
+  padding: 10px 15px;
+  overflow: scroll;
+  margin: 1em 0 0;
+}
+
+pre > code {
+  word-wrap: normal;
+}
+
+mark {
+  background-color: #ffa;
+  padding: 2px 4px;
+}
+
+sup,
+sub {
+  font-size: 0.625em;
+  margin-left: 2px;
 }

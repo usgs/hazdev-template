@@ -4,17 +4,6 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Typography';
 	$NAVIGATION = true;
 
-	$HEAD = '
-		<style>
-			hr {
-				padding:0;
-				margin:0;
-				border:none;
-				border-top:1px solid #ccc;
-			}
-		</style>
-	';
-
 	include('template.inc.php');
 }
 
@@ -34,7 +23,7 @@ not be used anywhere else:
 </code></pre>
 
 
-<h1>h1 Header</h1>
+<h1>h1 Title</h1>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore

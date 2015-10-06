@@ -11,6 +11,8 @@
     }
 
   ?>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'> -->
+  <!-- <link href='/css/fonts.css?family=Source+Sans+Pro:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'> -->
 </head>
 <body>
 
