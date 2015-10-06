@@ -1,9 +1,7 @@
 .alert {
   background-color: #eeeeee;
-  background-size: 4rem;
   margin-top: 1em;
   padding: 1em;
-  padding-left: 2rem;
   position: relative;
 
   > h1,
@@ -20,18 +18,18 @@
 .info,
 .success,
 .warning {
-  padding-left: 5.5rem;
+  padding-left: 3.5em;
 
   &:before {
     background-repeat: no-repeat;
-    background-size: 104px 26px;
+    background-size: 6em 1.5em;
     content: '';
     display: block;
     left: 1em;
-    height: 26px;
+    height: 1.5em;
     position: absolute;
     top: 1em;
-    width: 26px;
+    width: 1.5em;
   }
 }
 
@@ -40,7 +38,7 @@
 
   &:before {
     background-image: url('/theme/images/alerts.svg');
-    background-position: -78px;
+    background-position: -4.5em;
   }
 }
 
@@ -49,7 +47,7 @@
 
   &:before {
     background-image: url('/theme/images/alerts.svg');
-    background-position: 0px;
+    background-position: 0em;
   }
 }
 
@@ -58,7 +56,7 @@
 
   &:before {
     background-image: url('/theme/images/alerts.svg');
-    background-position: -26px;
+    background-position: -1.5em;
   }
 }
 
@@ -67,7 +65,7 @@
 
   &:before {
     background-image: url('/theme/images/alerts.svg');
-    background-position: -52px;
+    background-position: -3em;
   }
 }
 
