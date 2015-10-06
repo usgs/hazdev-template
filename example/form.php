@@ -25,6 +25,9 @@ if (!isset($TEMPLATE)) {
 
 <div class="preview">
   <h2>Text input Examples</h2>
+  <p>
+    Text input can span single or multiple lines.
+  </p>
   <form>
     <label for="input-type-text">Text input label</label>
     <input id="input-type-text" name="input-type-text" type="text" />
@@ -51,10 +54,10 @@ if (!isset($TEMPLATE)) {
   <form>
   	<label>Dropdown label
   		<select class="collection-selectbox">
-  			<option value="0">Location</option>
-  			<option value="1">MMI</option>
-  			<option value="2">Responses</option>
-  			<option value="3" selected="selected">Distance</option>
+  			<option value="0">Option 1</option>
+  			<option value="1">Option 2</option>
+  			<option value="2">Option 3</option>
+  			<option value="3" selected="selected">Option 4 - default</option>
   		</select>
   	</label>
   </form>
@@ -62,20 +65,28 @@ if (!isset($TEMPLATE)) {
 
 <div class="preview">
   <h2>Checkboxes Example</h2>
+  <p>
+    Checkboxes should be used when multiple selections are allowed, or
+    to enable/disable a feature.
+  </p>
   <fieldset class="usa-fieldset-inputs">
     <legend class="usa-sr-only">Checkboxes</legend>
     <ul class="usa-unstyled-list">
       <li>
-        <input type="checkbox" id="regularCheckbox1" value="checkbox 1" />
-        <label for="regularCheckbox1">Regular Checkbox 1</label>
+        <input type="checkbox" id="regular-checkbox-1" value="checkbox 1" checked />
+        <label for="regular-checkbox-1">Regular Checkbox 1 - checked by default</label>
       </li>
       <li>
-        <input type="checkbox" id="secondRegularCheckbox1" value="checkbox 2" />
-        <label for="secondRegularCheckbox1">Regular Checkbox 2</label>
+        <input type="checkbox" id="regular-checkbox-2" value="checkbox 2" />
+        <label for="regular-checkbox-2">Regular Checkbox 2</label>
       </li>
       <li>
-        <input type="checkbox" id="thirdRegularCheckbox1" value="checkbox 2" />
-        <label for="thirdRegularCheckbox1">Regular Checkbox 3</label>
+        <input type="checkbox" id="regular-checkbox-3" value="checkbox 3" />
+        <label for="regular-checkbox-3">Regular Checkbox 3</label>
+      </li>
+      <li>
+        <input type="checkbox" id="regular-checkbox-4" value="checkbox 4" disabled/>
+        <label for="regular-checkbox-4">Regular Checkbox 4 - disabled</label>
       </li>
     </ul>
   </fieldset>
@@ -83,77 +94,24 @@ if (!isset($TEMPLATE)) {
 
 <div class="preview">
   <h2>Radio Buttons Example</h2>
+  <p>
+    Radio buttons should be used when only 1 selection is allowed.
+  </p>
   <fieldset class="usa-fieldset-inputs">
     <legend class="usa-sr-only">Radio Buttons</legend>
     <ul class="usa-unstyled-list">
       <li>
-        <input type="radio" name="radios" id="regularRadio1" value="radio 1" />
-        <label for="regularRadio1">Regular Radio 1</label>
+        <input type="radio" name="radios" id="regular-radio-1" value="radio 1" checked />
+        <label for="regular-radio-1">Regular Radio 1 - selected by default</label>
       </li>
       <li>
-        <input type="radio" name="radios" id="secondRegularRadio1" value="radio 2" />
-        <label for="secondRegularRadio1">Regular Radio 2</label>
+        <input type="radio" name="radios" id="regular-radio-2" value="radio 2" />
+        <label for="regular-radio-2">Regular Radio 2</label>
+      </li>
+      <li>
+        <input type="radio" name="radios" id="regular-radio-3" value="radio 3" disabled/>
+        <label for="regular-radio-3">Regular Radio 3 - disabled</label>
       </li>
     </ul>
   </fieldset>
 </div>
-
-<h2>Usage</h2>
-Inspect an element to see how it was used in the desired example.
-
-<h2>Fieldset Example</h2>
-<p>
-	This is an example of a <code>fieldset</code> being used to format a question.
-</p>
-<section class="vertical">
-	<fieldset>
-		<legend>
-			I have a long question that I want to wrap on a smaller screen, do you
-			think that this text will wrap?
-		</legend>
-		<label for="regularRadio3">
-			<input type="radio" name="radios" id="regularRadio3" value="radio 1" />
-			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile.
-		</label>
-		<label for="secondRegularRadio3">
-			<input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" />
-			Yes
-		</label>
-		<label for="thirdRegularRadio3">
-			<input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" />
-			No
-		</label>
-		<label for="fourthRegularRadio3">
-			<input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" />
-			Maybe
-		</label>
-	</fieldset>
-</section>
-<h2>Usage</h2>
-<pre><code>&lt;section class="vertical"&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;
-			I have a long question that I want to wrap on a smaller screen, do you
-			think that this text will wrap?
-		&lt;/legend&gt;
-		&lt;label for="regularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="regularRadio3" value="radio 1" /&gt;
-			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile.
-		&lt;/label&gt;
-		&lt;label for="secondRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" /&gt;
-			Yes
-		&lt;/label&gt;
-		&lt;label for="thirdRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" /&gt;
-			No
-		&lt;/label&gt;
-		&lt;label for="fourthRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" /&gt;
-			Maybe
-		&lt;/label&gt;
-	&lt;/fieldset&gt;
-&lt;/section&gt;
-</code></pre>
