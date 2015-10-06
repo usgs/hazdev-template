@@ -1,33 +1,32 @@
 /** Stacked should be the default mobile style */
 
 input,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
-input[type="search"],
-input[type="file"],
 input[type="date"],
 input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
 input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
 input[type="time"],
+input[type="url"],
 input[type="week"],
-textarea,
-select  {
+select,
+textarea {
+  appearance: none;
   border: 1px solid $form-input-border-color;
   border-radius: 0;
   box-sizing: border-box;
   color: #000; // standardize on firefox
   display: block;
-  font-size: $base-font-size;
   margin: .2em 0;
   max-width: $input-max-width;
-  width: 100%;
   outline: none;
   padding: 1rem .7em;
-  appearance: none;
+  width: 100%;
 
   &:focus,
   &.usa-input-focus {
@@ -68,14 +67,12 @@ select  {
 
 .usa-input-error-label {
   display: block;
-  font-size: $base-font-size;
   font-weight: $font-bold;
 }
 
 .usa-input-error-message {
   color: $color-secondary-dark;
   display: block;
-  font-size: $base-font-size;
   font-weight: $font-bold;
   padding: {
     bottom: 3px;
@@ -85,14 +82,12 @@ select  {
 
 label {
   display: block;
-  margin: {
-    top: 3rem;
-  }
+  margin-top: 3rem;
   max-width: $input-max-width;
 }
 
 legend {
-  font-size: $h2-font-size;
+  font-size: 1.7625em;
   font-weight: $font-bold;
 }
 
@@ -133,7 +128,7 @@ input[type="radio"] {
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   cursor: pointer;
-  font-weight: 400;
+  font-weight: $font-normal;
   margin-bottom: 0.5em;
 }
 
@@ -238,11 +233,11 @@ input[type=range]::-ms-track {
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #757575;
-  height: 2.2rem;
-  border-radius: 1.5rem;
   background: #eeeeee;
+  border: 1px solid #757575;
+  border-radius: 1.5rem;
   cursor: pointer;
+  height: 2.2rem;
   margin-top: -.65rem;
   width: 2.2rem;
 }
@@ -311,8 +306,8 @@ input[type=range]:focus::-ms-thumb {
 .usa-form-group-day,
 .usa-form-group-month,
 .usa-form-group-year {
-  float: left;
   clear: none;
+  float: left;
   margin-right: 1.5rem;
   width: 5rem;
 }
