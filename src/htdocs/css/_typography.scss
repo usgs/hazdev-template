@@ -59,3 +59,66 @@ address,
 dfn {
  font-style: normal;
 }
+
+/** Text Level Semantics **/
+
+a {
+  color: $link-color;
+
+  &:active {
+    color: $link-color-active;
+  }
+  &:visited {
+    color: $link-color;
+  }
+}
+
+p {
+  margin: 1em 0 0;
+}
+
+abbr {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+pre,
+code {
+  font-family: $font-code;
+  color: #555;
+  background: #f8f8f8;
+  border-radius: 3px;
+}
+
+:not(pre)>code {
+  border: 1px solid #d8d8d8;
+  padding: 2px 4px;
+  // do not break code element unless inside pre tag
+  white-space: nowrap;
+}
+
+code {
+  font-size: 0.8em;
+}
+
+pre {
+  border: 1px solid #d8d8d8;
+  padding: 10px 15px;
+  overflow: scroll;
+  margin: 1em 0 0;
+}
+
+pre > code {
+  word-wrap: normal;
+}
+
+mark {
+  background-color: #ffa;
+  padding: 2px 4px;
+}
+
+sup,
+sub {
+  font-size: 0.625em;
+  margin-left: 2px;
+}
