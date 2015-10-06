@@ -3,12 +3,12 @@
 // Typography
 $em-base: 10px !default;
 $base-font-size: 17px !default;
-$h1-font-size: 2em !default;
-$h2-font-size: 1.625em !default;
-$h3-font-size: 1.375em !default;
-$h4-font-size: 1.125em !default;
-$h5-font-size: 1em !default;
-$h6-font-size: 0.875em !default;
+$h1-font-size: 2.35em !default;
+$h2-font-size: 1.7625em !default;  // 3/4 the size of h1
+$h3-font-size: 1.175em !default;   // 1/2 the size of h1
+$h4-font-size: .99875em !default;  // 17/40 the size of h1
+$h5-font-size: .88125em !default;  // 3/8 the size of h1
+$h6-font-size: .763755em !default; // 13/40 the size of h1
 $base-line-height: 1.5 !default;
 $heading-line-height: 1.3 !default;
 
