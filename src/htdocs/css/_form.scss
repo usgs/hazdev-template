@@ -55,11 +55,6 @@ textarea {
   position: relative;
   right: 1.9rem;
 
-  > input {
-    border: 3px solid $color-secondary-dark;
-    width: calc(100% + 1.5rem);
-  }
-
   > label {
     margin-top: 0;
   }
@@ -68,6 +63,11 @@ textarea {
 .usa-input-error-label {
   display: block;
   font-weight: $font-bold;
+
+  > input {
+    border: 3px solid $color-secondary-dark;
+    width: calc(100% + 1.5rem);
+  }
 }
 
 .usa-input-error-message {
@@ -140,7 +140,6 @@ input[type="radio"] + label::before {
   content: '\a0';
   display: inline-block;
   height: 1.8rem;
-  line-height: .8;
   margin-right: .6em;
   text-indent: .15em;
   vertical-align: .2em;
