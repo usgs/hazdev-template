@@ -99,19 +99,6 @@ Hover border color for site navigation.
 Default is #111.
 
 
-## Search
-
-<img src="images/search.png" alt="image of search"/>
-
-### $search-background-color
-Background color for search box.
-Default is #EEE.
-
-### $search-border-color
-Border color for search box.
-Default is #CCC.
-
-
 ## Offcanvas
 
 Side column content is hidden by default on pages smaller than `$breakpoint-offcanvas` pixels wide, and shown by clicking a toggle link.
@@ -154,40 +141,11 @@ Transition time when showing and hiding offcanvas content.
 Default is .5s.
 
 
-## Page Footer
-
-<img src="images/pageFooter.png" alt="iamge of page footer"/>
-
-### $page-footer-color
-Text color for page footer.
-Default is #999.
-
-### $page-footer-background-color
-Background color for page footer.
-Default is #FFF.
-
-### $page-footer-border-color
-Border color for page footer.
-Default is #DDD.
-
-
 ## General Layout
-
-### $body-margin
-Gutter around all page content.
-Default is 8px.
 
 ### $spacing
 Used as padding and margin of many elements.
 Default is 8px.
-
-### $horizontal-spacing
-Used as left and right padding and margin of many elements.
-Default is $spacing.
-
-### $vertical-spacing
-Used as top and bottom padding and margin of many elements.
-Default is $spacing.
 
 ### $breakpoint-stacking
 Width of page when content formatted using the flexible grid starts to stack.
@@ -197,6 +155,3 @@ Default is 560px.
 Width of page when OffCanvas is disabled.
 Default is 768px.
 
-### $side-column-width
-Width of side column, containing Section Navigation, Site Navigation, and Search, when page is at least `$breakpoint-offcanvas` pixels wide.
-Default is 20%.

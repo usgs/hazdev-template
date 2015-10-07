@@ -4,7 +4,9 @@ html {
 }
 
 body {
+  color: #333;
   font-size: 1.7rem;
+  line-height: 1.5;
 }
 
 p {
@@ -71,8 +73,9 @@ a {
   &:active {
     color: $link-color-active;
   }
+
   &:visited {
-    color: $link-color;
+    color: $link-color
   }
 }
 

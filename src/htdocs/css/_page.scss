@@ -10,8 +10,7 @@ main {
 }
 
 body {
-  color: $body-text-color;
-  margin: $body-margin;
+  margin: 0;
 }
 
 img,
@@ -20,14 +19,14 @@ canvas {
 }
 
 .page {
-  padding: 0 $horizontal-spacing;
+  padding: 0 $spacing;
 }
 
 .page-footer {
-  background-color: $page-footer-background-color;
-  color: $page-footer-color;
-  font-size: smaller;
-  padding: $vertical-spacing 0;
+  clear:both;
+  color: #999;
+  padding:$spacing 0;
+  font-size:smaller;
 
   > .page-social {
     margin: 1em 0 0;
@@ -56,11 +55,11 @@ canvas {
 
 @media screen and (min-width: 1200px) {
   .page {
-    width: calc(100% - $side-column-width);
+    width: 80%;
   }
 
   .site-footer {
-    width: $side-column-width;
+    width: 20%;
   }
 }
 
