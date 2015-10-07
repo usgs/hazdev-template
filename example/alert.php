@@ -29,9 +29,6 @@
 
       <link rel="stylesheet" href="/theme/css/alert.css"/>
 
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
     ';
 
     include 'template.inc.php';
