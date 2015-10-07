@@ -126,7 +126,7 @@ input[type="radio"] {
   position: absolute;
   left: -999em;
 }
-
+// TODO - make work with input inside label
 input[type="checkbox"] + label::before,
 input[type="radio"] + label::before {
   background: white;
@@ -140,40 +140,47 @@ input[type="radio"] + label::before {
   vertical-align: .2em;
   width: 1.8rem;
 }
-
+// TODO - make work with input inside label
+// Fix the size of radio buttons to match the size of checkboxes.
 input[type="radio"] + label::before {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px #757575;
   height: 1.6rem;
   width: 1.6rem;
 }
-
+// TODO - make work with input inside label
+// Make radio buttons round.
 input[type="radio"] + label::before {
   border-radius: 100%;
 }
-
+// TODO - make work with input inside label
+// Style the checked version of the checkbox/radio button
 input[type="checkbox"]:checked + label::before,
 input[type="radio"]:checked + label::before {
   background-color: $color-primary;
   box-shadow: 0 0 0 1px $color-primary;
 }
-
+// TODO - make work with input inside label
+// Add an outer circle on radio buttons to encompass the button when checked.
 input[type="radio"]:checked + label::before {
   box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary;
 }
-
+// TODO - make work with input inside label
+// Add an extra shadow around currently selected checkbox.
+input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 0 1px $color-white, 0 0 0 3px $color-primary;
+}
+// TODO - make work with input inside label
+// Add an extra shadow around currently selected radio button.
 input[type="radio"]:focus + label::before {
   box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary, 0 0 3px 4px $color-focus, 0 0 7px 4px $color-focus;
 }
-
+// TODO - make work with input inside label
+// Add checkmark image inside of checked checkbox.
 input[type="checkbox"]:checked + label::before {
   background-image: url('/theme/images/correct8.png');
   background-image: url('/theme/images/correct8.svg');
   background-position: 50%;
   background-repeat: no-repeat;
-}
-
-input[type="checkbox"]:focus + label::before {
-  box-shadow: 0 0 0 1px $color-white, 0 0 0 3px $color-primary;
 }
 
 input[type="checkbox"]:disabled + label {
