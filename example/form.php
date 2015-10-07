@@ -22,6 +22,27 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 
+<div class="preview">
+  <h2>Form example elements</h2>
+  <form>
+    <label>Dropdown label
+      <select class="collection-selectbox">
+        <option value="0">Option 1</option>
+        <option value="1">Option 2</option>
+        <option value="2">Option 3</option>
+        <option value="3" selected="selected">Option 4 - default</option>
+      </select>
+    </label>
+    
+    <label for="input-type-text">Text input label
+      <input id="input-type-text" name="input-type-text" type="text" />
+    </label>
+
+    <label for="input-type-textarea">Text area label
+      <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
+    </label>
+  </form>
+</div>
 
 <div class="preview">
   <h2>Text input Examples</h2>
