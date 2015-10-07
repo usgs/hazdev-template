@@ -1,11 +1,11 @@
 .alert {
   background-color: #eeeeee;
-  margin-top: 1em;
-  padding: 1em;
-  position: relative;
   line-height: 1;
+  margin-top: 1em;
   overflow: hidden;
+  padding: 1em;
   padding-left: 2em;
+  position: relative;
 
   > :first-child {
     margin-top: 0;
@@ -23,12 +23,20 @@
 
   &:before {
     content: '';
-    opacity: .075;
     font-family: 'Material Icons';
     font-size: 4.5em;
     left: -.2em;
+    opacity: .075;
     position: absolute;
     top: -.2em;
+  }
+}
+
+.error {
+  background-color: #F9DEDE;
+
+  &:before {
+    content: '\0e15c';
   }
 }
 
@@ -38,6 +46,10 @@
   &:before {
     content: '\0e88e';
   }
+}
+
+.no-icon:before {
+  content: '';
 }
 
 .success {
@@ -54,16 +66,4 @@
   &:before {
     content: '\0e002';
   }
-}
-
-.error {
-  background-color: #F9DEDE;
-
-  &:before {
-    content: '\0e15c';
-  }
-}
-
-.no-icon:before {
-  content: '';
 }
