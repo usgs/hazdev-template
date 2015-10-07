@@ -39,29 +39,29 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7625em;    // 3/4 the size of h1
+  font-size: 1.7625em;
 }
 
 h3 {
-  font-size: 1.175em;     // 1/2 the size of h1
+  font-size: 1.175em;
 }
 
 h4 {
-  font-size: 1em;         // 17/40 the size of h1
+  font-size: 1em;
 }
 
 h5 {
-	font-size: .88125em;    // 3/8 the size of h1
+	font-size: .88125em;
 }
 
 h6 {
   font-family: $font-sans;
-  font-size: .763755em;   // 13/40 the size of h1
+  font-size: .763755em;
   font-weight: $font-normal;
   text-transform: uppercase;
 }
 
-// Remove user agent styles
+/* Remove user agent styles */
 cite,
 var,
 address,
@@ -98,7 +98,7 @@ code {
 :not(pre)>code {
   border: 1px solid #d8d8d8;
   padding: 2px 4px;
-  // do not break code element unless inside pre tag
+  /* do not break code element unless inside pre tag */
   white-space: nowrap;
 }
 
