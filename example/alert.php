@@ -28,49 +28,46 @@
       </style>
 
       <link rel="stylesheet" href="/theme/css/alert.css"/>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     ';
 
     include 'template.inc.php';
   }
 ?>
 
-<p>
-  It is suggested that alert classes are added on <code>&lt;p&gt;</code>
-  tags. This way the element will inherit a top/bottom margin.
-</p>
-<h3 class="subheading">Example 1</h3>
+<h3>Basic Alert</h3>
 <p class="alert">
   To indicate additional information add the <code>.alert</code> class.
 </p>
+
+<h3>Status Alerts</h3>
 <p class="alert info">
   To emphasize important information add the <code>.alert .info</code>
   classes.
-</p>
-<p class="alert info remove-icon">
-  To remove info icon add the <code>.remove-icon</code> class.
 </p>
 <p class="alert success">
   To indicate success or a positive message add the
   <code>.alert .success</code> classes.
 </p>
-<p class="alert success remove-icon">
-  To remove success icon add the <code>.remove-icon</code> class.
-</p>
 <p class="alert warning">
   To highlight a message containing a warning add the
   <code>.alert .warning</code> classes.
-</p>
-<p class="alert warning remove-icon">
-  To remove warning icon add the <code>.remove-icon</code> class.
 </p>
 <p class="alert error">
   To highlight a message containing an error add the
   <code>.alert .error</code> classes.
 </p>
-<p class="alert error remove-icon">
-  To remove error icon add the <code>.remove-icon</code> class.
+
+<h3>Status Alerts Without Icons</h3>
+<p class="alert info no-icon">
+  To remove the icon from any of the status alerts add the
+  <code>.no-icon</code> class.
 </p>
 
+<h3>Alerts With Headers</h3>
 <div class="alert info">
   <h3>Header</h3>
   <p>
@@ -84,20 +81,17 @@
   </p>
 </div>
 
+<h3>Usage</h3>
+<pre><code>&lt;p class="alert"&gt;&hellip;&lt;/p&gt;
 
-<h3 class="subheading">Usage</h3>
-<pre>
-<code>&lt;p class="alert"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert info"&gt;&hellip;&lt;/p&gt;
-&lt;p class="alert info remove-icon"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert success"&gt;&hellip;&lt;/p&gt;
-&lt;p class="alert success remove-icon"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert warning"&gt;&hellip;&lt;/p&gt;
-&lt;p class="alert warning remove-icon"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert error"&gt;&hellip;&lt;/p&gt;
-&lt;p class="alert error remove-icon"&gt;&hellip;&lt;/p&gt;
+
+&lt;p class="alert info no-icon"&gt;&hellip;&lt;/p&gt;
+
 &lt;div class="alert info"&gt;
  &lt;h3&gt;&hellip;&lt;/h3&gt;
  &lt;p&gt;&hellip;&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
