@@ -82,6 +82,7 @@ textarea {
 }
 
 label {
+  cursor: pointer;
   display: block;
   margin-top: 3rem;
   max-width: $input-max-width;
@@ -124,13 +125,6 @@ input[type="checkbox"],
 input[type="radio"] {
   position: absolute;
   left: -999em;
-}
-
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  cursor: pointer;
-  font-weight: $font-normal;
-  margin-bottom: 0.5em;
 }
 
 input[type="checkbox"] + label::before,
