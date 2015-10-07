@@ -1,7 +1,8 @@
 /** Stacked should be the default mobile style */
 
 input,
-input[type="date"],
+input[type="date"],       // Day, Month, Year
+input[type="datetime"],   // Day, Month, Year, Hour, Minute, Second, Microsecond
 input[type="datetime-local"],
 input[type="email"],
 input[type="file"],
