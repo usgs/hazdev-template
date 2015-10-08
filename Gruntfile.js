@@ -62,6 +62,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     'copy:build',
+    'postcss:build',
     'concurrent:build',
     'runpreinstall:' + config.build + '/' + config.src
   ]);

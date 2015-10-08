@@ -6,23 +6,21 @@ var gruntconfig = function (grunt) {
     config: require('./config'),
 
     clean: require('./clean'),
-    compass: require('./compass'),
     concat: require('./concat'),
     concurrent: require('./concurrent'),
     copy: require('./copy'),
-    cssmin: require('./cssmin'),
     jshint: require('./jshint'),
     uglify: require('./uglify'),
+    postcss: require('./postcss'),
 
     tasks: [
       'grunt-concurrent',
       'grunt-contrib-clean',
-      'grunt-contrib-compass',
       'grunt-contrib-concat',
       'grunt-contrib-copy',
-      'grunt-contrib-cssmin',
       'grunt-contrib-jshint',
-      'grunt-contrib-uglify'
+      'grunt-contrib-uglify',
+      'grunt-postcss'
     ]
   };
 
@@ -33,13 +31,13 @@ var gruntconfig = function (grunt) {
         'build',
         'builddist',
         'clean',
-        'compass:build',
+        'postcss:build',
         'concat:scripts',
         'concurrent:scripts',
         'copy',
         'copy:build',
         'copy:dist',
-        'cssmin:dist',
+        'postcss:dist',
         'imagemin:dist',
         'jshint:scripts',
         'runpreinstall:' + config.build + '/' + config.src,

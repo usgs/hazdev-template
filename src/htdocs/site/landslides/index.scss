@@ -1,12 +1,11 @@
 /* include earthquake variables */
-@import 'variables';
+@import '_variables.scss';
 
 /* include the default theme */
 @import '../default/index.scss';
 
 /* include any content module css files */
 @import '../../css/flexible-grid.scss';
-@import '../../css/figcaption.scss';
 @import '../../css/jumplist.scss';
 @import '../../css/references.scss';
 @import '../../css/responsive-table.scss';

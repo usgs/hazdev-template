@@ -1,85 +1,74 @@
-
-// icon sizes
-$social-icon-size-small: 16px;
-$social-icon-size-large: 32px;
-
-
-
-@mixin social-icon($name, $size) {
-	display: inline-block;
-	background: url('/theme/images/social-sprite.png') no-repeat;
-	content: ' ';
-
-	// compute background position
-	$index: 1;
-	@if $name == facebook { $index: 1; }
-	@elseif $name == twitter { $index: 2; }
-	@elseif $name == google-plus { $index: 3; }
-	@elseif $name == email { $index: 4; }
-	@elseif $name == print { $index: 5; }
-	@elseif $name == feed { $index: 6; }
-	@elseif $name == feed2 { $index: 7; }
-	@elseif $name == google-earth { $index: 8; }
-	$position: -1 * ($social-icon-size-small + $social-icon-size-large) * ($index - 1);
-
-	@if $size == small {
-		background-position: 0 ($position - $social-icon-size-large);
-		height: $social-icon-size-small;
-		width: $social-icon-size-small;
-		margin-top: -1 * $social-icon-size-small;
-	}
-	@elseif $size == large {
-		width: $social-icon-size-large;
-		height: $social-icon-size-large;
-		background-position: 0 $position;
-		margin-top: -1 * $social-icon-size-large;
-	}
+.page-social > a {
+	margin-left: 16px;
+}
+.page-social > a:first-child {
+	margin: 0;
 }
 
+@media screen and (max-width: 767px) {
 
+	.page-social {
 
-// now generate all classes
-@each $name in facebook, twitter, google-plus, email, print, feed, feed2, google-earth {
-	@each $size in small, large {
-		.social-#{$name}-#{$size} {
-			@include social-icon($name, $size);
+		> a {
+			display: inline-block;
+			background: url("/theme/images/social-sprite.png") no-repeat;
+			content: ' ';
+			width: 32px;
+			height: 32px;
+			margin-top: -32px;
+			text-indent: -9999px;
+			overflow: hidden;
+			margin-top: 0;
+
+			&.facebook {
+				background-position: 0 0px;
+			}
+
+			&.twitter {
+				background-position: 0 -48px;
+			}
+
+			&.google-plus {
+				background-position: 0 -96px;
+			}
+
+			&.email {
+				background-position: 0 -144px;
+			}
 		}
 	}
 }
 
+@media screen and (min-width: 768px) {
 
-.page-social {
+	.page-social {
 
-	@media screen and (max-width: ($breakpoint-offcanvas - 1px)) {
-		@each $name in facebook, twitter, google-plus, email {
-			.#{$name} {
-				@include social-icon($name, large);
-				text-indent: -9999px;
-				overflow: hidden;
-				margin-top:0;
-			}
+		> a:before {
+			display: inline-block;
+			background: url("/theme/images/social-sprite.png") no-repeat;
+			content: ' ';
+			height: 16px;
+			width: 16px;
+			margin-top: -16px;
+			position: relative;
+			top: 2px;
+			margin-right: 4px;
+		}
+
+		> .facebook:before {
+			background-position: 0 -32px;
+		}
+
+		> .twitter:before {
+			background-position: 0 -80px;
+		}
+
+		> .google-plus:before {
+			background-position: 0 -128px;
+		}
+
+		> .email:before {
+			background-position: 0 -176px;
 		}
 	}
-
-	@media screen and (min-width: $breakpoint-offcanvas) {
-		@each $name in facebook, twitter, google-plus, email {
-			.#{$name}:before {
-				@include social-icon($name, small);
-				position:relative;
-				top:2px;
-				margin-right:4px;
-			}
-		}
-	}
-
-
-	& > a {
-		margin-left:$horizontal-spacing;
-
-		&:first-child {
-			margin:0;
-		}
-	}
-
-
 }

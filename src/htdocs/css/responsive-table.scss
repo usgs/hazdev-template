@@ -9,27 +9,21 @@
 
  */
 
-// set defaults, can be overridden when responsive-table is included in site css.
+/* set defaults, overridden when responsive-table is included in site css. */
 $breakpoint-stacking: 560px !default;
 
-$table_spacing: 1em !default;
 $table_border_color: #e0e0e0 !default;
 $table_background: #fff !default;
 
 $td_color: #555 !default;
-$td_padding: $table_spacing / 2 !default;
 $td_background_color: #fff !default;
 
 $th_color: #444 !default;
-$th_padding: $table_spacing / 2 !default;
 $th_background_color: #ededed !default;
 
-@mixin padding() {
-	padding: $table_spacing/2 $table_spacing*3/4;
-}
 
 table.tabular {
-	margin:$table_spacing 0 0;
+	margin: 1em 0 0;
 	border-collapse: collapse;
 	text-align:left;
 	width:100%;
@@ -45,6 +39,7 @@ table.tabular {
 		font-weight:bold;
 		text-shadow: 1px 1px 0px #fff;
 		text-align: left; /* only necessary for IE */
+		font-weight: 500;
 	}
 
 	td {
@@ -54,7 +49,7 @@ table.tabular {
 
 	th,
 	td {
-		@include padding();
+		padding: 0.5em 0.75em;
 		border:1px solid $table_border_color;
 	}
 }
@@ -93,7 +88,7 @@ table.responsive {
 	}
 
 	> tbody > tr {
-		margin-top: $table_spacing * 1.5;
+		margin-top: 1.5em;
 
 		&:first-child {
 			margin-top:0;
@@ -112,12 +107,12 @@ table.responsive {
 
 		> td:first-child,
 		> td:first-child:before {
-			padding-top: $table_spacing * 1.5;
+			padding-top: 1.5em;
 		}
 
 		> td {
 			position: relative;
-			padding: $td_padding/5;
+			padding: 0.1em;
 			padding-left: 40%;
 		}
 
@@ -125,7 +120,7 @@ table.responsive {
 			position: absolute;
 			top: 0;
 			left: 0;
-			padding: $td_padding/5 0;
+			padding: 0.1em 0;
 			white-space: nowrap;
 		}
 	}
@@ -168,7 +163,7 @@ table.responsive {
 			th, th:first-child,
 			td, td:first-child {
 				border: 1px solid $table_border_color;
-				@include padding();
+				padding: 0.5em 0.75em;
 			}
 		}
 

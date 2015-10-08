@@ -1,8 +1,9 @@
-/** Stacked should be the default mobile style */
+/* Stacked should be the default mobile style */
 select, textarea, input, fieldset, legend, label {
 	color: #333;
-	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
-	margin: 4px 2px;
+	/* browser default font-size:16px; prevents zooming on inputs for mobile */
+	font-size: 1.6rem;
+	margin:4px 2px;
 }
 
 legend,
@@ -24,8 +25,6 @@ textarea {
 	padding: 0.5em;
 	max-width: 100%;
 
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 }
 

@@ -1,8 +1,8 @@
 /* custom styles for the template */
 * {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  word-wrap: break-word; // keeps content from breaking its container
+  /* keeps content from breaking its container */
+  word-wrap: break-word;
 }
 
 main {
@@ -48,7 +48,7 @@ canvas {
     }
   }
 
-  // navigation/content as left/right columns
+  /* navigation/content as left/right columns */
   .page {
     padding-left:0;
     float: right;
@@ -63,7 +63,7 @@ canvas {
 
 @media screen and (min-width: 1200px) {
   .page {
-    width: 100% - $side-column-width;
+    width: calc(100% - $side-column-width);
   }
 
   .site-footer {

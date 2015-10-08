@@ -20,8 +20,6 @@ ol {
 }
 
 .linklist {
-  @extend ul.no-style;
-  @extend ul.separator;
 
   > li {
     overflow: auto;
@@ -65,7 +63,7 @@ dl {
   }
 }
 
-// for mobile both hortizontal and vertical stack with a clean left edge
+/* for mobile both hortizontal and vertical stack with a clean left edge */
 dl.vertical,
 dl.horizontal {
   > dd {

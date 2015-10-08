@@ -2,8 +2,7 @@
   background-color: #eeeeee;
   margin-top: 1em;
   overflow: hidden;
-  padding: 1em;
-  padding-left: 2em;
+  padding: 1em 2em;
   position: relative;
 
   > :first-child {
@@ -48,10 +47,6 @@
   }
 }
 
-.no-icon:before {
-  content: '';
-}
-
 .success {
   background-color: #E5FCDE;
 
@@ -66,4 +61,8 @@
   &:before {
     content: '\0e002';
   }
+}
+
+.no-icon:before {
+  content: '';
 }

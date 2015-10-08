@@ -9,20 +9,19 @@ body {
 
 p {
   line-height: $base-line-height;
-  margin: {
-    top: 1em;
-    bottom: 1em;
-  }
+  margin: 1em 0;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  clear: both;
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  display: block;
   font-family: $font-serif;
   line-height: $heading-line-height;
-  margin: {
-    top: 1.5em;
-    bottom: .5em;
-  }
+  margin: 1em 0 0.5em;
 }
 
 header > h1 {
@@ -34,29 +33,29 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7625em;    // 3/4 the size of h1
+  font-size: 1.7625em;
 }
 
 h3 {
-  font-size: 1.175em;     // 1/2 the size of h1
+  font-size: 1.175em;
 }
 
 h4 {
-  font-size: 1em;         // 17/40 the size of h1
+  font-size: 1em;
 }
 
 h5 {
-	font-size: .88125em;    // 3/8 the size of h1
+	font-size: .88125em;
 }
 
 h6 {
   font-family: $font-sans;
-  font-size: .763755em;   // 13/40 the size of h1
+  font-size: .763755em;
   font-weight: $font-normal;
   text-transform: uppercase;
 }
 
-// Remove user agent styles
+/* Remove user agent styles */
 cite,
 var,
 address,
@@ -93,7 +92,7 @@ code {
 :not(pre)>code {
   border: 1px solid #d8d8d8;
   padding: 2px 4px;
-  // do not break code element unless inside pre tag
+  /* do not break code element unless inside pre tag */
   white-space: nowrap;
 }
 
