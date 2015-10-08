@@ -1,4 +1,23 @@
-/* set template variables */
+
+/* Colors */
+
+$text-color: #444 !default;
+
+$gray: #e0e0e0 !default;
+$gray-lighter: #f4f4f4 !default;
+$gray-darker: #757575 !default;
+
+$primary: #205493 !default;
+$primary-lighter: #0071bc !default;
+$primary-darker: #112e51 !default;
+$primary-text-color: #ffffff !default;
+
+$secondary: $gray !default;
+$secondary-lighter: $gray-lighter !default;
+$secondary-darker: $gray-darker !default;
+$secondary-text-color: $text-color !default;
+
+/* Template Styles */
 
 $font-code: Consolas, monospace, serif;
 $font-sans: 'Source Sans Pro', Helvetica, Arial, sans-serif !default;
@@ -13,9 +32,9 @@ $banner-background-color: #000 !default;
 
 $site-title: 'U.S. Geological Survey' !default;
 $site-title-color: #fff !default;
-$site-title-background-color: #666 !default;
+$site-title-background-color: $primary !default;
 
-$spacing: 16px !default;
+$spacing: 17px !default;
 
 $breakpoint-stacking: 560px !default;
 $breakpoint-offcanvas: 768px !default;

@@ -1,19 +1,20 @@
 /* section nav */
 .site-sectionnav {
 
+<<<<<<< 0a3146f9a312b11f745e40d963c6efa0e3e868be
   /* Ungrouped Links */
   > a {
     background-color: #ededed;
     background-image: none;
-    border-top: 1px solid $sectionnav-border-color;
-    color: #333;
+    border-top: 1px solid $secondary;
+    color: $secondary-text-color;
     display: block;
     padding: calc($spacing * 3/4) $spacing;
     text-decoration: none;
     transition: background .25s ease-out;
 
     &:visited {
-      color: #333;
+      color: $secondary-text-color;
     }
   }
 
@@ -28,7 +29,7 @@
     /* items in a nav group */
     > a,
     > header {
-      color: #333;
+      color: $secondary-text-color;
       display: block;
       padding: calc($spacing * 3/4) $spacing;
       transition: background .25s ease-out;
@@ -55,9 +56,9 @@
 
     /* nav group header */
     > header {
-      background-color: #ededed;
-      border-bottom: 1px solid $sectionnav-border-color;
-      border-top: 1px solid $sectionnav-border-color;
+      background-color: $secondary-lighter;
+      border-bottom: 1px solid $secondary;
+      border-top: 1px solid $secondary;
       font-weight: normal;
       text-shadow: 0 1px 1px #fff;
     }
@@ -69,17 +70,17 @@
 
       /* hover styles for nav items */
       &:hover {
-        background-color: $sectionnav-background-color-hover;
+        background-color: $secondary-lighter;
         text-decoration: underline;
       }
     }
 
     > header > a {
       display: block;
-      color: #333;
+      color: $secondary-text-color;
 
       &:hover {
-        background-color: $sectionnav-background-color;
+        background-color: $secondary-lighter;
       }
     }
   }
@@ -124,7 +125,7 @@
 /* site nav */
 
 .site-sitenav {
-  background-color: $sitenav-background-color;
+  background-color: $primary;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   border-top: 1px solid rgba(0,0,0,0.1);
   margin: 0.2em 0;
@@ -136,7 +137,7 @@
     border-left: 1px solid rgba(255,255,255,0.1);
     border-right: 1px solid rgba(255,255,255,0.1);
     border-top: 1px solid rgba(255,255,255,0.1);
-    color: $sitenav-color;
+    color: $primary-text-color;
     display: block;
     font-weight: normal;
     padding: calc($spacing * 3/4) $spacing;
@@ -145,7 +146,7 @@
     transition: background .25s ease-out;
 
     &:visited {
-      color: $sitenav-color;
+      color: $primary-text-color;
     }
 
     &:last-child {
@@ -153,8 +154,8 @@
     }
 
     &:hover {
-      background: rgba(0,0,0,0.2);
-      color: $sitenav-color-hover;
+      background: $primary-darker;
+      color: $primary-text-color;
     }
   }
 
@@ -162,8 +163,8 @@
   > .current-page,
   > strong:hover,
   > .current-page:hover {
-    background-color: $sitenav-background-color-hover;
-    color: $sitenav-color-hover;
+    background-color: $primary-darker;
+    color: $primary-text-color;
   }
 }
 
@@ -185,7 +186,7 @@
   }
 
   > a {
-    color: $sitenav-background-color;
+    color: $primary-lighter;
     display: inline-block;
     margin: 0 $spacing 0 0;
 
@@ -209,7 +210,7 @@
   }
 
   .site-sitenav {
-    border: 1px solid $sitenav-border-color;
+    border: 1px solid $primary;
   }
 
   .site-sectionnav {
