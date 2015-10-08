@@ -4,8 +4,8 @@
 }
 /* common nav */
 .site-commonnav {
-  border-top:1px solid #e5e5e5;
-  clear:both;
+  border-top: 1px solid #e5e5e5;
+  clear: both;
   font-size: smaller;
   line-height: 1.6;
   padding: 1rem;
@@ -14,7 +14,7 @@
   > hr {
     border: solid #ddd;
     border-width: 1px 0 0;
-    margin:0 0 15px;
+    margin: 0 0 15px;
   }
 
   > a {
@@ -23,7 +23,7 @@
     margin: 0 $horizontal-spacing 0 0;
 
     &:last-child {
-      margin:0;
+      margin: 0;
     }
   }
 }
@@ -32,34 +32,32 @@
 .site-search {
   display: block;
   margin: 1.2em 1em;
-  position:relative;
+  position: relative;
 
   >[type="search"] {
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    appearance:none;
-    display:block;
-    margin:0;
-    width:100%;
+    appearance: none;
+    display: block;
+    margin: 0;
+    width: 100%;
   }
 
   > label {
-    display:block;
-    float:left;
-    font-size:smaller;
-    margin-right:1em;
+    display: block;
+    float: left;
+    font-size: smaller;
+    margin-right: 1em;
   }
 
   > button {
-    clear:both;
-    display:block;
+    clear: both;
+    display: block;
     margin: 1em 0 0 0;
   }
 
   &:after {
-    clear:both;
+    clear: both;
     content: ' ';
-    display:block;
+    display: block;
   }
 }
 
@@ -68,12 +66,12 @@
   /* Ungrouped Links */
   > a {
     background-color: #ededed;
-    background-image:none;
+    background-image: none;
     border-top: 1px solid $sectionnav-border-color;
     color: #333;
     display: block;
     padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-    text-decoration:none;
+    text-decoration: none;
     @extend nav-transition;
 
     &:visited {
@@ -82,7 +80,7 @@
   }
 
   > a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
   }
 
   /* Grouped Links */
@@ -101,12 +99,13 @@
     /* indent group items */
     > a {
       padding-left: calc(3/2 * $horizontal-spacing);
-      position:relative; /* for linear-gradient background
+      position: relative; /* for linear-gradient background
 
       /* gradient separator between section links */
       &:before {
-        position: absolute;
         content: '';
+        position: absolute;
+
         top: 0;
         left: 0;
         width: 100%;
@@ -127,18 +126,18 @@
 
     > a,
     > header > a {
-      text-decoration:none;
-      background-image:none;
+      text-decoration: none;
+      background-image: none;
 
       /* hover styles for nav items */
       &:hover {
-        text-decoration:underline;
+        text-decoration: underline;
         background-color: $sectionnav-background-color-hover;
       }
     }
 
     > header > a {
-      display:block;
+      display: block;
       color: #333;
 
       &:hover {
@@ -148,62 +147,27 @@
   }
 }
 
-
-/* search form */
-
-.site-search {
-  position:relative;
-  display: block;
-  margin: 1.2em 1em;
-
-  >[type="search"] {
-    display:block;
-    width:100%;
-    appearance:none;
-    margin:0;
-  }
-
-  > label {
-    display:block;
-    float:left;
-    margin-right:1em;
-    font-size:smaller;
-  }
-
-  > button {
-    display:block;
-    clear:both;
-    margin: 1em 0 0 0;
-  }
-
-  &:after {
-    content: ' ';
-    display:block;
-    clear:both;
-  }
-}
-
 /* site nav */
 .site-sitenav {
   background-color: $sitenav-background-color;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,0.1);
   margin: 0.2em 0;
   overflow: visible;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
 
   > a,
   > strong {
-    display: block;
-    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
     color: $sitenav-color;
+    display: block;
+    font-weight: normal;
+    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
     text-decoration: none;
-    font-weight:normal;
     text-shadow: 0 0 2px #000;
     @extend nav-transition;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-right: 1px solid rgba(255,255,255,0.1);
     border-left: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
 
     &:visited {
       color: $sitenav-color;
@@ -244,36 +208,6 @@
     border: 1px solid $sitenav-border-color;
   }
 
-  .site-sectionnav {
-    > a,
-    > strong {
-      border: 1px solid #ddd;
-      margin: 0 0 1em 0;
-      padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
-    }
-
-    > section {
-      margin: 0 0 1em;
-      border: 1px solid #ddd;
-
-      header,
-      header > a {
-        border-top: 0;
-      }
-
-      > a,
-      > strong,
-      > header {
-        padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
-      }
-
-      > a,
-      > strong {
-        padding-left: calc(3/2 * $horizontal-spacing);
-      }
-    }
-  }
-
   .site-sitenav {
     > a,
     > strong {
@@ -288,6 +222,6 @@
   .site-search,
   .site-sitenav,
   .site-commonnav {
-    display:none;
+    display: none;
   }
 }
