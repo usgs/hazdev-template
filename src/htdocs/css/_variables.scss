@@ -41,25 +41,3 @@ $breakpoint-offcanvas: 768px !default;
 
 $link-color: #306ac2 !default;
 $link-color-active: #c23030 !default;
-
-$sitenav-color: $site-title-color !default;
-$sitenav-background-color: $site-title-background-color !default;
-$sitenav-color-hover: $site-title-color !default;
-$sitenav-background-color-hover: darken($sitenav-background-color, 10%) !default;
-$sitenav-border-color: darken($sitenav-background-color, 10%);
-$sitenav-border-color-hover: $sitenav-border-color !default;
-
-$sectionnav-color: $sitenav-color !default;
-$sectionnav-background-color: #EDEDED;
-$sectionnav-color-hover: #000;
-$sectionnav-background-color-hover: #f8f8f8;
-$sectionnav-border-color: #ddd;
-
-
-$offcanvas-width: 228px;
-$offcanvas-toggle-color: #333 !default;
-$offcanvas-toggle-background-color: #eee !default;
-$offcanvas-toggle-color-active: #fff !default;
-$offcanvas-toggle-background-color-active: #ccc !default;
-
-$offcanvas-transition-time: .3s !default;

@@ -7,6 +7,10 @@
  * based on the current window size.
  */
 
+/* variables */
+$offcanvas-width: 228px !default;
+$offcanvas-transition-time: .3s !default;
+
 /* hide offcanvas elements by default */
 .offcanvas-mask,
 .offcanvas-container,
