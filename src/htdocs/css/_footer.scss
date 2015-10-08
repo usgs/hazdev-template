@@ -8,7 +8,7 @@
     border-top: 1px solid $secondary;
     color: $secondary-text-color;
     display: block;
-    padding: calc($spacing * 3/4) $spacing;
+    padding: calc($spacing * 2/3) $spacing;
     text-decoration: none;
     transition: background .25s ease-out;
 
@@ -30,7 +30,7 @@
     > header {
       color: $secondary-text-color;
       display: block;
-      padding: calc($spacing * 3/4) $spacing;
+      padding: calc($spacing * 2/3) $spacing;
       transition: background .25s ease-out;
     }
 
@@ -59,7 +59,7 @@
       border-bottom: 1px solid $secondary;
       border-top: 1px solid $secondary;
       font-weight: normal;
-      text-shadow: 0 1px 1px #fff;
+      text-shadow: 0 0 2px #fff;
     }
 
     > a,
@@ -130,7 +130,7 @@
     color: $primary-text-color;
     display: block;
     font-weight: normal;
-    padding: calc($spacing * 3/4) $spacing;
+    padding: calc($spacing * 2/3) $spacing;
     text-decoration: none;
     text-shadow: 0 0 2px #000;
     transition: background .25s ease-out;

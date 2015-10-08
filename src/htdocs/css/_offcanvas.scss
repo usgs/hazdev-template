@@ -33,6 +33,7 @@ $offcanvas-transition-time: .3s !default;
     > .offcanvas-toggle {
       box-shadow: none;
       display: block;
+      font-size: 0.88em;
       height: 2em;
       line-height: 2em;
       margin: 0;
@@ -56,6 +57,7 @@ $offcanvas-transition-time: .3s !default;
       top: 0;
       transition: left $offcanvas-transition-time ease-in-out;
       width: $offcanvas-width;
+      -webkit-overflow-scrolling: touch;
       z-index: 1002;
     }
 
@@ -99,7 +101,6 @@ $offcanvas-transition-time: .3s !default;
       background-color: rgba(0, 0, 0, .7);
     }
   }
-
 }
 
 
