@@ -106,7 +106,10 @@ select {
   background-repeat: no-repeat;
   background-size: 1.3rem;
 }
-
+// select {
+//   content: '\0E313';
+//   font-family: 'Material Icons';
+// }
 // Hint text
 
 .usa-form-hint {
@@ -129,16 +132,19 @@ input[type="checkbox"] + label,
 input[type="radio"] + label {
   cursor: pointer;
   font-weight: 400;
-  margin-bottom: 0.5em;
 }
 
 input[type="checkbox"] + label::before {
   content: '\0E835';
   font-family: 'Material Icons';
+  font-size: 1.6em;
+  vertical-align: middle;
 }
 input[type="radio"] + label::before {
   content: '\0E836';
   font-family: 'Material Icons';
+  font-size: 1.6em;
+  vertical-align: middle;
 }
 
 input[type="checkbox"] + label::before,
