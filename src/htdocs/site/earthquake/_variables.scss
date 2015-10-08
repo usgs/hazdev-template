@@ -1,10 +1,10 @@
 /* set template variables */
 
-$banner-image:'/theme/site/earthquake/banner.png' !default;
+$banner-image: url('/theme/site/earthquake/banner.png') !default;
 $site-title:'Earthquake Hazards Program' !default;
 
 $primary: #3d5e80 !default;
 $primary-darker: rgba(0,0,0,0.1) !default;
 
 /* import default variables */
-@import '../../css/variables.scss';
+@import '../../css/_variables.scss';

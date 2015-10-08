@@ -27,12 +27,9 @@ $font-bold: 700 !default;
 $font-normal: 400 !default;
 $font-thin: 300 !default;
 
-$banner-image: '/theme/images/usgs-banner.jpg' !default;
+$banner-image: url('/theme/images/usgs-banner.jpg') !default;
 $banner-background-color: #000 !default;
-
-$site-title: 'U.S. Geological Survey' !default;
-$site-title-color: #fff !default;
-$site-title-background-color: $primary !default;
+$banner-title: 'U.S. Geological Survey' !default;
 
 $spacing: 17px !default;
 
