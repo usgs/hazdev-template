@@ -11,5 +11,4 @@ before_install:
 install:
   - npm install
 script:
-  - grunt builddist
   - npm test
