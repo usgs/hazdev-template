@@ -30,11 +30,12 @@ ol {
     }
 
     h2, h3, h4 {
+      color: $link-color;
+      font-size: 1.125em;
+      line-height: 1.4;
       margin: 0 0 -.5rem 0;
       padding: 0;
-      line-height: 1.4;
-      font-size: 1.125em;
-      color: $link-color;
+
       &:active {
         color: $link-color-active;
       }
@@ -76,12 +77,12 @@ dl.horizontal {
 
   dl.horizontal {
     > dt {
-      float: left;
-      width: 10em;
-      overflow: hidden;
       clear: left;
+      float: left;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      width: 10em;
     }
 
     > dd {
