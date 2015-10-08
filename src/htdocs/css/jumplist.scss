@@ -2,8 +2,8 @@
 
 .jumplist {
   border: 1px solid #ddd;
-  padding: 0.5em 0 0 1em;
   margin: 1em 0 0;
+  padding: 0.5em 0 0 1em;
 
   > a {
     border-right: 1px solid #ccc;
@@ -19,8 +19,8 @@
   }
 
   &:after {
+    clear: both;
     content: ' ';
     display: block;
-    clear: both;
   }
 }
