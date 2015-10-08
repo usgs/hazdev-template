@@ -10,8 +10,8 @@ main {
 }
 
 body {
-  margin: $body-margin;
   color: $body-text-color;
+  margin: $body-margin;
 }
 
 img,
@@ -24,11 +24,11 @@ canvas {
 }
 
 .page-footer {
+  background-color: $page-footer-background-color;
   clear:both;
   color: $page-footer-color;
-  background-color: $page-footer-background-color;
-  padding:$vertical-spacing 0;
   font-size:smaller;
+  padding:$vertical-spacing 0;
 
   > .page-social {
     margin:1em 0 0;
@@ -41,17 +41,17 @@ canvas {
     position:relative;
 
     > .page-social {
-      position: absolute;
-      right: $horizontal-spacing;
       bottom: $vertical-spacing;
       margin: 0;
+      position: absolute;
+      right: $horizontal-spacing;
     }
   }
 
   /* navigation/content as left/right columns */
   .page {
-    padding-left:0;
     float: right;
+    padding-left:0;
     width: 75%;
   }
 
