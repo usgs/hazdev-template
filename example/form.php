@@ -5,7 +5,6 @@ if (!isset($TEMPLATE)) {
 
 	$HEAD = '
 			<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
-
 			<style>
 
 				.preview {
@@ -13,7 +12,6 @@ if (!isset($TEMPLATE)) {
           margin: 1em 0;
           padding: .25em 3rem;
         }
-
 			</style>
 	';
 
@@ -23,7 +21,7 @@ if (!isset($TEMPLATE)) {
 ?>
 
 <div class="preview">
-  <h2>Form example elements</h2>
+  <h2>Form Example Elements</h2>
   <form>
     <label for="input-type-text">Tell us your name, so that we can let you
       know when it is ready:
@@ -37,19 +35,19 @@ if (!isset($TEMPLATE)) {
       <legend class="usa-sr-only">Ice Cream Flavors</legend>
       <ul class="usa-unstyled-list">
         <li>
-          <input type="radio" name="vanilla" id="vanilla"
+          <input type="radio" name="flavor" id="flavor-vanilla"
               value="vanilla" checked="checked" />
-          <label for="vanilla">Vanilla</label>
+          <label for="flavor-vanilla">Vanilla</label>
         </li>
         <li>
-          <input type="radio" name="chocolate" id="chocolate"
+          <input type="radio" name="flavor" id="flavor-chocolate"
               value="chocolate" />
-          <label for="chocolate">Chocolate</label>
+          <label for="flavor-chocolate">Chocolate</label>
         </li>
         <li>
-          <input type="radio" name="strawberry" id="strawberry"
+          <input type="radio" name="flavor" id="flavor-strawberry"
               value="strawberry" disabled="disabled" />
-          <label for="strawberry">Strawberry - Sorry, out of stock</label>
+          <label for="flavor-strawberry">Strawberry - Sorry, out of stock</label>
         </li>
       </ul>
     </fieldset>
@@ -61,19 +59,19 @@ if (!isset($TEMPLATE)) {
       <legend class="usa-sr-only">Ice Cream Toppings</legend>
       <ul class="usa-unstyled-list">
         <li>
-          <input type="checkbox" id="sprinkles" name="sprinkles"
+          <input type="checkbox" name="topping" id="topping-sprinkles"
               value="sprinkles" checked="checked" />
-          <label for="checkbox-1">Sprinkles</label>
+          <label for="topping-sprinkles">Sprinkles</label>
         </li>
         <li>
-          <input type="checkbox" id="chocolate-syrup" name="chocolate-syrup"
+          <input type="checkbox" name="topping" id="topping-chocolate-syrup"
               value="chocolate-syrup" />
-          <label for="chocolate-syrup">Chocolate Syrup</label>
+          <label for="topping-chocolate-syrup">Chocolate Syrup</label>
         </li>
         <li>
-          <input type="checkbox" id="peanuts" name="peanuts"
+          <input type="checkbox" name="topping" id="topping-peanuts"
               value="peanuts" disabled="disabled" />
-          <label for="peanuts">Peanuts - Sorry, out of stock</label>
+          <label for="topping-peanuts">Peanuts - Sorry, out of stock</label>
         </li>
       </ul>
     </fieldset>
@@ -94,7 +92,7 @@ if (!isset($TEMPLATE)) {
 </div>
 
 <div class="preview">
-  <h2>Text input Examples</h2>
+  <h2>Text Input Examples</h2>
   <p>
     Text input can span single or multiple lines.
   </p>
@@ -156,20 +154,22 @@ if (!isset($TEMPLATE)) {
     <legend class="usa-sr-only">Checkboxes</legend>
     <ul class="usa-unstyled-list">
       <li>
-        <input type="checkbox" id="checkbox-1"
+        <input type="checkbox" id="checkbox-1" name="checkbox-example"
             value="checkbox 1" checked="checked" />
         <label for="checkbox-1">Regular Checkbox 1 - checked by default</label>
       </li>
       <li>
-        <input type="checkbox" id="checkbox-2" value="checkbox 2" />
+        <input type="checkbox" id="checkbox-2" name="checkbox-example"
+            value="checkbox 2" />
         <label for="checkbox-2">Regular Checkbox 2</label>
       </li>
       <li>
-        <input type="checkbox" id="checkbox-3" value="checkbox 3" />
+        <input type="checkbox" id="checkbox-3" name="checkbox-example"
+            value="checkbox 3" />
         <label for="checkbox-3">Regular Checkbox 3</label>
       </li>
       <li>
-        <input type="checkbox" id="checkbox-4"
+        <input type="checkbox" id="checkbox-4" name="checkbox-example"
             value="checkbox 4" disabled="disabled" />
         <label for="checkbox-4">Regular Checkbox 4 - disabled</label>
       </li>
@@ -186,16 +186,16 @@ if (!isset($TEMPLATE)) {
     <legend class="usa-sr-only">Radio Buttons</legend>
     <ul class="usa-unstyled-list">
       <li>
-        <input type="radio" name="radios" id="radio-1"
+        <input type="radio" id="radio-1" name="radio-example"
             value="radio 1" checked="checked" />
         <label for="radio-1">Regular Radio 1 - selected by default</label>
       </li>
       <li>
-        <input type="radio" name="radios" id="radio-2" value="radio 2" />
+        <input type="radio" id="radio-2" name="radio-example" value="radio 2" />
         <label for="radio-2">Regular Radio 2</label>
       </li>
       <li>
-        <input type="radio" name="radios" id="radio-3"
+        <input type="radio" id="radio-3" name="radio-example"
             value="radio 3" disabled="disabled"/>
         <label for="radio-3">Regular Radio 3 - disabled</label>
       </li>
