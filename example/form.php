@@ -25,6 +25,53 @@ if (!isset($TEMPLATE)) {
 <div class="preview">
   <h2>Form example elements</h2>
   <form>
+    <fieldset class="usa-fieldset-inputs">
+      <legend class="usa-sr-only">Checkboxes</legend>
+      <ul class="usa-unstyled-list">
+        <li>
+          <input type="checkbox" id="checkbox-1" name="checkbox-1"
+              value="checkbox 1" checked="checked" />
+          <label for="checkbox-1">Regular Checkbox 1 -
+              checked by default</label>
+        </li>
+        <li>
+          <input type="checkbox" id="checkbox-2" name="checkbox-2"
+              value="checkbox 2" />
+          <label for="checkbox-2">Regular Checkbox 2</label>
+        </li>
+        <li>
+          <input type="checkbox" id="checkbox-3" name="checkbox-3"
+              value="checkbox 3" />
+          <label for="checkbox-3">Regular Checkbox 3</label>
+        </li>
+        <li>
+          <input type="checkbox" id="checkbox-4" name="checkbox-4"
+              value="checkbox 4" disabled="disabled" />
+          <label for="checkbox-4">Regular Checkbox 4 - disabled</label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="usa-fieldset-inputs">
+      <legend class="usa-sr-only">Radio Buttons</legend>
+      <ul class="usa-unstyled-list">
+        <li>
+          <input type="radio" name="radios" id="radio-1"
+              value="radio 1" checked="checked" />
+          <label for="radio-1">Regular Radio 1 - selected by default</label>
+        </li>
+        <li>
+          <input type="radio" name="radios" id="radio-2" value="radio 2" />
+          <label for="radio-2">Regular Radio 2</label>
+        </li>
+        <li>
+          <input type="radio" name="radios" id="radio-3"
+              value="radio 3" disabled="disabled"/>
+          <label for="radio-3">Regular Radio 3 - disabled</label>
+        </li>
+      </ul>
+    </fieldset>
+
     <label>Dropdown label
       <select class="collection-selectbox">
         <option value="0">Option 1</option>
@@ -33,7 +80,8 @@ if (!isset($TEMPLATE)) {
         <option value="3" selected="selected">Option 4 - default</option>
       </select>
     </label>
-    
+
+
     <label for="input-type-text">Text input label
       <input id="input-type-text" name="input-type-text" type="text" />
     </label>

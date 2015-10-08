@@ -120,80 +120,60 @@ select {
 /**
  * Custom checkboxes
  */
-
+// Hide the actual checkbox and radio button, they are replaced by icons.
 input[type="checkbox"],
 input[type="radio"] {
   position: absolute;
   left: -999em;
 }
-// TODO - make work with input inside label
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  cursor: pointer;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+
+input[type="checkbox"] + label::before {
+  content: '\0E835';
+  font-family: 'Material Icons';
+}
+input[type="radio"] + label::before {
+  content: '\0E836';
+  font-family: 'Material Icons';
+}
+
 input[type="checkbox"] + label::before,
 input[type="radio"] + label::before {
-  background: white;
-  border-radius: $border-radius;
-  box-shadow: 0 0 0 1px #757575;
-  content: '\a0';
-  display: inline-block;
-  height: 1.8rem;
   margin-right: .6em;
-  text-indent: .15em;
-  vertical-align: .2em;
-  width: 1.8rem;
 }
-// TODO - make work with input inside label
-// Fix the size of radio buttons to match the size of checkboxes.
-input[type="radio"] + label::before {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #757575;
-  height: 1.6rem;
-  width: 1.6rem;
-}
-// TODO - make work with input inside label
-// Make radio buttons round.
+
 input[type="radio"] + label::before {
   border-radius: 100%;
 }
-// TODO - make work with input inside label
 // Style the checked version of the checkbox/radio button
 input[type="checkbox"]:checked + label::before,
 input[type="radio"]:checked + label::before {
-  background-color: $color-primary;
-  box-shadow: 0 0 0 1px $color-primary;
+  color: $color-primary;
 }
-// TODO - make work with input inside label
-// Add an outer circle on radio buttons to encompass the button when checked.
-input[type="radio"]:checked + label::before {
-  box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary;
-}
-// TODO - make work with input inside label
-// Add an extra shadow around currently selected checkbox.
-input[type="checkbox"]:focus + label::before {
-  box-shadow: 0 0 0 1px $color-white, 0 0 0 3px $color-primary;
-}
-// TODO - make work with input inside label
-// Add an extra shadow around currently selected radio button.
-input[type="radio"]:focus + label::before {
-  box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary, 0 0 3px 4px $color-focus, 0 0 7px 4px $color-focus;
-}
-// TODO - make work with input inside label
-// Add checkmark image inside of checked checkbox.
+// Use checkmark icon for checked checkbox.
 input[type="checkbox"]:checked + label::before {
-  background-image: url('/theme/images/correct8.png');
-  background-image: url('/theme/images/correct8.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
+  content: '\0E834';
 }
-
-input[type="checkbox"]:disabled + label {
+// Use filled circle icon for checked radio button.
+input[type="radio"]:checked + label::before {
+  content: '\0E837';
+}
+// Gray-out the button and label if they are disabled.
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
   color: $color-gray;
 }
-
 input[type="checkbox"]:disabled + label::before,
 input[type="radio"]:disabled + label::before {
   background: $color-gray-lighter;
-  box-shadow: 0 0 0 1px $color-gray-light;
   cursor: not-allowed;
 }
-
 
 // Memorable dates
 
