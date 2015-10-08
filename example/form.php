@@ -25,49 +25,50 @@ if (!isset($TEMPLATE)) {
 <div class="preview">
   <h2>Form example elements</h2>
   <form>
+    <p>
+      You make pick one flavor...
+    </p>
     <fieldset class="usa-fieldset-inputs">
-      <legend class="usa-sr-only">Checkboxes</legend>
+      <legend class="usa-sr-only">Ice Cream Flavors</legend>
       <ul class="usa-unstyled-list">
         <li>
-          <input type="checkbox" id="checkbox-1" name="checkbox-1"
-              value="checkbox 1" checked="checked" />
-          <label for="checkbox-1">Regular Checkbox 1 -
-              checked by default</label>
+          <input type="radio" name="vanilla" id="vanilla"
+              value="vanilla" checked="checked" />
+          <label for="vanilla">Vanilla</label>
         </li>
         <li>
-          <input type="checkbox" id="checkbox-2" name="checkbox-2"
-              value="checkbox 2" />
-          <label for="checkbox-2">Regular Checkbox 2</label>
+          <input type="radio" name="chocolate" id="chocolate"
+              value="chocolate" />
+          <label for="chocolate">Chocolate</label>
         </li>
         <li>
-          <input type="checkbox" id="checkbox-3" name="checkbox-3"
-              value="checkbox 3" />
-          <label for="checkbox-3">Regular Checkbox 3</label>
-        </li>
-        <li>
-          <input type="checkbox" id="checkbox-4" name="checkbox-4"
-              value="checkbox 4" disabled="disabled" />
-          <label for="checkbox-4">Regular Checkbox 4 - disabled</label>
+          <input type="radio" name="strawberry" id="strawberry"
+              value="strawberry" disabled="disabled" />
+          <label for="strawberry">Strawberry - Sorry, out of stock</label>
         </li>
       </ul>
     </fieldset>
 
+    <p>
+      ...and several toppings.
+    </p>
     <fieldset class="usa-fieldset-inputs">
-      <legend class="usa-sr-only">Radio Buttons</legend>
+      <legend class="usa-sr-only">Ice Cream Toppings</legend>
       <ul class="usa-unstyled-list">
         <li>
-          <input type="radio" name="radios" id="radio-1"
-              value="radio 1" checked="checked" />
-          <label for="radio-1">Regular Radio 1 - selected by default</label>
+          <input type="checkbox" id="sprinkles" name="sprinkles"
+              value="sprinkles" checked="checked" />
+          <label for="checkbox-1">Sprinkles</label>
         </li>
         <li>
-          <input type="radio" name="radios" id="radio-2" value="radio 2" />
-          <label for="radio-2">Regular Radio 2</label>
+          <input type="checkbox" id="chocolate-syrup" name="chocolate-syrup"
+              value="chocolate-syrup" />
+          <label for="chocolate-syrup">Chocolate Syrup</label>
         </li>
         <li>
-          <input type="radio" name="radios" id="radio-3"
-              value="radio 3" disabled="disabled"/>
-          <label for="radio-3">Regular Radio 3 - disabled</label>
+          <input type="checkbox" id="peanuts" name="peanuts"
+              value="peanuts" disabled="disabled" />
+          <label for="peanuts">Peanuts - Sorry, out of stock</label>
         </li>
       </ul>
     </fieldset>
