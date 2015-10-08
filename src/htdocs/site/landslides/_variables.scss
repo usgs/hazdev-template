@@ -1,9 +1,10 @@
 /* set template variables */
 
 $banner-image:'/theme/site/landslides/banner.png' !default;
-$site-title-background-color:#3D5E80 !default;
 $site-title:'Landslides Hazards Program' !default;
-$sitenav-background-color:#B6DAAC !default;
+
+$primary: #B6DAAC !default;
+$primary-darker: rgba(0,0,0,0.1) !default;
 
 /* import default variables */
 @import '../../css/_variables.scss';
