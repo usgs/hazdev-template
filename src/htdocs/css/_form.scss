@@ -24,7 +24,6 @@ textarea {
   color: #000; // standardize on firefox
   display: block;
   margin: .2em 0;
-  max-width: $input-max-width;
   outline: none;
   padding: 1rem .7em;
   width: 100%;
@@ -85,7 +84,6 @@ label {
   cursor: pointer;
   display: block;
   margin-top: 3rem;
-  max-width: $input-max-width;
 }
 
 legend {
