@@ -5,8 +5,15 @@ node_js:
 before_install:
   - composer self-update
   - npm install -g grunt-cli
-before_script:
   - npm --version
   - node --version
+  - npm cache clean -f
+  - npm install -g n
+  - n stable
+  - npm --version
+  - node --version
+install:
+  - npm install
 script:
+  - grunt builddist
   - npm test
