@@ -1,7 +1,9 @@
+sudo: false
 language: php
 node_js:
   - '5.6'
 before_install:
+  - composer self-update
   - npm install -g grunt-cli
 script:
   - npm test
