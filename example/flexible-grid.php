@@ -9,6 +9,16 @@ if (!isset($TEMPLATE)) {
 			margin: 16px 0 0;
 			text-align: center;
 		}
+
+		.row > .column {
+			white-space: nowrap;
+		}
+
+		.column > .alert {
+			text-align: center;
+			padding: 1em;
+			font-size: 15px;
+		}
 	</style>
 
 	<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
@@ -18,88 +28,133 @@ if (!isset($TEMPLATE)) {
 	include 'template.inc.php';
 }
 
-
-$names = array(
-	1 => "one",
-	2 => "two",
-	3 => "three",
-	4 => "four",
-	5 => "five"
-);
-
-
-$grid_sizes = array(2, 3, 4, 5);
-
-
-foreach ($grid_sizes as $size) {
-	echo '<h2>*/' . $size . '</h2>';
-	$size_name = $names[$size];
-
-	for ($i=1; $i<$size; $i++) {
-		$i_name = $names[$i] . '-of-' . $size_name;
-		$rest = $size - $i;
-		$rest_name = $names[$rest] . '-of-' . $size_name;
-
-		// output normal example
-		echo '<div class="row">';
-			echo '<div class="column ' . $i_name . '"><div class="alert">' . $i_name . ' (first)</div></div>';
-			echo '<div class="column ' . $rest_name . '"><div class="alert">' . $rest_name . ' (second)</div></div>';
-		echo '</div>';
-
-		// output right-to-left example
-		echo '<div class="row right-to-left">';
-			echo '<div class="column ' . $i_name . '"><div class="alert success no-icon">' . $i_name . ' (first)</div></div>';
-			echo '<div class="column ' . $rest_name . '"><div class="alert success no-icon">' . $rest_name . ' (second)</div></div>';
-		echo '</div>';
-
-		// output mobile example
-		echo '<div class="row mobile">';
-			echo '<div class="column mobile-' . $i_name . '"><div class="alert info no-icon">' . $i_name . ' (mobile)</div></div>';
-			echo '<div class="column mobile-' . $rest_name . '"><div class="alert info no-icon">' . $rest_name . ' (mobile)</div></div>';
-		echo '</div>';
-
-	}
-}
-
 ?>
 
-<h2>Nested columns</h2>
+
+<h2>The Grid</h2>
+
+<p>
+	The grid consists of <code>.column</code> elements inside
+	<code>.row</code> containers. The column widths are defined as a
+	percentage of their row containers, this is done using a
+	lexicographical representation of the row percentage.
+</p>
+
 <div class="row">
-	<div class="column one-of-two"><div class="alert info no-icon">one-of-two</div></div>
-	<div class="column one-of-two"><div class="alert info no-icon">
-		one-of-two<br/>
-		<div class="row">
-			<div class="column one-of-two"><div class="alert">nested one-of-two</div></div>
-			<div class="column one-of-two"><div class="alert">nested one-of-two</div></div>
-		</div>
-	</div></div>
+	<div class="column one-of-one"><p class="alert">.one-of-one</p></div>
+</div>
+
+<div class="row">
+	<div class="column one-of-two"><p class="alert">.one-of-two</p></div>
+	<div class="column one-of-two"><p class="alert">.one-of-two</p></div>
+</div>
+
+<div class="row">
+	<div class="column one-of-three"><p class="alert">.one-of-three</p></div>
+	<div class="column one-of-three"><p class="alert">.one-of-three</p></div>
+	<div class="column one-of-three"><p class="alert">.one-of-three</p></div>
+</div>
+
+<div class="row">
+	<div class="column one-of-four"><p class="alert">.one-of-four</p></div>
+	<div class="column one-of-four"><p class="alert">.one-of-four</p></div>
+	<div class="column one-of-four"><p class="alert">.one-of-four</p></div>
+	<div class="column one-of-four"><p class="alert">.one-of-four</p></div>
+</div>
+
+<div class="row">
+	<div class="column one-of-five"><p class="alert">.one-of-five</p></div>
+	<div class="column one-of-five"><p class="alert">.one-of-five</p></div>
+	<div class="column one-of-five"><p class="alert">.one-of-five</p></div>
+	<div class="column one-of-five"><p class="alert">.one-of-five</p></div>
+	<div class="column one-of-five"><p class="alert">.one-of-five</p></div>
 </div>
 
 
-<section class="desktop-to-mobile">
-	<h2>Transitioning columns</h2>
-	<p>
-		large screens see a <code>.one-of-four</code> layout, while small screens
-		get a <code>.mobile-one-of-two</code> layout. For small screens the same
-		four elements layout in a two-up grid.
-	</p>
-	<div class="row">
-		<div class="column one-of-four mobile-one-of-two"><div class="alert info no-icon">one-of-four (mobile-one-of-two)</div></div>
-		<div class="column one-of-four mobile-one-of-two"><div class="alert info no-icon">one-of-four (mobile-one-of-two)</div></div>
-		<div class="column one-of-four mobile-one-of-two"><div class="alert info no-icon">one-of-four (mobile-one-of-two)</div></div>
-		<div class="column one-of-four mobile-one-of-two"><div class="alert info no-icon">one-of-four (mobile-one-of-two)</div></div>
-	</div>
+<h2>Nested columns</h2>
 
-	<p>
-		large screens see a <code>.five-up</code> layout, while small screens
-		get a <code>.mobile-three-up</code> layout. For small screens the same
-		five elements layout in a three-up grid.
-	</p>
-	<div class="row mobile-three-up five-up">
-		<div class="column"><div class="alert info no-icon">five-up (mobile-three-up)</div></div>
-		<div class="column"><div class="alert info no-icon">five-up (mobile-three-up)</div></div>
-		<div class="column"><div class="alert info no-icon">five-up (mobile-three-up)</div></div>
-		<div class="column"><div class="alert info no-icon">five-up (mobile-three-up)</div></div>
-		<div class="column"><div class="alert info no-icon">five-up (mobile-three-up)</div></div>
+<p>
+	To nest your content within the grid, add a new <code>.row</code> and
+	set of <code>.column</code> elements within an existing <code>.column</code>
+	container.
+</p>
+
+<div class="row">
+	<div class="column two-of-three">
+		<div class="alert">
+			.two-of-three<br/>
+			<div class="row">
+				<div class="column one-of-three">
+					<div class="alert success no-icon">.one-of-three</div>
+				</div>
+				<div class="column one-of-three">
+					<div class="alert success no-icon">.one-of-three</div>
+				</div>
+				<div class="column one-of-three">
+					<div class="alert success no-icon">.one-of-three</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</section>
+	<div class="column one-of-three">
+		<div class="alert">
+			.one-of-three<br/>
+			<div class="row">
+				<div class="column one-of-two">
+					<div class="alert success no-icon">.one-of-two</div>
+				</div>
+				<div class="column one-of-two">
+					<div class="alert success no-icon">.one-of-two</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<h2>Transitioning columns</h2>
+
+<p>
+	Large screens see a <code>.one-of-four</code> layout, while small screens
+	get a <code>.mobile-one-of-two</code> layout. For small screens the same
+	four elements layout in a two-up grid.
+</p>
+
+<div class="row">
+	<div class="column one-of-four mobile-one-of-two">
+		<div class="alert info no-icon">.one-of-four<br/>.mobile-one-of-two</div>
+	</div>
+	<div class="column one-of-four mobile-one-of-two">
+		<div class="alert info no-icon">.one-of-four<br/>.mobile-one-of-two</div>
+	</div>
+	<div class="column one-of-four mobile-one-of-two">
+		<div class="alert info no-icon">.one-of-four<br/>.mobile-one-of-two</div>
+	</div>
+	<div class="column one-of-four mobile-one-of-two">
+		<div class="alert info no-icon">.one-of-four<br/>.mobile-one-of-two</div>
+	</div>
+</div>
+
+<p>
+	Large screens see a <code>.five-up</code> layout, while small screens
+	get a <code>.mobile-three-up</code> layout. For small screens the same
+	five elements layout in a three-up grid.
+</p>
+
+<div class="row mobile-three-up five-up">
+	<div class="column">
+		<div class="alert info no-icon">.five-up<br/>.mobile-three-up</div>
+	</div>
+	<div class="column">
+		<div class="alert info no-icon">.five-up<br/>.mobile-three-up</div>
+	</div>
+	<div class="column">
+		<div class="alert info no-icon">.five-up<br/>.mobile-three-up</div>
+	</div>
+	<div class="column">
+		<div class="alert info no-icon">.five-up<br/>.mobile-three-up</div>
+	</div>
+	<div class="column">
+		<div class="alert info no-icon">.five-up<br/>.mobile-three-up</div>
+	</div>
+</div>
