@@ -116,12 +116,10 @@ $color-cool-blue-lightest:   #dce4ef; // lighten($color-cool-blue, 90%)
 $color-focus:                #3e94cf;
 $color-visited:              #4c2c92;
 
-// Form variables
-$form-input-border-color: #5b616b; // 18F
-$focus-shadow: 0 0 3px $color-focus, 0 0 7px $color-focus;
+/* Form variables */
 $border-radius: rem(3px);
 
-// Screen reader only helper
+/* Screen reader only helper */
 .usa-sr-only {
   position: absolute;
   left:-999em;

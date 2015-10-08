@@ -1,8 +1,8 @@
 /** Stacked should be the default mobile style */
 
 input,
-input[type="date"],       // Day, Month, Year
-input[type="datetime"],   // Day, Month, Year, Hour, Minute, Second, Microsecond
+input[type="date"],
+input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],
 input[type="file"],
@@ -18,10 +18,10 @@ input[type="week"],
 select,
 textarea {
   appearance: none;
-  border: 1px solid $form-input-border-color;
+  border: 1px solid #5b616b;
   border-radius: 0;
   box-sizing: border-box;
-  color: #000; // standardize on firefox
+  color: #000;
   display: block;
   margin: .2em 0;
   outline: none;
@@ -30,7 +30,7 @@ textarea {
 
   &:focus,
   &.usa-input-focus {
-    box-shadow: $focus-shadow;
+    box-shadow: 0 0 3px $color-focus, 0 0 7px $color-focus;
   }
 
   &.usa-input-success {
@@ -106,11 +106,8 @@ select {
   background-repeat: no-repeat;
   background-size: 1.3rem;
 }
-// select {
-//   content: '\0E313';
-//   font-family: 'Material Icons';
-// }
-// Hint text
+
+/* Hint text */
 
 .usa-form-hint {
   color: #757575;
@@ -121,7 +118,7 @@ select {
 /**
  * Custom checkboxes
  */
-// Hide the actual checkbox and radio button, they are replaced by icons.
+/* Hide the actual checkbox and radio button, they are replaced by icons. */
 input[type="checkbox"],
 input[type="radio"] {
   position: absolute;
@@ -155,20 +152,20 @@ input[type="radio"] + label::before {
 input[type="radio"] + label::before {
   border-radius: 100%;
 }
-// Style the checked version of the checkbox/radio button
+/* Style the checked version of the checkbox/radio button */
 input[type="checkbox"]:checked + label::before,
 input[type="radio"]:checked + label::before {
   color: $color-primary;
 }
-// Use checkmark icon for checked checkbox.
+/* Use checkmark icon for checked checkbox. */
 input[type="checkbox"]:checked + label::before {
   content: '\0E834';
 }
-// Use filled circle icon for checked radio button.
+/* Use filled circle icon for checked radio button. */
 input[type="radio"]:checked + label::before {
   content: '\0E837';
 }
-// Gray-out the button and label if they are disabled.
+/* Gray-out the button and label if they are disabled. */
 input[type="checkbox"]:disabled + label,
 input[type="radio"]:disabled + label {
   color: $color-gray;
