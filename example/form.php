@@ -25,8 +25,13 @@ if (!isset($TEMPLATE)) {
 <div class="preview">
   <h2>Form example elements</h2>
   <form>
+    <label for="input-type-text">Tell us your name, so that we can let you
+      know when it is ready:
+      <input id="input-type-text" name="input-type-text" type="text" />
+    </label>
+
     <p>
-      You make pick one flavor...
+      You may pick one flavor...
     </p>
     <fieldset class="usa-fieldset-inputs">
       <legend class="usa-sr-only">Ice Cream Flavors</legend>
@@ -73,21 +78,16 @@ if (!isset($TEMPLATE)) {
       </ul>
     </fieldset>
 
-    <label>Dropdown label
+    <label>Now choose your container:
       <select class="collection-selectbox">
-        <option value="0">Option 1</option>
-        <option value="1">Option 2</option>
-        <option value="2">Option 3</option>
-        <option value="3" selected="selected">Option 4 - default</option>
+        <option value="waffle-cone">Waffle Cone</option>
+        <option value="regular-cone">Regular Cone</option>
+        <option value="users-hands">Your Hands</option>
+        <option value="bowl" selected="selected">Bowl</option>
       </select>
     </label>
 
-
-    <label for="input-type-text">Text input label
-      <input id="input-type-text" name="input-type-text" type="text" />
-    </label>
-
-    <label for="input-type-textarea">Text area label
+    <label for="input-type-textarea">Any other instructions?
       <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
     </label>
   </form>
