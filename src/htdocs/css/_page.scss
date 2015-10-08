@@ -25,11 +25,11 @@ canvas {
 .page-footer {
   clear:both;
   color: #999;
-  padding:$spacing 0;
   font-size:smaller;
+  margin: $spacing 0;
 
   > .page-social {
-    margin: 1em 0 0;
+    margin: $spacing 0 0;
   }
 }
 
@@ -40,7 +40,6 @@ canvas {
     justify-content: space-between;
   }
 
-  /* navigation/content as left/right columns */
   .page {
     float: right;
     padding-left: 0;

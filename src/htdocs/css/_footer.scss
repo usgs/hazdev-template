@@ -1,7 +1,6 @@
 /* section nav */
 .site-sectionnav {
 
-<<<<<<< 0a3146f9a312b11f745e40d963c6efa0e3e868be
   /* Ungrouped Links */
   > a {
     background-color: #ededed;
@@ -113,12 +112,6 @@
     display: block;
     margin: 1em 0 0 0;
   }
-
-  &:after {
-    clear: both;
-    content: ' ';
-    display: block;
-  }
 }
 
 
@@ -126,9 +119,6 @@
 
 .site-sitenav {
   background-color: $primary;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 0.2em 0;
   overflow: visible;
 
   > a,
@@ -149,10 +139,6 @@
       color: $primary-text-color;
     }
 
-    &:last-child {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
     &:hover {
       background: $primary-darker;
       color: $primary-text-color;
@@ -169,21 +155,14 @@
 }
 
 
-/* common nav */
+/* Site Footer */
 
 .site-commonnav {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $secondary;
   clear: both;
   font-size: smaller;
-  line-height: 1.6;
   padding: 1rem;
   text-align: center;
-
-  > hr {
-    border: solid #ddd;
-    border-width: 1px 0 0;
-    margin: 0 0 15px;
-  }
 
   > a {
     color: $primary-lighter;
@@ -206,48 +185,25 @@
   .site-sectionnav,
   .site-sitenav,
   .site-search {
-    margin: 1em 0;
-  }
-
-  .site-sitenav {
-    border: 1px solid $primary;
+    margin: $spacing 0;
   }
 
   .site-sectionnav {
 
     > a,
     > strong {
-      border: 1px solid #ddd;
-      margin: 0 0 1em 0;
-      padding: calc($spacing/2) calc($spacing * 2/3);
+      border: 1px solid $secondary;
+      margin: 0 0 $spacing;
     }
 
     > section {
-      border: 1px solid #ddd;
-      margin: 0 0 1em;
+      border: 1px solid $secondary;
+      margin: 0 0 $spacing;
 
       header,
       header > a {
         border-top: 0;
       }
-
-      > a,
-      > strong,
-      > header {
-        padding: calc($spacing/2) calc($spacing * 2/3);
-      }
-
-      > a,
-      > strong {
-        padding-left: calc(3/2 * $spacing);
-      }
-    }
-  }
-
-  .site-sitenav {
-    > a,
-    > strong {
-      padding: calc($spacing/2) calc($spacing * 2/3);
     }
   }
 }
