@@ -2,13 +2,13 @@
 @import '_variables.scss';
 
 /* include template partials */
-@import '_typography.scss';
 @import '_banner.scss';
+@import '_button.scss';
+@import '_figcaption.scss';
+@import '_footer.scss';
+@import '_form.scss';
+@import '_list.scss';
+@import '_offcanvas.scss';
 @import '_page.scss';
 @import '_social.scss';
-@import '_footer.scss';
-@import '_offcanvas.scss';
-@import '_list.scss';
-@import '_button.scss';
-@import '_form.scss';
-@import '_figcaption.scss';
+@import '_typography.scss';
