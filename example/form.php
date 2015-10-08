@@ -7,19 +7,12 @@ if (!isset($TEMPLATE)) {
 			<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
 
 			<style>
-				textarea {
-					width: 36em;
-					height: 10em;
-				}
 
-				.vertical > button {
-					margin: 2em 0 0;
-				}
-
-				.sortExample,
-				.searchExample {
-					margin: 1em 0 0;
-				}
+				.preview {
+          border: 1px solid #eee;
+          margin: 1em 0;
+          padding: .25em 3rem;
+        }
 
 			</style>
 	';
@@ -29,168 +22,183 @@ if (!isset($TEMPLATE)) {
 }
 ?>
 
+<div class="preview">
+  <h2>Form example elements</h2>
+  <form>
+    <label for="input-type-text">Tell us your name, so that we can let you
+      know when it is ready:
+      <input id="input-type-text" name="input-type-text" type="text" />
+    </label>
 
-<p>
-	The inputs, labels, and other form elements on a form are vertical
-	when the <code>.vertical</code> class is applied to the container.
-</p>
+    <p>
+      You may pick one flavor...
+    </p>
+    <fieldset class="usa-fieldset-inputs">
+      <legend class="usa-sr-only">Ice Cream Flavors</legend>
+      <ul class="usa-unstyled-list">
+        <li>
+          <input type="radio" name="vanilla" id="vanilla"
+              value="vanilla" checked="checked" />
+          <label for="vanilla">Vanilla</label>
+        </li>
+        <li>
+          <input type="radio" name="chocolate" id="chocolate"
+              value="chocolate" />
+          <label for="chocolate">Chocolate</label>
+        </li>
+        <li>
+          <input type="radio" name="strawberry" id="strawberry"
+              value="strawberry" disabled="disabled" />
+          <label for="strawberry">Strawberry - Sorry, out of stock</label>
+        </li>
+      </ul>
+    </fieldset>
 
-<h2>Form Elements</h2>
-<p>
-	Here are some examples of form elements displayed with their default styles.
-</p>
+    <p>
+      ...and several toppings.
+    </p>
+    <fieldset class="usa-fieldset-inputs">
+      <legend class="usa-sr-only">Ice Cream Toppings</legend>
+      <ul class="usa-unstyled-list">
+        <li>
+          <input type="checkbox" id="sprinkles" name="sprinkles"
+              value="sprinkles" checked="checked" />
+          <label for="checkbox-1">Sprinkles</label>
+        </li>
+        <li>
+          <input type="checkbox" id="chocolate-syrup" name="chocolate-syrup"
+              value="chocolate-syrup" />
+          <label for="chocolate-syrup">Chocolate Syrup</label>
+        </li>
+        <li>
+          <input type="checkbox" id="peanuts" name="peanuts"
+              value="peanuts" disabled="disabled" />
+          <label for="peanuts">Peanuts - Sorry, out of stock</label>
+        </li>
+      </ul>
+    </fieldset>
 
-<h3>Sort Example</h3>
-<div class="sortExample">
-	<label>Sort by
-		<select class="collection-selectbox">
-			<option value="0">Location</option>
-			<option value="1">MMI</option>
-			<option value="2">Responses</option>
-			<option value="3" selected="selected">Distance</option>
-		</select>
-	</label>
-	<button type="submit">Download</button>
+    <label>Now choose your container:
+      <select class="collection-selectbox">
+        <option value="waffle-cone">Waffle Cone</option>
+        <option value="regular-cone">Regular Cone</option>
+        <option value="users-hands">Your Hands</option>
+        <option value="bowl" selected="selected">Bowl</option>
+      </select>
+    </label>
+
+    <label for="input-type-textarea">Any other instructions?
+      <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
+    </label>
+  </form>
 </div>
 
-<h3>Search Example</h3>
-<div class="searchExample">
-	<label>Search
-		<input type="search" placeholder="Search" />
-	</label>
-	<button type="submit">Search</button>
+<div class="preview">
+  <h2>Text input Examples</h2>
+  <p>
+    Text input can span single or multiple lines.
+  </p>
+  <form>
+    <label for="input-type-text">Text input label
+      <input id="input-type-text" name="input-type-text" type="text" />
+    </label>
+
+    <label for="input-focus">Text input focused
+      <input class="usa-input-focus" id="input-focus"
+          name="input-focus" type="text" />
+    </label>
+
+    <div class="usa-input-error">
+      <label class="usa-input-error-label" for="input-error">Text input error
+        <span class="usa-input-error-message" id="input-error-message"
+            role="alert">Helpful error message</span>
+        <input id="input-error" name="input-error" type="text"
+            aria-describedby="input-error-message" />
+      </label>
+    </div>
+
+    <label for="input-success">Text input success
+      <input class="usa-input-success" id="input-success"
+          name="input-success" type="text" />
+    </label>
+
+    <label for="input-type-textarea">Text area label
+      <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
+    </label>
+  </form>
 </div>
 
+<div class="preview">
+  <h2>Dropdown Example</h2>
+  <p>
+    Dropdowns should be used when only 1 selection is allowed, and there are
+    not too many options to choose from.
+  </p>
+  <form>
+  	<label>Dropdown label
+  		<select class="collection-selectbox">
+  			<option value="0">Option 1</option>
+  			<option value="1">Option 2</option>
+  			<option value="2">Option 3</option>
+  			<option value="3" selected="selected">Option 4 - default</option>
+  		</select>
+  	</label>
+  </form>
+</div>
 
-<h2>Vertical Form</h2>
-<form class="vertical">
+<div class="preview">
+  <h2>Checkboxes Example</h2>
+  <p>
+    Checkboxes should be used when multiple selections are allowed, or
+    to enable/disable a feature.
+  </p>
+  <fieldset class="usa-fieldset-inputs">
+    <legend class="usa-sr-only">Checkboxes</legend>
+    <ul class="usa-unstyled-list">
+      <li>
+        <input type="checkbox" id="checkbox-1"
+            value="checkbox 1" checked="checked" />
+        <label for="checkbox-1">Regular Checkbox 1 - checked by default</label>
+      </li>
+      <li>
+        <input type="checkbox" id="checkbox-2" value="checkbox 2" />
+        <label for="checkbox-2">Regular Checkbox 2</label>
+      </li>
+      <li>
+        <input type="checkbox" id="checkbox-3" value="checkbox 3" />
+        <label for="checkbox-3">Regular Checkbox 3</label>
+      </li>
+      <li>
+        <input type="checkbox" id="checkbox-4"
+            value="checkbox 4" disabled="disabled" />
+        <label for="checkbox-4">Regular Checkbox 4 - disabled</label>
+      </li>
+    </ul>
+  </fieldset>
+</div>
 
-	<!-- Label and text input -->
-	<label for="regularInput1">Regular Input</label>
-	<input type="text" id="regularInput1" placeholder="Placeholder Text"/>
-
-	<!-- Label and textarea -->
-	<label for="regularTextarea1">Regular Textarea</label>
-	<textarea id="regularTextarea1"></textarea>
-
-	<!-- Label and select list -->
-	<label for="selectList1">Select List</label>
-	<select id="selectList1">
-		<option value="Option 1">Option 1</option>
-		<option value="Option 2">Option 2</option>
-		<option value="Option 3">Option 3</option>
-	</select>
-
-	<!-- Wrap checkbox/radio button groups in fieldsets -->
-	<fieldset>
-
-		<!-- Give the fieldset a legend -->
-		<legend>Checkboxes</legend>
-
-		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
-		<label for="regularCheckbox1">
-			<input type="checkbox" id="regularCheckbox1" value="checkbox 1" />
-			Regular Checkbox 1
-		</label>
-
-		<label for="secondRegularCheckbox1">
-			<input type="checkbox" id="secondRegularCheckbox1" value="checkbox 2" />
-			Regular Checkbox 2
-		</label>
-
-		<label for="thirdRegularCheckbox1">
-			<input type="checkbox" id="thirdRegularCheckbox1" value="checkbox 2" />
-			Regular Checkbox 3
-		</label>
-	</fieldset>
-
-	<fieldset>
-		<legend>Radio Buttons</legend>
-		<label for="regularRadio1">
-			<input type="radio" name="radios" id="regularRadio1" value="radio 1" />
-			Regular Radio 1
-		</label>
-		<label for="secondRegularRadio1">
-			<input type="radio" name="radios" id="secondRegularRadio1" value="radio 2" />
-			Regular Radio 2
-		</label>
-	</fieldset>
-
-	<button type="submit">Submit Form</button>
-</form>
-<h2>Usage</h2>
-<pre><code>&lt;form class="vertical"&gt;
-	&lt;label for="regularInput"&gt;Regular Input&lt;/label&gt;
-	&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
-	&hellip;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Radio Buttons&lt;/legend&gt;
-		&lt;label for="regularRadio"&gt;
-			&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
-			Regular Radio
-		&lt;/label&gt;
-		&lt;label for="secondRegularRadio"&gt;
-			&lt;input type="radio" name="radios" id="secondRegularRadio" value="radio 2" /&gt;
-			Regular Radio
-		&lt;/label&gt;
-	&lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre>
-
-
-<h2>Fieldset Example</h2>
-<p>
-	This is an example of a <code>fieldset</code> being used to format a question.
-</p>
-<section class="vertical">
-	<fieldset>
-		<legend>
-			I have a long question that I want to wrap on a smaller screen, do you
-			think that this text will wrap?
-		</legend>
-		<label for="regularRadio3">
-			<input type="radio" name="radios" id="regularRadio3" value="radio 1" />
-			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile. 
-		</label>
-		<label for="secondRegularRadio3">
-			<input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" />
-			Yes
-		</label>
-		<label for="thirdRegularRadio3">
-			<input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" />
-			No
-		</label>
-		<label for="fourthRegularRadio3">
-			<input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" />
-			Maybe
-		</label>
-	</fieldset>
-</section>
-<h2>Usage</h2>
-<pre><code>&lt;section class="vertical"&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;
-			I have a long question that I want to wrap on a smaller screen, do you
-			think that this text will wrap?
-		&lt;/legend&gt;
-		&lt;label for="regularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="regularRadio3" value="radio 1" /&gt;
-			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile.
-		&lt;/label&gt;
-		&lt;label for="secondRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" /&gt;
-			Yes
-		&lt;/label&gt;
-		&lt;label for="thirdRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" /&gt;
-			No
-		&lt;/label&gt;
-		&lt;label for="fourthRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" /&gt;
-			Maybe
-		&lt;/label&gt;
-	&lt;/fieldset&gt;
-&lt;/section&gt;
-</code></pre>
+<div class="preview">
+  <h2>Radio Buttons Example</h2>
+  <p>
+    Radio buttons should be used when only 1 selection is allowed.
+  </p>
+  <fieldset class="usa-fieldset-inputs">
+    <legend class="usa-sr-only">Radio Buttons</legend>
+    <ul class="usa-unstyled-list">
+      <li>
+        <input type="radio" name="radios" id="radio-1"
+            value="radio 1" checked="checked" />
+        <label for="radio-1">Regular Radio 1 - selected by default</label>
+      </li>
+      <li>
+        <input type="radio" name="radios" id="radio-2" value="radio 2" />
+        <label for="radio-2">Regular Radio 2</label>
+      </li>
+      <li>
+        <input type="radio" name="radios" id="radio-3"
+            value="radio 3" disabled="disabled"/>
+        <label for="radio-3">Regular Radio 3 - disabled</label>
+      </li>
+    </ul>
+  </fieldset>
+</div>

@@ -1,115 +1,204 @@
 /** Stacked should be the default mobile style */
-select, textarea, input, fieldset, legend, label {
-	color: #333;
-	font-size: 1.6rem; // prevents zooming on input in iOS (android? dont know)
-	margin: 4px 2px;
-}
 
-legend,
-label {
-	margin: 0.5em 0 0;
-}
-
+input,
 input[type="date"],
 input[type="datetime"],
+input[type="datetime-local"],
 input[type="email"],
+input[type="file"],
+input[type="month"],
 input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="text"],
 input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
 textarea {
-	height:4rem;
-	padding: 0.5em;
-	max-width: 100%;
+  appearance: none;
+  border: 1px solid #5b616b;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  margin: .2em 0;
+  outline: none;
+  padding: 1rem .7em;
+  width: 100%;
 
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+  &:focus,
+  &.usa-input-focus {
+    box-shadow: 0 0 3px $color-focus, 0 0 7px $color-focus;
+  }
+
+  &.usa-input-success {
+    border: 3px solid $color-green-light;
+  }
+}
+
+.usa-fieldset-inputs {
+  > label {
+    margin-top: 0;
+  }
+}
+
+.usa-input-error {
+  border-left: 4px solid $color-secondary-dark;
+  margin-top: 3rem;
+  padding: {
+    bottom: .8rem;
+    left: 1.5rem;
+    top: .8rem;
+  }
+  position: relative;
+  right: 1.9rem;
+
+  > label {
+    margin-top: 0;
+  }
+}
+
+.usa-input-error-label {
+  display: block;
+  font-weight: $font-bold;
+
+  > input {
+    border: 3px solid $color-secondary-dark;
+    width: calc(100% + 1.5rem);
+  }
+}
+
+.usa-input-error-message {
+  color: $color-secondary-dark;
+  display: block;
+  font-weight: $font-bold;
+  padding: {
+    bottom: 3px;
+    top: 3px;
+  }
+}
+
+label {
+  cursor: pointer;
+  display: block;
+  margin-top: 3rem;
+}
+
+textarea {
+  height: 16rem;
 }
 
 select {
-	height:4rem;
-	border:1px solid #d8d8d8;
-	padding: 0 0.25em;
-	max-width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $color-white;
+  background-image: url('/theme/images/arrow-down.png');
+  background-image: url('/theme/images/arrow-down.svg');
+  background-position: right 1.3rem center;
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
 }
 
-input,
-textarea {
-	border: 1px solid #d8d8d8;
+/* Hint text */
+
+.usa-form-hint {
+  color: #757575;
+  font-family: $font-sans;
+  margin-bottom: 0;
 }
 
-textarea {
-	vertical-align:top;
+/**
+ * Custom checkboxes
+ */
+/* Hide the actual checkbox and radio button, they are replaced by icons. */
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  left: -999em;
 }
 
-fieldset {
-	margin: 1em 0 0;
-	padding:0;
-	border:none;
-
-	label {
-		display:block;
-		text-indent: -49px;
-		padding-left: 49px;
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  cursor: pointer;
+  font-weight: 400;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-	padding: 0;
-	margin: 0 12px 0 16px;
-	width: 16px;
+input[type="checkbox"] + label::before {
+  content: '\0E835';
+  font-family: 'Material Icons';
+  font-size: 1.6em;
+  vertical-align: middle;
+}
+input[type="radio"] + label::before {
+  content: '\0E836';
+  font-family: 'Material Icons';
+  font-size: 1.6em;
+  vertical-align: middle;
 }
 
-.vertical {
-	label {
-		display:block;
-		margin: 1em 0 0;
-	}
-
-	fieldset {
-		label {
-			margin: 0.5em 0 0;
-		}
-	}
-
-	input[type="date"],
-	input[type="datetime"],
-	input[type="email"],
-	input[type="number"],
-	input[type="password"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="text"],
-	input[type="time"],
-	select,
-	textarea {
-		margin-left: 0;
-		margin-right: 0;
-	}
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+  margin-right: .6em;
 }
 
-@media screen and (min-width: $breakpoint-offcanvas) {
+input[type="radio"] + label::before {
+  border-radius: 100%;
+}
+/* Style the checked version of the checkbox/radio button */
+input[type="checkbox"]:checked + label::before,
+input[type="radio"]:checked + label::before {
+  color: $color-primary;
+}
+/* Use checkmark icon for checked checkbox. */
+input[type="checkbox"]:checked + label::before {
+  content: '\0E834';
+}
+/* Use filled circle icon for checked radio button. */
+input[type="radio"]:checked + label::before {
+  content: '\0E837';
+}
+/* Gray-out the button and label if they are disabled. */
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+  color: $color-gray;
+}
+input[type="checkbox"]:disabled + label::before,
+input[type="radio"]:disabled + label::before {
+  background: $color-gray-lighter;
+  cursor: not-allowed;
+}
 
-	input[type="date"],
-	input[type="datetime"],
-	input[type="email"],
-	input[type="number"],
-	input[type="password"],
-	input[type="search"],
-	input[type="tel"],
-	input[type="text"],
-	input[type="time"],
-	select,
-	textarea {
-		font-size: 0.8125em;
-		height: 3rem;
-	}
+// Memorable dates
+
+.usa-date-of-birth {
+  label {
+    margin-top: 0;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+.usa-form-group-day,
+.usa-form-group-month,
+.usa-form-group-year {
+  clear: none;
+  float: left;
+  margin-right: 1.5rem;
+  width: 5rem;
+}
+
+.usa-form-group-year {
+  width: 7rem;
 }
