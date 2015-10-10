@@ -1,20 +1,20 @@
 <?php
 if (!isset($TEMPLATE)) {
-	$TITLE = 'Forms';
-	$NAVIGATION = true;
+  $TITLE = 'Forms';
+  $NAVIGATION = true;
 
-	$HEAD = '
-			<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
-			<style>
-				.preview {
+  $HEAD = '
+      <link rel="stylesheet" href="/theme/css/flexible-grid.css" />
+      <style>
+        .preview {
           border: 1px solid #eee;
           margin: 1em 0;
           padding: .25em 3rem;
         }
-			</style>
-	';
+      </style>
+  ';
 
-	include 'template.inc.php';
+  include 'template.inc.php';
 
 }
 ?>
@@ -88,9 +88,7 @@ if (!isset($TEMPLATE)) {
       <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
     </label>
   </form>
-</div>
 
-<div>
   <h2>Usage</h2>
   <pre>
 &lt;form&gt;
@@ -217,9 +215,7 @@ if (!isset($TEMPLATE)) {
           name="input-success" type="text" />
     </label>
   </form>
-</div>
 
-<div>
   <h2>Usage</h2>
   <pre>
 &lt;form&gt;
@@ -242,5 +238,92 @@ if (!isset($TEMPLATE)) {
         name="input-success" type="text" /&gt;
   &lt;/label&gt;
 &lt;/form&gt;
+  </pre>
+</div>
+
+<div class="preview">
+  <h2>Dropdowns</h2>
+  <p>
+    Dropdowns should be used when only 1 selection is allowed, and there are
+    not too many options to choose from.
+  </p>
+
+  <h2>Usage</h2>
+  <pre>
+&lt;form&gt;
+  &lt;label&gt;Dropdown label
+    &lt;select class="collection-selectbox"&gt;
+      &lt;option value="0"&gt;Option 1&lt;/option&gt;
+      &lt;option value="1"&gt;Option 2&lt;/option&gt;
+      &lt;option value="2"&gt;Option 3&lt;/option&gt;
+      &lt;option value="3" selected="selected"&gt;Option 4 - default&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+  </pre>
+</div>
+
+<div class="preview">
+  <h2>Checkboxes</h2>
+  <p>
+    Checkboxes should be used when multiple selections are allowed, or
+    to enable/disable a feature.
+  </p>
+
+  <h2>Usage</h2>
+  <pre>
+&lt;fieldset class="usa-fieldset-inputs"&gt;
+  &lt;legend class="usa-sr-only"&gt;Checkboxes&lt;/legend&gt;
+  &lt;ul class="usa-unstyled-list"&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="checkbox-1"
+          value="checkbox 1" checked="checked" /&gt;
+      &lt;label for="checkbox-1"&gt;Regular Checkbox 1 - checked by default&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="checkbox-2" value="checkbox 2" /&gt;
+      &lt;label for="checkbox-2"&gt;Regular Checkbox 2&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="checkbox-3" value="checkbox 3" /&gt;
+      &lt;label for="checkbox-3"&gt;Regular Checkbox 3&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="checkbox-4"
+          value="checkbox 4" disabled="disabled" /&gt;
+      &lt;label for="checkbox-4"&gt;Regular Checkbox 4 - disabled&lt;/label&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/fieldset&gt;
+  </pre>
+</div>
+
+<div class="preview">
+  <h2>Radio Buttons</h2>
+  <p>
+    Radio buttons should be used when only 1 selection is allowed.
+  </p>
+
+  <h2>Usage</h2>
+  <pre>
+&lt;fieldset class="usa-fieldset-inputs"&gt;
+  &lt;legend class="usa-sr-only"&gt;Radio Buttons&lt;/legend&gt;
+  &lt;ul class="usa-unstyled-list"&gt;
+    &lt;li&gt;
+      &lt;input type="radio" name="radios" id="radio-1"
+          value="radio 1" checked="checked" /&gt;
+      &lt;label for="radio-1"&gt;Regular Radio 1 - selected by default&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="radio" name="radios" id="radio-2" value="radio 2" /&gt;
+      &lt;label for="radio-2"&gt;Regular Radio 2&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="radio" name="radios" id="radio-3"
+          value="radio 3" disabled="disabled"/&gt;
+      &lt;label for="radio-3"&gt;Regular Radio 3 - disabled&lt;/label&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/fieldset&gt;
   </pre>
 </div>
