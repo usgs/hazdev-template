@@ -90,33 +90,7 @@ if (!isset($TEMPLATE)) {
   </form>
 </div>
 
-<div class="preview">
-  <h2>Text Input Examples</h2>
-  <p>
-    Text input can span single or multiple lines, and can be styled
-    for success and error status.
-  </p>
-  <form>
-    <label for="input-focus">Text input focused
-      <input class="usa-input-focus" id="input-focus"
-          name="input-focus" type="text" />
-    </label>
-
-    <div class="usa-input-error">
-      <label class="usa-input-error-label" for="input-error">Text input error
-        <span class="usa-input-error-message" id="input-error-message"
-            role="alert">Helpful error message</span>
-        <input id="input-error" name="input-error" type="text"
-            aria-describedby="input-error-message" />
-      </label>
-    </div>
-
-    <label for="input-success">Text input success
-      <input class="usa-input-success" id="input-success"
-          name="input-success" type="text" />
-    </label>
-  </form>
-
+<div>
   <h2>Usage</h2>
   <pre>
 &lt;form&gt;
@@ -194,6 +168,60 @@ if (!isset($TEMPLATE)) {
   Text input can span single or multiple lines, and can be styled
   for success and error status.
 &lt;/p&gt;
+&lt;form&gt;
+  &lt;label for="input-focus"&gt;Text input focused
+    &lt;input class="usa-input-focus" id="input-focus"
+        name="input-focus" type="text" /&gt;
+  &lt;/label&gt;
+
+  &lt;div class="usa-input-error"&gt;
+    &lt;label class="usa-input-error-label" for="input-error"&gt;Text input error
+      &lt;span class="usa-input-error-message" id="input-error-message"
+          role="alert"&gt;Helpful error message&lt;/span&gt;
+      &lt;input id="input-error" name="input-error" type="text"
+          aria-describedby="input-error-message" /&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;label for="input-success"&gt;Text input success
+    &lt;input class="usa-input-success" id="input-success"
+        name="input-success" type="text" /&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+  </pre>
+</div>
+
+<div class="preview">
+  <h2>Text Input Examples</h2>
+  <p>
+    Text input can span single or multiple lines, and can be styled
+    for success and error status.
+  </p>
+  <form>
+    <label for="input-focus">Text input focused
+      <input class="usa-input-focus" id="input-focus"
+          name="input-focus" type="text" />
+    </label>
+
+    <div class="usa-input-error">
+      <label class="usa-input-error-label" for="input-error">Text input error
+        <span class="usa-input-error-message" id="input-error-message"
+            role="alert">Helpful error message</span>
+        <input id="input-error" name="input-error" type="text"
+            aria-describedby="input-error-message" />
+      </label>
+    </div>
+
+    <label for="input-success">Text input success
+      <input class="usa-input-success" id="input-success"
+          name="input-success" type="text" />
+    </label>
+  </form>
+</div>
+
+<div>
+  <h2>Usage</h2>
+  <pre>
 &lt;form&gt;
   &lt;label for="input-focus"&gt;Text input focused
     &lt;input class="usa-input-focus" id="input-focus"
