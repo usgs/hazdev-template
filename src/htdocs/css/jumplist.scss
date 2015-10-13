@@ -3,24 +3,17 @@
 .jumplist {
   border: 1px solid #ddd;
   margin: 1em 0 0;
-  padding: 0.5em 0 0 1em;
+  padding: 0.5em 0;
 
   > a {
     border-right: 1px solid #ccc;
     display: inline-block;
-    float: left;
     line-height: 1em;
-    margin: 0 0.5em 0.5em 0;
-    padding-right: 0.5em;
+    margin: 0.25em;
+    padding: 0 0.75em;
 
     &:last-child {
       border-right: 0;
     }
-  }
-
-  &:after {
-    clear: both;
-    content: ' ';
-    display: block;
   }
 }
