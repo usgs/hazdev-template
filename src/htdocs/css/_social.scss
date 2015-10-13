@@ -1,8 +1,9 @@
 .page-social > a {
   margin-left: 16px;
-}
-.page-social > a:first-child {
-  margin: 0;
+
+  &:first-child {
+    margin: 0;
+  }
 }
 
 
@@ -41,9 +42,10 @@
 
 
 @media screen and (min-width: 768px) {
-  .page-social {
-    > a:before {
 
+  .page-social {
+
+    > a:before {
       background: url("/theme/images/social-sprite.png") no-repeat;
       content: ' ';
       display: inline-block;
