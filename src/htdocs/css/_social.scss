@@ -1,74 +1,74 @@
 .page-social > a {
-	margin-left: 16px;
+  margin-left: 16px;
 }
 .page-social > a:first-child {
-	margin: 0;
+  margin: 0;
 }
+
 
 @media screen and (max-width: 767px) {
 
-	.page-social {
+  .page-social {
 
-		> a {
-			display: inline-block;
-			background: url("/theme/images/social-sprite.png") no-repeat;
-			content: ' ';
-			width: 32px;
-			height: 32px;
-			margin-top: -32px;
-			text-indent: -9999px;
-			overflow: hidden;
-			margin-top: 0;
+    > a {
+      background: url("/theme/images/social-sprite.png") no-repeat;
+      content: ' ';
+      display: inline-block;
+      height: 32px;
+      margin-top: 0;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 32px;
 
-			&.facebook {
-				background-position: 0 0px;
-			}
+      &.facebook {
+        background-position: 0 0px;
+      }
 
-			&.twitter {
-				background-position: 0 -48px;
-			}
+      &.twitter {
+        background-position: 0 -48px;
+      }
 
-			&.google-plus {
-				background-position: 0 -96px;
-			}
+      &.google-plus {
+        background-position: 0 -96px;
+      }
 
-			&.email {
-				background-position: 0 -144px;
-			}
-		}
-	}
+      &.email {
+        background-position: 0 -144px;
+      }
+    }
+  }
 }
 
+
 @media screen and (min-width: 768px) {
+  .page-social {
+    > a:before {
 
-	.page-social {
+      background: url("/theme/images/social-sprite.png") no-repeat;
+      content: ' ';
+      display: inline-block;
+      height: 16px;
+      margin-right: 4px;
+      margin-top: -16px;
+      position: relative;
+      top: 2px;
+      width: 16px;
+    }
 
-		> a:before {
-			display: inline-block;
-			background: url("/theme/images/social-sprite.png") no-repeat;
-			content: ' ';
-			height: 16px;
-			width: 16px;
-			margin-top: -16px;
-			position: relative;
-			top: 2px;
-			margin-right: 4px;
-		}
+    > .facebook:before {
+      background-position: 0 -32px;
+    }
 
-		> .facebook:before {
-			background-position: 0 -32px;
-		}
+    > .twitter:before {
+      background-position: 0 -80px;
+    }
 
-		> .twitter:before {
-			background-position: 0 -80px;
-		}
+    > .google-plus:before {
+      background-position: 0 -128px;
+    }
 
-		> .google-plus:before {
-			background-position: 0 -128px;
-		}
-
-		> .email:before {
-			background-position: 0 -176px;
-		}
-	}
+    > .email:before {
+      background-position: 0 -176px;
+    }
+  }
 }
