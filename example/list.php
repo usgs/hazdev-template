@@ -127,14 +127,14 @@
 <ul class="linklist">
   <li>
     <a href="#1">
-      <h4>This is a link</h4>
+      <h4 class="linklist-header">This is a link</h4>
     </a>
     <p>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris
       magna augue, fringilla et felis eget.</p>
   </li>
   <li>
     <a href="#2">
-      <h4>This is a longer link</h4>
+      <h4 class="linklist-header">This is a longer link</h4>
     </a>
     <p>Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam ut
       lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut vitae
@@ -152,7 +152,7 @@
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
     &lt;a&gt;
-      &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
+      &lt;h4 class="linklist-header"&gt;&lt;/h4&gt; (or h3, h5)
     &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
   &lt;/li&gt;
@@ -170,16 +170,18 @@
 <ul class="linklist">
   <li>
     <a href="#1">
-      <h4>This is a link</h4>
-      <img src="http://placehold.it/150x150" alt="Placeholder image">
+      <h4 class="linklist-header">This is a link</h4>
+      <img src="http://placehold.it/150x150" class="linklist-image"
+          alt="Placeholder image">
     </a>
     <p>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris
       magna augue, fringilla et felis eget.</p>
   </li>
   <li>
     <a href="#2">
-      <h4>This is a longer link</h4>
-      <img src="http://placehold.it/150x150" alt="Placeholder image">
+      <h4 class="linklist-header">This is a longer link</h4>
+      <img src="http://placehold.it/150x150" class="linklist-image"
+          alt="Placeholder image">
     </a>
     <p>Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam ut
       lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut vitae
@@ -197,8 +199,8 @@
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
     &lt;a&gt;
-      &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
-      &lt;img /&gt;
+      &lt;h4 class="linklist-header"&gt;&lt;/h4&gt; (or h3, h5)
+      &lt;img class="linklist-image" /&gt;
     &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
   &lt;/li&gt;
