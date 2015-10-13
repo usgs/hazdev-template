@@ -20,7 +20,6 @@ ol {
 }
 
 .linklist {
-
   > li {
     overflow: auto;
     padding: 2rem 0;
@@ -28,26 +27,28 @@ ol {
     &:last-child {
       padding-bottom: 1rem;
     }
-
-    h2, h3, h4 {
-      margin: 0 0 -.5rem 0;
-      padding: 0;
-      line-height: 1.4;
-      font-size: 1.125em;
-      color: $link-color;
-      &:active {
-        color: $link-color-active;
-      }
-    }
-
-    /* a selector included to 'enforce' img tag inside of a for linked img's */
-    a > img {
-      float: left;
-      margin: 0 $horizontal-spacing $vertical-spacing 0;
-      padding-top: 1.3em;
-    }
   }
 }
+
+.linklist-header {
+  color: $link-color;
+  font-size: 1.125em;
+  line-height: 1.4;
+  margin: 0 0 -.5rem 0;
+  padding: 0;
+
+  &:active {
+    color: $link-color-active;
+  }
+}
+
+/* a selector included to 'enforce' img tag inside of a for linked img's */
+.linklist-image {
+  float: left;
+  margin: 0 $horizontal-spacing $vertical-spacing 0;
+  padding-top: 1.3em;
+}
+
 
 /* Remove margin from nested lists */
 li > ul,
@@ -64,8 +65,8 @@ dl {
 }
 
 /* for mobile both hortizontal and vertical stack with a clean left edge */
-dl.vertical,
-dl.horizontal {
+.vertical,
+.horizontal {
   > dd {
     margin: 0;
   }
@@ -74,14 +75,14 @@ dl.horizontal {
 
 @media screen and (min-width: $breakpoint-stacking) {
 
-  dl.horizontal {
+  .horizontal {
     > dt {
-      float: left;
-      width: 10em;
-      overflow: hidden;
       clear: left;
+      float: left;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      width: 10em;
     }
 
     > dd {
