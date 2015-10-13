@@ -11,7 +11,7 @@ body {
 
 p {
   line-height: $base-line-height;
-  margin: 1em 0;
+  margin: $spacing 0 0;
 }
 
 h1, .h1,
@@ -23,7 +23,7 @@ h6, .h6 {
   display: block;
   font-family: $font-serif;
   line-height: $heading-line-height;
-  margin: 1em 0 0.5em;
+  margin: $spacing 0 calc($spacing/2);
 }
 
 header > h1 {
@@ -105,9 +105,9 @@ code {
 
 pre {
   border: 1px solid #d8d8d8;
-  padding: 10px 15px;
+  padding: $spacing;
   overflow: scroll;
-  margin: 1em 0 0;
+  margin: $spacing 0 0;
 }
 
 pre > code {

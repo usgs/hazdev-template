@@ -90,7 +90,7 @@
 
 .site-search {
   display: block;
-  margin: 1.2em 1em;
+  margin: $spacing;
   position: relative;
 
   >[type="search"] {
@@ -104,13 +104,13 @@
     display: block;
     float: left;
     font-size: smaller;
-    margin-right: 1em;
+    margin-right: $spacing;
   }
 
   > button {
     clear: both;
     display: block;
-    margin: 1em 0 0 0;
+    margin: $spacing 0 0 0;
   }
 }
 

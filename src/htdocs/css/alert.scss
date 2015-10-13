@@ -1,8 +1,8 @@
 .alert {
   background-color: #eeeeee;
-  margin-top: 1em;
+  margin-top: $spacing;
   overflow: hidden;
-  padding: 1em 2em;
+  padding: $spacing calc($spacing * 2);
   position: relative;
 
   > :first-child {
