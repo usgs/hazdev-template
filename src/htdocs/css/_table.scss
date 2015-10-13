@@ -14,32 +14,32 @@ table {
   font-size: 0.88em;
   margin: 1em 0 0;
   text-align: left;
-
-  th {
-    background-color: #f8f8f8;
-    background-color: rgba(0,0,0,0.03);
-    font-weight: bold;
-    /* only necessary for IE */
-    text-align: left;
-  }
-
-  th,
-  td {
-    padding: 0.666em 0.75em;
-    border: 1px solid #e8e8e8;
-
-  }
 }
 
-.borderless {
-  th {
-    border-top: 0;
-  }
+th {
+  background-color: #f8f8f8;
+  background-color: rgba(0,0,0,0.03);
+  font-weight: bold;
+  /* only necessary for IE */
+  text-align: left;
+}
 
-  th,
-  td {
+th,
+td {
+  padding: 0.666em 0.75em;
+  border: 1px solid #e8e8e8;
+}
+
+
+.borderless {
+
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tbody > tr > td {
     background: none;
     border-left: 0;
     border-right: 0;
+    border-top: 0;
   }
+
 }
