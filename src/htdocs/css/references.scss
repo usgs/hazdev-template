@@ -1,16 +1,15 @@
 /* bibliography-style references */
 
 .referencelist {
-	padding-left:50px;
+  font-size: 0.88em;
+  padding-left: 3em;
 
-	> li {
-		border:1px solid #fff;
-		list-style:none;
-		padding:0;
-		margin:1em 0 0;
-		color:#555;
-		font-size:.85em;
-		font-style:italic;
-		text-indent:-3em;
-	}
+  > li {
+    border: 1px solid #fff;
+    color: #555;
+    font-style: italic;
+    list-style: none;
+    margin: 1em 0 0;
+    text-indent: -3em;
+  }
 }
