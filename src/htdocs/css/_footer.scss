@@ -1,227 +1,265 @@
-
 @define-extend nav-transition {
-  transition: background .25s ease-out;
-}
-/* common nav */
-.site-commonnav {
-  border-top: 1px solid #e5e5e5;
-  clear: both;
-  font-size: smaller;
-  line-height: 1.6;
-  padding: 1rem;
-  text-align: center;
-
-  > hr {
-    border: solid #ddd;
-    border-width: 1px 0 0;
-    margin: 0 0 15px;
-  }
-
-  > a {
-    color: $sitenav-background-color;
-    display: inline-block;
-    margin: 0 $horizontal-spacing 0 0;
-
-    &:last-child {
-      margin: 0;
-    }
-  }
-}
-
-/* search form */
-.site-search {
-  display: block;
-  margin: 1.2em 1em;
-  position: relative;
-
-  >[type="search"] {
-    appearance: none;
-    display: block;
-    margin: 0;
-    width: 100%;
-  }
-
-  > label {
-    display: block;
-    float: left;
-    font-size: smaller;
-    margin-right: 1em;
-  }
-
-  > button {
-    clear: both;
-    display: block;
-    margin: 1em 0 0 0;
-  }
-
-  &:after {
-    clear: both;
-    content: ' ';
-    display: block;
-  }
+	transition: background .25s ease-out;
 }
 
 /* section nav */
 .site-sectionnav {
-  /* Ungrouped Links */
-  > a {
-    background-color: #ededed;
-    background-image: none;
-    border-top: 1px solid $sectionnav-border-color;
-    color: #333;
-    display: block;
-    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-    text-decoration: none;
-    @extend nav-transition;
 
-    &:visited {
-      color: #333;
-    }
-  }
+	/* Ungrouped Links */
+	> a {
+		background-color: #ededed;
+		background-image:none;
+		border-top: 1px solid $sectionnav-border-color;
+		color: #333;
+		display: block;
+		padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+		text-decoration:none;
+		@extend nav-transition;
 
-  > a:hover {
-    text-decoration: underline;
-  }
+		&:visited {
+			color: #333;
+		}
+	}
 
-  /* Grouped Links */
-  > section {
-    margin: 0 0 0.2em 0;
+	> a:hover {
+		text-decoration:underline;
+	}
 
-    /* items in a nav group */
-    > a,
-    > header {
-      color: #333;
-      display: block;
-      padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-      @extend nav-transition;
-    }
+	/* Grouped Links */
+	> section {
+		margin: 0 0 0.2em 0;
 
-    /* indent group items */
-    > a {
-      padding-left: calc(3/2 * $horizontal-spacing);
-      position: relative; /* for linear-gradient background
+		/* items in a nav group */
+		> a,
+		> header {
+			color: #333;
+			display: block;
+			padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+			@extend nav-transition;
+		}
 
-      /* gradient separator between section links */
-      &:before {
-        content: '';
-        position: absolute;
+		/* indent group items */
+		> a {
+			padding-left: calc(3/2 * $horizontal-spacing);
+			position:relative; /* for linear-gradient background
 
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0,
-            rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
-      }
-    }
+			/* gradient separator between section links */
+			&:before {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0,
+						rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
+			}
+		}
 
-    /* nav group header */
-    > header {
-      background-color: #ededed;
-      border-top: 1px solid $sectionnav-border-color;
-      border-bottom: 1px solid $sectionnav-border-color;
-      font-weight: normal;
-      text-shadow: 0 1px 1px #fff;
-    }
+		/* nav group header */
+		> header {
+			background-color: #ededed;
+			border-top: 1px solid $sectionnav-border-color;
+			border-bottom: 1px solid $sectionnav-border-color;
+			font-weight: normal;
+			text-shadow: 0 1px 1px #fff;
+		}
 
-    > a,
-    > header > a {
-      text-decoration: none;
-      background-image: none;
+		> a,
+		> header > a {
+			text-decoration:none;
+			background-image:none;
 
-      /* hover styles for nav items */
-      &:hover {
-        text-decoration: underline;
-        background-color: $sectionnav-background-color-hover;
-      }
-    }
+			/* hover styles for nav items */
+			&:hover {
+				text-decoration:underline;
+				background-color: $sectionnav-background-color-hover;
+			}
+		}
 
-    > header > a {
-      display: block;
-      color: #333;
+		> header > a {
+			display:block;
+			color: #333;
 
-      &:hover {
-        background-color: $sectionnav-background-color;
-      }
-    }
-  }
+			&:hover {
+				background-color: $sectionnav-background-color;
+			}
+		}
+	}
 }
 
+
+/* search form */
+
+.site-search {
+	position:relative;
+	display: block;
+	margin: 1.2em 1em;
+
+	>[type="search"] {
+		display:block;
+		width:100%;
+		appearance:none;
+		margin:0;
+	}
+
+	> label {
+		display:block;
+		float:left;
+		margin-right:1em;
+		font-size:smaller;
+	}
+
+	> button {
+		display:block;
+		clear:both;
+		margin: 1em 0 0 0;
+	}
+
+	&:after {
+		content: ' ';
+		display:block;
+		clear:both;
+	}
+}
+
+
 /* site nav */
+
 .site-sitenav {
-  background-color: $sitenav-background-color;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 0.2em 0;
-  overflow: visible;
+	background-color: $sitenav-background-color;
+	margin: 0.2em 0;
+	overflow: visible;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 
-  > a,
-  > strong {
-    color: $sitenav-color;
-    display: block;
-    font-weight: normal;
-    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-    text-decoration: none;
-    text-shadow: 0 0 2px #000;
-    @extend nav-transition;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    border-left: 1px solid rgba(255,255,255,0.1);
-    border-right: 1px solid rgba(255,255,255,0.1);
-    border-top: 1px solid rgba(255,255,255,0.1);
+	> a,
+	> strong {
+		display: block;
+		padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+		color: $sitenav-color;
+		text-decoration: none;
+		font-weight:normal;
+		text-shadow: 0 0 2px #000;
+		@extend nav-transition;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		border-top: 1px solid rgba(255,255,255,0.1);
+		border-right: 1px solid rgba(255,255,255,0.1);
+		border-left: 1px solid rgba(255,255,255,0.1);
 
-    &:visited {
-      color: $sitenav-color;
-    }
+		&:visited {
+			color: $sitenav-color;
+		}
 
-    &:last-child {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+		&:last-child {
+			border-bottom: 1px solid rgba(255,255,255,0.1);
+		}
 
-    &:hover {
-      background: rgba(0,0,0,0.2);
-      color: $sitenav-color-hover;
-    }
-  }
+		&:hover {
+			background: rgba(0,0,0,0.2);
+			color: $sitenav-color-hover;
+		}
+	}
 
-  > strong,
-  > .current-page,
-  > strong:hover,
-  > .current-page:hover {
-    background-color: $sitenav-background-color-hover;
-    color: $sitenav-color-hover;
-  }
+	> strong,
+	> .current-page,
+	> strong:hover,
+	> .current-page:hover {
+		background-color: $sitenav-background-color-hover;
+		color: $sitenav-color-hover;
+	}
+}
+
+
+/* common nav */
+
+.site-commonnav {
+	clear:both;
+	text-align: center;
+	line-height: 1.6;
+	padding: 1rem;
+	border-top:1px solid #e5e5e5;
+	font-size: smaller;
+
+	> hr {
+		border: solid #ddd;
+		border-width: 1px 0 0;
+		margin:0 0 15px;
+	}
+
+	> a {
+		display: inline-block;
+		color: $sitenav-background-color;
+		margin: 0 $horizontal-spacing 0 0;
+
+		&:last-child {
+			margin:0;
+		}
+	}
 }
 
 
 @media screen and (min-width: $breakpoint-offcanvas) {
-  .site-footer {
-    padding: calc($spacing - $vertical-spacing) $horizontal-spacing;
-  }
 
-  .site-sectionnav,
-  .site-sitenav,
-  .site-search {
-    margin: 1em 0;
-  }
+	.site-footer {
+		padding: calc($spacing - $vertical-spacing) $horizontal-spacing;
+	}
 
-  .site-sitenav {
-    border: 1px solid $sitenav-border-color;
-  }
+	.site-sectionnav,
+	.site-sitenav,
+	.site-search {
+		margin: 1em 0;
+	}
 
-  .site-sitenav {
-    > a,
-    > strong {
-      padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
-    }
-  }
+	.site-sitenav {
+		border: 1px solid $sitenav-border-color;
+	}
+
+	.site-sectionnav {
+
+		> a,
+		> strong {
+			border: 1px solid #ddd;
+			margin: 0 0 1em 0;
+			padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
+		}
+
+		> section {
+			margin: 0 0 1em;
+			border: 1px solid #ddd;
+
+			header,
+			header > a {
+				border-top: 0;
+			}
+
+			> a,
+			> strong,
+			> header {
+				padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
+			}
+
+			> a,
+			> strong {
+				padding-left: calc(3/2 * $horizontal-spacing);
+			}
+		}
+	}
+
+	.site-sitenav {
+		> a,
+		> strong {
+			padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
+		}
+	}
 }
 
 
 @media print {
-  .site-sectionnav,
-  .site-search,
-  .site-sitenav,
-  .site-commonnav {
-    display: none;
-  }
+	.site-sectionnav,
+	.site-search,
+	.site-sitenav,
+	.site-commonnav {
+		display:none;
+	}
 }
