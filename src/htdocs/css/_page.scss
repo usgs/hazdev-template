@@ -6,7 +6,7 @@
 }
 
 main {
-  display:block;
+  display: block;
 }
 
 body {
@@ -25,33 +25,26 @@ canvas {
 
 .page-footer {
   background-color: $page-footer-background-color;
-  clear:both;
   color: $page-footer-color;
-  font-size:smaller;
-  padding:$vertical-spacing 0;
+  font-size: smaller;
+  padding: $vertical-spacing 0;
 
   > .page-social {
-    margin:1em 0 0;
+    margin: 1em 0 0;
   }
 }
 
 @media screen and (min-width: $breakpoint-offcanvas) {
 
   .page-footer {
-    position:relative;
-
-    > .page-social {
-      bottom: $vertical-spacing;
-      margin: 0;
-      position: absolute;
-      right: $horizontal-spacing;
-    }
+    display: flex;
+    justify-content: space-between;
   }
 
   /* navigation/content as left/right columns */
   .page {
     float: right;
-    padding-left:0;
+    padding-left: 0;
     width: 75%;
   }
 
@@ -73,6 +66,6 @@ canvas {
 
 @media print {
   .page-footer {
-    display:none;
+    display: none;
   }
 }
