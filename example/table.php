@@ -170,7 +170,7 @@ if (!isset($TEMPLATE)) {
 	</table>
 </div>
 <h3>Usage</h3>
-<pre><code>&lt;table&gt;
+<pre><code>&lt;table class="borderless"&gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
 			&lt;th&gt;First Header&lt;/th&gt;
