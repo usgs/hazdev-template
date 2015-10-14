@@ -1,21 +1,19 @@
-
-
 /* section nav */
 .site-sectionnav {
 
   /* Ungrouped Links */
   > a {
-    background-color: #ededed;
+    background-color: $secondary-lighter;
     background-image: none;
-    border-top: 1px solid $sectionnav-border-color;
-    color: #333;
+    border-top: 1px solid $secondary;
+    color: $secondary-text-color;
     display: block;
-    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+    padding: calc($spacing * 2/3) $spacing;
     text-decoration: none;
     transition: background .25s ease-out;
 
     &:visited {
-      color: #333;
+      color: $secondary-text-color;
     }
   }
 
@@ -30,16 +28,17 @@
     /* items in a nav group */
     > a,
     > header {
-      color: #333;
+      color: $secondary-text-color;
       display: block;
-      padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+      padding: calc($spacing * 2/3) $spacing;
       transition: background .25s ease-out;
     }
 
     /* indent group items */
     > a {
-      padding-left: calc(3/2 * $horizontal-spacing);
-      position: relative; /* for linear-gradient background
+      padding-left: calc(3/2 * $spacing);
+      /* for linear-gradient background */
+      position: relative;
 
       /* gradient separator between section links */
       &:before {
@@ -56,11 +55,11 @@
 
     /* nav group header */
     > header {
-      background-color: #ededed;
-      border-bottom: 1px solid $sectionnav-border-color;
-      border-top: 1px solid $sectionnav-border-color;
+      background-color: $secondary-lighter;
+      border-bottom: 1px solid $secondary;
+      border-top: 1px solid $secondary;
       font-weight: normal;
-      text-shadow: 0 1px 1px #fff;
+      text-shadow: 0 0 2px #fff;
     }
 
     > a,
@@ -70,17 +69,17 @@
 
       /* hover styles for nav items */
       &:hover {
-        background-color: $sectionnav-background-color-hover;
+        background-color: $secondary-lighter;
         text-decoration: underline;
       }
     }
 
     > header > a {
       display: block;
-      color: #333;
+      color: $secondary-text-color;
 
       &:hover {
-        background-color: $sectionnav-background-color;
+        background-color: $secondary-lighter;
       }
     }
   }
@@ -91,7 +90,7 @@
 
 .site-search {
   display: block;
-  margin: 1.2em 1em;
+  margin: $spacing;
   position: relative;
 
   >[type="search"] {
@@ -105,19 +104,13 @@
     display: block;
     float: left;
     font-size: smaller;
-    margin-right: 1em;
+    margin-right: $spacing;
   }
 
   > button {
     clear: both;
     display: block;
-    margin: 1em 0 0 0;
-  }
-
-  &:after {
-    clear: both;
-    content: ' ';
-    display: block;
+    margin: $spacing 0 0 0;
   }
 }
 
@@ -125,10 +118,7 @@
 /* site nav */
 
 .site-sitenav {
-  background-color: $sitenav-background-color;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 0.2em 0;
+  background-color: $primary;
   overflow: visible;
 
   > a,
@@ -137,25 +127,21 @@
     border-left: 1px solid rgba(255,255,255,0.1);
     border-right: 1px solid rgba(255,255,255,0.1);
     border-top: 1px solid rgba(255,255,255,0.1);
-    color: $sitenav-color;
+    color: $primary-text-color;
     display: block;
     font-weight: normal;
-    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+    padding: calc($spacing * 2/3) $spacing;
     text-decoration: none;
     text-shadow: 0 0 2px #000;
     transition: background .25s ease-out;
 
     &:visited {
-      color: $sitenav-color;
-    }
-
-    &:last-child {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: $primary-text-color;
     }
 
     &:hover {
-      background: rgba(0,0,0,0.2);
-      color: $sitenav-color-hover;
+      background: $primary-darker;
+      color: $primary-text-color;
     }
   }
 
@@ -163,32 +149,25 @@
   > .current-page,
   > strong:hover,
   > .current-page:hover {
-    background-color: $sitenav-background-color-hover;
-    color: $sitenav-color-hover;
+    background-color: $primary-darker;
+    color: $primary-text-color;
   }
 }
 
 
-/* common nav */
+/* Site Footer */
 
 .site-commonnav {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $secondary;
   clear: both;
   font-size: smaller;
-  line-height: 1.6;
   padding: 1rem;
   text-align: center;
 
-  > hr {
-    border: solid #ddd;
-    border-width: 1px 0 0;
-    margin: 0 0 15px;
-  }
-
   > a {
-    color: $sitenav-background-color;
+    color: $primary-lighter;
     display: inline-block;
-    margin: 0 $horizontal-spacing 0 0;
+    margin: 0 $spacing 0 0;
 
     &:last-child {
       margin: 0;
@@ -200,54 +179,31 @@
 @media screen and (min-width: $breakpoint-offcanvas) {
 
   .site-footer {
-    padding: calc($spacing - $vertical-spacing) $horizontal-spacing;
+    padding: 0 $spacing;
   }
 
   .site-sectionnav,
   .site-sitenav,
   .site-search {
-    margin: 1em 0;
-  }
-
-  .site-sitenav {
-    border: 1px solid $sitenav-border-color;
+    margin: $spacing 0;
   }
 
   .site-sectionnav {
 
     > a,
     > strong {
-      border: 1px solid #ddd;
-      margin: 0 0 1em 0;
-      padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
+      border: 1px solid $secondary;
+      margin: 0 0 $spacing;
     }
 
     > section {
-      border: 1px solid #ddd;
-      margin: 0 0 1em;
+      border: 1px solid $secondary;
+      margin: 0 0 $spacing;
 
       header,
       header > a {
         border-top: 0;
       }
-
-      > a,
-      > strong,
-      > header {
-        padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
-      }
-
-      > a,
-      > strong {
-        padding-left: calc(3/2 * $horizontal-spacing);
-      }
-    }
-  }
-
-  .site-sitenav {
-    > a,
-    > strong {
-      padding: calc($vertical-spacing/2) calc($horizontal-spacing * 2/3);
     }
   }
 }

@@ -26,9 +26,6 @@
           border: 1px solid #d8d8d8;
         }
       </style>
-
-      <link rel="stylesheet" href="/theme/css/alert.css"/>
-
     ';
 
     include 'template.inc.php';

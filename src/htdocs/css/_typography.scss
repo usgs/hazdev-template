@@ -4,12 +4,13 @@ html {
 }
 
 body {
+  color: $text-color;
   font-size: 1.7rem;
+  line-height: 1.5;
 }
 
 p {
-  line-height: $base-line-height;
-  margin: 1em 0;
+  margin: $spacing 0 0;
 }
 
 h1, .h1,
@@ -20,8 +21,8 @@ h5, .h5,
 h6, .h6 {
   display: block;
   font-family: $font-serif;
-  line-height: $heading-line-height;
-  margin: 1em 0 0.5em;
+  line-height: 1.3;
+  margin: $spacing 0 calc($spacing/2);
 }
 
 header > h1 {
@@ -71,8 +72,9 @@ a {
   &:active {
     color: $link-color-active;
   }
+
   &:visited {
-    color: $link-color;
+    color: $link-color
   }
 }
 
@@ -102,9 +104,9 @@ code {
 
 pre {
   border: 1px solid #d8d8d8;
-  padding: 10px 15px;
+  padding: $spacing;
   overflow: scroll;
-  margin: 1em 0 0;
+  margin: $spacing 0 0;
 }
 
 pre > code {

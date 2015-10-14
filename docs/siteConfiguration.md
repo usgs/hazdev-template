@@ -17,14 +17,11 @@ Example site theme `theme.scss`:
 // banner image
 $banner-image: '/theme/images/usgs-banner.jpg';
 $banner-background-color: #000;
-
-// site title and colors
-$site-title: 'My Site Title';
-$site-title-color: #FFF;
-$site-title-background-color: #4E7AB9;
+$banner-title: 'My Site Title';
 
 // primary color of site
-$sitenav-background-color: #C9D8E9;
+$primary: #C9D8E9;
+$primary-text-color: #ffffff;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -32,12 +29,6 @@ $sitenav-background-color: #C9D8E9;
 
 @import ".../hazdev-template/src/htdocs/css/template";
 
-
-///////////////////////////////////////////////////////////////////////////////
-// include site-wide content patterns
-// alternatively, these can be included per page instead of site-wide
-
-// @import ".../hazdev-template/src/htdocs/css/flexible-grid.scss"
 
 ///////////////////////////////////////////////////////////////////////////////
 // other site-wide css rules

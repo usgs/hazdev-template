@@ -3,7 +3,6 @@ if (!isset($TEMPLATE)) {
   $TITLE = 'Icons';
 
   $HEAD = '
-    <link rel="stylesheet" href="/theme/css/flexible-grid.css"/>
     <link rel="stylesheet" ' .
         'href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <style>

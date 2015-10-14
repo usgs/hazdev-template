@@ -13,8 +13,8 @@ var postcss = {
     options: {
       map: true,
       processors: [
-        calc(),
         precss(),
+        calc(),
         autoprefixer({'browsers': 'last 2 versions'})
       ]
     },

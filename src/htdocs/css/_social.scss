@@ -1,9 +1,8 @@
 .page-social > a {
-  margin-left: 16px;
-
-  &:first-child {
-    margin: 0;
-  }
+  margin-left: $spacing;
+}
+.page-social > a:first-child {
+  margin: 0;
 }
 
 

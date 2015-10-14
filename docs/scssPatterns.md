@@ -6,13 +6,6 @@ SCSS Content Patterns
 
 A flexible grid for columns that can be nested.
 
-
-SCSS File:
-```css
-@import "hazdev-template/src/htdocs/css/flexible-grid.scss";
-```
-
-
 ### .row
 
 A row contains columns.
@@ -32,8 +25,8 @@ A right-to-left row lays out columns from right to left.
 ```
 <div class="right-to-left row">
 	<div class="column one-of-five">third</div>
-	<div class="column one-of-two">second</div>
-	<div class="column three-of-ten">first</div>
+	<div class="column three-of-five">second</div>
+	<div class="column one-of-five">first</div>
 </div>
 ```
 
@@ -67,44 +60,3 @@ Column sizes can be mixed and matched, columns will wrap if they add to more tha
 	.two-of-five
 	.three-of-five
 	.four-of-five
-
-* \*/6
-	.one-of-six
-	.two-of-six
-	.three-of-six
-	.four-of-six
-	.five-of-six
-
-* \*/8
-	.one-of-eight
-	.two-of-eight
-	.three-of-eight
-	.four-of-eight
-	.five-of-eight
-	.six-of-eight
-	.seven-of-eight
-
-* \*/10
-	.one-of-ten
-	.two-of-ten
-	.three-of-ten
-	.four-of-ten
-	.five-of-ten
-	.six-of-ten
-	.seven-of-ten
-	.eight-of-ten
-	.nine-of-ten
-
-* \*/12
-	.one-of-twelve
-	.two-of-twelve
-	.three-of-twelve
-	.four-of-twelve
-	.five-of-twelve
-	.six-of-twelve
-	.seven-of-twelve
-	.eight-of-twelve
-	.nine-of-twelve
-	.ten-of-twelve
-	.eleven-of-twelve
-

@@ -1,68 +1,40 @@
-/* set template variables */
 
-$base-line-height: 1.5 !default;
-$heading-line-height: 1.3 !default;
+/* Colors */
+
+$text-color: #333333 !default;
+
+$gray: #e0e0e0 !default;
+$gray-lighter: #f4f4f4 !default;
+$gray-darker: #757575 !default;
+
+$primary: #205493 !default;
+$primary-lighter: #0071bc !default;
+$primary-darker: #112e51 !default;
+$primary-text-color: #ffffff !default;
+
+$secondary: $gray !default;
+$secondary-lighter: $gray-lighter !default;
+$secondary-darker: $gray-darker !default;
+$secondary-text-color: $text-color !default;
+
+/* Template Styles */
 
 $font-code: Consolas, monospace, serif;
 $font-sans: 'Source Sans Pro', Helvetica, Arial, sans-serif !default;
 $font-serif: 'Merriweather', Times, serif;
 
-$font-normal: 400 !default;
 $font-bold: 700 !default;
-
-
-$body-margin: 0 !default;
-$body-text-color: #000 !default;
+$font-normal: 400 !default;
+$font-thin: 300 !default;
 
 $banner-image: '/theme/images/usgs-banner.jpg' !default;
 $banner-background-color: #000 !default;
+$banner-title: 'U.S. Geological Survey' !default;
 
-
-$site-title: 'U.S. Geological Survey' !default;
-$site-title-color: #fff !default;
-$site-title-background-color: #666 !default;
-
-
-$spacing: 16px !default;
-$horizontal-spacing: $spacing !default;
-$vertical-spacing: $spacing !default;
-
+$spacing: 1em !default;
 
 $breakpoint-stacking: 560px !default;
 $breakpoint-offcanvas: 768px !default;
-/* 20% of 768 px = 153.6 */
-$side-column-width: 20% !default;
 
 $link-color: #306ac2 !default;
 $link-color-active: #c23030 !default;
-
-$page-footer-color: #999 !default;
-$page-footer-background-color: #FFF !default;
-$page-footer-border-color: #DDD !default;
-
-
-$search-background-color: #EEE !default;
-$search-border-color: #CCC !default;
-
-
-$sitenav-color: $site-title-color !default;
-$sitenav-background-color: $site-title-background-color !default;
-$sitenav-color-hover: $site-title-color !default;
-$sitenav-background-color-hover: darken($sitenav-background-color, 10%) !default;
-$sitenav-border-color: darken($sitenav-background-color, 10%);
-$sitenav-border-color-hover: $sitenav-border-color !default;
-
-$sectionnav-color: $sitenav-color !default;
-$sectionnav-background-color: #EDEDED;
-$sectionnav-color-hover: #000;
-$sectionnav-background-color-hover: #f8f8f8;
-$sectionnav-border-color: #ddd;
-
-
-$offcanvas-width: 228px;
-$offcanvas-toggle-color: #333 !default;
-$offcanvas-toggle-background-color: #eee !default;
-$offcanvas-toggle-color-active: #fff !default;
-$offcanvas-toggle-background-color-active: #ccc !default;
-
-$offcanvas-transition-time: .3s !default;

@@ -1,8 +1,10 @@
 /* set template variables */
 
-$banner-image:'/theme/site/geomag/banner.png' !default;
-$site-title-background-color:#1B3C43 !default;
-$site-title:'National Geomagnetism Program' !default;
+$banner-image: '/theme/site/geomag/banner.png' !default;
+$banner-title:'National Geomagnetism Program' !default;
+
+$primary: #1B3C43 !default;
+$primary-darker: rgba(0,0,0,0.1) !default;
 
 /* import default variables */
 @import '../../css/_variables.scss';

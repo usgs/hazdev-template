@@ -1,5 +1,5 @@
 [role="banner"] {
-  background-color: $site-title-background-color;
+  background-color: $primary;
   height: 56px;
   position: relative;
 
@@ -29,7 +29,7 @@
       + image height 140%
       = hide "science for a changing world" on small screens.
     */
-    background-color: $site-title-background-color;
+    background-color: $primary;
     display: block;
     height: 42px;
     left: 0;
@@ -59,16 +59,16 @@
     background-position: 164px 0;
     background-repeat: no-repeat;
     background-size: auto 100%;
-    height: 72px;
+    height: 90px;
     /* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
-    margin-bottom:2em;
+    margin-bottom:2.5em;
 
     /* also adjust size of usgs logo */
     > .site-logo {
       background-color: $banner-background-color;
       height: 100%;
-      padding: 10px 14px;
-      width: 157px;
+      padding: 1em;
+      /*width: 157px;*/
 
       > img {
         height: 100%;
@@ -76,19 +76,18 @@
     }
 
     &:after {
-      background-color: $site-title-background-color;
+      background-color: $primary;
       border: 1px solid white;
       border-width: 1px 0;
-      color: $site-title-color;
-      content: $site-title;
+      color: $primary-text-color;
+      content: $banner-title;
       display: block;
-      font-weight: bold;
       left: 0;
-      line-height: 1.5;
-      padding: 0.25em 0 0.25em $horizontal-spacing;
+      line-height: 2;
+      padding: 0.25em 0 0.25em $spacing;
       position: absolute;
       right: 0;
-      text-shadow: 0 0 2px rgba(0,0,0,0.6);
+      text-shadow: 0 0 2px rgba(0,0,0,0.5);
       top: 100%;
     }
   }
@@ -118,7 +117,7 @@
 
     &:after {
       color: #333;
-      content: 'U.S. Geological Survey - ' $site-title;
+      content: 'U.S. Geological Survey - ' $banner-title;
       display: block;
       visibility: visible;
     }

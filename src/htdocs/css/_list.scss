@@ -1,7 +1,7 @@
 ul,
 ol {
-  margin: 1.5em 0 0;
-  padding-left: 2em;
+  margin: $spacing 0 0;
+  padding-left: calc($spacing * 2);
 
   &.no-style {
     list-style: none;
@@ -10,7 +10,7 @@ ol {
 
   &.separator > li {
     border-top: 1px solid #e8e8e8;
-    padding: 1em 0;
+    padding: $spacing 0;
 
     &:first-child {
       border-top: none;
@@ -43,7 +43,7 @@ ol {
     /* a selector included to 'enforce' img tag inside of a for linked img's */
     a > img {
       float: left;
-      margin: 0 $horizontal-spacing $vertical-spacing 0;
+      margin: 0 $spacing $spacing 0;
       padding-top: 1.3em;
     }
   }
@@ -56,7 +56,7 @@ li > ol {
 }
 
 dl {
-  margin: 1em 0 0;
+  margin: $spacing 0 0;
 
   > dt {
     font-weight: bold;
