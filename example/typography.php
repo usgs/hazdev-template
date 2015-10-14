@@ -1,21 +1,21 @@
 <?php
 
 if (!isset($TEMPLATE)) {
-	$TITLE = 'Typography';
-	$NAVIGATION = true;
+  $TITLE = 'Typography';
+  $NAVIGATION = true;
 
-	include('template.inc.php');
+  include('template.inc.php');
 }
 
 ?>
 
 <p>
-	This page gives examples of the default styles for <code>h1</code> through
-	<code>h6</code> headers.
+  This page gives examples of the default styles for <code>h1</code> through
+  <code>h6</code> headers.
 </p>
 
 <p>
-	<code>h1</code> headers are used for the title of the webpage and so should
+  <code>h1</code> headers are used for the title of the webpage and so should
 not be used anywhere else:
 </p>
 
