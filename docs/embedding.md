@@ -15,13 +15,13 @@ added.
 Configure php include path, by updating the mountPHP middleware function:
 
 <pre><code>var mountPHP = function (dir, options) {<strong>
-+	options = options || {
-+	  '.php': 'php-cgi',
-+	  'env': {
-+	    'PHPRC': process.cwd() + '/node_modules/hazdev-template/dist/conf/php.ini'
-+	  }
-+	};</strong>
-	return gateway(require('path').resolve(dir), options);
++  options = options || {
++    '.php': 'php-cgi',
++    'env': {
++      'PHPRC': process.cwd() + '/node_modules/hazdev-template/dist/conf/php.ini'
++    }
++  };</strong>
+  return gateway(require('path').resolve(dir), options);
 };
 </code></pre>
 

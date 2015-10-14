@@ -9,10 +9,10 @@ Each page using the template should configure the template, include the template
 
 // include guard so configuration and include only happen once
 if (!isset($TEMPLATE)) {
-	// configure the template
-	$TITLE = 'My Page Title';
-	// include the template
-	include 'template.inc.php';
+  // configure the template
+  $TITLE = 'My Page Title';
+  // include the template
+  include 'template.inc.php';
 }
 
 // generate page content
@@ -52,13 +52,13 @@ Template functions are normally only defined after the template has been include
 ```php
 if (!isset($TEMPLATE)) {
 
-	include_once 'functions.inc.php';
-	$id = param('id');
-	// look up title in database
+  include_once 'functions.inc.php';
+  $id = param('id');
+  // look up title in database
 
-	$TITLE = '...';
-	// include the template
-	include 'template.inc.php';
+  $TITLE = '...';
+  // include the template
+  include 'template.inc.php';
 }
 
 // generate page content
