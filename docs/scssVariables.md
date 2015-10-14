@@ -43,12 +43,7 @@ Default is #ffffff.
 
 ## Section Navigation
 
-Section navigation is by default made to be 10% "lighter" than [site navigation](#site-navigation), and often does not need to be specified by a theme.
-
 <img src="images/navigationExample.png" alt="image of section navigation"/>
-
-* "Test" shows the styles for the current page, based on $sitenav-background-color-hover.
-* "Item" shows the styles when a mouse hovers over the item.
 
 ### $secondary-text-color
 Text color for section navigation.
