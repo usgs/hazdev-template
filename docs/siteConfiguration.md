@@ -31,12 +31,6 @@ $primary-text-color: #ffffff;
 
 
 ///////////////////////////////////////////////////////////////////////////////
-// include site-wide content patterns
-// alternatively, these can be included per page instead of site-wide
-
-// @import ".../hazdev-template/src/htdocs/css/flexible-grid.scss"
-
-///////////////////////////////////////////////////////////////////////////////
 // other site-wide css rules
 
 ```
