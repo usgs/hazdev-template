@@ -21,55 +21,52 @@
   .offcanvas-enabled {
 
     /* position body relative, for offcanvas-active transition */
-    position:relative;
     left:0;
+    position:relative;
     transition: left $offcanvas-transition-time ease-in-out;
 
     /* show the offcanvas-toggle in the top right corner of the page */
-    .offcanvas-toggle {
-      margin:0;
-      padding: 0 0.75em;
+    > .offcanvas-toggle {
+      box-shadow: none;
       display:block;
       height: 2em;
       line-height: 2em;
+      margin:0;
+      padding: 0 0.75em;
       position:absolute;
-      top:12px;
       right:$spacing;
-      z-index:1005;
-      box-shadow: none;
+      top:12px;
       user-select: none;
+      z-index:1005;
     }
 
     /* position offcanvas to left of page */
-    .offcanvas {
-      position:fixed;
-      left: calc(-$offcanvas-width - 4px);
-      top:0;
-      bottom:0;
-      width:$offcanvas-width;
-
+    > .offcanvas {
       background-color:#FFF;
+      bottom:0;
       box-shadow: 1px 0 4px 0 black;
-      padding:0;
-      z-index:1002;
-
+      left: calc(-$offcanvas-width - 4px);
       overflow-y:auto;
-      -webkit-overflow-scrolling: touch;
+      padding:0;
+      position:fixed;
+      top:0;
       transition: left $offcanvas-transition-time ease-in-out;
+      width:$offcanvas-width;
+      z-index:1002;
     }
 
     /* position mask over page */
-    .offcanvas-mask {
+    > .offcanvas-mask {
       background-color:rgba(0, 0, 0, 0);
-      display:none;
-      position:fixed;
-      left:0;
-      top:0;
       bottom:0;
+      cursor:pointer;
+      display:none;
+      left:0;
+      position:fixed;
+      top:0;
+      transition: background-color $offcanvas-transition-time ease-in-out;
       width:100%;
       z-index:1001;
-      transition: background-color $offcanvas-transition-time ease-in-out;
-      cursor:pointer;
     }
 
   }
@@ -80,7 +77,7 @@
     overflow:hidden;
 
     /* mask page just before transition */
-    .offcanvas-mask {
+    > .offcanvas-mask {
       display:block;
     }
   }
@@ -88,13 +85,14 @@
 
   /* offcanvas is enabled and active */
   .offcanvas-active {
+
     /* move offcanvas over page */
-    .offcanvas {
+    > .offcanvas {
       left:0;
     }
 
     /* move mask to right of offcanvas */
-    .offcanvas-mask {
+    > .offcanvas-mask {
       background-color:rgba(0, 0, 0, .7);
     }
   }
