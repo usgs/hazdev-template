@@ -29,11 +29,16 @@
     "precss": "^1.1.2"
   },
   "devDependencies": {
+    "browserify": "^8.1.1",
+    "chai": "^1.10.0",
     "gateway": "~1.0.0",
     "grunt-contrib-connect": "~0.9.0",
     "grunt-connect-proxy": "~0.2.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-open": "~0.2.0"
+    "grunt-mocha-phantomjs": "^2.0.0",
+    "grunt-open": "~0.2.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.17.1"
   },
   "license": "CC0-1.0",
   "engines": {

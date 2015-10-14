@@ -33,7 +33,21 @@ var copy = {
     options: {
       mode: true
     }
-  }
+  },
+  test: {
+    expand: true,
+    cwd: config.test,
+    src: [
+      '**/*',
+      '!conf',
+      '!**/*.js',
+      '!**/*.scss'
+    ],
+    dest: config.build + '/' + config.test,
+    options: {
+      mode: true
+    }
+  },
 };
 
 module.exports = copy;

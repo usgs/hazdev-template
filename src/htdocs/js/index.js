@@ -2,6 +2,10 @@
 'use strict';
 
 // make the site footer offcanvas
-document.querySelector('.site-footer').classList.add('offcanvas');
+var siteFooter = document.querySelector('.site-footer');
+
+if (siteFooter) {
+  siteFooter.classList.add('offcanvas');
+}
 // initialize offcanvas
 OffCanvas.getOffCanvas();
