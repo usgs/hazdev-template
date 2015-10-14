@@ -4,10 +4,8 @@ Template SCSS Variables
 The most commonly configured SCSS variables are:
 - [$banner-image](#banner-image)
 - [$banner-background-color](#banner-background-color)
-- [$site-title](#site-title)
-- [$site-title-color](#site-title-color)
-- [$site-title-background-color](#site-title-background-color)
-- [$sitenav-background-color](#sitenav-background-color)
+- [$banner-title](#banner-title)
+- [$primary](#primary)
 
 See [Site Configuration](siteConfiguration.md) for information about configuring these variables.
 
@@ -24,22 +22,23 @@ Default is '/theme/images/usgs-banner.jpg'.
 ### $banner-background-color
 
 The background color of the banner section.
-Default is #000.
+Default is #000000.
 
-### $site-title
+### $banner-title
 
 Name of site.
 Default is 'U.S. Geological Survey'.
 
-### $site-title-color
+### $primary
 
-Text color for [$site-title](#site-title).
-Default is #FFF.
+Background color for [$banner-title](#banner-title).
+Default is #205493.
 
-### $site-title-background-color
+### $primary-text-color
 
-Background color for [$site-title](#site-title).
-Default is #4E7AB9.
+Text color for [$banner-title](#banner-title).
+Default is #ffffff.
+
 
 
 ## Section Navigation
@@ -51,101 +50,42 @@ Section navigation is by default made to be 10% "lighter" than [site navigation]
 * "Test" shows the styles for the current page, based on $sitenav-background-color-hover.
 * "Item" shows the styles when a mouse hovers over the item.
 
-### $sectionnav-color
+### $secondary-text-color
 Text color for section navigation.
-Default is $sitenav-color.
+Default is #333333.
 
-### $sectionnav-background-color
+### $secondary-lighter
 Background color for section navigation.
-Default is lighten($sitenav-background-color, 10%).
-
-### $sectionnav-color-hover
 Hover text color for section navigation.
-Default is $sitenav-color-hover.
+Default is #f4f4f4.
 
-### $sectionnav-background-color-hover
-Hover background color for section navigation.
-Default is lighten($sitenav-background-color-hover, 10%).
-
-### $sectionnav-border-color
+### $secondary
 Border color for section navigation.
-Default is #CCC.
+Default is #e0e0e0.
 
 
 ## Site Navigation
 
 <img src="images/siteNavigation.png" alt="image of site navigation"/>
 
-### $sitenav-color
+### $primary-text-color
 Text color for site navigation.
-Default is #132840.
+Default is #ffffff.
 
-### $sitenav-background-color
+### $primary
 Background color for site navigation.
-Default is #C9D8E9.
+Default is #205493.
 
-This variable is used as the basis for many site colors, and it's frequently enough to change only this color to customize an entire site.
-
-### $sitenav-color-hover
-Hover text color for site navigation
-Default is #111.
-
-### $sitenav-background-color-hover
+### $primary-darker
 Hover background color for site navigation.
-Default is darken($sitenav-background-color, 10%).
-
-### $sitenav-border-color-hover
-Hover border color for site navigation.
-Default is #111.
-
-
-## Offcanvas
-
-Side column content is hidden by default on pages smaller than `$breakpoint-offcanvas` pixels wide, and shown by clicking a toggle link.
-
-<img src="images/overviewOffcanvas.png" alt="image of offcanvas content"/>
-
-* Side column content fills `$offcanvas-width` percent of the screen.
-* The toggle is in the top right corner of the screen.
-
-### $offcanvas-width
-How wide the offcanvas content will be (or how far from the left edge page content is shifted).
-Default is 80%.
-
-### $offcanvas-toggle-color
-Text color for offcanvas toggle "button".
-Default is $sitenav-color.
-
-### $offcanvas-toggle-background-color
-Background color for offcanvas toggle "button".
-Default is $sitenav-background-color.
-
-### $offcanvas-toggle-border-color
-Border color for offcanvas toggle "button".
-Default is $offcanvas-toggle-color.
-
-### $offcanvas-toggle-color-hover
-Hover text color for offcanvas toggle "button".
-Default is $sitenav-color-hover.
-
-### $offcanvas-toggle-background-color-hover
-Hover background color for offcanvas toggle "button".
-Default is $sitenav-background-color-hover.
-
-### $offcanvas-toggle-border-color-hover
-Hover border color for offcanvas toggle "button".
-Default is $sitenav-border-color-hover
-
-### $offcanvas-transition-time
-Transition time when showing and hiding offcanvas content.
-Default is .5s.
+Default is #112e51.
 
 
 ## General Layout
 
 ### $spacing
 Used as padding and margin of many elements.
-Default is 8px.
+Default is 1em.
 
 ### $breakpoint-stacking
 Width of page when content formatted using the flexible grid starts to stack.
