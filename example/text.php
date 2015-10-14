@@ -3,10 +3,6 @@
 		$TITLE = 'Text Level Semantics';
 		$NAVIGATION = true;
 
-		$HEAD = '
-			<link rel="stylesheet" href="/theme/css/responsive-table.css"/>
-		';
-
 		include 'template.inc.php';
 	}
 ?>

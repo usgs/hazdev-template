@@ -5,16 +5,7 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	$HEAD = '
-	<link rel="stylesheet" href="/theme/css/responsive-table.css"/>
 	<style>
-		@media screen and (max-width: 559px) {
-			.test-horizontal td:nth-of-type(1):before { content: "First Header"; }
-			.test-horizontal td:nth-of-type(2):before { content: "Second Header"; }
-			.test-horizontal td:nth-of-type(3):before { content: "Third Header"; }
-			.test-horizontal td:nth-of-type(4):before { content: "Fourth Header"; }
-			.test-horizontal td:nth-of-type(5):before { content: "Fifth Header"; }
-		}
-
 		code > strong {
 			/* color: red */
 			color: #E46554;
