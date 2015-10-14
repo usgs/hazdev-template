@@ -6,12 +6,12 @@
   /* Ungrouped Links */
   > a {
     background-color: #ededed;
-    background-image:none;
+    background-image: none;
     border-top: 1px solid $sectionnav-border-color;
     color: #333;
     display: block;
     padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-    text-decoration:none;
+    text-decoration: none;
     transition: background .25s ease-out;
 
     &:visited {
@@ -20,7 +20,7 @@
   }
 
   > a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
   }
 
   /* Grouped Links */
@@ -39,7 +39,7 @@
     /* indent group items */
     > a {
       padding-left: calc(3/2 * $horizontal-spacing);
-      position:relative; /* for linear-gradient background
+      position: relative; /* for linear-gradient background
 
       /* gradient separator between section links */
       &:before {
@@ -65,18 +65,18 @@
 
     > a,
     > header > a {
-      background-image:none;
-      text-decoration:none;
+      background-image: none;
+      text-decoration: none;
 
       /* hover styles for nav items */
       &:hover {
         background-color: $sectionnav-background-color-hover;
-        text-decoration:underline;
+        text-decoration: underline;
       }
     }
 
     > header > a {
-      display:block;
+      display: block;
       color: #333;
 
       &:hover {
@@ -92,32 +92,32 @@
 .site-search {
   display: block;
   margin: 1.2em 1em;
-  position:relative;
+  position: relative;
 
   >[type="search"] {
-    appearance:none;
-    display:block;
-    margin:0;
-    width:100%;
+    appearance: none;
+    display: block;
+    margin: 0;
+    width: 100%;
   }
 
   > label {
-    display:block;
-    float:left;
-    font-size:smaller;
-    margin-right:1em;
+    display: block;
+    float: left;
+    font-size: smaller;
+    margin-right: 1em;
   }
 
   > button {
-    clear:both;
-    display:block;
+    clear: both;
+    display: block;
     margin: 1em 0 0 0;
   }
 
   &:after {
-    clear:both;
+    clear: both;
     content: ' ';
-    display:block;
+    display: block;
   }
 }
 
@@ -139,7 +139,7 @@
     border-top: 1px solid rgba(255,255,255,0.1);
     color: $sitenav-color;
     display: block;
-    font-weight:normal;
+    font-weight: normal;
     padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
     text-decoration: none;
     text-shadow: 0 0 2px #000;
@@ -172,8 +172,8 @@
 /* common nav */
 
 .site-commonnav {
-  border-top:1px solid #e5e5e5;
-  clear:both;
+  border-top: 1px solid #e5e5e5;
+  clear: both;
   font-size: smaller;
   line-height: 1.6;
   padding: 1rem;
@@ -182,7 +182,7 @@
   > hr {
     border: solid #ddd;
     border-width: 1px 0 0;
-    margin:0 0 15px;
+    margin: 0 0 15px;
   }
 
   > a {
@@ -191,7 +191,7 @@
     margin: 0 $horizontal-spacing 0 0;
 
     &:last-child {
-      margin:0;
+      margin: 0;
     }
   }
 }
@@ -258,6 +258,6 @@
   .site-search,
   .site-sitenav,
   .site-commonnav {
-    display:none;
+    display: none;
   }
 }
