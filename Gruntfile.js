@@ -89,7 +89,14 @@ module.exports = function (grunt) {
     'configureProxies:dev',
     'connect:devTemplate',
     'connect:dev',
+    'test',
     'watch'
+  ]);
+
+  grunt.registerTask('test', [
+    'concurrent:test',
+    'connect:test',
+    'mocha_phantomjs'
   ]);
 
 };

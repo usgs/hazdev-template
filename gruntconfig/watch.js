@@ -4,12 +4,19 @@ var config = require('./config');
 
 var watch = {
   scripts: {
-    files: [config.src + '/**/*.js'],
+    files: [
+      config.src + '/**/*.js',
+      config.test + '/**/*.js'
+    ],
     tasks: ['concurrent:scripts']
   },
   scss: {
     files: [config.src + '/**/*.scss'],
     tasks: ['postcss:build']
+  },
+  tests: {
+    files: [config.test + '/**/*.js'],
+    tasks: ['jshint:tests', 'mocha_phantomjs']
   },
   gruntfile: {
     files: [
@@ -22,7 +29,7 @@ var watch = {
     files: ['**/*.php'],
     tasks: ['copy:build']
   },
-  reload: {
+  livereload: {
     files: [config.build + '/**/*'],
     options: {
       livereload: true
