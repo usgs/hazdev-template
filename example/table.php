@@ -4,14 +4,6 @@ if (!isset($TEMPLATE)) {
 	$TITLE = 'Tables';
 	$NAVIGATION = true;
 
-	$HEAD = '
-	<style>
-		code > strong {
-			/* color: red */
-			color: #E46554;
-		}
-	</style>
-	';
 	include 'template.inc.php';
 }
 
@@ -86,7 +78,7 @@ if (!isset($TEMPLATE)) {
 	</table>
 </div>
 <h3>Usage</h3>
-<pre><code>&lt;table class="<strong>tabular</strong>"&gt;
+<pre><code>&lt;table&gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
 			&lt;th&gt;First Header&lt;/th&gt;
@@ -178,7 +170,7 @@ if (!isset($TEMPLATE)) {
 	</table>
 </div>
 <h3>Usage</h3>
-<pre><code>&lt;table class="<strong>tabular responsive</strong>"&gt;
+<pre><code>&lt;table&gt;
 	&lt;thead&gt;
 		&lt;tr&gt;
 			&lt;th&gt;First Header&lt;/th&gt;
@@ -260,7 +252,7 @@ if (!isset($TEMPLATE)) {
 </div>
 <h3>Usage</h3>
 <pre><code>&lt;div class="horizontal-scrolling"&gt;
-	&lt;table class="<strong>tabular responsive</strong>"&gt;
+	&lt;table&gt;
 		&lt;thead&gt;
 			&lt;tr&gt;
 				&lt;th&gt;First Header&lt;/th&gt;
@@ -272,7 +264,7 @@ if (!isset($TEMPLATE)) {
 		&lt;/thead&gt;
 		&lt;tbody&gt;
 			&lt;tr&gt;
-				<strong>&lt;th&gt;</strong>This<strong>&lt;/th&gt;</strong>
+				&lt;td&gt;tdis&lt;/td&gt;
 				&lt;td&gt;Is&lt;/td&gt;
 				&lt;td&gt;A&lt;/td&gt;
 				&lt;td&gt;Responsive&lt;/td&gt;
