@@ -5,14 +5,15 @@ button {
   border: none;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  cursor: pointer;
   color: #333;
+  cursor: pointer;
   font-family: 'helvetica neue', arial, sans-serif;
   font-size: 1em;
-  line-height:1;
+  line-height: 1;
   margin: 4px 2px;
   padding: 1rem 2rem;
-  position:relative; /* used by before/after selectors */
+  /* used by before/after selectors */
+  position: relative;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   vertical-align: top;
   z-index: 2;
@@ -21,7 +22,7 @@ button {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%,
         rgba(0, 0, 0, 0.1) 100%);
     color: #000;
-    text-shadow:none;
+    text-shadow: none;
   }
 
   &:active,
@@ -61,8 +62,6 @@ button {
   }
 
   &.yellow {
-    color: #555;
-    color: #836352;
     color: #74513F;
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
@@ -85,14 +84,14 @@ button {
     text-align: left;
 
     &:after {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 1rem 1.5rem;
-      text-align: center;
+      background: rgba(0, 0, 0, 0.05);
       border-radius: 0 2px 2px 0;
       border-left: 1px solid rgba(0, 0, 0, 0.05);
-      background: rgba(0, 0, 0, 0.05);
+      padding: 1rem 1.5rem;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
     }
 
     &.disabled:after,
@@ -122,9 +121,9 @@ button {
     margin: 0 0 0 -1px;
 
     &:first-child {
-      margin: 0;
       border-bottom-left-radius: 2px;
       border-top-left-radius: 2px;
+      margin: 0;
     }
 
     &:last-child {
@@ -139,9 +138,9 @@ button {
   }
 
   &:after {
+    display: block;
     clear: both;
     content: '';
-    display: block;
   }
 }
 
