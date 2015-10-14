@@ -4,8 +4,6 @@ if (!isset($TEMPLATE)) {
 	$NAVIGATION = true;
 
 	$HEAD = '
-			<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
-
 			<style>
 				textarea {
 					width: 36em;

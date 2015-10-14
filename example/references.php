@@ -3,7 +3,6 @@
 if (!isset($TEMPLATE)) {
   $TITLE = 'References';
   $NAVIGATION = true;
-  $HEAD = '<link rel="stylesheet" href="/theme/css/references.css"/>';
 
   include('template.inc.php');
 }

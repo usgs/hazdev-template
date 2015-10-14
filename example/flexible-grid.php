@@ -20,9 +20,6 @@ if (!isset($TEMPLATE)) {
 			font-size: 15px;
 		}
 	</style>
-
-	<link rel="stylesheet" href="/theme/css/flexible-grid.css" />
-	<link rel="stylesheet" href="/theme/css/alert.css" />
 	';
 
 	include 'template.inc.php';
