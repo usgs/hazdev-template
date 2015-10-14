@@ -3,10 +3,6 @@
 		$TITLE = 'Text Level Semantics';
 		$NAVIGATION = true;
 
-		$HEAD = '
-			<link rel="stylesheet" href="/theme/css/responsive-table.css"/>
-		';
-
 		include 'template.inc.php';
 	}
 ?>
@@ -17,8 +13,8 @@
 <p>
 	The following list gives you a short overview of the most commonly used text-level semantics and how to utilize them.
 </p>
-<h3 class="subheading">Example</h3>
-<table class="tabular">
+<h3>Example</h3>
+<table>
 	<thead>
 		<tr>
 			<th>Element</th>

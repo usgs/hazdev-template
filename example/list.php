@@ -311,3 +311,34 @@
   &hellip;
 &lt;/dl&gt;</code>
 </pre>
+
+
+<h2>Scrollable List</h2>
+<p>
+  By wrapping a list in a div with the classname .vertical-scrolling and
+  giving that wrapper a max-height will allow the list to be scrollable.
+</p>
+<div class="vertical-scrolling" style="height:100px;">
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+    <li>Item 7</li>
+    <li>Item 8</li>
+    <li>Item 9</li>
+    <li>Last Item</li>
+  </ol>
+</div>
+<h3>Usage</h3>
+<pre><code>&lt;div class=".vertical-scrolling" style="height:100px;"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;Last Item&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</code></pre>
