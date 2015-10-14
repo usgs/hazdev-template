@@ -85,6 +85,7 @@ if (!isset($TEMPLATE)) {
 			&lt;th&gt;Second Header&lt;/th&gt;
 			&lt;th&gt;Third Header&lt;/th&gt;
 			&lt;th&gt;Fourth Header&lt;/th&gt;
+			&lt;th&gt;Fifth Header&lt;/th&gt;
 		&lt;/tr&gt;
 	&lt;/thead&gt;
 	&lt;tbody&gt;
@@ -92,6 +93,7 @@ if (!isset($TEMPLATE)) {
 			&lt;td&gt;This&lt;/td&gt;
 			&lt;td&gt;Is&lt;/td&gt;
 			&lt;td&gt;A&lt;/td&gt;
+			&lt;td&gt;Normal&lt;/td&gt;
 			&lt;td&gt;Table&lt;/td&gt;
 		&lt;/tr&gt;
 	&hellip;
@@ -185,7 +187,7 @@ if (!isset($TEMPLATE)) {
 			&lt;td&gt;This&lt;/td&gt;
 			&lt;td&gt;Is&lt;/td&gt;
 			&lt;td&gt;A&lt;/td&gt;
-			&lt;td&gt;Responsive&lt;/td&gt;
+			&lt;td&gt;Borderless&lt;/td&gt;
 			&lt;td&gt;Table&lt;/td&gt;
 		&lt;/tr&gt;
 	&hellip;
