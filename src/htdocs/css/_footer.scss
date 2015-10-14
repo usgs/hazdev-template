@@ -1,6 +1,4 @@
-@define-extend nav-transition {
-  transition: background .25s ease-out;
-}
+
 
 /* section nav */
 .site-sectionnav {
@@ -14,7 +12,7 @@
     display: block;
     padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
     text-decoration:none;
-    @extend nav-transition;
+    transition: background .25s ease-out;
 
     &:visited {
       color: #333;
@@ -35,7 +33,7 @@
       color: #333;
       display: block;
       padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-      @extend nav-transition;
+      transition: background .25s ease-out;
     }
 
     /* indent group items */
@@ -45,35 +43,35 @@
 
       /* gradient separator between section links */
       &:before {
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0,
             rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
       }
     }
 
     /* nav group header */
     > header {
       background-color: #ededed;
-      border-top: 1px solid $sectionnav-border-color;
       border-bottom: 1px solid $sectionnav-border-color;
+      border-top: 1px solid $sectionnav-border-color;
       font-weight: normal;
       text-shadow: 0 1px 1px #fff;
     }
 
     > a,
     > header > a {
-      text-decoration:none;
       background-image:none;
+      text-decoration:none;
 
       /* hover styles for nav items */
       &:hover {
-        text-decoration:underline;
         background-color: $sectionnav-background-color-hover;
+        text-decoration:underline;
       }
     }
 
@@ -92,34 +90,34 @@
 /* search form */
 
 .site-search {
-  position:relative;
   display: block;
   margin: 1.2em 1em;
+  position:relative;
 
   >[type="search"] {
-    display:block;
-    width:100%;
     appearance:none;
+    display:block;
     margin:0;
+    width:100%;
   }
 
   > label {
     display:block;
     float:left;
-    margin-right:1em;
     font-size:smaller;
+    margin-right:1em;
   }
 
   > button {
-    display:block;
     clear:both;
+    display:block;
     margin: 1em 0 0 0;
   }
 
   &:after {
+    clear:both;
     content: ' ';
     display:block;
-    clear:both;
   }
 }
 
@@ -128,24 +126,24 @@
 
 .site-sitenav {
   background-color: $sitenav-background-color;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,0.1);
   margin: 0.2em 0;
   overflow: visible;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
 
   > a,
   > strong {
-    display: block;
-    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
-    color: $sitenav-color;
-    text-decoration: none;
-    font-weight:normal;
-    text-shadow: 0 0 2px #000;
-    @extend nav-transition;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-right: 1px solid rgba(255,255,255,0.1);
     border-left: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: $sitenav-color;
+    display: block;
+    font-weight:normal;
+    padding: calc($vertical-spacing * 3/4) $horizontal-spacing;
+    text-decoration: none;
+    text-shadow: 0 0 2px #000;
+    transition: background .25s ease-out;
 
     &:visited {
       color: $sitenav-color;
@@ -174,12 +172,12 @@
 /* common nav */
 
 .site-commonnav {
+  border-top:1px solid #e5e5e5;
   clear:both;
-  text-align: center;
+  font-size: smaller;
   line-height: 1.6;
   padding: 1rem;
-  border-top:1px solid #e5e5e5;
-  font-size: smaller;
+  text-align: center;
 
   > hr {
     border: solid #ddd;
@@ -188,8 +186,8 @@
   }
 
   > a {
-    display: inline-block;
     color: $sitenav-background-color;
+    display: inline-block;
     margin: 0 $horizontal-spacing 0 0;
 
     &:last-child {
@@ -225,8 +223,8 @@
     }
 
     > section {
-      margin: 0 0 1em;
       border: 1px solid #ddd;
+      margin: 0 0 1em;
 
       header,
       header > a {
