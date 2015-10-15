@@ -22,6 +22,7 @@ textarea {
   box-sizing: border-box;
   color: #000;
   display: block;
+  font-size: 1em;
   margin: .2em 0;
   outline: none;
   padding: 1rem .7em;
@@ -41,9 +42,6 @@ textarea {
   border: none;
   margin: 0;
   padding: 0;
-  > label {
-    margin-top: 0;
-  }
 }
 
 .usa-input-error {
@@ -78,7 +76,8 @@ textarea {
 label {
   cursor: pointer;
   display: block;
-  margin-top: 3rem;
+  font-size: 1em;
+  margin-top: .5em;
 }
 
 textarea {
@@ -89,7 +88,6 @@ select {
   appearance: none;
   background-color: #ffffff;
   background-image: url('/theme/images/arrow-down.png');
-  background-image: url('/theme/images/arrow-down.svg');
   background-position: right 1.3rem center;
   background-repeat: no-repeat;
   background-size: 1.3rem;
@@ -109,14 +107,15 @@ select {
 /* Hide the actual checkbox and radio button, they are replaced by icons. */
 input[type="checkbox"],
 input[type="radio"] {
-  position: absolute;
   left: -999em;
+  position: absolute;
 }
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   cursor: pointer;
   font-weight: 400;
+  margin-top: -.5em;
 }
 
 input[type="checkbox"] + label::before {
