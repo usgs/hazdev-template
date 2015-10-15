@@ -1,194 +1,241 @@
 <?php
 if (!isset($TEMPLATE)) {
-	$TITLE = 'Forms';
-	$NAVIGATION = true;
+  $TITLE = 'Forms';
+  $NAVIGATION = true;
 
-	$HEAD = '
-			<style>
-				textarea {
-					width: 36em;
-					height: 10em;
-				}
+  $HEAD = '
+      <style>
+        .preview {
+          border: 1px solid #eee;
+          margin: 1em 0;
+          padding: .25em 3rem;
+        }
+      </style>
+  ';
 
-				.vertical > button {
-					margin: 2em 0 0;
-				}
-
-				.sortExample,
-				.searchExample {
-					margin: 1em 0 0;
-				}
-
-			</style>
-	';
-
-	include 'template.inc.php';
+  include 'template.inc.php';
 
 }
 ?>
 
+<div class="preview">
+  <h2>Form Example Elements</h2>
+  <form>
+    <label for="input-type-text">Tell us your name, so that we can let you
+      know when it is ready:
+      <input id="input-type-text" name="input-type-text" type="text" />
+    </label>
 
-<p>
-	The inputs, labels, and other form elements on a form are vertical
-	when the <code>.vertical</code> class is applied to the container.
-</p>
+    <p>
+      You may pick one flavor...
+    </p>
+    <fieldset class="usa-fieldset-inputs">
+      <legend>Ice Cream Flavors</legend>
+      <ul class="no-style">
+        <li>
+          <input type="radio" name="flavor" id="flavor-vanilla"
+              value="vanilla" checked="checked" />
+          <label for="flavor-vanilla">Vanilla</label>
+        </li>
+        <li>
+          <input type="radio" name="flavor" id="flavor-chocolate"
+              value="chocolate" />
+          <label for="flavor-chocolate">Chocolate</label>
+        </li>
+        <li>
+          <input type="radio" name="flavor" id="flavor-strawberry"
+              value="strawberry" disabled="disabled" />
+          <label for="flavor-strawberry">Strawberry - Sorry, out of stock</label>
+        </li>
+      </ul>
+    </fieldset>
 
-<h2>Form Elements</h2>
-<p>
-	Here are some examples of form elements displayed with their default styles.
-</p>
+    <p>
+      ...and several toppings.
+    </p>
+    <fieldset class="usa-fieldset-inputs">
+      <legend>Ice Cream Toppings</legend>
+      <ul class="no-style">
+        <li>
+          <input type="checkbox" name="topping" id="topping-sprinkles"
+              value="sprinkles" checked="checked" />
+          <label for="topping-sprinkles">Sprinkles</label>
+        </li>
+        <li>
+          <input type="checkbox" name="topping" id="topping-chocolate-syrup"
+              value="chocolate-syrup" />
+          <label for="topping-chocolate-syrup">Chocolate Syrup</label>
+        </li>
+        <li>
+          <input type="checkbox" name="topping" id="topping-peanuts"
+              value="peanuts" disabled="disabled" />
+          <label for="topping-peanuts">Peanuts - Sorry, out of stock</label>
+        </li>
+      </ul>
+    </fieldset>
 
-<h3>Sort Example</h3>
-<div class="sortExample">
-	<label>Sort by
-		<select class="collection-selectbox">
-			<option value="0">Location</option>
-			<option value="1">MMI</option>
-			<option value="2">Responses</option>
-			<option value="3" selected="selected">Distance</option>
-		</select>
-	</label>
-	<button type="submit">Download</button>
-</div>
+    <label>Now choose your container:
+      <select>
+        <option value="waffle-cone">Waffle Cone</option>
+        <option value="regular-cone">Regular Cone</option>
+        <option value="users-hands">Your Hands</option>
+        <option value="bowl" selected="selected">Bowl</option>
+      </select>
+    </label>
 
-<h3>Search Example</h3>
-<div class="searchExample">
-	<label>Search
-		<input type="search" placeholder="Search" />
-	</label>
-	<button type="submit">Search</button>
-</div>
+    <label for="input-type-textarea">Any other instructions?
+      <textarea id="input-type-textarea" name="input-type-textarea"></textarea>
+    </label>
+  </form>
 
+  <h2>Usage</h2>
+  <pre>
+&lt;form&gt;
+  &lt;label for="input-type-text"&gt;Tell us your name, so that we can let you
+    know when it is ready:
+    &lt;input id="input-type-text" name="input-type-text" type="text" /&gt;
+  &lt;/label&gt;
 
-<h2>Vertical Form</h2>
-<form class="vertical">
+  &lt;p&gt;
+    You may pick one flavor...
+  &lt;/p&gt;
+  &lt;fieldset class="usa-fieldset-inputs"&gt;
+    &lt;legend&gt;Ice Cream Flavors&lt;/legend&gt;
+    &lt;ul class="no-style"&gt;
+      &lt;li&gt;
+        &lt;input type="radio" name="flavor" id="flavor-vanilla"
+            value="vanilla" checked="checked" /&gt;
+        &lt;label for="flavor-vanilla"&gt;Vanilla&lt;/label&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;input type="radio" name="flavor" id="flavor-chocolate"
+            value="chocolate" /&gt;
+        &lt;label for="flavor-chocolate"&gt;Chocolate&lt;/label&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;input type="radio" name="flavor" id="flavor-strawberry"
+            value="strawberry" disabled="disabled" /&gt;
+        &lt;label for="flavor-strawberry"&gt;Strawberry - Sorry, out of stock&lt;/label&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/fieldset&gt;
 
-	<!-- Label and text input -->
-	<label for="regularInput1">Regular Input</label>
-	<input type="text" id="regularInput1" placeholder="Placeholder Text"/>
+  &lt;p&gt;
+    ...and several toppings.
+  &lt;/p&gt;
+  &lt;fieldset class="usa-fieldset-inputs"&gt;
+    &lt;legend&gt;Ice Cream Toppings&lt;/legend&gt;
+    &lt;ul class="no-style"&gt;
+      &lt;li&gt;
+        &lt;input type="checkbox" name="topping" id="topping-sprinkles"
+            value="sprinkles" checked="checked" /&gt;
+        &lt;label for="topping-sprinkles"&gt;Sprinkles&lt;/label&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;input type="checkbox" name="topping" id="topping-chocolate-syrup"
+            value="chocolate-syrup" /&gt;
+        &lt;label for="topping-chocolate-syrup"&gt;Chocolate Syrup&lt;/label&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;input type="checkbox" name="topping" id="topping-peanuts"
+            value="peanuts" disabled="disabled" /&gt;
+        &lt;label for="topping-peanuts"&gt;Peanuts - Sorry, out of stock&lt;/label&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/fieldset&gt;
 
-	<!-- Label and textarea -->
-	<label for="regularTextarea1">Regular Textarea</label>
-	<textarea id="regularTextarea1"></textarea>
+  &lt;label&gt;Now choose your container:
+    &lt;select&gt;
+      &lt;option value="waffle-cone"&gt;Waffle Cone&lt;/option&gt;
+      &lt;option value="regular-cone"&gt;Regular Cone&lt;/option&gt;
+      &lt;option value="users-hands"&gt;Your Hands&lt;/option&gt;
+      &lt;option value="bowl" selected="selected"&gt;Bowl&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
 
-	<!-- Label and select list -->
-	<label for="selectList1">Select List</label>
-	<select id="selectList1">
-		<option value="Option 1">Option 1</option>
-		<option value="Option 2">Option 2</option>
-		<option value="Option 3">Option 3</option>
-	</select>
-
-	<!-- Wrap checkbox/radio button groups in fieldsets -->
-	<fieldset>
-
-		<!-- Give the fieldset a legend -->
-		<legend>Checkboxes</legend>
-
-		<!-- Wrap each checkbox in a label, then give it the input and span for the text option -->
-		<label for="regularCheckbox1">
-			<input type="checkbox" id="regularCheckbox1" value="checkbox 1" />
-			Regular Checkbox 1
-		</label>
-
-		<label for="secondRegularCheckbox1">
-			<input type="checkbox" id="secondRegularCheckbox1" value="checkbox 2" />
-			Regular Checkbox 2
-		</label>
-
-		<label for="thirdRegularCheckbox1">
-			<input type="checkbox" id="thirdRegularCheckbox1" value="checkbox 2" />
-			Regular Checkbox 3
-		</label>
-	</fieldset>
-
-	<fieldset>
-		<legend>Radio Buttons</legend>
-		<label for="regularRadio1">
-			<input type="radio" name="radios" id="regularRadio1" value="radio 1" />
-			Regular Radio 1
-		</label>
-		<label for="secondRegularRadio1">
-			<input type="radio" name="radios" id="secondRegularRadio1" value="radio 2" />
-			Regular Radio 2
-		</label>
-	</fieldset>
-
-	<button type="submit">Submit Form</button>
-</form>
-<h2>Usage</h2>
-<pre><code>&lt;form class="vertical"&gt;
-	&lt;label for="regularInput"&gt;Regular Input&lt;/label&gt;
-	&lt;input type="text" id="regularInput" placeholder="Placeholder Text"/&gt;
-	&hellip;
-	&lt;fieldset&gt;
-		&lt;legend&gt;Radio Buttons&lt;/legend&gt;
-		&lt;label for="regularRadio"&gt;
-			&lt;input type="radio" name="radios" id="regularRadio" value="radio 1" /&gt;
-			Regular Radio
-		&lt;/label&gt;
-		&lt;label for="secondRegularRadio"&gt;
-			&lt;input type="radio" name="radios" id="secondRegularRadio" value="radio 2" /&gt;
-			Regular Radio
-		&lt;/label&gt;
-	&lt;/fieldset&gt;
+  &lt;label for="input-type-textarea"&gt;Any other instructions?
+    &lt;textarea id="input-type-textarea" name="input-type-textarea"&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
 &lt;/form&gt;
-</code></pre>
+&lt;/div&gt;
 
+&lt;div class="preview"&gt;
+&lt;h2&gt;Text Input Examples&lt;/h2&gt;
+&lt;p&gt;
+  Text input can span single or multiple lines, and can be styled
+  for success and error status.
+&lt;/p&gt;
+&lt;form&gt;
+  &lt;label for="input-focus"&gt;Text input focused
+    &lt;input class="usa-input-focus" id="input-focus"
+        name="input-focus" type="text" /&gt;
+  &lt;/label&gt;
 
-<h2>Fieldset Example</h2>
-<p>
-	This is an example of a <code>fieldset</code> being used to format a question.
-</p>
-<section class="vertical">
-	<fieldset>
-		<legend>
-			I have a long question that I want to wrap on a smaller screen, do you
-			think that this text will wrap?
-		</legend>
-		<label for="regularRadio3">
-			<input type="radio" name="radios" id="regularRadio3" value="radio 1" />
-			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile. 
-		</label>
-		<label for="secondRegularRadio3">
-			<input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" />
-			Yes
-		</label>
-		<label for="thirdRegularRadio3">
-			<input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" />
-			No
-		</label>
-		<label for="fourthRegularRadio3">
-			<input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" />
-			Maybe
-		</label>
-	</fieldset>
-</section>
-<h2>Usage</h2>
-<pre><code>&lt;section class="vertical"&gt;
-	&lt;fieldset&gt;
-		&lt;legend&gt;
-			I have a long question that I want to wrap on a smaller screen, do you
-			think that this text will wrap?
-		&lt;/legend&gt;
-		&lt;label for="regularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="regularRadio3" value="radio 1" /&gt;
-			I'm not sure if it will wrap... I'm not very good with this line of
-			questioning let me think on it for ahile.
-		&lt;/label&gt;
-		&lt;label for="secondRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="secondRegularRadio3" value="radio 2" /&gt;
-			Yes
-		&lt;/label&gt;
-		&lt;label for="thirdRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="thirdRegularRadio3" value="radio 2" /&gt;
-			No
-		&lt;/label&gt;
-		&lt;label for="fourthRegularRadio3"&gt;
-			&lt;input type="radio" name="radios" id="fourthRegularRadio3" value="radio 2" /&gt;
-			Maybe
-		&lt;/label&gt;
-	&lt;/fieldset&gt;
-&lt;/section&gt;
-</code></pre>
+  &lt;div class="usa-input-error"&gt;
+    &lt;label class="usa-input-error-label" for="input-error"&gt;Text input error
+      &lt;span class="usa-input-error-message" id="input-error-message"
+          role="alert"&gt;Helpful error message&lt;/span&gt;
+      &lt;input id="input-error" name="input-error" type="text"
+          aria-describedby="input-error-message" /&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;label for="input-success"&gt;Text input success
+    &lt;input class="usa-input-success" id="input-success"
+        name="input-success" type="text" /&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+  </pre>
+</div>
+
+<div class="preview">
+  <h2>Text Input Examples</h2>
+  <p>
+    Text input can span single or multiple lines, and can be styled
+    for success and error status.
+  </p>
+  <form>
+    <label for="input-focus">Text input focused
+      <input class="usa-input-focus" id="input-focus"
+          name="input-focus" type="text" />
+    </label>
+
+    <div class="usa-input-error">
+      <label class="usa-input-error-label" for="input-error">Text input error
+        <span class="usa-input-error-message" id="input-error-message"
+            role="alert">Helpful error message</span>
+        <input id="input-error" name="input-error" type="text"
+            aria-describedby="input-error-message" />
+      </label>
+    </div>
+
+    <label for="input-success">Text input success
+      <input class="usa-input-success" id="input-success"
+          name="input-success" type="text" />
+    </label>
+  </form>
+
+  <h2>Usage</h2>
+  <pre>
+&lt;form&gt;
+  &lt;label for="input-focus"&gt;Text input focused
+    &lt;input class="usa-input-focus" id="input-focus"
+        name="input-focus" type="text" /&gt;
+  &lt;/label&gt;
+
+  &lt;div class="usa-input-error"&gt;
+    &lt;label class="usa-input-error-label" for="input-error"&gt;Text input error
+      &lt;span class="usa-input-error-message" id="input-error-message"
+          role="alert"&gt;Helpful error message&lt;/span&gt;
+      &lt;input id="input-error" name="input-error" type="text"
+          aria-describedby="input-error-message" /&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;label for="input-success"&gt;Text input success
+    &lt;input class="usa-input-success" id="input-success"
+        name="input-success" type="text" /&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+  </pre>
+</div>
