@@ -30,7 +30,7 @@ if (!isset($TEMPLATE)) {
       You may pick one flavor...
     </p>
     <fieldset class="usa-fieldset-inputs">
-      <legend class="usa-sr-only">Ice Cream Flavors</legend>
+      <legend>Ice Cream Flavors</legend>
       <ul class="no-style">
         <li>
           <input type="radio" name="flavor" id="flavor-vanilla"
@@ -54,7 +54,7 @@ if (!isset($TEMPLATE)) {
       ...and several toppings.
     </p>
     <fieldset class="usa-fieldset-inputs">
-      <legend class="usa-sr-only">Ice Cream Toppings</legend>
+      <legend>Ice Cream Toppings</legend>
       <ul class="no-style">
         <li>
           <input type="checkbox" name="topping" id="topping-sprinkles"
@@ -75,7 +75,7 @@ if (!isset($TEMPLATE)) {
     </fieldset>
 
     <label>Now choose your container:
-      <select class="collection-selectbox">
+      <select>
         <option value="waffle-cone">Waffle Cone</option>
         <option value="regular-cone">Regular Cone</option>
         <option value="users-hands">Your Hands</option>
@@ -100,7 +100,7 @@ if (!isset($TEMPLATE)) {
     You may pick one flavor...
   &lt;/p&gt;
   &lt;fieldset class="usa-fieldset-inputs"&gt;
-    &lt;legend class="usa-sr-only"&gt;Ice Cream Flavors&lt;/legend&gt;
+    &lt;legend&gt;Ice Cream Flavors&lt;/legend&gt;
     &lt;ul class="no-style"&gt;
       &lt;li&gt;
         &lt;input type="radio" name="flavor" id="flavor-vanilla"
@@ -124,7 +124,7 @@ if (!isset($TEMPLATE)) {
     ...and several toppings.
   &lt;/p&gt;
   &lt;fieldset class="usa-fieldset-inputs"&gt;
-    &lt;legend class="usa-sr-only"&gt;Ice Cream Toppings&lt;/legend&gt;
+    &lt;legend&gt;Ice Cream Toppings&lt;/legend&gt;
     &lt;ul class="no-style"&gt;
       &lt;li&gt;
         &lt;input type="checkbox" name="topping" id="topping-sprinkles"
@@ -145,7 +145,7 @@ if (!isset($TEMPLATE)) {
   &lt;/fieldset&gt;
 
   &lt;label&gt;Now choose your container:
-    &lt;select class="collection-selectbox"&gt;
+    &lt;select&gt;
       &lt;option value="waffle-cone"&gt;Waffle Cone&lt;/option&gt;
       &lt;option value="regular-cone"&gt;Regular Cone&lt;/option&gt;
       &lt;option value="users-hands"&gt;Your Hands&lt;/option&gt;
