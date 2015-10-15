@@ -3,8 +3,6 @@ if (!isset($TEMPLATE)) {
   $TITLE = 'Icons';
 
   $HEAD = '
-    <link rel="stylesheet" ' .
-        'href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <style>
       .icon-wrapper {
         float: left;
@@ -134,13 +132,6 @@ if (!isset($TEMPLATE)) {
 </p>
 
 <h2>Usage</h2>
-<p>
-  Include the stylesheet in the document <code>HEAD</code> section. This will
-  tell the browser to download the web font used by the icons as well as
-  classes/styles with canonical references to each font size.
-</p>
-<pre><code>$HEAD = '&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/&gt;';</code></pre>
-
 <p>
   Place icons on the page using the <code>material-icons</code> class on an
   element with content indicating the name of the icon to display.
