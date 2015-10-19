@@ -25,31 +25,38 @@ h6, .h6 {
   margin: calc($spacing * 3/2) 0 calc($spacing/2);
 }
 
-header > h1 {
+header > h1,
+header > .h1 {
   margin-top: calc($spacing * 3/4)
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 1.7625em;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 1.175em;
 }
 
-h3 {
+h3,
+.h3 {
   font-size: 1em;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: .88125em;
 }
 
-h5 {
+h5,
+.h5 {
   font-size: .763755em;
 }
 
-h6 {
+h6:not(.h1):not(.h2):not(.h3):not(.h4):not(.h5),
+.h6 {
   font-family: $font-sans;
   font-size: .763755em;
   font-weight: $font-normal;
