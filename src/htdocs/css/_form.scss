@@ -162,24 +162,3 @@ input[type="radio"]:disabled + label::before {
   color: #d6d7d9;
   cursor: not-allowed;
 }
-
-// Memorable dates
-
-.usa-date-of-birth {
-  > label {
-    margin-top: 0;
-  }
-}
-
-.usa-form-group-day,
-.usa-form-group-month,
-.usa-form-group-year {
-  clear: none;
-  float: left;
-  margin-right: 1.5rem;
-  width: 5rem;
-}
-
-.usa-form-group-year {
-  width: 7rem;
-}
