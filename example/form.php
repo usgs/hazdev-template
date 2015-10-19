@@ -26,11 +26,8 @@ if (!isset($TEMPLATE)) {
       <input id="input-type-text" name="input-type-text" type="text" />
     </label>
 
-    <p>
-      You may pick one flavor...
-    </p>
     <fieldset class="usa-fieldset-inputs">
-      <legend>Ice Cream Flavors</legend>
+      <legend>Ice Cream Flavor</legend>
       <ul class="no-style">
         <li>
           <input type="radio" name="flavor" id="flavor-vanilla"
@@ -50,9 +47,6 @@ if (!isset($TEMPLATE)) {
       </ul>
     </fieldset>
 
-    <p>
-      ...and several toppings.
-    </p>
     <fieldset class="usa-fieldset-inputs">
       <legend>Ice Cream Toppings</legend>
       <ul class="no-style">
