@@ -152,4 +152,4 @@ Default link color is #306ac2
 
 ### $link-color-active
 
-Defalut active link color is #c23030
+Default active link color is #c23030
