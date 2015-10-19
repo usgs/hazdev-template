@@ -7,9 +7,9 @@
     /* banner cooperator styles. */
     background-color: $banner-background-color;
     height: 100%;
-    left: 157px;
+    left: 186px;
     overflow: hidden;
-    padding: 10px 0;
+    padding: calc($spacing * 3/2) 0;
     position: absolute;
     top: 0;
     white-space: nowrap;
@@ -56,7 +56,7 @@
     /* make banner larger on large screens. */
     background-color: $banner-background-color;
     background-image: url($banner-image);
-    background-position: 164px 0;
+    background-position: 186px 0;
     background-repeat: no-repeat;
     background-size: auto 100%;
     height: 90px;
