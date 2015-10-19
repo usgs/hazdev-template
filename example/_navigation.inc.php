@@ -16,3 +16,5 @@ echo navGroup(navItem('/index.php', 'The Template'),
   );
 
 echo navItem('/content.php', 'Content Styles');
+
+echo navItem('/cooperator.php', 'Cooperator Logos');
