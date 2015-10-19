@@ -160,5 +160,10 @@ input[type="radio"]:disabled + label {
 input[type="checkbox"]:disabled + label::before,
 input[type="radio"]:disabled + label::before {
   color: #d6d7d9;
+}
+input[type="checkbox"]:disabled + label, 
+input[type="checkbox"]:disabled + label::before,
+input[type="radio"]:disabled + label,
+input[type="radio"]:disabled + label::before {
   cursor: not-allowed;
 }
