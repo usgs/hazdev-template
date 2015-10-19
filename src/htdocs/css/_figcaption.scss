@@ -15,13 +15,13 @@ figure {
   @media screen and (min-width: $breakpoint-stacking) {
     &.right {
       float: right;
-      margin-left: 1em;
+      margin-left: $spacing;
       max-width: 50%;
     }
 
     &.left {
       float: left;
-      margin-right: 1em;
+      margin-right: $spacing;
       max-width: 50%;
     }
   }
