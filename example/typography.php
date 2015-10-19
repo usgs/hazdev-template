@@ -23,7 +23,7 @@ not be used anywhere else:
 </code></pre>
 
 
-<h1>h1 Title</h1>
+<h1>&lt;h1&gt; Title (or .h1)</h1>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -40,7 +40,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.
 </p>
 
-<h2>h2 Header</h2>
+<h2>&lt;h2&gt; Header (or .h2)</h2>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -51,7 +51,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.
 </p>
 
-<h3>h3 Header</h3>
+<h3>&lt;h3&gt; Header (or .h3)</h3>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -62,7 +62,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.
 </p>
 
-<h4>h4 Header</h4>
+<h4>&lt;h4&gt; Header (or .h4)</h4>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -73,7 +73,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.
 </p>
 
-<h5>h5 Header</h5>
+<h5>&lt;h5&gt; Header (or .h5)</h5>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
@@ -84,7 +84,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.
 </p>
 
-<h6>h6 Header</h6>
+<h6>&lt;h6&gt; Header (or .h6)</h6>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipisici<strong>*</strong> g elit,
 sed do eius<strong>*</strong> od tempor<strong>*</strong> incididunt ut labore
