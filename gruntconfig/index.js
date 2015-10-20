@@ -16,7 +16,6 @@ var gruntconfig = function (grunt) {
     postcss: require('./postcss'),
 
     tasks: [
-      'grunt-browserify',
       'grunt-concurrent',
       'grunt-connect-rewrite',
       'grunt-contrib-clean',
@@ -54,6 +53,7 @@ var gruntconfig = function (grunt) {
     config.watch = require('./watch');
 
     config.tasks.push(
+      'grunt-browserify',
       'grunt-contrib-connect',
       'grunt-contrib-watch'
     );
