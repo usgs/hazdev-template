@@ -88,8 +88,8 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'build',
     'configureRewriteRules',
-    'connect:dev',
     'test',
+    'connect:dev',
     'watch'
   ]);
 
