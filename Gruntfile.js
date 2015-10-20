@@ -79,7 +79,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', [
     'builddist',
     'configureRewriteRules',
-    'connect:dist'
+    'connect:dist:keepalive'
   ]);
 
   // develop
