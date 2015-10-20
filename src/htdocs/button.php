@@ -79,7 +79,7 @@ if (!isset($TEMPLATE)) {
   There are five predefined colors that can be applied to buttons. If you add
   the class <code>.red</code>, <code>.orange</code>, <code>.yellow</code>,
   <code>.green</code>, or <code>.blue</code>, then the button will be styled
-  with that color scheme. 
+  with that color scheme.
 </p>
 <button class="red">Red</button>
 <button class="orange">Orange</button>
