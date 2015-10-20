@@ -9,6 +9,7 @@ echo navGroup(navItem('/index.php', 'The Template'),
     navItem('/icons.php', 'Icons') .
     navItem('/jumplist.php', 'Jump List') .
     navItem('/list.php', 'Lists') .
+    navItem('/minimal.php', 'Minimal') .
     navItem('/references.php', 'References') .
     navItem('/table.php', 'Tables') .
     navItem('/text.php', 'Text Level Semantics') .
