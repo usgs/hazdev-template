@@ -5,7 +5,6 @@ var gruntconfig = function (grunt) {
   var config = {
     config: require('./config'),
 
-    browserify: require('./browserify'),
     clean: require('./clean'),
     concat: require('./concat'),
     copy: require('./copy'),
@@ -32,7 +31,6 @@ var gruntconfig = function (grunt) {
       [
         'build',
         'builddist',
-        'clean',
         'postcss:build',
         'concat:scripts',
         'copy',
@@ -46,6 +44,7 @@ var gruntconfig = function (grunt) {
         'uglify:dist'
       ].indexOf(grunt.cli.tasks[0]) === -1) {
 
+    config.browserify = require('./browserify');
     config.connect = require('./connect');
     config.watch = require('./watch');
 
