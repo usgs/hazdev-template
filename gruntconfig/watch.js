@@ -5,11 +5,11 @@ var config = require('./config');
 var watch = {
   scripts: {
     files: [
-      config.src + '/**/*.js',
-      config.test + '/**/*.js'
+      config.src + '/**/*.js'
     ],
     tasks: [
       'jshint:scripts',
+      'concat:bundle',
       'concat:scripts'
     ]
   },
@@ -23,11 +23,12 @@ var watch = {
   },
   tests: {
     files: [
-      config.test + '/**/*.js'
+      config.test + '/**/*'
     ],
     tasks: [
+      'copy:test',
       'jshint:tests',
-      'mocha_phantomjs'
+      'browserify:test'
     ]
   },
   gruntfile: {
@@ -35,13 +36,18 @@ var watch = {
       'Gruntfile.js',
       'gruntconfig/**.js'
     ],
+    options: {
+      reload: true
+    },
     tasks: [
       'jshint:gruntfile'
     ]
   },
-  php: {
+  static: {
     files: [
-      '**/*.php'
+      config.src + '/**/*',
+      '!' + config.src + '/**/*.js',
+      '!' + config.src + '/**/*.scss'
     ],
     tasks: [
       'copy:build'
@@ -52,7 +58,7 @@ var watch = {
       config.build + '/**/*'
     ],
     options: {
-      livereload: true
+      livereload: config.liveReloadPort
     }
   }
 };
