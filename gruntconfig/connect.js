@@ -19,6 +19,7 @@ var connect = {
   dev: {
     options: {
       base: [config.build + '/' + config.src + '/htdocs'],
+      livereload: config.liveReloadPort,
       open: 'http://localhost:' + config.devPort + '/theme/index.php',
       port: config.devPort,
       middleware: function (connect, options, middlewares) {
@@ -43,6 +44,7 @@ var connect = {
         config.build + '/' + config.test,
         'node_modules'
       ],
+      livereload: config.liveReloadPort,
       port: config.testPort,
       open: 'http://localhost:' + config.testPort + '/test.html',
       middleware: function (connect, options, middlewares) {
