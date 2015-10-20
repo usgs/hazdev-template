@@ -3,40 +3,23 @@
 var config = require('./config');
 
 
+var rewriteRulesSnppet = require('grunt-connect-rewrite/lib/utils').rewriteRequest;
+
 var connect = {
   options: {
     hostname: '*'
   },
-  dev: {
-    proxies: [{
-      context: '/theme',
-      host: 'localhost',
-      port: config.devPort,
-      rewrite: {'/theme': ''}
-    }],
-    options: {
-      base: [config.example],
-      port: config.examplePort,
-      open: 'http://localhost:' + config.examplePort + '/',
-      livereload: true,
-      middleware: function (connect, options, middlewares) {
-        middlewares.unshift(
-          require('grunt-connect-proxy/lib/utils').proxyRequest,
-          require('gateway')(options.base[0], {
-            '.php': 'php-cgi',
-            'env': {
-              'PHPRC': config.build + '/' + config.src + '/conf/php.ini'
-            }
-          })
-        );
-        return middlewares;
-      }
+  rules: [
+    {
+      from: '/theme',
+      to: '/'
     }
-  },
+  ],
 
-  devTemplate: {
+  dev: {
     options: {
       base: [config.build + '/' + config.src + '/htdocs'],
+      open: 'http://localhost:' + config.devPort + '/theme/index.php',
       port: config.devPort,
       middleware: function (connect, options, middlewares) {
         middlewares.unshift(
@@ -47,26 +30,20 @@ var connect = {
             }
           })
         );
+        middlewares.unshift(rewriteRulesSnppet);
         return middlewares;
       }
     }
   },
 
   dist: {
-    proxies: [{
-      context: '/theme',
-      host: 'localhost',
-      port: config.devPort,
-      rewrite: {'/theme': ''}
-    }],
     options: {
-      base: [config.example],
+      base: [config.dist + '/htdocs'],
       port: config.distPort,
-      open: 'http://localhost:' + config.distPort + '/',
+      open: 'http://localhost:' + config.distPort + '/theme/index.php',
       keepalive: true,
       middleware: function (connect, options, middlewares) {
         middlewares.unshift(
-          require('grunt-connect-proxy/lib/utils').proxyRequest,
           require('gateway')(options.base[0], {
             '.php': 'php-cgi',
             'env': {
@@ -74,36 +51,13 @@ var connect = {
             }
           })
         );
-        return middlewares;
-      }
-    }
-  },
-
-  distTemplate: {
-    options: {
-      base: [config.dist + '/htdocs'],
-      port: config.devPort,
-      middleware: function (connect, options, middlewares) {
-        middlewares.unshift(
-          require('gateway')(options.base[0], {
-            '.php': 'php-cgi',
-            'env': {
-              'PHPRC': config.dist + '/conf/php.ini'
-            }
-          })
-        );
+        middlewares.unshift(rewriteRulesSnppet);
         return middlewares;
       }
     }
   },
 
   test: {
-    proxies: [{
-      context: '/theme',
-      host: 'localhost',
-      port: config.devPort,
-      rewrite: {'/theme': ''}
-    }],
     options: {
       base: [
         config.build + '/' + config.test,
@@ -114,7 +68,6 @@ var connect = {
       livereload: true,
       middleware: function (connect, options, middlewares) {
         middlewares.unshift(
-          require('grunt-connect-proxy/lib/utils').proxyRequest,
           require('gateway')(options.base[0], {
             '.php': 'php-cgi',
             'env': {

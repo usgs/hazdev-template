@@ -18,6 +18,7 @@ var gruntconfig = function (grunt) {
     tasks: [
       'grunt-browserify',
       'grunt-concurrent',
+      'grunt-connect-rewrite',
       'grunt-contrib-clean',
       'grunt-contrib-concat',
       'grunt-contrib-copy',
@@ -53,7 +54,6 @@ var gruntconfig = function (grunt) {
     config.watch = require('./watch');
 
     config.tasks.push(
-      'grunt-connect-proxy',
       'grunt-contrib-connect',
       'grunt-contrib-watch'
     );

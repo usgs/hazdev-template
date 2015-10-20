@@ -78,16 +78,14 @@ module.exports = function (grunt) {
   // preview the distribution
   grunt.registerTask('dist', [
     'builddist',
-    'configureProxies:dist',
-    'connect:distTemplate',
+    'configureRewriteRules',
     'connect:dist'
   ]);
 
   // develop
   grunt.registerTask('default', [
     'build',
-    'configureProxies:dev',
-    'connect:devTemplate',
+    'configureRewriteRules',
     'connect:dev',
     'test',
     'watch'

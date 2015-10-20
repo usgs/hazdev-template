@@ -42,7 +42,7 @@ Lightweight php template framework
 
 ### Example usage
 
-The `example` directory shows an example usage of the template:
+The template comes with a styleguide providing examples:
 
 * css/index.scss defines css variables, and includes the template sass partial
 * _config.inc.php configures site wide settings
