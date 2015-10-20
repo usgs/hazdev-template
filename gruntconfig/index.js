@@ -8,7 +8,6 @@ var gruntconfig = function (grunt) {
     browserify: require('./browserify'),
     clean: require('./clean'),
     concat: require('./concat'),
-    concurrent: require('./concurrent'),
     copy: require('./copy'),
     jshint: require('./jshint'),
     mocha_phantomjs: require('./mocha_phantomjs'),
@@ -16,7 +15,6 @@ var gruntconfig = function (grunt) {
     postcss: require('./postcss'),
 
     tasks: [
-      'grunt-concurrent',
       'grunt-connect-rewrite',
       'grunt-contrib-clean',
       'grunt-contrib-concat',
@@ -30,14 +28,13 @@ var gruntconfig = function (grunt) {
 
   // only configure development tasks if needed
   if (grunt.cli.tasks.length === 0 ||
-      // build related tasks (concurrent tasks are separate grunt processes)
+      // build related tasks
       [
         'build',
         'builddist',
         'clean',
         'postcss:build',
         'concat:scripts',
-        'concurrent:scripts',
         'copy',
         'copy:build',
         'copy:dist',

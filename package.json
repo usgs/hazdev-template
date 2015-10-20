@@ -18,7 +18,6 @@
     "autoprefixer": "^6.0.2",
     "cssnano": "^3.1.0",
     "grunt": "~0.4.1",
-    "grunt-concurrent": "~0.3.0",
     "grunt-connect-rewrite": "^0.2.1",
     "grunt-contrib-clean": "~0.4.1",
     "grunt-contrib-concat": "^0.5.0",
