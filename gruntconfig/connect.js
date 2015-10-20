@@ -36,26 +36,6 @@ var connect = {
     }
   },
 
-  dist: {
-    options: {
-      base: [config.dist + '/htdocs'],
-      port: config.distPort,
-      open: 'http://localhost:' + config.distPort + '/theme/index.php',
-      keepalive: true,
-      middleware: function (connect, options, middlewares) {
-        middlewares.unshift(
-          require('gateway')(options.base[0], {
-            '.php': 'php-cgi',
-            'env': {
-              'PHPRC': config.dist + '/conf/php.ini'
-            }
-          })
-        );
-        middlewares.unshift(rewriteRulesSnppet);
-        return middlewares;
-      }
-    }
-  },
 
   test: {
     options: {
@@ -65,7 +45,6 @@ var connect = {
       ],
       port: config.testPort,
       open: 'http://localhost:' + config.testPort + '/test.html',
-      livereload: true,
       middleware: function (connect, options, middlewares) {
         middlewares.unshift(
           require('gateway')(options.base[0], {
@@ -80,6 +59,25 @@ var connect = {
     }
   },
 
+  dist: {
+    options: {
+      base: [config.dist + '/htdocs'],
+      port: config.distPort,
+      open: 'http://localhost:' + config.distPort + '/theme/index.php',
+      middleware: function (connect, options, middlewares) {
+        middlewares.unshift(
+          require('gateway')(options.base[0], {
+            '.php': 'php-cgi',
+            'env': {
+              'PHPRC': config.dist + '/conf/php.ini'
+            }
+          })
+        );
+        middlewares.unshift(rewriteRulesSnppet);
+        return middlewares;
+      }
+    }
+  }
 };
 
 
