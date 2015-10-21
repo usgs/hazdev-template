@@ -4,7 +4,6 @@ input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],
-input[type="file"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
@@ -90,7 +89,10 @@ select {
   background-image: url('/theme/images/arrow-down.png');
   background-position: right 1.3rem center;
   background-repeat: no-repeat;
-  background-size: 1.3rem;
+  background-size: auto;
+  padding-right: 3em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* Hint text */

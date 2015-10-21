@@ -2,7 +2,7 @@
   background-color: #eeeeee;
   margin-top: $spacing;
   overflow: hidden;
-  padding: $spacing calc($spacing * 2);
+  padding: calc($spacing * 3/2) calc($spacing * 2);
   position: relative;
 
   > :first-child {
