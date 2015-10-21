@@ -105,7 +105,7 @@ if (!isset($TEMPLATE)) {
 
 <h2>Borderless Table (.borderless)</h2>
 <p>
-  This table is styled using the .borderless class. 
+  This table is styled using the .borderless class.
 </p>
 <div class="horizontal-scrolling">
   <table class="borderless">

@@ -1,7 +1,7 @@
 <?php
 if (!isset($TEMPLATE)) {
   $TITLE = 'Cooperator Logos';
-  $NAVIGATION = true;  
+  $NAVIGATION = true;
 
   $COOPERATORS =
     '<a class="cooperator" href="http://anss.org/">' .
@@ -16,7 +16,7 @@ if (!isset($TEMPLATE)) {
 <p>
   Contributor logos may be added to the banner by setting the
   <code>$COOPERATORS</code> template variable. The logo will appear
-  to the right of the USGS site logo. 
+  to the right of the USGS site logo.
 </p>
 
 <h2>Usage</h2>

@@ -63,7 +63,8 @@ module.exports = function (grunt) {
     'clean',
     'copy:build',
     'postcss:build',
-    'concurrent:build',
+    'jshint:scripts',
+    'concat:scripts',
     'runpreinstall:' + config.build + '/' + config.src
   ]);
 
@@ -71,30 +72,31 @@ module.exports = function (grunt) {
   grunt.registerTask('builddist', [
     'build',
     'copy:dist',
-    'concurrent:dist',
+    'postcss:dist',
+    'uglify:dist',
     'runpreinstall:' + config.dist
   ]);
 
   // preview the distribution
   grunt.registerTask('dist', [
     'builddist',
-    'configureProxies:dist',
-    'connect:distTemplate',
-    'connect:dist'
+    'configureRewriteRules',
+    'connect:dist:keepalive'
   ]);
 
   // develop
   grunt.registerTask('default', [
     'build',
-    'configureProxies:dev',
-    'connect:devTemplate',
-    'connect:dev',
+    'configureRewriteRules',
     'test',
+    'connect:dev',
     'watch'
   ]);
 
   grunt.registerTask('test', [
-    'concurrent:test',
+    'browserify:test',
+    'concat:bundle',
+    'copy:test',
     'connect:test',
     'mocha_phantomjs'
   ]);

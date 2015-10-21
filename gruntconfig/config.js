@@ -3,12 +3,11 @@
 var config = {
   build: '.build',
   buildPreinstall: '.build/src/lib/pre-install.php',
-  devPort: 8003,
+  devPort: 8000,
   dist: 'dist',
   distPort: 8002,
   distPreinstall: 'dist/lib/pre-install.php',
-  example: 'example',
-  examplePort: 8000,
+  liveReloadPort: 8009,
   src: 'src',
   test: 'test',
   testPort: 8001

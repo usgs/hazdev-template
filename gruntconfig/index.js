@@ -5,10 +5,8 @@ var gruntconfig = function (grunt) {
   var config = {
     config: require('./config'),
 
-    browserify: require('./browserify'),
     clean: require('./clean'),
     concat: require('./concat'),
-    concurrent: require('./concurrent'),
     copy: require('./copy'),
     jshint: require('./jshint'),
     mocha_phantomjs: require('./mocha_phantomjs'),
@@ -16,8 +14,7 @@ var gruntconfig = function (grunt) {
     postcss: require('./postcss'),
 
     tasks: [
-      'grunt-browserify',
-      'grunt-concurrent',
+      'grunt-connect-rewrite',
       'grunt-contrib-clean',
       'grunt-contrib-concat',
       'grunt-contrib-copy',
@@ -30,14 +27,12 @@ var gruntconfig = function (grunt) {
 
   // only configure development tasks if needed
   if (grunt.cli.tasks.length === 0 ||
-      // build related tasks (concurrent tasks are separate grunt processes)
+      // build related tasks
       [
         'build',
         'builddist',
-        'clean',
         'postcss:build',
         'concat:scripts',
-        'concurrent:scripts',
         'copy',
         'copy:build',
         'copy:dist',
@@ -49,11 +44,12 @@ var gruntconfig = function (grunt) {
         'uglify:dist'
       ].indexOf(grunt.cli.tasks[0]) === -1) {
 
+    config.browserify = require('./browserify');
     config.connect = require('./connect');
     config.watch = require('./watch');
 
     config.tasks.push(
-      'grunt-connect-proxy',
+      'grunt-browserify',
       'grunt-contrib-connect',
       'grunt-contrib-watch'
     );
