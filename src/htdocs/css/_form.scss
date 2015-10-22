@@ -1,5 +1,4 @@
 /** Stacked should be the default mobile style */
-input,
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -103,69 +102,84 @@ select {
   margin-bottom: 0;
 }
 
+
 /**
  * Custom checkboxes
  */
-/* Hide the actual checkbox and radio button, they are replaced by icons. */
-input[type="checkbox"],
-input[type="radio"] {
+
+input[type='checkbox'],
+input[type='radio'] {
   left: -999em;
   position: absolute;
+
+  + label {
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+
+    &:before {
+      background: white;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px #757575;
+      content: '\a0';
+      display: inline-block;
+      font-size: 1em;
+      height: 1.8rem;
+      line-height: 1;
+      margin-right: .6em;
+      text-indent: .15em;
+      vertical-align: middle;
+      width: 1.8rem;
+    }
+  }
+
+  &:checked + label:before {
+    background-color: $primary;
+    box-shadow: 0 0 0 1px $primary;
+  }
+
+  &:disabled + label {
+    color: #ccc;
+    cursor: not-allowed;
+
+    &:before {
+      background: #ccc;
+      box-shadow: 0 0 0 1px #ccc;
+      cursor: not-allowed;
+    }
+  }
 }
 
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  cursor: pointer;
-  font-weight: 400;
-  margin-top: -.5em;
+input[type='checkbox']:checked + label:before {
+  content: '✓';
+  color: #fff;
 }
 
-input[type="checkbox"] + label::before {
-  content: '\0E835';
-  font-family: 'Material Icons';
-  font-size: 1.6em;
-  vertical-align: middle;
-}
-input[type="radio"] + label::before {
-  content: '\0E836';
-  font-family: 'Material Icons';
-  font-size: 1.6em;
-  vertical-align: middle;
+input[type='radio'] {
+  + label:before {
+    border-radius: 100%;
+    box-shadow:
+        0 0 0 2px #fff,
+        0 0 0 3px #757575;
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  &:checked + label:before {
+    box-shadow:
+        0 0 0 2px #fff,
+        0 0 0 4px $primary;
+  }
 }
 
-input[type="checkbox"] + label::before,
-input[type="radio"] + label::before {
-  margin-right: .2em;
-}
-
-input[type="radio"] + label::before {
-  border-radius: 100%;
-}
-/* Style the checked version of the checkbox/radio button */
-input[type="checkbox"]:checked + label::before,
-input[type="radio"]:checked + label::before {
-  color: #0071bc;
-}
-/* Use checkmark icon for checked checkbox. */
-input[type="checkbox"]:checked + label::before {
-  content: '\0E834';
-}
-/* Use filled circle icon for checked radio button. */
-input[type="radio"]:checked + label::before {
-  content: '\0E837';
-}
-/* Gray-out the button and label if they are disabled. */
-input[type="checkbox"]:disabled + label,
-input[type="radio"]:disabled + label {
-  color: #5b616b;
-}
-input[type="checkbox"]:disabled + label::before,
-input[type="radio"]:disabled + label::before {
-  color: #d6d7d9;
-}
-input[type="checkbox"]:disabled + label, 
-input[type="checkbox"]:disabled + label::before,
-input[type="radio"]:disabled + label,
-input[type="radio"]:disabled + label::before {
-  cursor: not-allowed;
+/* these need to be at the end to override defaults. */
+input[type='checkbox'],
+input[type='radio'] {
+  &:focus + label:before {
+    box-shadow:
+        0 0 0 2px #fff,
+        0 0 0 4px $primary,
+        0 0 3px 4px #3e94cf,
+        0 0 7px 4px #3e94cf;
+  }
 }
