@@ -137,17 +137,6 @@ input[type='radio'] {
     background-color: $primary;
     box-shadow: 0 0 0 1px $primary;
   }
-
-  &:disabled + label {
-    color: #ccc;
-    cursor: not-allowed;
-
-    &:before {
-      background: #ccc;
-      box-shadow: 0 0 0 1px #ccc;
-      cursor: not-allowed;
-    }
-  }
 }
 
 input[type='checkbox']:checked + label:before {
@@ -181,5 +170,16 @@ input[type='radio'] {
         0 0 0 4px $primary,
         0 0 3px 4px #3e94cf,
         0 0 7px 4px #3e94cf;
+  }
+
+  &:disabled + label {
+    color: #ccc;
+    cursor: not-allowed;
+
+    &:before {
+      background: #ddd;
+      box-shadow: 0 0 0 1px #aaa;
+      cursor: not-allowed;
+    }
   }
 }
