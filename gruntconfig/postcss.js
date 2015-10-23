@@ -15,7 +15,7 @@ var postcss = {
       processors: [
         precss(),
         calc(),
-        autoprefixer({'browsers': 'last 2 versions'})
+        autoprefixer({'browsers': 'last 3 versions'})
       ]
     },
     expand: true,

@@ -76,6 +76,7 @@ label {
   display: block;
   font-size: 1em;
   margin-top: .5em;
+  position: relative;
 }
 
 textarea {
@@ -130,12 +131,12 @@ input[type='radio'] {
       content: '\a0';
       display: inline-block;
       font-size: 1em;
-      height: 1.8rem;
+      height: 1em;
       line-height: 1;
       margin-right: .6em;
+      margin-left: .6em;
       text-indent: .15em;
-      vertical-align: middle;
-      width: 1.8rem;
+      width: 1em;
     }
   }
 
@@ -145,9 +146,17 @@ input[type='radio'] {
   }
 }
 
-input[type='checkbox']:checked + label:before {
-  content: '✓';
-  color: #fff;
+input[type='checkbox']:checked + label:after {
+  content: '';
+  display: block;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  width: 0.35rem;
+  height: 0.8rem;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0.6rem;
+  left: 1.6rem;
 }
 
 input[type='radio'] {
@@ -188,4 +197,10 @@ input[type='radio'] {
       cursor: not-allowed;
     }
   }
+}
+
+input[type='radio']:disabled + label:before {
+  box-shadow:
+      0 0 0 2px #ddd,
+      0 0 0 3px #aaa;
 }
