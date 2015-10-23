@@ -92,7 +92,13 @@ select {
   padding-right: 3em;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  /** hide the select arrow in IE */
+  &::-ms-expand {
+    display: none;
+  }
 }
+
 
 /* Hint text */
 
