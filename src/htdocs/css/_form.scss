@@ -20,6 +20,7 @@ textarea {
   box-sizing: border-box;
   color: #000;
   display: block;
+  font-family: $font-sans;
   font-size: 1em;
   margin: .2em 0;
   outline: none;
@@ -34,6 +35,10 @@ textarea {
   &.usa-input-success {
     border: 3px solid #4aa564;
   }
+}
+
+option {
+  font-family: $font-sans;
 }
 
 .usa-fieldset-inputs {
