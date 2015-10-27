@@ -43,11 +43,19 @@ textarea {
 }
 
 .usa-input-error {
-  border-left: 4px solid #cd2026;
   margin-top: 3rem;
-  padding: .8rem 0 .8rem 1.5rem;
+  padding: .8rem 0 .8rem;
   position: relative;
-  right: 1.9rem;
+
+  &:before {
+    bottom: 0;
+    content: '';
+    background-color: #cd2026;
+    left: -1.9rem;
+    position: absolute;
+    top: 0;
+    width: 4px;
+  }
 
   > label {
     margin-top: 0;
@@ -60,7 +68,6 @@ textarea {
 
   > input {
     border: 3px solid #cd2026;
-    width: calc(100% + 1.5rem);
   }
 }
 
