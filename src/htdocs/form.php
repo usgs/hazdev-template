@@ -68,6 +68,37 @@ if (!isset($TEMPLATE)) {
       </ul>
     </fieldset>
 
+    <fieldset class="usa-fieldset-inputs">
+      <legend>Different Size Checkboxes</legend>
+      <ul class="no-style">
+        <li>
+          <input type="checkbox" name="topping" id="topping-sprinkles"
+              value="sprinkles" checked="checked" />
+          <label for="topping-sprinkles" style="font-size:13px">Sprinkles</label>
+        </li>
+        <li>
+          <input type="checkbox" name="topping" id="topping-sprinkles1"
+              value="sprinkles" checked="checked" />
+          <label for="topping-sprinkles1" style="font-size:15px">Sprinkles</label>
+        </li>
+        <li>
+          <input type="checkbox" name="topping" id="topping-sprinkles2"
+              value="sprinkles" checked="checked" />
+          <label for="topping-sprinkles2">Sprinkles</label>
+        </li>
+        <li>
+          <input type="checkbox" name="topping" id="topping-sprinkles3"
+              value="sprinkles" checked="checked" />
+          <label for="topping-sprinkles3" style="font-size:22px">Sprinkles</label>
+        </li>
+        <li>
+          <input type="checkbox" name="topping" id="topping-sprinkles4"
+              value="sprinkles" checked="checked" />
+          <label for="topping-sprinkles4" style="font-size:32px">Sprinkles</label>
+        </li>
+      </ul>
+    </fieldset>
+
     <label>Now choose your container:
       <select>
         <option value="waffle-cone">Waffle Cone</option>

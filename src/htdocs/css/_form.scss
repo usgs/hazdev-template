@@ -161,14 +161,14 @@ input[type='radio'] {
 input[type='checkbox']:checked + label:after {
   content: '';
   display: block;
-  border-bottom: 3px solid #fff;
-  border-right: 3px solid #fff;
-  width: 0.35rem;
-  height: 0.8rem;
+  border-bottom: 0.2em solid #fff;
+  border-right: 0.2em solid #fff;
+  width: 0.25em;
+  height: 0.6em;
   transform: rotate(45deg);
   position: absolute;
-  top: 0.6rem;
-  left: 1.6rem;
+  top: 0.24em;
+  left: 0.88em;
 }
 
 input[type='radio'] {
