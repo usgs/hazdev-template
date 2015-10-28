@@ -140,6 +140,7 @@ input[type='radio'] {
       background: white;
       border-radius: 2px;
       box-shadow: 0 0 0 1px #757575;
+      color: #fff;
       content: '';
       display: inline-block;
       font-size: 1em;
@@ -154,12 +155,10 @@ input[type='radio'] {
 
   &:checked + label:before {
     background-color: $primary;
-    box-shadow: 0 0 0 1px $primary;
   }
 }
 
-input[type='checkbox']:checked + label:before {
-  color: #fff;
+input[type='checkbox'] + label:before {
   content: '\0e5ca';
   font-family: 'Material Icons';
 }
@@ -199,6 +198,7 @@ input[type='radio'] {
     &:before {
       background: #ddd;
       box-shadow: 0 0 0 1px #aaa;
+      content: '';
       cursor: not-allowed;
     }
   }
