@@ -140,14 +140,14 @@ input[type='radio'] {
       background: white;
       border-radius: 2px;
       box-shadow: 0 0 0 1px #757575;
-      content: '\a0';
+      content: '';
       display: inline-block;
       font-size: 1em;
       height: 1em;
       line-height: 1;
       margin-right: .6em;
       margin-left: .6em;
-      text-indent: .15em;
+      text-indent: 0;
       width: 1em;
     }
   }
@@ -158,17 +158,10 @@ input[type='radio'] {
   }
 }
 
-input[type='checkbox']:checked + label:after {
-  content: '';
-  display: block;
-  border-bottom: 3px solid #fff;
-  border-right: 3px solid #fff;
-  width: 0.35rem;
-  height: 0.8rem;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 0.6rem;
-  left: 1.6rem;
+input[type='checkbox']:checked + label:before {
+  color: #fff;
+  content: '\0e5ca';
+  font-family: 'Material Icons';
 }
 
 input[type='radio'] {
