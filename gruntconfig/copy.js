@@ -11,7 +11,8 @@ var copy = {
       '!conf',
       '!**/*.eps',
       '!**/*.js',
-      '!**/*.scss'
+      '!**/*.scss',
+      'htdocs/js/classList.js'
     ],
     dest: config.build + '/' + config.src,
     options: {
