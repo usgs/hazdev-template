@@ -233,3 +233,66 @@ if (!isset($TEMPLATE)) {
 &lt;/form&gt;
   </pre>
 </div>
+
+<div class="preview">
+  <h2>Select Box Examples</h2>
+  <p>
+    Select Boxes can be styled for success and error status.
+  </p>
+  <form>
+    <label for="select-focus">Select Box focused
+      <select class="usa-select-focus" id="select-focus" name="select-focus" />
+        <option value="selected">I'm selected</option>
+      </select>
+    </label>
+
+    <div class="usa-select-error">
+      <label class="usa-select-error-label" for="select-error">Select Box error
+        <span class="usa-select-error-message" id="select-error-message"
+            role="alert">Helpful error message</span>
+        <select id="select-error" name="select-error"
+            aria-describedby="select-error-message" />
+            <option value="invalid-option">Invalid option</option>
+            <option value="invalid-option-2">Another invalid option</option>
+        </select>
+      </label>
+    </div>
+
+    <label for="select-success">Select Box success
+      <select class="usa-select-success" id="select-success"
+          name="select-success" />
+        <option value="success">Success!</option>
+      </select>
+    </label>
+  </form>
+
+  <h2>Usage</h2>
+  <pre>
+&lt;form&gt;
+  &lt;label for="select-focus"&gt;Select Box focused
+    &lt;select class="usa-select-focus" id="select-focus" name="select-focus" /&gt;
+      &lt;option value="selected"&gt;I'm selected&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+
+  &lt;div class="usa-select-error"&gt;
+    &lt;label class="usa-select-error-label" for="select-error"&gt;Select Box error
+      &lt;span class="usa-select-error-message" id="select-error-message"
+          role="alert"&gt;Helpful error message&lt;/span&gt;
+      &lt;select id="select-error" name="select-error"
+          aria-describedby="select-error-message" /&gt;
+          &lt;option value="invalid-option"&gt;Invalid option&lt;/option&gt;
+          &lt;option value="invalid-option-2"&gt;Another invalid option&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;label for="select-success"&gt;Select Box success
+    &lt;select class="usa-select-success" id="select-success"
+        name="select-success" /&gt;
+      &lt;option value="success"&gt;Success!&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+  </pre>
+</div>

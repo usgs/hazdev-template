@@ -28,11 +28,13 @@ textarea {
   width: 100%;
 
   &:focus,
-  &.usa-input-focus {
+  &.usa-input-focus,
+  &.usa-select-focus {
     box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
   }
 
-  &.usa-input-success {
+  &.usa-input-success,
+  &.usa-select-success {
     border: 3px solid #4aa564;
   }
 }
@@ -47,7 +49,8 @@ option {
   padding: 0;
 }
 
-.usa-input-error {
+.usa-input-error,
+.usa-select-error {
   margin-top: 3rem;
   padding: .8rem 0 .8rem;
   position: relative;
@@ -67,16 +70,19 @@ option {
   }
 }
 
-.usa-input-error-label {
+.usa-input-error-label,
+.usa-select-error-label {
   display: block;
   font-weight: $font-bold;
 
-  > input {
+  > input,
+  > select {
     border: 3px solid #cd2026;
   }
 }
 
-.usa-input-error-message {
+.usa-input-error-message,
+.usa-select-error-message {
   color: #cd2026;
   display: block;
   font-weight: $font-bold;
