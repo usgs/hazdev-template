@@ -118,7 +118,18 @@ This generates a navigation list similar to:
 
 
 
-## $CONTACT
+### $CACHE_MAXAGE
+
+Set cache age for page in seconds.  Default is `900` seconds, which is 15 minutes.
+Set to zero to not serve `Cache-Control` and `Expires` http headers.
+
+
+### $CACHE_SCOPE
+
+Set cache scope for page.  Default is `public`.
+
+
+### $CONTACT
 
 Sets the page contact information email.
 
@@ -154,6 +165,15 @@ $COOPERATORS =
 $COOPERATORS =
     '<img class="cooperator" src="/theme/images/anss-logo.svg"' .
       ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>';
+```
+
+
+### $MODIFIED
+
+When page was last modified.  Default is `time()`.
+
+```php
+$MODIFIED = filemtime('somefile.txt');
 ```
 
 

@@ -9,6 +9,9 @@ include_once 'functions.inc.php';
 // finish configuring template based on site and template defaults
 include 'config.inc.php';
 
+// send caching headers
+include 'cache.inc.php';
+
 // begin layout, which includes original page for content
 include 'layout.inc.php';
 
