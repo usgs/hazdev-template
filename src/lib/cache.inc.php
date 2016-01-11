@@ -16,14 +16,14 @@ if (!defined('RFC_DATE')) {
 }
 
 // set defaults
-if (!isset($MODIFIED)) {
-  $MODIFIED = time();
-}
 if (!isset($CACHE_MAXAGE)) {
-  $CACHE_MAXAGE = 900;
+  $CACHE_MAXAGE = -1;
 }
 if (!isset($CACHE_SCOPE)) {
-  $CACHE_SCOPE = "public";
+  $CACHE_SCOPE = 'public';
+}
+if (!isset($MODIFIED)) {
+  $MODIFIED = filemtime($_SERVER['SCRIPT_FILENAME']);
 }
 
 

@@ -120,13 +120,21 @@ This generates a navigation list similar to:
 
 ### $CACHE_MAXAGE
 
-Set cache age for page in seconds.  Default is `900` seconds, which is 15 minutes.
-Set to zero to not serve `Cache-Control` and `Expires` http headers.
+Cache age for page in seconds.
+Default is `-1` seconds.
+Values less than zero mean do not send headers.
+Used by `cache.inc.php` to send `Cache-Control` and `Expires` HTTP headers.
+
+NOTE: you must include `cache.inc.php` for this variable to be used.
 
 
 ### $CACHE_SCOPE
 
-Set cache scope for page.  Default is `public`.
+Set cache scope for page.
+Default is `public`.
+Only used in combination with non-negative $CACHE_MAXAGE values.
+
+NOTE: you must include `cache.inc.php` for this variable to be used.
 
 
 ### $CONTACT
@@ -170,11 +178,13 @@ $COOPERATORS =
 
 ### $MODIFIED
 
-When page was last modified.  Default is `time()`.
+When page was last modified.  Default is `filemtime($_SERVER['SCRIPT_FILENAME'])`.
 
 ```php
 $MODIFIED = filemtime('somefile.txt');
 ```
+
+NOTE: you must include `cache.inc.php` for this variable to be used.
 
 
 ### $SOCIAL
