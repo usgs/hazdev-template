@@ -118,7 +118,26 @@ This generates a navigation list similar to:
 
 
 
-## $CONTACT
+### $CACHE_MAXAGE
+
+Cache age for page in seconds.
+Default is `-1` seconds.
+Values less than zero mean do not send headers.
+Used by `cache.inc.php` to send `Cache-Control` and `Expires` HTTP headers.
+
+NOTE: you must include `cache.inc.php` for this variable to be used.
+
+
+### $CACHE_SCOPE
+
+Set cache scope for page.
+Default is `public`.
+Only used in combination with non-negative $CACHE_MAXAGE values.
+
+NOTE: you must include `cache.inc.php` for this variable to be used.
+
+
+### $CONTACT
 
 Sets the page contact information email.
 
@@ -155,6 +174,17 @@ $COOPERATORS =
     '<img class="cooperator" src="/theme/images/anss-logo.svg"' .
       ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>';
 ```
+
+
+### $MODIFIED
+
+When page was last modified.  Default is `filemtime($_SERVER['SCRIPT_FILENAME'])`.
+
+```php
+$MODIFIED = filemtime('somefile.txt');
+```
+
+NOTE: you must include `cache.inc.php` for this variable to be used.
 
 
 ### $SOCIAL
