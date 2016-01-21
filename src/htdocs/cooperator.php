@@ -20,5 +20,5 @@ if (!isset($TEMPLATE)) {
 </p>
 
 <h2>Usage</h2>
-<pre><code>$COOPERATORS = <?php echo htmlspecialchars($COOPERATORS); ?>
+<pre><code>$COOPERATORS = '<?php echo htmlspecialchars($COOPERATORS); ?>';
 </code></pre>
