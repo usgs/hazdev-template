@@ -22,6 +22,10 @@ if (!isset($CONTACT_URL)) {
 	$CONTACT_URL = '/contactus/?to={CONTACT}';
 }
 
+if (!isset($COOPERATORS)) {
+	$COOPERATORS = false;
+}
+
 // content for head element of page, like <meta> or <link>
 if (!isset($HEAD)) {
 	$HEAD = false;
@@ -174,4 +178,3 @@ if ($NAVIGATION === true) {
 		$NAVIGATION = null;
 	}
 }
-
