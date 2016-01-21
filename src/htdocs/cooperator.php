@@ -5,7 +5,7 @@ if (!isset($TEMPLATE)) {
 
   $COOPERATORS =
     '<a class="cooperator" href="http://anss.org/">' .
-      '<img src="https://usgs.github.io/anss-comcat/logos/ci.svg"' .
+      '<img src="http://earthquake.usgs.gov/data/comcat/logos/anss.svg"' .
       ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>' .
     '</a>';
 
@@ -20,5 +20,5 @@ if (!isset($TEMPLATE)) {
 </p>
 
 <h2>Usage</h2>
-<pre><code>$COOPERATORS = <?php echo htmlspecialchars($COOPERATORS); ?>
+<pre><code>$COOPERATORS = '<?php echo htmlspecialchars($COOPERATORS); ?>';
 </code></pre>
