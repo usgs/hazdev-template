@@ -1,14 +1,12 @@
 <?php
 
 if (!isset($TEMPLATE)) {
-  $TITLE = 'Figure Captions';
+  $TITLE = 'Images';
   $NAVIGATION = true;
 
   include('template.inc.php');
 }
 ?>
-
-<p><a href="https://github.com/usgs/hazdev-template/tree/master/src/htdocs/css/figcaption.scss">Images (with captions) SCSS</a></p>
 
 <h2>An H2 Header</h2>
 
@@ -59,9 +57,20 @@ if (!isset($TEMPLATE)) {
 </p>
 
 
-<h3>Example</h3>
-<pre><code>&lt;figure class="right"&gt;
+<h2>Usage</h2>
+<h3>With Caption</h3>
+<pre>
+  <code>&lt;figure class="right"&gt;
   &lt;img src="http://placehold.it/300x205" alt="Placeholder image"/&gt;
   &lt;figcaption&gt;Image floated right with figure caption.&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
+  &lt;/figure&gt;
+  </code>
+</pre>
+
+<h3>Without Caption</h3>
+<pre>
+  <code>&lt;figure class="right"&gt;
+  &lt;img src="http://placehold.it/300x205" alt="Placeholder image"/&gt;
+  &lt;/figure&gt;
+  </code>
+</pre>

@@ -1,14 +1,12 @@
 <?php
 
 if (!isset($TEMPLATE)) {
-  $TITLE = 'Jumplist';
+  $TITLE = 'Jumplists';
   $NAVIGATION = true;
 
   include('template.inc.php');
 }
 ?>
-
-<p><a href="https://github.com/usgs/hazdev-template/tree/master/src/htdocs/css/jumplist.scss">JumpList SCSS</a></p>
 
 <nav class="jumplist">
   <a href="#one">Jump to One</a>
@@ -145,3 +143,21 @@ if (!isset($TEMPLATE)) {
   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
+
+<h2>Usage</h2>
+<pre>
+  &lt;nav class="jumplist"&gt;
+    &lt;a href="#one"&gt;Jump to One&lt;/a&gt;
+    &lt;a href="#two"&gt;Jump to Two&lt;/a&gt;
+  &lt;/nav&gt;
+  
+  &lt;h2 id="one"&gt;Jump to One&lt;/h2&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
+  &lt;/p&gt;
+  &lt;h2 id="two"&gt;Jump to Two&lt;/h2&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do...
+  &lt;/p&gt;
+</pre>

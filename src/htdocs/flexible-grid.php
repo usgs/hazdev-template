@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($TEMPLATE)) {
-  $TITLE = 'Flexible grid demo';
+  $TITLE = 'Layout/Flexible Grid';
   $NAVIGATION = true;
   $HEAD = '
   <style>
@@ -67,6 +67,16 @@ if (!isset($TEMPLATE)) {
   <div class="column one-of-five"><p class="alert">.one-of-five</p></div>
 </div>
 
+<h2>Usage</h2>
+<pre>
+  &lt;div class="row"&gt;
+    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+</pre>
 
 <h2>Nested columns</h2>
 
@@ -108,6 +118,40 @@ if (!isset($TEMPLATE)) {
   </div>
 </div>
 
+<h2>Usage</h2>
+<pre>
+  &lt;div class="row"&gt;
+    &lt;div class="column two-of-three"&gt;
+      &lt;div class="alert"&gt;
+        .two-of-three&lt;br/&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="column one-of-three"&gt;
+            &lt;div class="alert success no-icon"&gt;.one-of-three&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="column one-of-three"&gt;
+            &lt;div class="alert success no-icon"&gt;.one-of-three&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="column one-of-three"&gt;
+            &lt;div class="alert success no-icon"&gt;.one-of-three&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="column one-of-three"&gt;
+      &lt;div class="alert"&gt;
+        .one-of-three&lt;br/&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="column one-of-two"&gt;
+            &lt;div class="alert success no-icon"&gt;.one-of-two&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="column one-of-two"&gt;
+            &lt;div class="alert success no-icon"&gt;.one-of-two&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
 
 <h2>Transitioning columns</h2>
 
@@ -155,3 +199,21 @@ if (!isset($TEMPLATE)) {
     <div class="alert info no-icon">.five-up<br/>.mobile-three-up</div>
   </div>
 </div>
+
+<h2>Usage</h2>
+<pre>
+  &lt;div class="row"&gt;
+    &lt;div class="column one-of-four mobile-one-of-two"&gt;
+      &lt;div class="alert info no-icon"&gt;.one-of-four&lt;br/&gt;.mobile-one-of-two&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="column one-of-four mobile-one-of-two"&gt;
+      &lt;div class="alert info no-icon"&gt;.one-of-four&lt;br/&gt;.mobile-one-of-two&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="column one-of-four mobile-one-of-two"&gt;
+      &lt;div class="alert info no-icon"&gt;.one-of-four&lt;br/&gt;.mobile-one-of-two&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="column one-of-four mobile-one-of-two"&gt;
+      &lt;div class="alert info no-icon"&gt;.one-of-four&lt;br/&gt;.mobile-one-of-two&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
