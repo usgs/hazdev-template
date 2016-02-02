@@ -9,9 +9,6 @@ if (!isset($TEMPLATE)) {
 ?>
 
 <h2>Example</h2>
-<p>
-  <a href="https://github.com/usgs/hazdev-template/tree/master/src/htdocs/css/references.scss">References SCSS</a>
-</p>
 
 <ul class="referencelist">
   <li>

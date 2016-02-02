@@ -151,7 +151,7 @@
   <code>
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
-    &lt;a&gt;
+    &lt;a href="put link here"&gt;
       &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
     &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
@@ -196,9 +196,9 @@
   <code>
 &lt;ul class="linklist"&gt;
   &lt;li&gt;
-    &lt;a&gt;
+    &lt;a href="put link here"&gt;
       &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
-      &lt;img /&gt;
+      &lt;img src="image-file" alt="alt text"/&gt;
     &lt;/a&gt;
     &lt;p&gt;&lt;/p&gt;
   &lt;/li&gt;
@@ -333,7 +333,7 @@
   </ol>
 </div>
 <h3>Usage</h3>
-<pre><code>&lt;div class=".vertical-scrolling" style="height:100px;"&gt;
+<pre><code>&lt;div class="vertical-scrolling" style="height:100px;"&gt;
   &lt;ol&gt;
     &lt;li&gt;Item 1&lt;/li&gt;
     &lt;li&gt;Item 2

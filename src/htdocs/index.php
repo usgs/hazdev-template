@@ -16,13 +16,15 @@ if (!isset($TEMPLATE)) {
 <ul>
   <li>Alerts</li>
   <li>Buttons</li>
-  <li>Figure Captions</li>
-  <li>Flexible Grid</li>
   <li>Forms</li>
   <li>Icons</li>
+  <li>Images</li>
   <li>Jump Lists</li>
+  <li>Layout/Flexible Grid</li>
   <li>Lists</li>
+  <li>Minimal</li>
   <li>References</li>
+  <li>Tables</li>
   <li>Text Level Semantics</li>
   <li>Typography</li>
 </ul>
