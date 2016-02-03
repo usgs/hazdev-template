@@ -194,6 +194,12 @@ if (!isset($TEMPLATE)) {
           name="input-focus" type="text" />
     </label>
 
+    <label for="input-disabled">Text input disabled
+      <input class="usa-input-disabled" id="input-disabled"
+          name="input-disabled" type="text" disabled="disabled"
+            value="disabled" />
+    </label>
+
     <div class="usa-input-error">
       <label class="usa-input-error-label" for="input-error">Text input error
         <span class="usa-input-error-message" id="input-error-message"
@@ -215,6 +221,12 @@ if (!isset($TEMPLATE)) {
   &lt;label for="input-focus"&gt;Text input focused
     &lt;input class="usa-input-focus" id="input-focus"
         name="input-focus" type="text" /&gt;
+  &lt;/label&gt;
+
+  &lt;label for="input-disabled"&gt;Text input disabled
+    &lt;input class="usa-input-disabled" id="input-disabled"
+        name="input-disabled" type="text" disabled="disabled"
+        value="disabled" /&gt;
   &lt;/label&gt;
 
   &lt;div class="usa-input-error"&gt;
