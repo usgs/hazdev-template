@@ -72,7 +72,9 @@ if (!isset($TEMPLATE)) {
       <select>
         <option value="waffle-cone">Waffle Cone</option>
         <option value="regular-cone">Regular Cone</option>
-        <option value="users-hands">Your Hands</option>
+        <option value="users-hands" disabled="disabled">
+            Your Hands - (unexceptable)
+        </option>
         <option value="bowl" selected="selected">Bowl</option>
       </select>
     </label>
@@ -142,7 +144,8 @@ if (!isset($TEMPLATE)) {
     &lt;select&gt;
       &lt;option value="waffle-cone"&gt;Waffle Cone&lt;/option&gt;
       &lt;option value="regular-cone"&gt;Regular Cone&lt;/option&gt;
-      &lt;option value="users-hands"&gt;Your Hands&lt;/option&gt;
+      &lt;option value="users-hands" disabled="disabled"&gt;
+          Your Hands - (unexceptable)&lt;/option&gt;
       &lt;option value="bowl" selected="selected"&gt;Bowl&lt;/option&gt;
     &lt;/select&gt;
   &lt;/label&gt;
