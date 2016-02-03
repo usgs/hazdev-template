@@ -33,6 +33,12 @@ textarea {
     box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
   }
 
+  &.usa-input-disabled {
+    background-color: #EEEEEE;
+    border-color: #CCC;
+    color: #999;
+  }
+
   &.usa-input-success,
   &.usa-select-success {
     border: 3px solid #4aa564;
