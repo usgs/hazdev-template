@@ -167,7 +167,7 @@
   optimized, retina (2x) images are recommended for thumbnail images in image
   lists.</p>
 
-<ul class="linklist">
+<ul class="no-style linklist">
   <li>
     <a href="#1">
       <h4>This is a link</h4>
@@ -194,7 +194,7 @@
 
 <pre>
   <code>
-&lt;ul class="linklist"&gt;
+&lt;ul class="no-style linklist"&gt;
   &lt;li&gt;
     &lt;a href="put link here"&gt;
       &lt;h4&gt;&lt;/h4&gt; (or h3, h5)
