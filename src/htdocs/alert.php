@@ -91,7 +91,8 @@
 
 
 <h3>Usage</h3>
-<pre><code>&lt;p class="alert"&gt;&hellip;&lt;/p&gt;
+<pre><code>
+  &lt;p class="alert"&gt;&hellip;&lt;/p&gt;
 
 &lt;p class="alert info"&gt;&hellip;&lt;/p&gt;
 &lt;p class="alert success"&gt;&hellip;&lt;/p&gt;
@@ -103,4 +104,5 @@
 &lt;div class="alert info"&gt;
  &lt;h3&gt;&hellip;&lt;/h3&gt;
  &lt;p&gt;&hellip;&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>

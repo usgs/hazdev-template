@@ -2,7 +2,6 @@
   if (!isset($TEMPLATE)) {
     $TITLE = 'Lists';
     $NAVIGATION = true;
-
     include 'template.inc.php';
   }
 ?>
