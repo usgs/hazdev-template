@@ -134,8 +134,12 @@ select {
 
 input[type='checkbox'],
 input[type='radio'] {
-  left: -999em;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
   position: absolute;
+  width: 0;
 
   + label {
     cursor: pointer;
