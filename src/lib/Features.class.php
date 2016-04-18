@@ -39,7 +39,7 @@
 class Features {
 
   // id for features list.
-  public $id = 'usgs_earthquake_research';
+  public $id = 'usgs_earthquake_home';
   // author for features list.
   public $author = 'U.S. Geological Survey';
   // site url (ends with a /).
