@@ -3,7 +3,7 @@
 echo navGroup(navItem('/theme/index.php', 'The Template'),
     navItem('/theme/alert.php', 'Alerts') .
     navItem('/theme/button.php', 'Buttons') .
-    navItem('/theme/features.php','Featured Items') .
+    navItem('/theme/features.php', 'Featured Items') .
     navItem('/theme/form.php', 'Forms') .
     navItem('/theme/icons.php', 'Icons') .
     navItem('/theme/images.php', 'Images') .
