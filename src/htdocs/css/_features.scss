@@ -3,8 +3,8 @@
 
   > a {
     display: block;
-    width: 100%;
     position: relative;
+    width: 100%;
 
     > .feature-title {
       color: #eee;
@@ -25,16 +25,16 @@
       background-size: 100%;
       padding-bottom: 65%;
       width: 100%;
-    }
 
-    > .feature-image:after {
-      background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0) 100%);
-      content: '';
-      display: block;
-      padding-bottom:50%;
-      position: absolute;
-      width: 100%;
-      z-index: 1;
+      > &:after {
+        background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0) 100%);
+        content: '';
+        display: block;
+        padding-bottom:50%;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+      }
     }
   }
 }

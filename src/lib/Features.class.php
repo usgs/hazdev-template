@@ -50,14 +50,12 @@ class Features {
   public $title;
   // items in list.
   public $items;
-
   /**
    * Construct a new Features list.
    */
   public function __construct ($items=null) {
     $this->items = array();
   }
-
   /**
    * Get list of items currently "publish"able.
    *
@@ -73,7 +71,29 @@ class Features {
     }
     return $items;
   }
-
+  /**
+   * Format Features list as Atom feed.
+   *
+   * @return {String} atom feed.
+   */
+  public function toAtom() {
+    $items = $this->getItems();
+    $r = '';
+    $r .= '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL .
+      '<feed xmlns="http://www.w3.org/2005/Atom">' .
+        '<title>' . $this->title . '</title>' .
+        '<updated>' . $this->getAtomDate(time()) . '</updated>' .
+        '<author>' .
+        '<name>' . $this->author . '</name>' .
+        '<uri>' . $this->siteUrl . '</uri>' .
+        '</author>' .
+        '<id>' . $this->id . '</id>';
+    foreach ($items as $item) {
+      $r .= $this->getAtomEntry($item);
+    }
+    $r .= '</feed>';
+    return $r;
+  }
   /**
    * Format Features list as Html.
    *
@@ -88,84 +108,36 @@ class Features {
     $len = count($items);
 
     $r = '';
-		$r .= '<div class="row">';
+    $r .= '<div class="row">';
 
-		for ($i = 0; $i < $len && $i < $numFeatured; $i++) {
-			$r .= '<div class="column one-of-two feature-main">' .
-				$this->getFeaturedHtml($items[$i]) .
-			'</div>';
-
-		}
+    for ($i = 0; $i < $len && $i < $numFeatured; $i++) {
+      $r .= '<div class="column one-of-two feature-main">' .
+              $this->getFeaturedHtml($items[$i]) .
+            '</div>';
+    }
 
     $r .= '<div class="column one-of-two">';
     $r .= '<ul class="no-style linklist feature-subfeatures">';
-		for ($i = $numFeatured; $i < $len && $i < $numItems; $i++) {
-			$r .= '<li class="feature-item">' .
-				$this->getItemHtml($items[$i]) .
-				'</li>';
-		}
-		$r .= '</ul>' .
-        '</div>' .
-		'</div>';
-
-		return $r;
-	}
-
-  /**
-   * Format a featured item as Html
-   *
-   * @param item {Item}
-   * @return {String} html formatted item.
-   */
-   protected function getFeaturedHtml ($item) {
- 		return '<a href="' . $item['link'] . '">' .
- 			'<h3 class="feature-title">' . $item['title'] . '</h3>' .
- 			'<div class="feature-image"' .
-          ' style="background-image:url(' . $item['image'] . ')"' .
-          '></div>' .
- 			'</a>' .
- 			'<p>' . $item['content'] . '</p>';;
- 	}
-
-  /**
-   * Format an item as Html.
-   *
-   * @param item {Item}
-   * @return {String} html formatted item.
-   */
-
-   protected function getItemHtml ($item) {
- 		return '<a href="' . $item['link'] . '">' .
- 			'<h3 class="feature-title">' . $item['title'] . '</h3>' .
- 			'<img class="feature-image" src="' . $item['thumbnail'] . '" alt="" />' .
- 			'</a>' .
- 			'<p>' . $item['content'] . '</p>';
- 	}
-
-  /**
-   * Format Features list as Atom feed.
-   *
-   * @return {String} atom feed.
-   */
-  public function toAtom() {
-    $items = $this->getItems();
-    $r = '';
-    $r .= '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL .
-      '<feed xmlns="http://www.w3.org/2005/Atom">' .
-        '<title>' . $this->title . '</title>' .
-        '<updated>' . $this->getAtomDate(time()) . '</updated>' .
-        '<author>' .
-          '<name>' . $this->author . '</name>' .
-          '<uri>' . $this->siteUrl . '</uri>' .
-        '</author>' .
-        '<id>' . $this->id . '</id>';
-    foreach ($items as $item) {
-      $r .= $this->getAtomEntry($item);
+    for ($i = $numFeatured; $i < $len && $i < $numItems; $i++) {
+      $r .= '<li class="feature-item">' .
+        $this->getItemHtml($items[$i]) .
+        '</li>';
     }
-    $r .= '</feed>';
+    $r .= '</ul>' .
+        '</div>' .
+      '</div>';
     return $r;
   }
-
+  /**
+   * Format a time as ISO8601.
+   *
+   * @param $time {Integer}
+   *        unix epoch timestamp in seconds.
+   * @return {String} ISO8601 formatted date.
+   */
+  protected function getAtomDate ($time) {
+    return gmdate('Y-m-d\TH:i:s\Z', $time);
+  }
   /**
    * Format an item as an Atom entry.
    *
@@ -178,10 +150,11 @@ class Features {
       '<id>' . $item['id'] . '</id>' .
       '<title>' . $item['title'] . '</title>' .
       '<updated>' . $this->getAtomDate($item['modified']) . '</updated>' .
-      '<link rel="alternate" type="text/html" href="' . $this->getLink($item['link']) . '"/>' .
+      '<link rel="alternate" type="text/html" href="' .
+      $this->getLink($item['link']) . '"/>' .
       '<summary type="html"><![CDATA[' .
-        '<img src="' . $this->getLink($item['thumbnail']) . '" width="100" align="left" hspace="10"/>' .
-        $item['content'] .
+      '<img src="' . $this->getLink($item['thumbnail']) .
+      '" width="100" align="left" hspace="10"/>' . $item['content'] .
       ']]></summary>';
     if (isset($item['tags'])) {
       foreach ($item['tags'] as $tag) {
@@ -191,18 +164,37 @@ class Features {
     $r .= '</entry>';
     return $r;
   }
-
   /**
-   * Format a time as ISO8601.
+   * Format a featured item as Html
    *
-   * @param $time {Integer}
-   *        unix epoch timestamp in seconds.
-   * @return {String} ISO8601 formatted date.
+   * @param item {Item}
+   * @return {String} html formatted item.
    */
-  protected function getAtomDate ($time) {
-    return gmdate('Y-m-d\TH:i:s\Z', $time);
-  }
-
+   protected function getFeaturedHtml ($item) {
+     return '' .
+      '<a href="' . $item['link'] . '">' .
+        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
+        '<div class="feature-image" ' .
+            'style="background-image:url(' . $item['image'] . ')"' .
+            '></div>' .
+      '</a>' .
+      '<p>' . $item['content'] . '</p>';
+   }
+  /**
+   * Format an item as Html.
+   *
+   * @param item {Item}
+   * @return {String} html formatted item.
+   */
+   protected function getItemHtml ($item) {
+     return '' .
+      '<a href="' . $item['link'] . '">' .
+        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
+        '<img class="feature-image" src="' . $item['thumbnail'] .
+        '" alt="" />' .
+      '</a>' .
+      '<p>' . $item['content'] . '</p>';
+   }
   /**
    * Get an absolute link from a relative link.
    *
@@ -216,5 +208,4 @@ class Features {
     }
     return $this->siteUrl . $this->baseUrl . $link;
   }
-
 }
