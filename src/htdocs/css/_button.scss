@@ -67,7 +67,17 @@ button {
   }
 
   &.disabled,
-  &[disabled] {
+  &[disabled],
+  &.red[disabled],
+  &.orange[disabled],
+  &.green[disabled],
+  &.blue[disabled],
+  &.yellow[disabled],
+  &.red.disabled,
+  &.orange.disabled,
+  &.green.disabled,
+  &.blue.disabled,
+  &.yellow.disabled {
     background: #ddd;
     box-shadow: none;
     color: rgba(0, 0, 0, 0.3);
