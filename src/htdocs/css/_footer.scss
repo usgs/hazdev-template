@@ -1,99 +1,76 @@
-/* section nav */
+/* reset <a> tag styles */
 .site-sectionnav {
+  margin: $spacing 0;
 
-  /* Ungrouped Links */
-  > a {
-    background-color: $secondary-lighter;
-    background-image: none;
-    border-top: 1px solid $secondary;
-    color: $secondary-text-color;
+  > a + a,
+  > a + section,
+  > section + a,
+  > section + section {
+    border-top: 1px solid $gray;
+  }
+
+  a {
+    color: $gray-text-color;
     display: block;
-    padding: calc($spacing * 2/3) $spacing;
+    padding: calc($spacing * 1/2) $spacing;
     text-decoration: none;
-    transition: background .25s ease-out;
 
     &:visited {
-      color: $secondary-text-color;
+      color: $gray-text-color;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active,
+    &:hover,
+    &.selected {
+      background: $gray-lighter;
     }
   }
 
-  > a:hover {
-    text-decoration: underline;
+  > a,
+  > a:visited,
+  > section > header > a,
+  > section > header > a:visited {
+    color: $text-color;
   }
 
-  /* Grouped Links */
   > section {
-    margin: 0 0 0.2em 0;
+    margin: $spacing 0;
 
-    /* items in a nav group */
-    > a,
     > header {
-      color: $secondary-text-color;
-      display: block;
-      padding: calc($spacing * 2/3) $spacing;
-      transition: background .25s ease-out;
+      margin: $spacing 0 calc($spacing / 2);
     }
 
-    /* indent group items */
     > a {
-      padding-left: calc(3/2 * $spacing);
-      /* for linear-gradient background */
-      position: relative;
-
-      /* gradient separator between section links */
-      &:before {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0,
-            rgba(0, 0, 0, 0.1) 2.5em, rgba(0, 0, 0, 0) 100%);
-        content: '';
-        height: 1px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
-    }
-
-    /* nav group header */
-    > header {
-      background-color: $secondary-lighter;
-      border-bottom: 1px solid $secondary;
-      border-top: 1px solid $secondary;
-      font-weight: normal;
-      text-shadow: 0 0 2px #fff;
-    }
-
-    > a,
-    > header > a {
-      background-image: none;
-      text-decoration: none;
-
-      /* hover styles for nav items */
-      &:hover {
-        background-color: $secondary-lighter;
-        text-decoration: underline;
-      }
-    }
-
-    > header > a {
-      display: block;
-      color: $secondary-text-color;
-
-      &:hover {
-        background-color: $secondary-lighter;
-      }
+      color: $gray-text-color;
+      font-size: 0.88em;
+      padding: calc($spacing * 2/3) calc($spacing * 1.5);
     }
   }
 }
+
+
+/* style the section navigation */
+.site-footer {
+  padding: $spacing;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 
 
 /* search form */
 
 .site-search {
   display: block;
-  margin: $spacing;
+  margin-top: $spacing;
   position: relative;
 
-  >[type="search"] {
+  > [type="search"] {
     appearance: none;
     display: block;
     margin: 0;
@@ -113,7 +90,6 @@
     margin: $spacing 0 0 0;
   }
 }
-
 
 /* site nav */
 
@@ -175,39 +151,11 @@
   }
 }
 
-
-@media screen and (min-width: $breakpoint-offcanvas) {
-
-  .site-footer {
-    padding: 0 $spacing;
-  }
-
-  .site-sectionnav,
-  .site-sitenav,
+@media screen and (max-width: $breakpoint-offcanvas) {
   .site-search {
-    margin: $spacing 0;
-  }
-
-  .site-sectionnav {
-
-    > a,
-    > strong {
-      border: 1px solid $secondary;
-      margin: 0 0 $spacing;
-    }
-
-    > section {
-      border: 1px solid $secondary;
-      margin: 0 0 $spacing;
-
-      header,
-      header > a {
-        border-top: 0;
-      }
-    }
+    padding: 0 1em;
   }
 }
-
 
 @media print {
   .site-sectionnav,

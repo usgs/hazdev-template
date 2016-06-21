@@ -96,7 +96,7 @@ function navItem ($href, $text, $isCurrentPage=null) {
 	}
 
 	if ($isCurrentPage) {
-		return '<a href="' . $href . '"><strong>' . $text . '</strong></a>';
+		return '<a class="selected" href="' . $href . '">' . $text . '</a>';
 	} else {
 		return '<a href="' . $href . '">' . $text . '</a>';
 	}
