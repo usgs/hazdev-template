@@ -1,5 +1,7 @@
 <?php
 
+echo "<a href='/earthquakes' class='up-one-level'>Earthquakes</a>";
+
 echo navGroup(navItem('/theme/index.php', 'The Template'),
     navItem('/theme/alert.php', 'Alerts') .
     navItem('/theme/button.php', 'Buttons') .

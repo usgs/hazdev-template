@@ -1,0 +1,13 @@
+
+.site-sectionnav > .up-one-level {
+  color: $link-color;
+
+  &:before {
+    content: 'keyboard_return';
+    display: inline-block;
+    font-family: 'Material Icons';
+    margin-right: 1em;
+    white-space: nowrap;
+    vertical-align: bottom;
+  }
+}
