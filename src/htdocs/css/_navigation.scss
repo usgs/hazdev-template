@@ -1,12 +1,13 @@
 
-.site-sectionnav > a.up-one-level {
-  white-space: nowrap;
+.site-sectionnav > .up-one-level {
+  color: $link-color;
 
   &:before {
     content: 'keyboard_return';
     display: inline-block;
     font-family: 'Material Icons';
     margin-right: 1em;
+    white-space: nowrap;
     vertical-align: bottom;
   }
 }
