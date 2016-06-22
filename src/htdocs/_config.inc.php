@@ -80,6 +80,6 @@ $HEAD = $THEME_CSS .
 
     // facebook meta tags
     '<meta property="og:image" content="http://' . $SITE_URL .
-        '/theme/images/usgs-logo-facebook.gif"/>' .
-    '<meta property="og:image:height" content="200"/>' .
-    '<meta property="og:image:width" content="200"/>';
+        '/theme/images/usgs-logo-facebook.png"/>' .
+    '<meta property="og:image:height" content="500"/>' .
+    '<meta property="og:image:width" content="500"/>';
