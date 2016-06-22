@@ -38,16 +38,16 @@
   }
 
   > section {
-    margin: $spacing 0;
+    margin: calc($spacing / 2) 0;
 
     > header {
-      margin: $spacing 0 calc($spacing / 2);
+      margin: calc($spacing / 2) 0 0;
     }
 
     > a {
       color: $gray-text-color;
       font-size: 0.88em;
-      padding: calc($spacing * 2/3) calc($spacing * 1.5);
+      padding: calc($spacing * 2/3) calc($spacing * 1/0.88);
     }
   }
 }
