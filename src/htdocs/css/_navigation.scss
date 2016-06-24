@@ -3,7 +3,7 @@
   color: $link-color;
 
   &:before {
-    content: 'keyboard_return';
+    content: '\0e31b';
     display: inline-block;
     font-family: 'Material Icons';
     margin-right: 1em;
