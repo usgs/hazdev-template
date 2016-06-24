@@ -10,4 +10,8 @@
     white-space: nowrap;
     vertical-align: bottom;
   }
+
+  &:visited {
+    color: $link-color;
+  }
 }
