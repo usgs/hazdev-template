@@ -108,7 +108,7 @@
 
     ?>
 
-    <form class="site-search" role="search" action="http://search.usa.gov/search" method="get" accept-charset="UTF-8">
+    <form class="site-search" role="search" action="//search.usa.gov/search" method="get" accept-charset="UTF-8">
       <input name="utf8" type="hidden" value="✓"/>
       <input name="affiliate" type="hidden" value="usgs"/>
       <input name="sitelimit" type="hidden" value="<?php echo $SITE_URL; ?>"/>
