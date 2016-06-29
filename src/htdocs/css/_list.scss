@@ -20,6 +20,11 @@ ol {
 
 .linklist {
 
+ul,
+ol {
+  padding-left: 0em;
+}
+
   > li {
     overflow: auto;
     padding: 2rem 0;
