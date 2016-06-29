@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A list of featured content.
  *
@@ -37,7 +36,6 @@
  *               strtotime('2014-10-31')
  */
 class Features {
-
   // id for features list.
   public $id = 'usgs_earthquake_home';
   // author for features list.
@@ -103,29 +101,40 @@ class Features {
    *        number of items to "feature".
    * @return {String} html.
    */
-  public function toHtml($numItems = 4, $numFeatured = 1) {
+  public function toHtml() {
     $items = $this->getItems();
     $len = count($items);
 
     $r = '';
     $r .= '<div class="row">';
 
-    for ($i = 0; $i < $len && $i < $numFeatured; $i++) {
       $r .= '<div class="column one-of-two feature-main">' .
-              $this->getFeaturedHtml($items[$i]) .
+              $this->getFeaturedHtml($items[0]) .
             '</div>';
-    }
 
-    $r .= '<div class="column one-of-two">';
-    $r .= '<ul class="no-style linklist feature-subfeatures">';
-    for ($i = $numFeatured; $i < $len && $i < $numItems; $i++) {
-      $r .= '<li class="feature-item">' .
-        $this->getItemHtml($items[$i]) .
-        '</li>';
-    }
-    $r .= '</ul>' .
-        '</div>' .
-      '</div>';
+      $r .= '<div class="column one-of-two">';
+        $r .= '<div class="row">';
+
+          $r .= '<div class="column one-of-two">';
+            $r .= '<ul class="no-style feature-subfeatures">';
+              $r .= '<li class="feature-item">' .
+                      $this->getItemHtml($items[1]) .
+                    '</li>' .
+                  '</ul>' .
+                '</div>';
+
+          $r .= '<div class="column one-of-two">';
+            $r .= '<ul class="no-style feature-subfeatures">';
+              $r .= '<li class="feature-item">' .
+                      $this->getItemHtml($items[2]) .
+                    '</li>' .
+                  '</ul>' .
+                '</div>';
+
+      $r .= '</div>' .
+          '</div>' .
+        '</div>';
+
     return $r;
   }
   /**
@@ -173,10 +182,10 @@ class Features {
    protected function getFeaturedHtml ($item) {
      return '' .
       '<a href="' . $item['link'] . '">' .
-        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
         '<div class="feature-image" ' .
             'style="background-image:url(' . $item['image'] . ')"' .
             '></div>' .
+            '<h3 class="feature-title">' . $item['title'] . '</h3>' .
       '</a>' .
       '<p>' . $item['content'] . '</p>';
    }
@@ -189,9 +198,9 @@ class Features {
    protected function getItemHtml ($item) {
      return '' .
       '<a href="' . $item['link'] . '">' .
-        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
         '<img class="feature-image" src="' . $item['thumbnail'] .
         '" alt="" />' .
+        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
       '</a>' .
       '<p>' . $item['content'] . '</p>';
    }

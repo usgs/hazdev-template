@@ -27,8 +27,8 @@ $EQ_FEATURES->items[] = array(
   adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>',
   'link' => 'http://url.of.webpage/',
   'modified' => strtotime('2014-11-01'),
-  'thumbnail' => 'http://placehold.it/75x75',
-  'image' => 'http://placehold.it/464x300'
+  'thumbnail' => 'http://placehold.it/300x200',
+  'image' => 'http://placehold.it/600x400'
 );
 
 $EQ_FEATURES->items[] = array(
@@ -40,8 +40,8 @@ $EQ_FEATURES->items[] = array(
   commodo consequat.',
   'link' => 'http://url.of.webpage/',
   'modified' => strtotime('2014-11-01'),
-  'thumbnail' => 'http://placehold.it/75x75',
-  'image' => 'http://placehold.it/75x75'
+  'thumbnail' => 'http://placehold.it/300x200',
+  'image' => 'http://placehold.it/600x400'
 );
 
 $EQ_FEATURES->items[] = array(
@@ -53,8 +53,8 @@ $EQ_FEATURES->items[] = array(
   commodo consequat.',
   'link' => 'http://url.of.webpage/',
   'modified' => strtotime('2014-11-01'),
-  'thumbnail' => 'http://placehold.it/75x75',
-  'image' => 'http://placehold.it/75x75'
+  'thumbnail' => 'http://placehold.it/300x200',
+  'image' => 'http://placehold.it/600x400'
 );
 
   echo $EQ_FEATURES->toHtml();
@@ -107,8 +107,8 @@ top just below the &ldquo;template&rdquo; code. (If for some reason the Featured
           elit, sed do eiusmod tempor incididunt ut labore.&lt;/p&gt;&rsquo;,
       &lsquo;link&rsquo; =&gt; &lsquo;http://url.of.webpage/&rsquo;,
       &lsquo;modified&rsquo; =&gt; strtotime(&lsquo;2014-11-01&lsquo;),
-      &lsquo;thumbnail&rsquo; =&gt; &lsquo;http://placehold.it/75x75&rsquo;,
-      &lsquo;image&rsquo; =&gt; &lsquo;http://placehold.it/464x300&rsquo;
+      &lsquo;thumbnail&rsquo; =&gt; &lsquo;http://placehold.it/300x200&rsquo;,
+      &lsquo;image&rsquo; =&gt; &lsquo;http://placehold.it/600x400&rsquo;
     );
 
     $EQ_FEATURES-&gt;items[] = array(
@@ -120,8 +120,8 @@ top just below the &ldquo;template&rdquo; code. (If for some reason the Featured
       laboris nisi ut aliquip ex ea commodo consequat.&rsquo;,
       &lsquo;link&rsquo; =&gt; &lsquo;http://url.of.webpage/&rsquo;,
       &lsquo;modified&rsquo; =&gt; strtotime(&lsquo;2014-11-01&rsquo;),
-      &lsquo;thumbnail&rsquo; =&gt; &lsquo;http://placehold.it/75x75&rsquo;,
-      &lsquo;image&rsquo; =&gt; &lsquo;http://placehold.it/75x75&rsquo;
+      &lsquo;thumbnail&rsquo; =&gt; &lsquo;http://placehold.it/300x200&rsquo;,
+      &lsquo;image&rsquo; =&gt; &lsquo;http://placehold.it/600x400&rsquo;
     );
 
     $EQ_FEATURES-&gt;items[] = array(
@@ -133,8 +133,8 @@ top just below the &ldquo;template&rdquo; code. (If for some reason the Featured
       laboris nisi ut aliquip ex ea commodo consequat.&rsquo;,
       &lsquo;link&rsquo; =&gt; &lsquo;http://url.of.webpage/&rsquo;,
       &lsquo;modified&rsquo; =&gt; strtotime(&lsquo;2014-11-01&rsquo;),
-      &lsquo;thumbnail&rsquo; =&gt; &lsquo;http://placehold.it/75x75&rsquo;,
-      &lsquo;image&rsquo; =&gt; &lsquo;http://placehold.it/75x75&rsquo;
+      &lsquo;thumbnail&rsquo; =&gt; &lsquo;http://placehold.it/300x200&rsquo;,
+      &lsquo;image&rsquo; =&gt; &lsquo;http://placehold.it/7600x400&rsquo;
     );
 
       echo $EQ_FEATURES-&gt;toHtml();
