@@ -1,7 +1,7 @@
 <?php
 if (!isset($TEMPLATE)) {
   $TITLE = 'The Template';
-  $NAVIGATION = true;
+  $NAVIGATION = false;
 
   include 'template.inc.php';
 }
@@ -14,17 +14,21 @@ if (!isset($TEMPLATE)) {
 </p>
 
 <ul>
-  <li>Alerts</li>
-  <li>Buttons</li>
-  <li>Forms</li>
-  <li>Icons</li>
-  <li>Images</li>
-  <li>Jump Lists</li>
-  <li>Layout/Flexible Grid</li>
-  <li>Lists</li>
-  <li>Minimal</li>
-  <li>References</li>
-  <li>Tables</li>
-  <li>Text Level Semantics</li>
-  <li>Typography</li>
+  <li><a href="/theme/alert.php">Alerts</a></li>
+  <li><a href="/theme/button.php">Buttons</a></li>
+  <li><a href="/theme/features.php">Featured Items</a></li>
+  <li><a href="/theme/form.php">Forms</a></li>
+  <li><a href="/theme/icons.php">Icons</a></li>
+  <li><a href="/theme/images.php">Images</a></li>
+  <li><a href="/theme/jumplist.php">Jump Lists</a></li>
+  <li><a href="/theme/flexible-grid.php">Layout/Flexible Grid</a></li>
+  <li><a href="/theme/list.php">Lists</a></li>
+  <li><a href="/theme/minimal.php">Minimal</a></li>
+  <li><a href="/theme/navigation.php">Navigation</a></li>
+  <li><a href="/theme/references.php">References</a></li>
+  <li><a href="/theme/table.php">Tables</a></li>
+  <li><a href="/theme/text.php">Text Level Semantics</a></li>
+  <li><a href="/theme/typography.php">Typography</a></li>
+  <li><a href="/theme/content.php">Content Styles</a></li>
+  <li><a href="/theme/cooperator.php">Cooperator Logos</a></li>
 </ul>
