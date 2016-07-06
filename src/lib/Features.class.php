@@ -182,10 +182,10 @@ class Features {
    protected function getFeaturedHtml ($item) {
      return '' .
       '<a href="' . $item['link'] . '">' .
+        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
         '<div class="feature-image" ' .
             'style="background-image:url(' . $item['image'] . ')"' .
-            '></div>' .
-            '<h3 class="feature-title">' . $item['title'] . '</h3>' .
+      '></div>' .
       '</a>' .
       '<p>' . $item['content'] . '</p>';
    }
@@ -198,9 +198,9 @@ class Features {
    protected function getItemHtml ($item) {
      return '' .
       '<a href="' . $item['link'] . '">' .
+        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
         '<img class="feature-image" src="' . $item['thumbnail'] .
         '" alt="" />' .
-        '<h3 class="feature-title">' . $item['title'] . '</h3>' .
       '</a>' .
       '<p>' . $item['content'] . '</p>';
    }
