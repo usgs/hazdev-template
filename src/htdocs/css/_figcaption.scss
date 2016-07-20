@@ -1,26 +1,28 @@
+figure {
+  display: block;
+  margin: $spacing 0 0;
 
-.feature-main {
+  > img {
+    border: 1px solid #ddd;
+    margin-bottom: .5em;
+  }
 
-  > a {
+  > figcaption {
     display: block;
-    position: relative;
-    width: 100%;
+    font-size: 0.75em;
+  }
 
-    > .feature-image {
-      background-repeat: no-repeat;
-      background-size: 100%;
-      padding-bottom: 65%;
-      width: 100%;
+  @media screen and (min-width: $breakpoint-stacking) {
+    &.right {
+      float: right;
+      margin-left: $spacing;
+      max-width: 50%;
+    }
+
+    &.left {
+      float: left;
+      margin-right: $spacing;
+      max-width: 50%;
     }
   }
-}
-
-.feature-subfeatures,
-.feature-subfeatures > .feature-item {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.feature-image {
-  width: 300px;
 }
