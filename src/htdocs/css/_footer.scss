@@ -23,10 +23,8 @@
       text-decoration: underline;
     }
 
-    &:active,
-    &:hover,
     &.selected {
-      background: $gray-lighter;
+      font-style: italic;
     }
   }
 
