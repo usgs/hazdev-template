@@ -195,9 +195,8 @@ if (!isset($TEMPLATE)) {
     </label>
 
     <label for="input-disabled">Text input disabled
-      <input class="usa-input-disabled" id="input-disabled"
-          name="input-disabled" type="text" disabled="disabled"
-            value="disabled" />
+      <input id="input-disabled" name="input-disabled" type="text"
+          disabled="disabled" value="disabled" />
     </label>
 
     <div class="usa-input-error">
@@ -224,9 +223,8 @@ if (!isset($TEMPLATE)) {
   &lt;/label&gt;
 
   &lt;label for="input-disabled"&gt;Text input disabled
-    &lt;input class="usa-input-disabled" id="input-disabled"
-        name="input-disabled" type="text" disabled="disabled"
-        value="disabled" /&gt;
+    &lt;input id="input-disabled" name="input-disabled" type="text"
+        disabled="disabled" value="disabled" /&gt;
   &lt;/label&gt;
 
   &lt;div class="usa-input-error"&gt;
