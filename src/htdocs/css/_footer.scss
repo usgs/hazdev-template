@@ -19,12 +19,9 @@
       color: $gray-text-color;
     }
 
-    &:hover {
-      text-decoration: underline;
-    }
-
+    &:hover,
     &.selected {
-      font-style: italic;
+      text-decoration: underline;
     }
   }
 
