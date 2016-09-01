@@ -220,3 +220,16 @@ input[type='radio']:disabled + label:before {
       0 0 0 2px #ddd,
       0 0 0 3px #aaa;
 }
+
+@media print {
+  /*
+    Fix checkbox printing styles in IE.
+  */
+  input[type=checkbox]+label:before {
+    content: '';
+  }
+
+  input[type=checkbox]:checked+label:before {
+    content: '\0e5ca';
+  }
+}
