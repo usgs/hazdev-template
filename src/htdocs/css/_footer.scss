@@ -10,18 +10,18 @@
   }
 
   a {
-    color: $gray-text-color;
+      color: $text-color;
     display: block;
     padding: calc($spacing * 1/2) $spacing;
     text-decoration: none;
 
     &:visited {
-      color: $gray-text-color;
+      color: $text-color;
     }
 
     &:hover,
     &.selected {
-      text-decoration: underline;
+      background: $gray-lighter;
     }
   }
 
@@ -40,7 +40,7 @@
     }
 
     > a {
-      color: $gray-text-color;
+      color: $text-color;
       font-size: 0.88em;
       padding: calc($spacing * 2/3) calc($spacing * 1/0.88);
     }
