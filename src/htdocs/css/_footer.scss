@@ -26,6 +26,7 @@
     }
   }
 
+  /* top level is dark gray */
   > a,
   > a:visited,
   > section > header > a,
@@ -41,7 +42,6 @@
     }
 
     > a {
-      color: $text-color;
       font-size: 0.88em;
       padding: calc($spacing * 2/3) calc($spacing * 1/0.88);
     }
