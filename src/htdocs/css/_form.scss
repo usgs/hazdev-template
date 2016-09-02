@@ -169,7 +169,14 @@ input[type='radio'] {
   }
 }
 
+/*
+  Fix checkbox printing styles in IE.
+*/
 input[type='checkbox'] + label:before {
+  content: '';
+}
+
+input[type='checkbox']:checked + label:before {
   content: '\0e5ca';
   font-family: 'Material Icons';
 }
@@ -219,17 +226,4 @@ input[type='radio']:disabled + label:before {
   box-shadow:
       0 0 0 2px #ddd,
       0 0 0 3px #aaa;
-}
-
-@media print {
-  /*
-    Fix checkbox printing styles in IE.
-  */
-  input[type=checkbox]+label:before {
-    content: '';
-  }
-
-  input[type=checkbox]:checked+label:before {
-    content: '\0e5ca';
-  }
 }
