@@ -10,18 +10,19 @@
   }
 
   a {
-      color: $text-color;
+    color: $gray-text-color;
     display: block;
     padding: calc($spacing * 1/2) $spacing;
     text-decoration: none;
 
     &:visited {
-      color: $text-color;
+      color: $gray-text-color;
     }
 
     &:hover,
     &.selected {
       background: $gray-lighter;
+      color: $text-color;
     }
   }
 
