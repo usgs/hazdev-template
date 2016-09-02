@@ -170,13 +170,7 @@ input[type='radio'] {
   }
 }
 
-/*
-  Fix checkbox printing styles in IE.
-*/
-input[type='checkbox'] + label:before {
-  content: '';
-}
-
+/* checkmark icon when checkbox is checked */
 input[type='checkbox']:checked + label:before {
   content: '\0e5ca';
   font-family: 'Material Icons';
