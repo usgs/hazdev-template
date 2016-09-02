@@ -76,4 +76,10 @@ $HEAD = $THEME_CSS .
         'magnitude scale,mercalli,plate,richter,seismic,seismicity,seismogram,' .
         'seismograph,seismologist,seismology,subduction,tectonics,tsunami,quake,' .
         'sismologico,sismologia' .
-    '"/>';
+    '"/>' .
+
+    // facebook meta tags
+    '<meta property="og:image" content="http://' . $SITE_URL .
+        '/theme/images/usgs-logo-facebook.png"/>' .
+    '<meta property="og:image:height" content="500"/>' .
+    '<meta property="og:image:width" content="500"/>';
