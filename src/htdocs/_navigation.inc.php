@@ -11,6 +11,7 @@ echo navGroup(navItem('/theme/index.php', 'The Template'),
     navItem('/theme/flexible-grid.php', 'Layout/Flexible Grid') .
     navItem('/theme/list.php', 'Lists') .
     navItem('/theme/minimal.php', 'Minimal') .
+    navItem('/theme/navigation.php', 'Navigation') .
     navItem('/theme/references.php', 'References') .
     navItem('/theme/table.php', 'Tables') .
     navItem('/theme/text.php', 'Text Level Semantics') .
