@@ -1,6 +1,6 @@
 /* reset <a> tag styles */
 .site-sectionnav {
-  margin: $spacing 0;
+  margin: $spacing 0 0;
 
   > a + a,
   > a + section,
@@ -95,6 +95,7 @@
 
 .site-sitenav {
   background-color: $primary;
+  margin: $spacing 0 0;
   overflow: visible;
 
   > a,
