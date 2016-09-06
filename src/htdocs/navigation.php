@@ -29,7 +29,7 @@ echo navItem('#', 'First Item') .
 </div>
 
 
-<h3>Navigation with Clickable Header</h3>
+<h3>Navigation Section with Clickable Header</h3>
 <div class="site-sectionnav">
 <?php
 echo navGroup(navItem('#', 'Header'),
@@ -42,7 +42,7 @@ echo navGroup(navItem('#', 'Header'),
 </div>
 
 
-<h3>Navigation <i>without</i> Clickable Header</h3>
+<h3>Navigation Section <i>without</i> Clickable Header</h3>
 <div class="site-sectionnav">
 <?php
 echo navGroup('Header',
@@ -55,7 +55,7 @@ echo navGroup('Header',
 </div>
 
 
-<h3>Navigation with Up-One-Level Link</h3>
+<h3>Navigation Up-One-Level Link</h3>
 <div class="site-sectionnav">
 <?php
 echo '<a href="#" class="up-one-level">Up One Level Link</a>';
