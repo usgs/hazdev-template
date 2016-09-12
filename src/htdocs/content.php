@@ -101,6 +101,8 @@ if (!isset($TEMPLATE)) {
     &ldquo;University of Washington&rdquo; is preferred to &ldquo;Univ. of
       Washington&rdquo; (include &ldquo;.&rdquo; here).
   </li>
+  <li>Organizations associated with a link are shown like this in parentheses:<br/>
+    Special Event Page (Incorporated Research Institues for Seismology)
   <li>&ldquo;real-time&rdquo; not &ldquo;realtime&rdquo;.</li>
   <li>phone numbers - xxx-xxx-xxxx</li>
   <li>5000 not 5,000, but 10,000+ gets the comma.</li>
