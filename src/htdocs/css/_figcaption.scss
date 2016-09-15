@@ -4,12 +4,13 @@ figure {
 
   > img {
     border: 1px solid #ddd;
-    margin-bottom: .5em;
+    padding: 0.5em;
   }
 
   > figcaption {
     display: block;
     font-size: 0.75em;
+    margin: 1em 0;
   }
 
   @media screen and (min-width: $breakpoint-stacking) {
