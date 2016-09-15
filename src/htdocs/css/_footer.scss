@@ -38,10 +38,10 @@
     margin: calc($spacing / 2) 0;
 
     > header {
-      margin: calc($spacing * 1/2) $spacing;
+      margin: calc($spacing * 3/4) $spacing;
 
       > a {
-       margin: 0 -$spacing -calc($spacing * 1/2);
+       margin: 0 -$spacing -calc($spacing * 3/4);
       }
     }
 
