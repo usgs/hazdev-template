@@ -40,14 +40,20 @@
     > header {
       margin: calc($spacing * 3/4) $spacing;
 
+      /* leave a top margin of 0.5em */
       > a {
-       margin: 0 -$spacing -calc($spacing * 3/4);
+       margin: -calc($spacing * 1/4) -$spacing -calc($spacing * 3/4);
       }
     }
 
     > a {
       font-size: 0.88em;
       padding: calc($spacing * 2/3) calc($spacing * 1/0.88);
+    }
+
+    /* leave more space for first section header link */
+    &:first-child > header > a {
+      margin-top: 0;
     }
   }
 }
