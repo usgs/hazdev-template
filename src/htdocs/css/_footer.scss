@@ -1,6 +1,6 @@
 /* reset <a> tag styles */
 .site-sectionnav {
-  margin: $spacing 0;
+  margin: $spacing 0 0;
 
   > a + a,
   > a + section,
@@ -38,7 +38,11 @@
     margin: calc($spacing / 2) 0;
 
     > header {
-      margin: calc($spacing / 2) 0 0;
+      margin: calc($spacing * 3/4) $spacing;
+
+      > a {
+       margin: 0 -$spacing -calc($spacing * 3/4);
+      }
     }
 
     > a {
@@ -91,6 +95,7 @@
 
 .site-sitenav {
   background-color: $primary;
+  margin: $spacing 0 0;
   overflow: visible;
 
   > a,
