@@ -170,7 +170,7 @@
   <li>
     <a href="#1">
       <h4>This is a link</h4>
-      <img src="http://placehold.it/150x150" alt="Placeholder image">
+      <img src="https://placehold.it/150x150" alt="Placeholder image">
     </a>
     <p>Aenean sed nunc nec diam dictum tempus. Sed quis arcu leo. Mauris
       magna augue, fringilla et felis eget.</p>
@@ -178,7 +178,7 @@
   <li>
     <a href="#2">
       <h4>This is a longer link</h4>
-      <img src="http://placehold.it/150x150" alt="Placeholder image">
+      <img src="https://placehold.it/150x150" alt="Placeholder image">
     </a>
     <p>Integer hendrerit risus tellus, non varius quam elementum ac. Aliquam ut
       lectus nulla. Maecenas tincidunt ligula quis augue rhoncus mattis. Ut vitae

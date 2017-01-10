@@ -125,7 +125,7 @@ if (!isset($TEMPLATE)) {
   As a general rule, the hazdev-template has chosen to incorporate the <a
   href="https://www.google.com/design/icons/">material icon font</a> pack when
   icons are required. A <a
-  href="http://google.github.io/material-design-icons/">complete implementation
+  href="https://google.github.io/material-design-icons/">complete implementation
   guide</a> can be used as a reference for optimal usage and styling. Below are
   instructions for incorporating the fonts into projects already using the
   hazdev-template as well as a few examples.

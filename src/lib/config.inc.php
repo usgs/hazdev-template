@@ -47,12 +47,12 @@ if (!isset($SOCIAL)) {
 	$SOCIAL = array(
 			array(
 				'name' => 'Facebook',
-				'url' => 'http://www.facebook.com/sharer.php?u={URL}',
+				'url' => 'https://www.facebook.com/sharer.php?u={URL}',
 				'class' => 'facebook'
 			),
 			array(
 				'name' => 'Twitter',
-				'url' => 'http://twitter.com/intent/tweet?url={URL}&text={TITLE}',
+				'url' => 'https://twitter.com/intent/tweet?url={URL}&text={TITLE}',
 				'class' => 'twitter'
 			),
 			array(

@@ -42,7 +42,7 @@ class Features {
   // author for features list.
   public $author = 'U.S. Geological Survey';
   // site url (ends with a /).
-  public $siteUrl = 'http://earthquake.usgs.gov/';
+  public $siteUrl = 'https://earthquake.usgs.gov/';
   // base url for section (ends with a /).
   public $baseUrl;
   // title of features list.
@@ -79,7 +79,7 @@ class Features {
     $items = $this->getItems();
     $r = '';
     $r .= '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL .
-      '<feed xmlns="http://www.w3.org/2005/Atom">' .
+      '<feed xmlns="https://www.w3.org/2005/Atom">' .
         '<title>' . $this->title . '</title>' .
         '<updated>' . $this->getAtomDate(time()) . '</updated>' .
         '<author>' .
@@ -213,7 +213,7 @@ class Features {
    * @return {String} absolute link.
    */
   protected function getLink ($link) {
-    if (strpos($link, 'http') === 0) {
+    if (strpos($link, 'https') === 0) {
       return $link;
     }
     return $this->siteUrl . $this->baseUrl . $link;

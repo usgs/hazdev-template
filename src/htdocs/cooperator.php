@@ -5,7 +5,7 @@ if (!isset($TEMPLATE)) {
 
   $COOPERATORS =
     '<a class="cooperator" href="http://anss.org/">' .
-      '<img src="http://earthquake.usgs.gov/data/comcat/logos/anss.svg"' .
+      '<img src="https://earthquake.usgs.gov/data/comcat/logos/anss.svg"' .
       ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>' .
     '</a>';
 
