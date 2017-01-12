@@ -3,14 +3,14 @@
  * classList.js: Cross-browser full element.classList implementation.
  * 2014-01-31
  *
- * By Eli Grey, http://eligrey.com
+ * By Eli Grey, https://eligrey.com
  * Public Domain.
  * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
  */
 
 /*global self, document, DOMException */
 
-/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
+/*! @source https://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
 
 if ("document" in self && !("classList" in document.createElement("_"))) {
 

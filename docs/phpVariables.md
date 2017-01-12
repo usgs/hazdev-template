@@ -201,12 +201,12 @@ Default value is
 $SOCIAL = array(
     array(
       'name' => 'Facebook',
-      'url' => 'http://www.facebook.com/sharer.php?u={URL}',
+      'url' => 'https://www.facebook.com/sharer.php?u={URL}',
       'class' => 'facebook'
     ),
     array(
       'name' => 'Twitter',
-      'url' => 'http://twitter.com/share?url={URL}&text={TITLE}',
+      'url' => 'https://twitter.com/share?url={URL}&text={TITLE}',
       'class' => 'twitter'
     ),
     array(
