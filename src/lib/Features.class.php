@@ -79,7 +79,7 @@ class Features {
     $items = $this->getItems();
     $r = '';
     $r .= '<?xml version="1.0" encoding="utf-8"?>' . PHP_EOL .
-      '<feed xmlns="https://www.w3.org/2005/Atom">' .
+      '<feed xmlns="http://www.w3.org/2005/Atom">' .
         '<title>' . $this->title . '</title>' .
         '<updated>' . $this->getAtomDate(time()) . '</updated>' .
         '<author>' .
