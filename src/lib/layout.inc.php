@@ -61,8 +61,10 @@
 
         if ($SOCIAL) {
           $pageUrl = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'Off')
-              ? 'https://' : 'http://') .
-              $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+              || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+              $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')) ?
+              'https://' : 'http://' . $_SERVER['HTTP_HOST'] .
+              $_SERVER['REQUEST_URI'];
 
           $replacements = array(
               '{URL}' => htmlspecialchars($pageUrl),

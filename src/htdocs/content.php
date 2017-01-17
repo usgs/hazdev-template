@@ -84,7 +84,7 @@ if (!isset($TEMPLATE)) {
     </pre>
   </li>
   <li>
-    Use the <a href="http://www.plainlanguage.gov/">Plain Language</a>
+    Use the <a href="https://www.plainlanguage.gov/">Plain Language</a>
     guidelines.
   </li>
   <li>

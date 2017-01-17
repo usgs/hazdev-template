@@ -11,7 +11,7 @@ if (!isset($TEMPLATE)) {
 <h2>An H2 Header</h2>
 
 <figure class="right">
-  <img src="http://placehold.it/300x205" alt="Placeholder image"/>
+  <img src="https://placehold.it/300x205" alt="Placeholder image"/>
   <figcaption>Image floated right with figure caption.</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ if (!isset($TEMPLATE)) {
 <h4 id="aheader">An H4 Header</h4>
 
 <figure class="left" >
-  <img src="http://placehold.it/300x205" alt="Placeholder image"/>
+  <img src="https://placehold.it/300x205" alt="Placeholder image"/>
   <figcaption>Image floated left with figure caption.</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ if (!isset($TEMPLATE)) {
 <h3>With Caption</h3>
 <pre>
   <code>&lt;figure class="right"&gt;
-  &lt;img src="http://placehold.it/300x205" alt="Placeholder image"/&gt;
+  &lt;img src="https://placehold.it/300x205" alt="Placeholder image"/&gt;
   &lt;figcaption&gt;Image floated right with figure caption.&lt;/figcaption&gt;
   &lt;/figure&gt;
   </code>
@@ -70,7 +70,7 @@ if (!isset($TEMPLATE)) {
 <h3>Without Caption</h3>
 <pre>
   <code>&lt;figure class="right"&gt;
-  &lt;img src="http://placehold.it/300x205" alt="Placeholder image"/&gt;
+  &lt;img src="https://placehold.it/300x205" alt="Placeholder image"/&gt;
   &lt;/figure&gt;
   </code>
 </pre>

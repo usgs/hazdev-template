@@ -42,7 +42,7 @@ class Features {
   // author for features list.
   public $author = 'U.S. Geological Survey';
   // site url (ends with a /).
-  public $siteUrl = 'http://earthquake.usgs.gov/';
+  public $siteUrl = 'https://earthquake.usgs.gov/';
   // base url for section (ends with a /).
   public $baseUrl;
   // title of features list.
@@ -213,7 +213,7 @@ class Features {
    * @return {String} absolute link.
    */
   protected function getLink ($link) {
-    if (strpos($link, 'http') === 0) {
+    if (strpos($link, 'https') === 0) {
       return $link;
     }
     return $this->siteUrl . $this->baseUrl . $link;
