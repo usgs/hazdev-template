@@ -52,7 +52,7 @@ if (!isset($SOCIAL)) {
 			),
 			array(
 				'name' => 'Twitter',
-				'url' => 'https://twitter.com/intent/tweet?url={URL}&text={TITLE}',
+				'url' => 'https://twitter.com/intent/tweet?url={URL}&text=USGS%20%7C%20{TITLE}',
 				'class' => 'twitter'
 			),
 			array(
