@@ -13,6 +13,11 @@ if (!isset($TITLE)) {
 	$TITLE = 'Default Page Title';
 }
 
+// allow user to set <title> independently of <h1>; use $TITLE by default
+if (!isset($TITLETAG)) {
+  $TITLETAG = $TITLE;
+}
+
 // page contact, email address
 if (!isset($CONTACT)) {
 	$CONTACT = null;
