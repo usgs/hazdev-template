@@ -1,4 +1,4 @@
-/* global OffCanvas */
+/* global LinkUpdater, OffCanvas */
 'use strict';
 
 // make the site footer offcanvas
@@ -9,3 +9,6 @@ if (siteFooter) {
 }
 // initialize offcanvas
 OffCanvas.getOffCanvas();
+
+// initialize link updater
+LinkUpdater();
