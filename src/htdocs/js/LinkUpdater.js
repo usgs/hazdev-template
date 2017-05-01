@@ -13,7 +13,7 @@
  *   <a href="blah" data-link-template="something?url={URL}&amp;{TITLE}">Text</a>
  * </div>
  * <script>
- *   new LinkUpdater({el: document.querySelector('.container')});
+ *   LinkUpdater({el: document.querySelector('.container')});
  * </script>
  *
  * @param options {Object}
@@ -21,43 +21,49 @@
  */
 var LinkUpdater = function (options) {
   var _this,
-      _initialize,
+      _initialize;
 
-      _el,
 
-      _render;
+  _this = {};
 
-  _this = Object.create({});
 
   /**
    * Parse options and bind event listeners.
    */
-  _initialize = function () {
-    _el = options.el;
-    // update links
-    _render();
-    // update links when url fragment changes
-    window.addEventListener('hashchange', _render);
+  _initialize = function (options) {
+    _this.el = (options && options.el) ?
+        options.el : document.querySelector('body');
 
-    options = null;
+    // update links
+    _this.render();
+
+    // update links when url fragment changes
+    window.addEventListener('hashchange', _this.render);
   };
 
   /**
    * Update social links to current document url and title.
    */
-  _render = function () {
-    var url = encodeURIComponent(window.location),
-        title = encodeURIComponent(document.title),
-        links, link, linkUrl;
+  _this.render = function () {
+    var i,
+        len,
+        link,
+        linkUrl,
+        links,
+        title,
+        url;
+
+    title = encodeURIComponent(document.title);
+    url = encodeURIComponent(window.location);
 
     // find all links with a "data-link-template" attribute
-    links = _el.querySelectorAll('a[data-link-template]');
-    for (var i=0, len=links.length; i<len; i++) {
+    links = _this.el.querySelectorAll('a[data-link-template]');
+    for (i = 0, len = links.length; i < len; i++) {
       link = links[i];
       // generate new url based on template
       linkUrl = link.getAttribute('data-link-template');
-      linkUrl = linkUrl.replace('{URL}', url);
       linkUrl = linkUrl.replace('{TITLE}', title);
+      linkUrl = linkUrl.replace('{URL}', url);
       // update href
       link.setAttribute('href', linkUrl);
     }
@@ -67,10 +73,18 @@ var LinkUpdater = function (options) {
    * Unbind event listeners.
    */
   _this.destroy = function () {
-    window.removeEventListener('hashchange', _render);
+    if (!_this) {
+      return;
+    }
+
+    window.removeEventListener('hashchange', _this.render);
+    _initialize = null;
+    _this = null;
   };
 
-  _initialize();
+
+  _initialize(options);
+  options = null;
   return _this;
 };
 
