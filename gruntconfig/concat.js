@@ -5,6 +5,7 @@ var config = require('./config');
 var concat = {
   scripts: {
     src: [
+      config.src + '/htdocs/js/LinkUpdater.js',
       config.src + '/htdocs/js/OffCanvas.js',
       config.src + '/htdocs/js/index.js'
     ],
