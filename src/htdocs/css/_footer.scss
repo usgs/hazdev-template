@@ -55,6 +55,12 @@
     &:first-child > header > a {
       margin-top: 0;
     }
+
+    &:after {
+      content: '';
+      display: block;
+      overflow: auto;
+    }
   }
 }
 

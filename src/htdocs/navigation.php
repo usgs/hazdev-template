@@ -67,3 +67,18 @@ echo navGroup(navItem('#', 'Header'),
   );
 ?>
 </div>
+
+
+<h3>Navigation Section With No Children</h3>
+<div class="site-sectionnav">
+<?php
+echo '<a href="#" class="up-one-level">Up One Level Link</a>';
+echo navGroup(navItem('#', 'Header with No Children'), null);
+echo navGroup(navItem('#', 'Header'),
+    navItem('#', 'First Item') .
+    navItem('#', 'Second Item') .
+    navItem('#', 'Third Item') .
+    navItem('#', 'Fourth Item')
+  );
+?>
+</div>
