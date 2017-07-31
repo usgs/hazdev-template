@@ -17,8 +17,9 @@ table {
 }
 
 th {
-  background-color: #f8f8f8;
-  background-color: rgba(0,0,0,0.03);
+  background-color: $gray-lighter;
+  /* Must have opacity for .vertical-scrolling / .horizontal-scrolling */
+  background-color: rgba(0,0,0,0.04);
   font-weight: bold;
   /* only necessary for IE */
   text-align: left;
@@ -27,7 +28,7 @@ th {
 th,
 td {
   padding: 0.666em 0.75em;
-  border: 1px solid #e8e8e8;
+  border: 1px solid $gray;
 }
 
 

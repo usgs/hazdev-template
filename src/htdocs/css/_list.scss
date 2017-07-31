@@ -9,7 +9,7 @@ ol {
   }
 
   &.separator > li {
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid $gray;
     padding: $spacing 0;
 
     &:first-child {

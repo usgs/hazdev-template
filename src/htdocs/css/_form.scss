@@ -15,10 +15,10 @@ input[type="week"],
 select,
 textarea {
   appearance: none;
-  border: 1px solid #5b616b;
+  border: 1px solid $gray-darker;
   border-radius: 0;
   box-sizing: border-box;
-  color: #000;
+  color: $text-color;
   display: block;
   font-family: $font-sans;
   font-size: 1em;
@@ -122,7 +122,7 @@ select {
 /* Hint text */
 
 .usa-form-hint {
-  color: #757575;
+  color: $gray-darker;
   font-family: $font-sans;
   margin-bottom: 0;
 }
@@ -150,7 +150,7 @@ input[type='radio'] {
     &:before {
       background: #fff;
       border-radius: 2px;
-      box-shadow: 0 0 0 1px #757575;
+      box-shadow: 0 0 0 1px $gray-darker;
       color: #fff;
       content: '';
       display: inline-block;
@@ -181,7 +181,7 @@ input[type='radio'] {
     border-radius: 100%;
     box-shadow:
         0 0 0 2px #fff,
-        0 0 0 3px #757575;
+        0 0 0 3px $gray-darker;
     height: 1.6rem;
     width: 1.6rem;
   }
@@ -205,12 +205,12 @@ input[type='radio'] {
   }
 
   &:disabled + label {
-    color: #ccc;
+    color: $gray-text-color;
     cursor: not-allowed;
 
     &:before {
-      background: #ddd;
-      box-shadow: 0 0 0 1px #aaa;
+      background: $gray;
+      box-shadow: 0 0 0 1px $gray-lighter;
       content: '';
       cursor: not-allowed;
     }
@@ -219,6 +219,6 @@ input[type='radio'] {
 
 input[type='radio']:disabled + label:before {
   box-shadow:
-      0 0 0 2px #ddd,
-      0 0 0 3px #aaa;
+      0 0 0 2px $gray,
+      0 0 0 3px $gray-lighter;
 }

@@ -1,11 +1,11 @@
 button {
-  background: #f8f8f8;
+  background: $gray-lighter;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%,
       rgba(0, 0, 0, 0.05) 100%);
   border: none;
   border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  color: #333;
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
+  color: $text-color;
   cursor: pointer;
   font-family: $font-sans;
   font-size: 1em;
@@ -25,7 +25,7 @@ button {
   &:hover {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%,
         rgba(0, 0, 0, 0.1) 100%);
-    color: #000;
+    color: $text-color;
     text-shadow: none;
   }
 
@@ -72,7 +72,7 @@ button {
   &.green,
   &.blue {
     color: #fff;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
   }
 
   &.yellow {
@@ -92,9 +92,9 @@ button {
   &.green.disabled,
   &.blue.disabled,
   &.yellow.disabled {
-    background: #ddd;
+    background: $gray;
     box-shadow: none;
-    color: rgba(0, 0, 0, 0.3);
+    color: $gray-text-color;
     cursor: not-allowed;
     text-shadow: none;
     z-index: 1;
@@ -157,7 +157,7 @@ button {
 
     &.disabled,
     &[disabled] {
-      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
     }
   }
 
