@@ -2,8 +2,8 @@
 
 .jumplist {
   border: 1px solid #ddd;
-  margin: $spacing 0 0;
-  padding: 0.5em 0.5em 0.5em 0;
+  margin: $spacing 0;
+  padding: 0.5em 0;
 
   > a {
     display: inline-block;
@@ -14,7 +14,7 @@
       color: #ccc;
       content: '|\00A0';
       display: inline-block;
-      margin: 0 0.75em 0 0;
+      margin-right: 0.75em;
     }
   }
 }

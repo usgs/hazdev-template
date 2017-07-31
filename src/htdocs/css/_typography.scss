@@ -86,7 +86,6 @@ a {
 }
 
 abbr {
-  border-bottom: 1px dotted;
   cursor: help;
 }
 
@@ -113,7 +112,7 @@ pre {
   border: 1px solid #d8d8d8;
   padding: $spacing;
   overflow: scroll;
-  margin: $spacing 0 0;
+  margin: $spacing 0;
 }
 
 pre > code {
@@ -125,8 +124,3 @@ mark {
   padding: 2px 4px;
 }
 
-sup,
-sub {
-  font-size: 0.625em;
-  margin-left: 2px;
-}

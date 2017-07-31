@@ -1,6 +1,6 @@
 /* reset <a> tag styles */
 .site-sectionnav {
-  margin: $spacing 0 0;
+  margin: $spacing 0;
 
   > a + a,
   > a + section,
@@ -93,7 +93,7 @@
   > button {
     clear: both;
     display: block;
-    margin: $spacing 0 0 0;
+    margin: $spacing 0;
   }
 }
 
@@ -101,7 +101,7 @@
 
 .site-sitenav {
   background-color: $primary;
-  margin: $spacing 0 0;
+  margin: $spacing 0;
   overflow: visible;
 
   > a,
@@ -150,11 +150,7 @@
   > a {
     color: $primary-lighter;
     display: inline-block;
-    margin: 0 $spacing 0 0;
-
-    &:last-child {
-      margin: 0;
-    }
+    margin: 0 calc($spacing / 2);
   }
 }
 

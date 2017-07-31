@@ -10,7 +10,7 @@ button {
   font-family: $font-sans;
   font-size: 1em;
   line-height: 1;
-  margin: 4px 2px;
+  margin: 4px 0;
   padding: 1rem 2rem;
   /* used by before/after selectors */
   position: relative;
@@ -18,11 +18,25 @@ button {
   vertical-align: top;
   z-index: 2;
 
+  &+ button {
+    margin: 4px 2px;
+  }
+
   &:hover {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%,
         rgba(0, 0, 0, 0.1) 100%);
     color: #000;
     text-shadow: none;
+  }
+
+
+  &:active,
+  &:focus {
+    z-index: 3;
+  }
+
+  &.selected + .selected {
+    z-index: 2;
   }
 
   &:active,

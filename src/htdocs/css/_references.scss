@@ -5,11 +5,10 @@
   padding-left: 3em;
 
   > li {
-    border: 1px solid #fff;
     color: #555;
     font-style: italic;
     list-style: none;
-    margin: $spacing 0 0;
+    margin: $spacing 0;
     text-indent: -3em;
   }
 }
