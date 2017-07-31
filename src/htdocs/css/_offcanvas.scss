@@ -23,7 +23,6 @@ $offcanvas-transition-time: .3s !default;
 
   /* offcanvas is enabled, but not necessarily active */
   .offcanvas-enabled {
-
     /* position body relative, for offcanvas-active transition */
     left: 0;
     position: relative;
@@ -98,7 +97,7 @@ $offcanvas-transition-time: .3s !default;
 
     /* move mask to right of offcanvas */
     > .offcanvas-mask {
-      background-color: rgba(0, 0, 0, .7);
+      background-color: rgba(0, 0, 0, 0.7);
     }
   }
 }

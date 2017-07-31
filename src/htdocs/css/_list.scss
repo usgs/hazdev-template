@@ -30,11 +30,11 @@ ol {
     }
 
     h2, h3, h4 {
-      margin: 0 0 -.5rem 0;
-      padding: 0;
-      line-height: 1.3;
-      font-size: 1.125em;
       color: $link-color;
+      font-size: 1.125em;
+      line-height: 1.3;
+      margin: 0 0 -0.5rem 0;
+      padding: 0;
 
       &:active {
         color: $link-color-active;
@@ -67,6 +67,7 @@ dl {
 /* for mobile both hortizontal and vertical stack with a clean left edge */
 dl.vertical,
 dl.horizontal {
+
   > dd {
     margin: 0;
   }
@@ -76,13 +77,14 @@ dl.horizontal {
 @media screen and (min-width: $breakpoint-stacking) {
 
   dl.horizontal {
+
     > dt {
-      float: left;
-      width: 10em;
-      overflow: hidden;
       clear: left;
+      float: left;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      width: 10em;
     }
 
     > dd {

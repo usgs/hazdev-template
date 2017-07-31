@@ -47,18 +47,18 @@ h3,
 
 h4,
 .h4 {
-  font-size: .88125em;
+  font-size: 0.88125em;
 }
 
 h5,
 .h5 {
-  font-size: .763755em;
+  font-size: 0.763755em;
 }
 
 h6:not(.h1):not(.h2):not(.h3):not(.h4):not(.h5),
 .h6 {
   font-family: $font-sans;
-  font-size: .763755em;
+  font-size: 0.763755em;
   font-weight: $font-normal;
   text-transform: uppercase;
 }

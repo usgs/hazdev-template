@@ -19,7 +19,7 @@ table {
 th {
   background-color: $gray-lighter;
   /* Must have opacity for .vertical-scrolling / .horizontal-scrolling */
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0, 0, 0, 0.04);
   font-weight: bold;
   /* only necessary for IE */
   text-align: left;
@@ -42,5 +42,4 @@ td {
     border-right: 0;
     border-top: 0;
   }
-
 }

@@ -1,10 +1,10 @@
 /* Horizontal Scrolling can be used to wrap tables and make them responsive */
 .horizontal-scrolling {
   background:
-    linear-gradient(to right, #fff 30%, rgba(255,255,255,0)),
-    linear-gradient(to left, #fff 30%, rgba(255,255,255,0)) right,
-    linear-gradient(to right, rgba(0,0,0,.15), transparent 70%),
-    linear-gradient(to left, rgba(0,0,0,.15), transparent 70%) right;
+    linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)),
+    linear-gradient(to left, #fff 30%, rgba(255, 255, 255, 0)) right,
+    linear-gradient(to right, rgba(0, 0, 0, 0.15), transparent 70%),
+    linear-gradient(to left, rgba(0, 0, 0, 0.15), transparent 70%) right;
   background-repeat: no-repeat;
   background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
   background-attachment: local, local, scroll, scroll;
@@ -25,8 +25,8 @@
   background:
     linear-gradient(to top, #fff 50%, #fff),
     linear-gradient(to bottom, #fff 50%, #fff) bottom,
-    radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 10px, 100% 10px, 100% 5px, 100% 5px;
   background-attachment: local, local, scroll, scroll;
