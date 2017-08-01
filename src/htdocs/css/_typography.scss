@@ -5,7 +5,7 @@ html {
 
 body {
   color: $text-color;
-  font-size: 17px;
+  font-size: $font-size;
   line-height: 1.5;
 }
 
@@ -105,7 +105,7 @@ code {
 }
 
 code {
-  font-size: 0.88em;
+  font-size: $font-size-small;
 }
 
 pre {

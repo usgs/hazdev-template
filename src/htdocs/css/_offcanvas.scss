@@ -32,7 +32,7 @@ $offcanvas-transition-time: .3s !default;
     > .offcanvas-toggle {
       box-shadow: none;
       display: block;
-      font-size: 0.88em;
+      font-size: $font-size-small;
       height: 2em;
       line-height: 2em;
       margin: 0;
