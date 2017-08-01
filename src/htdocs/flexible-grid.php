@@ -38,43 +38,43 @@ if (!isset($TEMPLATE)) {
 </p>
 
 <div class="row">
-  <div class="column one-of-one"><p class="alert">.one-of-one</p></div>
+  <div class="column one-of-one"><div class="alert">.one-of-one</div></div>
 </div>
 
 <div class="row">
-  <div class="column one-of-two"><p class="alert">.one-of-two</p></div>
-  <div class="column one-of-two"><p class="alert">.one-of-two</p></div>
+  <div class="column one-of-two"><div class="alert">.one-of-two</div></div>
+  <div class="column one-of-two"><div class="alert">.one-of-two</div></div>
 </div>
 
 <div class="row">
-  <div class="column one-of-three"><p class="alert">.one-of-three</p></div>
-  <div class="column one-of-three"><p class="alert">.one-of-three</p></div>
-  <div class="column one-of-three"><p class="alert">.one-of-three</p></div>
+  <div class="column one-of-three"><div class="alert">.one-of-three</div></div>
+  <div class="column one-of-three"><div class="alert">.one-of-three</div></div>
+  <div class="column one-of-three"><div class="alert">.one-of-three</div></div>
 </div>
 
 <div class="row">
-  <div class="column one-of-four"><p class="alert">.one-of-four</p></div>
-  <div class="column one-of-four"><p class="alert">.one-of-four</p></div>
-  <div class="column one-of-four"><p class="alert">.one-of-four</p></div>
-  <div class="column one-of-four"><p class="alert">.one-of-four</p></div>
+  <div class="column one-of-four"><div class="alert">.one-of-four</div></div>
+  <div class="column one-of-four"><div class="alert">.one-of-four</div></div>
+  <div class="column one-of-four"><div class="alert">.one-of-four</div></div>
+  <div class="column one-of-four"><div class="alert">.one-of-four</div></div>
 </div>
 
 <div class="row">
-  <div class="column one-of-five"><p class="alert">.one-of-five</p></div>
-  <div class="column one-of-five"><p class="alert">.one-of-five</p></div>
-  <div class="column one-of-five"><p class="alert">.one-of-five</p></div>
-  <div class="column one-of-five"><p class="alert">.one-of-five</p></div>
-  <div class="column one-of-five"><p class="alert">.one-of-five</p></div>
+  <div class="column one-of-five"><div class="alert">.one-of-five</div></div>
+  <div class="column one-of-five"><div class="alert">.one-of-five</div></div>
+  <div class="column one-of-five"><div class="alert">.one-of-five</div></div>
+  <div class="column one-of-five"><div class="alert">.one-of-five</div></div>
+  <div class="column one-of-five"><div class="alert">.one-of-five</div></div>
 </div>
 
 <h2>Usage</h2>
 <pre>
   &lt;div class="row"&gt;
-    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
-    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
-    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
-    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
-    &lt;div class="column one-of-five"&gt;&lt;p class="alert"&gt;.one-of-five&lt;/p&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;div class="alert"&gt;.one-of-five&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;div class="alert"&gt;.one-of-five&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;div class="alert"&gt;.one-of-five&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;div class="alert"&gt;.one-of-five&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="column one-of-five"&gt;&lt;div class="alert"&gt;.one-of-five&lt;/div&gt;&lt;/div&gt;
   &lt;/div&gt;
 </pre>
 
