@@ -49,3 +49,19 @@ The template comes with a styleguide providing examples:
 * _navigation.inc.php configures left navigation
 * index.php includes the template
 
+
+## Containers/Docker
+
+- Build container
+
+```
+docker build -t usgs/hazdev-template:latest .
+```
+
+- Run container
+```
+docker run --rm -e EXPOSE_HOST=127.0.0.1 -e EXPOSE_PORT=8000 -e MOUNT_PATH=/theme usgs/hazdev-template:latest
+```
+
+Once the container is running, open the following URL in a web browser:
+	http://localhost:8000/theme
