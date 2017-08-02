@@ -76,12 +76,12 @@ dfn {
 a {
   color: $link-color;
 
-  &:active {
-    color: $link-color-active;
-  }
-
   &:visited {
     color: $link-color-visited
+  }
+
+  &:active {
+    color: $link-color-active;
   }
 }
 
