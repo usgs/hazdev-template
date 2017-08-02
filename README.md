@@ -60,8 +60,10 @@ docker build -t usgs/hazdev-template:latest .
 
 - Run container
 ```
-docker run --rm -e EXPOSE_HOST=127.0.0.1 -e EXPOSE_PORT=8000 -e MOUNT_PATH=/theme usgs/hazdev-template:latest
+docker run --rm -p 8000:80 -e EXPOSE_HOST=127.0.0.1 -e EXPOSE_PORT=8000 -e MOUNT_PATH=/theme usgs/hazdev-template:latest
 ```
 
-Once the container is running, open the following URL in a web browser:
+- Once the container is running, open the following URL in a web browser:
 	http://localhost:8000/theme
+
+- Custom PHP scripts can use the template by mounting them in the document root `/data/www/html`
