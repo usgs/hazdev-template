@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title><?php echo strip_tags($TITLETAG); ?></title>
   <meta charset="utf-8"/>
