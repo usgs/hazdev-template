@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <header role="banner" class="site-header">
+  <header class="site-header">
     <a class="site-logo" href="/" title="U.S. Geological Survey">
       <img src="/theme/images/usgs-logo.svg" alt=""/>
     </a>
