@@ -1,4 +1,4 @@
-[role="banner"] {
+.site-header {
   background-color: $primary;
   height: 56px;
   position: relative;
@@ -111,7 +111,7 @@
 
 @media print {
   /** Only show USGS logo when printing, requires background colors... */
-  [role="banner"] {
+  .site-header {
     background-color: #fff;
     height: 0;
     margin: 0;
