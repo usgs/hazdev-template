@@ -31,7 +31,7 @@
     ?>
   </header>
 
-  <main role="main" class="page" aria-labelledby="page-header">
+  <main class="page" aria-labelledby="page-header">
     <header class="page-header" id="page-header">
       <h1><?php echo $TITLE; ?></h1>
     </header>
