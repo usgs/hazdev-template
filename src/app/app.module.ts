@@ -5,7 +5,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 
 import { AppComponent } from './app.component';
 
-import { HazdevAngularTemplateModule } from './hazdev-angular-template/hazdev-angular-template.module';
+import { HazdevTemplateModule } from './hazdev-template/hazdev-template.module';
 
 @NgModule({
   declarations: [
@@ -14,10 +14,10 @@ import { HazdevAngularTemplateModule } from './hazdev-angular-template/hazdev-an
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HazdevAngularTemplateModule
+    HazdevTemplateModule
   ],
   exports: [
-    HazdevAngularTemplateModule
+    HazdevTemplateModule
   ],
   providers: [
     MediaMatcher

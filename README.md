@@ -68,16 +68,16 @@ Follow these steps to wrap your application in the hazdev angular template.
     import { HazdevAngularTemplateComponent } from 'hazdev-template';
     ```
 1. Use the normal TITLE, NAVIGATION, SITE_SITENAV, SITE_COMMONNAV template variables to configure your template.
-1. Wrap your application with the `app-hazdev-angular-template` component that was imported with the `HazdevTemplate`.
+1. Wrap your application with the `app-hazdev-template` component that was imported with the `HazdevTemplate`.
     ```
-    <app-hazdev-angular-template
+    <app-hazdev-template
       [TITLE]="TITLE"
       [NAVIGATION]="NAVIGATION"
       [SITE_SITENAV]="SITE_SITENAV"
       [SITE_COMMONNAV]="SITE_COMMONNAV"
     >
     ... your application's entry point component ... 
-    </app-hazdev-angular-template>
+    </app-hazdev-template>
     ```
 
 

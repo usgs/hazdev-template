@@ -1,1 +1,1 @@
-export * from './src/app/hazdev-angular-template/hazdev-angular-template.module';
+export * from './src/app/hazdev-template/hazdev-template.module';

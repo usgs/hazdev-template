@@ -10,12 +10,12 @@
       "assets": [
         {
           "glob": "**/*",
-          "input": "app/hazdev-angular-template/hazdev-angular-template-header/assets",
+          "input": "app/hazdev-template/header/assets",
           "output": "assets/"
         },
         {
           "glob": "**/*",
-          "input": "app/hazdev-angular-template/hazdev-angular-template-page/assets",
+          "input": "app/hazdev-template/page/assets",
           "output": "assets/"
         },
         "assets",

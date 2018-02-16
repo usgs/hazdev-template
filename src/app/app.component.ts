@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { HazdevAngularTemplateComponent } from './hazdev-angular-template/hazdev-angular-template.component';
+import { HazdevTemplateComponent } from './hazdev-template/hazdev-template.component';
 
 @Component({
   selector: 'app-root',

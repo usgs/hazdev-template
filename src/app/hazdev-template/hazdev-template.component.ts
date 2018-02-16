@@ -5,12 +5,12 @@ import { environment } from '../../environments/environment';
 import { MenuService } from '../menu.service';
 
 @Component({
-  selector: 'app-hazdev-angular-template',
-  templateUrl: './hazdev-angular-template.component.html',
-  styleUrls: ['./hazdev-angular-template.component.css'],
+  selector: 'app-hazdev-template',
+  templateUrl: './hazdev-template.component.html',
+  styleUrls: ['./hazdev-template.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class HazdevAngularTemplateComponent implements OnInit, OnDestroy {
+export class HazdevTemplateComponent implements OnInit, OnDestroy {
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;

@@ -1,4 +1,4 @@
-<app-hazdev-angular-template-header>
+<app-header>
   <button
       (click)="sidenav.toggle()"
       class="hazdev-sidenav-toggle"
@@ -6,17 +6,17 @@
   >
     Menu
   </button>
-</app-hazdev-angular-template-header>
+</app-header>
 
 <mat-sidenav-container>
   <mat-sidenav-content>
-    <app-hazdev-angular-template-page
+    <app-page
         [TITLE]="TITLE"
         [CONTACT]="CONTACT"
         [SOCIAL]="SOCIAL"
     >
       <ng-content></ng-content>
-    </app-hazdev-angular-template-page>
+    </app-page>
   </mat-sidenav-content>
 
   <mat-sidenav #sidenav
@@ -25,17 +25,17 @@
       [opened]="!mobileQuery.matches"
       (openedChange)="onSideNavChange($event)"
   >
-    <app-hazdev-angular-template-navigation
+    <app-navigation
         [NAVIGATION]="NAVIGATION"
         [SITE_SITENAV]="SITE_SITENAV"
         [SITE_URL]="SITE_URL"
     >
       <!-- Custom Section Navigation -->
       <ng-content select="[templateSideNavigation]" templateSideNavigation></ng-content>
-    </app-hazdev-angular-template-navigation>
+    </app-navigation>
   </mat-sidenav>
 </mat-sidenav-container>
 
-<app-hazdev-angular-template-footer
+<app-footer
     [SITE_COMMONNAV]="SITE_COMMONNAV"
-></app-hazdev-angular-template-footer>
+></app-footer>

@@ -4,12 +4,12 @@ import { NavigationItemComponent } from './navigation-item/navigation-item.compo
 import { NavigationGroupComponent } from './navigation-group/navigation-group.component';
 
 @Component({
-  selector: 'app-hazdev-angular-template-navigation',
-  templateUrl: './hazdev-angular-template-navigation.component.html',
-  styleUrls: ['./hazdev-angular-template-navigation.component.scss'],
+  selector: 'app-navigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HazdevAngularTemplateNavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit {
   @Input() NAVIGATION: any[];
   @Input() SITE_SITENAV: any[];
   @Input() SITE_URL: string;

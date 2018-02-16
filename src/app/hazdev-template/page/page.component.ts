@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hazdev-angular-template-page',
-  templateUrl: './hazdev-angular-template-page.component.html',
-  styleUrls: ['./hazdev-angular-template-page.component.css']
+  selector: 'app-page',
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.css']
 })
-export class HazdevAngularTemplatePageComponent implements OnInit {
+export class PageComponent implements OnInit {
   @Input() CONTACT: string;
   @Input() SOCIAL: string;
   @Input() TITLE: string;
