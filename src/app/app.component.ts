@@ -10,7 +10,7 @@ import { HazdevAngularTemplateComponent } from './hazdev-angular-template/hazdev
 export class AppComponent {
   TITLE = 'Hazdev Angular Template';
 
-  // NAVIGATION = [
+  NAVIGATION = [
   //   {
   //     header: {href: '/ws/geoserve/index.php', display: 'Geoserve Web Services'},
   //     links: [
@@ -20,7 +20,7 @@ export class AppComponent {
   //     ]
   //   },
   //   {'href': '/', 'display': 'Interactive Interface'}
-  // ];
+  ];
 
   SITE_SITENAV = [
     {href: '/earthquakes/', display: 'Earthquakes'},
