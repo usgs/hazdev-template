@@ -1,3 +1,45 @@
-<p>
-  hazdev-angular-template-navigation works!
-</p>
+<!-- Free form navigation section -->
+<ng-content select="[templateSideNavigation]"></ng-content>
+
+<!-- Navigation from NAVIGATION  -->
+<mat-nav-list *ngIf="NAVIGATION" class="site-sectionnav">
+  <ng-container *ngFor="let item of NAVIGATION">
+    <app-navigation-group
+        *ngIf="item.header"
+        [href]="item.header.href"
+        [title]="item.header.display">
+      <app-navigation-item
+          *ngFor="let link of item.links"
+          [href]="link.href"
+          [title]="link.display">
+      </app-navigation-item>
+    </app-navigation-group>
+    <app-navigation-item
+        *ngIf="item.href"
+        [href]="item.href"
+        [title]="item.display">
+    </app-navigation-item>
+  </ng-container>
+</mat-nav-list>
+
+<!-- Navigation from SITE_SITENAV  -->
+<mat-nav-list
+    *ngIf="SITE_SITENAV"
+    class="hazdev-navigation-sitenav"
+    aria-label="Site Navigation">
+  <app-navigation-item
+      *ngFor="let item of SITE_SITENAV"
+      [href]="item.href"
+      [title]="item.display">
+  </app-navigation-item>
+</mat-nav-list>
+
+<form class="site-search" role="search" action="//search.usa.gov/search" method="get" accept-charset="UTF-8">
+    <input name="utf8" type="hidden" value="✓"/>
+    <input name="affiliate" type="hidden" value="usgs"/>
+    <input name="sitelimit" type="hidden" value="{{ SITE_URL }}" />
+  <mat-form-field>
+    <input matInput id="query" name="query" type="search" placeholder="Search..." title="Search"/>
+  </mat-form-field>
+  <button type="submit" mat-raised-button>Search</button>
+</form>

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import {
@@ -35,6 +36,7 @@ import { MenuService } from './menu.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-item',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-item.component.css']
 })
 export class NavigationItemComponent implements OnInit {
+  @Input() href: string;
+  @Input() title: string;
 
   constructor() { }
 

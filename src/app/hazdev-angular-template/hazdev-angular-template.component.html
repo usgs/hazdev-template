@@ -1,3 +1,41 @@
-<p>
-  hazdev-angular-template works!
-</p>
+<app-hazdev-angular-template-header>
+  <button
+      (click)="sidenav.toggle()"
+      class="hazdev-sidenav-toggle"
+      mat-raised-button
+  >
+    Menu
+  </button>
+</app-hazdev-angular-template-header>
+
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <app-hazdev-angular-template-page
+        [TITLE]="TITLE"
+        [CONTACT]="CONTACT"
+        [SOCIAL]="SOCIAL"
+    >
+      <ng-content></ng-content>
+    </app-hazdev-angular-template-page>
+  </mat-sidenav-content>
+
+  <mat-sidenav #sidenav
+      class="site-footer"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [opened]="!mobileQuery.matches"
+      (openedChange)="onSideNavChange($event)"
+  >
+    <app-hazdev-angular-template-navigation
+        [NAVIGATION]="NAVIGATION"
+        [SITE_SITENAV]="SITE_SITENAV"
+        [SITE_URL]="SITE_URL"
+    >
+      <!-- Custom Section Navigation -->
+      <ng-content select="[templateSideNavigation]" templateSideNavigation></ng-content>
+    </app-hazdev-angular-template-navigation>
+  </mat-sidenav>
+</mat-sidenav-container>
+
+<app-hazdev-angular-template-footer
+    [SITE_COMMONNAV]="SITE_COMMONNAV"
+></app-hazdev-angular-template-footer>

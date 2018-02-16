@@ -1,3 +1,10 @@
-<p>
-  navigation-group works!
-</p>
+<section class="hazdev-template-nav-section">
+  <header>
+    <app-navigation-item
+        class="hazdev-template-nav-item"
+        [href]="href"
+        [title]="title">
+    </app-navigation-item>
+  </header>
+  <ng-content></ng-content>
+</section>

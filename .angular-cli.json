@@ -8,6 +8,16 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
+        {
+          "glob": "**/*",
+          "input": "app/hazdev-angular-template-header/assets",
+          "output": "assets/"
+        },
+        {
+          "glob": "**/*",
+          "input": "app/hazdev-angular-template-page/assets",
+          "output": "assets/"
+        },
         "assets",
         "favicon.ico"
       ],
@@ -19,8 +29,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss",
-        "theme.scss"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

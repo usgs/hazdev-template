@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hazdev-angular-template-footer',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hazdev-angular-template-footer.component.css']
 })
 export class HazdevAngularTemplateFooterComponent implements OnInit {
+  @Input() SITE_COMMONNAV: any[];
 
   constructor() { }
 

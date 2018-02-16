@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-group',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-group.component.css']
 })
 export class NavigationGroupComponent implements OnInit {
+  @Input() href: string;
+  @Input() title: string;
 
   constructor() { }
 
