@@ -3,7 +3,6 @@ Angular version of the hazdev template.
 
 
 ## Getting Started:
--------------------
 
 How to preview the project in your browser:
 
@@ -20,7 +19,6 @@ How to preview the project in your browser:
 
 
 ## Building
------------
 
 This project is intended to be deployed as an NPM package. Building in this
 sense requires packaging the application from the Angular source code, and
@@ -35,7 +33,7 @@ tool.
 $ ng run package
 ```
 
-The `ng run npm-publish` runs a script that bundles the npm package into a tar file that is fully distributable. The tar file can be imported by running a local npm install:
+The `ng run package` runs a script that bundles the npm package into a tar file that is fully distributable. The tar file can be imported by running a local npm install:
 
 ```
 $ npm install hazdev-template@beta
@@ -48,7 +46,7 @@ npm publish dist-npm --tag <version>
 
 
 ## Using the Hazdev Angular Template
-------------------------------------
+
 Follow these steps to wrap your application in the hazdev angular template. 
 
 1. install the earthquake-geoserve-ui project (the tarball from step 1)
@@ -87,7 +85,6 @@ Follow these steps to wrap your application in the hazdev angular template.
 
 
 ## General Angular Information
----------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
