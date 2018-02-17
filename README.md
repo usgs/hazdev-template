@@ -38,7 +38,7 @@ $ ng run npm-publish
 The `ng run npm-publish` runs a script that bundles the npm package into a tar file that is fully distributable. The tar file can be imported by running a local npm install:
 
 ```
-$ npm install <path>/<to>/<application>/npm-dist/earthquake-geoserve-ui-<version>.tgz
+$ npm install hazdev-template
 ```
 
 However, the tar file should be tagged and pushed to npm to facilitate more widespread consumption:
