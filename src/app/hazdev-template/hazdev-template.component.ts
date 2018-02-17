@@ -7,7 +7,7 @@ import { MenuService } from '../menu.service';
 @Component({
   selector: 'app-hazdev-template',
   templateUrl: './hazdev-template.component.html',
-  styleUrls: ['./hazdev-template.component.css'],
+  styleUrls: ['./hazdev-template.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class HazdevTemplateComponent implements OnInit, OnDestroy {

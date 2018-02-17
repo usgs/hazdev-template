@@ -67,6 +67,10 @@ Follow these steps to wrap your application in the hazdev angular template.
     ```
     import { HazdevAngularTemplateComponent } from 'hazdev-template';
     ```
+1. Add google fonts (Roboto and Merriweather) to the project
+    ```
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400|Merriweather:400,400italic,700|Material+Icons" rel="stylesheet">
+    ```
 1. Use the normal TITLE, NAVIGATION, SITE_SITENAV, SITE_COMMONNAV template variables to configure your template.
 1. Wrap your application with the `app-hazdev-template` component that was imported with the `HazdevTemplate`.
     ```

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng2-mock-component';
 
 import { NavigationGroupComponent } from './navigation-group.component';
 
@@ -8,7 +9,11 @@ describe('NavigationGroupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationGroupComponent ]
+      declarations: [
+        NavigationGroupComponent,
+
+        MockComponent({selector: 'app-navigation-item', inputs: ['href', 'routerLink', 'title']}),
+      ]
     })
     .compileComponents();
   }));
