@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 ANGULAR_BUILD=dist
-NPM_BUILD=npm-dist
+NPM_BUILD=dist-npm
 
 ## build the project using angular-cli (bundles assets)
 npm run build
