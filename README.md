@@ -61,9 +61,9 @@ Follow these steps to wrap your application in the hazdev angular template.
       "output": "./assets/"
     },
     ```
-1. import the `HazdevAngularTemplateComponent` into `app-module.ts`, from the hazdev-template project.
+1. import the `HazdevTemplateModule` into `app-module.ts`, from the hazdev-template project.
     ```
-    import { HazdevAngularTemplateComponent } from 'hazdev-template';
+    import { HazdevTemplateModule } from 'hazdev-template';
     ```
 1. Add google fonts (Roboto and Merriweather) to the project
     ```
@@ -78,7 +78,15 @@ Follow these steps to wrap your application in the hazdev angular template.
       [SITE_SITENAV]="SITE_SITENAV"
       [SITE_COMMONNAV]="SITE_COMMONNAV"
     >
-    ... your application's entry point component ... 
+    ... your application's entry point component ...
+    </app-hazdev-template>
+    ```
+1. To define a custom side navigation, use the `templateSideNavigation` selector to define content for the side navigation container.
+    ```
+    <app-hazdev-template>
+      <nav templateSideNavigation>
+          <p>sample content for side navigation</p>
+      </nav>
     </app-hazdev-template>
     ```
 
