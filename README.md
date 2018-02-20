@@ -30,13 +30,13 @@ Build/Publish the npm distributable from the Angular source using the `ng` comma
 tool.
 
 ```
-$ ng run package
+$ npm run package
 ```
 
 The `ng run package` runs a script that bundles the npm package into a tar file that is fully distributable. The tar file can be imported by running a local npm install:
 
 ```
-$ npm install hazdev-template@beta
+$ npm install hazdev-template@<version>
 ```
 
 However, the tar file should be tagged and pushed to npm to facilitate more widespread consumption:
