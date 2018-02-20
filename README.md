@@ -69,7 +69,20 @@ Follow these steps to wrap your application in the hazdev angular template.
     ```
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400|Merriweather:400,400italic,700|Material+Icons" rel="stylesheet">
     ```
-1. Use the normal TITLE, NAVIGATION, SITE_SITENAV, SITE_COMMONNAV template variables to configure your template.
+1. Use the normal TITLE, NAVIGATION, SITE_SITENAV, SITE_COMMONNAV template variables to configure your template. The `NAVIGATION` variable will accept an `href` or a `routerLink` parameter for configuring a navigation item. 
+    ```
+    NAVIGATION = [
+      {
+        header: {href: '/example/', display: 'Example'},
+        links: [
+          {href: '/example/about.php', display: 'About'},
+          {href: '/example/contact.php', display: 'Contact'},
+          {routerLink: '/example/router/link', display: 'Working Router Link'}
+        ]
+      },
+      {href: '/map', display: 'Map'}
+    ];
+    ```
 1. Wrap your application with the `app-hazdev-template` component that was imported with the `HazdevTemplate`.
     ```
     <app-hazdev-template
