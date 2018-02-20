@@ -7,16 +7,19 @@
     <app-navigation-group
         *ngIf="item.header"
         [href]="item.header.href"
+        [routerLink]="item.header.routerLink"
         [title]="item.header.display">
       <app-navigation-item
           *ngFor="let link of item.links"
           [href]="link.href"
+          [routerLink]="link.routerLink"
           [title]="link.display">
       </app-navigation-item>
     </app-navigation-group>
     <app-navigation-item
-        *ngIf="item.href"
+        *ngIf="item.href || item.routerLink"
         [href]="item.href"
+        [routerLink]="item.routerLink"
         [title]="item.display">
     </app-navigation-item>
   </ng-container>
@@ -30,6 +33,7 @@
   <app-navigation-item
       *ngFor="let item of SITE_SITENAV"
       [href]="item.href"
+      [routerLink]="item.routerLink"
       [title]="item.display">
   </app-navigation-item>
 </mat-nav-list>

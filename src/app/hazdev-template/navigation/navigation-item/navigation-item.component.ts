@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-navigation-item',
@@ -7,9 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavigationItemComponent implements OnInit {
   @Input() href: string;
+  @Input() routerLink: any[] | string;
   @Input() title: string;
 
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit() {
   }

@@ -9,6 +9,6 @@ describe('hazdev-template App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Hazdev Angular Template');
   });
 });

@@ -19,7 +19,8 @@ export class AppComponent {
         {href: '/ws/geoserve/layers.php', display: 'Layers Service'}
       ]
     },
-    {'href': '/', 'display': 'Interactive Interface'}
+    {href: '/', display: 'Interactive Interface'},
+    {routerLink: '/any/link/anywhere', display: 'Working Router Link'}
   ];
 
   SITE_SITENAV = [

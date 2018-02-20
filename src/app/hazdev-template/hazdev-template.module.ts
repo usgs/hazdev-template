@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MediaMatcher } from '@angular/cdk/layout';
-
+import { RouterModule } from '@angular/router';
 import {
   MatButtonModule,
   MatDialogModule,
@@ -38,7 +38,8 @@ import { MenuService } from '../menu.service';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    RouterModule.forRoot([])
   ],
   exports: [
     HazdevTemplateComponent,

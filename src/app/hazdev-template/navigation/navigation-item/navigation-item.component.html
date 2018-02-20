@@ -1,3 +1,21 @@
-<a mat-list-item href="{{ href }}">
+<!--
+<a mat-list-item routerLink="{{ link }}" href="{{ href }}">
   {{ title }}
 </a>
+ -->
+
+<ng-container *ngIf="routerLink; else noRouterLink">
+  <a
+      mat-list-item
+      routerLink="{{ routerLink }}">
+    {{ title }}
+  </a>
+</ng-container>
+
+<ng-template #noRouterLink>
+  <a
+      mat-list-item
+      href="{{ href }}">
+    {{ title }}
+  </a>
+</ng-template>
