@@ -41,8 +41,20 @@ export class HazdevTemplateComponent implements OnInit, OnDestroy {
     }
   ];
   @Input() NAVIGATION: any[] = [];
-  @Input() SITE_COMMONNAV: any[];
-  @Input() SITE_SITENAV: any[];
+  @Input() SITE_COMMONNAV: any[] = [
+    {href: '/', display: 'Home'},
+    {href: '/aboutus/', display: 'About Us'},
+    {href: '/contactus/', display: 'Contacts'},
+    {href: '/legal.php', display: 'Legal'}
+  ];
+  @Input() SITE_SITENAV: any[] = [
+    {href: '/earthquakes/', display: 'Earthquakes'},
+    {href: '/hazards/', display: 'Hazards'},
+    {href: '/data/', display: 'Data & Products'},
+    {href: '/learn/', display: 'Learn'},
+    {href: '/monitoring/', display: 'Monitoring'},
+    {href: '/research/', display: 'Research'}
+  ];
   @Input() SITE_URL = environment.siteUrl;
 
   constructor (
