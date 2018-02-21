@@ -102,6 +102,12 @@ Follow these steps to wrap your application in the hazdev angular template.
       </nav>
     </app-hazdev-template>
     ```
+1. To create the "up one level" navigation link a helper class was created `a.up-one-level`. This should be used with the tag for the free-form side-navigation section.
+  ```
+  <a templateSideNavigation class="up-one-level" href="/up/one/level">
+    Up One Level
+  </a>
+  ```
 
 
 

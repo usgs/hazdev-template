@@ -3,6 +3,38 @@
 
 
 /***********************************
+ ****  Up one level navigation  ****
+ ***********************************/
+
+
+a.up-one-level {
+  display: block;
+  padding: .5em 1em;
+  text-decoration: none;
+  margin: 1em 0 -8px;
+  border-bottom: 1px solid #ddd;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.up-one-level,
+.up-one-level:visited {
+  color: #0071bc;
+}
+
+.up-one-level:before {
+    content: '\0e31b';
+    display: inline-block;
+    font-family: Material Icons;
+    margin-right: 1em;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+
+/***********************************
  ****    Section Navigation     ****
  ***********************************/
 
@@ -18,6 +50,8 @@ section.hazdev-template-nav-section > app-navigation-item > a.mat-list-item {
 }
 
 /* navigation border between sections and non-group nav items */
+app-navigation-item + app-navigation-group,
+app-navigation-group + app-navigation-group,
 app-navigation-group + app-navigation-item,
 .site-sectionnav > app-navigation-item + app-navigation-item {
   display: block;
