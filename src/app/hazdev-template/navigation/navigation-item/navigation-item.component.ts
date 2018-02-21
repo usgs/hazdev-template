@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
 export class NavigationItemComponent implements OnInit {
   @Input() href: string;
   @Input() routerLink: any[] | string;
-  @Input() title: string;
+  @Input() display: string;
 
 
   constructor() {}

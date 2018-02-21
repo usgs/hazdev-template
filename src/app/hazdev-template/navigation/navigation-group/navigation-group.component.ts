@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavigationGroupComponent implements OnInit {
   @Input() href: string;
   @Input() routerLink: string;
-  @Input() title: string;
+  @Input() display: string;
 
   constructor() { }
 

@@ -1,14 +1,8 @@
-<!--
-<a mat-list-item routerLink="{{ link }}" href="{{ href }}">
-  {{ title }}
-</a>
- -->
-
 <ng-container *ngIf="routerLink; else noRouterLink">
   <a
       mat-list-item
       routerLink="{{ routerLink }}">
-    {{ title }}
+    {{ display }}
   </a>
 </ng-container>
 
@@ -16,6 +10,6 @@
   <a
       mat-list-item
       href="{{ href }}">
-    {{ title }}
+    {{ display }}
   </a>
 </ng-template>
