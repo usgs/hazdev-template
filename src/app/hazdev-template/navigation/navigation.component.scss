@@ -53,7 +53,7 @@ section.hazdev-template-nav-section > app-navigation-item > a.mat-list-item {
 app-navigation-item + app-navigation-group,
 app-navigation-group + app-navigation-group,
 app-navigation-group + app-navigation-item,
-.site-sectionnav > app-navigation-item + app-navigation-item {
+.site-sectionnav > app-navigation-item +  app-navigation-item {
   display: block;
   border-top: 1px solid #ddd;
 }
