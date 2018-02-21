@@ -12,30 +12,30 @@ export class AppComponent {
 
   NAVIGATION = [
     {
-      header: {href: '/ws/geoserve/index.php', display: 'Geoserve Web Services'},
+      header: {display: 'Geoserve Web Services'},
       links: [
-        {href: '/ws/geoserve/places.php', display: 'Places Service'},
-        {href: '/ws/geoserve/regions.php', display: 'Regions Service'},
-        {href: '/ws/geoserve/layers.php', display: 'Layers Service'}
+        {navHrefLink: '/ws/geoserve/places.php', display: 'Places Service'},
+        {navHrefLink: '/ws/geoserve/regions.php', display: 'Regions Service'},
+        {navHrefLink: '/ws/geoserve/layers.php', display: 'Layers Service'}
       ]
     },
-    {href: '/', display: 'Interactive Interface'},
-    {routerLink: '/any/link/anywhere', display: 'Working Router Link'}
+    {navHrefLink: '/', display: 'Interactive Interface'},
+    {navRouterLink: '/any/link/anywhere', display: 'Working Router Link'}
   ];
 
   SITE_SITENAV = [
-    {href: '/earthquakes/', display: 'Earthquakes'},
-    {href: '/hazards/', display: 'Hazards'},
-    {href: '/data/', display: 'Data & Products'},
-    {href: '/learn/', display: 'Learn'},
-    {href: '/monitoring/', display: 'Monitoring'},
-    {href: '/research/', display: 'Research'}
+    {navHrefLink: '/earthquakes/', display: 'Earthquakes'},
+    {navHrefLink: '/hazards/', display: 'Hazards'},
+    {navHrefLink: '/data/', display: 'Data & Products'},
+    {navHrefLink: '/learn/', display: 'Learn'},
+    {navHrefLink: '/monitoring/', display: 'Monitoring'},
+    {navHrefLink: '/research/', display: 'Research'}
   ];
 
   SITE_COMMONNAV = [
-    {href: '/', display: 'Home'},
-    {href: '/aboutus/', display: 'About Us'},
-    {href: '/contactus/', display: 'Contacts'},
-    {href: '/legal.php', display: 'Legal'}
+    {navHrefLink: '/', display: 'Home'},
+    {navHrefLink: '/aboutus/', display: 'About Us'},
+    {navHrefLink: '/contactus/', display: 'Contacts'},
+    {navHrefLink: '/legal.php', display: 'Legal'}
   ];
 }

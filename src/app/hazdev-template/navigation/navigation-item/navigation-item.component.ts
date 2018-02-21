@@ -8,8 +8,8 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./navigation-item.component.css']
 })
 export class NavigationItemComponent implements OnInit {
-  @Input() href: string;
-  @Input() routerLink: any[] | string;
+  @Input() navHrefLink: string;
+  @Input() navRouterLink: any[] | string;
   @Input() display: string;
 
 

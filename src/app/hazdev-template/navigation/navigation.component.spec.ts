@@ -12,8 +12,8 @@ describe('NavigationComponent', () => {
       declarations: [
         NavigationComponent,
 
-        MockComponent({selector: 'app-navigation-group', inputs: ['href', 'routerLink', 'title']}),
-        MockComponent({selector: 'app-navigation-item', inputs: ['href', 'routerLink', 'title']}),
+        MockComponent({selector: 'app-navigation-group', inputs: ['navHrefLink', 'navRouterLink', 'display']}),
+        MockComponent({selector: 'app-navigation-item', inputs: ['navHrefLink', 'navRouterLink', 'display']}),
         MockComponent({selector: 'mat-nav-list'}),
         MockComponent({selector: 'mat-form-field'})
       ]

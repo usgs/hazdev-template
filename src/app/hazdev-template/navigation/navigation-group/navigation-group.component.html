@@ -1,11 +1,6 @@
 <section class="hazdev-template-nav-section">
   <header>
-    <app-navigation-item
-        class="hazdev-template-nav-item"
-        [href]="href"
-        [routerLink]="routerLink"
-        [display]="display">
-    </app-navigation-item>
+    <ng-content select="[navGroupHeader]"></ng-content>
   </header>
   <ng-content></ng-content>
 </section>

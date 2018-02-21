@@ -10,9 +10,7 @@ describe('NavigationGroupComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NavigationGroupComponent,
-
-        MockComponent({selector: 'app-navigation-item', inputs: ['href', 'routerLink', 'title']}),
+        NavigationGroupComponent
       ]
     })
     .compileComponents();

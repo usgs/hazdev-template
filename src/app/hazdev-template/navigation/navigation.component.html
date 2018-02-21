@@ -5,21 +5,23 @@
 <mat-nav-list *ngIf="NAVIGATION" class="site-sectionnav">
   <ng-container *ngFor="let item of NAVIGATION">
     <app-navigation-group
-        *ngIf="item.header"
-        [href]="item.header.href"
-        [routerLink]="item.header.routerLink"
-        [display]="item.header.display">
+        *ngIf="item.header">
+      <app-navigation-item navGroupHeader
+          [navHrefLink]="item.header.navHrefLink"
+          [navRouterLink]="item.header.navRouterLink"
+          [display]="item.header.display">
+      </app-navigation-item>
       <app-navigation-item
           *ngFor="let link of item.links"
-          [href]="link.href"
-          [routerLink]="link.routerLink"
+          [navHrefLink]="link.navHrefLink"
+          [navRouterLink]="link.navRouterLink"
           [display]="link.display">
       </app-navigation-item>
     </app-navigation-group>
     <app-navigation-item
-        *ngIf="item.href || item.routerLink"
-        [href]="item.href"
-        [routerLink]="item.routerLink"
+        *ngIf="item.navHrefLink || item.navRouterLink"
+        [navHrefLink]="item.navHrefLink"
+        [navRouterLink]="item.navRouterLink"
         [display]="item.display">
     </app-navigation-item>
   </ng-container>
@@ -32,8 +34,8 @@
     aria-label="Site Navigation">
   <app-navigation-item
       *ngFor="let item of SITE_SITENAV"
-      [href]="item.href"
-      [routerLink]="item.routerLink"
+      [navHrefLink]="item.navHrefLink"
+      [navRouterLink]="item.navRouterLink"
       [display]="item.display">
   </app-navigation-item>
 </mat-nav-list>

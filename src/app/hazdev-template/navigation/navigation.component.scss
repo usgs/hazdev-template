@@ -58,6 +58,13 @@ app-navigation-group + app-navigation-item,
   border-top: 1px solid #ddd;
 }
 
+/* non-link header */
+.navigation-no-link-item {
+  display: block;
+  padding: 0 1em;
+  margin: 1em 0;
+}
+
 
 /***********************************
  ****      Site Navigation      ****
