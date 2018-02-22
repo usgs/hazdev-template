@@ -7,7 +7,7 @@
  ***********************************/
 
 
-a.up-one-level {
+a.up-one-level[templatesidenavigation] {
   display: block;
   padding: .5em 1em;
   text-decoration: none;
@@ -19,12 +19,12 @@ a.up-one-level {
   }
 }
 
-.up-one-level,
-.up-one-level:visited {
+a.up-one-level[templatesidenavigation],
+a.up-one-level[templatesidenavigation]:visited {
   color: #0071bc;
 }
 
-.up-one-level:before {
+a.up-one-level[templatesidenavigation]:before {
     content: '\0e31b';
     display: inline-block;
     font-family: Material Icons;
