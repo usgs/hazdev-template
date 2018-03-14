@@ -41,7 +41,7 @@ main {
 @media screen and (max-width: 767px) {
 
   .page-social > a {
-    background: url("/assets/social-sprite.png") no-repeat;
+    background: url("assets/social-sprite.png") no-repeat;
     content: ' ';
     display: inline-block;
     height: 32px;
@@ -76,7 +76,7 @@ main {
   }
 
   .page-social > a:before {
-    background: url("/assets/social-sprite.png") no-repeat;
+    background: url("assets/social-sprite.png") no-repeat;
     content: ' ';
     display: inline-block;
     height: 16px;
