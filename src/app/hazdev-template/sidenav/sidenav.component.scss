@@ -1,0 +1,76 @@
+.sidenav-container {
+  align-items: stretch;
+  display: flex !important;
+  flex-direction: row;
+}
+
+.sidenav {
+  display: block;
+  margin-left: -244px;
+  width: 244px;
+}
+
+.sidenav-backdrop {
+  background-color: rgba(1, 1, 1, 0);;
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  transition-property: background-color,visibility;
+  visibility: hidden;
+  z-index: 3;
+}
+
+.sidenav-content {
+  display: block;
+}
+
+// move by setting margin-left
+.sidenav {
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  transition-property: margin-left;
+}
+
+.sidenav-opened .sidenav {
+  margin-left: 0;
+}
+
+// smaller screen
+// content fixed, nav floats with backdrop
+@media screen and (max-width: 767px) {
+  .sidenav-container {
+    position: relative;
+  }
+
+  .sidenav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    background-color: #fafafa;
+  }
+
+  .sidenav-opened .sidenav-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    visibility: visible;
+  }
+}
+
+// larger screen
+// content flexes, nav moves in from left
+@media screen and (min-width: 768px) {
+  .sidenav {
+    padding-left: 1em;
+  }
+
+  .sidenav-content {
+    flex: 1;
+  }
+}

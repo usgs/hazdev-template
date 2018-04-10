@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { RouterModule } from '@angular/router';
 import {
   MatButtonModule,
   MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
-  MatListModule,
-  MatSidenavModule
+  MatListModule
 } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
-import { HazdevTemplateComponent } from './hazdev-template.component';
 import { FooterComponent } from './footer/footer.component';
+import { HazdevTemplateComponent } from './hazdev-template.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { PageComponent } from './page/page.component';
 import { NavigationGroupComponent } from './navigation/navigation-group/navigation-group.component';
 import { NavigationItemComponent } from './navigation/navigation-item/navigation-item.component';
+import { PageComponent } from './page/page.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
-import { MenuService } from '../menu.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,8 @@ import { MenuService } from '../menu.service';
     NavigationComponent,
     PageComponent,
     NavigationGroupComponent,
-    NavigationItemComponent
+    NavigationItemComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +38,6 @@ import { MenuService } from '../menu.service';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatSidenavModule,
     RouterModule.forRoot([])
   ],
   exports: [
@@ -47,8 +46,7 @@ import { MenuService } from '../menu.service';
     NavigationItemComponent
   ],
   providers: [
-    MediaMatcher,
-    MenuService
+    MediaMatcher
   ]
 })
 export class HazdevTemplateModule { }
