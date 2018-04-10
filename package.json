@@ -1,6 +1,6 @@
 {
   "name": "hazdev-template",
-  "version": "2.1.6",
+  "version": "2.2.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
