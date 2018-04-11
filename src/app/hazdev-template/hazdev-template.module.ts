@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import {
   MatButtonModule,
@@ -38,7 +38,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    RouterModule.forRoot([])
+    RouterModule
   ],
   exports: [
     HazdevTemplateComponent,
