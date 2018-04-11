@@ -8,33 +8,28 @@
   </button>
 </app-header>
 
-<mat-sidenav-container>
-  <mat-sidenav-content>
-    <app-page
-        [TITLE]="TITLE"
-        [CONTACT]="CONTACT"
-        [SOCIAL]="SOCIAL"
-    >
-      <ng-content></ng-content>
-    </app-page>
-  </mat-sidenav-content>
-
-  <mat-sidenav #sidenav
-      class="site-footer"
-      [mode]="mobileQuery.matches ? 'over' : 'side'"
-      [opened]="!mobileQuery.matches"
-      (openedChange)="onSideNavChange($event)"
+<app-sidenav #sidenav
+    [opened]="!mobileQuery.matches">
+  <app-page
+    [TITLE]="TITLE"
+    [CONTACT]="CONTACT"
+    [SOCIAL]="SOCIAL"
   >
+  <ng-content></ng-content>
+  </app-page>
+
+  <div sidenav
+    class="site-footer">
     <app-navigation
-        [NAVIGATION]="NAVIGATION"
-        [SITE_SITENAV]="SITE_SITENAV"
-        [SITE_URL]="SITE_URL"
+      [NAVIGATION]="NAVIGATION"
+      [SITE_SITENAV]="SITE_SITENAV"
+      [SITE_URL]="SITE_URL"
     >
-      <!-- Custom Section Navigation -->
+    <!-- Custom Section Navigation -->
       <ng-content select="[templateSideNavigation]" templateSideNavigation></ng-content>
     </app-navigation>
-  </mat-sidenav>
-</mat-sidenav-container>
+  </div>
+</app-sidenav>
 
 <app-footer
     [SITE_COMMONNAV]="SITE_COMMONNAV"
