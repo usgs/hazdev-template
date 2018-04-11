@@ -253,22 +253,10 @@ mark {
   margin: 10px 14px 0 0;
 }
 
-mat-sidenav-container.mat-drawer-container {
-  background: #fff;
-}
-
-mat-sidenav.site-footer {
-  width: 244px; /* Don't use a percentage here */
-}
-
 /* Larger screen styles */
 @media screen and (min-width: 768px) {
   .hazdev-site-header > .hazdev-sidenav-toggle {
     margin: 1em 1em 0 0;
-  }
-
-  mat-sidenav.site-footer {
-    padding-left: 1em;
   }
 }
 
