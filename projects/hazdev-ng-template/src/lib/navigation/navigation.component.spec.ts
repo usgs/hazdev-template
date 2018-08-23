@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng2-mock-component';
 
 import { NavigationComponent } from './navigation.component';
 
@@ -8,9 +9,21 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        NavigationComponent,
+
+        MockComponent({
+          selector: 'hazdev-template-navigation-group',
+          inputs: ['navHrefLink', 'navRouterLink', 'display']
+        }),
+        MockComponent({
+          selector: 'hazdev-template-navigation-item',
+          inputs: ['navHrefLink', 'navRouterLink', 'display']
+        }),
+        MockComponent({ selector: 'mat-nav-list' }),
+        MockComponent({ selector: 'mat-form-field' })
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

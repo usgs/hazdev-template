@@ -1,3 +1,12 @@
-<p>
-  sidenav works!
-</p>
+<div class="sidenav-container" [class.sidenav-opened]="opened">
+  <div class="sidenav">
+    <ng-content select="[sidenav]"></ng-content>
+  </div>
+
+  <div class="sidenav-backdrop" (click)="toggle()">
+  </div>
+
+  <div class="sidenav-content">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'hazdev-template-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
-  constructor() {}
+export class SidenavComponent {
+  @Input()
+  opened: boolean;
 
-  ngOnInit() {}
+  toggle() {
+    this.opened = !this.opened;
+  }
 }

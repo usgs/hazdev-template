@@ -8,9 +8,8 @@ describe('SidenavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidenavComponent ]
-    })
-    .compileComponents();
+      declarations: [SidenavComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,15 @@ describe('SidenavComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('toggle', () => {
+    it('toggles', () => {
+      component.opened = false;
+      component.toggle();
+      expect(component.opened).toBeTruthy();
+      component.toggle();
+      expect(component.opened).toBeFalsy();
+    });
   });
 });
