@@ -133,6 +133,46 @@
           }
         }
       }
+    },
+    "hazdev-ng-template": {
+      "root": "projects/hazdev-ng-template",
+      "sourceRoot": "projects/hazdev-ng-template/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/hazdev-ng-template/tsconfig.lib.json",
+            "project": "projects/hazdev-ng-template/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/hazdev-ng-template/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hazdev-ng-template/src/test.ts",
+            "tsConfig": "projects/hazdev-ng-template/tsconfig.spec.json",
+            "karmaConfig": "projects/hazdev-ng-template/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hazdev-ng-template/tsconfig.lib.json",
+              "projects/hazdev-ng-template/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "hazdev-template",
