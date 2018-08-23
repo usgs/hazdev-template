@@ -129,7 +129,7 @@
       "root": "projects/hazdev-ng-template",
       "sourceRoot": "projects/hazdev-ng-template/src",
       "projectType": "library",
-      "prefix": "template",
+      "prefix": "hazdev-template",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
