@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "npm run build && cd dist/hazdev-ng-template && npm publish"
+    "publish": "./publish.sh"
   },
   "private": false,
   "dependencies": {

@@ -19,15 +19,14 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/app/hazdev-template/header/assets",
-                "output": "/assets"
+                "input": "../node_modules/hazdev-ng-template/assets",
+                "output": "./assets/"
               },
               {
                 "glob": "**/*",
-                "input": "src/app/hazdev-template/page/assets",
-                "output": "/assets"
+                "input": "dist/hazdev-ng-template/assets",
+                "output": "./assets/"
               },
-              "src/assets",
               "src/favicon.ico"
             ],
             "styles": [],

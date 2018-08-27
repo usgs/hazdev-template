@@ -39,4 +39,4 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     NavigationItemComponent
   ]
 })
-export class HazdevNgTemplateModule {}
+export class HazdevTemplateModule {}

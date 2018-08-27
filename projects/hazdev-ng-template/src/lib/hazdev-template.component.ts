@@ -1,12 +1,13 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, Input, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
 
 import { environment } from '../environments/environment';
 
 @Component({
   selector: 'hazdev-template',
   templateUrl: './hazdev-template.component.html',
-  styleUrls: ['./hazdev-template.component.scss']
+  styleUrls: ['./hazdev-template.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HazdevTemplateComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
