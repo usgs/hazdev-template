@@ -131,8 +131,11 @@ mark {
   padding: 2px 4px;
 }
 
-.mat-button-wrapper {
-  font-weight: 400;
+button.mat-raised-button {
+  background-color: mat-color($mat-grey, 200);
+  color: #333;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* Grid */

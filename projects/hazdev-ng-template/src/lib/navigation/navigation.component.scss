@@ -36,7 +36,7 @@ a.up-one-level[templatesidenavigation]:before {
  ***********************************/
 
 /* group nav item styles */
-section.hazdev-template-nav-section > app-navigation-item > a.mat-list-item {
+section.hazdev-template-nav-section > hazdev-navigation-item > a.mat-list-item {
   color: #666;
   font-size: 0.88em;
 }
@@ -47,10 +47,12 @@ section.hazdev-template-nav-section > app-navigation-item > a.mat-list-item {
 }
 
 /* navigation border between sections and non-group nav items */
-app-navigation-item + app-navigation-group,
-app-navigation-group + app-navigation-group,
-app-navigation-group + app-navigation-item,
-.site-sectionnav > app-navigation-item + app-navigation-item {
+hazdev-template-navigation-item + hazdev-template-navigation-group,
+hazdev-template-navigation-group + hazdev-template-navigation-group,
+hazdev-template-navigation-group + hazdev-template-navigation-item,
+.site-sectionnav
+  > hazdev-template-navigation-item
+  + hazdev-template-navigation-item {
   display: block;
   border-top: 1px solid #ddd;
 }
@@ -73,7 +75,7 @@ mat-nav-list.hazdev-navigation-sitenav {
   padding: 0;
 }
 
-.hazdev-navigation-sitenav > app-navigation-item > a.mat-list-item {
+.hazdev-navigation-sitenav > hazdev-template-navigation-item > a.mat-list-item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 1px solid hsla(0, 0%, 100%, 0.1);
   border-right: 1px solid hsla(0, 0%, 100%, 0.1);

@@ -70,16 +70,23 @@ main {
     margin: 0;
   }
 
-  .page-social > a:before {
-    background: url("assets/social-sprite.png") no-repeat;
-    content: "";
-    display: inline-block;
-    height: 16px;
-    margin-right: 4px;
-    margin-top: -16px;
-    position: relative;
-    top: 2px;
-    width: 16px;
+@media screen and (min-width: 768px) {
+  .page-social {
+    margin: 0;
+  }
+
+  .page-social > a {
+    &:before {
+      background: url("assets/social-sprite.png") no-repeat;
+      content: "";
+      display: inline-block;
+      height: 16px;
+      margin-right: 4px;
+      margin-top: -16px;
+      position: relative;
+      top: 2px;
+      width: 16px;
+    }
 
     &.facebook:before {
       background-position: 0 -32px;
@@ -97,4 +104,6 @@ main {
       background-position: 0 -176px;
     }
   }
+}
+
 }
