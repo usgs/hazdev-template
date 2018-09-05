@@ -9,7 +9,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
 
-        MockComponent({selector: 'app-hazdev-template', inputs: ['TITLE', 'NAVIGATION', 'SITE_SITENAV', 'SITE_COMMONNAV']}),
+        MockComponent({selector: 'hazdev-template', inputs: ['TITLE', 'NAVIGATION', 'SITE_SITENAV', 'SITE_COMMONNAV']}),
       ],
     }).compileComponents();
   }));

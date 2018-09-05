@@ -5,11 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build && ng serve -o",
-    "build": "ng build --prod hazdev-ng-template",
-    "test": "ng test",
+    "build": "./build.sh",
+    "test": "ng test --source-map=false hazdev-ng-template",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "./publish.sh"
+    "publish": "npm run build && npm publish"
   },
   "private": false,
   "dependencies": {
