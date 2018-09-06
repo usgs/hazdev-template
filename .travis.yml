@@ -27,9 +27,11 @@ before_script:
 
 script:
   - ng lint
-  - ng test --single-run --code-coverage
+  - npm run build
+  - ng build --prod --delete-output-path false --base-href /theme
+  - ng test hazdev-ng-template --watch=false --code-coverage
+  - ng test hazdev-template --watch=false --code-coverage
   - npm run e2e
-  - ng build --prod --base-href /theme
 
 after_success:
   - cat coverage/lcov.info | codacy-coverage --verbose

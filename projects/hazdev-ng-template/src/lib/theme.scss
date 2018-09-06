@@ -1,0 +1,78 @@
+/* Import theming functions */
+@import "~@angular/material/theming";
+
+/* set components to use font-family used by entire site */
+$custom-typography: mat-typography-config(
+  $font-family: "Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif"
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include angular-material-typography($custom-typography);
+
+/*
+ Custom palette created using earthquake template colors
+  - http://mcg.mbitson.com/#!?mcgpalette0=3d5e80
+ */
+$earthquake-palette: (
+  50: #e8ecf0,
+  100: #c5cfd9,
+  200: #9eafc0,
+  300: #778ea6,
+  400: #5a7693,
+  500: #3d5e80,
+  600: #375678,
+  700: #2f4c6d,
+  800: #274263,
+  900: #1a3150,
+  A100: #8fbcff,
+  A200: #5c9dff,
+  A400: #297eff,
+  A700: #0f6fff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff
+  )
+);
+
+/*
+ Define the palettes for your theme using the Material Design palettes
+ available in palette.scss (imported above). For each palette, you can
+ optionally specify a default, lighter, and darker hue.
+ */
+$earthquake-app-primary: mat-palette($earthquake-palette);
+$earthquake-app-accent: mat-palette($mat-pink);
+
+/*The warn palette is optional (defaults to red). */
+$earthquake-app-warn: mat-palette($mat-orange);
+
+/* Create the theme object (a Sass map containing all of the palettes). */
+$earthquake-app-theme: mat-light-theme(
+  $earthquake-app-primary,
+  $earthquake-app-accent,
+  $earthquake-app-warn
+);
+
+/*
+$earthquake-header-background: mat-color($earthquake-app-primary, darker);
+$earthquake-header-banner-img: none;
+*/
+
+/* Main banner color */
+/* TODO, remove this color and just use a darker palette color */
+$earthquake-header-background: #000000;
+
+/* Banner image */
+/* TODO, get a new banner image or remove entirely */
+$earthquake-header-banner-img: url("/assets/earthquake/banner.png");

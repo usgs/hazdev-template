@@ -4,21 +4,20 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
+    "start": "npm run build && ng serve -o",
+    "build": "./build.sh",
+    "test": "ng test --source-map=false hazdev-ng-template",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json",
-    "package": "./npm-package.sh"
+    "publish": "npm run build && npm publish"
   },
   "private": false,
   "dependencies": {
+    "@angular/common": "6.0.3",
+    "@angular/core": "6.0.3",
+    "@angular/compiler": "6.0.3",
     "@angular/animations": "6.0.3",
     "@angular/cdk": "^6.0.0",
-    "@angular/common": "6.0.3",
-    "@angular/compiler": "6.0.3",
-    "@angular/core": "6.0.3",
     "@angular/forms": "6.0.3",
     "@angular/http": "6.0.3",
     "@angular/material": "^6.0.0",
@@ -30,8 +29,14 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular/cli": "6.0.3",
     "@angular/compiler-cli": "6.0.3",
+    "@angular-devkit/build-ng-packagr": "~0.6.3",
+    "@angular-devkit/build-angular": "~0.6.3",
+    "ng-packagr": "^2.0.0",
+    "tsickle": ">=0.25.5",
+    "tslib": "^1.7.1",
+    "typescript": "2.7.2",
+    "@angular/cli": "6.0.3",
     "@angular/language-service": "6.0.3",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
@@ -44,12 +49,9 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^2.0.0",
     "ng2-mock-component": "^0.1.1",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
-    "tslint": "~5.9.1",
-    "typescript": "2.7.2",
-    "@angular-devkit/build-angular": "~0.6.3"
+    "tslint": "~5.9.1"
   }
 }

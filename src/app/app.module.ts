@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HazdevTemplateModule } from 'hazdev-ng-template';
 
 import { AppComponent } from './app.component';
-import { HazdevTemplateModule } from './hazdev-template/hazdev-template.module';
-import { RouterModule } from '@angular/router';
-
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -18,11 +15,8 @@ import { RouterModule } from '@angular/router';
 
     RouterModule.forRoot([])
   ],
-  exports: [
-    HazdevTemplateModule
-  ],
-  providers: [
-  ],
+  exports: [HazdevTemplateModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

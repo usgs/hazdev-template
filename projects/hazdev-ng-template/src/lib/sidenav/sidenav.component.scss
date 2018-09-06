@@ -1,0 +1,101 @@
+/**
+ * Side navigation using flex.
+ *
+ * Container is a flex container.
+ * Sidenav and Content are moved on/off screen using negative margins.
+ */
+
+.sidenav-container {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.sidenav {
+  display: block;
+  margin-right: 0;
+  width: 244px;
+
+  // off screen by default
+  // zero height, for when nav is taller than content
+  height: 0;
+  margin-left: -244px;
+
+  // nav moves in from left, and has auto height
+  .sidenav-opened & {
+    height: auto;
+    margin-left: 0;
+  }
+}
+
+.sidenav-backdrop {
+  background-color: rgba(1, 1, 1, 0);
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.sidenav-content {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.sidenav,
+.sidenav-backdrop,
+.sidenav-content {
+  transition-duration: 0.4s;
+  transition-property: background-color, height, margin-left, margin-right,
+    visibility;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+// smaller screen
+@media screen and (max-width: 767px) {
+  .sidenav-container {
+    // prevent horizontal scrolling
+    overflow: hidden;
+  }
+
+  .sidenav {
+    // stack on top of backdrop
+    background-color: #fff;
+    z-index: 4;
+  }
+
+  .sidenav-opened {
+    // .sidenav already moves in from left
+
+    // content moves off to right
+    .sidenav-content {
+      margin-right: -244px;
+      z-index: 2;
+    }
+
+    // backdrop covers content
+    .sidenav-backdrop {
+      background-color: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      visibility: visible;
+      z-index: 3;
+    }
+  }
+}
+
+// larger screen
+// content flexes, nav moves in from left
+@media screen and (min-width: 768px) {
+  .sidenav {
+    padding-left: 1em;
+  }
+
+  .sidenav-content {
+    flex: 1;
+  }
+}

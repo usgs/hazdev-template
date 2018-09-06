@@ -1,0 +1,5 @@
+<footer *ngIf="SITE_COMMONNAV" class="site-commonnav">
+  <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
+    {{ item.display }}
+  </a>
+</footer>
