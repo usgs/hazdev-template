@@ -6,10 +6,10 @@
     "ng": "ng",
     "start": "npm run build && ng serve -o",
     "build": "./build.sh",
-    "test": "ng test --source-map=false hazdev-ng-template",
+    "test": "npm run build && ng test --source-map=false hazdev-ng-template",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "npm run build && npm publish"
+    "publish": "npm run build && cd dist/hazdev-ng-template && npm publish"
   },
   "private": false,
   "dependencies": {
