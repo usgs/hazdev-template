@@ -4,6 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
+  cooperatorService: '/data/comcat/contributor/index.json.php',
   production: false,
   siteUrl: 'http://localhost.localdomain'
 };
