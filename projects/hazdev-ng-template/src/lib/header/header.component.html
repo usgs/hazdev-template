@@ -2,6 +2,8 @@
   <a class="hazdev-site-logo" href="/" title="U.S. Geological Survey">
     <img src="assets/usgs-logo.svg" alt="U.S. Geological Survey logo" />
   </a>
+  <hazdev-template-cooperator *ngIf="cooperator" [cooperator]="cooperator">
+  </hazdev-template-cooperator>
   <a class="hazdev-jumplink-navigation" href="#site-sectionnav">Jump to Navigation</a>
   <ng-content></ng-content>
 </header>

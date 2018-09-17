@@ -15,6 +15,8 @@ export class HazdevTemplateComponent implements OnDestroy {
   public href = '';
 
   @Input()
+  COOPERATOR: string;
+  @Input()
   TITLE: string;
   @Input()
   CONTACT = 'mailto:noreply@example.com';
