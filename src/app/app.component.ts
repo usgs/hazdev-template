@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  COOPERATOR = 'ci';
+
   TITLE = 'Hazdev Angular Template';
 
   NAVIGATION = [
