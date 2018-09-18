@@ -81,14 +81,15 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "../node_modules/hazdev-ng-template/assets",
-                "output": "./assets/"
+                "input": "src/app/hazdev-template/header/assets",
+                "output": "/assets"
               },
               {
                 "glob": "**/*",
-                "input": "dist/hazdev-ng-template/assets",
-                "output": "./assets/"
+                "input": "src/app/hazdev-template/page/assets",
+                "output": "/assets"
               },
+              "src/assets",
               "src/favicon.ico"
             ]
           }
