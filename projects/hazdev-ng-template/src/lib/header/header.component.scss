@@ -28,7 +28,7 @@
 }
 
 hazdev-template-cooperator {
-  display: block;
+  display: none;
   height: 42px;
   left: 135px;
   max-width: 135px;
@@ -66,6 +66,7 @@ hazdev-template-cooperator {
   }
   hazdev-template-cooperator {
     background-color: #000;
+    display: block;
     height: 100%;
     left: 186px;
     max-width: 186px;
