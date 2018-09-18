@@ -1,19 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { CooperatorService } from '../cooperator.service';
+import { Component, Input } from '@angular/core';
+import { Cooperator } from '../cooperator';
 
 @Component({
   selector: 'hazdev-template-cooperator',
-  templateUrl: './cooperator.component.html',
-  styleUrls: ['./cooperator.component.scss']
+  styleUrls: ['./cooperator.component.scss'],
+  templateUrl: './cooperator.component.html'
 })
-export class CooperatorComponent implements OnInit {
-
+export class CooperatorComponent {
   @Input()
-  cooperator: string;
-
-  constructor(public service: CooperatorService) { }
-
-  ngOnInit() {
-  }
-
+  cooperator: Cooperator;
 }
