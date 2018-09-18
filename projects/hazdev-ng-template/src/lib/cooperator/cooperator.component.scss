@@ -1,10 +1,13 @@
 a {
-  display: block;
   height: 100%;
-  width: 100%;
+  max-width: none;
+  white-space: nowrap;
+  display: inline-block;
+  margin-right: 1em;
 
   > img {
-    border: none;
-    max-width: 100%;
+    max-width: none;
+    padding: 1em 0;
+    height: 100%;
   }
 }

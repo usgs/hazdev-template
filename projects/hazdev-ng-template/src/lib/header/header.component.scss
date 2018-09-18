@@ -28,14 +28,13 @@
 }
 
 hazdev-template-cooperator {
+  background-color: #000;
   display: none;
-  height: 42px;
-  left: 135px;
-  max-width: 135px;
+  height: 100%;
+  left: 136px;
   overflow: hidden;
-  padding: 14px 14px 0 0;
+  padding-left: 1em;
   position: absolute;
-  top: 0;
 }
 
 /* visually hide navigation jumplink. */
@@ -65,14 +64,10 @@ hazdev-template-cooperator {
     padding: 1em;
   }
   hazdev-template-cooperator {
-    background-color: #000;
+    background-image: none;
     display: block;
-    height: 100%;
     left: 186px;
-    max-width: 186px;
-    overflow: hidden;
-    padding: 1em 1em 0 0;
-    position: absolute;
+    padding-left: 0;
   }
   .hazdev-site-header:after {
     background-color: mat-color($earthquake-app-primary);
