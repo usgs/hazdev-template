@@ -2,6 +2,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
 
 import { environment } from '../environments/environment';
+import { Cooperator } from './cooperator';
 
 @Component({
   selector: 'hazdev-template',
@@ -15,7 +16,7 @@ export class HazdevTemplateComponent implements OnDestroy {
   public href = '';
 
   @Input()
-  COOPERATOR: string;
+  COOPERATOR: Cooperator;
   @Input()
   TITLE: string;
   @Input()

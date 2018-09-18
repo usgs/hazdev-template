@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Cooperator } from '../cooperator';
 
 @Component({
   selector: 'hazdev-template-header',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
 
   @Input()
-  cooperator: string;
+  cooperator: Cooperator;
 }
