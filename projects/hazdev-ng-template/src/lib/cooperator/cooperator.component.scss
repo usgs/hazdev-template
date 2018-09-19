@@ -1,0 +1,13 @@
+a {
+  height: 100%;
+  max-width: none;
+  white-space: nowrap;
+  display: inline-block;
+  margin-right: 1em;
+
+  > img {
+    max-width: none;
+    padding: 1em 0;
+    height: 100%;
+  }
+}

@@ -12,6 +12,7 @@ import { NavigationItemComponent } from './navigation-item/navigation-item.compo
 import { NavigationComponent } from './navigation/navigation.component';
 import { PageComponent } from './page/page.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { CooperatorComponent } from './cooperator/cooperator.component';
 
 @NgModule({
   imports: [
@@ -24,14 +25,15 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     RouterModule.forRoot([])
   ],
   declarations: [
-    HazdevTemplateComponent,
+    CooperatorComponent,
     FooterComponent,
+    HazdevTemplateComponent,
     HeaderComponent,
     NavigationComponent,
-    PageComponent,
-    SidenavComponent,
+    NavigationGroupComponent,
     NavigationItemComponent,
-    NavigationGroupComponent
+    PageComponent,
+    SidenavComponent
   ],
   exports: [
     HazdevTemplateComponent,

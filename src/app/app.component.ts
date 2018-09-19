@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  COOPERATOR = {
+    linkUrl: 'https://earthquake.usgs.gov/data/comcat/contributor/ci/',
+    imageUrl: 'https://earthquake.usgs.gov/data/comcat/logos/ci.svg',
+    description:
+      'California Integrated Seismic Network: Southern California Seismic Network (Caltech, USGS Pasadena, and Partners)'
+  };
+
   TITLE = 'Hazdev Angular Template';
 
   NAVIGATION = [

@@ -26,6 +26,17 @@
   height: 140%;
   border: none;
 }
+
+hazdev-template-cooperator {
+  background-color: #000;
+  display: none;
+  height: 100%;
+  left: 136px;
+  overflow: hidden;
+  padding-left: 1em;
+  position: absolute;
+}
+
 /* visually hide navigation jumplink. */
 .hazdev-jumplink-navigation {
   display: block;
@@ -51,6 +62,12 @@
   .hazdev-site-header > .hazdev-site-logo > img {
     height: 100%;
     padding: 1em;
+  }
+  hazdev-template-cooperator {
+    background-image: none;
+    display: block;
+    left: 186px;
+    padding-left: 0;
   }
   .hazdev-site-header:after {
     background-color: mat-color($earthquake-app-primary);

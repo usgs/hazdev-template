@@ -1,18 +1,27 @@
-<hazdev-template-header>
-  <button (click)="sidenav.toggle()" class="hazdev-sidenav-toggle" mat-raised-button>
+<hazdev-template-header [cooperator]="COOPERATOR">
+  <button (click)="sidenav.toggle()"
+    class="hazdev-sidenav-toggle"
+    mat-raised-button>
     Menu
   </button>
 </hazdev-template-header>
 
-<hazdev-template-sidenav #sidenav [opened]="!mobileQuery.matches">
-  <hazdev-template-page [TITLE]="TITLE" [CONTACT]="CONTACT" [SOCIAL]="SOCIAL">
+<hazdev-template-sidenav #sidenav
+  [opened]="!mobileQuery.matches">
+  <hazdev-template-page [TITLE]="TITLE"
+    [CONTACT]="CONTACT"
+    [SOCIAL]="SOCIAL">
     <ng-content></ng-content>
   </hazdev-template-page>
 
-  <div sidenav class="site-footer">
-    <hazdev-template-navigation [NAVIGATION]="NAVIGATION" [SITE_SITENAV]="SITE_SITENAV" [SITE_URL]="SITE_URL">
+  <div sidenav
+    class="site-footer">
+    <hazdev-template-navigation [NAVIGATION]="NAVIGATION"
+      [SITE_SITENAV]="SITE_SITENAV"
+      [SITE_URL]="SITE_URL">
       <!-- Custom Section Navigation -->
-      <ng-content select="[templateSideNavigation]" templateSideNavigation></ng-content>
+      <ng-content select="[templateSideNavigation]"
+        templateSideNavigation></ng-content>
     </hazdev-template-navigation>
   </div>
 </hazdev-template-sidenav>
