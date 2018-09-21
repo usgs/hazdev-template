@@ -19,13 +19,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "../node_modules/hazdev-ng-template/assets",
-                "output": "./assets/"
-              },
-              {
-                "glob": "**/*",
-                "input": "dist/hazdev-ng-template/assets",
-                "output": "./assets/"
+                "input": "../projects/hazdev-ng-template/src/assets",
+                "output": "./assets"
               },
               "src/favicon.ico"
             ],
@@ -81,15 +76,9 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/app/hazdev-template/header/assets",
-                "output": "/assets"
+                "input": "../projects/hazdev-ng-template/src/assets",
+                "output": "./assets"
               },
-              {
-                "glob": "**/*",
-                "input": "src/app/hazdev-template/page/assets",
-                "output": "/assets"
-              },
-              "src/assets",
               "src/favicon.ico"
             ]
           }
@@ -147,7 +136,15 @@
           "options": {
             "main": "projects/hazdev-ng-template/src/test.ts",
             "tsConfig": "projects/hazdev-ng-template/tsconfig.spec.json",
-            "karmaConfig": "projects/hazdev-ng-template/karma.conf.js"
+            "karmaConfig": "projects/hazdev-ng-template/karma.conf.js",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/hazdev-ng-template/src/assets",
+                "output": "./assets"
+              },
+              "projects/hazdev-ng-template/src/favicon.ico"
+            ]
           }
         },
         "lint": {

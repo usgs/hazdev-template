@@ -57,7 +57,7 @@ Follow these steps to wrap your application in the hazdev angular template.
     ```
     {
       "glob": "**/*",
-      "input": "../node_modules/hazdev-template/src/assets",
+      "input": "../node_modules/hazdev-ng-template/src/assets",
       "output": "./assets/"
     },
     ```
