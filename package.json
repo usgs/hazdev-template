@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build && ng serve -o",
+    "start": "npm run build && ng serve -o --base-href /some/path/",
     "build": "./build.sh",
     "test": "npm run build && ng test --source-map=false hazdev-ng-template",
     "lint": "ng lint",
