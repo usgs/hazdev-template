@@ -57,6 +57,17 @@ hazdev-template-navigation-group + hazdev-template-navigation-item,
   border-top: 1px solid #ddd;
 }
 
+/* increase font-weight on navigation headers */
+section.hazdev-template-nav-section,
+hazdev-template-navigation-item {
+  font-weight: 500;
+}
+
+/* reduce font-weight on navigation items */
+section.hazdev-template-nav-section > hazdev-template-navigation-item {
+  font-weight: 400;
+}
+
 /* non-link header */
 .navigation-no-link-item {
   display: block;
