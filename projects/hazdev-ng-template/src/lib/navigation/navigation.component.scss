@@ -64,6 +64,11 @@ hazdev-template-navigation-group + hazdev-template-navigation-item,
   margin: 1em 0;
 }
 
+/* active router link */
+.active-link {
+  background: rgba(0, 0, 0, 0.04);
+}
+
 /***********************************
  ****      Site Navigation      ****
  ***********************************/

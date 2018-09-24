@@ -25,7 +25,7 @@ export class AppComponent {
       ]
     },
     { navHrefLink: '/', display: 'Interactive Interface' },
-    { navRouterLink: '/any/link/anywhere', display: 'Working Router Link' }
+    { navRouterLink: '/', display: 'Working Router Link' }
   ];
 
   SITE_SITENAV = [
