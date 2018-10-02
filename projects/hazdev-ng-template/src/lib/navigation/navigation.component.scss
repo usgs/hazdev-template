@@ -9,7 +9,7 @@ a.up-one-level[templatesidenavigation] {
   display: block;
   padding: 0.5em 1em;
   text-decoration: none;
-  margin: 1em 0 -8px;
+  margin: 1em 0 8px;
   border-bottom: 1px solid #ddd;
 
   &:hover {
@@ -71,8 +71,9 @@ section.hazdev-template-nav-section > hazdev-template-navigation-item {
 /* non-link header */
 .navigation-no-link-item {
   display: block;
+  font-weight: 500;
   padding: 0 1em;
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 
 /* active router link */

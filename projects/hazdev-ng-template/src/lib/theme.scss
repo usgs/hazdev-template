@@ -60,8 +60,7 @@ $earthquake-app-warn: mat-palette($mat-orange);
 /* Create the theme object (a Sass map containing all of the palettes). */
 $earthquake-app-theme: mat-light-theme(
   $earthquake-app-primary,
-  $earthquake-app-accent,
-  $earthquake-app-warn
+  $earthquake-app-primary
 );
 
 /*
