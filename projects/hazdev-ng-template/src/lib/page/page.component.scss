@@ -38,8 +38,8 @@ main {
 
 @media screen and (max-width: 767px) {
   .page-social > a {
-    background: url("/assets/social-sprite.png") no-repeat;
-    content: " ";
+    background: url('/assets/social-sprite.png') no-repeat;
+    content: ' ';
     display: inline-block;
     height: 32px;
     margin-top: 0;
@@ -70,39 +70,33 @@ main {
     margin: 0;
   }
 
-  @media screen and (min-width: 768px) {
-    .page-social {
-      margin: 0;
+  .page-social > a {
+    &:before {
+      background: url('/assets/social-sprite.png') no-repeat;
+      content: '';
+      display: inline-block;
+      height: 16px;
+      margin-right: 4px;
+      margin-top: -16px;
+      position: relative;
+      top: 2px;
+      width: 16px;
     }
 
-    .page-social > a {
-      &:before {
-        background: url("/assets/social-sprite.png") no-repeat;
-        content: "";
-        display: inline-block;
-        height: 16px;
-        margin-right: 4px;
-        margin-top: -16px;
-        position: relative;
-        top: 2px;
-        width: 16px;
-      }
+    &.facebook:before {
+      background-position: 0 -32px;
+    }
 
-      &.facebook:before {
-        background-position: 0 -32px;
-      }
+    &.twitter:before {
+      background-position: 0 -80px;
+    }
 
-      &.twitter:before {
-        background-position: 0 -80px;
-      }
+    &.google-plus:before {
+      background-position: 0 -128px;
+    }
 
-      &.google-plus:before {
-        background-position: 0 -128px;
-      }
-
-      &.email:before {
-        background-position: 0 -176px;
-      }
+    &.email:before {
+      background-position: 0 -176px;
     }
   }
 }
