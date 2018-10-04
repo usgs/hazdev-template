@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class HazdevNgTemplateService {
   mobileEmitter = new BehaviorSubject(null);
 
-  emitMobileEvent(isMobile: boolean) {
+  emitClickEvent(isMobile: boolean) {
     this.mobileEmitter.next(isMobile);
   }
 }

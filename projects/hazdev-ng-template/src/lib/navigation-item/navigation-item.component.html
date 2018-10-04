@@ -1,17 +1,24 @@
 <ng-container *ngIf="navRouterLink">
-  <a mat-list-item [routerLink]="navRouterLink" routerLinkActive="active-link">
+  <a mat-list-item
+    [routerLink]="navRouterLink"
+    routerLinkActive="active-link"
+    (click)="onClick($event)">
     {{ display }}
   </a>
 </ng-container>
 
 <ng-container *ngIf="navHrefLink">
-  <a mat-list-item [href]="navHrefLink">
+  <a mat-list-item
+    [href]="navHrefLink"
+    (click)="onClick($event)">
     {{ display }}
   </a>
 </ng-container>
 
 <ng-container *ngIf="!navHrefLink && !navRouterLink">
-  <span mat-list-item class="navigation-no-link-item">
+  <span mat-list-item
+    class="navigation-no-link-item"
+    (click)="onClick($event)">
     {{ display }}
   </span>
 </ng-container>
