@@ -8,13 +8,9 @@ describe('NavigationGroupComponent', () => {
   let fixture: ComponentFixture<NavigationGroupComponent>;
 
   beforeEach(async(() => {
-    const windowMock: Window = <any>{};
     TestBed.configureTestingModule({
       declarations: [NavigationGroupComponent],
-      providers: [
-        { provide: HazdevNgTemplateService },
-        { provide: 'Window', useValue: window }
-      ]
+      providers: [{ provide: HazdevNgTemplateService }]
     }).compileComponents();
   }));
 
