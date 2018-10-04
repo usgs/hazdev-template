@@ -22,7 +22,7 @@ export class NavigationGroupComponent {
    */
   getViewPortWidth(): boolean {
     try {
-      return this.window.screen.width <= 800;
+      return this.window.screen.width < 768;
     } catch (e) {
       return false;
     }
