@@ -9,10 +9,14 @@ describe('NavigationItemComponent', () => {
   let fixture: ComponentFixture<NavigationItemComponent>;
 
   beforeEach(async(() => {
+    const windowMock: Window = <any>{};
     TestBed.configureTestingModule({
       declarations: [NavigationItemComponent],
       imports: [RouterModule.forRoot([])],
-      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: 'Window', useValue: window }
+      ]
     }).compileComponents();
   }));
 

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavigationGroupComponent } from './navigation-group.component';
+import { HazdevNgTemplateService } from '../hazdev-template.service';
 
 describe('NavigationGroupComponent', () => {
   let component: NavigationGroupComponent;
@@ -8,9 +9,9 @@ describe('NavigationGroupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationGroupComponent ]
-    })
-    .compileComponents();
+      declarations: [NavigationGroupComponent],
+      providers: [{ provide: HazdevNgTemplateService }]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

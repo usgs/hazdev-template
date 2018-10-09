@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -39,6 +44,7 @@ import { CooperatorComponent } from './cooperator/cooperator.component';
     HazdevTemplateComponent,
     NavigationGroupComponent,
     NavigationItemComponent
-  ]
+  ],
+  providers: [{ provide: 'Window', useValue: window }]
 })
 export class HazdevTemplateModule {}

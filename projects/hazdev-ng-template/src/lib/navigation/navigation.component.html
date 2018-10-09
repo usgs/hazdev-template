@@ -2,35 +2,66 @@
 <ng-content select="[templateSideNavigation]"></ng-content>
 
 <!-- Navigation from NAVIGATION  -->
-<mat-nav-list *ngIf="NAVIGATION" class="site-sectionnav">
+<mat-nav-list *ngIf="NAVIGATION"
+  class="site-sectionnav">
   <ng-container *ngFor="let item of NAVIGATION">
     <hazdev-template-navigation-group *ngIf="item.header">
-      <hazdev-template-navigation-item navGroupHeader [navHrefLink]="item.header.navHrefLink" [navRouterLink]="item.header.navRouterLink"
+      <hazdev-template-navigation-item navGroupHeader
+        [navHrefLink]="item.header.navHrefLink"
+        [navRouterLink]="item.header.navRouterLink"
         [display]="item.header.display">
       </hazdev-template-navigation-item>
-      <hazdev-template-navigation-item *ngFor="let link of item.links" [navHrefLink]="link.navHrefLink" [navRouterLink]="link.navRouterLink"
+      <hazdev-template-navigation-item *ngFor="let link of item.links"
+        [navHrefLink]="link.navHrefLink"
+        [navRouterLink]="link.navRouterLink"
         [display]="link.display">
       </hazdev-template-navigation-item>
     </hazdev-template-navigation-group>
-    <hazdev-template-navigation-item *ngIf="item.navHrefLink || item.navRouterLink" [navHrefLink]="item.navHrefLink" [navRouterLink]="item.navRouterLink"
+    <hazdev-template-navigation-item *ngIf="item.navHrefLink || item.navRouterLink"
+      [navHrefLink]="item.navHrefLink"
+      [navRouterLink]="item.navRouterLink"
       [display]="item.display">
     </hazdev-template-navigation-item>
   </ng-container>
 </mat-nav-list>
 
 <!-- Navigation from SITE_SITENAV  -->
-<mat-nav-list *ngIf="SITE_SITENAV" class="hazdev-navigation-sitenav" aria-label="Site Navigation">
-  <hazdev-template-navigation-item *ngFor="let item of SITE_SITENAV" [navHrefLink]="item.navHrefLink" [navRouterLink]="item.navRouterLink"
+<mat-nav-list *ngIf="SITE_SITENAV"
+  class="hazdev-navigation-sitenav"
+  aria-label="Site Navigation">
+  <hazdev-template-navigation-item *ngFor="let item of SITE_SITENAV"
+    [navHrefLink]="item.navHrefLink"
+    [navRouterLink]="item.navRouterLink"
     [display]="item.display">
   </hazdev-template-navigation-item>
 </mat-nav-list>
 
-<form class="site-search" role="search" action="//search.usa.gov/search" method="get" accept-charset="UTF-8">
-  <input name="utf8" type="hidden" value="✓" />
-  <input name="affiliate" type="hidden" value="usgs" />
-  <input name="sitelimit" type="hidden" value="{{ SITE_URL }}" />
+<form class="site-search"
+  role="search"
+  action="//search.usa.gov/search"
+  method="get"
+  accept-charset="UTF-8">
+  <input name="utf8"
+    aria-label="Charset"
+    type="hidden"
+    value="✓" />
+  <input name="affiliate"
+    aria-label="Affiliate"
+    type="hidden"
+    value="usgs" />
+  <input name="sitelimit"
+    aria-label="Sitelimit"
+    type="hidden"
+    value="{{ SITE_URL }}" />
   <mat-form-field>
-    <input matInput id="query" name="query" type="search" placeholder="Search..." title="Search" />
+    <input matInput
+      aria-label="Search"
+      id="query"
+      name="query"
+      type="search"
+      placeholder="Search..."
+      title="Search" />
   </mat-form-field>
-  <button type="submit" mat-raised-button>Search</button>
+  <button type="submit"
+    mat-raised-button>Search</button>
 </form>
