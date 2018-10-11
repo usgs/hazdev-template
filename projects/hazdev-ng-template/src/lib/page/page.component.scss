@@ -57,10 +57,6 @@ $social-sprite: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAGACAMAA
       background-position: 0 -48px;
     }
 
-    &.google-plus {
-      background-position: 0 -96px;
-    }
-
     &.email {
       background-position: 0 -144px;
     }
@@ -91,10 +87,6 @@ $social-sprite: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAGACAMAA
 
     &.twitter:before {
       background-position: 0 -80px;
-    }
-
-    &.google-plus:before {
-      background-position: 0 -128px;
     }
 
     &.email:before {

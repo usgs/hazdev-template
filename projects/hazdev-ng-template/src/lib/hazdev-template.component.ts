@@ -35,11 +35,6 @@ export class HazdevTemplateComponent implements OnDestroy {
       class: 'twitter'
     },
     {
-      display: 'Google',
-      href: 'https://plusone.google.com/_/+1/confirm?url={URL}',
-      class: 'google-plus'
-    },
-    {
       display: 'Email',
       href: '{CONTACT}?to=&subject={TITLE}&body={URL}',
       class: 'email'
