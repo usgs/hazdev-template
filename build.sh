@@ -8,7 +8,7 @@ PROJECT_DIR=projects/$APP/
 ng build --prod ${APP};
 
 ## copy assets into npm package
-cp -rv ${PROJECT_DIR}/src/assets ${DIST_DIR}/.;
+cp -Rv ${PROJECT_DIR}/src/assets ${DIST_DIR}/.;
 find ${DIST_DIR} -type f -name '*.js' -exec \
   sed -i '' 's|/assets|assets|g' {} \;
 

@@ -18,6 +18,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { PageComponent } from './page/page.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CooperatorComponent } from './cooperator/cooperator.component';
+import { HazdevNgTemplateService } from './hazdev-template.service';
 
 @NgModule({
   imports: [
@@ -45,6 +46,6 @@ import { CooperatorComponent } from './cooperator/cooperator.component';
     NavigationGroupComponent,
     NavigationItemComponent
   ],
-  providers: [{ provide: 'Window', useValue: window }]
+  providers: [{ provide: 'Window', useValue: window }, HazdevNgTemplateService]
 })
 export class HazdevTemplateModule {}
