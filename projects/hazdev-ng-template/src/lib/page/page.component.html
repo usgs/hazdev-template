@@ -11,7 +11,7 @@
     <div *ngIf="CONTACT">
       <a href="{{ CONTACT }}">Questions or comments?</a>
     </div>
-    <nav *ngIf="SOCIAL" class="page-social" aria-label="Share this page">
+    <nav *ngIf="SOCIAL" class="page-social" aria-label="Share this page" (click)="onClick($event)">
       <a *ngFor="let social of SOCIAL" href="{{ getSocialHref(social.href) }}" title="Share using {{ social.display }}" class="{{ social.class }}">{{ social.display }}</a>
     </nav>
   </footer>
