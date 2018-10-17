@@ -1,17 +1,17 @@
 import { inject, TestBed } from '@angular/core/testing';
 
-import { HazdevNgTemplateService } from './hazdev-template.service';
+import { HazdevTemplateService } from './hazdev-template.service';
 
-describe('HazdevNgTemplateService', () => {
+describe('HazdevTemplateService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HazdevNgTemplateService]
+      providers: [HazdevTemplateService]
     });
   });
 
   it('should be created', inject(
-    [HazdevNgTemplateService],
-    (service: HazdevNgTemplateService) => {
+    [HazdevTemplateService],
+    (service: HazdevTemplateService) => {
       expect(service).toBeTruthy();
     }
   ));

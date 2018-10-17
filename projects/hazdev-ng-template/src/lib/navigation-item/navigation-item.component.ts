@@ -1,5 +1,5 @@
 import { Component, Input, Inject } from '@angular/core';
-import { HazdevNgTemplateService } from '../hazdev-template.service';
+import { HazdevTemplateService } from '../hazdev-template.service';
 
 @Component({
   selector: 'hazdev-template-navigation-item',
@@ -16,7 +16,7 @@ export class NavigationItemComponent {
 
   constructor(
     @Inject('Window') private window: any,
-    public hazdevService: HazdevNgTemplateService
+    public hazdevService: HazdevTemplateService
   ) {}
 
   /**

@@ -1,4 +1,4 @@
-import { HazdevNgTemplateService } from './../hazdev-template.service';
+import { HazdevTemplateService } from './../hazdev-template.service';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavigationGroupComponent } from './../navigation-group/navigation-group.component';
@@ -13,7 +13,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   @Input()
   opened: boolean;
 
-  constructor(public hazdevService: HazdevNgTemplateService) {}
+  constructor(public hazdevService: HazdevTemplateService) {}
 
   ngOnDestroy() {
     this.navGroupSub.unsubscribe();
