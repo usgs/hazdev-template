@@ -63,6 +63,15 @@ $earthquake-app-theme: mat-light-theme(
   $earthquake-app-primary
 );
 
+/* 
+Add a mat-elevation mixin so that we get shadows on material components.
+See "Breaking Changes" section for info on the mat-eleveation changes.
+ - https://github.com/angular/material2/releases?after=7.0.1
+*/
+@mixin theme-elevation($zValue) {
+  @include mat-theme-elevation($zValue, $earthquake-app-theme);
+}
+
 /*
 $earthquake-header-background: mat-color($earthquake-app-primary, darker);
 $earthquake-header-banner-img: none;
