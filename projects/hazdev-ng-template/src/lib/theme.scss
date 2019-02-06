@@ -14,20 +14,20 @@ $custom-typography: mat-typography-config(
   - http://mcg.mbitson.com/#!?mcgpalette0=3d5e80
  */
 $earthquake-palette: (
-  50: #e8ecf0,
-  100: #c5cfd9,
-  200: #9eafc0,
-  300: #778ea6,
-  400: #5a7693,
-  500: #3d5e80,
-  600: #375678,
-  700: #2f4c6d,
-  800: #274263,
-  900: #1a3150,
-  A100: #8fbcff,
-  A200: #5c9dff,
-  A400: #297eff,
-  A700: #0f6fff,
+  50: #e8edf6,
+  100: #c6d2e8,
+  200: #a0b5d8,
+  300: #7a97c8,
+  400: #5e80bd,
+  500: #416ab1,
+  600: #3b62aa,
+  700: #3257a1,
+  800: #2a4d98,
+  900: #1c3c88,
+  A100: #c2d2ff,
+  A200: #8facff,
+  A400: #5c87ff,
+  A700: #4274ff,
   contrast: (
     50: #000000,
     100: #000000,
@@ -41,7 +41,7 @@ $earthquake-palette: (
     900: #ffffff,
     A100: #000000,
     A200: #000000,
-    A400: #ffffff,
+    A400: #000000,
     A700: #ffffff
   )
 );
