@@ -1,13 +1,37 @@
+@import '../theme.scss';
+
+.horizontal {
+  margin: 1em 0;
+}
+
 .site-commonnav {
-  border-top: 1px solid #ccc;
+  background: mat-color($earthquake-app-primary);
   display: block;
   font-size: 0.88em;
-  margin: 0 0 1em;
+  padding: 1em;
   text-align: center;
+}
+
+.site-commonnav > div.interior-nav,
+.site-commonnav > div.common-nav {
+  > a {
+    color: #fff;
+    margin: 0.3em 0.5em;
+  }
+
+  > a:hover,
+  > a:visited,
+  > a:active {
+    color: #fff;
+  }
+}
+
+.site-commonnav > div.interior-nav {
+  text-align: left;
+  margin-left: 0.5em;
 
   > a {
-    display: inline-block;
-    margin: 1em;
+    display: block;
   }
 }
 
