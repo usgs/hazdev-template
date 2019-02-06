@@ -7,7 +7,9 @@ import { Cooperator } from '../cooperator';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
   @Input()
   cooperator: Cooperator;
+
+  @Input()
+  SITE_URL: string;
 }

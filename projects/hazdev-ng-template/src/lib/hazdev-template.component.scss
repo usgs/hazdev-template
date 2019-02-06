@@ -1,9 +1,13 @@
-@import "./styles.scss";
+@import './styles.scss';
 
 /* Mobile styles first */
 .hazdev-site-header > .hazdev-sidenav-toggle {
   float: right;
   margin: 10px 14px 0 0;
+}
+
+.hazdev-site-header > .hazdev-sidenav-toggle.hamburger > img:hover {
+  cursor: pointer;
 }
 
 /* Larger screen styles */

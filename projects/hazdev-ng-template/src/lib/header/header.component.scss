@@ -1,5 +1,5 @@
 /* Import your custom theme */
-@import "../theme.scss";
+@import '../theme.scss';
 
 .hazdev-site-header {
   background-color: mat-color($earthquake-app-primary);
@@ -47,13 +47,11 @@ hazdev-template-cooperator {
 @media screen and (min-width: 768px) {
   .hazdev-site-header {
     /* make banner larger on large screens. */
-    background-color: $earthquake-header-background;
-    background-image: $earthquake-header-banner-img;
     background-position: 186px 0;
     background-repeat: no-repeat;
     background-size: auto 100%;
     height: 90px; /* 1.5 line-height on 1em text, with 0.25em padding top/bottom */
-    margin-bottom: 2.5em;
+    /* margin-bottom: 2.5em; */
   } /* also adjust size of usgs logo */
   .hazdev-site-header > .hazdev-site-logo {
     height: 100%;
@@ -69,23 +67,11 @@ hazdev-template-cooperator {
     left: 186px;
     padding-left: 0;
   }
-  .hazdev-site-header:after {
-    background-color: mat-color($earthquake-app-primary);
-    color: #ffffff;
-    content: "Earthquake Hazards Program";
-    display: block;
-    left: 0;
-    line-height: 2;
-    padding: 0.25em 0 0.25em 1em;
-    position: absolute;
-    right: 0;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    top: 100%;
-  }
 }
+
 @media print {
   /** Only show USGS logo when printing, requires background colors... */
-  [role="banner"] {
+  [role='banner'] {
     background-color: #fff;
     height: 0;
     margin: 0;
@@ -93,13 +79,13 @@ hazdev-template-cooperator {
     visibility: hidden;
     width: 100%;
   }
-  [role="banner"]:after {
+  [role='banner']:after {
     color: #333;
-    content: "U.S. Geological Survey - " "Earthquake Hazards Program";
+    content: 'U.S. Geological Survey - ' 'Earthquake Hazards Program';
     display: block;
     visibility: visible;
   }
-  [role="main"] {
+  [role='main'] {
     padding: 1em 0 0 !important;
   }
 }

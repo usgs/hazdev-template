@@ -38,9 +38,24 @@ export class AppComponent {
   ];
 
   SITE_COMMONNAV = [
-    { navHrefLink: '/', display: 'Home' },
-    { navHrefLink: '/aboutus/', display: 'About Us' },
-    { navHrefLink: '/contactus/', display: 'Contacts' },
-    { navHrefLink: '/legal.php', display: 'Legal' }
+    // { navHrefLink: '/', display: 'Home' },
+    // { navHrefLink: '/aboutus/', display: 'About Us' },
+    // { navHrefLink: '/contactus/', display: 'Contacts' },
+    // { navHrefLink: '/legal.php', display: 'Legal' }
+    {
+      navHrefLink: 'https://www.doi.gov/privacy',
+      display: 'DOI Privacy Policy'
+    },
+    {
+      navHrefLink: 'https://www.usgs.gov/policies-and-notices',
+      display: 'Legal'
+    },
+    {
+      navHrefLink:
+        'https://www.usgs.gov/accessibility-and-us-geological-survey',
+      display: 'Accessibility'
+    },
+    { navHrefLink: 'https://www.usgs.gov/sitemap', display: 'Site Map' },
+    { navHrefLink: 'https://answers.usgs.gov/', display: 'Contact USGS' }
   ];
 }

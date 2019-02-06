@@ -1,4 +1,8 @@
+/* Import your custom theme */
+@import '../theme.scss';
+
 .site-commonnav {
+  background: mat-color($earthquake-app-primary);
   border-top: 1px solid #ccc;
   display: block;
   font-size: 0.88em;
@@ -8,6 +12,17 @@
   > a {
     display: inline-block;
     margin: 1em;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  > a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  > a:visited {
+    color: #fff;
   }
 }
 
