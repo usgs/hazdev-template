@@ -1,5 +1,11 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnDestroy,
+  ViewEncapsulation
+} from '@angular/core';
 
 import { environment } from '../environments/environment';
 import { Cooperator } from './cooperator';
@@ -44,10 +50,29 @@ export class HazdevTemplateComponent implements OnDestroy {
   NAVIGATION: any[] = [];
   @Input()
   SITE_COMMONNAV: any[] = [
-    { navHrefLink: '/', display: 'Home' },
-    { navHrefLink: '/aboutus/', display: 'About Us' },
-    { navHrefLink: '/contactus/', display: 'Contacts' },
-    { navHrefLink: '/legal.php', display: 'Legal' }
+    {
+      navHrefLink: 'https://www.doi.gov/privacy',
+      display: 'DOI Privacy Policy'
+    },
+    {
+      navHrefLink: 'https://www.usgs.gov/policies-and-notices',
+      display: 'Legal'
+    },
+    {
+      navHrefLink:
+        'https://www.usgs.gov/accessibility-and-us-geological-survey',
+      display: 'Accessibility'
+    },
+    { navHrefLink: 'https://www.usgs.gov/sitemap', display: 'Site Map' },
+    { navHrefLink: 'https://answers.usgs.gov/', display: 'Contact USGS' }
+  ];
+  @Input()
+  SITE_INTERIORNAV: any[] = [
+    {
+      navHrefLink: 'https://www.doi.gov/',
+      display: 'U.S.Department of the Interior'
+    },
+    { navHrefLink: 'https://www.usgs.gov/', display: 'U.S. Geological Survey' }
   ];
   @Input()
   SITE_SITENAV: any[] = [

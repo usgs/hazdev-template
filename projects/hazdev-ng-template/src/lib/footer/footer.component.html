@@ -1,5 +1,13 @@
-<footer *ngIf="SITE_COMMONNAV" class="site-commonnav">
-  <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
-    {{ item.display }}
-  </a>
+<footer class="site-commonnav">
+  <div *ngIf="SITE_INTERIORNAV" class="interior-nav">
+    <a *ngFor="let item of SITE_INTERIORNAV" [href]="item.navHrefLink">{{
+      item.display
+    }}</a>
+  </div>
+  <hr class="horizontal" />
+  <div *ngIf="SITE_COMMONNAV" class="common-nav">
+    <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
+      {{ item.display }}
+    </a>
+  </div>
 </footer>
