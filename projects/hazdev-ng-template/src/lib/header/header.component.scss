@@ -4,7 +4,6 @@
 .hazdev-site-header {
   background-color: mat-color($earthquake-app-primary);
   height: 65px;
-  min-height: 50px;
   position: relative;
 }
 /* position usgs logo over background. */
@@ -16,9 +15,8 @@
     = hide "science for a changing world" on small screens.
   */
   display: block;
-  height: 65px;
+  height: 50px;
   left: 0;
-  min-height: 50px;
   overflow: hidden;
   padding: 14px 14px 0;
   position: absolute;
