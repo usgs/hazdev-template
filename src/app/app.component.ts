@@ -28,12 +28,55 @@ export class AppComponent {
     { navRouterLink: '/', display: 'Working Router Link' }
   ];
 
-  SITE_INTERIORNAV = [
+
+  SITE_COMMONNAV = [
     {
       navHrefLink: 'https://www.doi.gov/',
-      display: 'U.S.Department of the Interior'
+      display: 'U.S. Department of the Interior'
     },
-    { navHrefLink: 'https://www.usgs.gov/', display: 'U.S. Geological Survey' }
+    {
+      navHrefLink: 'https://www.doioig.gov/',
+      display: 'DOI Inspector General'
+    },
+    {
+      navHrefLink: 'https://www.whitehouse.gov/',
+      display: 'White House'
+    },
+    {
+      navHrefLink: 'https://www.whitehouse.gov/omb/management/egov/',
+      display: 'E-gov'
+    },
+    {
+      navHrefLink: 'https://www.doi.gov/pmb/eeo/no-fear-act',
+      display: 'No Fear Act'
+    },
+    {
+      navHrefLink: 'https://www2.usgs.gov/foia',
+      display: 'FOIA'
+     }
+  ];
+
+  SITE_INTERIORNAV = [
+    {
+      navHrefLink: 'https://www.doi.gov/privacy',
+      display: 'DOI Privacy Policy'
+    },
+    {
+      navHrefLink: 'https://www.usgs.gov/laws/policies_notices.html',
+      display: 'Legal'
+    },
+    {
+      navHrefLink: 'https://www2.usgs.gov/laws/accessibility.html',
+      display: 'Accessibility'
+    },
+    {
+      navHrefLink: 'https://www.usgs.gov/sitemap.html',
+      display: 'Site Map'
+    },
+    {
+      navHrefLink: 'https://answers.usgs.gov/',
+      display: 'Contact USGS'
+    }
   ];
 
   SITE_SITENAV = [
@@ -45,21 +88,12 @@ export class AppComponent {
     { navHrefLink: '/research/', display: 'Research' }
   ];
 
-  SITE_COMMONNAV = [
-    {
-      navHrefLink: 'https://www.doi.gov/privacy',
-      display: 'DOI Privacy Policy'
-    },
-    {
-      navHrefLink: 'https://www.usgs.gov/policies-and-notices',
-      display: 'Legal'
-    },
-    {
-      navHrefLink:
-        'https://www.usgs.gov/accessibility-and-us-geological-survey',
-      display: 'Accessibility'
-    },
-    { navHrefLink: 'https://www.usgs.gov/sitemap', display: 'Site Map' },
-    { navHrefLink: 'https://answers.usgs.gov/', display: 'Contact USGS' }
+  SITE_SOCIAL = [
+    { navHrefLink: 'https://twitter.com/usgs', display: 'Twitter', class: 'fa fa-twitter-square' },
+    { navHrefLink: 'https://facebook.com/usgeologicalsurvey', display: 'Facebook', class: 'fa fa-facebook-square' },
+    { navHrefLink: 'https://github.com/usgs', display: 'GitHub', class: 'fa fa-github' },
+    { navHrefLink: 'https://flickr.com/usgeologicalsurvey', display: 'Flickr', class: 'fa fa-flickr' },
+    { navHrefLink: 'http://youtube.com/usgs', display: 'YouTube', class: 'fa fa-youtube-play' },
+    { navHrefLink: 'https://instagram.com/usgs', display: 'Instagram', class: 'fa fa-instagram' },
   ];
 }

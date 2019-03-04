@@ -84,6 +84,8 @@ export class HazdevTemplateComponent implements OnDestroy {
     { navHrefLink: '/research/', display: 'Research' }
   ];
   @Input()
+  SITE_SOCIAL: any[];
+  @Input()
   SITE_URL = environment.siteUrl;
 
   public mobileQueryListener;

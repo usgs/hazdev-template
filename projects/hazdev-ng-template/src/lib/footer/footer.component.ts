@@ -11,4 +11,7 @@ export class FooterComponent {
 
   @Input()
   SITE_INTERIORNAV: any[];
+
+  @Input()
+  SITE_SOCIAL: any[];
 }
