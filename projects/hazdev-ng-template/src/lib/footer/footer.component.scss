@@ -31,6 +31,10 @@
   }
 }
 
+.social-nav {
+  margin: 1em 0 0;
+}
+
 .interior-nav,
 .common-nav,
 .social-nav {
@@ -51,5 +55,16 @@
 @media print {
   .site-commonnav {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-nav {
+    margin: 0;
   }
 }

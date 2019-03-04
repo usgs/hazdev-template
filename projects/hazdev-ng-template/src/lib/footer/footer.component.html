@@ -7,14 +7,16 @@
       item.display
     }}</a>
   </div>
-  <div *ngIf="SITE_COMMONNAV" class="common-nav">
-    <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
-      {{ item.display }}
-    </a>
-  </div>
-  <div *ngIf="SITE_SOCIAL" class="social-nav">
-    <a *ngFor="let item of SITE_SOCIAL" [href]="item.navHrefLink" >
-      <i [class]="item.class"><span class="only">{{ item.display }}</span></i>
-    </a>
+  <div class="space-between">
+    <div *ngIf="SITE_COMMONNAV" class="common-nav">
+      <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
+        {{ item.display }}
+      </a>
+    </div>
+    <div *ngIf="SITE_SOCIAL" class="social-nav">
+      <a *ngFor="let item of SITE_SOCIAL" [href]="item.navHrefLink" >
+        <i [class]="item.class"><span class="only">{{ item.display }}</span></i>
+      </a>
+    </div>
   </div>
 </footer>
