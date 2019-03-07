@@ -10,18 +10,10 @@
   padding: 2em 1em;
   position: relative;
 
-  > div {
-    padding: 1em 0;
-  }
-
-  > div + div {
-    border-top: 1px solid #eee;
-  }
-
   > .hazdev-site-logo {
     display: block;
     height: 56px;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     width: 152px;
 
     > img {
@@ -31,13 +23,11 @@
   }
 }
 
-.social-nav {
-  margin: 1em 0 0;
-}
-
 .interior-nav,
 .common-nav,
-.social-nav {
+.social-nav,
+.space-between {
+  margin: 1em 0 0;
 
   > a {
     color: #fff;
@@ -58,13 +48,11 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .space-between {
+.space-between {
+  border-top: 1px solid #eee;
+
+  @media screen and (min-width: 1000px) {
     display: flex;
     justify-content: space-between;
-  }
-
-  .social-nav {
-    margin: 0;
   }
 }
