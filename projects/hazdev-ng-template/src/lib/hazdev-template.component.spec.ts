@@ -23,13 +23,22 @@ describe('HazdevTemplateComponent', () => {
       declarations: [
         HazdevTemplateComponent,
 
-        MockComponent({ selector: 'app-hazdev-template-header' }),
         MockComponent({
-          selector: 'app-hazdev-template-page',
+          selector: 'hazdev-template-header',
+          inputs: ['cooperator']
+        }),
+        MockComponent({
+          selector: 'hazdev-template-page',
           inputs: ['CONTACT', 'SOCIAL', 'TITLE']
         }),
-        MockComponent({ selector: 'app-hazdev-template-navigation' }),
-
+        MockComponent({
+          selector: 'hazdev-template-navigation',
+          inputs: ['NAVIGATION', 'SITE_SITENAV', 'SITE_URL']
+        }),
+        MockComponent({
+          selector: 'hazdev-template-footer',
+          inputs: ['SITE_COMMONNAV', 'SITE_INTERIORNAV', 'SITE_SOCIAL']
+        }),
         MockComponent({
           selector: 'mat-sidenav',
           inputs: ['mode', 'fixedInViewport', 'fixedTopGap', 'opened']

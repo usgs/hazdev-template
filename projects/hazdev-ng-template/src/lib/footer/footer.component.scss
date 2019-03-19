@@ -1,18 +1,58 @@
+@import '../theme.scss';
+@import '../font-awesome.scss';
+
+
 .site-commonnav {
-  border-top: 1px solid #ccc;
+  background: mat-color($earthquake-app-primary);
   display: block;
   font-size: 0.88em;
-  margin: 0 0 1em;
-  text-align: center;
+  margin: 4em 0 0;
+  padding: 2em 1em;
+  position: relative;
+
+  > .hazdev-site-logo {
+    display: block;
+    height: 56px;
+    margin-bottom: 2em;
+    width: 152px;
+
+    > img {
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+.interior-nav,
+.common-nav,
+.social-nav,
+.space-between {
+  margin: 1em 0 0;
 
   > a {
+    color: #fff;
     display: inline-block;
-    margin: 1em;
+    margin: 0.5em 1em 0.5em 0;
+  }
+
+  > a:hover,
+  > a:visited,
+  > a:active {
+    color: #fff;
   }
 }
 
 @media print {
   .site-commonnav {
     display: none;
+  }
+}
+
+.space-between {
+  border-top: 1px solid #eee;
+
+  @media screen and (min-width: 1000px) {
+    display: flex;
+    justify-content: space-between;
   }
 }

@@ -1,5 +1,22 @@
-<footer *ngIf="SITE_COMMONNAV" class="site-commonnav">
-  <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
-    {{ item.display }}
+<footer class="site-commonnav">
+  <a class="hazdev-site-logo" href="/" title="U.S. Geological Survey">
+    <img src="assets/usgs-logo.svg" alt="U.S. Geological Survey logo" />
   </a>
+  <div *ngIf="SITE_INTERIORNAV" class="interior-nav">
+    <a *ngFor="let item of SITE_INTERIORNAV" [href]="item.navHrefLink">{{
+      item.display
+    }}</a>
+  </div>
+  <div class="space-between">
+    <div *ngIf="SITE_COMMONNAV" class="common-nav">
+      <a *ngFor="let item of SITE_COMMONNAV" [href]="item.navHrefLink">
+        {{ item.display }}
+      </a>
+    </div>
+    <div *ngIf="SITE_SOCIAL" class="social-nav">
+      <a *ngFor="let item of SITE_SOCIAL" [href]="item.navHrefLink" >
+        <i [class]="item.class"><span class="only">{{ item.display }}</span></i>
+      </a>
+    </div>
+  </div>
 </footer>

@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class FooterComponent {
   @Input()
   SITE_COMMONNAV: any[];
+
+  @Input()
+  SITE_INTERIORNAV: any[];
+
+  @Input()
+  SITE_SOCIAL: any[];
 }
