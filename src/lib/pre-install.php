@@ -47,6 +47,11 @@ file_put_contents($HTTPD_CONF, '
     php_value include_path "' . $include_path . '"
   </IfModule>
 
+  <IfModule mod_php7.c>
+    # add template lib directory to include path
+    php_value include_path "' . $include_path . '"
+  </IfModule>
+
   # template alias for css/js/images
   Alias /theme ' . $HTDOCS_DIR . '
 
