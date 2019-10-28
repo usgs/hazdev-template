@@ -175,6 +175,13 @@ $COOPERATORS =
       ' alt="in cooperation with Advanced National Seismic System (ANSS)"/>';
 ```
 
+### $LANG
+
+Page language.  Default is `en`.
+
+```php
+$LANG = 'en';
+```
 
 ### $MODIFIED
 
