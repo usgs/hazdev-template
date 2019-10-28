@@ -92,7 +92,7 @@
     ?>
   </main>
 
-  <nav class="site-footer">
+  <nav class="site-footer" aria-label="Navigation">
     <?php
 
       if ($NAVIGATION) {
