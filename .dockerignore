@@ -1,0 +1,9 @@
+.build
+.DS_Store
+.git
+.sass-cache
+*.sublime-workspace
+dist
+node_modules
+src/conf/config.ini*
+src/conf/httpd.conf
