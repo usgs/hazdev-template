@@ -9,7 +9,7 @@ include_once 'functions.inc.php';
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo isset($LANG) ? $LANG : 'en'; ?>">
 <head>
   <title><?php echo strip_tags($TITLE); ?></title>
   <meta charset="utf-8"/>
